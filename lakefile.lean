@@ -25,7 +25,11 @@ but not on other platforms, so the manual requests it explicitly.
 -/
 elab "lakePluginArgs%" : term => do
   let sysroot ← findSysroot
-  let plugin := (sysroot / "lib" / "lean" / s!"libLake_shared.{Lake.sharedLibExt}").toString
+  let plugin :=
+    if System.Platform.isWindows then
+      (sysroot / "bin" / s!"libLake_shared.{Lake.sharedLibExt}").toString
+    else
+      (sysroot / "lib" / "lean" / s!"libLake_shared.{Lake.sharedLibExt}").toString
   return toExpr (#["--plugin", plugin] : Array String)
 
 
@@ -58,6 +62,10 @@ lean_lib IndexMapGrind where
 lean_lib Manual where
   weakLeanArgs := lakePluginArgs%
 
+@[default_target]
+lean_lib ManualZh where
+  weakLeanArgs := lakePluginArgs%
+
 /--
 Elaborates Lean-format `lakefile.lean` examples for the manual, emitting both the elaborated
 package configuration and its SubVerso highlighting. Used by the `lakeLean` directive.
@@ -80,6 +88,11 @@ target subversoExtractMod : FilePath := do
 lean_exe "generate-manual" where
   needs := #[`@/subversoExtractMod, `@/«extract-lakefile»]
   root := `Main
+
+@[default_target]
+lean_exe "generate-manual-zh" where
+  needs := #[`@/subversoExtractMod, `@/«extract-lakefile»]
+  root := `MainZh
 
 @[default_target]
 lean_lib Tutorial where
