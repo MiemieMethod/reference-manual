@@ -53,9 +53,26 @@ jobs:
             ${{ runner.os }}-lake-zh-${{ hashFiles('lean-toolchain') }}-
 
       - name: Build Chinese manual
+        shell: bash
         run: |
-          lake --no-ansi build generate-manual-zh
-          bash ./generate-html-zh.sh --mode preview
+          set -o pipefail
+          {
+            lake --no-ansi build generate-manual-zh
+            bash ./generate-html-zh.sh --mode preview
+          } 2>&1 | tee build-zh-ci.log
+
+      - name: Report Chinese build failure
+        if: failure()
+        shell: bash
+        run: |
+          if [ -f build-zh-ci.log ]; then
+            python3 - <<'PY'
+          from pathlib import Path
+          text = "\n".join(Path("build-zh-ci.log").read_text(errors="replace").splitlines()[-120:])
+          text = text.replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A")
+          print(f"::error title=Chinese manual build failed::{text}")
+          PY
+          fi
 
       - name: Upload Chinese HTML artifact
         uses: actions/upload-artifact@v4
