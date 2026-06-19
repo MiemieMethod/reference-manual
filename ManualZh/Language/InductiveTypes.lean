@@ -381,7 +381,7 @@ axiom α : Prop
 
  * {lean}`Decidable α` 的表示方式与 `Bool` {TODO} 相同[Decidable 和 Bool 不是简单构造函数和无关性规则的特殊情况吗？]
 
- * {lean}`Nat`和{lean}`Int`由{C}`lean_object *`表示。
+ * {lean}`Nat` 和 {lean}`Int` 由 {C}`lean_object *` 表示。
   它们的表示在 {ref "nat-runtime"}[关于自然数的部分]和 {ref "int-runtime"}[关于整数的部分]中有更详细的描述。
 
 :::

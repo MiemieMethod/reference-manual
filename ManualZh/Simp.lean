@@ -77,7 +77,7 @@ simp $_:optConfig $[only]? $[ [ $[$e],* ] ]? $[at $[$h]*]?
 
 换句话说，简化策略的调用按顺序采用以下修饰符，所有这些修饰符都是可选的：
  * 一组 {ref "tactic-config"}[配置选项]，其中应包括 {name}`Lean.Meta.Simp.Config` 或 {name}`Lean.Meta.DSimp.Config` 字段，具体取决于所调用的简化器是 {tactic}`simp` 版本还是 {tactic}`dsimp` 版本。
- * {keywordOf Lean.Parser.Tactic.simp}`only` 修饰符不包括默认的 simp 集，而是以空的 {margin} 开头[从技术上讲，simp 集始终包含 {name}`eq_self` 和 {name}`iff_self`，以便释放自反情况。] simp 集。
+ * {keywordOf Lean.Parser.Tactic.simp}`only` 修饰符不包括默认的 simp 集，而是以空的{margin}[从技术上讲，simp 集始终包含 {name}`eq_self` 和 {name}`iff_self`，以便释放自反情况。] simp 集开始。
  * 引理列表在 simp 集中添加或删除引理。可以通过三种方式在引理列表中指定引理：
    * `*`，将证明状态中的所有假设添加到 simp 集中
    * `-` 后跟引理，从 simpl 集中删除引理
