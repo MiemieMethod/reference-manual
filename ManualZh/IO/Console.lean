@@ -20,6 +20,9 @@ set_option pp.rawOnError true
 set_option linter.unusedVariables false
 
 #doc (Manual) "控制台输出" =>
+%%%
+tag := "zh-io-console-root"
+%%%
 
 Lean 包括用于写入 {tech}[标准输出] 和 {tech}[标准错误] 的便捷函数。
 全部都使用 {lean}`ToString` 实例，并且名称以 `-ln` 结尾的变体在输出后添加换行符。

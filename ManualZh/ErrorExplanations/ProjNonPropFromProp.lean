@@ -11,6 +11,7 @@ open Verso.Genre Manual InlineLean
 
 #doc (Manual) "关于：`projNonPropFromProp`" =>
 %%%
+tag := "zh-errorexplanations-projnonpropfromprop-root"
 shortTitle := "projNonPropFromProp"
 %%%
 

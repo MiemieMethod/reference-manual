@@ -12,6 +12,7 @@ open Verso.Genre Manual InlineLean
 
 #doc (Manual) "关于：`inductionWithNoAlts`" =>
 %%%
+tag := "zh-errorexplanations-inductionwithnoalts-root"
 shortTitle := "inductionWithNoAlts"
 %%%
 

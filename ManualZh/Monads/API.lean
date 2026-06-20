@@ -21,6 +21,9 @@ set_option pp.rawOnError true
 set_option linter.unusedVariables false
 
 #doc (Manual) "API 参考" =>
+%%%
+tag := "zh-monads-api-root"
+%%%
 
 除了此处描述的一般函数之外，还有一些函数通常定义为每个集合类型的命名空间中的 API 的一部分：
  * `mapM` 映射一元函数。

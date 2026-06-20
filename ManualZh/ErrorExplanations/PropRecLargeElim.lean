@@ -11,6 +11,7 @@ open Verso.Genre Manual InlineLean
 
 #doc (Manual) "关于：`propRecLargeElim`" =>
 %%%
+tag := "zh-errorexplanations-propreclargeelim-root"
 shortTitle := "propRecLargeElim"
 %%%
 

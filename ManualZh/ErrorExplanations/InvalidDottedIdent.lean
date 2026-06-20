@@ -11,6 +11,7 @@ open Verso.Genre Manual InlineLean
 
 #doc (Manual) "关于：`invalidDottedIdent`" =>
 %%%
+tag := "zh-errorexplanations-invaliddottedident-root"
 shortTitle := "invalidDottedIdent"
 %%%
 

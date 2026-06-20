@@ -70,6 +70,7 @@ def error_explanation_table : BlockCommandOf Unit
 
 #doc (Manual) "错误说明" =>
 %%%
+tag := "zh-errorexplanations-root"
 number := false
 htmlToc := false
 %%%

@@ -12,6 +12,7 @@ open Verso.Genre Manual InlineLean
 
 #doc (Manual) "关于：`ctorResultingTypeMismatch`" =>
 %%%
+tag := "zh-errorexplanations-ctorresultingtypemismatch-root"
 shortTitle := "ctorResultingTypeMismatch"
 %%%
 

@@ -76,6 +76,7 @@ where
 
 #doc (Manual) "精化和编译" =>
 %%%
+tag := "zh-elaboration-root"
 htmlSplit := .never
 %%%
 

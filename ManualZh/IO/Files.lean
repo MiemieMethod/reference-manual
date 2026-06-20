@@ -20,6 +20,9 @@ set_option pp.rawOnError true
 set_option linter.unusedVariables false
 
 #doc (Manual) "文件、文件句柄和流" =>
+%%%
+tag := "zh-io-files-root"
+%%%
 
 Lean 在所有支持的平台上提供一致的文件系统 API。
 这些是关键概念：

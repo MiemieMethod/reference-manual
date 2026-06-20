@@ -12,6 +12,7 @@ open Verso.Genre Manual InlineLean
 
 #doc (Manual) "关于：`inductiveParamMissing`" =>
 %%%
+tag := "zh-errorexplanations-inductiveparammissing-root"
 shortTitle := "inductiveParamMissing"
 %%%
 

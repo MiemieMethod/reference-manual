@@ -11,6 +11,7 @@ open Verso.Genre Manual InlineLean
 
 #doc (Manual) "关于：`inferBinderTypeFailed`" =>
 %%%
+tag := "zh-errorexplanations-inferbindertypefailed-root"
 shortTitle := "inferBinderTypeFailed"
 %%%
 

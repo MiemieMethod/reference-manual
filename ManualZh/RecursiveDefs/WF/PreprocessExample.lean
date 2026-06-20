@@ -21,6 +21,9 @@ open Lean.Elab.Tactic.GuardMsgs.WhitespaceMode
 set_option linter.constructorNameAsVariable false
 
 #doc (Manual) "良基递归预处理示例（包含在其他地方）" =>
+%%%
+tag := "zh-recursivedefs-wf-preprocessexample-root"
+%%%
 
 ::::example "Preprocessing for a custom data type"
 

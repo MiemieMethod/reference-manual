@@ -21,6 +21,9 @@ set_option pp.rawOnError true
 set_option linter.unusedVariables false
 
 #doc (Manual) "组合错误和状态 Monad" =>
+%%%
+tag := "zh-monads-zoo-combined-root"
+%%%
 
 ```lean -show
 variable (ε : Type u) (σ σ' : Type u) (α : Type u)

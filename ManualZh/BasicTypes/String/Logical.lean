@@ -16,6 +16,9 @@ set_option pp.rawOnError true
 
 
 #doc (Manual) "逻辑模型" =>
+%%%
+tag := "zh-basictypes-string-logical-root"
+%%%
 
 {docstring String}
 

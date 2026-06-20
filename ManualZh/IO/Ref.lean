@@ -21,6 +21,9 @@ set_option pp.rawOnError true
 set_option linter.unusedVariables false
 
 #doc (Manual) "可变引用" =>
+%%%
+tag := "zh-io-ref-root"
+%%%
 
 
 虽然普通的 {tech}[状态单子] 使用跟踪状态内容以及计算值的元组对有状态计算进行编码，但 Lean 的运行时系统还提供始终由可变内存单元支持的可变引用。

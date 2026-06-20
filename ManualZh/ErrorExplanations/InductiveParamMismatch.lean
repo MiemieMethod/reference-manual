@@ -11,6 +11,7 @@ open Verso.Genre Manual InlineLean
 
 #doc (Manual) "关于：`inductiveParamMismatch`" =>
 %%%
+tag := "zh-errorexplanations-inductiveparammismatch-root"
 shortTitle := "inductiveParamMismatch"
 %%%
 

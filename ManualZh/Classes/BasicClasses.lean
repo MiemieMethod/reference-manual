@@ -298,6 +298,7 @@ tag := "zh-classes-basicclasses-h007"
 
 # 可见的表示
 %%%
+tag := "zh-classes-basicclasses-h008"
 draft := true
 %%%
 

@@ -16,6 +16,9 @@ open Verso.Genre.Manual.InlineLean
 set_option pp.rawOnError true
 
 #doc (Manual) "转型" =>
+%%%
+tag := "zh-basictypes-list-transformation-root"
+%%%
 
 {docstring List.map}
 

@@ -11,6 +11,7 @@ open Verso.Genre Manual InlineLean
 
 #doc (Manual) "关于：`unknownIdentifier`" =>
 %%%
+tag := "zh-errorexplanations-unknownidentifier-root"
 shortTitle := "unknownIdentifier"
 %%%
 

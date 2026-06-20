@@ -25,6 +25,9 @@ set_option linter.unusedVariables false
 set_option guard_msgs.diff true
 
 #doc (Manual) "句法" =>
+%%%
+tag := "zh-monads-syntax-root"
+%%%
 
 Lean 支持通过特殊语法使用函子、应用函子和 monad 进行编程：
  * 中缀运算符适用于最常见的操作。

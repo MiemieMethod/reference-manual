@@ -16,6 +16,9 @@ open Verso.Genre.Manual.InlineLean
 set_option pp.rawOnError true
 
 #doc (Manual) "谓词和关系" =>
+%%%
+tag := "zh-basictypes-list-predicates-root"
+%%%
 
 {docstring List.IsPrefix}
 

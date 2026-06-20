@@ -11,6 +11,7 @@ open Verso.Genre Manual InlineLean
 
 #doc (Manual) "关于：`synthInstanceFailed`" =>
 %%%
+tag := "zh-errorexplanations-synthinstancefailed-root"
 shortTitle := "synthInstanceFailed"
 %%%
 

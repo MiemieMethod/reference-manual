@@ -21,6 +21,9 @@ set_option pp.rawOnError true
 set_option linter.unusedVariables false
 
 #doc (Manual) "身份" =>
+%%%
+tag := "zh-monads-zoo-id-root"
+%%%
 
 身份单子 {name}`Id` 没有任何效果。
 {name}`Id`和{name}`pure`的相应实现都是恒等函数，{name}`bind`是逆函数应用。

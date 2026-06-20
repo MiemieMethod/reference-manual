@@ -19,6 +19,9 @@ open Verso.Genre.Manual.InlineLean
 open Lean.Elab.Tactic.GuardMsgs.WhitespaceMode
 
 #doc (Manual) "终止失败（包含在其他地方）" =>
+%%%
+tag := "zh-recursivedefs-wf-guesslexexample-root"
+%%%
 
 :::example "Termination failure"
 
