@@ -21,6 +21,7 @@ open Lean.Elab.Tactic.GuardMsgs.WhitespaceMode
 
 #doc (Manual) "使用Elan管理工具链" =>
 %%%
+file := "Managing-Toolchains-with-Elan"
 tag := "elan"
 shortContextTitle := "Elan"
 %%%
@@ -32,6 +33,7 @@ Elan 可以无缝地处理各种项目，每个项目都设计为使用特定版
 
 # 选择工具链
 %%%
+file := "Selecting-Toolchains"
 tag := "elan-toolchain-versions"
 %%%
 
@@ -42,6 +44,7 @@ tag := "elan-toolchain-versions"
 
 ## 工具链标识符
 %%%
+file := "Toolchain-Identifiers"
 tag := "elan-channels"
 %%%
 
@@ -81,6 +84,7 @@ tag := "elan-channels"
 
 ## 确定当前工具链
 %%%
+file := "Determining-the-Current-Toolchain"
 tag := "elan-toolchain-config"
 %%%
 
@@ -104,6 +108,7 @@ Elan 将工具链与目录关联起来，并使用当前工作目录的最新父
 
 # 工具链位置
 %%%
+file := "Toolchain-Locations"
 tag := "elan-dir"
 %%%
 
@@ -113,6 +118,7 @@ tag := "elan-dir"
 
 # 命令行界面
 %%%
+file := "Command-Line-Interface"
 tag := "elan-cli"
 %%%
 
@@ -169,6 +175,7 @@ DISCUSSION:
 
 ## 查询工具链
 %%%
+file := "Querying-Toolchains"
 tag := "elan-show"
 %%%
 
@@ -221,6 +228,7 @@ Lean (version 4.9.0, arm64-apple-darwin23.5.0, commit 8f9843a4a5fe, Release)
 
 ## 设置默认工具链
 %%%
+file := "Setting-the-Default-Toolchain"
 tag := "elan-default"
 %%%
 
@@ -251,6 +259,7 @@ DISCUSSION:
 
 ## 管理已安装的工具链
 %%%
+file := "Managing-Installed-Toolchains"
 tag := "elan-toolchain"
 %%%
 
@@ -445,6 +454,7 @@ DISCUSSION:
 
 ## 管理目录覆盖
 %%%
+file := "Managing-Directory-Overrides"
 tag := "elan-override"
 %%%
 
@@ -514,6 +524,7 @@ DISCUSSION:
 
 ## 运行工具和命令
 %%%
+file := "Running-Tools-and-Commands"
 tag := "elan-run"
 %%%
 
@@ -579,6 +590,7 @@ ARGS:
 
 ## 管理义隆
 %%%
+file := "Managing-Elan"
 tag := "elan-self"
 %%%
 

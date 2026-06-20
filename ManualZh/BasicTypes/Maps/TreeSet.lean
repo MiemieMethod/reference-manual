@@ -19,6 +19,7 @@ set_option pp.rawOnError true
 
 #doc (Manual) "基于树的集合" =>
 %%%
+file := "Tree-Based-Sets"
 tag := "TreeSet"
 %%%
 
@@ -26,6 +27,7 @@ tag := "TreeSet"
 
 # 创建
 %%%
+file := "Creation"
 tag := "zh-basictypes-maps-treeset-h001"
 %%%
 
@@ -33,6 +35,7 @@ tag := "zh-basictypes-maps-treeset-h001"
 
 # 特性
 %%%
+file := "Properties"
 tag := "zh-basictypes-maps-treeset-h002"
 %%%
 
@@ -42,6 +45,7 @@ tag := "zh-basictypes-maps-treeset-h002"
 
 # 查询
 %%%
+file := "Queries"
 tag := "zh-basictypes-maps-treeset-h003"
 %%%
 
@@ -57,6 +61,7 @@ tag := "zh-basictypes-maps-treeset-h003"
 
 ## 基于排序的查询
 %%%
+file := "Ordering-Based-Queries"
 tag := "zh-basictypes-maps-treeset-h004"
 %%%
 
@@ -119,6 +124,7 @@ tag := "zh-basictypes-maps-treeset-h004"
 
 # 修改
 %%%
+file := "Modification"
 tag := "zh-basictypes-maps-treeset-h005"
 %%%
 
@@ -142,6 +148,7 @@ tag := "zh-basictypes-maps-treeset-h005"
 
 # 迭代
 %%%
+file := "Iteration"
 tag := "zh-basictypes-maps-treeset-h006"
 %%%
 
@@ -166,6 +173,7 @@ tag := "zh-basictypes-maps-treeset-h006"
 
 # 转换
 %%%
+file := "Conversion"
 tag := "zh-basictypes-maps-treeset-h007"
 %%%
 
@@ -179,6 +187,7 @@ tag := "zh-basictypes-maps-treeset-h007"
 
 ## 非捆绑变体
 %%%
+file := "Unbundled-Variants"
 tag := "zh-basictypes-maps-treeset-h008"
 %%%
 

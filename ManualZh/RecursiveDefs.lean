@@ -22,6 +22,7 @@ open Lean.Elab.Tactic.GuardMsgs.WhitespaceMode
 
 #doc (Manual) "递归定义" =>
 %%%
+file := "Recursive-Definitions"
 tag := "recursive-definitions"
 %%%
 
@@ -108,6 +109,7 @@ Lean 要求安全地定义每个递归函数，而不是禁止递归函数。
 
 # 相互递归
 %%%
+file := "Mutual-Recursion"
 tag := "mutual-syntax"
 %%%
 
@@ -188,6 +190,7 @@ end
 
 # 不完整和不安全的定义
 %%%
+file := "Partial-and-Unsafe-Definitions"
 tag := "partial-unsafe"
 %%%
 
@@ -200,6 +203,7 @@ In essence, the {keyword}`partial` subset of Lean is a traditional functional pr
 
 ## 部分功能
 %%%
+file := "Partial-Functions"
 tag := "partial-functions"
 %%%
 
@@ -265,6 +269,7 @@ theorem answer_eq_other : answerUser = answerOtherUser := by
 
 ## 不安全的定义
 %%%
+file := "Unsafe-Definitions"
 tag := "unsafe"
 %%%
 
@@ -377,6 +382,7 @@ theorem unFin_length_eq_length {xs : List (Fin n)} :
 
 # 控制减少
 %%%
+file := "Controlling-Reduction"
 tag := "reducibility"
 htmlSplit := .never
 %%%
@@ -508,6 +514,7 @@ irreducible
 
 ## 还原性和策略
 %%%
+file := "Reducibility-and-Tactics"
 tag := "zh-recursivedefs-h006"
 %%%
 
@@ -614,6 +621,7 @@ theorem sum_eq_add : sum x y = x + y := by simp
 
 ## 修改还原性
 %%%
+file := "Modifying-Reducibility"
 tag := "zh-recursivedefs-h007"
 %%%
 
@@ -641,6 +649,7 @@ unseal $_:ident $_*
 
 ## 选项
 %%%
+file := "Options"
 tag := "zh-recursivedefs-h008"
 %%%
 

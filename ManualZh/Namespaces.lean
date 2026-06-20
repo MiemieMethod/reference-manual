@@ -29,6 +29,7 @@ set_option linter.unusedVariables false
 
 #doc (Manual) "命名空间和部分" =>
 %%%
+file := "Namespaces-and-Sections"
 tag := "namespaces-sections"
 htmlSplit := .never
 %%%
@@ -47,6 +48,7 @@ htmlSplit := .never
 
 # 章节范围
 %%%
+file := "Section-Scopes"
 tag := "scopes"
 %%%
 
@@ -78,6 +80,7 @@ tag := "scopes"
 
 ## 控制部分范围
 %%%
+file := "Controlling-Section-Scopes"
 tag := "scope-commands"
 %%%
 
@@ -277,6 +280,7 @@ Unknown identifier `cupcake`
 
 ## 节变量
 %%%
+file := "Section-Variables"
 tag := "section-variables"
 %%%
 

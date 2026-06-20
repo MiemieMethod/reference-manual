@@ -12,6 +12,7 @@ open Verso.Genre Manual InlineLean
 
 #doc (Manual) "关于：`ctorResultingTypeMismatch`" =>
 %%%
+file := "About___-___ctorResultingTypeMismatch___"
 tag := "zh-errorexplanations-ctorresultingtypemismatch-root"
 shortTitle := "ctorResultingTypeMismatch"
 %%%
@@ -26,6 +27,7 @@ inductive type being defined has no indices.
 
 # 示例
 %%%
+file := "Examples"
 tag := "zh-errorexplanations-ctorresultingtypemismatch-h001"
 %%%
 

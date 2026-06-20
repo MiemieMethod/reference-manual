@@ -20,6 +20,7 @@ set_option linter.unusedVariables false
 
 #doc (Manual) "使用 {tactic}`conv` 进行有针对性的重写" =>
 %%%
+file := "Targeted-Rewriting-with-___tactic______conv___"
 tag := "conv"
 %%%
 
@@ -80,6 +81,7 @@ example :
 
 # 控制结构
 %%%
+file := "Control-Structures"
 tag := "conv-control"
 %%%
 
@@ -110,6 +112,7 @@ tag := "conv-control"
 
 # 目标选择
 %%%
+file := "Goal-Selection"
 tag := "conv-goals"
 %%%
 
@@ -142,6 +145,7 @@ tag := "conv-goals"
 
 # 导航
 %%%
+file := "Navigation"
 tag := "conv-nav"
 %%%
 
@@ -197,11 +201,13 @@ $x:ident
 
 # 改变目标
 %%%
+file := "Changing-the-Goal"
 tag := "conv-change"
 %%%
 
 ## 减少
 %%%
+file := "Reduction"
 tag := "conv-reduction"
 %%%
 
@@ -260,6 +266,7 @@ example : f 5 = 5 := by
 
 ## 简化
 %%%
+file := "Simplification"
 tag := "conv-simp"
 %%%
 
@@ -274,6 +281,7 @@ tag := "conv-simp"
 
 ## 重写
 %%%
+file := "Rewriting"
 tag := "conv-rw"
 %%%
 
@@ -294,6 +302,7 @@ tag := "conv-rw"
 
 # 嵌套策略
 %%%
+file := "Nested-Tactics"
 tag := "conv-nested"
 %%%
 
@@ -316,6 +325,7 @@ tag := "conv-nested"
 
 # 调试实用程序
 %%%
+file := "Debugging-Utilities"
 tag := "conv-debug"
 %%%
 
@@ -325,6 +335,7 @@ tag := "conv-debug"
 
 # 其他
 %%%
+file := "Other"
 tag := "conv-other"
 %%%
 

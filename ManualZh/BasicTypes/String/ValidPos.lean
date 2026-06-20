@@ -16,6 +16,7 @@ set_option pp.rawOnError true
 
 #doc (Manual) "职位" =>
 %%%
+file := "Positions"
 tag := "string-api-valid-pos"
 %%%
 
@@ -24,6 +25,7 @@ tag := "string-api-valid-pos"
 
 # 在字符串中
 %%%
+file := "In-Strings"
 tag := "zh-basictypes-string-validpos-h001"
 %%%
 
@@ -39,6 +41,7 @@ tag := "zh-basictypes-string-validpos-h001"
 
 # 查找
 %%%
+file := "Lookups"
 tag := "zh-basictypes-string-validpos-h002"
 %%%
 
@@ -54,6 +57,7 @@ tag := "zh-basictypes-string-validpos-h002"
 
 # 修改
 %%%
+file := "Modifications"
 tag := "zh-basictypes-string-validpos-h003"
 %%%
 
@@ -63,6 +67,7 @@ tag := "zh-basictypes-string-validpos-h003"
 
 # 调整
 %%%
+file := "Adjustment"
 tag := "zh-basictypes-string-validpos-h004"
 %%%
 
@@ -80,6 +85,7 @@ tag := "zh-basictypes-string-validpos-h004"
 
 # 其他琴弦
 %%%
+file := "Other-Strings"
 tag := "zh-basictypes-string-validpos-h005"
 %%%
 

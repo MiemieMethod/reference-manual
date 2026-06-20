@@ -24,6 +24,7 @@ open Lean.Grind
 
 #doc (Manual) "线性算术工作站" =>
 %%%
+file := "Linear-Arithmetic-Solver"
 tag := "grind-linarith"
 %%%
 
@@ -115,6 +116,7 @@ example (a b c d e f : R) :
 
 # 支持`linarith`
 %%%
+file := "Supporting-___linarith___"
 tag := "grind-linarith-classes"
 %%%
 

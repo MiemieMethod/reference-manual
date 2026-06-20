@@ -22,6 +22,7 @@ set_option linter.unusedVariables false
 
 #doc (Manual) "提升单子" =>
 %%%
+file := "Lifting-Monads"
 tag := "lifting-monads"
 %%%
 
@@ -162,6 +163,7 @@ but is expected to have type
 
 # 倒车升降机
 %%%
+file := "Reversing-Lifts"
 tag := "zh-monads-lift-h001"
 %%%
 
@@ -181,6 +183,7 @@ monad 提供的许多操作都是高阶的，在同一个 monad 中采取操作�
 
 ## 单子函子
 %%%
+file := "Monad-Functors"
 tag := "zh-monads-lift-h002"
 %%%
 
@@ -190,6 +193,7 @@ tag := "zh-monads-lift-h002"
 
 ## 使用 `MonadControl` 进行可逆提升
 %%%
+file := "Reversible-Lifting-with-___MonadControl___"
 tag := "zh-monads-lift-h003"
 %%%
 

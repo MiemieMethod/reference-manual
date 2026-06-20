@@ -22,6 +22,7 @@ open Lean.Grind
 
 #doc (Manual) "集成`grind`的功能" =>
 %%%
+file := "Integrating-___grind______s-Features"
 tag := "zh-grind-extendedexamples-integration-root"
 %%%
 

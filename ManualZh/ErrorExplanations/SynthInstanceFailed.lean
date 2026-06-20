@@ -11,6 +11,7 @@ open Verso.Genre Manual InlineLean
 
 #doc (Manual) "关于：`synthInstanceFailed`" =>
 %%%
+file := "About___-___synthInstanceFailed___"
 tag := "zh-errorexplanations-synthinstancefailed-root"
 shortTitle := "synthInstanceFailed"
 %%%
@@ -39,6 +40,7 @@ variable {t : Type} (x y : Int)
 
 # 示例
 %%%
+file := "Examples"
 tag := "zh-errorexplanations-synthinstancefailed-h001"
 %%%
 

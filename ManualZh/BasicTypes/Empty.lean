@@ -15,6 +15,7 @@ set_option pp.rawOnError true
 
 #doc (Manual) "空的Type" =>
 %%%
+file := "The-Empty-Type"
 tag := "empty"
 %%%
 
@@ -56,6 +57,7 @@ def g (n : Nat) : Nat :=
 
 # API 参考
 %%%
+file := "API-Reference"
 tag := "zh-basictypes-empty-h001"
 %%%
 

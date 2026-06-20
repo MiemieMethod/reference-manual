@@ -15,6 +15,7 @@ set_option pp.rawOnError true
 
 #doc (Manual) "总和类型" =>
 %%%
+file := "Sum-Types"
 tag := "sum-types"
 %%%
 
@@ -50,6 +51,7 @@ sum 类型有两种类型：
 
 # 句法
 %%%
+file := "Syntax"
 tag := "sum-syntax"
 %%%
 
@@ -94,6 +96,7 @@ end
 
 # API 参考
 %%%
+file := "API-Reference"
 tag := "sum-api"
 %%%
 
@@ -102,6 +105,7 @@ Sum 类型主要用于 {tech (key := "pattern matching")}[模式匹配]，而不
 
 ## 案例区分
 %%%
+file := "Case-Distinction"
 tag := "zh-basictypes-sum-h003"
 %%%
 
@@ -111,6 +115,7 @@ tag := "zh-basictypes-sum-h003"
 
 ## 提取值
 %%%
+file := "Extracting-Values"
 tag := "zh-basictypes-sum-h004"
 %%%
 
@@ -126,6 +131,7 @@ tag := "zh-basictypes-sum-h004"
 
 ## 转换
 %%%
+file := "Transformations"
 tag := "zh-basictypes-sum-h005"
 %%%
 
@@ -135,6 +141,7 @@ tag := "zh-basictypes-sum-h005"
 
 ## 有人居住
 %%%
+file := "Inhabited"
 tag := "zh-basictypes-sum-h006"
 %%%
 

@@ -22,6 +22,7 @@ set_option linter.unusedVariables false
 
 #doc (Manual) "自定义运算符" =>
 %%%
+file := "Custom-Operators"
 tag := "operators"
 %%%
 

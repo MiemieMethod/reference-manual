@@ -15,6 +15,7 @@ open Verso.Genre.Manual.InlineLean
 
 #doc (Manual) "自然数" =>
 %%%
+file := "Natural-Numbers"
 tag := "Nat"
 %%%
 
@@ -26,6 +27,7 @@ tag := "Nat"
 
 # 逻辑模型
 %%%
+file := "Logical-Model"
 tag := "nat-model"
 %%%
 
@@ -58,6 +60,7 @@ example (n : Nat) : n < n + 1 := by
 
 ## 皮亚诺公理
 %%%
+file := "Peano-Axioms"
 tag := "peano-axioms"
 %%%
 
@@ -95,6 +98,7 @@ theorem succ_not_zero : ¬n + 1 = 0 :=
 
 # 运行时表示
 %%%
+file := "Run-Time-Representation"
 tag := "nat-runtime"
 %%%
 
@@ -114,6 +118,7 @@ tag := "nat-runtime"
 
 ## 性能说明
 %%%
+file := "Performance-Notes"
 tag := "nat-performance"
 %%%
 
@@ -125,6 +130,7 @@ tag := "nat-performance"
 
 # 句法
 %%%
+file := "Syntax"
 tag := "nat-syntax"
 %%%
 
@@ -134,12 +140,14 @@ tag := "nat-syntax"
 
 # API 参考
 %%%
+file := "API-Reference"
 tag := "nat-api"
 %%%
 
 
 ## 算术
 %%%
+file := "Arithmetic"
 tag := "nat-api-arithmetic"
 %%%
 
@@ -163,6 +171,7 @@ tag := "nat-api-arithmetic"
 
 ### 按位运算
 %%%
+file := "Bitwise-Operations"
 tag := "nat-api-bitwise"
 %%%
 
@@ -182,6 +191,7 @@ tag := "nat-api-bitwise"
 
 ## 最小值和最大值
 %%%
+file := "Minimum-and-Maximum"
 tag := "nat-api-minmax"
 %%%
 
@@ -192,6 +202,7 @@ tag := "nat-api-minmax"
 
 ## GCD 和 LCM
 %%%
+file := "GCD-and-LCM"
 tag := "nat-api-gcd-lcm"
 %%%
 
@@ -202,6 +213,7 @@ tag := "nat-api-gcd-lcm"
 
 ## 二的幂
 %%%
+file := "Powers-of-Two"
 tag := "nat-api-pow2"
 %%%
 
@@ -212,12 +224,14 @@ tag := "nat-api-pow2"
 
 ## 比较
 %%%
+file := "Comparisons"
 tag := "nat-api-comparison"
 %%%
 
 
 ### 布尔比较
 %%%
+file := "Boolean-Comparisons"
 tag := "nat-api-comparison-bool"
 %%%
 
@@ -230,6 +244,7 @@ tag := "nat-api-comparison-bool"
 
 ### 可判定的平等
 %%%
+file := "Decidable-Equality"
 tag := "nat-api-deceq"
 %%%
 
@@ -241,6 +256,7 @@ tag := "nat-api-deceq"
 
 ### 谓词
 %%%
+file := "Predicates"
 tag := "nat-api-predicates"
 %%%
 
@@ -250,6 +266,7 @@ tag := "nat-api-predicates"
 
 ## 迭代
 %%%
+file := "Iteration"
 tag := "nat-api-iteration"
 %%%
 
@@ -288,6 +305,7 @@ tag := "nat-api-iteration"
 
 ## 转换
 %%%
+file := "Conversion"
 tag := "nat-api-conversion"
 %%%
 
@@ -337,6 +355,7 @@ tag := "nat-api-conversion"
 
 ## 消除
 %%%
+file := "Elimination"
 tag := "nat-api-elim"
 %%%
 
@@ -351,6 +370,7 @@ tag := "nat-api-elim"
 
 ### 替代归纳原理
 %%%
+file := "Alternative-Induction-Principles"
 tag := "nat-api-induction"
 %%%
 

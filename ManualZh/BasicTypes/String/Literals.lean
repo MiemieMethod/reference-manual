@@ -17,6 +17,7 @@ set_option pp.rawOnError true
 
 #doc (Manual) "句法" =>
 %%%
+file := "Syntax"
 tag := "string-syntax"
 %%%
 
@@ -24,6 +25,7 @@ Lean 具有三种字符串文字：普通字符串文字、插值字符串文字
 
 # 字符串文字
 %%%
+file := "String-Literals"
 tag := "string-literals"
 %%%
 
@@ -73,6 +75,7 @@ def str3 := "String with \
 
 # 内插字符串
 %%%
+file := "Interpolated-Strings"
 tag := "string-interpolation"
 %%%
 
@@ -91,6 +94,7 @@ example :
 
 # 原始字符串文字
 %%%
+file := "Raw-String-Literals"
 tag := "raw-string-literals"
 %%%
 

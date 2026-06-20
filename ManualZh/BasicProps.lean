@@ -20,6 +20,7 @@ set_option pp.rawOnError true
 
 #doc (Manual) "基本建设" =>
 %%%
+file := "Basic-Propositions"
 tag := "basic-props"
 %%%
 
@@ -31,6 +32,7 @@ tag := "basic-props"
 
 # 真相
 %%%
+file := "Truth"
 tag := "true-false"
 %%%
 
@@ -91,6 +93,7 @@ termination_by n
 
 # 逻辑连接词
 %%%
+file := "Logical-Connectives"
 tag := "zh-basicprops-h002"
 %%%
 
@@ -204,6 +207,7 @@ $_ ↔ $_
 
 # 量词
 %%%
+file := "Quantifiers"
 tag := "zh-basicprops-h003"
 %%%
 
@@ -297,6 +301,7 @@ exists $_ $[$_]*, $_
 
 # 命题等价
 %%%
+file := "Propositional-Equality"
 tag := "propositional-equality"
 %%%
 
@@ -351,6 +356,7 @@ $_ ▸ $_
 
 ## 平等证明的唯一性
 %%%
+file := "Uniqueness-of-Equality-Proofs"
 tag := "UIP"
 %%%
 
@@ -388,6 +394,7 @@ example {α : Sort u} {a : α}
 
 ## 异质平等
 %%%
+file := "Heterogeneous-Equality"
 tag := "HEq"
 %%%
 

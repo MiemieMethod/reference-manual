@@ -15,6 +15,7 @@ set_option pp.rawOnError true
 
 #doc (Manual) "调用计算" =>
 %%%
+file := "Lazy-Computations"
 tag := "Thunk"
 %%%
 
@@ -27,6 +28,7 @@ tag := "Thunk"
 
 # 逻辑模型
 %%%
+file := "Logical-Model"
 tag := "Thunk-model"
 %%%
 
@@ -39,6 +41,7 @@ thunk 被建模为包含 {lean}`Unit` 中的函数的单字段结构。
 
 # 运行时表示
 %%%
+file := "Runtime-Representation"
 tag := "Thunk-runtime"
 %%%
 
@@ -73,6 +76,7 @@ Thunk 有两个字段：
 
 # 强制
 %%%
+file := "Coercions"
 tag := "Thunk-coercions"
 %%%
 
@@ -199,6 +203,7 @@ ys: 0
 
 # API 参考
 %%%
+file := "API-Reference"
 tag := "Thunk-api"
 %%%
 

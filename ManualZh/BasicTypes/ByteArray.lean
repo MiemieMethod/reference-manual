@@ -24,6 +24,7 @@ example := Char
 
 #doc (Manual) "字节吞吐量" =>
 %%%
+file := "Byte-Arrays"
 tag := "ByteArray"
 %%%
 
@@ -39,11 +40,13 @@ tag := "ByteArray"
 
 # API 参考
 %%%
+file := "API-Reference"
 tag := "zh-basictypes-bytearray-h001"
 %%%
 
 ## 构造字节数组
 %%%
+file := "Constructing-Byte-Arrays"
 tag := "zh-basictypes-bytearray-h002"
 %%%
 
@@ -59,6 +62,7 @@ tag := "zh-basictypes-bytearray-h002"
 
 ## 尺寸
 %%%
+file := "Size"
 tag := "zh-basictypes-bytearray-h003"
 %%%
 
@@ -70,6 +74,7 @@ tag := "zh-basictypes-bytearray-h003"
 
 ## 查找
 %%%
+file := "Lookups"
 tag := "zh-basictypes-bytearray-h004"
 %%%
 
@@ -83,6 +88,7 @@ tag := "zh-basictypes-bytearray-h004"
 
 ## 转换
 %%%
+file := "Conversions"
 tag := "zh-basictypes-bytearray-h005"
 %%%
 
@@ -94,6 +100,7 @@ tag := "zh-basictypes-bytearray-h005"
 
 ### UTF-8
 %%%
+file := "UTF-8"
 tag := "zh-basictypes-bytearray-h006"
 %%%
 
@@ -105,6 +112,7 @@ tag := "zh-basictypes-bytearray-h006"
 
 ## 修改
 %%%
+file := "Modification"
 tag := "zh-basictypes-bytearray-h007"
 %%%
 
@@ -118,6 +126,7 @@ tag := "zh-basictypes-bytearray-h007"
 
 ## 迭代
 %%%
+file := "Iteration"
 tag := "zh-basictypes-bytearray-h008"
 %%%
 
@@ -129,6 +138,7 @@ tag := "zh-basictypes-bytearray-h008"
 
 ## 迭代器
 %%%
+file := "Iterators"
 tag := "zh-basictypes-bytearray-h009"
 %%%
 
@@ -166,6 +176,7 @@ tag := "zh-basictypes-bytearray-h009"
 
 ## 切片
 %%%
+file := "Slices"
 tag := "zh-basictypes-bytearray-h010"
 %%%
 
@@ -208,6 +219,7 @@ tag := "zh-basictypes-bytearray-h010"
 
 ## 元素谓词
 %%%
+file := "Element-Predicates"
 tag := "zh-basictypes-bytearray-h011"
 %%%
 

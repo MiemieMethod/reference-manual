@@ -16,6 +16,7 @@ open Verso.Genre.Manual.InlineLean
 
 #doc (Manual) "商数" =>
 %%%
+file := "Quotients"
 tag := "quotients"
 %%%
 
@@ -64,6 +65,7 @@ tag := "quotients"
 
 # 商类型的替代方案
 %%%
+file := "Alternatives-to-Quotient-Types"
 tag := "quotient-alternatives"
 %%%
 
@@ -184,6 +186,7 @@ theorem toInt_sound :
 
 # 类固醇
 %%%
+file := "Setoids"
 tag := "setoids"
 %%%
 
@@ -202,6 +205,7 @@ Setoid 除了作为商类型的构建块之外，本身也很有用。
 
 # 等价关系
 %%%
+file := "Equivalence-Relations"
 tag := "equivalence-relations"
 %%%
 
@@ -243,6 +247,7 @@ end
 
 # 商 API
 %%%
+file := "Quotient-API"
 tag := "quotient-api"
 %%%
 
@@ -250,6 +255,7 @@ tag := "quotient-api"
 
 ## 商数介绍
 %%%
+file := "Introducing-Quotients"
 tag := "quotient-intro"
 %%%
 
@@ -324,6 +330,7 @@ instance : OfNat Z n where
 
 ## 消除商数
 %%%
+file := "Eliminating-Quotients"
 tag := "quotient-elim"
 %%%
 
@@ -420,6 +427,7 @@ instance : Add Z where
 
 ## 关于商的证明
 %%%
+file := "Proofs-About-Quotients"
 tag := "quotient-proofs"
 %%%
 
@@ -525,6 +533,7 @@ theorem Z.add_neg_inverse (n : Z) : n  + (-n) = 0 := by
 
 # 逻辑模型
 %%%
+file := "Logical-Model"
 tag := "quotient-model"
 %%%
 
@@ -550,6 +559,7 @@ tag := "quotient-model"
 
 ## 商约减
 %%%
+file := "Quotient-Reduction"
 tag := "quotient-reduction"
 %%%
 
@@ -589,6 +599,7 @@ end
 
 ## 商和归纳类型
 %%%
+file := "Quotients-and-Inductive-Types"
 tag := "quotients-nested-inductives"
 %%%
 
@@ -620,6 +631,7 @@ inductive SetTree (α : Type u) where
 
 ## 低级商 API
 %%%
+file := "Low-Level-Quotient-API"
 tag := "zh-quotients-h011"
 %%%
 
@@ -640,6 +652,7 @@ Lean 还提供从 {name}`Quot` 到任何子单例的便捷消除，无需进一�
 
 # 商和函数外延
 %%%
+file := "Quotients-and-Function-Extensionality"
 tag := "quotient-funext"
 %%%
 
@@ -713,6 +726,7 @@ theorem funext'
 
 # 壁球类型
 %%%
+file := "Squash-Types"
 tag := "squash-types"
 %%%
 

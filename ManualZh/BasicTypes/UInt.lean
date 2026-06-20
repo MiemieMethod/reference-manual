@@ -17,6 +17,7 @@ open Verso.Genre.Manual.InlineLean
 
 #doc (Manual) "固定精度整数" =>
 %%%
+file := "Fixed-Precision-Integers"
 tag := "fixed-ints"
 %%%
 
@@ -26,6 +27,7 @@ Lean 的标准库包括 固定位宽整数 类型的常见分类。
 
 # 逻辑模型
 %%%
+file := "Logical-Model"
 tag := "zh-basictypes-uint-h001"
 %%%
 
@@ -36,6 +38,7 @@ tag := "zh-basictypes-uint-h001"
 
 ## 未签名
 %%%
+file := "Unsigned"
 tag := "zh-basictypes-uint-h002"
 %%%
 
@@ -51,6 +54,7 @@ tag := "zh-basictypes-uint-h002"
 
 ## 签名
 %%%
+file := "Signed"
 tag := "zh-basictypes-uint-h003"
 %%%
 
@@ -66,6 +70,7 @@ tag := "zh-basictypes-uint-h003"
 
 # 运行时表示
 %%%
+file := "Run-Time-Representation"
 tag := "fixed-int-runtime"
 %%%
 
@@ -84,6 +89,7 @@ Lean 不专门表示归纳类型或数组。
 
 # 句法
 %%%
+file := "Syntax"
 tag := "zh-basictypes-uint-h005"
 %%%
 
@@ -137,11 +143,13 @@ example : (0xff : Int8) = -1   := by rfl
 
 # API 参考
 %%%
+file := "API-Reference"
 tag := "zh-basictypes-uint-h006"
 %%%
 
 ## 尺寸
 %%%
+file := "Sizes"
 tag := "zh-basictypes-uint-h007"
 %%%
 
@@ -170,6 +178,7 @@ tag := "zh-basictypes-uint-h007"
 
 ## 范围
 %%%
+file := "Ranges"
 tag := "zh-basictypes-uint-h008"
 %%%
 
@@ -195,11 +204,13 @@ tag := "zh-basictypes-uint-h008"
 
 ## 转换
 %%%
+file := "Conversions"
 tag := "zh-basictypes-uint-h009"
 %%%
 
 ### 往返 `Int`
 %%%
+file := "To-and-From-___Int___"
 tag := "zh-basictypes-uint-h010"
 %%%
 
@@ -249,6 +260,7 @@ tag := "zh-basictypes-uint-h010"
 
 ### 往返 `Nat`
 %%%
+file := "To-and-From-___Nat___"
 tag := "zh-basictypes-uint-h011"
 %%%
 
@@ -317,6 +329,7 @@ tag := "zh-basictypes-uint-h011"
 
 ### 至其他 固定位宽整数
 %%%
+file := "To-Other-Fixed-Width-Integers"
 tag := "zh-basictypes-uint-h012"
 %%%
 
@@ -423,6 +436,7 @@ tag := "zh-basictypes-uint-h012"
 
 ### 转浮点数
 %%%
+file := "To-Floating-Point-Numbers"
 tag := "zh-basictypes-uint-h013"
 %%%
 
@@ -468,6 +482,7 @@ tag := "zh-basictypes-uint-h013"
 
 ### 往返位向量
 %%%
+file := "To-and-From-Bitvectors"
 tag := "zh-basictypes-uint-h014"
 %%%
 
@@ -493,6 +508,7 @@ tag := "zh-basictypes-uint-h014"
 
 ### 有限数的往返
 %%%
+file := "To-and-From-Finite-Numbers"
 tag := "zh-basictypes-uint-h015"
 %%%
 
@@ -520,6 +536,7 @@ tag := "zh-basictypes-uint-h015"
 
 ### 致人物
 %%%
+file := "To-Characters"
 tag := "zh-basictypes-uint-h016"
 %%%
 
@@ -534,6 +551,7 @@ tag := "zh-basictypes-uint-h016"
 
 ## 按位运算
 %%%
+file := "Bitwise-Operations"
 tag := "zh-basictypes-uint-h017"
 %%%
 

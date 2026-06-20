@@ -31,6 +31,7 @@ file := "v4.31.0"
 
 # 亮点
 %%%
+file := "Highlights"
 tag := "zh-releases-v4-31-0-h001"
 %%%
 
@@ -40,6 +41,7 @@ _此亮点部分由 Juanjo Madrigal 贡献。_
 
 ## `do` 表示法：新循环形式和新精化器
 %%%
+file := "___do___-Notation___-New-Loop-Forms-and-New-Elaborator"
 tag := "zh-releases-v4-31-0-h002"
 %%%
 
@@ -82,6 +84,7 @@ must be last element in a `do` sequence
 
 ## Monadic 程序验证：`mvcgen'`
 %%%
+file := "Monadic-Program-Verification___-___mvcgen______"
 tag := "zh-releases-v4-31-0-h003"
 %%%
 
@@ -91,6 +94,7 @@ tag := "zh-releases-v4-31-0-h003"
 
 ## 透明度和 Defeq 纪律
 %%%
+file := "Transparency-and-Defeq-Discipline"
 tag := "zh-releases-v4-31-0-h004"
 %%%
 
@@ -123,6 +127,7 @@ example : y = 5 := by simp
 
 ## 弃用模块、语法和选项
 %%%
+file := "Deprecating-Modules___-Syntax___-and-Options"
 tag := "zh-releases-v4-31-0-h005"
 %%%
 
@@ -141,6 +146,7 @@ tag := "zh-releases-v4-31-0-h005"
 
 ## Lake：内置 Linting
 %%%
+file := "Lake___-Built-in-Linting"
 tag := "zh-releases-v4-31-0-h006"
 %%%
 
@@ -150,6 +156,7 @@ Lake 获得内置的 linting 框架，可通过 `lake lint` 标志访问（[#133
 
 ## 表现
 %%%
+file := "Performance"
 tag := "zh-releases-v4-31-0-h007"
 %%%
 
@@ -163,6 +170,7 @@ tag := "zh-releases-v4-31-0-h007"
 
 ## 图书馆亮点
 %%%
+file := "Library-Highlights"
 tag := "zh-releases-v4-31-0-h008"
 %%%
 
@@ -179,6 +187,7 @@ tag := "zh-releases-v4-31-0-h008"
 
 ## 编辑器和用户体验改进
 %%%
+file := "Editor-and-UX-Improvements"
 tag := "zh-releases-v4-31-0-h009"
 %%%
 
@@ -188,6 +197,7 @@ tag := "zh-releases-v4-31-0-h009"
 
 ## 重大变化
 %%%
+file := "Breaking-Changes"
 tag := "zh-releases-v4-31-0-h010"
 %%%
 
@@ -202,6 +212,7 @@ tag := "zh-releases-v4-31-0-h010"
 
 # 语言
 %%%
+file := "Language"
 tag := "zh-releases-v4-31-0-h011"
 %%%
 
@@ -615,6 +626,7 @@ tag := "zh-releases-v4-31-0-h011"
 
 # 图书馆
 %%%
+file := "Library"
 tag := "zh-releases-v4-31-0-h012"
 %%%
 
@@ -725,6 +737,7 @@ tag := "zh-releases-v4-31-0-h012"
 
 # 策略
 %%%
+file := "Tactics"
 tag := "zh-releases-v4-31-0-h013"
 %%%
 
@@ -936,6 +949,7 @@ tag := "zh-releases-v4-31-0-h013"
 
 # 编译器
 %%%
+file := "Compiler"
 tag := "zh-releases-v4-31-0-h014"
 %%%
 
@@ -1013,6 +1027,7 @@ tag := "zh-releases-v4-31-0-h014"
 
 # 漂亮的印刷
 %%%
+file := "Pretty-Printing"
 tag := "zh-releases-v4-31-0-h015"
 %%%
 
@@ -1034,6 +1049,7 @@ tag := "zh-releases-v4-31-0-h015"
 
 # 文档
 %%%
+file := "Documentation"
 tag := "zh-releases-v4-31-0-h016"
 %%%
 
@@ -1049,6 +1065,7 @@ tag := "zh-releases-v4-31-0-h016"
 
 # 服务器
 %%%
+file := "Server"
 tag := "zh-releases-v4-31-0-h017"
 %%%
 
@@ -1070,6 +1087,7 @@ tag := "zh-releases-v4-31-0-h017"
 
 # Lake
 %%%
+file := "Lake"
 tag := "zh-releases-v4-31-0-h018"
 %%%
 
@@ -1133,6 +1151,7 @@ tag := "zh-releases-v4-31-0-h018"
 
 # 其他
 %%%
+file := "Other"
 tag := "zh-releases-v4-31-0-h019"
 %%%
 

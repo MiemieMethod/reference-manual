@@ -25,6 +25,7 @@ open Lean.Elab.Tactic
 
 #doc (Manual) "定制策略" =>
 %%%
+file := "Custom-Tactics"
 tag := "custom-tactics"
 %%%
 
@@ -41,6 +42,7 @@ open Lean
 
 # 策略宏
 %%%
+file := "Tactic-Macros"
 tag := "tactic-macros"
 %%%
 
@@ -77,6 +79,7 @@ example : 0 ≤ 4 := by
 
 ## 可扩展策略宏
 %%%
+file := "Extensible-Tactic-Macros"
 tag := "tactic-macro-extension"
 %%%
 

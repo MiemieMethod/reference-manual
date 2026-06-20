@@ -22,6 +22,7 @@ open Lean Lean.Grind Lean.Meta.Grind
 
 #doc (Manual) "约束传播" =>
 %%%
+file := "Constraint-Propagation"
 tag := "grind-propagation"
 %%%
 
@@ -188,6 +189,7 @@ TODO (@kim-em)：我们不添加上面的 `{lean}` literal type to `propagateEta
 
 # 仅传播示例
 %%%
+file := "Propagation___Only-Examples"
 tag := "zh-grind-constraintpropagation-h001"
 %%%
 

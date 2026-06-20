@@ -22,6 +22,7 @@ set_option linter.unusedVariables false
 
 #doc (Manual) "API 参考" =>
 %%%
+file := "API-Reference"
 tag := "zh-monads-api-root"
 %%%
 
@@ -74,6 +75,7 @@ These values were kept:
 
 # 丢弃结果
 %%%
+file := "Discarding-Results"
 tag := "zh-monads-api-h001"
 %%%
 
@@ -83,6 +85,7 @@ tag := "zh-monads-api-h001"
 
 # 控制流程
 %%%
+file := "Control-Flow"
 tag := "zh-monads-api-h002"
 %%%
 
@@ -92,6 +95,7 @@ tag := "zh-monads-api-h002"
 
 # 提升布尔运算
 %%%
+file := "Lifting-Boolean-Operations"
 tag := "zh-monads-api-h003"
 %%%
 
@@ -103,6 +107,7 @@ tag := "zh-monads-api-h003"
 
 # 克莱斯利成分
 %%%
+file := "Kleisli-Composition"
 tag := "zh-monads-api-h004"
 %%%
 
@@ -114,6 +119,7 @@ tag := "zh-monads-api-h004"
 
 # 重新排序的操作
 %%%
+file := "Re-Ordered-Operations"
 tag := "zh-monads-api-h005"
 %%%
 

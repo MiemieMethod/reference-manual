@@ -31,6 +31,7 @@ set_option linter.unusedVariables false
 
 #doc (Manual) "符号和宏" =>
 %%%
+file := "Notations-and-Macros"
 tag := "language-extension"
 %%%
 
@@ -60,6 +61,7 @@ Lean 通过多种机制解决符号可扩展性问题，每种机制解决问题
 
 # 宏
 %%%
+file := "Macros"
 tag := "macros"
 %%%
 
@@ -157,6 +159,7 @@ elab_rules : term
 
 ## 卫生
 %%%
+file := "Hygiene"
 tag := "macro-hygiene"
 %%%
 
@@ -185,6 +188,7 @@ Lean 具有自动卫生功能：几乎在所有情况下，宏都会自动卫生
 
 ## 宏观单子
 %%%
+file := "The-Macro-Monad"
 tag := "macro-monad"
 %%%
 
@@ -200,6 +204,7 @@ tag := "macro-monad"
 
 ### 异常和错误
 %%%
+file := "Exceptions-and-Errors"
 tag := "macro-exceptions"
 %%%
 
@@ -217,6 +222,7 @@ tag := "macro-exceptions"
 
 ### 卫生相关操作
 %%%
+file := "Hygiene-Related-Operations"
 tag := "macro-monad-hygiene"
 %%%
 
@@ -229,6 +235,7 @@ tag := "macro-monad-hygiene"
 
 ### 查询环境
 %%%
+file := "Querying-the-Environment"
 tag := "macro-environment"
 %%%
 
@@ -245,6 +252,7 @@ tag := "macro-environment"
 
 ## 引述
 %%%
+file := "Quotation"
 tag := "quotation"
 %%%
 
@@ -413,6 +421,7 @@ example [Monad m] [MonadQuotation m] : m Syntax := `(term|2 + 2)
 
 ### 准报价
 %%%
+file := "Quasiquotation"
 tag := "quasiquotation"
 %%%
 
@@ -582,6 +591,7 @@ end
 
 ### 接头
 %%%
+file := "Splices"
 tag := "splices"
 %%%
 
@@ -769,6 +779,7 @@ end
 
 ### 令牌反引号
 %%%
+file := "Token-Antiquotations"
 tag := "token-antiquotations"
 %%%
 
@@ -795,6 +806,7 @@ atom"%$"ident
 
 ## 匹配语法
 %%%
+file := "Matching-Syntax"
 tag := "quote-patterns"
 %%%
 
@@ -905,6 +917,7 @@ macro_rules
 
 ## 定义宏
 %%%
+file := "Defining-Macros"
 tag := "defining-macros"
 %%%
 
@@ -915,6 +928,7 @@ tag := "defining-macros"
 
 ### `macro_rules` 命令
 %%%
+file := "The-___macro_rules___-Command"
 tag := "macro_rules"
 %%%
 
@@ -1150,6 +1164,7 @@ elaboration function for `arbitrary!` has not been implemented
 
 ### `macro` 命令
 %%%
+file := "The-___macro___-Command"
 tag := "macro-command"
 %%%
 
@@ -1225,6 +1240,7 @@ end
 
 ### 宏属性
 %%%
+file := "The-Macro-Attribute"
 tag := "macro-attribute"
 %%%
 

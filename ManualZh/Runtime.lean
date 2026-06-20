@@ -19,6 +19,7 @@ set_option pp.rawOnError true
 
 #doc (Manual) "运行时代码" =>
 %%%
+file := "Run-Time-Code"
 tag := "runtime"
 %%%
 
@@ -49,6 +50,7 @@ tag := "runtime"
 
 # 拳击
 %%%
+file := "Boxing"
 tag := "boxing"
 %%%
 
@@ -68,6 +70,7 @@ Lean 值可以在运行时以两种方式表示：
 
 # 引用计数
 %%%
+file := "Reference-Counting"
 tag := "reference-counting"
 %%%
 
@@ -116,6 +119,7 @@ Lean 使用 {deftech (key := "reference count")}_引用计数_进行内存管理
 
 ## 观察独特性
 %%%
+file := "Observing-Uniqueness"
 tag := "zh-runtime-h003"
 %%%
 
@@ -195,6 +199,7 @@ shared RC String update
 
 ## 编译器IR
 %%%
+file := "Compiler-IR"
 tag := "zh-runtime-h004"
 %%%
 
@@ -318,6 +323,7 @@ def discardElems : List α → List Unit
 
 ### 更多主题
 %%%
+file := "More-Topics"
 tag := "zh-runtime-h005"
 draft := true
 %%%
@@ -334,6 +340,7 @@ draft := true
 
 # 多线程执行
 %%%
+file := "Multi-Threaded-Execution"
 tag := "zh-runtime-h006"
 %%%
 
@@ -343,6 +350,7 @@ Lean 运行时系统包括一个为任务分配硬件资源的任务管理器。
 
 # 对外函数接口
 %%%
+file := "Foreign-Function-Interface"
 tag := "ffi"
 %%%
 
@@ -377,6 +385,7 @@ export $x:ident
 
 ## Lean ABI
 %%%
+file := "The-Lean-ABI"
 tag := "zh-runtime-h008"
 %%%
 
@@ -411,6 +420,7 @@ s sym(t₁, ..., tₙ);
 
 ### 将类型从 Lean 转换为 C
 %%%
+file := "Translating-Types-from-Lean-to-C"
 tag := "ffi-types"
 %%%
 
@@ -447,6 +457,7 @@ variable (u : Unit)
 
 ### 借款
 %%%
+file := "Borrowing"
 tag := "ffi-borrowing"
 %%%
 
@@ -466,6 +477,7 @@ tag := "ffi-borrowing"
 
 ## 初始化
 %%%
+file := "Initialization"
 tag := "ffi-initialization"
 %%%
 
@@ -533,6 +545,7 @@ void lean_finalize_thread();
 
 ## 解释器中的 `@[extern]`
 %%%
+file := "_______LSQ_extern_RSQ____-in-the-Interpreter"
 tag := "zh-runtime-h012"
 %%%
 

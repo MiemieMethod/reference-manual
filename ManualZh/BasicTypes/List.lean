@@ -25,6 +25,7 @@ set_option maxHeartbeats 250000
 
 #doc (Manual) "链表" =>
 %%%
+file := "Linked-Lists"
 tag := "List"
 %%%
 
@@ -36,6 +37,7 @@ Lean 提供文字列表和构造函数 {name}`List.cons` 的语法。
 
 # 句法
 %%%
+file := "Syntax"
 tag := "list-syntax"
 %%%
 
@@ -115,6 +117,7 @@ example : @split = @split'' := by
 
 # 性能说明
 %%%
+file := "Performance-Notes"
 tag := "list-performance"
 %%%
 
@@ -129,6 +132,7 @@ tag := "list-performance"
 
 # API 参考
 %%%
+file := "API-Reference"
 tag := "list-api-reference"
 %%%
 
@@ -136,6 +140,7 @@ tag := "list-api-reference"
 
 ## 构建列表
 %%%
+file := "Constructing-Lists"
 tag := "zh-basictypes-list-h004"
 %%%
 
@@ -163,6 +168,7 @@ tag := "zh-basictypes-list-h004"
 
 ## 长度
 %%%
+file := "Length"
 tag := "zh-basictypes-list-h005"
 %%%
 
@@ -174,6 +180,7 @@ tag := "zh-basictypes-list-h005"
 
 ## 首尾
 %%%
+file := "Head-and-Tail"
 tag := "zh-basictypes-list-h006"
 %%%
 
@@ -196,6 +203,7 @@ tag := "zh-basictypes-list-h006"
 
 ## 查找
 %%%
+file := "Lookups"
 tag := "zh-basictypes-list-h007"
 %%%
 
@@ -219,6 +227,7 @@ tag := "zh-basictypes-list-h007"
 
 ## 查询
 %%%
+file := "Queries"
 tag := "zh-basictypes-list-h008"
 %%%
 
@@ -248,6 +257,7 @@ tag := "zh-basictypes-list-h008"
 
 ## 转换
 %%%
+file := "Conversions"
 tag := "zh-basictypes-list-h009"
 %%%
 
@@ -266,6 +276,7 @@ tag := "zh-basictypes-list-h009"
 
 ## 排序
 %%%
+file := "Sorting"
 tag := "zh-basictypes-list-h010"
 %%%
 
@@ -275,6 +286,7 @@ tag := "zh-basictypes-list-h010"
 
 ## 迭代
 %%%
+file := "Iteration"
 tag := "zh-basictypes-list-h011"
 %%%
 
@@ -292,6 +304,7 @@ tag := "zh-basictypes-list-h011"
 
 ### 褶皱
 %%%
+file := "Folds"
 tag := "zh-basictypes-list-h012"
 %%%
 
@@ -329,6 +342,7 @@ tag := "zh-basictypes-list-h012"
 
 ## 过滤
 %%%
+file := "Filtering"
 tag := "zh-basictypes-list-h013"
 %%%
 
@@ -350,6 +364,7 @@ tag := "zh-basictypes-list-h013"
 
 ## 元素谓词
 %%%
+file := "Element-Predicates"
 tag := "zh-basictypes-list-h014"
 %%%
 
@@ -373,6 +388,7 @@ tag := "zh-basictypes-list-h014"
 
 ## 终止助手
 %%%
+file := "Termination-Helpers"
 tag := "zh-basictypes-list-h015"
 %%%
 

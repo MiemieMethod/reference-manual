@@ -16,6 +16,7 @@ set_option pp.rawOnError true
 
 #doc (Manual) "原始子串" =>
 %%%
+file := "Raw-Substrings"
 tag := "string-api-substring"
 %%%
 
@@ -30,6 +31,7 @@ tag := "string-api-substring"
 
 # 特性
 %%%
+file := "Properties"
 tag := "zh-basictypes-string-substrings-h001"
 %%%
 
@@ -39,6 +41,7 @@ tag := "zh-basictypes-string-substrings-h001"
 
 # 职位
 %%%
+file := "Positions"
 tag := "zh-basictypes-string-substrings-h002"
 %%%
 
@@ -57,6 +60,7 @@ tag := "zh-basictypes-string-substrings-h002"
 
 # 折叠和聚集
 %%%
+file := "Folds-and-Aggregation"
 tag := "zh-basictypes-string-substrings-h003"
 %%%
 
@@ -70,6 +74,7 @@ tag := "zh-basictypes-string-substrings-h003"
 
 # 比较
 %%%
+file := "Comparisons"
 tag := "zh-basictypes-string-substrings-h004"
 %%%
 
@@ -79,6 +84,7 @@ tag := "zh-basictypes-string-substrings-h004"
 
 # 前缀和后缀
 %%%
+file := "Prefix-and-Suffix"
 tag := "zh-basictypes-string-substrings-h005"
 %%%
 
@@ -92,6 +98,7 @@ tag := "zh-basictypes-string-substrings-h005"
 
 # 查找
 %%%
+file := "Lookups"
 tag := "zh-basictypes-string-substrings-h006"
 %%%
 
@@ -104,6 +111,7 @@ tag := "zh-basictypes-string-substrings-h006"
 
 # 修改
 %%%
+file := "Modifications"
 tag := "zh-basictypes-string-substrings-h007"
 %%%
 
@@ -138,6 +146,7 @@ tag := "zh-basictypes-string-substrings-h007"
 
 # 转换
 %%%
+file := "Conversions"
 tag := "zh-basictypes-string-substrings-h008"
 %%%
 

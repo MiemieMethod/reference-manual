@@ -24,6 +24,7 @@ set_option maxRecDepth 600
 
 #doc (Manual) "共归纳谓词和归纳谓词" =>
 %%%
+file := "Coinductive-and-Inductive-Predicates"
 tag := "coinductive-predicates"
 %%%
 
@@ -94,6 +95,7 @@ InfSeq.coinduct (R : α → α → Prop) (pred : α → Prop) :
 
 # 定点终止条款
 %%%
+file := "Fixpoint-Termination-Clauses"
 tag := "fixpoint-clauses"
 %%%
 
@@ -102,6 +104,7 @@ tag := "fixpoint-clauses"
 
 ## 共导固定点
 %%%
+file := "Coinductive-Fixpoint"
 tag := "coinductive-fixpoint-clause"
 %%%
 
@@ -450,6 +453,7 @@ theorem loop_equiv_cycle :
 
 ## 感应固定点
 %%%
+file := "Inductive-Fixpoint"
 tag := "inductive-fixpoint-clause"
 %%%
 
@@ -507,6 +511,7 @@ theorem star_implies_starInd (R : α → α → Prop) :
 
 ## 相互块中的混合归纳-共归纳谓词
 %%%
+file := "Mixed-Inductive-Coinductive-Predicates-in-Mutual-Blocks"
 tag := "mixed-mutual-fixpoint"
 %%%
 
@@ -541,6 +546,7 @@ tick.mutual_induct (pred_1 pred_2 : Prop) :
 
 # 更多例子
 %%%
+file := "Further-Examples"
 tag := "coinductive-predicate-examples"
 %%%
 

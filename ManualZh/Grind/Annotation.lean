@@ -19,6 +19,7 @@ open Lean.Elab.Tactic.GuardMsgs.WhitespaceMode
 
 #doc (Manual) "为 `grind` 注释库" =>
 %%%
+file := "Annotating-Libraries-for-___grind___"
 tag := "grind-annotation"
 %%%
 
@@ -29,6 +30,7 @@ tag := "grind-annotation"
 
 # 简单引理
 %%%
+file := "Simp-Lemmas"
 tag := "zh-grind-annotation-h001"
 %%%
 
@@ -40,6 +42,7 @@ tag := "zh-grind-annotation-h001"
 
 # 向后和向前推理
 %%%
+file := "Backwards-and-Forwards-Reasoning"
 tag := "zh-grind-annotation-h002"
 %%%
 

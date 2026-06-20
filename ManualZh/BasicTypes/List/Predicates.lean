@@ -17,6 +17,7 @@ set_option pp.rawOnError true
 
 #doc (Manual) "谓词和关系" =>
 %%%
+file := "Predicates-and-Relations"
 tag := "zh-basictypes-list-predicates-root"
 %%%
 

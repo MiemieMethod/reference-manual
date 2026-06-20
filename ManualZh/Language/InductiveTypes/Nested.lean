@@ -15,6 +15,7 @@ set_option guard_msgs.diff true
 
 #doc (Manual) "嵌套归纳类型" =>
 %%%
+file := "Nested-Inductive-Types"
 tag := "nested-inductive-types"
 %%%
 

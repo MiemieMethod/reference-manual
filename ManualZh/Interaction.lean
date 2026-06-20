@@ -18,6 +18,7 @@ set_option pp.rawOnError true
 
 #doc (Manual) "与 Lean 交互" =>
 %%%
+file := "Interacting-with-Lean"
 htmlSplit := .never
 tag := "interaction"
 %%%
@@ -35,6 +36,7 @@ Lean 命令的信息可在 {deftech}_message log_ 中获取，它累积来自 {t
 
 # 评估条款
 %%%
+file := "Evaluating-Terms"
 tag := "hash-eval"
 %%%
 
@@ -197,6 +199,7 @@ Could not synthesize a `ToExpr`, `Repr`, or `ToString` instance for type
 
 # 减少条款
 %%%
+file := "Reducing-Terms"
 tag := "hash-reduce"
 %%%
 
@@ -242,6 +245,7 @@ fun x => (Nat.rec ⟨fun x => x, PUnit.unit⟩ (fun n n_ih => ⟨fun x => (n_ih.
 
 # 检查类型
 %%%
+file := "Checking-Types"
 tag := "hash-check"
 %%%
 
@@ -313,6 +317,7 @@ Hint: Type class instance resolution failures can be inspected with the `set_opt
 
 # 综合实例
 %%%
+file := "Synthesizing-Instances"
 tag := "hash-synth"
 %%%
 
@@ -370,6 +375,7 @@ Hint: Additional diagnostic information may be available using the `set_option d
 
 # 查询上下文
 %%%
+file := "Querying-the-Context"
 tag := "hash-print"
 %%%
 
@@ -544,6 +550,7 @@ set_option pp.funBinderTypes true
 
 # 使用 {keyword}`#guard_msgs` 测试输出
 %%%
+file := "Testing-Output-with-___keyword_________guard_msgs___"
 tag := "hash-guard_msgs"
 %%%
 

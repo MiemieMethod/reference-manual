@@ -20,6 +20,7 @@ set_option pp.rawOnError true
 
 #doc (Manual) "浮点数" =>
 %%%
+file := "Floating-Point-Numbers"
 tag := "Float"
 %%%
 
@@ -122,6 +123,7 @@ def pos0 : Float := 0.0
 
 # 句法
 %%%
+file := "Syntax"
 tag := "zh-basictypes-float-h001"
 %%%
 
@@ -155,11 +157,13 @@ example : (413.52 : Float32) = (OfScientific.ofScientific 41352 true 2 : Float32
 
 # API 参考
 %%%
+file := "API-Reference"
 tag := "Float-api"
 %%%
 
 ## 特性
 %%%
+file := "Properties"
 tag := "zh-basictypes-float-h003"
 %%%
 
@@ -186,6 +190,7 @@ tag := "zh-basictypes-float-h003"
 
 ## 句法
 %%%
+file := "Syntax"
 tag := "zh-basictypes-float-h004"
 %%%
 
@@ -198,6 +203,7 @@ tag := "zh-basictypes-float-h004"
 
 ## 转换
 %%%
+file := "Conversions"
 tag := "zh-basictypes-float-h005"
 %%%
 
@@ -275,6 +281,7 @@ tag := "zh-basictypes-float-h005"
 
 ## 比较
 %%%
+file := "Comparisons"
 tag := "zh-basictypes-float-h006"
 %%%
 
@@ -284,6 +291,7 @@ tag := "zh-basictypes-float-h006"
 
 ### 不平等现象
 %%%
+file := "Inequalities"
 tag := "zh-basictypes-float-h007"
 %%%
 
@@ -308,6 +316,7 @@ tag := "zh-basictypes-float-h007"
 
 ## 算术
 %%%
+file := "Arithmetic"
 tag := "zh-basictypes-float-h008"
 %%%
 
@@ -343,6 +352,7 @@ tag := "zh-basictypes-float-h008"
 
 ### 根源
 %%%
+file := "Roots"
 tag := "zh-basictypes-float-h009"
 %%%
 
@@ -358,6 +368,7 @@ tag := "zh-basictypes-float-h009"
 
 ## 对数
 %%%
+file := "Logarithms"
 tag := "zh-basictypes-float-h010"
 %%%
 
@@ -375,6 +386,7 @@ tag := "zh-basictypes-float-h010"
 
 ## 缩放
 %%%
+file := "Scaling"
 tag := "zh-basictypes-float-h011"
 %%%
 
@@ -384,6 +396,7 @@ tag := "zh-basictypes-float-h011"
 
 ## 四舍五入
 %%%
+file := "Rounding"
 tag := "zh-basictypes-float-h012"
 %%%
 
@@ -401,11 +414,13 @@ tag := "zh-basictypes-float-h012"
 
 ## 三角学
 %%%
+file := "Trigonometry"
 tag := "zh-basictypes-float-h013"
 %%%
 
 ### 正弦
 %%%
+file := "Sine"
 tag := "zh-basictypes-float-h014"
 %%%
 
@@ -427,6 +442,7 @@ tag := "zh-basictypes-float-h014"
 
 ### 余弦
 %%%
+file := "Cosine"
 tag := "zh-basictypes-float-h015"
 %%%
 
@@ -448,6 +464,7 @@ tag := "zh-basictypes-float-h015"
 
 ### 切线
 %%%
+file := "Tangent"
 tag := "zh-basictypes-float-h016"
 %%%
 
@@ -473,6 +490,7 @@ tag := "zh-basictypes-float-h016"
 
 ## 负数和绝对值
 %%%
+file := "Negation-and-Absolute-Value"
 tag := "zh-basictypes-float-h017"
 %%%
 

@@ -23,6 +23,7 @@ open Lean.Grind
 
 #doc (Manual) "更大的例子" =>
 %%%
+file := "Bigger-Examples"
 tag := "grind-bigger-examples"
 %%%
 

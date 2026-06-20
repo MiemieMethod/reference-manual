@@ -25,6 +25,7 @@ open Lean (Syntax Expr)
 
 #doc (Manual) "扩展Lean的输出" =>
 %%%
+file := "Extending-Lean___s-Output"
 tag := "unexpand-and-delab"
 %%%
 
@@ -54,6 +55,7 @@ tag := "unexpand-and-delab"
 
 # 解扩展器
 %%%
+file := "Unexpanders"
 tag := "Unexpanders"
 %%%
 
@@ -248,6 +250,7 @@ some [1 🚩 2, 3, 4, 5]
 
 # 精化器
 %%%
+file := "Delaborators"
 tag := "delaborators"
 %%%
 ::::::::leanSection

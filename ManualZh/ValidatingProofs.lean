@@ -45,6 +45,7 @@ htmlSplit := .never
 
 # 蓝色双复选标记
 %%%
+file := "The-Blue-Double-Check-Marks"
 tag := "validating-blue-check-marks"
 %%%
 
@@ -52,6 +53,7 @@ tag := "validating-blue-check-marks"
 
 ## 指示
 %%%
+file := "Instructions"
 tag := "zh-validatingproofs-h002"
 %%%
 
@@ -63,6 +65,7 @@ tag := "zh-validatingproofs-h002"
 
 ## 意义
 %%%
+file := "Significance"
 tag := "zh-validatingproofs-h003"
 %%%
 
@@ -70,6 +73,7 @@ tag := "zh-validatingproofs-h003"
 
 ## 相信
 %%%
+file := "Trust"
 tag := "zh-validatingproofs-h004"
 %%%
 
@@ -77,6 +81,7 @@ tag := "zh-validatingproofs-h004"
 
 ## 保护
 %%%
+file := "Protection"
 tag := "zh-validatingproofs-h005"
 %%%
 
@@ -91,6 +96,7 @@ tag := "zh-validatingproofs-h005"
 
 ## 评论
 %%%
+file := "Comments"
 tag := "zh-validatingproofs-h006"
 %%%
 
@@ -101,6 +107,7 @@ VS Code 以外的编辑器可能有不同的指示。
 
 # 打印公理
 %%%
+file := "Printing-Axioms"
 tag := "validating-printing-axioms"
 %%%
 
@@ -109,6 +116,7 @@ tag := "validating-printing-axioms"
 
 ## 指示
 %%%
+file := "Instructions"
 tag := "zh-validatingproofs-h008"
 %%%
 
@@ -124,6 +132,7 @@ theorem thmName : TheoremStatement := .intro
 
 ## 意义
 %%%
+file := "Significance"
 tag := "zh-validatingproofs-h009"
 %%%
 
@@ -136,6 +145,7 @@ tag := "zh-validatingproofs-h009"
 
 ## 相信
 %%%
+file := "Trust"
 tag := "zh-validatingproofs-h010"
 %%%
 
@@ -143,6 +153,7 @@ tag := "zh-validatingproofs-h010"
 
 ## 保护
 %%%
+file := "Protection"
 tag := "zh-validatingproofs-h011"
 %%%
 
@@ -156,6 +167,7 @@ tag := "zh-validatingproofs-h011"
 
 # 使用 `lean4checker` 重新检查校样
 %%%
+file := "Re-Checking-Proofs-with-___lean4checker___"
 tag := "validating-lean4checker"
 %%%
 
@@ -163,6 +175,7 @@ tag := "validating-lean4checker"
 
 ## 指示
 %%%
+file := "Instructions"
 tag := "zh-validatingproofs-h013"
 %%%
 
@@ -170,6 +183,7 @@ tag := "zh-validatingproofs-h013"
 
 ## 意义
 %%%
+file := "Significance"
 tag := "zh-validatingproofs-h014"
 %%%
 
@@ -178,6 +192,7 @@ tag := "zh-validatingproofs-h014"
 
 ## 相信
 %%%
+file := "Trust"
 tag := "zh-validatingproofs-h015"
 %%%
 
@@ -185,6 +200,7 @@ tag := "zh-validatingproofs-h015"
 
 ## 保护
 %%%
+file := "Protection"
 tag := "zh-validatingproofs-h016"
 %%%
 
@@ -197,6 +213,7 @@ tag := "zh-validatingproofs-h016"
 
 ## 评论
 %%%
+file := "Comments"
 tag := "zh-validatingproofs-h017"
 %%%
 
@@ -212,6 +229,7 @@ Lean策略和其他元代码在运行时可以执行任意操作。
 
 # 黄金标准：`comparator` 和外部检查器
 %%%
+file := "Gold-Standard___-___comparator___-and-external-checkers"
 tag := "validating-comparator"
 %%%
 
@@ -220,6 +238,7 @@ tag := "validating-comparator"
 
 ## 指示
 %%%
+file := "Instructions"
 tag := "zh-validatingproofs-h019"
 %%%
 
@@ -227,6 +246,7 @@ tag := "zh-validatingproofs-h019"
 
 ## 意义
 %%%
+file := "Significance"
 tag := "zh-validatingproofs-h020"
 %%%
 
@@ -236,6 +256,7 @@ Comparator 将在沙盒环境中构建证明，以防止构建步骤中的 {tech
 
 ## 相信
 %%%
+file := "Trust"
 tag := "zh-validatingproofs-h021"
 %%%
 
@@ -243,6 +264,7 @@ tag := "zh-validatingproofs-h021"
 
 ## 保护
 %%%
+file := "Protection"
 tag := "zh-validatingproofs-h022"
 %%%
 
@@ -255,6 +277,7 @@ tag := "zh-validatingproofs-h022"
 
 ## 评论
 %%%
+file := "Comments"
 tag := "zh-validatingproofs-h023"
 %%%
 
@@ -262,6 +285,7 @@ tag := "zh-validatingproofs-h023"
 
 # 剩余问题
 %%%
+file := "Remaining-Issues"
 tag := "zh-validatingproofs-h024"
 %%%
 
@@ -278,6 +302,7 @@ tag := "zh-validatingproofs-h024"
 
 # 在 `Lean.trustCompiler` 上（最高至 Lean 4.28.0）
 %%%
+file := "On-___Lean___trustCompiler___-_LPAR_up-to-Lean-4___28___0_RPAR_"
 tag := "validating-trustCompiler"
 %%%
 

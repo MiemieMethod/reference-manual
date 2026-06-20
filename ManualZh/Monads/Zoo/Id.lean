@@ -22,6 +22,7 @@ set_option linter.unusedVariables false
 
 #doc (Manual) "身份" =>
 %%%
+file := "Identity"
 tag := "zh-monads-zoo-id-root"
 %%%
 

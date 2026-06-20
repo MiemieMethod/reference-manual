@@ -21,6 +21,7 @@ set_option pp.rawOnError true
 
 #doc (Manual) "亚型" =>
 %%%
+file := "Subtypes"
 tag := "Subtype"
 %%%
 

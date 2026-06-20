@@ -19,6 +19,7 @@ set_option maxRecDepth 800
 
 #doc (Manual) "Type 系统" =>
 %%%
+file := "The-Type-System"
 tag := "type-system"
 shortContextTitle := "Type System"
 %%%
@@ -138,6 +139,7 @@ Lean 中的基本类型为 {tech}[universes]、{tech}[function] 类型、{name}`
 
 # 提案
 %%%
+file := "Propositions"
 tag := "propositions"
 %%%
 
@@ -171,6 +173,7 @@ tag := "propositions"
 
 # 宇宙
 %%%
+file := "Universes"
 tag := "zh-types-h002"
 %%%
 
@@ -228,6 +231,7 @@ of sort `Type 2`
 
 ## 预测性
 %%%
+file := "Predicativity"
 tag := "zh-types-h003"
 %%%
 
@@ -299,6 +303,7 @@ of sort `Type 4`
 
 ## 多态性
 %%%
+file := "Polymorphism"
 tag := "zh-types-h004"
 %%%
 
@@ -406,6 +411,7 @@ info: count.{u_1} {m : Type → Type u_1} {α : Type} [Monad m] (p : α → Bool
 
 ### 级别表达式
 %%%
+file := "Level-Expressions"
 tag := "level-expressions"
 %%%
 
@@ -431,6 +437,7 @@ $$`\mathtt{imax}\ u\ v = \begin{cases}0 & \mathrm{when\ }v = 0\\\mathtt{max}\ u\
 
 ### Universe 变量绑定
 %%%
+file := "Universe-Variable-Bindings"
 tag := "zh-types-h006"
 %%%
 
@@ -533,6 +540,7 @@ def L := List (Type 0)
 
 ### 宇宙统一
 %%%
+file := "Universe-Unification"
 tag := "zh-types-h007"
 draft := true
 %%%
@@ -545,6 +553,7 @@ draft := true
 
 ### 宇宙提升
 %%%
+file := "Universe-Lifting"
 tag := "zh-types-h008"
 %%%
 

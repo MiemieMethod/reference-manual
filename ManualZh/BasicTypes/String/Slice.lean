@@ -16,6 +16,7 @@ set_option pp.rawOnError true
 
 #doc (Manual) "字符串切片" =>
 %%%
+file := "String-Slices"
 tag := "string-api-slice"
 %%%
 
@@ -31,11 +32,13 @@ tag := "string-api-slice"
 
 # API 参考
 %%%
+file := "API-Reference"
 tag := "zh-basictypes-string-slice-h001"
 %%%
 
 ## 复印
 %%%
+file := "Copying"
 tag := "zh-basictypes-string-slice-h002"
 %%%
 
@@ -43,6 +46,7 @@ tag := "zh-basictypes-string-slice-h002"
 
 ## 尺寸
 %%%
+file := "Size"
 tag := "zh-basictypes-string-slice-h003"
 %%%
 
@@ -52,6 +56,7 @@ tag := "zh-basictypes-string-slice-h003"
 
 ## 边界
 %%%
+file := "Boundaries"
 tag := "zh-basictypes-string-slice-h004"
 %%%
 
@@ -70,6 +75,7 @@ tag := "zh-basictypes-string-slice-h004"
 
 ### 调整
 %%%
+file := "Adjustment"
 tag := "zh-basictypes-string-slice-h005"
 %%%
 
@@ -107,6 +113,7 @@ tag := "zh-basictypes-string-slice-h005"
 
 ## 人物
 %%%
+file := "Characters"
 tag := "zh-basictypes-string-slice-h006"
 %%%
 
@@ -120,6 +127,7 @@ tag := "zh-basictypes-string-slice-h006"
 
 ## 字节
 %%%
+file := "Bytes"
 tag := "zh-basictypes-string-slice-h007"
 %%%
 
@@ -129,6 +137,7 @@ tag := "zh-basictypes-string-slice-h007"
 
 ## 职位
 %%%
+file := "Positions"
 tag := "zh-basictypes-string-slice-h008"
 %%%
 
@@ -138,6 +147,7 @@ tag := "zh-basictypes-string-slice-h008"
 
 ## 搜寻中
 %%%
+file := "Searching"
 tag := "zh-basictypes-string-slice-h009"
 %%%
 
@@ -155,6 +165,7 @@ tag := "zh-basictypes-string-slice-h009"
 
 ## 操纵
 %%%
+file := "Manipulation"
 tag := "zh-basictypes-string-slice-h010"
 %%%
 
@@ -172,6 +183,7 @@ tag := "zh-basictypes-string-slice-h010"
 
 ## 迭代
 %%%
+file := "Iteration"
 tag := "zh-basictypes-string-slice-h011"
 %%%
 
@@ -195,6 +207,7 @@ tag := "zh-basictypes-string-slice-h011"
 
 ## 转换
 %%%
+file := "Conversions"
 tag := "zh-basictypes-string-slice-h012"
 %%%
 
@@ -207,6 +220,7 @@ tag := "zh-basictypes-string-slice-h012"
 
 ## 平等
 %%%
+file := "Equality"
 tag := "zh-basictypes-string-slice-h013"
 %%%
 
@@ -217,6 +231,7 @@ tag := "zh-basictypes-string-slice-h013"
 
 # 图案
 %%%
+file := "Patterns"
 tag := "zh-basictypes-string-slice-h014"
 %%%
 
@@ -249,11 +264,13 @@ Lean 标准库提供的实例允许将以下类型用于向前和向后搜索：
 
 # 职位
 %%%
+file := "Positions"
 tag := "zh-basictypes-string-slice-h015"
 %%%
 
 ## 查找
 %%%
+file := "Lookups"
 tag := "zh-basictypes-string-slice-h016"
 %%%
 
@@ -269,6 +286,7 @@ tag := "zh-basictypes-string-slice-h016"
 
 ## 递增和递减
 %%%
+file := "Incrementing-and-Decrementing"
 tag := "zh-basictypes-string-slice-h017"
 %%%
 
@@ -290,6 +308,7 @@ tag := "zh-basictypes-string-slice-h017"
 
 ## 其他字符串或切片
 %%%
+file := "Other-Strings-or-Slices"
 tag := "zh-basictypes-string-slice-h018"
 %%%
 

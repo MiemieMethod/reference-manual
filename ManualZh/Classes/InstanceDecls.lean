@@ -16,6 +16,7 @@ open Verso.Genre.Manual.InlineLean
 
 #doc (Manual) "实例声明" =>
 %%%
+file := "Instance-Declarations"
 tag := "instance-declarations"
 %%%
 
@@ -113,6 +114,7 @@ instance : BEq NatWrapper :=
 
 # 递归实例
 %%%
+file := "Recursive-Instances"
 tag := "recursive-instances"
 %%%
 
@@ -210,6 +212,7 @@ partial def NatRoseTree.beq : (tree1 tree2 : NatRoseTree) → Bool
 
 # `class inductive` 的实例
 %%%
+file := "Instances-of-___class-inductive___s"
 tag := "class-inductive-instances"
 %%%
 
@@ -295,6 +298,7 @@ instance instDecidableEqStringList : DecidableEq StringList
 
 # 实例优先级
 %%%
+file := "Instance-Priorities"
 tag := "instance-priorities"
 %%%
 
@@ -339,6 +343,7 @@ $_ - $_
 
 # 默认实例
 %%%
+file := "Default-Instances"
 tag := "default-instances"
 %%%
 
@@ -411,6 +416,7 @@ attribute [default_instance 100] ofNatEvenPlusTwo
 
 # 实例属性
 %%%
+file := "The-Instance-Attribute"
 tag := "instance-attribute"
 %%%
 

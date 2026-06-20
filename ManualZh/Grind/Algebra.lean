@@ -23,6 +23,7 @@ set_option maxHeartbeats 300000
 
 #doc (Manual) "代数工作室（交换环、域）" =>
 %%%
+file := "Algebraic-Solver-_LPAR_Commutative-Rings___-Fields_RPAR_"
 tag := "grind-ring"
 %%%
 
@@ -123,6 +124,7 @@ example [CommRing α] (a b c : α)
 
 # 解算器 Type 类
 %%%
+file := "Solver-Type-Classes"
 tag := "grind-ring-classes"
 %%%
 
@@ -156,6 +158,7 @@ Lean 标准库包含标准库中定义的类型的适用实例。
 
 ## 代数结构
 %%%
+file := "Algebraic-Structures"
 tag := "zh-grind-algebra-h002"
 %%%
 
@@ -172,6 +175,7 @@ tag := "zh-grind-algebra-h002"
 
 ### 领域
 %%%
+file := "Fields"
 tag := "grind-ring-field"
 %%%
 
@@ -202,6 +206,7 @@ example [Field α] (a : α) :
 
 ## 环特性
 %%%
+file := "Ring-Characteristics"
 tag := "zh-grind-algebra-h004"
 %%%
 
@@ -216,6 +221,7 @@ tag := "zh-grind-algebra-h004"
 
 ## 自然数零因数
 %%%
+file := "Natural-Number-Zero-Divisors"
 tag := "NoNatZeroDivisors"
 %%%
 
@@ -319,6 +325,7 @@ h_2 : ¬y * x = 1
 
 ### 右抵消加法
 %%%
+file := "Right-Cancellative-Addition"
 tag := "AddRightCancel"
 %%%
 
@@ -338,6 +345,7 @@ example (x y : Nat) :
 
 # 资源限制
 %%%
+file := "Resource-Limits"
 tag := "zh-grind-algebra-h007"
 %%%
 

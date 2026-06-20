@@ -31,6 +31,7 @@ set_option maxRecDepth 1024
 #doc (Manual) "函子、Monad 和 `do` 表示法" =>
 
 %%%
+file := "Functors___-Monads-and-___do___-Notation"
 tag := "monads-and-do"
 %%%
 

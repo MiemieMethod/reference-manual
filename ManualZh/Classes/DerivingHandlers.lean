@@ -78,6 +78,7 @@ open Lean Elab Command
 
 #doc (Manual) "派生处理程序" =>
 %%%
+file := "Deriving-Handlers"
 tag := "deriving-handlers"
 %%%
 

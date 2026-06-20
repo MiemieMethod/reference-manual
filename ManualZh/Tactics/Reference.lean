@@ -24,11 +24,13 @@ set_option maxHeartbeats 250000
 
 #doc (Manual) "策略参考" =>
 %%%
+file := "Tactic-Reference"
 tag := "tactic-ref"
 %%%
 
 # 古典逻辑
 %%%
+file := "Classical-Logic"
 tag := "tactic-ref-classical"
 %%%
 
@@ -38,6 +40,7 @@ tag := "tactic-ref-classical"
 
 # 假设
 %%%
+file := "Assumptions"
 tag := "tactic-ref-assumptions"
 %%%
 
@@ -49,6 +52,7 @@ tag := "tactic-ref-assumptions"
 
 # 量词
 %%%
+file := "Quantifiers"
 tag := "tactic-ref-quantifiers"
 %%%
 
@@ -68,6 +72,7 @@ tag := "tactic-ref-quantifiers"
 
 # 关系
 %%%
+file := "Relations"
 tag := "tactic-ref-relations"
 %%%
 
@@ -112,6 +117,7 @@ symm
 
 ## 平等
 %%%
+file := "Equality"
 tag := "tactic-ref-equality"
 %%%
 
@@ -135,6 +141,7 @@ tag := "tactic-ref-equality"
 
 # 结合性和交换性
 %%%
+file := "Associativity-and-Commutativity"
 tag := "tactic-ref-associativity-commutativity"
 %%%
 
@@ -147,6 +154,7 @@ tag := "tactic-ref-associativity-commutativity"
 
 # 引理
 %%%
+file := "Lemmas"
 tag := "tactic-ref-lemmas"
 %%%
 
@@ -174,6 +182,7 @@ tag := "tactic-ref-lemmas"
 
 # 谬误
 %%%
+file := "Falsehood"
 tag := "tactic-ref-false"
 %%%
 
@@ -189,6 +198,7 @@ tag := "tactic-ref-false"
 
 # 目标管理
 %%%
+file := "Goal-Management"
 tag := "tactic-ref-goals"
 %%%
 
@@ -216,6 +226,7 @@ tag := "tactic-ref-goals"
 
 # 演员管理
 %%%
+file := "Cast-Management"
 tag := "tactic-ref-casts"
 %%%
 
@@ -242,6 +253,7 @@ tag := "tactic-ref-casts"
 
 # 管理 `let` 表达式
 %%%
+file := "Managing-___let___-Expressions"
 tag := "zh-tactics-reference-h011"
 %%%
 
@@ -260,6 +272,7 @@ tag := "zh-tactics-reference-h011"
 
 # 外延性
 %%%
+file := "Extensionality"
 tag := "tactic-ref-ext"
 %%%
 
@@ -277,6 +290,7 @@ tag := "tactic-ref-ext"
 
 # SMT 启发的自动化
 %%%
+file := "SMT-Inspired-Automation"
 tag := "zh-tactics-reference-h013"
 %%%
 :::tactic "grind"
@@ -296,6 +310,7 @@ tag := "zh-tactics-reference-h013"
 
 # 重写
 %%%
+file := "Rewriting"
 tag := "tactic-ref-rw"
 %%%
 
@@ -334,11 +349,13 @@ tag := "tactic-ref-rw"
 
 # 归纳类型
 %%%
+file := "Inductive-Types"
 tag := "tactic-ref-inductive"
 %%%
 
 ## 介绍
 %%%
+file := "Introduction"
 tag := "tactic-ref-inductive-intro"
 %%%
 
@@ -360,6 +377,7 @@ tag := "tactic-ref-inductive-intro"
 
 ## 消除
 %%%
+file := "Elimination"
 tag := "tactic-ref-inductive-elim"
 %%%
 
@@ -486,6 +504,7 @@ cases_eliminator
 
 # 图书馆检索
 %%%
+file := "Library-Search"
 tag := "tactic-ref-search"
 %%%
 
@@ -533,6 +552,7 @@ Try this:
 
 # 案例分析
 %%%
+file := "Case-Analysis"
 tag := "tactic-ref-cases"
 %%%
 
@@ -545,6 +565,7 @@ tag := "tactic-ref-cases"
 
 # 决策程序
 %%%
+file := "Decision-Procedures"
 tag := "tactic-ref-decision"
 %%%
 
@@ -564,6 +585,7 @@ tag := "tactic-ref-decision"
 
 ## SAT 求解器集成
 %%%
+file := "SAT-Solver-Integration"
 tag := "tactic-ref-sat"
 %%%
 
@@ -581,6 +603,7 @@ tag := "tactic-ref-sat"
 
 # 按价值评估
 %%%
+file := "Call-by-Value-Evaluation"
 tag := "tactic-ref-cbv"
 %%%
 
@@ -748,6 +771,7 @@ unsolved goals
 
 ## {tactic}`decide_cbv`
 %%%
+file := "___tactic______decide_cbv___"
 tag := "zh-tactics-reference-h023"
 %%%
 
@@ -824,6 +848,7 @@ example : ¬∃ k,
 
 ## 控制 {tactic}`cbv` 行为
 %%%
+file := "Controlling-___tactic______cbv___-Behavior"
 tag := "zh-tactics-reference-h024"
 %%%
 
@@ -911,6 +936,7 @@ unsolved goals
 
 ### 定制简化程序
 %%%
+file := "Custom-Simplification-Procedures"
 tag := "zh-tactics-reference-h025"
 %%%
 
@@ -1075,6 +1101,7 @@ Lean 包括 {tactic}`cbv` 的许多内置简化程序。
 
 ## 选项
 %%%
+file := "Options"
 tag := "zh-tactics-reference-h026"
 %%%
 
@@ -1084,6 +1111,7 @@ tag := "zh-tactics-reference-h026"
 
 # 控制减少
 %%%
+file := "Controlling-Reduction"
 tag := "tactic-reducibility"
 %%%
 
@@ -1102,6 +1130,7 @@ tag := "tactic-reducibility"
 
 # 控制流程
 %%%
+file := "Control-Flow"
 tag := "tactic-ref-control"
 %%%
 
@@ -1131,6 +1160,7 @@ tag := "tactic-ref-control"
 
 # 术语精化后端
 %%%
+file := "Term-Elaboration-Backends"
 tag := "tactic-ref-term-helpers"
 %%%
 
@@ -1149,6 +1179,7 @@ tag := "tactic-ref-term-helpers"
 
 # 调试实用程序
 %%%
+file := "Debugging-Utilities"
 tag := "tactic-ref-debug"
 %%%
 
@@ -1170,6 +1201,7 @@ tag := "tactic-ref-debug"
 
 # 建议
 %%%
+file := "Suggestions"
 tag := "zh-tactics-reference-h031"
 %%%
 
@@ -1182,6 +1214,7 @@ tag := "zh-tactics-reference-h031"
 
 # 其他
 %%%
+file := "Other"
 tag := "tactic-ref-other"
 %%%
 
@@ -1208,6 +1241,7 @@ tag := "tactic-ref-other"
 
 # 验证条件生成
 %%%
+file := "Verification-Condition-Generation"
 tag := "tactic-ref-mvcgen"
 %%%
 
@@ -1216,11 +1250,13 @@ tag := "tactic-ref-mvcgen"
 
 ## 策略用于 `Std.Do.SPred` 中的状态目标
 %%%
+file := "Tactics-for-Stateful-Goals-in-___Std___Do___SPred___"
 tag := "tactic-ref-spred"
 %%%
 
 ### 启动和停止校样模式
 %%%
+file := "Starting-and-Stopping-the-Proof-Mode"
 tag := "zh-tactics-reference-h035"
 %%%
 
@@ -1235,6 +1271,7 @@ tag := "zh-tactics-reference-h035"
 
 ### 证明国家目标
 %%%
+file := "Proving-a-Stateful-Goal"
 tag := "zh-tactics-reference-h036"
 %%%
 
@@ -1273,6 +1310,7 @@ tag := "zh-tactics-reference-h036"
 
 ### 操纵状态假设
 %%%
+file := "Manipulating-Stateful-Hypotheses"
 tag := "zh-tactics-reference-h037"
 %%%
 

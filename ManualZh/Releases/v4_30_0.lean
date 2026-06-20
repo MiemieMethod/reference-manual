@@ -30,6 +30,7 @@ file := "v4.30.0"
 
 # 亮点
 %%%
+file := "Highlights"
 tag := "zh-releases-v4-30-0-h001"
 %%%
 
@@ -39,6 +40,7 @@ _此亮点部分由 Juanjo Madrigal 贡献。_
 
 ## 全新 `sym =>` 互动策略
 %%%
+file := "New-___sym-____GT____-Interactive-Tactic"
 tag := "zh-releases-v4-30-0-h002"
 %%%
 
@@ -61,6 +63,7 @@ example (f : Nat → Nat) (a b : Nat)
 
 ## `cbv`策略扩展
 %%%
+file := "___cbv___-Tactic-Expansion"
 tag := "zh-releases-v4-30-0-h003"
 %%%
 
@@ -97,11 +100,13 @@ v4.30.0 引入了以下改进：
 
 ## 编译器：用户借用注释和新的 LCNF 后端
 %%%
+file := "Compiler___-User-Borrow-Annotations-and-New-LCNF-Backend"
 tag := "zh-releases-v4-30-0-h004"
 %%%
 
 ### 用户借用注释
 %%%
+file := "User-Borrow-Annotations"
 tag := "zh-releases-v4-30-0-h005"
 %%%
 
@@ -118,6 +123,7 @@ def process (ctx : @& Context) (data : Array Nat) : Result :=
 
 ### 新 LCNF 后端完成
 %%%
+file := "New-LCNF-Backend-Complete"
 tag := "zh-releases-v4-30-0-h006"
 %%%
 
@@ -127,6 +133,7 @@ tag := "zh-releases-v4-30-0-h006"
 
 ### 其他编译器改进
 %%%
+file := "Other-Compiler-Improvements"
 tag := "zh-releases-v4-30-0-h007"
 %%%
 
@@ -136,6 +143,7 @@ tag := "zh-releases-v4-30-0-h007"
 
 ## Lake 缓存检修
 %%%
+file := "Lake-Cache-Overhaul"
 tag := "zh-releases-v4-30-0-h008"
 %%%
 
@@ -157,6 +165,7 @@ tag := "zh-releases-v4-30-0-h008"
 
 ## 其他语言改进
 %%%
+file := "Other-Language-Improvements"
 tag := "zh-releases-v4-30-0-h009"
 %%%
 
@@ -169,11 +178,13 @@ tag := "zh-releases-v4-30-0-h009"
 
 ## 图书馆亮点
 %%%
+file := "Library-Highlights"
 tag := "zh-releases-v4-30-0-h010"
 %%%
 
 ### HTTP 库
 %%%
+file := "HTTP-Library"
 tag := "zh-releases-v4-30-0-h011"
 %%%
 
@@ -181,6 +192,7 @@ tag := "zh-releases-v4-30-0-h011"
 
 ### 其他库添加
 %%%
+file := "Other-Library-Additions"
 tag := "zh-releases-v4-30-0-h012"
 %%%
 
@@ -193,6 +205,7 @@ tag := "zh-releases-v4-30-0-h012"
 
 ## 实验：使用 `idbg` 进行实时调试
 %%%
+file := "Experimental___-Live-Debugging-with-___idbg___"
 tag := "zh-releases-v4-30-0-h013"
 %%%
 
@@ -200,6 +213,7 @@ tag := "zh-releases-v4-30-0-h013"
 
 ## 重大变化
 %%%
+file := "Breaking-Changes"
 tag := "zh-releases-v4-30-0-h014"
 %%%
 
@@ -213,6 +227,7 @@ tag := "zh-releases-v4-30-0-h014"
 
 # 语言
 %%%
+file := "Language"
 tag := "zh-releases-v4-30-0-h015"
 %%%
 
@@ -434,6 +449,7 @@ tag := "zh-releases-v4-30-0-h015"
 
 # 图书馆
 %%%
+file := "Library"
 tag := "zh-releases-v4-30-0-h016"
 %%%
 
@@ -659,6 +675,7 @@ tag := "zh-releases-v4-30-0-h016"
 
 # 策略
 %%%
+file := "Tactics"
 tag := "zh-releases-v4-30-0-h017"
 %%%
 
@@ -836,6 +853,7 @@ tag := "zh-releases-v4-30-0-h017"
 
 # 编译器
 %%%
+file := "Compiler"
 tag := "zh-releases-v4-30-0-h018"
 %%%
 
@@ -976,6 +994,7 @@ tag := "zh-releases-v4-30-0-h018"
 
 # 漂亮的印刷
 %%%
+file := "Pretty-Printing"
 tag := "zh-releases-v4-30-0-h019"
 %%%
 
@@ -1007,6 +1026,7 @@ tag := "zh-releases-v4-30-0-h019"
 
 # 文档
 %%%
+file := "Documentation"
 tag := "zh-releases-v4-30-0-h020"
 %%%
 
@@ -1031,6 +1051,7 @@ tag := "zh-releases-v4-30-0-h020"
 
 # 服务器
 %%%
+file := "Server"
 tag := "zh-releases-v4-30-0-h021"
 %%%
 
@@ -1046,6 +1067,7 @@ tag := "zh-releases-v4-30-0-h021"
 
 # Lake
 %%%
+file := "Lake"
 tag := "zh-releases-v4-30-0-h022"
 %%%
 
@@ -1118,6 +1140,7 @@ tag := "zh-releases-v4-30-0-h022"
 
 # 其他
 %%%
+file := "Other"
 tag := "zh-releases-v4-30-0-h023"
 %%%
 

@@ -17,6 +17,7 @@ set_option pp.rawOnError true
 
 #doc (Manual) "FFI" =>
 %%%
+file := "FFI"
 tag := "array-ffi"
 %%%
 

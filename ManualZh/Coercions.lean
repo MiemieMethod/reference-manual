@@ -52,6 +52,7 @@ where
 
 #doc (Manual) "强制" =>
 %%%
+file := "Coercions"
 tag := "coercions"
 %%%
 
@@ -316,6 +317,7 @@ def one : Decimal where
 
 # 强制插入
 %%%
+file := "Coercion-Insertion"
 tag := "coercion-insertion"
 %%%
 
@@ -452,6 +454,7 @@ end
 
 # 类型之间的强制
 %%%
+file := "Coercing-Between-Types"
 tag := "ordinary-coercion"
 %%%
 
@@ -791,6 +794,7 @@ def sub' (n k : Nat) : Int := ↑ (n - k)
 
 ## 实施强制
 %%%
+file := "Implementing-Coercions"
 tag := "coercion-impl"
 %%%
 
@@ -886,6 +890,7 @@ def friday : Weekday :=
 
 ## 来自自然数和整数的强制转换
 %%%
+file := "Coercions-from-Natural-Numbers-and-Integers"
 tag := "nat-api-cast"
 %%%
 
@@ -911,6 +916,7 @@ Lean 标准库的实例经过排列，使得在强制插入期间优先选择 {n
 
 # 强制排序
 %%%
+file := "Coercing-to-Sorts"
 tag := "sort-coercion"
 %%%
 
@@ -1005,6 +1011,7 @@ def y : Option Type := bool
 
 # 强制转换为函数类型
 %%%
+file := "Coercing-to-Function-Types"
 tag := "fun-coercion"
 %%%
 
@@ -1236,6 +1243,7 @@ Tm.lam (Tm.lam (Tm.rep (Tm.var 1) (Tm.var 0) (Tm.lam (Tm.lam (Tm.succ (Tm.var 0)
 
 # 实施细节
 %%%
+file := "Implementation-Details"
 tag := "coercion-impl-details"
 %%%
 
@@ -1246,6 +1254,7 @@ tag := "coercion-impl-details"
 
 ## 展开强制
 %%%
+file := "Unfolding-Coercions"
 tag := "coercion-unfold-impl"
 %%%
 
@@ -1257,6 +1266,7 @@ tag := "coercion-unfold-impl"
 
 ## 强制链接
 %%%
+file := "Coercion-Chaining"
 tag := "coercion-chain-impl"
 %%%
 

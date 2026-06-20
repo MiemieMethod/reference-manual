@@ -22,6 +22,7 @@ set_option linter.constructorNameAsVariable false
 
 #doc (Manual) "良基递归预处理示例（包含在其他地方）" =>
 %%%
+file := "Well-founded-recursion-preprocessing-example-_LPAR_for-inclusion-elsewhere_RPAR_"
 tag := "zh-recursivedefs-wf-preprocessexample-root"
 %%%
 

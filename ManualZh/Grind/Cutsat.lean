@@ -21,6 +21,7 @@ open Lean.Elab.Tactic.GuardMsgs.WhitespaceMode
 
 #doc (Manual) "线性整数算术" =>
 %%%
+file := "Linear-Integer-Arithmetic"
 tag := "cutsat"
 %%%
 
@@ -108,6 +109,7 @@ h_2 : 2 ∣ 2 * a + b
 
 # 理性解决方案
 %%%
+file := "Rational-Solutions"
 tag := "cutsat-qlia"
 %%%
 
@@ -158,6 +160,7 @@ h_3 : 9 * x + -7 * y + -4 ≤ 0
 
 # 非线性约束
 %%%
+file := "Nonlinear-Constraints"
 tag := "zh-grind-cutsat-h002"
 %%%
 
@@ -220,6 +223,7 @@ example (x : Int) : x*x ≥ 0 := by
 
 # 除法和模数
 %%%
+file := "Division-and-Modulus"
 tag := "zh-grind-cutsat-h003"
 %%%
 
@@ -237,6 +241,7 @@ example (x y : Int) :
 
 # 代数处理
 %%%
+file := "Algebraic-Processing"
 tag := "zh-grind-cutsat-h004"
 %%%
 
@@ -255,6 +260,7 @@ example (a b : Nat)
 
 # 传播信息
 %%%
+file := "Propagating-Information"
 tag := "cutsat-mbtc"
 %%%
 
@@ -303,6 +309,7 @@ h_4 : ¬f (x + y) = 0
 
 # 其他类型
 %%%
+file := "Other-Types"
 tag := "cutsat-ToInt"
 %%%
 
@@ -339,6 +346,7 @@ example (a b c : UInt64) : a ≤ 2 → b ≤ 3 → c - a - b = 0 → c ≤ 5 := 
 
 # 实施说明
 %%%
+file := "Implementation-Notes"
 tag := "zh-grind-cutsat-h007"
 %%%
 

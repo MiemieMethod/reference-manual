@@ -20,6 +20,7 @@ htmlSplit := .never
 
 # 1 级
 %%%
+file := "Tier-1"
 tag := "zh-supportedplatforms-h001"
 %%%
 
@@ -36,6 +37,7 @@ Lean 的二进制版本可通过 {ref "elan"}[`elan`] 适用于这些平台。
 
 # 2 级
 %%%
+file := "Tier-2"
 tag := "zh-supportedplatforms-h002"
 %%%
 

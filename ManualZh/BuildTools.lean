@@ -23,6 +23,7 @@ open Lean.Elab.Tactic.GuardMsgs.WhitespaceMode
 
 #doc (Manual) "构建工具和分发" =>
 %%%
+file := "Build-Tools-and-Distribution"
 tag := "build-tools-and-distribution"
 shortContextTitle := "Build Tools"
 %%%
@@ -65,6 +66,7 @@ Lean 工具链被设计为独立的，大多数命令行用户永远不需要显
 
 # Reservoir
 %%%
+file := "Reservoir"
 tag := "reservoir"
 draft := true
 %%%

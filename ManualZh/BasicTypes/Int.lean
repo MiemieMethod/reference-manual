@@ -15,6 +15,7 @@ open Verso.Genre.Manual.InlineLean
 
 #doc (Manual) "整数" =>
 %%%
+file := "Integers"
 tag := "Int"
 %%%
 
@@ -30,6 +31,7 @@ Lean 的实现特别支持整数。
 
 # 逻辑模型
 %%%
+file := "Logical-Model"
 tag := "int-model"
 %%%
 整数表示为自然数或自然数后继者的否定。
@@ -43,6 +45,7 @@ tag := "int-model"
 
 # 运行时表示
 %%%
+file := "Run-Time-Representation"
 tag := "int-runtime"
 %%%
 
@@ -51,6 +54,7 @@ tag := "int-runtime"
 
 # 句法
 %%%
+file := "Syntax"
 tag := "int-syntax"
 %%%
 
@@ -86,11 +90,13 @@ end
 
 # API 参考
 %%%
+file := "API-Reference"
 tag := "zh-basictypes-int-h004"
 %%%
 
 ## 特性
 %%%
+file := "Properties"
 tag := "zh-basictypes-int-h005"
 %%%
 
@@ -98,6 +104,7 @@ tag := "zh-basictypes-int-h005"
 
 ## 转换
 %%%
+file := "Conversions"
 tag := "zh-basictypes-int-h006"
 %%%
 
@@ -121,6 +128,7 @@ tag := "zh-basictypes-int-h006"
 
 ## 算术
 %%%
+file := "Arithmetic"
 tag := "zh-basictypes-int-h007"
 %%%
 
@@ -148,6 +156,7 @@ tag := "zh-basictypes-int-h007"
 
 ### 分配
 %%%
+file := "Division"
 tag := "int-div"
 %%%
 {inst}`Div Int` 和 {inst}`Mod Int` 实例实现欧几里得除法，如 {name}`Int.ediv` 的参考文献中所述。
@@ -195,6 +204,7 @@ tag := "int-div"
 
 ## 按位运算符
 %%%
+file := "Bitwise-Operators"
 tag := "zh-basictypes-int-h009"
 %%%
 
@@ -206,6 +216,7 @@ tag := "zh-basictypes-int-h009"
 
 ## 比较
 %%%
+file := "Comparisons"
 tag := "zh-basictypes-int-h010"
 %%%
 

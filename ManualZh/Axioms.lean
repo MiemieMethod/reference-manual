@@ -14,6 +14,7 @@ open Verso.Genre.Manual.InlineLean
 
 #doc (Manual) "公理" =>
 %%%
+file := "Axioms"
 tag := "axioms"
 htmlSplit := .never
 %%%
@@ -35,6 +36,7 @@ Lean 自动跟踪每个证明所依赖的公理，以便对其进行审核。
 
 # 公理声明
 %%%
+file := "Axiom-Declarations"
 tag := "axiom-declarations"
 %%%
 
@@ -52,6 +54,7 @@ Axioms 声明可以使用所有可能的 {ref "declaration-modifiers"}[声明修
 
 # 一致性
 %%%
+file := "Consistency"
 tag := "axiom-consistency"
 %%%
 
@@ -110,6 +113,7 @@ example : False := by
 
 # 减少
 %%%
+file := "Reduction"
 tag := "axiom-reduction"
 %%%
 
@@ -178,6 +182,7 @@ def nextOdd (k : Nat) :
 
 # 标准公理
 %%%
+file := "Standard-Axioms"
 tag := "standard-axioms"
 %%%
 

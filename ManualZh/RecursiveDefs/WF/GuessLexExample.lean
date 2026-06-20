@@ -20,6 +20,7 @@ open Lean.Elab.Tactic.GuardMsgs.WhitespaceMode
 
 #doc (Manual) "终止失败（包含在其他地方）" =>
 %%%
+file := "Termination-failure-_LPAR_for-inclusion-elsewhere_RPAR_"
 tag := "zh-recursivedefs-wf-guesslexexample-root"
 %%%
 

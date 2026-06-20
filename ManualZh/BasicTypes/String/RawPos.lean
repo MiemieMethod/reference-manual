@@ -16,6 +16,7 @@ set_option pp.rawOnError true
 
 #doc (Manual) "原始头寸" =>
 %%%
+file := "Raw-Positions"
 tag := "string-api-pos"
 %%%
 
@@ -24,6 +25,7 @@ tag := "string-api-pos"
 
 # 有效性
 %%%
+file := "Validity"
 tag := "zh-basictypes-string-rawpos-h001"
 %%%
 
@@ -33,6 +35,7 @@ tag := "zh-basictypes-string-rawpos-h001"
 
 # 边界
 %%%
+file := "Boundaries"
 tag := "zh-basictypes-string-rawpos-h002"
 %%%
 
@@ -42,6 +45,7 @@ tag := "zh-basictypes-string-rawpos-h002"
 
 # 比较
 %%%
+file := "Comparisons"
 tag := "zh-basictypes-string-rawpos-h003"
 %%%
 
@@ -53,6 +57,7 @@ tag := "zh-basictypes-string-rawpos-h003"
 
 # 调整
 %%%
+file := "Adjustment"
 tag := "zh-basictypes-string-rawpos-h004"
 %%%
 
@@ -80,6 +85,7 @@ tag := "zh-basictypes-string-rawpos-h004"
 
 # 字符串查找
 %%%
+file := "String-Lookups"
 tag := "zh-basictypes-string-rawpos-h005"
 %%%
 
@@ -95,6 +101,7 @@ tag := "zh-basictypes-string-rawpos-h005"
 
 # 字符串修改
 %%%
+file := "String-Modifications"
 tag := "zh-basictypes-string-rawpos-h006"
 %%%
 

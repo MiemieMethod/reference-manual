@@ -18,6 +18,7 @@ set_option maxHeartbeats 250000
 
 #doc (Manual) "基础课程" =>
 %%%
+file := "Basic-Classes"
 tag := "basic-classes"
 %%%
 
@@ -25,6 +26,7 @@ tag := "basic-classes"
 
 # 布尔相等测试
 %%%
+file := "Boolean-Equality-Tests"
 tag := "zh-classes-basicclasses-h001"
 %%%
 
@@ -50,6 +52,7 @@ tag := "zh-classes-basicclasses-h001"
 
 # 订购
 %%%
+file := "Ordering"
 tag := "zh-classes-basicclasses-h002"
 %%%
 
@@ -191,6 +194,7 @@ true
 
 ## 实例构建
 %%%
+file := "Instance-Construction"
 tag := "zh-classes-basicclasses-h003"
 %%%
 
@@ -202,6 +206,7 @@ tag := "zh-classes-basicclasses-h003"
 
 # 最小值和最大值
 %%%
+file := "Minimum-and-Maximum-Values"
 tag := "zh-classes-basicclasses-h004"
 %%%
 
@@ -229,6 +234,7 @@ variable {α : Type u} [LE α]
 
 # 可判定性
 %%%
+file := "Decidability"
 tag := "decidable-propositions"
 %%%
 
@@ -278,6 +284,7 @@ noncomputable example (f g : Nat → Nat) : Decidable (f = g) :=
 
 # 居住类型
 %%%
+file := "Inhabited-Types"
 tag := "zh-classes-basicclasses-h006"
 %%%
 
@@ -287,6 +294,7 @@ tag := "zh-classes-basicclasses-h006"
 
 # 子单例类型
 %%%
+file := "Subsingleton-Types"
 tag := "zh-classes-basicclasses-h007"
 %%%
 
@@ -298,6 +306,7 @@ tag := "zh-classes-basicclasses-h007"
 
 # 可见的表示
 %%%
+file := "Visible-Representations"
 tag := "zh-classes-basicclasses-h008"
 draft := true
 %%%
@@ -313,6 +322,7 @@ draft := true
 
 # 算术和位运算符
 %%%
+file := "Arithmetic-and-Bitwise-Operators"
 tag := "zh-classes-basicclasses-h009"
 %%%
 
@@ -376,6 +386,7 @@ tag := "zh-classes-basicclasses-h009"
 
 # 附加
 %%%
+file := "Append"
 tag := "zh-classes-basicclasses-h010"
 %%%
 
@@ -385,6 +396,7 @@ tag := "zh-classes-basicclasses-h010"
 
 # 数据查找
 %%%
+file := "Data-Lookups"
 tag := "zh-classes-basicclasses-h011"
 %%%
 

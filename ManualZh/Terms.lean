@@ -23,6 +23,7 @@ set_option guard_msgs.diff true
 
 #doc (Manual) "条款" =>
 %%%
+file := "Terms"
 tag := "terms"
 %%%
 
@@ -33,6 +34,7 @@ tag := "terms"
 
 # 标识符
 %%%
+file := "Identifiers"
 tag := "identifiers-and-resolution"
 %%%
 
@@ -231,6 +233,7 @@ open D
 
 ## 领先 `.`
 %%%
+file := "Leading-_________"
 tag := "zh-terms-h002"
 %%%
 
@@ -272,6 +275,7 @@ def MyList α := List α
 
 # 功能类型
 %%%
+file := "Function-Types"
 tag := "function-types"
 %%%
 
@@ -338,6 +342,7 @@ $t1:term → $t2
 # 功能
 
 %%%
+file := "Functions"
 tag := "function-terms"
 %%%
 
@@ -391,6 +396,7 @@ free{"fun " "(" (ident)* ": " term")" " =>" term}
 
 ## 隐式参数
 %%%
+file := "Implicit-Parameters"
 tag := "implicit-functions"
 %%%
 
@@ -549,6 +555,7 @@ fun {α} x => x : {α : Type} → α → α
 
 # 功能应用
 %%%
+file := "Function-Application"
 tag := "function-application"
 %%%
 
@@ -718,6 +725,7 @@ fun x_1 y => sum3 x_1 y x : (x y : Nat) → Nat
 
 ## 广义字段表示法
 %%%
+file := "Generalized-Field-Notation"
 tag := "generalized-field-notation"
 %%%
 
@@ -834,6 +842,7 @@ Nat.half Nat.zero : Nat
 
 ## 管道语法
 %%%
+file := "Pipeline-Syntax"
 tag := "zh-terms-h008"
 %%%
 
@@ -940,6 +949,7 @@ end
 
 # 数字文字
 %%%
+file := "Numeric-Literals"
 tag := "zh-terms-h009"
 %%%
 
@@ -948,6 +958,7 @@ tag := "zh-terms-h009"
 
 ## 自然数
 %%%
+file := "Natural-Numbers"
 tag := "nat-literals"
 %%%
 
@@ -1014,6 +1025,7 @@ instance : OfNat NatInterval n where
 
 ## 科学数字
 %%%
+file := "Scientific-Numbers"
 tag := "zh-terms-h011"
 %%%
 
@@ -1026,6 +1038,7 @@ tag := "zh-terms-h011"
 
 ## 弦乐
 %%%
+file := "Strings"
 tag := "zh-terms-h012"
 %%%
 
@@ -1033,6 +1046,7 @@ tag := "zh-terms-h012"
 
 ## 列表和数组
 %%%
+file := "Lists-and-Arrays"
 tag := "zh-terms-h013"
 %%%
 
@@ -1093,6 +1107,7 @@ let y := 1 :: 1 :: 1 :: 1 :: y;
 
 # 结构和构造函数
 %%%
+file := "Structures-and-Constructors"
 tag := "zh-terms-h014"
 %%%
 
@@ -1100,6 +1115,7 @@ tag := "zh-terms-h014"
 
 # 条件句
 %%%
+file := "Conditionals"
 tag := "if-then-else"
 %%%
 
@@ -1203,6 +1219,7 @@ else
 
 # 模式匹配
 %%%
+file := "Pattern-Matching"
 tag := "pattern-matching"
 %%%
 
@@ -1474,6 +1491,7 @@ info: fun y =>
 
 ## 类型
 %%%
+file := "Types"
 tag := "zh-terms-h017"
 %%%
 
@@ -1584,6 +1602,7 @@ but is expected to have type
 
 ### 模式相等性证明
 %%%
+file := "Pattern-Equality-Proofs"
 tag := "zh-terms-h018"
 %%%
 
@@ -1619,6 +1638,7 @@ simp_all made no progress
 
 ### 明确的动机
 %%%
+file := "Explicit-Motives"
 tag := "zh-terms-h019"
 %%%
 
@@ -1655,6 +1675,7 @@ Invalid match expression: This pattern contains metavariables:
 
 ### 判别式细化
 %%%
+file := "Discriminant-Refinement"
 tag := "zh-terms-h020"
 %%%
 
@@ -1686,6 +1707,7 @@ fun n p =>
 
 ### 概括
 %%%
+file := "Generalization"
 tag := "match-generalization"
 %%%
 
@@ -1737,6 +1759,7 @@ def boolCases (b : Bool)
 
 ## 自定义模式功能
 %%%
+file := "Custom-Pattern-Functions"
 tag := "match_pattern-functions"
 %%%
 
@@ -1803,6 +1826,7 @@ end
 
 ## 模式匹配功能
 %%%
+file := "Pattern-Matching-Functions"
 tag := "pattern-fun"
 %%%
 
@@ -1863,6 +1887,7 @@ fun n =>
 
 ## 其他模式匹配运营商
 %%%
+file := "Other-Pattern-Matching-Operators"
 tag := "zh-terms-h024"
 %%%
 
@@ -1927,6 +1952,7 @@ example : x = "Hello" → x = "world" → False := nofun
 
 ## 精化模式匹配
 %%%
+file := "Elaborating-Pattern-Matching"
 tag := "pattern-match-elaboration"
 draft := true
 %%%
@@ -1937,6 +1963,7 @@ draft := true
 
 # 洞
 %%%
+file := "Holes"
 tag := "zh-terms-h026"
 %%%
 
@@ -1985,6 +2012,7 @@ def the (α : Sort u) (x : α) : α := x
 
 # Type 归属
 %%%
+file := "Type-Ascription"
 tag := "zh-terms-h027"
 %%%
 
@@ -2138,6 +2166,7 @@ false
 
 # 引用和反引用
 %%%
+file := "Quotation-and-Antiquotation"
 tag := "zh-terms-h028"
 %%%
 
@@ -2145,6 +2174,7 @@ tag := "zh-terms-h028"
 
 # `do`-符号
 %%%
+file := "___do___-Notation"
 tag := "zh-terms-h029"
 %%%
 
@@ -2152,6 +2182,7 @@ tag := "zh-terms-h029"
 
 # 证明
 %%%
+file := "Proofs"
 tag := "zh-terms-h030"
 %%%
 

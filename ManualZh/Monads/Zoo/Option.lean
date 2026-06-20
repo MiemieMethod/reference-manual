@@ -22,6 +22,7 @@ set_option linter.unusedVariables false
 
 #doc (Manual) "选项" =>
 %%%
+file := "Option"
 tag := "option-monad"
 %%%
 

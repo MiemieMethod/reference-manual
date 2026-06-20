@@ -22,6 +22,7 @@ set_option linter.unusedVariables false
 
 #doc (Manual) "优先级" =>
 %%%
+file := "Precedence"
 tag := "precedence"
 %%%
 

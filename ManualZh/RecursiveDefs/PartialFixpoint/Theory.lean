@@ -21,6 +21,7 @@ open Lean.Order
 
 #doc (Manual) "理论与构建" =>
 %%%
+file := "Theory-and-Construction"
 tag := "partial-fixpoint-theory"
 %%%
 

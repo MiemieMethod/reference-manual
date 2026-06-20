@@ -25,6 +25,7 @@ open Lean.Elab.Tactic
 
 #doc (Manual) "策略样张" =>
 %%%
+file := "Tactic-Proofs"
 tag := "tactics"
 %%%
 
@@ -49,6 +50,7 @@ tag := "tactics"
 
 # 运行策略
 %%%
+file := "Running-Tactics"
 tag := "by"
 %%%
 
@@ -75,6 +77,7 @@ by { $t* }
 
 # 阅读校样状态
 %%%
+file := "Reading-Proof-States"
 tag := "proof-states"
 %%%
 
@@ -309,6 +312,7 @@ Single-guillemet 语法也适用于证明之外：
 
 ## 隐藏证明和大项
 %%%
+file := "Hiding-Proofs-and-Large-Terms"
 tag := "hiding-terms-in-proof-states"
 %%%
 
@@ -354,6 +358,7 @@ gt : ↑i > 5
 
 ## 元变量
 %%%
+file := "Metavariables"
 tag := "metavariables-in-proofs"
 %%%
 
@@ -489,6 +494,7 @@ h2 : j < k
 
 # 策略语言
 %%%
+file := "The-Tactic-Language"
 tag := "tactic-language"
 %%%
 
@@ -507,6 +513,7 @@ tag := "tactic-language"
 
 ## 控制结构
 %%%
+file := "Control-Structures"
 tag := "tactic-language-control"
 %%%
 
@@ -517,6 +524,7 @@ tag := "tactic-language-control"
 
 ### 成功与失败
 %%%
+file := "Success-and-Failure"
 tag := "tactic-language-success-failure"
 %%%
 
@@ -539,6 +547,7 @@ tag := "tactic-language-success-failure"
 
 ### 分枝
 %%%
+file := "Branching"
 tag := "tactic-language-branching"
 %%%
 
@@ -586,6 +595,7 @@ example (n : Nat) : if n = 0 then n < 1 else n > 0 := by
 
 ### 目标选择
 %%%
+file := "Goal-Selection"
 tag := "tactic-language-goal-selection"
 %%%
 
@@ -609,6 +619,7 @@ tag := "tactic-language-goal-selection"
 
 #### 测序
 %%%
+file := "Sequencing"
 tag := "tactic-language-sequencing"
 %%%
 
@@ -701,6 +712,7 @@ h : x = 1 ∨ x = 2
 
 #### 致力于多个目标
 %%%
+file := "Working-on-Multiple-Goals"
 tag := "tactic-language-multiple-goals"
 %%%
 
@@ -716,6 +728,7 @@ tag := "tactic-language-multiple-goals"
 
 ### 聚焦
 %%%
+file := "Focusing"
 tag := "tactic-language-focusing"
 %%%
 
@@ -737,6 +750,7 @@ tag := "tactic-language-focusing"
 
 ### 重复与迭代
 %%%
+file := "Repetition-and-Iteration"
 tag := "tactic-language-iteration"
 %%%
 
@@ -755,6 +769,7 @@ tag := "tactic-language-iteration"
 
 ## 姓名和卫生
 %%%
+file := "Names-and-Hygiene"
 tag := "tactic-language-hygiene"
 %%%
 
@@ -821,6 +836,7 @@ n : Nat
 
 ### 获取假设
 %%%
+file := "Accessing-Assumptions"
 tag := "tactic-language-assumptions"
 %%%
 
@@ -833,6 +849,7 @@ tag := "tactic-language-assumptions"
 
 ## 假设管理
 %%%
+file := "Assumption-Management"
 tag := "tactic-language-assumption-management"
 %%%
 
@@ -851,6 +868,7 @@ tag := "tactic-language-assumption-management"
 
 ## 局部定义和证明
 %%%
+file := "Local-Definitions-and-Proofs"
 tag := "tactic-language-local-defs"
 %%%
 
@@ -880,6 +898,7 @@ tag := "tactic-language-local-defs"
 
 ## 配置
 %%%
+file := "Configuration"
 tag := "tactic-config"
 %%%
 
@@ -919,6 +938,7 @@ $x:configItem*
 
 ## 命名空间和选项管理
 %%%
+file := "Namespace-and-Option-Management"
 tag := "tactic-language-namespaces-options"
 %%%
 
@@ -932,6 +952,7 @@ tag := "tactic-language-namespaces-options"
 
 ### 控制展开
 %%%
+file := "Controlling-Unfolding"
 tag := "tactic-language-unfolding"
 %%%
 
@@ -950,6 +971,7 @@ tag := "tactic-language-unfolding"
 
 # 选项
 %%%
+file := "Options"
 tag := "tactic-language-options"
 %%%
 
@@ -968,6 +990,7 @@ tag := "tactic-language-options"
 
 # 命名绑定变量
 %%%
+file := "Naming-Bound-Variables"
 tag := "bound-variable-name-hints"
 %%%
 

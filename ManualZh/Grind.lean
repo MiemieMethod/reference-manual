@@ -49,6 +49,7 @@ open Manual (comment)
 
 #doc (Manual) "`grind`策略" =>
 %%%
+file := "The-___grind___-tactic"
 tag := "grind-tactic"
 %%%
 
@@ -151,6 +152,7 @@ example (x y : Int) :
 
 # 错误信息
 %%%
+file := "Error-Messages"
 tag := "grind-errors"
 %%%
 
@@ -161,6 +163,7 @@ tag := "grind-errors"
 
 # 最小化 `grind` 调用
 %%%
+file := "Minimizing-___grind___-calls"
 tag := "zh-grind-h002"
 %%%
 
@@ -189,6 +192,7 @@ tag := "zh-grind-h002"
 
 # 还原性
 %%%
+file := "Reducibility"
 tag := "zh-grind-h003"
 %%%
 

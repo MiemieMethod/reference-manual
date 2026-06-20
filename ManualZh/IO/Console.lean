@@ -21,6 +21,7 @@ set_option linter.unusedVariables false
 
 #doc (Manual) "控制台输出" =>
 %%%
+file := "Console-Output"
 tag := "zh-io-console-root"
 %%%
 

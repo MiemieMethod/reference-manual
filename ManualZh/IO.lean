@@ -27,6 +27,7 @@ set_option linter.unusedVariables false
 
 #doc (Manual) "IO" =>
 %%%
+file := "IO"
 tag := "io"
 %%%
 
@@ -55,6 +56,7 @@ axiom α : Type
 
 # 逻辑模型
 %%%
+file := "Logical-Model"
 tag := "zh-io-h001"
 %%%
 
@@ -92,6 +94,7 @@ Lean 运行时系统负责在程序运行时提供初始令牌，每个原始操
 
 ## `IO`、`EIO` 和 `BaseIO` Monad
 %%%
+file := "The-___IO______-___EIO___-and-___BaseIO___-Monads"
 tag := "io-monad"
 %%%
 
@@ -134,6 +137,7 @@ example : IO = EIO IO.Error := rfl
 
 ## `IO` 中的错误和错误处理
 %%%
+file := "Errors-and-Error-Handling-in-___IO___"
 tag := "io-monad-errors"
 %%%
 
@@ -203,6 +207,7 @@ Access granted!
 
 # 控制结构
 %%%
+file := "Control-Structures"
 tag := "io-monad-control"
 %%%
 
@@ -219,6 +224,7 @@ tag := "io-monad-control"
 
 # 系统和平台信息
 %%%
+file := "System-and-Platform-Information"
 tag := "platform-info"
 %%%
 
@@ -235,6 +241,7 @@ tag := "platform-info"
 
 # 环境变量
 %%%
+file := "Environment-Variables"
 tag := "io-monad-getenv"
 %%%
 
@@ -242,6 +249,7 @@ tag := "io-monad-getenv"
 
 # 定时
 %%%
+file := "Timing"
 tag := "io-timing"
 %%%
 
@@ -257,11 +265,13 @@ tag := "io-timing"
 
 # 流程
 %%%
+file := "Processes"
 tag := "io-processes"
 %%%
 
 ## 当前流程
 %%%
+file := "Current-Process"
 tag := "zh-io-h009"
 %%%
 
@@ -275,6 +285,7 @@ tag := "zh-io-h009"
 
 ## 正在运行的进程
 %%%
+file := "Running-Processes"
 tag := "zh-io-h010"
 %%%
 
@@ -513,6 +524,7 @@ There are 90 four-digit palindromes.
 
 # 随机数
 %%%
+file := "Random-Numbers"
 tag := "zh-io-h011"
 %%%
 
@@ -526,6 +538,7 @@ tag := "zh-io-h011"
 
 ## 随机生成器
 %%%
+file := "Random-Generators"
 tag := "zh-io-h012"
 %%%
 
@@ -543,6 +556,7 @@ tag := "zh-io-h012"
 
 ## 系统随机性
 %%%
+file := "System-Randomness"
 tag := "zh-io-h013"
 %%%
 

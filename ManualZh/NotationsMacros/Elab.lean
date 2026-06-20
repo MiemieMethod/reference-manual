@@ -23,6 +23,7 @@ set_option linter.unusedVariables false
 #doc (Manual) "精化器" =>
 
 %%%
+file := "Elaborators"
 tag := "elaborators"
 %%%
 
@@ -89,6 +90,7 @@ tactic $_
 
 # 命令精化器
 %%%
+file := "Command-Elaborators"
 tag := "zh-notationsmacros-elab-h001"
 %%%
 
@@ -143,6 +145,7 @@ Found 2 instances of 'interestingName'
 
 # 术语精化器
 %%%
+file := "Term-Elaborators"
 tag := "zh-notationsmacros-elab-h002"
 %%%
 
@@ -300,6 +303,7 @@ Hint: Type class instance resolution failures can be inspected with the `set_opt
 
 # 定制策略
 %%%
+file := "Custom-Tactics"
 tag := "zh-notationsmacros-elab-h003"
 %%%
 

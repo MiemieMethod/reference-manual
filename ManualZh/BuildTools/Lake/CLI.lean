@@ -21,6 +21,7 @@ open Lean.Elab.Tactic.GuardMsgs.WhitespaceMode
 
 #doc (Manual) "命令行界面" =>
 %%%
+file := "Command-Line-Interface"
 tag := "lake-cli"
 %%%
 
@@ -107,6 +108,7 @@ Lean 发行版包括 C 编译器工具链。
 
 # 环境变量
 %%%
+file := "Environment-Variables"
 tag := "lake-environment"
 %%%
 
@@ -263,6 +265,7 @@ fun o =>
 
 # 选项
 %%%
+file := "Options"
 tag := "zh-buildtools-lake-cli-h002"
 %%%
 
@@ -341,6 +344,7 @@ Lake 的命令行界面提供了许多全局选项以及执行重要任务的子
 
 # 控制输出
 %%%
+file := "Controlling-Output"
 tag := "zh-buildtools-lake-cli-h003"
 %%%
 
@@ -385,6 +389,7 @@ tag := "zh-buildtools-lake-cli-h003"
 
 # 自动工具链更新
 %%%
+file := "Automatic-Toolchain-Updates"
 tag := "automatic-toolchain-updates"
 %%%
 
@@ -413,6 +418,7 @@ Lake 使用的 Elan 可执行文件可以使用 {envVar}`ELAN` 环境变量进�
 
 # 创建包
 %%%
+file := "Creating-Packages"
 tag := "zh-buildtools-lake-cli-h005"
 %%%
 
@@ -476,6 +482,7 @@ version of the configuration file, respectively. The default is TOML.
 
 # 构建和运行
 %%%
+file := "Building-and-Running"
 tag := "zh-buildtools-lake-cli-h006"
 %%%
 
@@ -728,6 +735,7 @@ the workspace's root package's additional Lean arguments and the given args
 
 # 模块导入
 %%%
+file := "Module-Imports"
 tag := "zh-buildtools-lake-cli-h007"
 %%%
 
@@ -832,6 +840,7 @@ ANNOTATIONS:
 
 # 开发工具
 %%%
+file := "Development-Tools"
 tag := "zh-buildtools-lake-cli-h008"
 %%%
 
@@ -840,6 +849,7 @@ Lake 包括对指定标准开发工具和工作流程的支持。
 
 ## 测试和检查
 %%%
+file := "Tests-and-Linters"
 tag := "zh-buildtools-lake-cli-h009"
 %%%
 
@@ -1014,6 +1024,7 @@ package or its dependencies. It merely verifies that one is specified.
 
 ## 脚本
 %%%
+file := "Scripts"
 tag := "zh-buildtools-lake-cli-h010"
 %%%
 
@@ -1076,6 +1087,7 @@ A bare `lake run` command will run the default script(s) of the root package
 
 ## 语言服务器
 %%%
+file := "Language-Server"
 tag := "zh-buildtools-lake-cli-h011"
 %%%
 
@@ -1098,6 +1110,7 @@ with the package configuration's `moreServerArgs` field and `args`.
 
 # 依赖管理
 %%%
+file := "Dependency-Management"
 tag := "zh-buildtools-lake-cli-h012"
 %%%
 
@@ -1135,6 +1148,7 @@ A bare `lake update` will upgrade all dependencies.
 
 # 包装和分销
 %%%
+file := "Packaging-and-Distribution"
 tag := "zh-buildtools-lake-cli-h013"
 %%%
 
@@ -1155,6 +1169,7 @@ then uploads the asset to the pre-existing GitHub release `tag` using `gh`.
 
 ## 缓存云构建
 %%%
+file := "Cached-Cloud-Builds"
 tag := "zh-buildtools-lake-cli-h014"
 %%%
 
@@ -1201,6 +1216,7 @@ the package's `buildArchive` in its Lake directory (`.lake`).
 
 # 本地缓存
 %%%
+file := "Local-Caches"
 tag := "zh-buildtools-lake-cli-h015"
 %%%
 
@@ -1556,6 +1572,7 @@ See `lake cache help <command>` for more information on a specific command.
 
 # 配置文件
 %%%
+file := "Configuration-Files"
 tag := "zh-buildtools-lake-cli-h016"
 %%%
 

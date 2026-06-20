@@ -20,6 +20,7 @@ open Lean.Elab.Tactic.GuardMsgs.WhitespaceMode
 
 #doc (Manual) "良基递归" =>
 %%%
+file := "Well-Founded-Recursion"
 tag := "well-founded-recursion"
 %%%
 
@@ -68,6 +69,7 @@ termination_by n
 
 # 基础良好的关系
 %%%
+file := "Well-Founded-Relations"
 tag := "wf-rel"
 %%%
 
@@ -136,6 +138,7 @@ decreasing_by
 
 # 终止证明
 %%%
+file := "Termination-proofs"
 tag := "zh-recursivedefs-wf-h002"
 %%%
 
@@ -446,6 +449,7 @@ section
 
 # 默认终止证明策略
 %%%
+file := "Default-Termination-Proof-Tactic"
 tag := "zh-recursivedefs-wf-h003"
 %%%
 
@@ -554,6 +558,7 @@ decreasing_by
 
 # 推断良基递归
 %%%
+file := "Inferring-Well-Founded-Recursion"
 tag := "inferring-well-founded-recursion"
 %%%
 
@@ -678,6 +683,7 @@ m n : Nat
 
 # 相互良基递归
 %%%
+file := "Mutual-Well-Founded-Recursion"
 tag := "mutual-well-founded-recursion"
 %%%
 
@@ -723,6 +729,7 @@ Try this:
 
 # 预处理函数定义
 %%%
+file := "Preprocessing-Function-Definitions"
 tag := "well-founded-preprocessing"
 %%%
 
@@ -821,6 +828,7 @@ end
 
 # 理论与构建
 %%%
+file := "Theory-and-Construction"
 tag := "zh-recursivedefs-wf-h007"
 %%%
 

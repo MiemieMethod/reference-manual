@@ -25,6 +25,7 @@ set_option maxHeartbeats 250000
 
 #doc (Manual) "弦乐" =>
 %%%
+file := "Strings"
 tag := "String"
 %%%
 
@@ -48,6 +49,7 @@ UTF-8 是可变宽度编码。
 
 # 运行时表示
 %%%
+file := "Run-Time-Representation"
 tag := "string-runtime"
 %%%
 
@@ -94,6 +96,7 @@ Lean 运行时中的许多字符串函数通过查阅对象标头中的引用计
 
 ## 性能说明
 %%%
+file := "Performance-Notes"
 tag := "string-performance"
 %%%
 
@@ -105,12 +108,14 @@ tag := "string-performance"
 
 # API 参考
 %%%
+file := "API-Reference"
 tag := "string-api"
 %%%
 
 
 ## 建设中
 %%%
+file := "Constructing"
 tag := "string-api-build"
 %%%
 
@@ -125,6 +130,7 @@ tag := "string-api-build"
 
 ## 转换
 %%%
+file := "Conversions"
 tag := "string-api-convert"
 %%%
 
@@ -147,6 +153,7 @@ tag := "string-api-convert"
 
 ## 特性
 %%%
+file := "Properties"
 tag := "string-api-props"
 %%%
 
@@ -156,6 +163,7 @@ tag := "string-api-props"
 
 ## 职位
 %%%
+file := "Positions"
 tag := "string-api-valid-pos"
 %%%
 
@@ -163,6 +171,7 @@ tag := "string-api-valid-pos"
 
 ### 在字符串中
 %%%
+file := "In-Strings"
 tag := "zh-basictypes-string-h008"
 %%%
 
@@ -180,6 +189,7 @@ tag := "zh-basictypes-string-h008"
 
 ### 查找
 %%%
+file := "Lookups"
 tag := "zh-basictypes-string-h009"
 %%%
 
@@ -193,6 +203,7 @@ tag := "zh-basictypes-string-h009"
 
 ### 修改
 %%%
+file := "Modifications"
 tag := "zh-basictypes-string-h010"
 %%%
 
@@ -202,6 +213,7 @@ tag := "zh-basictypes-string-h010"
 
 ### 调整
 %%%
+file := "Adjustment"
 tag := "zh-basictypes-string-h011"
 %%%
 
@@ -219,6 +231,7 @@ tag := "zh-basictypes-string-h011"
 
 ### 其他琴弦
 %%%
+file := "Other-Strings"
 tag := "zh-basictypes-string-h012"
 %%%
 
@@ -234,6 +247,7 @@ tag := "zh-basictypes-string-h012"
 
 ## 原始头寸
 %%%
+file := "Raw-Positions"
 tag := "string-api-pos"
 %%%
 
@@ -241,6 +255,7 @@ tag := "string-api-pos"
 
 ### 字节位置
 %%%
+file := "Byte-Position"
 tag := "zh-basictypes-string-h014"
 %%%
 
@@ -248,6 +263,7 @@ tag := "zh-basictypes-string-h014"
 
 ### 有效性
 %%%
+file := "Validity"
 tag := "zh-basictypes-string-h015"
 %%%
 
@@ -257,6 +273,7 @@ tag := "zh-basictypes-string-h015"
 
 ### 边界
 %%%
+file := "Boundaries"
 tag := "zh-basictypes-string-h016"
 %%%
 
@@ -266,6 +283,7 @@ tag := "zh-basictypes-string-h016"
 
 ### 比较
 %%%
+file := "Comparisons"
 tag := "zh-basictypes-string-h017"
 %%%
 
@@ -277,6 +295,7 @@ tag := "zh-basictypes-string-h017"
 
 ### 调整
 %%%
+file := "Adjustment"
 tag := "zh-basictypes-string-h018"
 %%%
 
@@ -304,6 +323,7 @@ tag := "zh-basictypes-string-h018"
 
 ### 字符串查找
 %%%
+file := "String-Lookups"
 tag := "zh-basictypes-string-h019"
 %%%
 
@@ -319,6 +339,7 @@ tag := "zh-basictypes-string-h019"
 
 ### 字符串修改
 %%%
+file := "String-Modifications"
 tag := "zh-basictypes-string-h020"
 %%%
 
@@ -328,6 +349,7 @@ tag := "zh-basictypes-string-h020"
 
 ## 查找和修改
 %%%
+file := "Lookups-and-Modifications"
 tag := "string-api-lookup"
 %%%
 
@@ -382,6 +404,7 @@ tag := "string-api-lookup"
 
 ## 折叠和聚集
 %%%
+file := "Folds-and-Aggregation"
 tag := "string-api-fold"
 %%%
 
@@ -397,6 +420,7 @@ tag := "string-api-fold"
 
 ## 比较
 %%%
+file := "Comparisons"
 tag := "string-api-compare"
 %%%
 
@@ -420,6 +444,7 @@ tag := "string-api-compare"
 
 ## 操纵
 %%%
+file := "Manipulation"
 tag := "string-api-modify"
 %%%
 
@@ -441,6 +466,7 @@ tag := "string-api-modify"
 
 ## 遗留迭代器
 %%%
+file := "Legacy-Iterators"
 tag := "string-iterators"
 %%%
 
@@ -506,6 +532,7 @@ tag := "string-iterators"
 
 ## 元编程
 %%%
+file := "Metaprogramming"
 tag := "string-api-meta"
 %%%
 
@@ -516,6 +543,7 @@ tag := "string-api-meta"
 
 ## 编码
 %%%
+file := "Encodings"
 tag := "string-api-encoding"
 %%%
 

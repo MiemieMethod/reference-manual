@@ -19,6 +19,7 @@ open Lean.Elab.Tactic.GuardMsgs.WhitespaceMode
 
 #doc (Manual) "案例分析" =>
 %%%
+file := "Case-Analysis"
 tag := "grind-split"
 %%%
 
@@ -29,6 +30,7 @@ tag := "grind-split"
 
 # 选择启发法
 %%%
+file := "Selection-Heuristics"
 tag := "zh-grind-caseanalysis-h001"
 %%%
 
@@ -257,6 +259,7 @@ example (h : Even (n + 2)) : Even n := by
 
 # 表现
 %%%
+file := "Performance"
 tag := "zh-grind-caseanalysis-h002"
 %%%
 

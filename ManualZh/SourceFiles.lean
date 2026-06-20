@@ -13,6 +13,7 @@ open Verso.Genre.Manual.InlineLean
 
 #doc (Manual) "源文件和模块" =>
 %%%
+file := "Source-Files-and-Modules"
 tag := "files"
 htmlSplit := .never
 %%%
@@ -30,6 +31,7 @@ Lean 中的最小编译单元是单个 {tech (key := "source file")}[源文件]�
 
 # 编码和表示
 %%%
+file := "Encoding-and-Representation"
 tag := "module-encoding"
 %%%
 
@@ -42,6 +44,7 @@ Lean {deftech (key := "source files")}[源文件] 是以 UTF-8 编码的 Unicode
 
 # 具体语法
 %%%
+file := "Concrete-Syntax"
 tag := "module-syntax"
 %%%
 
@@ -52,6 +55,7 @@ Lean的具体语法是{ref "language-extension"}[extensible]。
 
 ## 空白
 %%%
+file := "Whitespace"
 tag := "whitespace"
 %%%
 
@@ -61,6 +65,7 @@ Lean 中的标记可以由任意数量的 {deftech}[_whitespace_] 字符序列�
 
 ## 评论
 %%%
+file := "Comments"
 tag := "comments"
 %%%
 
@@ -85,6 +90,7 @@ Lean 有两种注释语法：
 
 ## 关键字和标识符
 %%%
+file := "Keywords-and-Identifiers"
 tag := "keywords-and-identifiers"
 %%%
 
@@ -191,6 +197,7 @@ info: "Failure @0 (⟨1, 0⟩): expected token\nFinal stack:\n  <missing>\nRemai
 
 # 结构
 %%%
+file := "Structure"
 tag := "module-structure"
 %%%
 
@@ -208,6 +215,7 @@ $hdr:header $cmd:command*
 
 ## 标头
 %%%
+file := "Headers"
 tag := "module-headers"
 %%%
 
@@ -280,6 +288,7 @@ $[public]? $[meta]? import $[all]? $mod:ident
 
 ## 命令
 %%%
+file := "Commands"
 tag := "commands"
 %%%
 
@@ -295,6 +304,7 @@ tag := "commands"
 
 # 模块和可见性
 %%%
+file := "Modules-and-Visibility"
 tag := "module-scopes"
 %%%
 
@@ -634,6 +644,7 @@ theorem Tree.count_leaf_eq_zero : count (.leaf : Tree α) = 0 := by
 
 ## 元阶段
 %%%
+file := "The-Meta-Phase"
 tag := "meta-phase"
 %%%
 
@@ -797,6 +808,7 @@ public def colors := toPalindrome #["red", "green", "blue"]
 
 # 精心设计的模块
 %%%
+file := "Elaborated-Modules"
 tag := "module-contents"
 %%%
 
@@ -812,6 +824,7 @@ tag := "module-contents"
 
 # 模块系统错误和模式
 %%%
+file := "Module-System-Errors-and-Patterns"
 tag := "zh-sourcefiles-h012"
 %%%
 
@@ -835,6 +848,7 @@ tag := "zh-sourcefiles-h012"
 
 ## 移植现有文件的秘诀
 %%%
+file := "Recipe-for-Porting-Existing-Files"
 tag := "zh-sourcefiles-h013"
 %%%
 
@@ -855,6 +869,7 @@ tag := "zh-sourcefiles-h013"
 
 # 包、库和目标
 %%%
+file := "Packages___-Libraries___-and-Targets"
 tag := "code-distribution"
 %%%
 

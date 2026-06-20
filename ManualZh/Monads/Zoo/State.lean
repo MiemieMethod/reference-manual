@@ -22,6 +22,7 @@ set_option linter.unusedVariables false
 
 #doc (Manual) "状态" =>
 %%%
+file := "State"
 tag := "state-monads"
 %%%
 
@@ -31,6 +32,7 @@ tag := "state-monads"
 
 # 一般状态 API
 %%%
+file := "General-State-API"
 tag := "zh-monads-zoo-state-h001"
 %%%
 
@@ -54,6 +56,7 @@ tag := "zh-monads-zoo-state-h001"
 
 # 基于元组的状态 Monad
 %%%
+file := "Tuple-Based-State-Monads"
 tag := "zh-monads-zoo-state-h002"
 %%%
 
@@ -92,6 +95,7 @@ variable {α σ : Type u}
 
 # 连续传递风格的状态单子
 %%%
+file := "State-Monads-in-Continuation-Passing-Style"
 tag := "zh-monads-zoo-state-h003"
 %%%
 
@@ -117,6 +121,7 @@ tag := "zh-monads-zoo-state-h003"
 
 # 来自可变引用的状态 Monad
 %%%
+file := "State-Monads-from-Mutable-References"
 tag := "zh-monads-zoo-state-h004"
 %%%
 

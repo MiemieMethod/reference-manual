@@ -22,6 +22,7 @@ set_option linter.unusedVariables false
 
 #doc (Manual) "组合错误和状态 Monad" =>
 %%%
+file := "Combined-Error-and-State-Monads"
 tag := "zh-monads-zoo-combined-root"
 %%%
 
@@ -59,6 +60,7 @@ variable (ε : Type u) (σ σ' : Type u) (α : Type u)
 
 # 状态回滚
 %%%
+file := "State-Rollback"
 tag := "zh-monads-zoo-combined-h001"
 %%%
 
@@ -80,6 +82,7 @@ tag := "zh-monads-zoo-combined-h001"
 
 # 实施
 %%%
+file := "Implementations"
 tag := "zh-monads-zoo-combined-h002"
 %%%
 

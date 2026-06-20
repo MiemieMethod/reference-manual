@@ -22,6 +22,7 @@ set_option linter.unusedVariables false
 
 #doc (Manual) "符号" =>
 %%%
+file := "Notations"
 tag := "notations"
 %%%
 
@@ -219,6 +220,7 @@ notation "[" start " ⇒' " stop "]" => between start stop
 
 # 运算符和符号
 %%%
+file := "Operators-and-Notations"
 tag := "operators-and-notations"
 %%%
 

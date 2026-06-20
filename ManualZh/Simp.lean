@@ -19,6 +19,7 @@ set_option linter.unusedVariables false
 
 #doc (Manual) "简化者" =>
 %%%
+file := "The-Simplifier"
 tag := "the-simplifier"
 %%%
 
@@ -28,6 +29,7 @@ tag := "the-simplifier"
 
 # 调用简化器
 %%%
+file := "Invoking-the-Simplifier"
 tag := "simp-tactic-naming"
 %%%
 
@@ -64,6 +66,7 @@ Lean 的简化器可以通过多种方式调用。
 
 ## 参数
 %%%
+file := "Parameters"
 tag := "simp-tactic-params"
 %%%
 
@@ -196,6 +199,7 @@ h' : p (x + 12)
 
 # 重写规则
 %%%
+file := "Rewrite-Rules"
 tag := "simp-rewrites"
 %%%
 
@@ -327,6 +331,7 @@ Prod.mk.injEq.{u, v} {α : Type u} {β : Type v} (fst : α) (snd : β) :
 
 # 简单套装
 %%%
+file := "Simp-sets"
 tag := "simp-sets"
 %%%
 
@@ -378,6 +383,7 @@ simp $p:prio
 
 # 简单范式
 %%%
+file := "Simp-Normal-Forms"
 tag := "simp-normal-forms"
 %%%
 
@@ -405,6 +411,7 @@ tag := "simp-normal-forms"
 
 # 终端头寸与非终端头寸
 %%%
+file := "Terminal-vs-Non-Terminal-Positions"
 tag := "terminal-simp"
 %%%
 
@@ -449,6 +456,7 @@ example (xs : Array Unit) : xs.size = 2 → xs = #[(), ()] := by
 
 # 配置简化
 %%%
+file := "Configuring-Simplification"
 tag := "simp-config"
 %%%
 
@@ -462,6 +470,7 @@ tag := "simp-config"
 
 ## 选项
 %%%
+file := "Options"
 tag := "simp-options"
 %%%
 
@@ -479,6 +488,7 @@ tag := "simp-options"
 
 # 简化与重写
 %%%
+file := "Simplification-vs-Rewriting"
 tag := "simp-vs-rw"
 %%%
 

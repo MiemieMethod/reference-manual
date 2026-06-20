@@ -20,6 +20,7 @@ open Lean.Order
 
 #doc (Manual) "理论与构建" =>
 %%%
+file := "Theory-and-Construction"
 tag := "coinductive-theory"
 %%%
 
@@ -35,6 +36,7 @@ tag := "coinductive-theory"
 
 # 完全格子
 %%%
+file := "Complete-Lattices"
 tag := "complete-lattices"
 %%%
 
@@ -57,6 +59,7 @@ tag := "complete-lattices"
 
 # 命题的格结构
 %%%
+file := "Lattice-Structure-on-Propositions"
 tag := "lattice-prop"
 %%%
 
@@ -80,6 +83,7 @@ tag := "lattice-prop"
 
 # 单调性
 %%%
+file := "Monotonicity"
 tag := "coinductive-monotonicity"
 %%%
 

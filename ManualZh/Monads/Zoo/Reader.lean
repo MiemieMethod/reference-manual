@@ -22,6 +22,7 @@ set_option linter.unusedVariables false
 
 #doc (Manual) "读者" =>
 %%%
+file := "Reader"
 tag := "reader-monad"
 %%%
 

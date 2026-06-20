@@ -18,6 +18,7 @@ set_option maxRecDepth 768
 
 #doc (Manual) "位提供" =>
 %%%
+file := "Bitvectors"
 tag := "BitVec"
 %%%
 
@@ -29,6 +30,7 @@ tag := "BitVec"
 
 # 逻辑模型
 %%%
+file := "Logical-Model"
 tag := "zh-basictypes-bitvec-h001"
 %%%
 
@@ -39,6 +41,7 @@ tag := "zh-basictypes-bitvec-h001"
 
 # 运行时表示
 %%%
+file := "Runtime-Representation"
 tag := "zh-basictypes-bitvec-h002"
 %%%
 
@@ -47,6 +50,7 @@ tag := "zh-basictypes-bitvec-h002"
 
 # 句法
 %%%
+file := "Syntax"
 tag := "zh-basictypes-bitvec-h003"
 %%%
 :::leanSection
@@ -171,6 +175,7 @@ is false
 
 # 自动化
 %%%
+file := "Automation"
 tag := "BitVec-automation"
 %%%
 
@@ -218,12 +223,14 @@ theorem popcount_correct : popcount = popcount_spec := by
 
 # API 参考
 %%%
+file := "API-Reference"
 tag := "BitVec-api"
 %%%
 
 
 ## 界限
 %%%
+file := "Bounds"
 tag := "zh-basictypes-bitvec-h006"
 %%%
 
@@ -233,6 +240,7 @@ tag := "zh-basictypes-bitvec-h006"
 
 ## 建造
 %%%
+file := "Construction"
 tag := "zh-basictypes-bitvec-h007"
 %%%
 
@@ -246,6 +254,7 @@ tag := "zh-basictypes-bitvec-h007"
 
 ## 转换
 %%%
+file := "Conversion"
 tag := "zh-basictypes-bitvec-h008"
 %%%
 
@@ -272,6 +281,7 @@ tag := "zh-basictypes-bitvec-h008"
 
 ## 比较
 %%%
+file := "Comparisons"
 tag := "zh-basictypes-bitvec-h009"
 %%%
 
@@ -287,6 +297,7 @@ tag := "zh-basictypes-bitvec-h009"
 
 ## 散列
 %%%
+file := "Hashing"
 tag := "zh-basictypes-bitvec-h010"
 %%%
 
@@ -294,6 +305,7 @@ tag := "zh-basictypes-bitvec-h010"
 
 ## 顺序操作
 %%%
+file := "Sequence-Operations"
 tag := "zh-basictypes-bitvec-h011"
 %%%
 
@@ -325,6 +337,7 @@ tag := "zh-basictypes-bitvec-h011"
 
 ### 位提取
 %%%
+file := "Bit-Extraction"
 tag := "zh-basictypes-bitvec-h012"
 %%%
 
@@ -348,6 +361,7 @@ tag := "zh-basictypes-bitvec-h012"
 
 ## 按位运算符
 %%%
+file := "Bitwise-Operators"
 tag := "zh-basictypes-bitvec-h013"
 %%%
 
@@ -378,6 +392,7 @@ tag := "zh-basictypes-bitvec-h013"
 
 ## 算术
 %%%
+file := "Arithmetic"
 tag := "zh-basictypes-bitvec-h014"
 %%%
 
@@ -395,6 +410,7 @@ tag := "zh-basictypes-bitvec-h014"
 
 ### 无符号操作
 %%%
+file := "Unsigned-Operations"
 tag := "zh-basictypes-bitvec-h015"
 %%%
 
@@ -410,6 +426,7 @@ tag := "zh-basictypes-bitvec-h015"
 
 ### 签名操作
 %%%
+file := "Signed-Operations"
 tag := "zh-basictypes-bitvec-h016"
 %%%
 
@@ -431,6 +448,7 @@ tag := "zh-basictypes-bitvec-h016"
 
 ## 迭代
 %%%
+file := "Iteration"
 tag := "zh-basictypes-bitvec-h017"
 %%%
 
@@ -440,11 +458,13 @@ tag := "zh-basictypes-bitvec-h017"
 
 ## 证明自动化
 %%%
+file := "Proof-Automation"
 tag := "zh-basictypes-bitvec-h018"
 %%%
 
 ### 钻头爆破
 %%%
+file := "Bit-Blasting"
 tag := "zh-basictypes-bitvec-h019"
 %%%
 

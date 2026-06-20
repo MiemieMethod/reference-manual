@@ -17,6 +17,7 @@ set_option pp.rawOnError true
 
 #doc (Manual) "分区" =>
 %%%
+file := "Partitioning"
 tag := "zh-basictypes-list-partitioning-root"
 %%%
 

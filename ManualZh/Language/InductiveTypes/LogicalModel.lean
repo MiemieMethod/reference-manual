@@ -17,12 +17,14 @@ set_option maxRecDepth 800
 
 #doc (Manual) "逻辑模型" =>
 %%%
+file := "Logical-Model"
 tag := "inductive-types-logical-model"
 %%%
 
 
 # 递归器
 %%%
+file := "Recursors"
 tag := "recursors"
 %%%
 
@@ -32,6 +34,7 @@ tag := "recursors"
 
 ## 递归器类型
 %%%
+file := "Recursor-Types"
 tag := "recursor-types"
 %%%
 
@@ -137,6 +140,7 @@ EvenOddList.rec.{u, v} {α : Type v}
 
 ### 亚单例消除
 %%%
+file := "Subsingleton-Elimination"
 tag := "subsingleton-elimination"
 %%%
 
@@ -214,6 +218,7 @@ Eq.rec.{u, v} {α : Sort v} {x : α}
 
 ## 减少
 %%%
+file := "Reduction"
 tag := "iota-reduction"
 %%%
 
@@ -227,6 +232,7 @@ tag := "iota-reduction"
 
 # 格式良好的要求
 %%%
+file := "Well-Formedness-Requirements"
 tag := "well-formed-inductives"
 %%%
 
@@ -236,6 +242,7 @@ tag := "well-formed-inductives"
 
 ## 宇宙层级
 %%%
+file := "Universe-Levels"
 tag := "inductive-type-universe-levels"
 %%%
 
@@ -271,6 +278,7 @@ inductive Spurious (α : Type 5) : Type 0 where
 
 ## 严格的积极性
 %%%
+file := "Strict-Positivity"
 tag := "strict-positivity"
 %%%
 
@@ -326,6 +334,7 @@ def Bad : Type := Fix fun t => t → t
 
 ## Prop 与 Type 对比
 %%%
+file := "Prop-vs-Type"
 tag := "prop-vs-type"
 %%%
 
@@ -364,6 +373,7 @@ Hint: A possible solution is to use levels of the form `max 1 _` or `_ + 1` to e
 
 # 终止检查的结构
 %%%
+file := "Constructions-for-Termination-Checking"
 tag := "recursor-elaboration-helpers"
 %%%
 

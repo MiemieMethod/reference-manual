@@ -23,6 +23,7 @@ open Std (TreeMap Iter IterM IterStep Iterator PlausibleIterStep IteratorLoop It
 
 #doc (Manual) "迭代器" =>
 %%%
+file := "Iterators"
 tag := "iterators"
 %%%
 
@@ -125,6 +126,7 @@ def Coll.iter (c : Coll) := (#[].iter : Iter Elem)
 
 # 运行时注意事项
 %%%
+file := "Run-Time-Considerations"
 tag := "zh-iterators-h001"
 %%%
 
@@ -141,6 +143,7 @@ tag := "zh-iterators-h001"
 
 # 迭代器定义
 %%%
+file := "Iterator-Definitions"
 tag := "zh-iterators-h002"
 %%%
 
@@ -229,6 +232,7 @@ example :=
 
 ## 合理性
 %%%
+file := "Plausibility"
 tag := "iterator-plausibility"
 %%%
 
@@ -253,6 +257,7 @@ tag := "iterator-plausibility"
 
 ## 有限且高效的迭代器
 %%%
+file := "Finite-and-Productive-Iterators"
 tag := "zh-iterators-h004"
 %%%
 
@@ -645,6 +650,7 @@ def fileSize (name : System.FilePath) : IO Nat := do
 
 ## 访问元素
 %%%
+file := "Accessing-Elements"
 tag := "zh-iterators-h005"
 %%%
 
@@ -657,6 +663,7 @@ tag := "zh-iterators-h005"
 
 ## 循环
 %%%
+file := "Loops"
 tag := "zh-iterators-h006"
 %%%
 
@@ -668,6 +675,7 @@ tag := "zh-iterators-h006"
 
 ## 宇宙层级
 %%%
+file := "Universe-Levels"
 tag := "zh-iterators-h007"
 %%%
 
@@ -684,6 +692,7 @@ tag := "zh-iterators-h007"
 
 ## 基本迭代器
 %%%
+file := "Basic-Iterators"
 tag := "zh-iterators-h008"
 %%%
 
@@ -700,6 +709,7 @@ tag := "zh-iterators-h008"
 
 # 使用迭代器
 %%%
+file := "Consuming-Iterators"
 tag := "zh-iterators-h009"
 %%%
 
@@ -838,6 +848,7 @@ where
 
 ## 步进迭代器
 %%%
+file := "Stepping-Iterators"
 tag := "zh-iterators-h010"
 %%%
 
@@ -849,6 +860,7 @@ tag := "zh-iterators-h010"
 
 ### 终止
 %%%
+file := "Termination"
 tag := "zh-iterators-h011"
 %%%
 
@@ -891,6 +903,7 @@ termination_by it.finitelyManySkips
 
 ## 使用纯迭代器
 %%%
+file := "Consuming-Pure-Iterators"
 tag := "zh-iterators-h012"
 %%%
 
@@ -922,6 +935,7 @@ tag := "zh-iterators-h012"
 
 ## 使用 Monadic 迭代器
 %%%
+file := "Consuming-Monadic-Iterators"
 tag := "zh-iterators-h013"
 %%%
 
@@ -953,6 +967,7 @@ tag := "zh-iterators-h013"
 
 ## 收藏家
 %%%
+file := "Collectors"
 tag := "zh-iterators-h014"
 %%%
 
@@ -974,6 +989,7 @@ tag := "zh-iterators-h014"
 
 # 迭代器组合器
 %%%
+file := "Iterator-Combinators"
 tag := "zh-iterators-h015"
 %%%
 
@@ -1029,6 +1045,7 @@ left.zip right     -----(a, x)------(b, y)-----⊥
 
 ## 纯组合器
 %%%
+file := "Pure-Combinators"
 tag := "zh-iterators-h016"
 %%%
 
@@ -1083,6 +1100,7 @@ tag := "zh-iterators-h016"
 
 ## 单子组合器
 %%%
+file := "Monadic-Combinators"
 tag := "zh-iterators-h017"
 %%%
 
@@ -1142,11 +1160,13 @@ tag := "zh-iterators-h017"
 
 # 关于迭代器的推理
 %%%
+file := "Reasoning-About-Iterators"
 tag := "zh-iterators-h018"
 %%%
 
 ## 关于消费者的推理
 %%%
+file := "Reasoning-About-Consumers"
 tag := "zh-iterators-h019"
 %%%
 
@@ -1195,6 +1215,7 @@ example (l : Array Nat) :
 
 ## 逐步推理
 %%%
+file := "Stepwise-Reasoning"
 tag := "zh-iterators-h020"
 %%%
 
@@ -1214,6 +1235,7 @@ tag := "zh-iterators-h020"
 
 ## 用于推理的 Monad
 %%%
+file := "Monads-for-Reasoning"
 tag := "zh-iterators-h021"
 %%%
 
@@ -1247,6 +1269,7 @@ tag := "zh-iterators-h021"
 
 ## 等价
 %%%
+file := "Equivalence"
 tag := "zh-iterators-h022"
 %%%
 

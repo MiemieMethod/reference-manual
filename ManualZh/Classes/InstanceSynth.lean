@@ -18,6 +18,7 @@ open Verso.Genre.Manual.InlineLean
 
 #doc (Manual) "实例合成" =>
 %%%
+file := "Instance-Synthesis"
 tag := "instance-synth"
 %%%
 
@@ -41,6 +42,7 @@ tag := "instance-synth"
 
 # 实例搜索摘要
 %%%
+file := "Instance-Search-Summary"
 tag := "zh-classes-instancesynth-h001"
 %%%
 
@@ -71,6 +73,7 @@ tag := "zh-classes-instancesynth-h001"
 
 # 实例搜索问题
 %%%
+file := "Instance-Search-Problems"
 tag := "instance-search"
 %%%
 
@@ -181,6 +184,7 @@ IF THE LEAN OUTPUT BELOW CHANGES, IT MAY ALSO BE NECESSARY TO UPDATE THE NARRATI
 
 # 候选实例
 %%%
+file := "Candidate-Instances"
 tag := "zh-classes-instancesynth-h003"
 %%%
 
@@ -235,6 +239,7 @@ def addPairs (p1 p2 : NatPair) : NatPair :=
 
 # 实例参数和综合
 %%%
+file := "Instance-Parameters-and-Synthesis"
 tag := "instance-synth-parameters"
 %%%
 
@@ -271,6 +276,7 @@ set_option pp.explicit true in
 
 # 输出参数
 %%%
+file := "Output-Parameters"
 tag := "class-output-parameters"
 %%%
 
@@ -437,6 +443,7 @@ OneSmaller.shrink (some false) ⋯ : Bool
 
 # 默认实例
 %%%
+file := "Default-Instances"
 tag := "default-instance-synth"
 %%%
 
@@ -449,6 +456,7 @@ tag := "default-instance-synth"
 
 # “道德规范”实例
 %%%
+file := "___Morally-Canonical___-Instances"
 tag := "zh-classes-instancesynth-h007"
 %%%
 
@@ -467,6 +475,7 @@ tag := "zh-classes-instancesynth-h007"
 
 # 包装合成实例
 %%%
+file := "Wrapping-Synthesized-Instances"
 tag := "instance-wrapping"
 %%%
 
@@ -486,6 +495,7 @@ tag := "instance-wrapping"
 
 # 选项
 %%%
+file := "Options"
 tag := "zh-classes-instancesynth-h009"
 %%%
 

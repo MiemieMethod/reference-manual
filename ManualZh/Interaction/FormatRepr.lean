@@ -23,6 +23,7 @@ set_option verso.docstring.allowMissing true
 
 #doc (Manual) "技术输出" =>
 %%%
+file := "Formatted-Output"
 tag := "format-repr"
 %%%
 
@@ -43,6 +44,7 @@ tag := "format-repr"
 
 # 格式
 %%%
+file := "Format"
 tag := "Format"
 %%%
 
@@ -383,6 +385,7 @@ It is:  abc
 
 ## 文件
 %%%
+file := "Documents"
 tag := "format-api"
 %%%
 
@@ -394,6 +397,7 @@ tag := "format-api"
 
 ## 空文档
 %%%
+file := "Empty-Documents"
 tag := "format-empty"
 %%%
 
@@ -418,6 +422,7 @@ tag := "format-empty"
 
 ## 序列
 %%%
+file := "Sequences"
 tag := "format-join"
 %%%
 
@@ -434,6 +439,7 @@ tag := "format-join"
 
 ## 缩进
 %%%
+file := "Indentation"
 tag := "format-indent"
 %%%
 
@@ -447,6 +453,7 @@ tag := "format-indent"
 
 ## 方括号和圆括号
 %%%
+file := "Brackets-and-Parentheses"
 tag := "format-brackets"
 %%%
 
@@ -462,6 +469,7 @@ tag := "format-brackets"
 
 ## 渲染
 %%%
+file := "Rendering"
 tag := "format-render"
 %%%
 
@@ -484,6 +492,7 @@ tag := "format-render"
 
 ## `ToFormat` 级
 %%%
+file := "The-___ToFormat___-Class"
 tag := "zh-interaction-formatrepr-h008"
 %%%
 
@@ -494,6 +503,7 @@ tag := "zh-interaction-formatrepr-h008"
 
 # `Repr`
 %%%
+file := "___Repr___"
 tag := "repr"
 %%%
 
@@ -551,6 +561,7 @@ Repr.reprPrec.{u} {α : Type u} [Repr α] : α → Nat → Std.Format
 
 ## 如何编写 `Repr` 实例
 %%%
+file := "How-To-Write-a-___Repr___-Instance"
 tag := "repr-instance-howto"
 %%%
 
@@ -828,6 +839,7 @@ info: 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 + 11 + 1 + 2 + 3 + 4 + 5 + 6 + 7 + 
 
 ## 原子类型
 %%%
+file := "Atomic-Types"
 tag := "ReprAtom"
 %%%
 

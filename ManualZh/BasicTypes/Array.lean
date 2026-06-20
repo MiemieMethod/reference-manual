@@ -23,6 +23,7 @@ example := Char
 
 #doc (Manual) "储备" =>
 %%%
+file := "Arrays"
 tag := "Array"
 %%%
 
@@ -39,6 +40,7 @@ Lean 特别支持数组：
 
 # 逻辑模型
 %%%
+file := "Logical-Model"
 tag := "zh-basictypes-array-h001"
 %%%
 
@@ -49,6 +51,7 @@ tag := "zh-basictypes-array-h001"
 
 # 运行时表示
 %%%
+file := "Run-Time-Representation"
 tag := "array-runtime"
 %%%
 
@@ -92,6 +95,7 @@ Lean 运行时中的许多数组函数通过查询对象头中的引用计数来
 
 ## 性能说明
 %%%
+file := "Performance-Notes"
 tag := "array-performance"
 %%%
 
@@ -106,6 +110,7 @@ tag := "array-performance"
 
 # 句法
 %%%
+file := "Syntax"
 tag := "array-syntax"
 %%%
 
@@ -185,11 +190,13 @@ true
 
 # API 参考
 %%%
+file := "API-Reference"
 tag := "array-api"
 %%%
 
 ## 构造数组
 %%%
+file := "Constructing-Arrays"
 tag := "zh-basictypes-array-h006"
 %%%
 
@@ -219,6 +226,7 @@ tag := "zh-basictypes-array-h006"
 
 ## 尺寸
 %%%
+file := "Size"
 tag := "zh-basictypes-array-h007"
 %%%
 
@@ -230,6 +238,7 @@ tag := "zh-basictypes-array-h007"
 
 ## 查找
 %%%
+file := "Lookups"
 tag := "zh-basictypes-array-h008"
 %%%
 
@@ -249,6 +258,7 @@ tag := "zh-basictypes-array-h008"
 
 ## 查询
 %%%
+file := "Queries"
 tag := "zh-basictypes-array-h009"
 %%%
 
@@ -264,6 +274,7 @@ tag := "zh-basictypes-array-h009"
 
 ## 转换
 %%%
+file := "Conversions"
 tag := "zh-basictypes-array-h010"
 %%%
 
@@ -282,6 +293,7 @@ tag := "zh-basictypes-array-h010"
 
 ## 修改
 %%%
+file := "Modification"
 tag := "zh-basictypes-array-h011"
 %%%
 
@@ -349,6 +361,7 @@ tag := "zh-basictypes-array-h011"
 
 ## 排序数组
 %%%
+file := "Sorted-Arrays"
 tag := "zh-basictypes-array-h012"
 %%%
 
@@ -370,6 +383,7 @@ tag := "zh-basictypes-array-h012"
 
 ## 迭代
 %%%
+file := "Iteration"
 tag := "zh-basictypes-array-h013"
 %%%
 
@@ -399,6 +413,7 @@ tag := "zh-basictypes-array-h013"
 
 ## 转型
 %%%
+file := "Transformation"
 tag := "zh-basictypes-array-h014"
 %%%
 
@@ -437,6 +452,7 @@ tag := "zh-basictypes-array-h014"
 
 ## 过滤
 %%%
+file := "Filtering"
 tag := "zh-basictypes-array-h015"
 %%%
 
@@ -456,6 +472,7 @@ tag := "zh-basictypes-array-h015"
 
 ## 分区
 %%%
+file := "Partitioning"
 tag := "zh-basictypes-array-h016"
 %%%
 
@@ -466,6 +483,7 @@ tag := "zh-basictypes-array-h016"
 
 ## 元素谓词
 %%%
+file := "Element-Predicates"
 tag := "zh-basictypes-array-h017"
 %%%
 
@@ -513,6 +531,7 @@ tag := "zh-basictypes-array-h017"
 
 ## 比较
 %%%
+file := "Comparisons"
 tag := "zh-basictypes-array-h018"
 %%%
 
@@ -522,6 +541,7 @@ tag := "zh-basictypes-array-h018"
 
 ## 终止助手
 %%%
+file := "Termination-Helpers"
 tag := "zh-basictypes-array-h019"
 %%%
 

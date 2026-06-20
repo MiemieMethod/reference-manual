@@ -11,6 +11,7 @@ open Verso.Genre Manual InlineLean
 
 #doc (Manual) "关于：`invalidDottedIdent`" =>
 %%%
+file := "About___-___invalidDottedIdent___"
 tag := "zh-errorexplanations-invaliddottedident-root"
 shortTitle := "invalidDottedIdent"
 %%%
@@ -29,6 +30,7 @@ Universe（例如 {lean}`Prop` 或 {lean}`Type`），因为不支持点分标识
 
 # 示例
 %%%
+file := "Examples"
 tag := "zh-errorexplanations-invaliddottedident-h001"
 %%%
 

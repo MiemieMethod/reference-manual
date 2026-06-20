@@ -21,6 +21,7 @@ set_option linter.unusedVariables false
 
 #doc (Manual) "文件、文件句柄和流" =>
 %%%
+file := "Files___-File-Handles___-and-Streams"
 tag := "zh-io-files-root"
 %%%
 
@@ -66,6 +67,7 @@ Lean 在所有支持的平台上提供一致的文件系统 API。
 
 # 低级文件 API
 %%%
+file := "Low-Level-File-API"
 tag := "zh-io-files-h001"
 %%%
 
@@ -170,6 +172,7 @@ Contents: '!!B!!BCD!B'
 
 # 流
 %%%
+file := "Streams"
 tag := "zh-io-files-h002"
 %%%
 
@@ -186,6 +189,7 @@ tag := "zh-io-files-h002"
 
 # 路径
 %%%
+file := "Paths"
 tag := "zh-io-files-h003"
 %%%
 
@@ -239,6 +243,7 @@ tag := "zh-io-files-h003"
 
 # 与文件系统交互
 %%%
+file := "Interacting-with-the-Filesystem"
 tag := "zh-io-files-h004"
 %%%
 
@@ -308,6 +313,7 @@ tag := "zh-io-files-h004"
 
 # 标准输入/输出
 %%%
+file := "Standard-I___O"
 tag := "stdio"
 %%%
 
@@ -396,6 +402,7 @@ def runCountdown : IO String := do
 
 # 文件和目录
 %%%
+file := "Files-and-Directories"
 tag := "zh-io-files-h006"
 %%%
 

@@ -23,6 +23,7 @@ file := "v4.28.0"
 
 # 亮点
 %%%
+file := "Highlights"
 tag := "zh-releases-v4-28-0-h001"
 %%%
 
@@ -33,6 +34,7 @@ Lean v4.28 版本包含模块系统修复、性能
 
 ## 符号模拟框架
 %%%
+file := "Symbolic-Simulation-Framework"
 tag := "zh-releases-v4-28-0-h002"
 %%%
 
@@ -63,6 +65,7 @@ tag := "zh-releases-v4-28-0-h002"
 
 ## 用户定义的研磨属性
 %%%
+file := "User-Defined-Grind-Attributes"
 tag := "zh-releases-v4-28-0-h003"
 %%%
 
@@ -106,6 +109,7 @@ grind_pattern [my_grind] fg => g (f x)
 
 ## Grind 中可配置的标准化和预处理
 %%%
+file := "Configurable-Normalization-and-Preprocessing-in-Grind"
 tag := "zh-releases-v4-28-0-h004"
 %%%
 
@@ -137,6 +141,7 @@ example : 6 ∣ 3*h x := by grind
 
 ## Grind 和 Simp 中的局部定义
 %%%
+file := "Local-Definitions-in-Grind-and-Simp"
 tag := "zh-releases-v4-28-0-h005"
 %%%
 
@@ -154,6 +159,7 @@ tag := "zh-releases-v4-28-0-h005"
 
 ## `bv_decide` 中的求解器模式
 %%%
+file := "Solver-Mode-in-___bv_decide___"
 tag := "zh-releases-v4-28-0-h006"
 %%%
 
@@ -168,6 +174,7 @@ tag := "zh-releases-v4-28-0-h006"
 
 ## 并行策略组合器
 %%%
+file := "Parallel-Tactic-Combinator"
 tag := "zh-releases-v4-28-0-h007"
 %%%
 
@@ -184,6 +191,7 @@ tag := "zh-releases-v4-28-0-h007"
 
 ## 依赖管理工具
 %%%
+file := "Dependency-Management-Tools"
 tag := "zh-releases-v4-28-0-h008"
 %%%
 
@@ -204,6 +212,7 @@ tag := "zh-releases-v4-28-0-h008"
 
 ## 外部检查器
 %%%
+file := "External-Checker"
 tag := "zh-releases-v4-28-0-h009"
 %%%
 
@@ -214,11 +223,13 @@ elan 已知的二进制文件，允许开箱即用地访问
 
 ## 图书馆亮点
 %%%
+file := "Library-Highlights"
 tag := "zh-releases-v4-28-0-h010"
 %%%
 
 ### 范围
 %%%
+file := "Ranges"
 tag := "zh-releases-v4-28-0-h011"
 %%%
 
@@ -229,6 +240,7 @@ tag := "zh-releases-v4-28-0-h011"
 
 ### 迭代器
 %%%
+file := "Iterators"
 tag := "zh-releases-v4-28-0-h012"
 %%%
 
@@ -247,6 +259,7 @@ tag := "zh-releases-v4-28-0-h012"
 
 ### 位向量
 %%%
+file := "Bitvectors"
 tag := "zh-releases-v4-28-0-h013"
 %%%
 
@@ -259,6 +272,7 @@ tag := "zh-releases-v4-28-0-h013"
 
 ### 异步框架
 %%%
+file := "Async-Framework"
 tag := "zh-releases-v4-28-0-h014"
 %%%
 
@@ -269,6 +283,7 @@ tag := "zh-releases-v4-28-0-h014"
 
 # 语言
 %%%
+file := "Language"
 tag := "zh-releases-v4-28-0-h015"
 %%%
 
@@ -384,6 +399,7 @@ tag := "zh-releases-v4-28-0-h015"
 
 # 图书馆
 %%%
+file := "Library"
 tag := "zh-releases-v4-28-0-h016"
 %%%
 
@@ -552,6 +568,7 @@ tag := "zh-releases-v4-28-0-h016"
 
 # 策略
 %%%
+file := "Tactics"
 tag := "zh-releases-v4-28-0-h017"
 %%%
 
@@ -999,6 +1016,7 @@ tag := "zh-releases-v4-28-0-h017"
 
 # 编译器
 %%%
+file := "Compiler"
 tag := "zh-releases-v4-28-0-h018"
 %%%
 
@@ -1055,6 +1073,7 @@ tag := "zh-releases-v4-28-0-h018"
 
 # 文档
 %%%
+file := "Documentation"
 tag := "zh-releases-v4-28-0-h019"
 %%%
 
@@ -1078,6 +1097,7 @@ tag := "zh-releases-v4-28-0-h019"
 
 # 服务器
 %%%
+file := "Server"
 tag := "zh-releases-v4-28-0-h020"
 %%%
 
@@ -1105,6 +1125,7 @@ tag := "zh-releases-v4-28-0-h020"
 
 # Lake
 %%%
+file := "Lake"
 tag := "zh-releases-v4-28-0-h021"
 %%%
 
@@ -1149,6 +1170,7 @@ tag := "zh-releases-v4-28-0-h021"
 
 # 其他
 %%%
+file := "Other"
 tag := "zh-releases-v4-28-0-h022"
 %%%
 
@@ -1169,6 +1191,7 @@ tag := "zh-releases-v4-28-0-h022"
 
 # 菲菲
 %%%
+file := "Ffi"
 tag := "zh-releases-v4-28-0-h023"
 %%%
 

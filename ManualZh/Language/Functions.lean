@@ -13,6 +13,7 @@ open Verso.Genre.Manual.InlineLean
 
 #doc (Manual) "功能" =>
 %%%
+file := "Functions"
 tag := "functions"
 %%%
 
@@ -115,6 +116,7 @@ example :
 
 # 函数抽象
 %%%
+file := "Function-Abstractions"
 tag := "zh-language-functions-h001"
 %%%
 
@@ -131,6 +133,7 @@ tag := "zh-language-functions-h001"
 
 # 柯里化
 %%%
+file := "Currying"
 tag := "currying"
 %%%
 
@@ -145,6 +148,7 @@ Lean 用于定义函数、指定其类型并应用它们的语法会产生多参
 
 # 外延性
 %%%
+file := "Extensionality"
 tag := "function-extensionality"
 %%%
 
@@ -181,6 +185,7 @@ example : (fun x => f x) = f := by rfl
 
 # 整体性和终止性
 %%%
+file := "Totality-and-Termination"
 tag := "totality"
 %%%
 
@@ -217,6 +222,7 @@ example : thirdChar #['-', 'x'] = 'A' := rfl
 
 # API 参考
 %%%
+file := "API-Reference"
 tag := "function-api"
 %%%
 
@@ -232,6 +238,7 @@ tag := "function-api"
 
 ## 特性
 %%%
+file := "Properties"
 tag := "function-api-properties"
 %%%
 

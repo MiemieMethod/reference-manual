@@ -17,6 +17,7 @@ set_option pp.rawOnError true
 
 #doc (Manual) "转型" =>
 %%%
+file := "Transformation"
 tag := "zh-basictypes-list-transformation-root"
 %%%
 

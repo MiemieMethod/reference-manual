@@ -16,6 +16,7 @@ set_option pp.rawOnError true
 
 #doc (Manual) "任选值" =>
 %%%
+file := "Optional-Values"
 tag := "option"
 %%%
 
@@ -114,6 +115,7 @@ def postalCodes : Std.HashMap Nat String :=
 
 # 强制
 %%%
+file := "Coercions"
 tag := "zh-basictypes-option-h001"
 %%%
 
@@ -150,11 +152,13 @@ end
 
 # API 参考
 %%%
+file := "API-Reference"
 tag := "zh-basictypes-option-h002"
 %%%
 
 ## 提取值
 %%%
+file := "Extracting-Values"
 tag := "zh-basictypes-option-h003"
 %%%
 
@@ -177,6 +181,7 @@ tag := "zh-basictypes-option-h003"
 
 ## 特性和比较
 %%%
+file := "Properties-and-Comparisons"
 tag := "zh-basictypes-option-h004"
 %%%
 
@@ -203,6 +208,7 @@ variable {α} [DecidableEq α] [LT α] [Min α] [Max α]
 
 ## 转换
 %%%
+file := "Conversion"
 tag := "zh-basictypes-option-h005"
 %%%
 
@@ -216,6 +222,7 @@ tag := "zh-basictypes-option-h005"
 
 ## 控制
 %%%
+file := "Control"
 tag := "zh-basictypes-option-h006"
 %%%
 
@@ -242,6 +249,7 @@ tag := "zh-basictypes-option-h006"
 
 ## 迭代
 %%%
+file := "Iteration"
 tag := "zh-basictypes-option-h007"
 %%%
 
@@ -266,6 +274,7 @@ tag := "zh-basictypes-option-h007"
 
 ## 递归助手
 %%%
+file := "Recursion-Helpers"
 tag := "zh-basictypes-option-h008"
 %%%
 
@@ -277,6 +286,7 @@ tag := "zh-basictypes-option-h008"
 
 ## 推理
 %%%
+file := "Reasoning"
 tag := "zh-basictypes-option-h009"
 %%%
 

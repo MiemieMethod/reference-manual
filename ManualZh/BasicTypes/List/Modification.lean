@@ -17,6 +17,7 @@ set_option pp.rawOnError true
 
 #doc (Manual) "修改" =>
 %%%
+file := "Modification"
 tag := "zh-basictypes-list-modification-root"
 %%%
 
@@ -74,6 +75,7 @@ tag := "zh-basictypes-list-modification-root"
 
 # 插入
 %%%
+file := "Insertion"
 tag := "zh-basictypes-list-modification-h001"
 %%%
 

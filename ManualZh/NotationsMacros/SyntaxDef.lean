@@ -22,6 +22,7 @@ set_option linter.unusedVariables false
 
 #doc (Manual) "定义新语法" =>
 %%%
+file := "Defining-New-Syntax"
 tag := "syntax-ext"
 %%%
 
@@ -30,6 +31,7 @@ Lean 的语法统一表示非常通用且灵活。
 
 # 语法模型
 %%%
+file := "Syntax-Model"
 tag := "syntax-data"
 %%%
 
@@ -70,6 +72,7 @@ Lean 的解析器生成 {name}`Lean.Syntax` 类型的具体语法树。
 
 # 语法节点类型
 %%%
+file := "Syntax-Node-Kinds"
 tag := "zh-notationsmacros-syntaxdef-h002"
 %%%
 
@@ -89,6 +92,7 @@ Lean 的解析器将每个关键字原子 `KW` 包装在一个单例节点中，
 
 # 令牌和文字类型
 %%%
+file := "Token-and-Literal-Kinds"
 tag := "zh-notationsmacros-syntaxdef-h003"
 %%%
 
@@ -138,6 +142,7 @@ info: Lean.Syntax.node (Lean.SourceInfo.none) `str #[Lean.Syntax.atom (Lean.Sour
 
 # 内部种类
 %%%
+file := "Internal-Kinds"
 tag := "zh-notationsmacros-syntaxdef-h004"
 %%%
 
@@ -151,6 +156,7 @@ tag := "zh-notationsmacros-syntaxdef-h004"
 
 # 来源职位
 %%%
+file := "Source-Positions"
 tag := "source-info"
 %%%
 
@@ -178,6 +184,7 @@ tag := "source-info"
 
 # 检查语法
 %%%
+file := "Inspecting-Syntax"
 tag := "zh-notationsmacros-syntaxdef-h006"
 %%%
 
@@ -384,6 +391,7 @@ end Inspecting
 
 # 类型化语法
 %%%
+file := "Typed-Syntax"
 tag := "typed-syntax"
 %%%
 
@@ -440,6 +448,7 @@ variable {ks : SyntaxNodeKinds} {sep : String}
 
 # 别名
 %%%
+file := "Aliases"
 tag := "zh-notationsmacros-syntaxdef-h008"
 %%%
 
@@ -474,6 +483,7 @@ tag := "zh-notationsmacros-syntaxdef-h008"
 
 # 构造语法的助手
 %%%
+file := "Helpers-for-Constructing-Syntax"
 tag := "syntax-construction-helpers"
 %%%
 
@@ -515,6 +525,7 @@ tag := "syntax-construction-helpers"
 
 ## 引用数据
 %%%
+file := "Quoting-Data"
 tag := "quote-class"
 %%%
 
@@ -571,6 +582,7 @@ where
 
 # 解码类型化语法
 %%%
+file := "Decoding-Typed-Syntax"
 tag := "typed-syntax-helpers"
 %%%
 
@@ -595,6 +607,7 @@ tag := "typed-syntax-helpers"
 
 # 语法类别
 %%%
+file := "Syntax-Categories"
 tag := "syntax-categories"
 %%%
 
@@ -620,6 +633,7 @@ declare_syntax_cat $_ $[(behavior := $_)]?
 
 # 语法规则
 %%%
+file := "Syntax-Rules"
 tag := "syntax-rules"
 %%%
 
@@ -868,6 +882,7 @@ macro_rules
 
 # 缩进
 %%%
+file := "Indentation"
 tag := "syntax-indentation"
 %%%
 

@@ -19,6 +19,7 @@ set_option format.width 60
 
 #doc (Manual) "范围" =>
 %%%
+file := "Ranges"
 tag := "ranges"
 %%%
 
@@ -159,6 +160,7 @@ $a<...*
 
 # 范围类型
 %%%
+file := "Range-Types"
 tag := "zh-basictypes-range-h001"
 %%%
 
@@ -272,6 +274,7 @@ tag := "zh-basictypes-range-h001"
 
 # 范围相关的 Type 类
 %%%
+file := "Range-Related-Type-Classes"
 tag := "zh-basictypes-range-h002"
 %%%
 
@@ -299,6 +302,7 @@ tag := "zh-basictypes-range-h002"
 
 # 实施范围
 %%%
+file := "Implementing-Ranges"
 tag := "zh-basictypes-range-h003"
 %%%
 
@@ -577,6 +581,7 @@ It's Day.we
 
 # 范围和切片
 %%%
+file := "Ranges-and-Slices"
 tag := "zh-basictypes-range-h004"
 %%%
 

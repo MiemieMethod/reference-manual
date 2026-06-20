@@ -32,6 +32,7 @@ open Std.Do
 
 #doc (Manual) "`mvcgen`策略" =>
 %%%
+file := "The-___mvcgen___-tactic"
 tag := "mvcgen-tactic"
 %%%
 
@@ -48,6 +49,7 @@ tag := "mvcgen-tactic"
 
 # 概述
 %%%
+file := "Overview"
 tag := "zh-vcgen-h001"
 %%%
 
@@ -75,6 +77,7 @@ tag := "zh-vcgen-h001"
 
 # 谓词变压器
 %%%
+file := "Predicate-Transformers"
 tag := "zh-vcgen-h002"
 %%%
 
@@ -96,6 +99,7 @@ tag := "zh-vcgen-h002"
 
 ## 状态谓词
 %%%
+file := "Stateful-Predicates"
 tag := "zh-vcgen-h003"
 %%%
 
@@ -144,6 +148,7 @@ def ItIsSecret : SPred [String] := fun s => ⌜s = "secret"⌝
 
 ### 蕴涵
 %%%
+file := "Entailment"
 tag := "zh-vcgen-h004"
 %%%
 
@@ -183,6 +188,7 @@ variable {σ : List (Type u)} {P Q : SPred σ}
 
 ### 符号
 %%%
+file := "Notation"
 tag := "zh-vcgen-h005"
 %%%
 
@@ -203,6 +209,7 @@ term($t)
 
 ### 连接词和量词
 %%%
+file := "Connectives-and-Quantifiers"
 tag := "zh-vcgen-h006"
 %%%
 
@@ -294,6 +301,7 @@ spred(∃ (_ $_* : $ty),  $_)
 
 ### 有状态的值
 %%%
+file := "Stateful-Values"
 tag := "zh-vcgen-h007"
 %%%
 
@@ -312,6 +320,7 @@ tag := "zh-vcgen-h007"
 
 ## 断言
 %%%
+file := "Assertions"
 tag := "zh-vcgen-h008"
 %%%
 
@@ -398,6 +407,7 @@ $_ →ₚ $_
 
 ## 谓词变压器
 %%%
+file := "Predicate-Transformers"
 tag := "zh-vcgen-h009"
 %%%
 
@@ -439,6 +449,7 @@ variable {σ : List (Type u)} {ps : PostShape} {x y : PredTrans ps α} {Q : Asse
 
 ### 最弱的先决条件
 %%%
+file := "Weakest-Preconditions"
 tag := "zh-vcgen-h010"
 %%%
 
@@ -456,6 +467,7 @@ wp⟦$_ $[: $_]?⟧
 
 ### 最弱先决条件单子态射
 %%%
+file := "Weakest-Precondition-Monad-Morphisms"
 tag := "zh-vcgen-h011"
 %%%
 
@@ -563,6 +575,7 @@ theorem rev_correct :
 
 ### 充分性引理
 %%%
+file := "Adequacy-Lemmas"
 tag := "mvcgen-adequacy"
 %%%
 
@@ -585,6 +598,7 @@ tag := "mvcgen-adequacy"
 
 ## 霍尔三元组
 %%%
+file := "Hoare-Triples"
 tag := "zh-vcgen-h013"
 %%%
 
@@ -611,6 +625,7 @@ variable [WP m ps] {x : m α} {P : Assertion ps} {Q : PostCond α ps}
 
 ## 规范引理
 %%%
+file := "Specification-Lemmas"
 tag := "zh-vcgen-h014"
 %%%
 
@@ -672,6 +687,7 @@ example : Assertion (.arg Nat .pure) = SPred [Nat] := rfl
 
 ## 规格不变
 %%%
+file := "Invariant-Specifications"
 tag := "zh-vcgen-h015"
 %%%
 
@@ -703,6 +719,7 @@ tag := "zh-vcgen-h015"
 
 # 验证条件
 %%%
+file := "Verification-Conditions"
 tag := "zh-vcgen-h016"
 %%%
 
@@ -737,6 +754,7 @@ variable [Monad m] [WPMonad m ps] {e : m α} {P : Assertion ps} {Q : PostCond α
 
 # 为 Monad 启用 `mvcgen`
 %%%
+file := "Enabling-___mvcgen___-For-Monads"
 tag := "zh-vcgen-h017"
 %%%
 
@@ -918,6 +936,7 @@ theorem logUntil_length : (logUntil n).run.2.size = n := by
 
 # 校样模式
 %%%
+file := "Proof-Mode"
 tag := "mvcgen-proof-mode"
 %%%
 

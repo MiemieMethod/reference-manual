@@ -22,6 +22,7 @@ set_option maxHeartbeats 250000
 
 #doc (Manual) "基于树的地图" =>
 %%%
+file := "Tree-Based-Maps"
 tag := "TreeMap"
 %%%
 
@@ -32,6 +33,7 @@ tag := "TreeMap"
 
 # 创建
 %%%
+file := "Creation"
 tag := "zh-basictypes-maps-treemap-h001"
 %%%
 
@@ -39,6 +41,7 @@ tag := "zh-basictypes-maps-treemap-h001"
 
 # 特性
 %%%
+file := "Properties"
 tag := "zh-basictypes-maps-treemap-h002"
 %%%
 
@@ -49,6 +52,7 @@ tag := "zh-basictypes-maps-treemap-h002"
 
 # 查询
 %%%
+file := "Queries"
 tag := "zh-basictypes-maps-treemap-h003"
 %%%
 
@@ -80,6 +84,7 @@ tag := "zh-basictypes-maps-treemap-h003"
 
 ## 基于排序的查询
 %%%
+file := "Ordering-Based-Queries"
 tag := "zh-basictypes-maps-treemap-h004"
 %%%
 
@@ -198,6 +203,7 @@ tag := "zh-basictypes-maps-treemap-h004"
 
 # 修改
 %%%
+file := "Modification"
 tag := "zh-basictypes-maps-treemap-h005"
 %%%
 
@@ -234,6 +240,7 @@ tag := "zh-basictypes-maps-treemap-h005"
 
 # 迭代
 %%%
+file := "Iteration"
 tag := "zh-basictypes-maps-treemap-h006"
 %%%
 
@@ -263,6 +270,7 @@ tag := "zh-basictypes-maps-treemap-h006"
 
 # 转换
 %%%
+file := "Conversion"
 tag := "zh-basictypes-maps-treemap-h007"
 %%%
 
@@ -280,6 +288,7 @@ tag := "zh-basictypes-maps-treemap-h007"
 
 ## 非捆绑变体
 %%%
+file := "Unbundled-Variants"
 tag := "zh-basictypes-maps-treemap-h008"
 %%%
 

@@ -36,6 +36,7 @@ set_option pp.rawOnError true
 
 #doc (Manual) "基本类型" =>
 %%%
+file := "Basic-Types"
 tag := "basic-types"
 %%%
 
@@ -63,6 +64,7 @@ Lean 包含许多编译器特别支持的内置类型。
 
 # 单位 Type
 %%%
+file := "The-Unit-Type"
 tag := "zh-basictypes-h001"
 %%%
 
@@ -104,6 +106,7 @@ variable {m : Type → Type} [Monad m] {α : Type}
 
 ## 定义等价
 %%%
+file := "Definitional-Equality"
 tag := "zh-basictypes-h002"
 %%%
 
@@ -178,6 +181,7 @@ example (e1 e2 : ProofUnitLike) : e1 = e2 := rfl
 
 # 布尔值
 %%%
+file := "Booleans"
 tag := "zh-basictypes-h003"
 %%%
 
@@ -187,6 +191,7 @@ tag := "zh-basictypes-h003"
 
 ## 运行时表示
 %%%
+file := "Run-Time-Representation"
 tag := "zh-basictypes-h004"
 %%%
 
@@ -194,6 +199,7 @@ tag := "zh-basictypes-h004"
 
 ## 布尔值和命题
 %%%
+file := "Booleans-and-Propositions"
 tag := "zh-basictypes-h005"
 %%%
 
@@ -237,6 +243,7 @@ end BoolProp
 
 ## 句法
 %%%
+file := "Syntax"
 tag := "zh-basictypes-h006"
 %%%
 
@@ -264,11 +271,13 @@ $_:term ^^ $_:term
 
 ## API 参考
 %%%
+file := "API-Reference"
 tag := "zh-basictypes-h007"
 %%%
 
 ### 逻辑运算
 %%%
+file := "Logical-Operations"
 tag := "zh-basictypes-h008"
 %%%
 
@@ -301,6 +310,7 @@ end ShortCircuit
 
 ### 比较
 %%%
+file := "Comparisons"
 tag := "zh-basictypes-h009"
 %%%
 
@@ -310,6 +320,7 @@ tag := "zh-basictypes-h009"
 
 ### 转换
 %%%
+file := "Conversions"
 tag := "zh-basictypes-h010"
 %%%
 

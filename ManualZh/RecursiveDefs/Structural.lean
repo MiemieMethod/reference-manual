@@ -21,6 +21,7 @@ set_option guard_msgs.diff true
 
 #doc (Manual) "结构递归" =>
 %%%
+file := "Structural-Recursion"
 tag := "structural-recursion"
 %%%
 
@@ -104,6 +105,7 @@ end
 
 # 显式结构递归
 %%%
+file := "Explicit-Structural-Recursion"
 tag := "zh-recursivedefs-structural-h001"
 %%%
 
@@ -400,6 +402,7 @@ end
 
 # 相互结构递归
 %%%
+file := "Mutual-Structural-Recursion"
 tag := "mutual-structural-recursion"
 %%%
 
@@ -487,6 +490,7 @@ termination_by structural a => a
 
 # 推断结构递归
 %%%
+file := "Inferring-Structural-Recursion"
 tag := "inferring-structural-recursion"
 %%%
 
@@ -518,6 +522,7 @@ Try this:
 
 # 精化使用值过程递归
 %%%
+file := "Elaboration-Using-Course-of-Values-Recursion"
 tag := "elab-as-course-of-values"
 %%%
 

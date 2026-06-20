@@ -30,6 +30,7 @@ file := "v4.28.1"
 
 # 编译器
 %%%
+file := "Compiler"
 tag := "zh-releases-v4-28-1-h001"
 %%%
 

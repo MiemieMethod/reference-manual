@@ -22,6 +22,7 @@ set_option maxRecDepth 600
 
 #doc (Manual) "`coinductive` 命令" =>
 %%%
+file := "The-___coinductive___-Command"
 tag := "coinductive-command"
 %%%
 
@@ -86,6 +87,7 @@ theorem InfSeq.casesOnTest (r : α → α → Prop)
 
 # 精化
 %%%
+file := "Elaboration"
 tag := "coinductive-elaboration"
 %%%
 
@@ -175,6 +177,7 @@ InfSeq._functor.existential_equiv : ∀ (α : Type) (r : α → α → Prop) (In
 
 # 互感和感性块
 %%%
+file := "Mutual-Coinductive-and-Inductive-Blocks"
 tag := "mutual-coinductive-syntax"
 %%%
 
@@ -220,6 +223,7 @@ Tick.mutual_induct : ∀ (pred_1 pred_2 : Prop),
 
 # 限制
 %%%
+file := "Restrictions"
 tag := "coinductive-restrictions"
 %%%
 

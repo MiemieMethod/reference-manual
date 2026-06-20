@@ -21,6 +21,7 @@ set_option maxRecDepth 800
 
 #doc (Manual) "归纳类型" =>
 %%%
+file := "Inductive-Types"
 tag := "inductive-types"
 %%%
 
@@ -44,6 +45,7 @@ _结构_ 是归纳类型的一种特殊情况，只有一个构造函数。
 
 # 归纳类型声明
 %%%
+file := "Inductive-Type-Declarations"
 tag := "inductive-declarations"
 %%%
 
@@ -81,6 +83,7 @@ $[deriving $[$x:ident],*]?
 
 ## 参数及指标
 %%%
+file := "Parameters-and-Indices"
 tag := "inductive-datatypes-parameters-and-indices"
 %%%
 
@@ -103,6 +106,7 @@ Type 构造函数可以采用两种参数： {deftech}_parameters_ {index (subte
 
 ## 示例归纳类型
 %%%
+file := "Example-Inductive-Types"
 tag := "example-inductive-types"
 %%%
 
@@ -288,6 +292,7 @@ inductive Either'' : Type u → Type v → Type (max u v + 1) where
 
 ## 匿名构造函数语法
 %%%
+file := "Anonymous-Constructor-Syntax"
 tag := "anonymous-constructor-syntax"
 %%%
 
@@ -341,6 +346,7 @@ def AtLeastOne.head' : AtLeastOne α → α
 
 ## 派生实例
 %%%
+file := "Deriving-Instances"
 tag := "inductive-declarations-deriving-instances"
 %%%
 
@@ -354,6 +360,7 @@ tag := "inductive-declarations-deriving-instances"
 
 # 运行时表示
 %%%
+file := "Run-Time-Representation"
 tag := "run-time-inductives"
 %%%
 
@@ -361,6 +368,7 @@ tag := "run-time-inductives"
 
 ## 例外情况
 %%%
+file := "Exceptions"
 tag := "inductive-types-runtime-special-support"
 %%%
 
@@ -388,6 +396,7 @@ axiom α : Prop
 
 ## 关联
 %%%
+file := "Relevance"
 tag := "inductive-types-runtime-relevance"
 %%%
 
@@ -418,6 +427,7 @@ Fin.mk {n : Nat} (val : Nat) : val < n → Fin n
 
 ## 简单的包装器
 %%%
+file := "Trivial-Wrappers"
 tag := "inductive-types-trivial-wrappers"
 %%%
 
@@ -440,6 +450,7 @@ Subtype.mk.{u} {α : Sort u} {p : α → Prop}
 
 ## 其他归纳类型
 %%%
+file := "Other-Inductive-Types"
 tag := "inductive-types-standard-representation"
 %%%
 
@@ -454,6 +465,7 @@ tag := "inductive-types-standard-representation"
 
 ### FFI
 %%%
+file := "FFI"
 tag := "inductive-types-ffi"
 %%%
 
@@ -521,6 +533,7 @@ structure S where
 
 # 相互归纳类型
 %%%
+file := "Mutual-Inductive-Types"
 tag := "mutual-inductive-types"
 %%%
 
@@ -557,6 +570,7 @@ Note: Inferred this name from the expected resulting type of `.nil`:
 
 ## 要求
 %%%
+file := "Requirements"
 tag := "mutual-inductive-types-requirements"
 %%%
 
@@ -566,6 +580,7 @@ tag := "mutual-inductive-types-requirements"
 
 ### 相互依赖
 %%%
+file := "Mutual-Dependencies"
 tag := "mutual-inductive-types-dependencies"
 %%%
 
@@ -597,6 +612,7 @@ Unknown identifier `FreshList`
 
 ### 参数必须匹配
 %%%
+file := "Parameters-Must-Match"
 tag := "mutual-inductive-types-same-parameters"
 %%%
 
@@ -649,6 +665,7 @@ of sort `Type 1`
 
 ### 宇宙层级
 %%%
+file := "Universe-Levels"
 tag := "mutual-inductive-types-same-universe"
 %%%
 
@@ -750,6 +767,7 @@ example : RLE [1, 1, 2, 2, 3, 1, 1, 1] where
 
 ### 积极性
 %%%
+file := "Positivity"
 tag := "mutual-inductive-types-positivity"
 %%%
 
@@ -790,6 +808,7 @@ end
 
 ## 递归器
 %%%
+file := "Recursors"
 tag := "mutual-inductive-types-recursors"
 %%%
 
@@ -858,6 +877,7 @@ Two.rec.{u} {α : Type}
 
 ## 运行时表示
 %%%
+file := "Run-Time-Representation"
 tag := "mutual-inductive-types-run-time"
 %%%
 
@@ -868,6 +888,7 @@ tag := "mutual-inductive-types-run-time"
 
 ## 格理论归纳和共归纳谓词
 %%%
+file := "Lattice-Theoretic-Inductive-and-Coinductive-Predicates"
 tag := "zh-language-inductivetypes-h020"
 %%%
 

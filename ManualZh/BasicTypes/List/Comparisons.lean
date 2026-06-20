@@ -17,6 +17,7 @@ set_option pp.rawOnError true
 
 #doc (Manual) "比较" =>
 %%%
+file := "Comparisons"
 tag := "zh-basictypes-list-comparisons-root"
 %%%
 

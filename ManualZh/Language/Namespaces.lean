@@ -13,6 +13,7 @@ open Verso.Genre.Manual.InlineLean
 
 #doc (Manual) "命名空间" =>
 %%%
+file := "Namespaces"
 tag := "namespaces"
 %%%
 
@@ -65,6 +66,7 @@ end Forest
 
 # 命名空间和节范围
 %%%
+file := "Namespaces-and-Section-Scopes"
 tag := "zh-language-namespaces-h001"
 %%%
 
@@ -342,6 +344,7 @@ Unknown identifier `three`
 
 # 导出名称
 %%%
+file := "Exporting-Names"
 tag := "zh-language-namespaces-h002"
 %%%
 

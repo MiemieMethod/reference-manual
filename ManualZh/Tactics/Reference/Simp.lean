@@ -19,6 +19,7 @@ set_option linter.unusedVariables false
 
 #doc (Manual) "简化" =>
 %%%
+file := "Simplification"
 tag := "simp-tactics"
 %%%
 

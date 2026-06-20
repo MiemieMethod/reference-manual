@@ -17,6 +17,7 @@ set_option verso.docstring.allowMissing true
 
 #doc (Manual) "比较" =>
 %%%
+file := "Comparisons"
 tag := "fixed-int-comparisons"
 %%%
 

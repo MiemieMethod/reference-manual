@@ -15,6 +15,7 @@ open Verso.Genre.Manual.InlineLean
 
 #doc (Manual) "有限自然数" =>
 %%%
+file := "Finite-Natural-Numbers"
 tag := "Fin"
 %%%
 
@@ -36,6 +37,7 @@ variable (n : Nat)
 
 # 运行时特性
 %%%
+file := "Run-Time-Characteristics"
 tag := "zh-basictypes-fin-h001"
 %%%
 
@@ -44,6 +46,7 @@ tag := "zh-basictypes-fin-h001"
 
 # 强制和文字
 %%%
+file := "Coercions-and-Literals"
 tag := "zh-basictypes-fin-h002"
 %%%
 
@@ -128,11 +131,13 @@ Hint: Type class instance resolution failures can be inspected with the `set_opt
 
 # API 参考
 %%%
+file := "API-Reference"
 tag := "zh-basictypes-fin-h003"
 %%%
 
 ## 建造
 %%%
+file := "Construction"
 tag := "zh-basictypes-fin-h004"
 %%%
 
@@ -144,6 +149,7 @@ tag := "zh-basictypes-fin-h004"
 
 ## 算术
 %%%
+file := "Arithmetic"
 tag := "zh-basictypes-fin-h005"
 %%%
 
@@ -172,6 +178,7 @@ tag := "zh-basictypes-fin-h005"
 
 ## 按位运算
 %%%
+file := "Bitwise-Operations"
 tag := "zh-basictypes-fin-h006"
 %%%
 
@@ -190,6 +197,7 @@ tag := "zh-basictypes-fin-h006"
 
 ## 转换
 %%%
+file := "Conversions"
 tag := "zh-basictypes-fin-h007"
 %%%
 
@@ -213,6 +221,7 @@ tag := "zh-basictypes-fin-h007"
 
 ## 迭代
 %%%
+file := "Iteration"
 tag := "zh-basictypes-fin-h008"
 %%%
 
@@ -230,6 +239,7 @@ tag := "zh-basictypes-fin-h008"
 
 ## 推理
 %%%
+file := "Reasoning"
 tag := "zh-basictypes-fin-h009"
 %%%
 

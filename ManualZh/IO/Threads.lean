@@ -21,6 +21,7 @@ set_option linter.unusedVariables false
 
 #doc (Manual) "任务和线程" =>
 %%%
+file := "Tasks-and-Threads"
 tag := "concurrency"
 %%%
 
@@ -59,6 +60,7 @@ Lean 运行时维护一个用于运行任务的线程池。
 
 # 创建任务
 %%%
+file := "Creating-Tasks"
 tag := "zh-io-threads-h001"
 %%%
 
@@ -67,6 +69,7 @@ tag := "zh-io-threads-h001"
 
 ## 纯任务
 %%%
+file := "Pure-Tasks"
 tag := "zh-io-threads-h002"
 %%%
 
@@ -79,6 +82,7 @@ tag := "zh-io-threads-h002"
 
 ## 不纯的任务
 %%%
+file := "Impure-Tasks"
 tag := "zh-io-threads-h003"
 %%%
 
@@ -96,6 +100,7 @@ tag := "zh-io-threads-h003"
 
 ## 优先事项
 %%%
+file := "Priorities"
 tag := "zh-io-threads-h004"
 %%%
 
@@ -113,6 +118,7 @@ tag := "zh-io-threads-h004"
 
 # 任务结果
 %%%
+file := "Task-Results"
 tag := "zh-io-threads-h005"
 %%%
 
@@ -124,6 +130,7 @@ tag := "zh-io-threads-h005"
 
 # 排序任务
 %%%
+file := "Sequencing-Tasks"
 tag := "zh-io-threads-h006"
 %%%
 
@@ -162,6 +169,7 @@ tag := "zh-io-threads-h006"
 
 # 取消和状态
 %%%
+file := "Cancellation-and-Status"
 tag := "zh-io-threads-h007"
 %%%
 
@@ -182,6 +190,7 @@ tag := "zh-io-threads-h007"
 
 # 承诺
 %%%
+file := "Promises"
 tag := "zh-io-threads-h008"
 %%%
 
@@ -206,6 +215,7 @@ tag := "zh-io-threads-h008"
 
 # 任务之间的通信
 %%%
+file := "Communication-Between-Tasks"
 tag := "zh-io-threads-h009"
 %%%
 
@@ -215,6 +225,7 @@ tag := "zh-io-threads-h009"
 
 ## 渠道
 %%%
+file := "Channels"
 tag := "zh-io-threads-h010"
 %%%
 
@@ -254,6 +265,7 @@ variable {m : Type → Type v} {α : Type} [MonadLiftT BaseIO m] [Inhabited α] 
 :::
 ## 互斥体
 %%%
+file := "Mutexes"
 tag := "zh-io-threads-h011"
 %%%
 
@@ -272,6 +284,7 @@ tag := "zh-io-threads-h011"
 
 ## 条件变量
 %%%
+file := "Condition-Variables"
 tag := "zh-io-threads-h012"
 %%%
 

@@ -15,6 +15,7 @@ open Verso.Genre.Manual.InlineLean
 
 #doc (Manual) "算术" =>
 %%%
+file := "Arithmetic"
 tag := "fixed-int-arithmetic"
 %%%
 

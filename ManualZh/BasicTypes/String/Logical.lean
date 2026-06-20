@@ -17,6 +17,7 @@ set_option pp.rawOnError true
 
 #doc (Manual) "逻辑模型" =>
 %%%
+file := "Logical-Model"
 tag := "zh-basictypes-string-logical-root"
 %%%
 
@@ -35,6 +36,7 @@ Lean 中字符串的逻辑模型是一个包含两个字段的结构体：
 
 # 向后兼容性
 %%%
+file := "Backwards-Compatibility"
 tag := "zh-basictypes-string-logical-h001"
 %%%
 

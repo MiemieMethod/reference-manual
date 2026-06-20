@@ -17,6 +17,7 @@ open Lean.Elab.Tactic.GuardMsgs.WhitespaceMode
 
 #doc (Manual) "递归示例（包含在其他地方）" =>
 %%%
+file := "Recursion-Example-_LPAR_for-inclusion-elsewhere_RPAR_"
 tag := "zh-recursivedefs-structural-recursorexample-root"
 %%%
 

@@ -22,6 +22,7 @@ set_option linter.unusedVariables false
 
 #doc (Manual) "可变引用" =>
 %%%
+file := "Mutable-References"
 tag := "zh-io-ref-root"
 %%%
 
@@ -38,6 +39,7 @@ tag := "zh-io-ref-root"
 
 # 状态转换器
 %%%
+file := "State-Transformers"
 tag := "mutable-st-references"
 %%%
 
@@ -68,6 +70,7 @@ tag := "mutable-st-references"
 
 ## 阅读和写作
 %%%
+file := "Reading-and-Writing"
 tag := "zh-io-ref-h002"
 %%%
 
@@ -163,6 +166,7 @@ Final balance is zero or positive.
 
 ## 比较
 %%%
+file := "Comparisons"
 tag := "zh-io-ref-h003"
 %%%
 
@@ -170,6 +174,7 @@ tag := "zh-io-ref-h003"
 
 ## `ST` 支持的状态 Monad
 %%%
+file := "___ST___-Backed-State-Monads"
 tag := "zh-io-ref-h004"
 %%%
 
@@ -177,6 +182,7 @@ tag := "zh-io-ref-h004"
 
 # 并发性
 %%%
+file := "Concurrency"
 tag := "ref-locks"
 %%%
 

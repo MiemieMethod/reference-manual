@@ -12,6 +12,7 @@ open Verso.Genre Manual InlineLean
 
 #doc (Manual) "关于：`dependsOnNoncomputable`" =>
 %%%
+file := "About___-___dependsOnNoncomputable___"
 tag := "zh-errorexplanations-dependsonnoncomputable-root"
 shortTitle := "dependsOnNoncomputable"
 %%%
@@ -32,6 +33,7 @@ section on {ref "declaration-modifiers"}[Modifiers] for more information about n
 
 # 示例
 %%%
+file := "Examples"
 tag := "zh-errorexplanations-dependsonnoncomputable-h001"
 %%%
 

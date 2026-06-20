@@ -23,6 +23,7 @@ set_option maxRecDepth 600
 
 #doc (Manual) "部分不动点递归" =>
 %%%
+file := "Partial-Fixpoint-Recursion"
 tag := "partial-fixpoint"
 %%%
 
@@ -92,6 +93,7 @@ end
 
 # 尾递归函数
 %%%
+file := "Tail-Recursive-Functions"
 tag := "partial-fixpoint-tailrec"
 %%%
 
@@ -186,6 +188,7 @@ Could not prove 'List.findIndex' to be monotone in its recursive calls:
 
 # 一元函数
 %%%
+file := "Monadic-functions"
 tag := "partial-fixpoint-monadic"
 %%%
 
@@ -266,6 +269,7 @@ partial_fixpoint
 
 # 部分正确性定理
 %%%
+file := "Partial-Correctness-Theorems"
 tag := "partial-correctness-theorem"
 %%%
 
@@ -358,6 +362,7 @@ theorem List.findIndex_implies_pred
 
 # 具有部分不动点的互递归
 %%%
+file := "Mutual-Recursion-with-Partial-Fixpoints"
 tag := "mutual-partial-fixpoint"
 %%%
 

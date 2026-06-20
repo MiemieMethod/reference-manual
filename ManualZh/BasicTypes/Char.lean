@@ -20,6 +20,7 @@ set_option pp.rawOnError true
 
 #doc (Manual) "人物" =>
 %%%
+file := "Characters"
 tag := "Char"
 %%%
 
@@ -29,6 +30,7 @@ Lean 为字符文字提供特殊的 {ref "char-syntax"}[语法]。
 
 # 逻辑模型
 %%%
+file := "Logical-Model"
 tag := "char-model"
 %%%
 
@@ -38,6 +40,7 @@ tag := "char-model"
 
 # 运行时表示
 %%%
+file := "Run-Time-Representation"
 tag := "char-runtime"
 %%%
 
@@ -49,6 +52,7 @@ tag := "char-runtime"
 
 # 句法
 %%%
+file := "Syntax"
 tag := "char-syntax"
 %%%
 
@@ -72,11 +76,13 @@ tag := "char-syntax"
 
 # API 参考
 %%%
+file := "API-Reference"
 tag := "char-api"
 %%%
 
 ## 转换
 %%%
+file := "Conversions"
 tag := "zh-basictypes-char-h005"
 %%%
 
@@ -153,6 +159,7 @@ tag := "zh-basictypes-char-h005"
 
 ## 字符类
 %%%
+file := "Character-Classes"
 tag := "char-api-classes"
 %%%
 
@@ -170,6 +177,7 @@ tag := "char-api-classes"
 
 ## 大小写转换
 %%%
+file := "Case-Conversion"
 tag := "zh-basictypes-char-h007"
 %%%
 
@@ -179,6 +187,7 @@ tag := "zh-basictypes-char-h007"
 
 ## 比较
 %%%
+file := "Comparisons"
 tag := "zh-basictypes-char-h008"
 %%%
 
@@ -188,6 +197,7 @@ tag := "zh-basictypes-char-h008"
 
 ## Unicode
 %%%
+file := "Unicode"
 tag := "zh-basictypes-char-h009"
 %%%
 

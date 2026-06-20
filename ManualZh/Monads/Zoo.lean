@@ -36,6 +36,7 @@ set_option linter.unusedVariables false
 
 #doc (Manual) "单子的种类" =>
 %%%
+file := "Varieties-of-Monads"
 tag := "monad-varieties"
 %%%
 
@@ -75,6 +76,7 @@ tag := "monad-varieties"
 
 # Monad Type 类
 %%%
+file := "Monad-Type-Classes"
 tag := "zh-monads-zoo-h001"
 %%%
 
@@ -297,6 +299,7 @@ set "Four" : M PUnit
 
 # 莫纳德变形金刚
 %%%
+file := "Monad-Transformers"
 tag := "monad-transformers"
 %%%
 

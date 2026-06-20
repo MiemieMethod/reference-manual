@@ -11,6 +11,7 @@ open Verso.Genre Manual InlineLean
 
 #doc (Manual) "关于：`unknownIdentifier`" =>
 %%%
+file := "About___-___unknownIdentifier___"
 tag := "zh-errorexplanations-unknownidentifier-root"
 shortTitle := "unknownIdentifier"
 %%%
@@ -43,6 +44,7 @@ variable that is not in scope.
 
 # 示例
 %%%
+file := "Examples"
 tag := "zh-errorexplanations-unknownidentifier-h001"
 %%%
 

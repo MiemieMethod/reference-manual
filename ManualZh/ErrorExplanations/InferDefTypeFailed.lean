@@ -11,6 +11,7 @@ open Verso.Genre Manual InlineLean
 
 #doc (Manual) "关于：`inferDefTypeFailed`" =>
 %%%
+file := "About___-___inferDefTypeFailed___"
 tag := "zh-errorexplanations-inferdeftypefailed-root"
 shortTitle := "inferDefTypeFailed"
 %%%
@@ -40,6 +41,7 @@ shortTitle := "inferDefTypeFailed"
 
 # 示例
 %%%
+file := "Examples"
 tag := "zh-errorexplanations-inferdeftypefailed-h001"
 %%%
 

@@ -29,6 +29,7 @@ set_option linter.unusedVariables false
 set_option maxRecDepth 100000
 #doc (Manual) "Type 类别" =>
 %%%
+file := "Type-Classes"
 tag := "type-classes"
 %%%
 
@@ -81,6 +82,7 @@ Type 类非常灵活。
 
 # 类声明
 %%%
+file := "Class-Declarations"
 tag := "class"
 %%%
 
@@ -305,6 +307,7 @@ def Heap'.insert [Ord α] (x : α) (xs : Heap' α) : Heap' α :=
 
 ## 将类型求和为类
 %%%
+file := "Sum-Types-as-Classes"
 tag := "class inductive"
 %%%
 
@@ -327,6 +330,7 @@ $[deriving $[$x:ident],*]?
 
 ## 类别缩写
 %%%
+file := "Class-Abbreviations"
 tag := "class-abbrev"
 %%%
 
@@ -390,6 +394,7 @@ instance [Add α] [Mul α] : AddMul' α where
 
 # 派生实例
 %%%
+file := "Deriving-Instances"
 tag := "deriving-instances"
 %%%
 

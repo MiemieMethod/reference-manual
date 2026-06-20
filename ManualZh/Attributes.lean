@@ -25,6 +25,7 @@ set_option linter.unusedVariables false
 
 #doc (Manual) "属性" =>
 %%%
+file := "Attributes"
 tag := "attributes"
 htmlSplit := .never
 %%%
@@ -56,6 +57,7 @@ $_:attrKind $_:attr
 
 # 属性作为修饰符
 %%%
+file := "Attributes-as-Modifiers"
 tag := "zh-attributes-h001"
 %%%
 
@@ -70,6 +72,7 @@ tag := "zh-attributes-h001"
 
 # {keyword}`attribute` 命令
 %%%
+file := "The-___keyword______attribute___-Command"
 tag := "zh-attributes-h002"
 %%%
 
@@ -102,6 +105,7 @@ attribute [$_,*] $_
 
 # 范围属性
 %%%
+file := "Scoped-Attributes"
 tag := "scoped-attributes"
 %%%
 

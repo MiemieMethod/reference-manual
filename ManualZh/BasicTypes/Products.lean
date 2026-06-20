@@ -15,6 +15,7 @@ set_option pp.rawOnError true
 
 #doc (Manual) "元组" =>
 %%%
+file := "Tuples"
 tag := "tuples"
 %%%
 
@@ -80,6 +81,7 @@ Lean 标准库包含各种类似元组的类型。
 
 # 有序对
 %%%
+file := "Ordered-Pairs"
 tag := "pairs"
 %%%
 
@@ -134,6 +136,7 @@ $_ ×' $_
 
 ## API 参考
 %%%
+file := "API-Reference"
 tag := "prod-api"
 %%%
 
@@ -141,6 +144,7 @@ tag := "prod-api"
 
 ### 转型
 %%%
+file := "Transformation"
 tag := "zh-basictypes-products-h003"
 %%%
 
@@ -150,6 +154,7 @@ tag := "zh-basictypes-products-h003"
 
 ### 自然数范围
 %%%
+file := "Natural-Number-Ranges"
 tag := "zh-basictypes-products-h004"
 %%%
 
@@ -161,6 +166,7 @@ tag := "zh-basictypes-products-h004"
 
 ### 订购
 %%%
+file := "Ordering"
 tag := "zh-basictypes-products-h005"
 %%%
 
@@ -169,6 +175,7 @@ tag := "zh-basictypes-products-h005"
 
 # 依赖对
 %%%
+file := "Dependent-Pairs"
 tag := "sigma-types"
 %%%
 

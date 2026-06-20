@@ -27,6 +27,7 @@ open Lean
 #doc (Manual) "扩展 `do` 表示法" =>
 
 %%%
+file := "Extending-___do___-Notation"
 tag := "do-elab"
 %%%
 
@@ -48,6 +49,7 @@ Lean 版本 4.29.0 中引入了可扩展的 {keywordOf Lean.Parser.Term.do}`do` 
 
 # 精化概述
 %%%
+file := "Elaboration-Overview"
 tag := "zh-notationsmacros-doelab-h001"
 %%%
 
@@ -65,6 +67,7 @@ tag := "zh-notationsmacros-doelab-h001"
 
 # `do` 表示法中的宏
 %%%
+file := "Macros-in-___do___-Notation"
 tag := "zh-notationsmacros-doelab-h002"
 %%%
 
@@ -177,6 +180,7 @@ def getEven : IO { n : Nat // n % 2 = 0 ∨ n % 3 = 0} := do
 
 ## 局限性
 %%%
+file := "Limitations"
 tag := "zh-notationsmacros-doelab-h003"
 %%%
 
@@ -243,6 +247,7 @@ in the application
 
 # 精化
 %%%
+file := "Elaboration"
 tag := "zh-notationsmacros-doelab-h004"
 %%%
 
@@ -300,6 +305,7 @@ doElem_elab
 
 ## 单子操作
 %%%
+file := "Monad-Operations"
 tag := "zh-notationsmacros-doelab-h005"
 %%%
 
@@ -315,6 +321,7 @@ tag := "zh-notationsmacros-doelab-h005"
 
 ## 延续
 %%%
+file := "Continuations"
 tag := "zh-notationsmacros-doelab-h006"
 %%%
 
@@ -503,6 +510,7 @@ This `do` element and its control-flow region are dead code. Consider removing i
 
 ## 控制流：`return`、`break` 和 `continue`
 %%%
+file := "Control-Flow___-___return______-___break______-and-___continue___"
 tag := "do-elab-return-continue-break"
 %%%
 
@@ -592,6 +600,7 @@ def elabOnce : DoElab := fun stx dec => do
 
 ## 控制信息
 %%%
+file := "Control-Information"
 tag := "do-elab-control-info"
 %%%
 
@@ -647,6 +656,7 @@ doElem_control_info
 
 ## 可变变量
 %%%
+file := "Mutable-Variables"
 tag := "zh-notationsmacros-doelab-h009"
 %%%
 
@@ -784,6 +794,7 @@ x: 0, c: A
 
 ## 提升效果
 %%%
+file := "Lifting-Effects"
 tag := "do-elab-effect-lift"
 %%%
 

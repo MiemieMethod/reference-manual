@@ -31,11 +31,13 @@ file := "v4.27.0"
 
 # 亮点
 %%%
+file := "Highlights"
 tag := "zh-releases-v4-27-0-h001"
 %%%
 
 ## 模块系统稳定
 %%%
+file := "Module-System-Stabilized"
 tag := "zh-releases-v4-27-0-h002"
 %%%
 
@@ -45,6 +47,7 @@ tag := "zh-releases-v4-27-0-h002"
 
 ## 向后兼容性选项
 %%%
+file := "Backward-Compatibility-Options"
 tag := "zh-releases-v4-27-0-h003"
 %%%
 
@@ -55,6 +58,7 @@ tag := "zh-releases-v4-27-0-h003"
 
 ## 性能提升
 %%%
+file := "Performance-Gains"
 tag := "zh-releases-v4-27-0-h004"
 %%%
 
@@ -69,6 +73,7 @@ tag := "zh-releases-v4-27-0-h004"
 
 ## 错误信息
 %%%
+file := "Error-Messages"
 tag := "zh-releases-v4-27-0-h005"
 %%%
 
@@ -89,11 +94,13 @@ tag := "zh-releases-v4-27-0-h005"
 
 ## 研磨的新功能
 %%%
+file := "New-Features-in-Grind"
 tag := "zh-releases-v4-27-0-h006"
 %%%
 
 ### 函数值同余闭包
 %%%
+file := "Function-Valued-Congruence-Closure"
 tag := "zh-releases-v4-27-0-h007"
 %%%
 
@@ -122,6 +129,7 @@ h : f a = g
 
 ### 控制定理实例化
 %%%
+file := "Controlling-Theorem-Instantiation"
 tag := "zh-releases-v4-27-0-h008"
 %%%
 
@@ -149,6 +157,7 @@ grind_pattern fMono => f x, f y where
 
 ### 提供任意参数
 %%%
+file := "Supplying-Arbitrary-Parameters"
 tag := "zh-releases-v4-27-0-h009"
 %%%
 
@@ -177,6 +186,7 @@ example (a : Nat) :
 
 ### 研磨回复
 %%%
+file := "Grind-Revert"
 tag := "zh-releases-v4-27-0-h010"
 %%%
 
@@ -189,6 +199,7 @@ tag := "zh-releases-v4-27-0-h010"
 
 ### Grind 的其他新功能
 %%%
+file := "Other-New-Features-in-Grind"
 tag := "zh-releases-v4-27-0-h011"
 %%%
 
@@ -211,6 +222,7 @@ tag := "zh-releases-v4-27-0-h011"
 
 ## 良基递归上 `Nat`
 %%%
+file := "Well-Founded-Recursion-on-___Nat___"
 tag := "zh-releases-v4-27-0-h012"
 %%%
 
@@ -221,6 +233,7 @@ tag := "zh-releases-v4-27-0-h012"
 
 ## 图书馆亮点
 %%%
+file := "Library-Highlights"
 tag := "zh-releases-v4-27-0-h013"
 %%%
 
@@ -248,6 +261,7 @@ tag := "zh-releases-v4-27-0-h013"
 
 ## 重大变化
 %%%
+file := "Breaking-Changes"
 tag := "zh-releases-v4-27-0-h014"
 %%%
 
@@ -270,6 +284,7 @@ tag := "zh-releases-v4-27-0-h014"
 
 # 语言
 %%%
+file := "Language"
 tag := "zh-releases-v4-27-0-h015"
 %%%
 
@@ -537,6 +552,7 @@ tag := "zh-releases-v4-27-0-h015"
 
 # 图书馆
 %%%
+file := "Library"
 tag := "zh-releases-v4-27-0-h016"
 %%%
 
@@ -798,6 +814,7 @@ tag := "zh-releases-v4-27-0-h016"
 
 # 策略
 %%%
+file := "Tactics"
 tag := "zh-releases-v4-27-0-h017"
 %%%
 
@@ -1170,6 +1187,7 @@ tag := "zh-releases-v4-27-0-h017"
 
 # Compiler
 %%%
+file := "Compiler"
 tag := "zh-releases-v4-27-0-h018"
 %%%
 
@@ -1266,6 +1284,7 @@ tag := "zh-releases-v4-27-0-h018"
 
 # Documentation
 %%%
+file := "Documentation"
 tag := "zh-releases-v4-27-0-h019"
 %%%
 
@@ -1295,6 +1314,7 @@ tag := "zh-releases-v4-27-0-h019"
 
 # Server
 %%%
+file := "Server"
 tag := "zh-releases-v4-27-0-h020"
 %%%
 
@@ -1316,6 +1336,7 @@ tag := "zh-releases-v4-27-0-h020"
 
 # Lake
 %%%
+file := "Lake"
 tag := "zh-releases-v4-27-0-h021"
 %%%
 
@@ -1341,6 +1362,7 @@ tag := "zh-releases-v4-27-0-h021"
 
 # Other
 %%%
+file := "Other"
 tag := "zh-releases-v4-27-0-h022"
 %%%
 

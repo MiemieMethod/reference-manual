@@ -11,6 +11,7 @@ open Verso.Genre Manual InlineLean
 
 #doc (Manual) "关于：`redundantMatchAlt`" =>
 %%%
+file := "About___-___redundantMatchAlt___"
 tag := "zh-errorexplanations-redundantmatchalt-root"
 shortTitle := "redundantMatchAlt"
 %%%
@@ -47,6 +48,7 @@ shortTitle := "redundantMatchAlt"
 
 # 示例
 %%%
+file := "Examples"
 tag := "zh-errorexplanations-redundantmatchalt-h001"
 %%%
 

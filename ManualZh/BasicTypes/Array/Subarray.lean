@@ -17,6 +17,7 @@ set_option pp.rawOnError true
 
 #doc (Manual) "子储备" =>
 %%%
+file := "Subarrays"
 tag := "subarray"
 %%%
 
@@ -35,6 +36,7 @@ variable {α : Type u}
 
 # 数组数据
 %%%
+file := "Array-Data"
 tag := "zh-basictypes-array-subarray-h001"
 %%%
 
@@ -50,6 +52,7 @@ tag := "zh-basictypes-array-subarray-h001"
 
 # 调整大小
 %%%
+file := "Resizing"
 tag := "zh-basictypes-array-subarray-h002"
 %%%
 
@@ -63,6 +66,7 @@ tag := "zh-basictypes-array-subarray-h002"
 
 # 查找
 %%%
+file := "Lookups"
 tag := "zh-basictypes-array-subarray-h003"
 %%%
 
@@ -74,6 +78,7 @@ tag := "zh-basictypes-array-subarray-h003"
 
 # 迭代
 %%%
+file := "Iteration"
 tag := "zh-basictypes-array-subarray-h004"
 %%%
 
@@ -89,6 +94,7 @@ tag := "zh-basictypes-array-subarray-h004"
 
 # 元素谓词
 %%%
+file := "Element-Predicates"
 tag := "zh-basictypes-array-subarray-h005"
 %%%
 

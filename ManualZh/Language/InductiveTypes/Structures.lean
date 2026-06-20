@@ -17,6 +17,7 @@ set_option guard_msgs.diff true
 
 #doc (Manual) "结构声明" =>
 %%%
+file := "Structure-Declarations"
 tag := "structures"
 %%%
 
@@ -53,6 +54,7 @@ structure RecStruct where
 
 # 结构参数
 %%%
+file := "Structure-Parameters"
 tag := "structure-params"
 %%%
 
@@ -61,6 +63,7 @@ tag := "structure-params"
 
 # 领域
 %%%
+file := "Fields"
 tag := "structure-fields"
 %%%
 
@@ -174,6 +177,7 @@ def Graph.empty : Graph := {}
 
 # 结构构造函数
 %%%
+file := "Structure-Constructors"
 tag := "structure-constructors"
 %%%
 
@@ -420,6 +424,7 @@ def location : Float × Float where
 
 # 结构继承
 %%%
+file := "Structure-Inheritance"
 tag := "structure-inheritance"
 %%%
 

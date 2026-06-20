@@ -22,6 +22,7 @@ set_option linter.unusedVariables false
 
 #doc (Manual) "法律" =>
 %%%
+file := "Laws"
 tag := "monad-laws"
 %%%
 

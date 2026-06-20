@@ -22,6 +22,7 @@ set_option linter.unusedVariables false
 
 #doc (Manual) "例外情况" =>
 %%%
+file := "Exceptions"
 tag := "exception-monads"
 %%%
 
@@ -32,6 +33,7 @@ tag := "exception-monads"
 
 # 例外情况
 %%%
+file := "Exceptions"
 tag := "zh-monads-zoo-except-h001"
 %%%
 
@@ -58,6 +60,7 @@ tag := "zh-monads-zoo-except-h001"
 
 # Type级
 %%%
+file := "Type-Class"
 tag := "zh-monads-zoo-except-h002"
 %%%
 
@@ -77,6 +80,7 @@ tag := "zh-monads-zoo-except-h002"
 
 # “最后”计算
 %%%
+file := "___Finally___-Computations"
 tag := "zh-monads-zoo-except-h003"
 %%%
 
@@ -84,6 +88,7 @@ tag := "zh-monads-zoo-except-h003"
 
 # 变压器
 %%%
+file := "Transformer"
 tag := "zh-monads-zoo-except-h004"
 %%%
 
@@ -110,6 +115,7 @@ tag := "zh-monads-zoo-except-h004"
 
 # 连续传递风格中的异常 Monad
 %%%
+file := "Exception-Monads-in-Continuation-Passing-Style"
 tag := "zh-monads-zoo-except-h005"
 %%%
 

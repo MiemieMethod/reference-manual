@@ -36,6 +36,7 @@ set_option maxHeartbeats 1000000
 
 #doc (Manual) "地图和套装" =>
 %%%
+file := "Maps-and-Sets"
 tag := "maps"
 %%%
 
@@ -133,6 +134,7 @@ open Std
 
 # 图书馆设计
 %%%
+file := "Library-Design"
 tag := "zh-basictypes-maps-h001"
 %%%
 
@@ -146,6 +148,7 @@ tag := "zh-basictypes-maps-h001"
 
 ## 融合运营
 %%%
+file := "Fused-Operations"
 tag := "zh-basictypes-maps-h002"
 %%%
 
@@ -158,6 +161,7 @@ tag := "zh-basictypes-maps-h002"
 
 ## 原始数据和不变量
 %%%
+file := "Raw-Data-and-Invariants"
 tag := "raw-data"
 %%%
 
@@ -309,6 +313,7 @@ def Maze.go? (maze : Maze) (dir : String) : Option Maze :=
 
 ## 适合唯一性的运算符
 %%%
+file := "Suitable-Operators-for-Uniqueness"
 tag := "zh-basictypes-maps-h004"
 %%%
 
@@ -368,6 +373,7 @@ def addAlias'' (aliases : HashMap String (Array String))
 
 # 哈希映射
 %%%
+file := "Hash-Maps"
 tag := "HashMap"
 %%%
 
@@ -378,6 +384,7 @@ tag := "HashMap"
 
 ## 创建
 %%%
+file := "Creation"
 tag := "zh-basictypes-maps-h006"
 %%%
 
@@ -385,6 +392,7 @@ tag := "zh-basictypes-maps-h006"
 
 ## 特性
 %%%
+file := "Properties"
 tag := "zh-basictypes-maps-h007"
 %%%
 
@@ -406,6 +414,7 @@ $_ ~m $_
 
 ## 查询
 %%%
+file := "Queries"
 tag := "zh-basictypes-maps-h008"
 %%%
 
@@ -437,6 +446,7 @@ tag := "zh-basictypes-maps-h008"
 
 ## 修改
 %%%
+file := "Modification"
 tag := "zh-basictypes-maps-h009"
 %%%
 
@@ -470,6 +480,7 @@ tag := "zh-basictypes-maps-h009"
 
 ## 迭代
 %%%
+file := "Iteration"
 tag := "zh-basictypes-maps-h010"
 %%%
 
@@ -491,6 +502,7 @@ tag := "zh-basictypes-maps-h010"
 
 ## 转换
 %%%
+file := "Conversion"
 tag := "zh-basictypes-maps-h011"
 %%%
 
@@ -506,6 +518,7 @@ tag := "zh-basictypes-maps-h011"
 
 ## 非捆绑变体
 %%%
+file := "Unbundled-Variants"
 tag := "zh-basictypes-maps-h012"
 %%%
 
@@ -519,6 +532,7 @@ tag := "zh-basictypes-maps-h012"
 
 # 依赖哈希映射
 %%%
+file := "Dependent-Hash-Maps"
 tag := "DHashMap"
 %%%
 
@@ -528,6 +542,7 @@ tag := "DHashMap"
 
 ## 创建
 %%%
+file := "Creation"
 tag := "zh-basictypes-maps-h014"
 %%%
 
@@ -535,6 +550,7 @@ tag := "zh-basictypes-maps-h014"
 
 ## 特性
 %%%
+file := "Properties"
 tag := "zh-basictypes-maps-h015"
 %%%
 
@@ -556,6 +572,7 @@ $_ ~m $_
 
 ## 查询
 %%%
+file := "Queries"
 tag := "zh-basictypes-maps-h016"
 %%%
 
@@ -588,6 +605,7 @@ tag := "zh-basictypes-maps-h016"
 
 ## 修改
 %%%
+file := "Modification"
 tag := "zh-basictypes-maps-h017"
 %%%
 
@@ -619,6 +637,7 @@ tag := "zh-basictypes-maps-h017"
 
 ## 迭代
 %%%
+file := "Iteration"
 tag := "zh-basictypes-maps-h018"
 %%%
 
@@ -640,6 +659,7 @@ tag := "zh-basictypes-maps-h018"
 
 ## 转换
 %%%
+file := "Conversion"
 tag := "zh-basictypes-maps-h019"
 %%%
 
@@ -651,6 +671,7 @@ tag := "zh-basictypes-maps-h019"
 
 ## 非捆绑变体
 %%%
+file := "Unbundled-Variants"
 tag := "zh-basictypes-maps-h020"
 %%%
 
@@ -664,6 +685,7 @@ tag := "zh-basictypes-maps-h020"
 
 # 扩展哈希图
 %%%
+file := "Extensional-Hash-Maps"
 tag := "ExtHashMap"
 %%%
 
@@ -673,6 +695,7 @@ tag := "ExtHashMap"
 
 ## 创建
 %%%
+file := "Creation"
 tag := "zh-basictypes-maps-h022"
 %%%
 
@@ -680,6 +703,7 @@ tag := "zh-basictypes-maps-h022"
 
 ## 特性
 %%%
+file := "Properties"
 tag := "zh-basictypes-maps-h023"
 %%%
 
@@ -689,6 +713,7 @@ tag := "zh-basictypes-maps-h023"
 
 ## 查询
 %%%
+file := "Queries"
 tag := "zh-basictypes-maps-h024"
 %%%
 
@@ -712,6 +737,7 @@ tag := "zh-basictypes-maps-h024"
 
 ## 修改
 %%%
+file := "Modification"
 tag := "zh-basictypes-maps-h025"
 %%%
 
@@ -741,6 +767,7 @@ tag := "zh-basictypes-maps-h025"
 
 ## 迭代
 %%%
+file := "Iteration"
 tag := "zh-basictypes-maps-h026"
 %%%
 
@@ -748,6 +775,7 @@ tag := "zh-basictypes-maps-h026"
 
 ## 转换
 %%%
+file := "Conversion"
 tag := "zh-basictypes-maps-h027"
 %%%
 
@@ -759,6 +787,7 @@ tag := "zh-basictypes-maps-h027"
 
 # 扩展依赖哈希图
 %%%
+file := "Extensional-Dependent-Hash-Maps"
 tag := "ExtDHashMap"
 %%%
 
@@ -768,6 +797,7 @@ tag := "ExtDHashMap"
 
 ## 创建
 %%%
+file := "Creation"
 tag := "zh-basictypes-maps-h029"
 %%%
 
@@ -775,6 +805,7 @@ tag := "zh-basictypes-maps-h029"
 
 ## 特性
 %%%
+file := "Properties"
 tag := "zh-basictypes-maps-h030"
 %%%
 
@@ -785,6 +816,7 @@ tag := "zh-basictypes-maps-h030"
 
 ## 查询
 %%%
+file := "Queries"
 tag := "zh-basictypes-maps-h031"
 %%%
 
@@ -808,6 +840,7 @@ tag := "zh-basictypes-maps-h031"
 
 ## 修改
 %%%
+file := "Modification"
 tag := "zh-basictypes-maps-h032"
 %%%
 
@@ -836,6 +869,7 @@ tag := "zh-basictypes-maps-h032"
 
 ## 迭代
 %%%
+file := "Iteration"
 tag := "zh-basictypes-maps-h033"
 %%%
 
@@ -843,6 +877,7 @@ tag := "zh-basictypes-maps-h033"
 
 ## 转换
 %%%
+file := "Conversion"
 tag := "zh-basictypes-maps-h034"
 %%%
 
@@ -851,6 +886,7 @@ tag := "zh-basictypes-maps-h034"
 
 # 哈希集
 %%%
+file := "Hash-Sets"
 tag := "HashSet"
 %%%
 
@@ -858,6 +894,7 @@ tag := "HashSet"
 
 ## 创建
 %%%
+file := "Creation"
 tag := "zh-basictypes-maps-h036"
 %%%
 
@@ -865,6 +902,7 @@ tag := "zh-basictypes-maps-h036"
 
 ## 特性
 %%%
+file := "Properties"
 tag := "zh-basictypes-maps-h037"
 %%%
 
@@ -887,6 +925,7 @@ $_ ~m $_
 
 ## 查询
 %%%
+file := "Queries"
 tag := "zh-basictypes-maps-h038"
 %%%
 
@@ -904,6 +943,7 @@ tag := "zh-basictypes-maps-h038"
 
 ## 修改
 %%%
+file := "Modification"
 tag := "zh-basictypes-maps-h039"
 %%%
 
@@ -923,6 +963,7 @@ tag := "zh-basictypes-maps-h039"
 
 ## 迭代
 %%%
+file := "Iteration"
 tag := "zh-basictypes-maps-h040"
 %%%
 
@@ -942,6 +983,7 @@ tag := "zh-basictypes-maps-h040"
 
 ## 转换
 %%%
+file := "Conversion"
 tag := "zh-basictypes-maps-h041"
 %%%
 
@@ -955,6 +997,7 @@ tag := "zh-basictypes-maps-h041"
 
 ## 非捆绑变体
 %%%
+file := "Unbundled-Variants"
 tag := "zh-basictypes-maps-h042"
 %%%
 
@@ -969,6 +1012,7 @@ tag := "zh-basictypes-maps-h042"
 
 # 扩展哈希集
 %%%
+file := "Extensional-Hash-Sets"
 tag := "ExtHashSet"
 %%%
 
@@ -976,6 +1020,7 @@ tag := "ExtHashSet"
 
 ## 创建
 %%%
+file := "Creation"
 tag := "zh-basictypes-maps-h044"
 %%%
 
@@ -983,6 +1028,7 @@ tag := "zh-basictypes-maps-h044"
 
 ## 特性
 %%%
+file := "Properties"
 tag := "zh-basictypes-maps-h045"
 %%%
 
@@ -993,6 +1039,7 @@ tag := "zh-basictypes-maps-h045"
 
 ## 查询
 %%%
+file := "Queries"
 tag := "zh-basictypes-maps-h046"
 %%%
 
@@ -1009,6 +1056,7 @@ tag := "zh-basictypes-maps-h046"
 
 ## 修改
 %%%
+file := "Modification"
 tag := "zh-basictypes-maps-h047"
 %%%
 
@@ -1024,6 +1072,7 @@ tag := "zh-basictypes-maps-h047"
 
 ## 转换
 %%%
+file := "Conversion"
 tag := "zh-basictypes-maps-h048"
 %%%
 
@@ -1036,6 +1085,7 @@ tag := "zh-basictypes-maps-h048"
 
 # 基于树的依赖图
 %%%
+file := "Dependent-Tree-Based-Maps"
 tag := "DTreeMap"
 %%%
 
@@ -1045,6 +1095,7 @@ tag := "DTreeMap"
 
 ## 创建
 %%%
+file := "Creation"
 tag := "zh-basictypes-maps-h050"
 %%%
 
@@ -1052,6 +1103,7 @@ tag := "zh-basictypes-maps-h050"
 
 ## 特性
 %%%
+file := "Properties"
 tag := "zh-basictypes-maps-h051"
 %%%
 
@@ -1061,6 +1113,7 @@ tag := "zh-basictypes-maps-h051"
 
 ## 查询
 %%%
+file := "Queries"
 tag := "zh-basictypes-maps-h052"
 %%%
 
@@ -1092,6 +1145,7 @@ tag := "zh-basictypes-maps-h052"
 
 ## 修改
 %%%
+file := "Modification"
 tag := "zh-basictypes-maps-h053"
 %%%
 
@@ -1121,6 +1175,7 @@ tag := "zh-basictypes-maps-h053"
 
 ## 迭代
 %%%
+file := "Iteration"
 tag := "zh-basictypes-maps-h054"
 %%%
 
@@ -1142,6 +1197,7 @@ tag := "zh-basictypes-maps-h054"
 
 ## 转换
 %%%
+file := "Conversion"
 tag := "zh-basictypes-maps-h055"
 %%%
 
@@ -1153,6 +1209,7 @@ tag := "zh-basictypes-maps-h055"
 
 ## 非捆绑变体
 %%%
+file := "Unbundled-Variants"
 tag := "zh-basictypes-maps-h056"
 %%%
 

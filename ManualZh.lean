@@ -40,6 +40,7 @@ set_option maxRecDepth 1024
 
 #doc (Manual) "Lean 语言参考" =>
 %%%
+file := "The-Lean-Language-Reference"
 tag := "lean-language-reference-zh"
 shortContextTitle := "Lean 参考"
 %%%
@@ -110,6 +111,7 @@ Lean 同时也是一门纯*函数式编程语言*，具有基于引用计数的�
 
 # 动态类型
 %%%
+file := "Dynamic-Typing"
 draft := true
 %%%
 
@@ -125,6 +127,7 @@ draft := true
 
 # 标准库
 %%%
+file := "Standard-Library"
 tag := "standard-library"
 draft := true
 %%%
@@ -148,17 +151,17 @@ draft := true
 
 # 索引
 %%%
+file := "the-index"
 number := false
-file := some "the-index"
 %%%
 
 {theIndex}
 
 # 进度
 %%%
+file := "the-index"
 number := false
 draft := true
-file := some "the-index"
 %%%
 
 

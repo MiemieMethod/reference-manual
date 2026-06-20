@@ -19,6 +19,7 @@ open Lean.Elab.Tactic.GuardMsgs.WhitespaceMode
 
 #doc (Manual) "电子匹配" =>
 %%%
+file := "E___matching"
 tag := "e-matching"
 %%%
 
@@ -38,6 +39,7 @@ tag := "e-matching"
 
 # 图案
 %%%
+file := "Patterns"
 tag := "e-matching-patterns"
 %%%
 
@@ -647,6 +649,7 @@ norm
 
 # 检查模式
 %%%
+file := "Inspecting-Patterns"
 tag := "zh-grind-ematching-h002"
 %%%
 
@@ -801,6 +804,7 @@ h₆: [q (#3 + 2), p (#2 + 2)]
 
 # 资源限制
 %%%
+file := "Resource-Limits"
 tag := "grind-limits"
 %%%
 
