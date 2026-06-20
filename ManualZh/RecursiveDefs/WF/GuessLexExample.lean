@@ -44,9 +44,9 @@ Could not find a decreasing measure.
 The basic measures relate at each recursive call as follows:
 (<, ≤, =: relation proved, ? all proofs failed, _: no proof attempted)
            n m l
-1) 35:6-25 = = =
-2) 36:6-23 = < _
-3) 37:6-23 < _ _
+1) 36:6-25 = = =
+2) 37:6-23 = < _
+3) 38:6-23 < _ _
 Please use `termination_by` to specify a decreasing measure.
 ```
 
