@@ -988,6 +988,9 @@ tag := "zh-releases-v4-23-0-h004"
 * [#9850](https://github.com/leanprover/lean4/pull/9850) 添加 `Std.PRange` 表示法的精化器。
 
 ## 编译器
+%%%
+tag := "zh-releases-v4-23-0-h005"
+%%%
 
 * [#8691](https://github.com/leanprover/lean4/pull/8691) 确保使用编译时恢复状态
   新的编译器失败。这对于不可计算的情况尤其重要
@@ -1140,6 +1143,9 @@ tag := "zh-releases-v4-23-0-h004"
   在返回值的生命周期内对元素的有效引用。
 
 ## 漂亮的印刷
+%%%
+tag := "zh-releases-v4-23-0-h006"
+%%%
 
 * [#8391](https://github.com/leanprover/lean4/pull/8391) 为 `Vector.mk` 添加一个解展开器，用于解展开 `Vector.mk
   #[...]_` to `#v[...]`。
@@ -1167,6 +1173,9 @@ tag := "zh-releases-v4-23-0-h004"
   宇宙层级 元变量。
 
 ## 文档
+%%%
+tag := "zh-releases-v4-23-0-h007"
+%%%
 
 * [#9093](https://github.com/leanprover/lean4/pull/9093) 添加了 `ToFormat.toFormat` 缺失的文档字符串。
 
@@ -1175,6 +1184,9 @@ tag := "zh-releases-v4-23-0-h004"
 * [#9593](https://github.com/leanprover/lean4/pull/9593) 显着简化了 `propext` 的文档字符串。
 
 ## 服务器
+%%%
+tag := "zh-releases-v4-23-0-h008"
+%%%
 
 * [#9040](https://github.com/leanprover/lean4/pull/9040) 改进了“转到定义”用户体验，具体来说：
   - 现在，在类型类投影上使用“转到定义”将提取
@@ -1211,6 +1223,9 @@ tag := "zh-releases-v4-23-0-h004"
   并行精化的进展。
 
 ## Lake
+%%%
+tag := "zh-releases-v4-23-0-h009"
+%%%
 
 * [#9053](https://github.com/leanprover/lean4/pull/9053) 更新 Lake 以解析可传递的 `.olean` 文件
   通过 `lean --setup` 的 `modules` 字段导入 Lean。这个
@@ -1290,6 +1305,9 @@ tag := "zh-releases-v4-23-0-h004"
   产生有效的标头。
 
 ## 其他
+%%%
+tag := "zh-releases-v4-23-0-h010"
+%%%
 
 * [#9106](https://github.com/leanprover/lean4/pull/9106) 修复了“未定义符号：lean::mpz::divexact(lean::mpz const&,
   Lean::mpz const&)` when building without `LEAN_USE_GMP`

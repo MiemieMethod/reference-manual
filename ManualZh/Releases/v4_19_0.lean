@@ -1149,6 +1149,9 @@ tag := "zh-releases-v4-19-0-h019"
   简化add-of-append。
 
 ## 编译器
+%%%
+tag := "zh-releases-v4-19-0-h020"
+%%%
 
 * [#7398](https://github.com/leanprover/lean4/pull/7398) 修复了 cce（常见情况消除）过程中的范围界定错误
   旧代码生成器的。该通道将为
@@ -1161,6 +1164,9 @@ tag := "zh-releases-v4-19-0-h019"
   服务器进程，最多减少 60%
 
 ## 漂亮的印刷
+%%%
+tag := "zh-releases-v4-19-0-h021"
+%%%
 
 * [#7589](https://github.com/leanprover/lean4/pull/7589) 更改了打印机的结构实例符号，以便
   如果字段的值定义等于默认值，则字段被省略
@@ -1169,6 +1175,9 @@ tag := "zh-releases-v4-19-0-h019"
   无论如何打印。
 
 ## 文档
+%%%
+tag := "zh-releases-v4-19-0-h022"
+%%%
 
 * [#7198](https://github.com/leanprover/lean4/pull/7198) 使 `Char` 命名空间中的文档字符串遵循
   文档约定。
@@ -1239,6 +1248,9 @@ tag := "zh-releases-v4-19-0-h019"
   API 时尚。
 
 ## 服务器
+%%%
+tag := "zh-releases-v4-19-0-h023"
+%%%
 
 * [#7178](https://github.com/leanprover/lean4/pull/7178) 修复了语言服务器中的竞争条件
   有时会导致它丢弃请求并且永远不会响应它们
@@ -1286,6 +1298,9 @@ tag := "zh-releases-v4-19-0-h019"
   版本不会因文档更改而取消。
 
 ## Lake
+%%%
+tag := "zh-releases-v4-19-0-h024"
+%%%
 
 * [#7185](https://github.com/leanprover/lean4/pull/7185) 重构了 Lake 的构建内部结构，以引入
   包、模块和库之外的目标和方面。刻面，
@@ -1349,6 +1364,9 @@ tag := "zh-releases-v4-19-0-h019"
   类型并修复从关键文字到目标的失败强制。
 
 ## 其他
+%%%
+tag := "zh-releases-v4-19-0-h025"
+%%%
 
 * [#7326](https://github.com/leanprover/lean4/pull/7326) 更新发行说明脚本以更好地缩进 PR
   描述。

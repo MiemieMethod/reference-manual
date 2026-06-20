@@ -706,6 +706,9 @@ tag := "zh-releases-v4-20-0-h006"
   大型结构的条款。
 
 ## 图书馆
+%%%
+tag := "zh-releases-v4-20-0-h007"
+%%%
 
 * [#6081](https://github.com/leanprover/lean4/pull/6081) 将 `inheritEnv` 字段添加到 `IO.Process.SpawnArgs`。如果
   `false`，生成的进程不会继承其父进程的环境。
@@ -935,6 +938,9 @@ tag := "zh-releases-v4-20-0-h006"
 * [#8184](https://github.com/leanprover/lean4/pull/8184) 为所有地图变体添加 `insertMany_append` 引理。
 
 ## 编译器
+%%%
+tag := "zh-releases-v4-20-0-h008"
+%%%
 
 * [#6063](https://github.com/leanprover/lean4/pull/6063) 更新了 LLVM 和 clang 所使用和附带的版本
   Lean 至 19.1.2
@@ -1027,6 +1033,9 @@ tag := "zh-releases-v4-20-0-h006"
   `precompileModules` 会导致“找不到符号”错误。
 
 ## 漂亮的印刷
+%%%
+tag := "zh-releases-v4-20-0-h009"
+%%%
 
 * [#7805](https://github.com/leanprover/lean4/pull/7805) 修改原始自然数文字的漂亮打印；现在
   `pp.explicit` 和 `pp.natLit` 均启用 `nat_lit` 前缀。安
@@ -1063,6 +1072,9 @@ tag := "zh-releases-v4-20-0-h006"
   名称。
 
 ## 文档
+%%%
+tag := "zh-releases-v4-20-0-h010"
+%%%
 
 * [#7947](https://github.com/leanprover/lean4/pull/7947) 添加了一些文档字符串来阐明
   `Lean.mkFreshId`、`Lean.Core.mkFreshUserName`、
@@ -1072,6 +1084,9 @@ tag := "zh-releases-v4-20-0-h006"
 * [#8018](https://github.com/leanprover/lean4/pull/8018) 将 RArray 文档字符串调整为 #8014 中的新现实。
 
 ## 服务器
+%%%
+tag := "zh-releases-v4-20-0-h011"
+%%%
 
 * [#7610](https://github.com/leanprover/lean4/pull/7610) 调整 `TryThis` 小部件以在小部件消息中也起作用
   而不仅仅是作为面板小部件。它还添加了额外的
@@ -1089,6 +1104,9 @@ tag := "zh-releases-v4-20-0-h006"
   在#7902 中意外损坏。
 
 ## Lake
+%%%
+tag := "zh-releases-v4-20-0-h012"
+%%%
 
 * [#7796](https://github.com/leanprover/lean4/pull/7796) 将 Lean 的共享库路径移动到工作区之前
   Lake 的增强环境（例如 `lake env`）。
@@ -1146,6 +1164,9 @@ tag := "zh-releases-v4-20-0-h006"
   Lake CLI 以及 Lean 和 TOML 配置文件中。
 
 ## 其他
+%%%
+tag := "zh-releases-v4-20-0-h013"
+%%%
 
 * [#7785](https://github.com/leanprover/lean4/pull/7785) 为发布过程添加了进一步的自动化，处理
   标记并自动创建新的 `bump/v4.X.0` 分支，以及

@@ -7,9 +7,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 MANUAL = ROOT / "ManualZh"
 
-HEADING_RE = re.compile(r"^(#{1,6})\s+.+$")
+HEADING_RE = re.compile(r"^\s{0,3}(#{1,6})\s+.+$")
 FENCE_RE = re.compile(r"^\s*(`{3,}|~{3,})")
-MARKDOWN_BLOCK_RE = re.compile(r"^\s*(`{4,}|~{4,})markdown\b")
+MARKDOWN_BLOCK_RE = re.compile(r"^\s*(`{3,}|~{3,})markdown\b")
 GENERATED_TAG_RE = re.compile(r'^tag := "zh-[^"]+"$')
 
 
@@ -79,7 +79,7 @@ def add_tags(path: Path) -> int:
                 out.append(line)
                 continue
 
-            if not in_metadata and not in_markdown_inner_fence and HEADING_RE.match(line):
+            if not in_metadata and HEADING_RE.match(line):
                 heading_index += 1
                 out.append(line)
                 if next_nonblank(lines, i + 1) != "%%%":

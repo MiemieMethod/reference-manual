@@ -872,6 +872,9 @@ tag := "zh-releases-v4-26-0-h014"
   定理，作为测试工作流程的一部分。更多内容敬请关注。
 
 ## 编译器
+%%%
+tag := "zh-releases-v4-26-0-h015"
+%%%
 
 * [#10625](https://github.com/leanprover/lean4/pull/10625) 通过擦除 `IO.RealWorld` 实现零成本 `BaseIO`
   来自参数列表和结构的参数。这是一个**重大突破
@@ -941,11 +944,17 @@ tag := "zh-releases-v4-26-0-h014"
   Verso 文档字符串元数据。
 
 ## 文档
+%%%
+tag := "zh-releases-v4-26-0-h016"
+%%%
 
 * [#11179](https://github.com/leanprover/lean4/pull/11179) 删除了大多数情况，其中错误消息解释说它是
   “可能是由于元变量”，给出了更多解释和提示。
 
 ## 服务器
+%%%
+tag := "zh-releases-v4-26-0-h017"
+%%%
 
 * [#10787](https://github.com/leanprover/lean4/pull/10787) 改进了服务器日志记录机制以允许过滤日志
   通过 LSP 方法输出。
@@ -955,6 +964,9 @@ tag := "zh-releases-v4-26-0-h014"
   服务器在悬停弹出窗口中呈现术语。
 
 ## Lake
+%%%
+tag := "zh-releases-v4-26-0-h018"
+%%%
 
 * [#10861](https://github.com/leanprover/lean4/pull/10861) 修复了 `input_dir` 跟踪，以便也递归通过
   子目录。 `input_dir` 的 `filter` 将应用于每个
@@ -993,6 +1005,9 @@ tag := "zh-releases-v4-26-0-h014"
   根）。
 
 ## 其他
+%%%
+tag := "zh-releases-v4-26-0-h019"
+%%%
 
 * [#11074](https://github.com/leanprover/lean4/pull/11074) 添加了 `.claude/claude.md`，包含基本开发说明
   让 Claude Code 在此存储库中运行。
