@@ -64,7 +64,7 @@ Type 类非常灵活。
   {name}`Decidable` 类型类允许 Lean 自动找到命题的决策过程。
   这用作 {keywordOf termIfThenElse}`if` 表达式的基础，该表达式可以在任何可判定的命题上分支。
 
-虽然普通的多态定义只是期望使用任意参数进行实例化，但使用类型类重载的运算符将使用 {deftech (key := "instances")}_instances_ 进行实例化，{deftech}_instances_ 定义某些特定参数集的重载操作。
+虽然普通的多态定义只是期望使用任意参数进行实例化，但使用类型类重载的运算符将使用 {deftech (key := "instances")}_instances_ 进行实例化，{tech (key := "instances")}[instances] 定义某些特定参数集的重载操作。
 这些 {deftech}[instance-implicit] 参数在方括号中指示。
 在调用站点，Lean 或者 {deftech (key := "synthesis")}_synthesizes_ {index}[实例合成] {index (subterm := "of type class instances")}[合成]来自可用候选的合适实例，或者发出错误信号。
 因为实例本身可能具有实例参数，所以该搜索过程可以是递归的并且产生组合来自各种实例的代码的最终复合实例值。

@@ -416,7 +416,7 @@ example [Monad m] [MonadQuotation m] : m Syntax := `(term|2 + 2)
 tag := "quasiquotation"
 %%%
 
-{deftech}_Quasiquotation_ 是一种可能包含 {deftech}_antiquotations_ 的引用形式，{deftech (key := "splices")}_antiquotations_ 是未引用的引用区域，而是计算结果语法的表达式。
+{deftech}_Quasiquotation_ 是一种可能包含 {deftech}_antiquotations_ 的引用形式，{tech (key := "antiquotations")}[反引用] 是未引用的引用区域，而是计算结果语法的表达式。
 准引用本质上是一个模板；外部引用区域提供了一个固定的框架，始终产生相同的外部语法，而反引号产生最终语法中不同的部分。
 Lean 中的所有引用都是准引用，因此不需要特殊语法来区分准引用和其他引用。
 引用过程不会将宏作用域添加到通过反引号插入的标识符，因为这些标识符要么来自另一个引用（在这种情况下它们已经具有宏作用域），要么来自宏的输入（在这种情况下它们不应该具有宏作用域，因为它们不是由宏引入的）。
@@ -585,10 +585,10 @@ end
 tag := "splices"
 %%%
 
-除了通过反引号包括其他语法之外，准引号还可以包括 {deftech (key := "splice suffix")}_splices_。
+除了通过反引号包括其他语法之外，准引号还可以包括 {deftech (key := "splices")}_splices_。
 拼接表示数组的元素按顺序插入。
 重复的元素可以包括分隔符，例如列表或数组元素之间的逗号。
-拼接可以由带有 {deftech (key := "extended splices")}_splice 后缀_的普通反引号组成，或者它们可以是 {deftech (key := "token antiquotations")}_扩展拼接_，提供额外的重复结构。
+拼接可以由带有 {deftech (key := "splice suffix")}_splice 后缀_的普通反引号组成，或者它们可以是 {deftech (key := "extended splices")}_扩展拼接_，提供额外的重复结构。
 
 剪接后缀由星号或有效原子后跟星号 (`*`) 组成。
 后缀可以跟在任何标识符或术语反引号后面。
