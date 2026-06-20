@@ -85,6 +85,43 @@ cat > "$TUT_REMOTE_CONFIG" <<EOF
 }
 EOF
 
+VERSO_SOURCES_BACKUP=""
+
+restore_verso_sources() {
+  if [ -n "$VERSO_SOURCES_BACKUP" ] && [ -f "$VERSO_SOURCES_BACKUP" ]; then
+    cp "$VERSO_SOURCES_BACKUP" verso-sources.json
+    rm -f "$VERSO_SOURCES_BACKUP"
+    VERSO_SOURCES_BACKUP=""
+  fi
+}
+
+use_chinese_verso_sources() {
+  VERSO_SOURCES_BACKUP="$(mktemp)"
+  cp verso-sources.json "$VERSO_SOURCES_BACKUP"
+  trap restore_verso_sources EXIT
+  cat > verso-sources.json <<EOF
+{
+  "version": 0,
+  "sources": {
+    "reference": {
+      "root": "",
+      "shortName": "ref",
+      "longName": "Lean Language Reference",
+      "updateFrequency": "always",
+      "sources": [{ "local": "$REF_SOURCE/xref.json" }]
+    },
+    "tutorials": {
+      "root": "/tutorials",
+      "shortName": "tutorials",
+      "longName": "Lean Tutorials",
+      "updateFrequency": "always",
+      "sources": [{ "local": "_tutorial-out/xref.json" }]
+    }
+  }
+}
+EOF
+}
+
 echo "Running generate-manual-zh with args --depth 2 --verbose --delay-html-multi multi-zh.json --remote-config $REF_REMOTE_CONFIG --with-word-count words-zh.txt $MANUAL_OUTPUT_FLAG $DRAFT_FLAG"
 lake --quiet exe generate-manual-zh --depth 2 --verbose --delay-html-multi multi-zh.json --remote-config "$REF_REMOTE_CONFIG" --with-word-count "words-zh.txt" $MANUAL_OUTPUT_FLAG $DRAFT_FLAG
 
@@ -94,8 +131,11 @@ lake --quiet exe generate-tutorials --verbose --delay tutorials-zh.json --remote
 echo "Running generate-manual-zh with args --verbose --resume-html-multi multi-zh.json --remote-config $REF_REMOTE_CONFIG $MANUAL_OUTPUT_FLAG $DRAFT_FLAG"
 lake --quiet exe generate-manual-zh --verbose --resume-html-multi multi-zh.json --remote-config "$REF_REMOTE_CONFIG" $MANUAL_OUTPUT_FLAG $DRAFT_FLAG
 
+use_chinese_verso_sources
 echo "Running generate-tutorials with args --verbose --resume tutorials-zh.json --remote-config $TUT_REMOTE_CONFIG"
 lake --quiet exe generate-tutorials --verbose --resume tutorials-zh.json --remote-config "$TUT_REMOTE_CONFIG"
+restore_verso_sources
+trap - EXIT
 
 mkdir -p "$OUTPUT"
 cp -r "$REF_SOURCE"/* "$OUTPUT/"
