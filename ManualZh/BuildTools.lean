@@ -51,11 +51,11 @@ Lean 工具链被设计为独立的，大多数命令行用户永远不需要显
 
 : `leanchecker`
 
-  该工具可通过 Lean内核重播 {tech}[`.olean` 文件] 中的精化结果，从而进一步确保所有条款均已正确检查。
+  该工具可通过 Lean内核重播 {tech (key := ".olean files")}[`.olean` 文件] 中的精化结果，从而进一步确保所有条款均已正确检查。
 :::
 
 除了这些构建工具之外，工具链还包含构建 Lean 代码所需的文件。
-这包括源代码、{tech}[`.olean` 文件]、编译的库、C 头文件和编译的 Lean 运行时系统。
+这包括源代码、{tech (key := ".olean files")}[`.olean` 文件]、编译的库、C 头文件和编译的 Lean 运行时系统。
 它们还包括 Lean 附带的策略使用的外部校样自动化工具，例如用于 {tactic}`bv_decide` 的 `cadical`。
 
 

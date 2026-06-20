@@ -65,7 +65,7 @@ Lean 标准库包含各种类似元组的类型。
 :::paragraph
 该表中的一些潜在行在库中不存在：
 
- * 不存在依赖对，其中第一个投影是命题，因为 {tech}[证明无关性] 使这变得毫无意义。
+ * 不存在依赖对，其中第一个投影是命题，因为 {tech (key := "proof irrelevance")}[证明无关性] 使这变得毫无意义。
 
  * 不存在将类型与命题组合在一起的非依赖对，因为这种情况在实践中很少见：将数据与_不相关_证明进行分组并不常见。
 :::
@@ -88,7 +88,7 @@ section
 variable {α : Type u} {β : Type v} {γ : Type w} {x : α} {y : β} {z : γ}
 ```
 
-类型 {lean}`α × β` 是 {lean}`Prod α β` 的 {tech}[符号]，包含有序对，其中第一项是 {lean}`α`，第二项是 {lean}`β`。
+类型 {lean}`α × β` 是 {lean}`Prod α β` 的 {tech (key := "notation")}[符号]，包含有序对，其中第一项是 {lean}`α`，第二项是 {lean}`β`。
 这些对写在括号中，并用逗号分隔。
 较大的元组表示为嵌套元组，因此 {lean}`α × β × γ` 相当于 {lean}`α × (β × γ)`，{lean}`(x, y, z)` 相当于 {lean}`(x, (y, z))`。
 
@@ -173,7 +173,7 @@ tag := "sigma-types"
 %%%
 
 
-{deftech}_Dependentpairs_，也称为 {deftech}_dependent sums_ 或 {deftech}_Σ-types_，{see "Σ-types"}[Sigma types]{index}[Σ-types] 是其中第二项的类型可能取决于第一项的_value_的对。
+{deftech (key := "Dependent pairs")}_Dependentpairs_，也称为 {deftech}_dependent sums_ 或 {deftech}_Σ-types_，{see "Σ-types"}[Sigma types]{index}[Σ-types] 是其中第二项的类型可能取决于第一项的_value_的对。
 它们与存在量词 {TODO}[xref] 和 {name}`Subtype` 密切相关。
 与存在量化的陈述不同，依赖对位于 {lean}`Type` 宇宙中，并且是计算相关的数据。
 与子类型不同，第二项也是计算相关的数据。
@@ -262,7 +262,7 @@ variable {α : Type} (x : α)
     ```
 
     相当于 {lean}`Option α`，其中 {lean  (type := "Option α")}`none` 是 {lean  (type := "Σ (b : Bool), if b then Unit else α")}`⟨true, ()⟩`，{lean  (type := "Option α")}`some x` 是 {lean  (type := "Σ (b : Bool), if b then Unit else α")}`⟨false, x⟩`。
-    以这种方式使用依赖对并不常见，因为直接定义特殊用途的 {tech}[归纳类型] 通常要容易得多。
+    以这种方式使用依赖对并不常见，因为直接定义特殊用途的 {tech (key := "inductive type")}[归纳类型] 通常要容易得多。
     :::
 ::::
 

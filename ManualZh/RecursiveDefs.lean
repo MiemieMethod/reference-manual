@@ -26,10 +26,10 @@ tag := "recursive-definitions"
 %%%
 
 允许任意递归函数定义会使 Lean 的逻辑不一致。
-一般递归使得编写循环证明成为可能：“{tech}[命题] $`P` 为真，因为命题 $`P` 为真”。
+一般递归使得编写循环证明成为可能：“{tech (key := "proposition")}[命题] $`P` 为真，因为命题 $`P` 为真”。
 在证明之外，可以将无限循环分配为类型 {name}`Empty`，它可以与 {keywordOf Lean.Parser.Term.nomatch}`nomatch` 或 {name Empty.rec}`Empty.rec` 一起使用来证明任何定理。
 
-完全禁止递归函数定义将使 Lean 的用处大大降低：{tech}[归纳类型] 是定义谓词和数据的关键，并且它们具有递归结构。
+完全禁止递归函数定义将使 Lean 的用处大大降低：{tech (key := "inductive types")}[归纳类型] 是定义谓词和数据的关键，并且它们具有递归结构。
 此外，大多数有用的递归函数不会威胁到健全性，并且无限循环通常表明定义中的错误而不是有意的行为。
 Lean 要求安全地定义每个递归函数，而不是禁止递归函数。
 在详细精化递归定义时，Lean精化器还提供了所定义的函数是安全的理由。{margin}[精化概述中有关 {ref "elaboration-results"}[精化器的输出]的部分将上下文背景化精化的精化器整体上下文中的递归定义。]
@@ -38,7 +38,7 @@ Lean 要求安全地定义每个递归函数，而不是禁止递归函数。
 
 : 结构递归函数
 
-  结构递归函数采用一个参数，以便该函数仅对所述参数的严格子组件进行递归调用。{margin}[严格来说，类型为 {tech}[索引族] 的参数与其索引分组在一起，整个集合被视为一个单元。]
+  结构递归函数采用一个参数，以便该函数仅对所述参数的严格子组件进行递归调用。{margin}[严格来说，类型为 {tech (key := "indexed families")}[索引族] 的参数与其索引分组在一起，整个集合被视为一个单元。]
   精化器将递归转换为参数的 {tech}[recursor] 的使用。
   因为递归器的每次类型正确使用都保证避免无限回归，所以这个翻译是函数终止的证据。
   通过递归器定义的函数的应用程序在定义上等于递归的结果，并且通常在内核内相对有效。
@@ -47,7 +47,7 @@ Lean 要求安全地定义每个递归函数，而不是禁止递归函数。
 
   很多函数也很难转换为结构递归；例如，函数可能会终止，因为数组索引和数组大小之间的差异随着索引的增加而减小，但 {name}`Nat.rec` 不适用，因为增加的索引是函数的参数。
   此处，终止的 {tech}[measure] 在每次递归调用时都会减少，但该度量本身并不是函数的参数。
-  在这些情况下，{tech}[良基递归] 可用于定义函数。
+  在这些情况下，{tech (key := "well-founded recursion")}[良基递归] 可用于定义函数。
   良基递归是一种将具有递减测度的递归函数系统地转换为递归函数的技术，并证明每个测度递减序列最终都会以最小值终止。
   通过良基递归定义的函数的应用程序不一定在定义上等于它们的返回值，但这种等式可以作为命题来证明。
   即使存在定义等式，这些函数的计算速度通常也很慢，因为它们需要减少通常非常大的证明项。
@@ -57,7 +57,7 @@ Lean 要求安全地定义每个递归函数，而不是禁止递归函数。
   函数的定义可以理解为指定其行为的方程。
   在某些情况下，即使递归函数不一定对所有输入都终止，也可以证明满足此规范的函数的存在。
   该策略甚至适用于函数定义不一定针对所有输入终止的某些情况。
-  这些偏函数作为这些方程的固定点出现，称为 {tech}_部分固定点_。
+  这些偏函数作为这些方程的固定点出现，称为 {tech (key := "partial fixpoints")}_部分固定点_。
 
   特别是，任何返回类型位于某些 monad 中的函数（例如 {name}`Option`）都可以使用此策略来定义。
   Lean 为这些一元函数生成附加的部分正确性定理。
@@ -81,7 +81,7 @@ Lean 要求安全地定义每个递归函数，而不是禁止递归函数。
 : 不安全的递归定义
 
   不安全定义没有部分定义的任何限制。
-  他们可以自由地使用一般递归，并且可以使用 Lean 的功能来打破有关其方程理论的假设，例如用于转换的原语 ({name}`unsafeCast`)、检查指针相等性 ({name}`ptrAddrUnsafe`) 以及观察 {tech}[引用计数] ({name}`isExclusiveUnsafe`)。
+  他们可以自由地使用一般递归，并且可以使用 Lean 的功能来打破有关其方程理论的假设，例如用于转换的原语 ({name}`unsafeCast`)、检查指针相等性 ({name}`ptrAddrUnsafe`) 以及观察 {tech (key := "reference counts")}[引用计数] ({name}`isExclusiveUnsafe`)。
   但是，任何引用不安全定义的声明本身都必须标记为 {keywordOf Lean.Parser.Command.declaration}`unsafe`，以明确何时无法保证逻辑健全性。
   不安全操作可用于将其他函数的实现替换为编译代码中更有效的变体，而内核仍使用原始定义。
   被替换的函数可能是不透明的，这导致函数名称在逻辑中具有琐碎的方程理论，或者它可能是普通函数，在这种情况下该函数在逻辑中使用。
@@ -112,7 +112,7 @@ tag := "mutual-syntax"
 %%%
 
 正如递归定义是在定义主体中提及所定义的名称一样，{deftech}_mutually recursive_ 定义是可以递归或互相提及的定义。
-要在多个声明之间使用相互递归，必须将它们放置在 {deftech}[相互块] 中。
+要在多个声明之间使用相互递归，必须将它们放置在 {deftech (key := "mutual block")}[相互块] 中。
 
 :::syntax command (title := "Mutual Declaration Blocks")
 相互递归的一般语法是：
@@ -206,7 +206,7 @@ tag := "partial-functions"
 {keyword}`partial` 修饰符只能应用于函数定义。
 不需要部分函数来证明终止，并且 Lean 不会尝试这样做。
 这些函数是“部分”的，因为它们不一定指定从域的每个元素到共域元素的映射，因为它们可能无法终止域的某些或所有元素。
-它们被详细精化为包含显式递归的 {tech}[预定义]，并使用内核进行类型检查；然而，它们随后被逻辑视为不透明常量。
+它们被详细精化为包含显式递归的 {tech (key := "pre-definitions")}[预定义]，并使用内核进行类型检查；然而，它们随后被逻辑视为不透明常量。
 
 函数的返回类型必须是可居住的；这确保了稳健性。
 否则，部分函数可能具有 {lean}`Unit → Empty` 等类型。
@@ -221,7 +221,7 @@ tag := "partial-functions"
 即使递归定义不是内核的 类型论 的一部分，内核仍可用于检查定义主体是否具有正确的类型。
 这与其他函数式语言的工作方式相同：通过在定义已与其类型关联的环境中检查主体来对递归的使用进行类型检查。
 确保进行类型检查后，主体将被丢弃，内核仅保留不透明常量。
-与所有 Lean 函数一样，编译器从详细的 {tech}[预定义] 生成代码。
+与所有 Lean 函数一样，编译器从详细的 {tech (key := "pre-definition")}[预定义] 生成代码。
 
 即使内核未展开部分函数，​​仍然可以推理调用它们的其他函数，只要该推理不依赖于部分函数本身的实现即可。
 
@@ -386,23 +386,23 @@ htmlSplit := .never
 
 可还原性有四个级别：
 
-: {deftech}[不可约]
+: {deftech (key := "Irreducible")}[不可约]
 
   不可约定义在精化期间根本没有展开。
   通过应用 {attr}`irreducible` 属性可以使定义变得不可约。
 
-: {deftech}[半还原]
+: {deftech (key := "Semireducible")}[半还原]
 
-  半简化定义不会通过潜在昂贵的自动化（例如类型类实例合成或 {tactic}`simp`）展开，但它们会在检查 定义等价 和解析 {tech}[广义字段表示法] 时展开。
-  {keywordOf Lean.Parser.Command.declaration}`def` 命令通常创建半可简化定义，除非使用属性指定了不同的可简化级别；但是，默认情况下，使用 {tech}[良基递归] 的定义是不可约的。
+  半简化定义不会通过潜在昂贵的自动化（例如类型类实例合成或 {tactic}`simp`）展开，但它们会在检查 定义等价 和解析 {tech (key := "generalized field notation")}[广义字段表示法] 时展开。
+  {keywordOf Lean.Parser.Command.declaration}`def` 命令通常创建半可简化定义，除非使用属性指定了不同的可简化级别；但是，默认情况下，使用 {tech (key := "well-founded recursion")}[良基递归] 的定义是不可约的。
 
-: {deftech}[隐式可约]
+: {deftech (key := "Implicit reducible")}[隐式可约]
 
-  隐式可约定义在类型类 {tech (key := "synthesis")}[实例综​​合] 期间以及检查函数隐式参数的 {tech}[定义等价] 期间展开。
-  这包括普通 {tech}[隐式] 参数、{tech}[实例隐式] 参数和 {tech}[严格隐式] 参数。
+  隐式可约定义在类型类 {tech (key := "synthesis")}[实例综​​合] 期间以及检查函数隐式参数的 {tech (key := "definitional equality")}[定义等价] 期间展开。
+  这包括普通 {tech (key := "implicit")}[隐式] 参数、{tech (key := "instance implicit")}[实例隐式] 参数和 {tech (key := "strict implicit")}[严格隐式] 参数。
   所有类型类实例都应该是实例可约简的或可约简的，就像出现在隐式参数类型中并且旨在约简的定义一样。
 
-: {deftech}[可还原]
+: {deftech (key := "Reducible")}[可还原]
 
   可简化的定义基本上随需随处展开。
   Type 类实例综合、定义等价 检查以及语言的其余部分将定义本质上视为缩写。
@@ -463,7 +463,7 @@ instance : ToString Clause := inferInstanceAs (ToString String)
 
 
 :::example "Reducibility and Generalized Field Notation"
-{tech}[通用字段表示法] 在搜索匹配名称时展开可简化和半可简化声明。
+{tech (key := "Generalized field notation")}[通用字段表示法] 在搜索匹配名称时展开可简化和半可简化声明。
 给定 {name}`List` 的半简化别名 {name}`Sequence`：
 ```lean
 def Sequence := List
@@ -579,7 +579,7 @@ def notZero (n : Nat) [Nonzero n] : n ≠ 0 := Nonzero.non_zero
 #check notZero (plus 2 2)
 ```
 还可以找到隐式可约定义 {name}`sum`。
-这是因为类型 {lean}`Nonzero (sum 2 2)` 是 {name}`notZero` 的 {tech}[实例隐式] 参数的类型。
+这是因为类型 {lean}`Nonzero (sum 2 2)` 是 {name}`notZero` 的 {tech (key := "instance implicit")}[实例隐式] 参数的类型。
 特别是，{name}`sum` 被简化为 {name}`Nat.add`，它本身是隐式可约的，因此类型被简化为 {lean}`Nonzero 4`：
 ```lean
 #check notZero (sum 2 2)

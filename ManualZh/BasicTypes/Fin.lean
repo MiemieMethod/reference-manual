@@ -23,7 +23,7 @@ section
 variable (n : Nat)
 ```
 
-对于任何 {tech}[自然数] {lean}`n`，{lean}`Fin n` 是包含严格小于 {lean}`n` 的所有自然数的类型。
+对于任何 {tech (key := "natural number")}[自然数] {lean}`n`，{lean}`Fin n` 是包含严格小于 {lean}`n` 的所有自然数的类型。
 换句话说，{lean}`Fin n` 恰好具有 {lean}`n` 元素。
 它可用于表示列表或数组中的有效索引，也可用作规范的 {lean}`n` 元素类型。
 
@@ -47,7 +47,7 @@ tag := "zh-basictypes-fin-h001"
 tag := "zh-basictypes-fin-h002"
 %%%
 
-有一个从 {lean}`Fin n` 到 {lean}`Nat` 的 {tech}[强制]，它丢弃数字小于界限的证明。
+有一个从 {lean}`Fin n` 到 {lean}`Nat` 的 {tech (key := "coercion")}[强制]，它丢弃数字小于界限的证明。
 特别地，这个强制正是投影{name}`Fin.val`。
 这样做的结果之一是 {name}`Fin.val` 的使用显示为强制，而不是证明状态中的显式投影。
 :::example "Coercing from {name}`Fin` to {name}`Nat`"

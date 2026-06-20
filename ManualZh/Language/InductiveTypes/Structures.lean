@@ -34,7 +34,7 @@ $[deriving $[$_],*]?
 声明一个新的结构类型。
 :::
 
-{deftech}[结构] 是仅具有单个构造函数且没有索引的归纳类型。
+{deftech (key := "Structures")}[结构] 是仅具有单个构造函数且没有索引的归纳类型。
 作为这些限制的交换，Lean 为结构生成代码，提供了许多便利：为每个字段生成投影函数，可以使用基于字段名称而不是位置参数的附加构造函数语法，可以使用类似的语法来替换某些命名字段的值，并且结构可以扩展其他结构。
 就像其他归纳类型一样，结构可以是递归的；他们在严格积极性方面受到同样的限制。
 结构不会给Lean增加任何表现力；它们的所有功能都是通过代码生成来实现的。
@@ -57,7 +57,7 @@ tag := "structure-params"
 %%%
 
 就像普通的归纳类型声明一样，结构声明的标头包含一个可以指定参数和结果 Universe 的签名。
-结构不能定义 {tech}[索引族]。
+结构不能定义 {tech (key := "indexed families")}[索引族]。
 
 # 领域
 %%%
@@ -125,7 +125,7 @@ MyStructure : Type
 ::::
 
 
-对于每个字段，都会生成一个 {deftech}[投影函数]，用于从基础类型的构造函数中提取字段的值。
+对于每个字段，都会生成一个 {deftech (key := "projection function")}[投影函数]，用于从基础类型的构造函数中提取字段的值。
 该函数位于结构名称的命名空间中。
 结构字段投影由精化器专门处理（如 {ref "structure-inheritance"}[有关结构继承的部分]中所述），它执行查找命名空间之外的额外步骤。
 当字段类型依赖于先前字段时，依赖投影函数的类型根据早期投影来编写，而不是显式的模式匹配。
@@ -203,7 +203,7 @@ import Std
 结构 {lean}`NatStringBimap` 保持自然数和字符串之间的有限双射。
 它由一对映射组成，每个键都作为值在另一个映射中仅出现一次。
 由于构造函数是私有的，因此定义模块外部的代码无法构造新实例，并且必须使用提供的 API，它维护类型的不变量。
-此外，显式提供默认构造函数名称可以将 {tech}[文档注释] 附加到构造函数。
+此外，显式提供默认构造函数名称可以将 {tech (key := "documentation comment")}[文档注释] 附加到构造函数。
 
 ```lean
 structure NatStringBimap where
@@ -232,8 +232,8 @@ def NatStringBimap.insert
 ```
 :::
 
-由于结构由单构造函数归纳类型表示，因此可以使用 {tech}[匿名构造函数语法] 调用或匹配其构造函数。
-此外，可以使用 {deftech}_结构实例_表示法来构造或匹配结构，其中包括字段的名称及其值。
+由于结构由单构造函数归纳类型表示，因此可以使用 {tech (key := "anonymous constructor syntax")}[匿名构造函数语法] 调用或匹配其构造函数。
+此外，可以使用 {deftech (key := "structure instance")}_结构实例_表示法来构造或匹配结构，其中包括字段的名称及其值。
 
 ::::syntax term (title := "Structure Instances")
 
@@ -269,9 +269,9 @@ $f:ident
 在模式上下文中，字段名称映射到与相应投影匹配的模式，并且字段缩写绑定作为字段名称的模式变量。
 默认参数仍然存在于模式中；如果模式没有为具有默认值的字段指定值，则该模式仅与默认值匹配。
 
-当字段定义包含 {keywordOf Lean.Parser.Term.stuctInstField}`private` 修饰符时，该值将放置在当前模块的 {tech}[私有范围] 中，即使结构值本身位于公共范围中也是如此。
+当字段定义包含 {keywordOf Lean.Parser.Term.stuctInstField}`private` 修饰符时，该值将放置在当前模块的 {tech (key := "private scope")}[私有范围] 中，即使结构值本身位于公共范围中也是如此。
 该值包含在公共但未公开的帮助器定义中。
-这对于类型类的实例特别有用，因为默认情况下，类型类的公共 {tech}[实例] 中 {tech}[方法] 的实现是 {tech}[暴露]。
+这对于类型类的实例特别有用，因为默认情况下，类型类的公共 {tech (key := "methods")}[实例] 中 {tech (key := "instances")}[方法] 的实现是 {tech (key := "exposed")}[暴露]。
 此修饰符允许将它们设为私有。
 
 可选的类型注释允许在未另行确定的上下文中指定结构类型。
@@ -300,7 +300,7 @@ false
 
 ::::example "Private Field Values"
 :::leanModules
-即使结构的定义为 {tech}[exposeed]，也可以使用字段级 {keywordOf Lean.Parser.Term.stuctInstField}`private` 修饰符隐藏各个字段。
+即使结构的定义为 {tech (key := "exposed")}[exposeed]，也可以使用字段级 {keywordOf Lean.Parser.Term.stuctInstField}`private` 修饰符隐藏各个字段。
 在此模块中，{name}`x` 的公开公共定义可以使用私有定义 {name}`secret`，因为 {name}`imaginary` 字段的值未公开：
 ```leanModule (moduleName := Main)
 module
@@ -347,7 +347,7 @@ Note: A private declaration `State.toString` (from the current module) exists bu
 ```
 :::
 :::leanModules
-将 {name}`toString` 的实现标记为 {keyword}`private` 会将其从模块的 {tech}[公共范围] 中删除，从而使其能够访问私有函数：
+将 {name}`toString` 的实现标记为 {keyword}`private` 会将其从模块的 {tech (key := "public scope")}[公共范围] 中删除，从而使其能够访问私有函数：
 ```leanModule (moduleName := Main) (name := tooExposed)
 module
 
@@ -427,7 +427,7 @@ tag := "structure-inheritance"
 生成的结构类型具有所有父结构类型的所有字段。
 如果父结构类型具有重叠的字段名称，则所有重叠的字段名称必须具有相同的类型。
 
-生成的结构具有影响字段值的 {deftech}_字段解析顺序_。
+生成的结构具有影响字段值的 {deftech (key := "field resolution order")}_字段解析顺序_。
 如果可能，此解析顺序是结构父级的 [C3 线性化](https://en.wikipedia.org/wiki/C3_linearization)。
 本质上，字段解析顺序应该是整个父集的总排序，以便每个 {keywordOf Lean.Parser.Command.declaration (parser:=«structure»)}`extends` 列表都是有序的。
 当没有 C3 线性化时，仍然会使用启发式来查找阶数。
@@ -527,7 +527,7 @@ deriving Repr
 父结构类型与其子结构类型之间不存在子类型关系。
 即使结构体 `B` 扩展结构体 `A`，需要 `A` 的函数也不会接受 `B`。
 但是，会生成将结构转换为其每个父结构的转换函数。
-这些转换函数称为 {deftech}_parentprojections_。
+这些转换函数称为 {deftech (key := "parent projections")}_parentprojections_。
 父投影位于子结构的命名空间中，其名称是父结构的名称，前面带有 `to`。
 
 ::: example "Structure type inheritance with overlapping fields"
@@ -581,7 +581,7 @@ example : toAcademicWork = Textbook.toAcademicWork := by
 可以使用生成的结构的投影，就好像它的字段只是父字段的并集一样。
 当使用字段时，Lean精化器自动生成适当的投影。
 同样，基于字段的初始化和结构更新符号隐藏了继承编码的细节。
-但是，当使用构造函数的名称、使用 {tech}[匿名构造函数语法] 或通过索引而不是名称引用字段时，编码是可见的。
+但是，当使用构造函数的名称、使用 {tech (key := "anonymous constructor syntax")}[匿名构造函数语法] 或通过索引而不是名称引用字段时，编码是可见的。
 
 :::: example "Field Indices and Structure Inheritance"
 
@@ -707,7 +707,7 @@ structure F extends A, A' where
 ```
 
 
-{keywordOf Lean.Parser.Command.print}`#print` 命令显示有关结构类型的最重要信息，包括 {tech}[父投影]、所有字段及其默认值、构造函数和 {tech}[字段解析顺序]。
+{keywordOf Lean.Parser.Command.print}`#print` 命令显示有关结构类型的最重要信息，包括 {tech (key := "parent projections")}[父投影]、所有字段及其默认值、构造函数和 {tech (key := "field resolution order")}[字段解析顺序]。
 当处理包含继承菱形的深层层次结构时，此信息可能非常有用。
 
 ::: example "{keyword}`#print` and Structure Types"

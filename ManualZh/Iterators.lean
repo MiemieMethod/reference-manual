@@ -117,7 +117,7 @@ structure Elem : Type u where
 def Coll.iter (c : Coll) := (#[].iter : Iter Elem)
 ```
 每个有意义的内置集合都可以进行迭代。
-换句话说，集合库包括迭代器 {tech}[生产者]。
+换句话说，集合库包括迭代器 {tech (key := "producers")}[生产者]。
 按照约定，集合类型 {name}`Coll` 提供函数 {name}`Coll.iter`，该函数返回集合元素上的迭代器。
 示例包括 {name}`List.iter`、{name}`Array.iter` 和 {name}`TreeMap.iter`。
 此外，其他内置类型（例如范围）支持使用相同约定的迭代。
@@ -236,10 +236,10 @@ tag := "iterator-plausibility"
 这种关系的存在是因为大多数迭代器都保持其内部状态的不变性并以可预测的方式产生值。
 例如，数组迭代器跟踪数组和数组中的当前索引。
 步进数组迭代器会导致迭代器遍历相同的底层数组；当索引足够小时，它会产生一个值，否则会产生一个值。
-迭代器状态中的 {deftech}_plausible Steps_ 是通过 {name Iterator.IsPlausibleStep}`IsPlausibleStep` 的迭代器实现与其相关的那些步骤。
+迭代器状态中的 {deftech (key := "plausible steps")}_plausible Steps_ 是通过 {name Iterator.IsPlausibleStep}`IsPlausibleStep` 的迭代器实现与其相关的那些步骤。
 在逻辑级别跟踪合理性使得推断单子迭代器的终止行为变得可行。
 
-{name}`Iter.Step` 和 {name}`IterM.Step` 都是根据 {name}`PlausibleIterStep` 定义的；因此，这两种类型都可以与 {tech}[前导点符号] 一起用于其命名空间。
+{name}`Iter.Step` 和 {name}`IterM.Step` 都是根据 {name}`PlausibleIterStep` 定义的；因此，这两种类型都可以与 {tech (key := "leading dot notation")}[前导点符号] 一起用于其命名空间。
 可以使用三个 {ref "match_pattern-functions"}[匹配模式函数] {name}`PlausibleIterStep.yield`、{name}`PlausibleIterStep.skip` 和 {name}`PlausibleIterStep.done` 来分析 {name}`Iter.Step` 或 {name}`IterM.Step`。
 这些函数将底层 {name}`IterStep` 中的信息与周围的证明对象配对。
 
@@ -671,7 +671,7 @@ tag := "zh-iterators-h006"
 tag := "zh-iterators-h007"
 %%%
 
-为了使迭代器的 {tech}[宇宙层级] 更加灵活，在 {name}`Iterator.step` 的结果周围应用了包装类型 {name Std.Shrink}`Shrink`。
+为了使迭代器的 {tech (key := "universe levels")}[宇宙层级] 更加灵活，在 {name}`Iterator.step` 的结果周围应用了包装类型 {name Std.Shrink}`Shrink`。
 该类型目前是占位符。
 当完整实施可用时，它的存在是为了减少重大变更的范围。
 
@@ -709,7 +709,7 @@ tag := "zh-iterators-h009"
 : 将其转换为顺序数据结构
 
   函数 {name}`Iter.toList`、{name}`Iter.toArray` 及其一元等效函数 {name}`IterM.toList` 和 {name}`IterM.toArray` 按顺序构造包含迭代器中的值的列表或数组。
-  只有 {tech}[有限迭代器] 可以转换为顺序数据结构。
+  只有 {tech (key := "finite iterators")}[有限迭代器] 可以转换为顺序数据结构。
 
 : {keywordOf Lean.Parser.Term.doFor}`for` 循环
 
@@ -977,7 +977,7 @@ tag := "zh-iterators-h014"
 tag := "zh-iterators-h015"
 %%%
 
-迭代器组合器的文档通常包括 {deftech}_大理石图_，显示底层迭代器返回的元素与组合器迭代器返回的元素之间的关系。
+迭代器组合器的文档通常包括 {deftech (key := "marble diagrams")}_大理石图_，显示底层迭代器返回的元素与组合器迭代器返回的元素之间的关系。
 大理石图提供示例，而不是完整规格。
 这些图由多行组成。
 每行显示迭代器输出的示例，其中 `-` 表示 {name PlausibleIterStep.skip}`skip`，术语表示 {name PlausibleIterStep.yield}`yield` 返回的值，`⊥` 表示迭代结束。
@@ -1155,7 +1155,7 @@ tag := "zh-iterators-h019"
 在实践中，许多这样的定理已经被注册为 {tactic}`simp` 引理。
 
 :::paragraph
-引理有一个非常可预测的命名系统，许多引理都在 {tech}[默认 simp 集]中。
+引理有一个非常可预测的命名系统，许多引理都在 {tech (key := "default simp set")}[默认 simp 集]中。
 一些最重要的包括：
 
  * 诸如 {name}`Iter.all_toList`、{name}`Iter.any_toList` 和 {name}`Iter.foldl_toList` 之类的消费者引理将列表引入为模型。
@@ -1185,7 +1185,7 @@ example (l : Array Nat) :
   simp
 ```
 
-事实上，因为大多数所需的引理都在 {tech}[默认 simp 集]中，所以证明可以非常短：
+事实上，因为大多数所需的引理都在 {tech (key := "default simp set")}[默认 simp 集]中，所以证明可以非常短：
 ```lean
 example (l : Array Nat) :
     (l.iter.map (· * 2)).all (· % 2 = 0) := by

@@ -364,7 +364,7 @@ tag := "tactic-ref-inductive-elim"
 %%%
 
 消除策略使用 {ref "recursors"}[recursors] 和自动派生的 {ref "recursor-elaboration-helpers"}[`casesOn` helper] 来实现归纳和案例分割。
-由这些策略产生的 {tech}[子目标] 由消除器的小前提类型确定，并且使用具有 {keyword}`using` 选项的不同消除器会产生不同的子目标。
+由这些策略产生的 {tech (key := "subgoals")}[子目标] 由消除器的小前提类型确定，并且使用具有 {keyword}`using` 选项的不同消除器会产生不同的子目标。
 
 :::::leanSection
 ```lean -show
@@ -393,7 +393,7 @@ isLt✝ : val✝ < n + 1
 ⊢ 0 + ⟨val✝, isLt✝⟩ = ⟨val✝, isLt✝⟩
 ```
 
-这是因为 {name}`Fin` 是具有单个非递归构造函数的 {tech}[结构]。
+这是因为 {name}`Fin` 是具有单个非递归构造函数的 {tech (key := "structure")}[结构]。
 它的递归器对于这个构造函数有一个小前提：
 ```signature
 Fin.rec.{u} {n : Nat} {motive : Fin n → Sort u}
@@ -444,7 +444,7 @@ Fin.induction.{u} {n : Nat}
 ::::
 :::::
 
-{deftech}[自定义消除器] 可以使用 {attr}`induction_eliminator` 和 {attr}`cases_eliminator` 属性进行注册。
+{deftech (key := "Custom eliminators")}[自定义消除器] 可以使用 {attr}`induction_eliminator` 和 {attr}`cases_eliminator` 属性进行注册。
 消除器是为其显式目标（即消除器函数的显式参数而不是隐式参数）注册的，并且当 {tactic}`induction` 或 {tactic}`cases` 用于这些类型的目标时将应用消除器。
 当存在时，自定义消除器优先于递归器。
 将 {option}`tactic.customEliminators` 设置为 {lean}`false` 将禁用自定义消除器。
@@ -585,11 +585,11 @@ tag := "tactic-ref-cbv"
 %%%
 
 {tactic}`cbv`策略模拟按值调用评估以减少术语。
-在 {deftech}[按值调用计算] 中，函数的参数在函数调用减少之前会减少为值。
+在 {deftech (key := "call-by-value evaluation")}[按值调用计算] 中，函数的参数在函数调用减少之前会减少为值。
 粗略地说，_values_ 要么是函数，要么是构造函数对值的应用；函数体不需要是一个值，函数本身也可以算作一个值。
 此评估策略与 Lean 编译器生成的代码的执行顺序相匹配，这使其非常适合为在运行时良好运行而编写的代码。
 
-{tactic}`cbv` 使用 {tech}[方程引理] 展开定义，并应用自动证明 {tech}[匹配函数] 的类似定理，在每一步生成 命题等价 证明。
+{tactic}`cbv` 使用 {tech (key := "equational lemmas")}[方程引理] 展开定义，并应用自动证明 {tech (key := "matcher functions")}[匹配函数] 的类似定理，在每一步生成 命题等价 证明。
 因为展开是命题性的而不是定义性的，所以 {tactic}`cbv` 可以减少通过 {ref "well-founded-recursion"}[良基递归] 或 {ref "partial-fixpoint"}[部分固定点] 定义的函数。
 一般来说，这些函数在定义上并不等于它们的展开，因此内核的定义缩减不会减少它们的递归调用。
 
@@ -603,7 +603,7 @@ tag := "tactic-ref-cbv"
 在减少持续应用时，{tactic}`cbv` 按顺序尝试以下策略：
 
  1. 自定义{attr}`cbv_eval`重写规则
- 2. {tech}[方程引理]（例如，`foo.eq_1`、`foo.eq_2`）
+ 2. {tech (key := "Equational lemmas")}[方程引理]（例如，`foo.eq_1`、`foo.eq_2`）
  3. 展开方程
  4. 内核匹配器还原
 
@@ -706,8 +706,8 @@ import Std.Data.DTreeMap
 import Std.Data.TreeMap
 ```
 
-函数 {name}`wfLength` 是 {name}`List.length` 的一个版本，它是通过 {tech}[良基递归] 而不是 {ref "structural-recursion"}[结构递归] 定义的。
-结果是 {tech}[不可约]：
+函数 {name}`wfLength` 是 {name}`List.length` 的一个版本，它是通过 {tech (key := "well-founded recursion")}[良基递归] 而不是 {ref "structural-recursion"}[结构递归] 定义的。
+结果是 {tech (key := "irreducible")}[不可约]：
 ```lean
 def wfLength : List Nat → Nat
   | [] => 0
@@ -755,7 +755,7 @@ tag := "zh-tactics-reference-h023"
 :::
 
 :::example "`decide_cbv`"
-{tactic}`decide_cbv`策略通过 {tech}[按值调用评估] 减少 {name}`Decidable` 实例来关闭可判定命题的目标：
+{tactic}`decide_cbv`策略通过 {tech (key := "call-by-value evaluation")}[按值调用评估] 减少 {name}`Decidable` 实例来关闭可判定命题的目标：
 ```lean
 example : 2 + 3 = 5 ∧ 10 < 20 := by
   decide_cbv
@@ -828,7 +828,7 @@ tag := "zh-tactics-reference-h024"
 %%%
 
 :::syntax attr (title := "Custom `cbv` Rewrite Rules")
-{attr}`cbv_eval` 属性将定理注册为 {tactic}`cbv` 在尝试 {tech}[方程引理] 之前应用的自定义重写规则。
+{attr}`cbv_eval` 属性将定理注册为 {tactic}`cbv` 在尝试 {tech (key := "equational lemmas")}[方程引理] 之前应用的自定义重写规则。
 该定理必须是无条件等式；一侧（通常是左侧）必须是常数的应用。
 
 ```grammar
@@ -875,7 +875,7 @@ example : slowReverse [1, 2, 3, 4, 5] = [5, 4, 3, 2, 1] := by
 :::
 
 :::syntax attr (title := "Opaque Declarations for `cbv`")
-{attr}`cbv_opaque` 属性阻止 {tactic}`cbv` 使用其 {tech}[方程引理] 展开声明或展开定理。
+{attr}`cbv_opaque` 属性阻止 {tactic}`cbv` 使用其 {tech (key := "equational lemmas")}[方程引理] 展开声明或展开定理。
 但是，{attr}`cbv_eval` 重写规则始终优先于 {attr}`cbv_opaque`：如果声明存在匹配的 {attr}`cbv_eval` 规则，则即使声明标记为 {attr}`cbv_opaque`，也会应用该规则。
 这允许用一组受控的评估规则替换默认的展开行为。
 
@@ -915,7 +915,7 @@ tag := "zh-tactics-reference-h025"
 %%%
 
 :::paragraph
-{deftech}[cbv 简化过程] ({tactic}`cbv` simproc) 是用户定义的元程序，{tactic}`cbv` 在与给定模式匹配的子表达式上调用它。
+{deftech (key := "cbv simplification procedure")}[cbv 简化过程] ({tactic}`cbv` simproc) 是用户定义的元程序，{tactic}`cbv` 在与给定模式匹配的子表达式上调用它。
 虽然 {attr}`cbv_eval` 规则仅限于静态相等，但 {tactic}`cbv` simprocs 可以执行任意计算来决定如何重写子表达式。
 常见用例包括定义用于根据文字值或短路控制流评估函数的过程。
 

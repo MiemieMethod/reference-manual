@@ -17,11 +17,11 @@ tag := "files"
 htmlSplit := .never
 %%%
 
-Lean 中的最小编译单元是单个 {tech}[源文件]。
+Lean 中的最小编译单元是单个 {tech (key := "source file")}[源文件]。
 源文件可以根据文件名导入其他源文件。
 换句话说，文件的名称和文件夹结构在 Lean 代码中很重要。
 
-每个源文件都有一个 {deftech}_导入名称_，该名称源自其文件名和调用 Lean 的方式的组合：Lean 有一组_根目录_，它希望在其中查找代码，源文件的导入名称是从根目录到文件名的目录名称，带点 (`.`)散布并删除 `.lean`。
+每个源文件都有一个 {deftech (key := "import name")}_导入名称_，该名称源自其文件名和调用 Lean 的方式的组合：Lean 有一组_根目录_，它希望在其中查找代码，源文件的导入名称是从根目录到文件名的目录名称，带点 (`.`)散布并删除 `.lean`。
 例如，如果以 `Projects/MyLib/src` 作为根调用 Lean，则文件 `Projects/MyLib/src/Literature/Novel/SciFi.lean` 可以作为 `Literature.Novel.SciFi` 导入。
 
 ::: TODO
@@ -33,7 +33,7 @@ Lean 中的最小编译单元是单个 {tech}[源文件]。
 tag := "module-encoding"
 %%%
 
-Lean {deftech}[源文件] 是以 UTF-8 编码的 Unicode 文本文件。 {TODO}[弄清楚BOM和Lean的状态]
+Lean {deftech (key := "source files")}[源文件] 是以 UTF-8 编码的 Unicode 文本文件。 {TODO}[弄清楚BOM和Lean的状态]
 行可以以换行符结束（`"\n"`、Unicode `'LINE FEED (LF)' (U+000A)`），也可以以换页符和换行符序列结束（`"\r\n"`、Unicode `'CARRIAGE RETURN (CR)' (U+000D)` 后跟 `'LINE FEED (LF)' (U+000A)`）。
 但是，Lean 在解析或比较文件时会标准化行结尾，因此所有文件都会被比较，就好像它们的所有行结尾都是 `"\n"` 一样。
 ::: TODO
@@ -47,7 +47,7 @@ tag := "module-syntax"
 
 
 Lean的具体语法是{ref "language-extension"}[extensible]。
-在像 Lean 这样的语言中，不可能一劳永逸地完全描述语法，因为除了新常量或 {tech}[归纳类型] 之外，库还可能定义语法。
+在像 Lean 这样的语言中，不可能一劳永逸地完全描述语法，因为除了新常量或 {tech (key := "inductive types")}[归纳类型] 之外，库还可能定义语法。
 这里不是完整地描述语言，而是描述整体框架，而每种语言构造的语法都记录在其所属的部分中。
 
 ## 空白
@@ -89,9 +89,9 @@ tag := "keywords-and-identifiers"
 %%%
 
 
-{tech}[标识符] 由一个或多个标识符组件组成，这些组件之间用 `'.'`.{index}[标识符] 分隔
+{tech (key := "identifier")}[标识符] 由一个或多个标识符组件组成，这些组件之间用 `'.'`.{index}[标识符] 分隔
 
-{deftech}[标识符组件] 由字母或类似字母的字符或下划线 (`'_'`) 组成，后跟零个或多个标识符连续字符。
+{deftech (key := "Identifier components")}[标识符组件] 由字母或类似字母的字符或下划线 (`'_'`) 组成，后跟零个或多个标识符连续字符。
 字母为大写或小写的英文字母，类字母字符包括一系列非英语字母文字，包括在 Lean 中广泛使用的希腊字母、科普特文字、Unicode 类字母符号块的成员，其中包含许多双线字符（包括 `ℕ` 和 `ℤ`）和缩写、Latin-1 补充字母（`×` 和 `÷` 除外）和 Latin Extended-A 块。
 标识符连续字符由字母、类似字母的字符、下划线（`'_'`）、感叹号（`!`）、问号（`?`）、下标和单引号（`'`）组成。
 作为例外，下划线本身并不是有效的标识符。
@@ -184,9 +184,9 @@ info: "Failure @0 (⟨1, 0⟩): expected token\nFinal stack:\n  <missing>\nRemai
 一些潜在的标识符组件可以是保留关键字。
 保留关键字的具体集合取决于活动语法扩展集合，这可能取决于导入文件集合和当前打开的 {TODO}[xref/deftech for namespace] 命名空间； Lean 无法作为整体进行枚举。
 这些关键字还必须用 guillemets 引用，才能在大多数语法上下文中用作标识符组件。
-关键字可以用作没有 guillemets 的标识符的上下文（例如归纳类型中的构造函数名称）为 {deftech}_rawidentifier_contexts.{index (subterm:="raw")}[identifier]
+关键字可以用作没有 guillemets 的标识符的上下文（例如归纳类型中的构造函数名称）为 {deftech (key := "raw identifier")}_rawidentifier_contexts.{index (subterm:="raw")}[identifier]
 
-包含一个或多个 `'.'` 字符并因此由多个标识符组件组成的标识符称为 {deftech}[分层标识符]。
+包含一个或多个 `'.'` 字符并因此由多个标识符组件组成的标识符称为 {deftech (key := "hierarchical identifiers")}[分层标识符]。
 分层标识符用于表示导入名称和命名空间中的名称。
 
 # 结构
@@ -216,7 +216,7 @@ tag := "module-headers"
 它们的声明在当前模块中可见。
 
 :::syntax Lean.Parser.Module.header -open (title := "Module Headers")
-模块头由可选的 {keywordOf Lean.Parser.Module.header}`module` 关键字组成，后跟一系列 {deftech}[`import` 语句]：
+模块头由可选的 {keywordOf Lean.Parser.Module.header}`module` 关键字组成，后跟一系列 {deftech (key := "import statements")}[`import` 语句]：
 ```grammar
 $[module]?
 $i:import*
@@ -240,7 +240,7 @@ prelude
 :::
 
 ::::syntax Lean.Parser.Module.import (title := "Imports")
-所有 {tech}[源文件] 都可以使用普通导入：
+所有 {tech (key := "source files")}[源文件] 都可以使用普通导入：
 ```grammar
 import $mod:ident
 ```
@@ -251,7 +251,7 @@ import $mod:ident
 源文件名不一定对应于命名空间。
 源文件可以将名称添加到任何命名空间，并且导入源文件对当前打开的命名空间集没有影响。
 
-通过将名称中的点 (`'.'`) 替换为目录分隔符并附加 `.lean` 或 `.olean`，{tech}[导入名称] 将转换为文件名。
+通过将名称中的点 (`'.'`) 替换为目录分隔符并附加 `.lean` 或 `.olean`，{tech (key := "import name")}[导入名称] 将转换为文件名。
 Lean 在其包含路径中搜索相应的中间构建产品或可导入模块文件。
 
 {tech}[Modules] 可以使用以下导入语法：
@@ -270,11 +270,11 @@ $[public]? $[meta]? import $[all]? $mod:ident
 
 : {keyword}`meta`
 
-  导入模块的内容在当前模块的 {tech}[元阶段] 中可用。
+  导入模块的内容在当前模块的 {tech (key := "meta phase")}[元阶段] 中可用。
 
 : {keyword}`all`
 
-  导入模块的私有作用域被添加到当前模块的 {tech}[私有作用域]。
+  导入模块的私有作用域被添加到当前模块的 {tech (key := "private scope")}[私有作用域]。
 :::
 ::::
 
@@ -299,7 +299,7 @@ tag := "module-scopes"
 %%%
 
 :::paragraph
-{deftech}[模块] 是一个选择区分公共信息和私人信息的源文件。
+{deftech (key := "module")}[模块] 是一个选择区分公共信息和私人信息的源文件。
 Lean 确保私人信息可以更改，而不会影响仅导入其公共信息的客户端。
 该学科带来了许多好处：
 
@@ -329,7 +329,7 @@ Lean 确保私人信息可以更改，而不会影响仅导入其公共信息的
 :::
 
 :::paragraph
-模块包含两个单独的范围：{deftech}_public 范围_ 包含在导入模块的模块中可见的信息，而 {deftech}_private 范围_ 包含通常仅在模块内可见的信息。
+模块包含两个单独的范围：{deftech (key := "public scope")}_public 范围_ 包含在导入模块的模块中可见的信息，而 {deftech (key := "private scope")}_private 范围_ 包含通常仅在模块内可见的信息。
 私人或公开信息的一些示例包括：
 
 : 名称
@@ -339,20 +339,20 @@ Lean 确保私人信息可以更改，而不会影响仅导入其公共信息的
 
 : 定义
 
-  公共定义可能是 {deftech}[exposeed]，也可能不是。
+  公共定义可能是 {deftech (key := "exposed")}[exposeed]，也可能不是。
   如果未公开公共定义，则无法在只能访问公共范围的上下文中展开它。
   相反，客户必须依赖公共范围内提供的有关定义的定理。
 :::
 
 每个声明都有默认的可见性规则。
-一般来说，默认情况下所有名称都是私有的，除非在 {tech}[public 部分] 中定义。
+一般来说，默认情况下所有名称都是私有的，除非在 {tech (key := "public section")}[public 部分] 中定义。
 即使是公共名称通常也将定义主体放在私有范围内，甚至公开定义中的证明也保持私有。
 每个声明命令的具体可见性规则与声明本身一起记录。
 
 ::::example "Private and Public Definitions"
 :::leanModules +error
 模块 {module}`Greet.Create` 定义函数 {name}`greeting`。
-由于没有可见性修饰符，因此该函数默认为 {tech}[私有范围]：
+由于没有可见性修饰符，因此该函数默认为 {tech (key := "private scope")}[私有范围]：
 ```leanModule (moduleName := Greet.Create)
 module
 def greeting (name : String) : String :=
@@ -394,7 +394,7 @@ module
 public def greeting (name : String) : String :=
   s!"Hello, {name}"
 ```
-尽管 {name}`greeting` 的定义在模块 {module}`Greet` 中可见，但它无法在证明中展开，因为定义的主体位于 {module}`Greet` 的 {tech}[私有范围] 中：
+尽管 {name}`greeting` 的定义在模块 {module}`Greet` 中可见，但它无法在证明中展开，因为定义的主体位于 {module}`Greet` 的 {tech (key := "private scope")}[私有范围] 中：
 ```leanModule (moduleName := Greet) (name := nonExp)
 module
 import Greet.Create
@@ -639,13 +639,13 @@ tag := "meta-phase"
 
 Lean 中的定义会产生 类型论 中专为形式推理而设计的表示形式以及专为执行而设计的编译表示形式。
 这种编译表示用于生成机器代码，但也可以使用解释器直接执行。
-在 {tech -normalize}[精化] 期间运行的代码（例如 {ref "tactics"}[策略] 或 {ref "macros"}[macros]）是定义的编译形式。
+在 {tech (key := "elaboration") -normalize}[精化] 期间运行的代码（例如 {ref "tactics"}[策略] 或 {ref "macros"}[macros]）是定义的编译形式。
 如果此编译表示发生更改，则由它创建的任何代码可能不再是最新的，并且必须重新运行。
 由于编译器执行重要的优化，因此对函数的传递依赖链中的任何定义进行更改原则上可能会使其编译表示无效。
 这意味着模块导出的元程序比普通定义产生更强的耦合。
 此外，元程序在普通术语的构造期间运行；因此，它们在使用前必须被完全定义和编译。
 毕竟，没有函数体的函数定义无法运行。
-元程序运行的时间称为 {deftech}_元编程阶段_，通常简称为 {deftech}_元阶段_。
+元程序运行的时间称为 {deftech (key := "metaprogramming phase")}_元编程阶段_，通常简称为 {deftech (key := "meta phase")}_元阶段_。
 
 正如它们区分公共信息和私有信息一样，模块还区分元阶段可用的代码和普通代码。
 任何用作编译时执行入口点的声明都必须使用 {keywordOf Lean.Parser.Module.import}`meta` 修饰符进行标记，这表明该声明可用作元程序。
@@ -674,7 +674,7 @@ partial def revArrays : Syntax → m Term
 macro "rev!" e:term : term => do
   revArrays e
 ```
-该错误消息表明 {name}`revArrays` 无法从宏中使用，因为它未在模块的 {tech}[元编程阶段] 中定义：
+该错误消息表明 {name}`revArrays` 无法从宏中使用，因为它未在模块的 {tech (key := "metaprogramming phase")}[元编程阶段] 中定义：
 ```leanOutput nonMeta
 Invalid `meta` definition `_aux___macroRules_termRev!__1`, `revArrays` not marked `meta`
 ```
@@ -789,7 +789,7 @@ public def colors := toPalindrome #["red", "green", "blue"]
 例外情况是导入定义仅用于本地元程序时，例如使用 {keywordOf Parser.Command.syntax}`local syntax`、{keywordOf Parser.Command.macro}`local macro` 或 {keywordOf Parser.Command.elab}`local elab` 声明的定义。
 
 作为指导原则，通常最好保持 {keywordOf Lean.Parser.Command.declModifiers}`meta` 注释的数量尽可能小。
-这可以避免将可重用的声明锁定到 {tech}[元阶段] 中，并有助于构建系统避免更多的重建。
+这可以避免将可重用的声明锁定到 {tech (key := "meta phase")}[元阶段] 中，并有助于构建系统避免更多的重建。
 因此，当元程序依赖于本身不需要标记为 {keywordOf Lean.Parser.Command.declModifiers}`meta` 的其他代码时，该其他代码应放置在单独的模块中并且不标记为 {keywordOf Lean.Parser.Command.declModifiers}`meta`。
 只有实际注册元程序的最终模块才需要帮助程序处于元阶段。
 该模块应使用 {keywordOf Lean.Parser.Module.import}`public meta import` 导入这些帮助程序，然后使用内置语法（如 {keywordOf Parser.Command.elab}`elab`、使用 {keywordOf Lean.Parser.Command.declaration}`meta def` 或使用 {keywordOf Lean.Parser.Command.section}`meta section`）定义其元程序。
@@ -800,8 +800,8 @@ public def colors := toPalindrome #["red", "green", "blue"]
 tag := "module-contents"
 %%%
 
-当 Lean 详细说明源文件时，结果是 {tech}[环境]。
-该环境包括常量 {tech}[归纳类型]、{tech}[定理]、{tech (key := "type class")}[类型类]、{tech}[实例]以及文件中声明的所有其他内容，以及跟踪 {tech}[simp 集]等各种数据的边表，命名空间别名和 {tech}[文档注释]。
+当 Lean 详细说明源文件时，结果是 {tech (key := "environment")}[环境]。
+该环境包括常量 {tech (key := "inductive types")}[归纳类型]、{tech (key := "theorems")}[定理]、{tech (key := "type class")}[类型类]、{tech (key := "instances")}[实例]以及文件中声明的所有其他内容，以及跟踪 {tech (key := "simp sets")}[simp 集]等各种数据的边表，命名空间别名和 {tech (key := "documentation comments")}[文档注释]。
 如果文件包含模块，那么环境还会跟踪哪些信息是公共的和私有的，以及定义可用的阶段。
 
 当源文件由 Lean 处理时，命令将内容添加到环境中。
@@ -820,7 +820,7 @@ tag := "zh-sourcefiles-h012"
 
 : 未知的常量错误
 
-  检查是否正在 {tech}[公共范围] 中访问私有定义。
+  检查是否正在 {tech (key := "public scope")}[公共范围] 中访问私有定义。
   如果是这样，也可以通过将当前声明设为私有，或者使用字段上的 {keywordOf Lean.Parser.Term.structInstFieldDef}`private` 修饰符或 {keywordOf Lean.Parser.Term.by}`by` 作为证明将引用放入私有范围来解决问题。
 
 : 定义等价 错误，尤其是在移植之后

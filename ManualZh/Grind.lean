@@ -72,9 +72,9 @@ open Lean Lean.Grind Lean.Meta.Grind
 :::paragraph
 合作的引擎有：
 
-* {tech}[同余闭包],
-* {tech}[约束传播],
-* {tech}[E 匹配],
+* {tech (key := "congruence closure")}[同余闭包],
+* {tech (key := "constraint propagation")}[约束传播],
+* {tech (key := "E‑matching")}[E 匹配],
 * 指导{ref "grind-split"}[案例分析]，以及
 * 一套卫星理论求解器，包括 {ref "cutsat"}[线性整数算术] 和 {ref "grind-ring"}[交换环]。
 
@@ -95,7 +95,7 @@ Lean 的标准库已经用 `@[grind]` 属性进行了注释，因此会自动发
 
 :::example "Congruence Closure" (open := true)
 
-使用 {tech}[同余闭包]，该证明立即成功，它发现了相等项的集合。
+使用 {tech (key := "congruence closure")}[同余闭包]，该证明立即成功，它发现了相等项的集合。
 
 ```lean
 example (a b c : Nat) (h₁ : a = b) (h₂ : b = c) :
@@ -192,11 +192,11 @@ tag := "zh-grind-h002"
 tag := "zh-grind-h003"
 %%%
 
-{tech}[可简化]术语定义由{tactic}`grind` 热切地展开。
+{tech (key := "Reducible")}[可简化]术语定义由{tactic}`grind` 热切地展开。
 这可以实现更高效的 定义等价 比较和索引。
 
 :::example "Reducibility and Congruence Closure"
-{name}`one` 的定义不是 {tech}[可约化]：
+{name}`one` 的定义不是 {tech (key := "reducible")}[可约化]：
 ```lean
 def one := 1
 ```
@@ -233,7 +233,7 @@ example : two = 2 := by grind
 :::example "E-matching and Unfolding Abbreviations"
 当向定理添加 {attr}`grind` 注释时，将根据定理语句生成 E 匹配模式。
 这些模式决定了定理何时被实例化。
-定理 {name}`one_eq_1` 提到了 {tech}[半可约] 定义 {name}`one`，结果模式也是 {name}`one`：
+定理 {name}`one_eq_1` 提到了 {tech (key := "semireducible")}[半可约] 定义 {name}`one`，结果模式也是 {name}`one`：
 ```lean (name := one_eq_1)
 def one := 1
 
@@ -258,7 +258,7 @@ two_eq_2: [@OfNat.ofNat `[Nat] `[2] `[instOfNatNat 2]]
 :::
 
 :::example "Recursive Abbreviations and `grind`"
-使用 {attr}`grind` 属性为递归缩写的 {tech}[等式引理] 添加电子匹配模式不会产生递归缩写的有用模式。
+使用 {attr}`grind` 属性为递归缩写的 {tech (key := "equational lemmas")}[等式引理] 添加电子匹配模式不会产生递归缩写的有用模式。
 斐波那契函数定义中的 {attrs}`@[grind?]` 属性会产生三种模式，每种模式对应于三种可能性之一：
 ```lean (name := fib1) -keep
 @[grind?]

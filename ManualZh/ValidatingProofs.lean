@@ -30,7 +30,7 @@ htmlSplit := .never
 本节讨论如何验证以 Lean 表示的证明。
 
 根据情况，可能会建议采取额外的步骤来排除误导性的证据。
-特别是，无论是处理 {tech}[诚实] 证明尝试（仅需要防止良性错误）还是处理可能积极试图误导的 {tech}[恶意] 证明尝试，这一点都非常重要。
+特别是，无论是处理 {tech (key := "honest")}[诚实] 证明尝试（仅需要防止良性错误）还是处理可能积极试图误导的 {tech (key := "malicious")}[恶意] 证明尝试，这一点都非常重要。
 
 特别是，当目标是创建有效证明时，我们使用 {deftech}_honest_。
 这允许证明和元代码（策略、属性、命令等）中存在错误和错误，但不允许明显仅用于规避系统的代码（例如使用 {option}`debug.skipKernelTC`）。
@@ -73,7 +73,7 @@ tag := "zh-validatingproofs-h003"
 tag := "zh-validatingproofs-h004"
 %%%
 
-如果人们相信正式定理陈述与其预期的非正式含义相对应，并相信导入库的作者是 {tech}[诚实]，他们检查了其库中的定理是否表达了其预期的非正式含义，并且没有声明和使用不健全的公理，则此检查是有意义的。
+如果人们相信正式定理陈述与其预期的非正式含义相对应，并相信导入库的作者是 {tech (key := "honest")}[诚实]，他们检查了其库中的定理是否表达了其预期的非正式含义，并且没有声明和使用不健全的公理，则此检查是有意义的。
 
 ## 保护
 %%%
@@ -85,7 +85,7 @@ tag := "zh-validatingproofs-h005"
 
 * 当前定理的不完整证明（缺少目标，策略错误）
 * {lean}`sorry` *在当前定理中*的显式使用
-* {tech}[诚实] 元程序和策略中的错误
+* {tech (key := "Honest")}[诚实] 元程序和策略中的错误
 * 仍在后台检查证据
 :::
 
@@ -139,7 +139,7 @@ tag := "zh-validatingproofs-h009"
 tag := "zh-validatingproofs-h010"
 %%%
 
-如果人们相信正式定理陈述与其预期的非正式含义相对应，并且相信导入库的作者是 {tech}[诚实]，则此检查是有意义的。
+如果人们相信正式定理陈述与其预期的非正式含义相对应，并且相信导入库的作者是 {tech (key := "honest")}[诚实]，则此检查是有意义的。
 
 ## 保护
 %%%
@@ -159,7 +159,7 @@ tag := "zh-validatingproofs-h011"
 tag := "validating-lean4checker"
 %%%
 
-有一小类错误和一些不诚实的证明方式，可以通过在构建项目时重新检查存储在 {tech}[`.olean` 文件] 中的证明来捕获。
+有一小类错误和一些不诚实的证明方式，可以通过在构建项目时重新检查存储在 {tech (key := ".olean files")}[`.olean` 文件] 中的证明来捕获。
 
 ## 指示
 %%%
@@ -173,15 +173,15 @@ tag := "zh-validatingproofs-h013"
 tag := "zh-validatingproofs-h014"
 %%%
 
-`lean4checker` 工具读取 `lean` 在构建期间存储的声明和证明（{tech}[`.olean` 文件]），并通过内核重播它们。
-它相信 {tech}[`.olean` 文件] 结构正确。
+`lean4checker` 工具读取 `lean` 在构建期间存储的声明和证明（{tech (key := ".olean files")}[`.olean` 文件]），并通过内核重播它们。
+它相信 {tech (key := ".olean files")}[`.olean` 文件] 结构正确。
 
 ## 相信
 %%%
 tag := "zh-validatingproofs-h015"
 %%%
 
-如果人们相信正式定理陈述与其预期的非正式含义相对应，并且相信导入库的作者不是非常狡猾的 {tech}[恶意]，并且既不会损害用户的系统，也不会使用 Lean 的可扩展性来改变定理陈述的解释，则此检查是有意义的。
+如果人们相信正式定理陈述与其预期的非正式含义相对应，并且相信导入库的作者不是非常狡猾的 {tech (key := "malicious")}[恶意]，并且既不会损害用户的系统，也不会使用 Lean 的可扩展性来改变定理陈述的解释，则此检查是有意义的。
 
 ## 保护
 %%%
@@ -200,10 +200,10 @@ tag := "zh-validatingproofs-h016"
 tag := "zh-validatingproofs-h017"
 %%%
 
-由于 `lean4checker` 读取 {tech}[`.olean` 文件] 而不验证其格式，因此此检查很容易导致攻击者制作无效的 `.olean` 文件（例如无效指针、字符串中的无效数据）。
+由于 `lean4checker` 读取 {tech (key := ".olean files")}[`.olean` 文件] 而不验证其格式，因此此检查很容易导致攻击者制作无效的 `.olean` 文件（例如无效指针、字符串中的无效数据）。
 
 Lean策略和其他元代码在运行时可以执行任意操作。
-导入由确定的 {tech}[恶意] 攻击者创建的库并在没有进一步保护的情况下构建它们可能会危及用户的系统，之后无法进行进一步的有意义的检查。
+导入由确定的 {tech (key := "malicious")}[恶意] 攻击者创建的库并在没有进一步保护的情况下构建它们可能会危及用户的系统，之后无法进行进一步的有意义的检查。
 
 我们建议将 `lean4checker` 作为 CI 的一部分运行，以提供针对 Lean 声明处理中的错误的额外保护，并作为对简单攻击的威慑。
 [lean-action](https://github.com/leanprover/lean-action) GitHub 操作通过设置 `lean4checker: true` 提供此功能。
@@ -215,7 +215,7 @@ Lean策略和其他元代码在运行时可以执行任意操作。
 tag := "validating-comparator"
 %%%
 
-为了防止严重的 {tech}[恶意] 证明损害 Lean 解释定理陈述或用户系统的方式，需要采取额外的步骤。
+为了防止严重的 {tech (key := "malicious")}[恶意] 证明损害 Lean 解释定理陈述或用户系统的方式，需要采取额外的步骤。
 这应该只适用于高风险场景（证明市场、高奖励证明竞争、不统一的人工智能）。
 
 ## 指示
@@ -230,7 +230,7 @@ tag := "zh-validatingproofs-h019"
 tag := "zh-validatingproofs-h020"
 %%%
 
-Comparator 将在沙盒环境中构建证明，以防止构建步骤中的 {tech}[恶意] 代码。
+Comparator 将在沙盒环境中构建证明，以防止构建步骤中的 {tech (key := "malicious")}[恶意] 代码。
 证明项导出为序列化格式。
 在沙箱之外并且远离可能的恶意代码，它会验证导出的格式，使用 Lean 的内核和/或外部检查器重放证明，并确保已证明的定理语句与可信挑战文件中的定理语句相匹配。
 
@@ -239,7 +239,7 @@ Comparator 将在沙盒环境中构建证明，以防止构建步骤中的 {tech
 tag := "zh-validatingproofs-h021"
 %%%
 
-如果可信质询文件中的定理语句正确并且用于构建可能的 {tech}[恶意] 代码的沙箱是安全的，则此检查是有意义的。
+如果可信质询文件中的定理语句正确并且用于构建可能的 {tech (key := "malicious")}[恶意] 代码的沙箱是安全的，则此检查是有意义的。
 
 ## 保护
 %%%
@@ -249,7 +249,7 @@ tag := "zh-validatingproofs-h022"
 :::listBullet "🛡️"
 （除了上面的列表之外）
 
-* 主动{tech}[恶意]证明
+* 主动{tech (key := "malicious")}[恶意]证明
 * 一些（但并非全部）使用的检查器中存在实现错误。
 :::
 
@@ -284,7 +284,7 @@ tag := "validating-trustCompiler"
 Lean 支持通过本机评估进行证明。
 它由 {tactic}`decide`{keywordOf Lean.Parser.Tactic.decide}` +native`策略或特定策略（特别是 {tactic}`bv_decide`）在内部使用，并生成证明项，调用编译的 Lean 代码来执行计算，然后由内核信任该计算。
 
-{tech}[诚实]策略中包含的特定用途（例如 {tactic}`bv_decide`）通常是值得信赖的。
+{tech (key := "honest")}[诚实]策略中包含的特定用途（例如 {tactic}`bv_decide`）通常是值得信赖的。
 可信代码库更大（它包括Lean的编译工具链和标准库中的库注释），但仍然是固定的和经过审查的。
 
 当术语的本机评估与内核的评估不一致时，一般使用（{tactic}`decide`{keywordOf Lean.Parser.Tactic.decide}` +native` 或直接使用 {name}`Lean.ofReduceBool`）可用于创建无效证明。

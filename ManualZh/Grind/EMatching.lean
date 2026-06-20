@@ -24,10 +24,10 @@ tag := "e-matching"
 
 {deftech}_E-matching_ 是一个使用基本术语有效实例化量化定理陈述的过程。
 它广泛应用于 SMT 求解器，{tactic}`grind` 使用它来高效地实例化定理。
-与 {tech}[同余闭包] 结合使用时特别有效，使 {tactic}`grind` 能够自动发现等式和注释定理的非明显后果。
+与 {tech (key := "congruence closure")}[同余闭包] 结合使用时特别有效，使 {tactic}`grind` 能够自动发现等式和注释定理的非明显后果。
 
 电子匹配根据定理索引向隐喻白板添加新事实。
-当白板包含与索引匹配的术语时，电子匹配引擎会实例化相应的定理，并且生成的术语可以为进一步的 {tech}[同余闭包]、{tech}[约束传播] 和特定于理论的求解器提供数据。
+当白板包含与索引匹配的术语时，电子匹配引擎会实例化相应的定理，并且生成的术语可以为进一步的 {tech (key := "congruence closure")}[同余闭包]、{tech (key := "constraint propagation")}[约束传播] 和特定于理论的求解器提供数据。
 通过电子匹配添加到白板的每个事实都称为 {deftech (key := "e-matching instance")}_instance_。
 注释电子匹配定理，从而将它们添加到索引中，对于 {tactic}`grind` 有效利用库至关重要。
 
@@ -175,7 +175,7 @@ axiom Rtrans {x y z : Int} : R x y → R y z → R x z
 ```
 
 要利用 {lean}`R` 具有传递性的事实，{tactic}`grind` 必须已经能够满足两个前提。
-这是使用 {tech}[多模式] 表示的：
+这是使用 {tech (key := "multi-pattern")}[多模式] 表示的：
 ```lean
 grind_pattern Rtrans => R x y, R y z
 
@@ -650,11 +650,11 @@ norm
 tag := "zh-grind-ematching-h002"
 %%%
 
-{attr}`grind?` 属性是 {attr}`grind` 属性的一个版本，它另外显示生成的图案或 {tech}[多图案]。
+{attr}`grind?` 属性是 {attr}`grind` 属性的一个版本，它另外显示生成的图案或 {tech (key := "multi-pattern")}[多图案]。
 模式和多重模式显示为子表达式列表，每个子表达式都是一个模式；普通模式显示为单例列表。
 在这些显示的模式中，定义的常量的名称按原样打印。
 当定理的参数出现在模式中时，它们将使用数字而不是名称来显示。
-特别地，它们是从右到左编号的，从0开始；该表示被称为 {deftech}_de Bruijnindexs_。
+特别地，它们是从右到左编号的，从0开始；该表示被称为 {deftech (key := "de Bruijn indices")}_de Bruijnindexs_。
 
 :::example "Inspecting Patterns" (open := true)
 为了使用 {tactic}`grind` 整除性可传递的证明，需要 E 匹配模式：
@@ -699,7 +699,7 @@ h₁: [q #1]
 为什么是`@[grind! →]`？选择`q #1`？
 属性 `@[grind! →]` 通过从左到右遍历假设（即类型为命题的参数）来查找模式。
 在本例中，只有一个假设：`p (q x) = 7`。
-上述启发式表示，{attr}`grind!` 将搜索最小的 {tech}[可索引] 子表达式，其中 {tech}[覆盖] 先前未覆盖的参数。
+上述启发式表示，{attr}`grind!` 将搜索最小的 {tech (key := "indexable")}[可索引] 子表达式，其中 {tech (key := "covers")}[覆盖] 先前未覆盖的参数。
 只有一个未覆盖的参数，即 `x`。
 整个假设 `p (q x) = 7` 无法使用，因为 {tactic}`grind` 不会对相等性进行索引。
 右侧 `7` 没有帮助，因为它无法确定 `x` 的值。
@@ -790,7 +790,7 @@ axiom q : Nat → Nat
     p (x + 2) = 7 :=
   sorry
 ```
-在这些模式中，`y` 是参数 `#3`，`x` 是参数 `#2`，因为在定理语句中 {tech}[自动隐式参数] 是从左到右插入的，并且 `y` 出现在 `x` 之前。
+在这些模式中，`y` 是参数 `#3`，`x` 是参数 `#2`，因为在定理语句中 {tech (key := "automatic implicit parameters")}[自动隐式参数] 是从左到右插入的，并且 `y` 出现在 `x` 之前。
 前提是参数 `#1` 和 `#0`。
 在生成的多重模式中，`y` 由第一个前提的子表达式覆盖，`z` 由结论的子表达式覆盖：
 ```leanOutput h6
@@ -809,13 +809,13 @@ tag := "grind-limits"
 
 : 生成
 
-  每个项都被分配一个 {deftech}_生成_，并且 E-matching 产生的项的生成比用于实例化定理的所有项的最大生成大一。
+  每个项都被分配一个 {deftech (key := "generation")}_生成_，并且 E-matching 产生的项的生成比用于实例化定理的所有项的最大生成大一。
   E-matching 只考虑生成低于可配置阈值的项。
   {tactic}`grind` 的 `gen` 选项控制生成阈值。
 
 : 轮次限制
 
-  E-matching 引擎的每次调用都称为一个 {deftech}_轮次_。
+  E-matching 引擎的每次调用都称为一个 {deftech (key := "round")}_轮次_。
   只执行有限轮次的 E-matching。
   `ematch` 至 {tactic}`grind` 选项控制轮数限制。
 

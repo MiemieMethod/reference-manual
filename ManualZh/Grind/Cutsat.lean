@@ -258,7 +258,7 @@ example (a b : Nat)
 tag := "cutsat-mbtc"
 %%%
 
-该求解器还实现了 {deftech}_基于模型的理论组合_，这是一种将等式传播回隐喻共享白板的机制。
+该求解器还实现了 {deftech (key := "model-based theory combination")}_基于模型的理论组合_，这是一种将等式传播回隐喻共享白板的机制。
 这些额外的等式反过来可能会引发新的同余。
 基于模型的理论组合增加了搜索空间的大小；可以使用选项 `grind -mbtc` 禁用它。
 

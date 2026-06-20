@@ -58,7 +58,7 @@ variable {α : Type u} {p : Prop}
 :::
 ::::
 
-由于 {tech}[证明无关性] 和 {tech (key := "η-equivalence")}[η-相等]，当基本类型的元素定义等价时，子类型的两个元素定义等价。
+由于 {tech (key := "proof irrelevance")}[证明无关性] 和 {tech (key := "η-equivalence")}[η-相等]，当基本类型的元素定义等价时，子类型的两个元素定义等价。
 在证明中，{tactic}`ext`策略可用于将子类型元素相等的目标转换为其值相等的目标。
 
 :::example "Definitional Equality of Subtypes"

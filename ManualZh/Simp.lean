@@ -204,7 +204,7 @@ tag := "simp-rewrites"
 : 待展开的宣言
 
   默认情况下，简化器只会展开 {tech}[reducible] 定义。
-  但是，可以为任何 {tech}[半可约] 或 {tech}[不可约] 定义添加重写规则，这也会导致简化器展开它。
+  但是，可以为任何 {tech (key := "semireducible")}[半可约] 或 {tech (key := "irreducible")}[不可约] 定义添加重写规则，这也会导致简化器展开它。
   当简化器在定义模式（{tactic}`dsimp` 及其变体）下运行时，定义展开仅用其值替换定义的名称；否则，它还使用方程编译器生成的方程引理。
 
 : 方程引理
@@ -282,7 +282,7 @@ example : foo'' (x, y) = (y, x) := by
 ```
 :::
 
-由于 {tech}[命题外延性]，等式引理可以将命题重写为更简单、逻辑上等价的命题。
+由于 {tech (key := "propositional extensionality")}[命题外延性]，等式引理可以将命题重写为更简单、逻辑上等价的命题。
 当简化器将证明目标重写为 {lean}`True` 时，它会自动关闭它。
 作为等式引理的特例，等式以外的命题可以被标记为重写规则
 它们被预处理成规则，将命题重写为 {lean}`True`。
@@ -366,7 +366,7 @@ simp $p:prio
 ```
 :::
 
-{deftech}_自定义 simp 集_ 使用 {name Lean.Meta.registerSimpAttr}`registerSimpAttr` 创建，必须在 {tech}[初始化] 期间通过将其放置在 {keywordOf Lean.Parser.Command.initialize}`initialize` 块中来运行。
+{deftech (key := "Custom simp sets")}_自定义 simp 集_ 使用 {name Lean.Meta.registerSimpAttr}`registerSimpAttr` 创建，必须在 {tech (key := "initialization")}[初始化] 期间通过将其放置在 {keywordOf Lean.Parser.Command.initialize}`initialize` 块中来运行。
 作为副作用，它会创建一个与 {attr}`simp` 具有相同接口的新属性，该属性将规则添加到自定义 simp 集。
 返回的值是 {name Lean.Meta.SimpExtension}`SimpExtension`，可用于以编程方式访问自定义 simp 集的内容。
 通过将其属性名称包含在规则列表中，可以指示 {tactic}`simp`策略使用新的 simp 集。
@@ -383,7 +383,7 @@ tag := "simp-normal-forms"
 
 
 默认的 {tech}[simp set] 包含用 {attr}`simp` 属性标记的所有定理和简化过程。
-表达式的 {deftech}_simp 范式_ 是通过 {tactic}`simp`策略应用默认 simp 集的结果，直到无法应用更多规则。
+表达式的 {deftech (key := "simp normal form")}_simp 范式_ 是通过 {tactic}`simp`策略应用默认 simp 集的结果，直到无法应用更多规则。
 当表达式采用 simp 范式时，它会根据默认的 simp 集尽可能地简化，通常使其更容易在证明中使用。
 
 {tactic}`simp`策略*不保证汇合*，这意味着表达式的 simp 范式可能取决于应用默认 simp 集的元素的顺序。

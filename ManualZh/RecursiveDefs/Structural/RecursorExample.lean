@@ -66,7 +66,7 @@ def half' (n : Nat) : Nat := helper n false
 [0, 0, 1, 1, 2, 2, 3, 3, 4]
 ```
 
-可以使用称为 {deftech}[值过程递归] 的通用技术来代替创造力。
+可以使用称为 {deftech (key := "course-of-values recursion")}[值过程递归] 的通用技术来代替创造力。
 值过程递归使用可以为每个归纳类型系统导出的帮助程序，根据递归器定义； Lean 自动导出它们。
 对于每个 {lean}`Nat` {lean}`n`，类型 {lean}`n.below (motive := mot)` 为所有 {lean}`k < n` 提供 {lean}`mot k` 类型的值，表示为迭代的 {TODO}[xref sigma] 相关对类型。
 值过程递归器 {name}`Nat.brecOn` 允许函数使用任何较小的 {lean}`Nat` 的结果。

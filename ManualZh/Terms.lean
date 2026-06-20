@@ -44,8 +44,8 @@ $x:ident
 
 标识符术语是对名称的引用。{margin}[标识符的具体词法语法在 {ref "keywords-and-identifiers"}[有关 Lean 的具体语法的部分]中进行了描述。]
 标识符也出现在绑定名称的上下文中，例如 {keywordOf Lean.Parser.Term.let}`let` 和 {keywordOf Lean.Parser.Term.fun}`fun`；然而，这些具有约束力的事件本身并不是完整的术语。
-从标识符到名称的映射并不简单：在 {tech}[模块] 中的任何点，一定数量的 {tech}[命名空间] 将打开，可能存在 {tech}[节变量]，并且可能存在本地绑定。
-此外，标识符可以包含多个点分隔的原子标识符；点既将命名空间与其内容分隔开，又将变量与使用 {tech}[字段表示法] 的字段或函数分隔开。
+从标识符到名称的映射并不简单：在 {tech (key := "module")}[模块] 中的任何点，一定数量的 {tech (key := "namespaces")}[命名空间] 将打开，可能存在 {tech (key := "section variables")}[节变量]，并且可能存在本地绑定。
+此外，标识符可以包含多个点分隔的原子标识符；点既将命名空间与其内容分隔开，又将变量与使用 {tech (key := "field notation")}[字段表示法] 的字段或函数分隔开。
 这会产生歧义，因为标识符 `A.B.C.D.e.f` 可以指以下任何内容：
 
  * 命名空间 `A.B.C.D.e` 中的名称 `f`（例如，在 `e` 的 {keywordOf Lean.Parser.Command.declaration}`where` 块中定义的函数）。
@@ -64,10 +64,10 @@ $x:ident
 
 名称解析受以下因素影响：
  * {tech (key := "pre-resolved identifier")}[预解析名称] 附加到标识符
- * 附加到标识符的 {tech}[宏范围]
+ * 附加到标识符的 {tech (key := "macro scopes")}[宏范围]
  * 范围内的本地绑定，包括作为 {keywordOf Lean.Parser.Term.letrec}`let rec` 的精化的一部分创建的辅助定义。
  * 在当前模块传递导入的模块中使用 {keywordOf Lean.Parser.Command.export}`export` 创建的别名
- * 当前的 {tech}[节范围]，特别是 {tech}[当前命名空间]、打开的命名空间和节变量
+ * 当前的 {tech (key := "section scope")}[节范围]，特别是 {tech (key := "current namespace")}[当前命名空间]、打开的命名空间和节变量
 
 
 标识符的任何前缀都可以解析为一组名称。
@@ -76,8 +76,8 @@ $x:ident
 标识符前缀可以指以下任何一项，较早的项目优先于后面的项目：
  1. 名称与标识符前缀相同的本地绑定变量，包括宏作用域，更接近的本地绑定优先于外部本地绑定。
  2. 名称与标识符前缀相同的本地辅助定义
- 3. 名称与标识符前缀相同的 {tech}[节变量]
- 3. 与附加到标识符前缀的 {tech}[当前命名空间] 前缀相同的全局名称，或者当前命名空间的前缀中存在别名，当前命名空间的较长前缀优先于较短前缀
+ 3. 名称与标识符前缀相同的 {tech (key := "section variable")}[节变量]
+ 3. 与附加到标识符前缀的 {tech (key := "current namespace")}[当前命名空间] 前缀相同的全局名称，或者当前命名空间的前缀中存在别名，当前命名空间的较长前缀优先于较短前缀
  4. 已通过 {keywordOf Lean.Parser.Command.open}`open` 命令纳入范围的全局名称，与标识符前缀相同
 
 
@@ -235,9 +235,9 @@ tag := "zh-terms-h002"
 %%%
 
 当标识符以点 (`.`) 开头时，将使用精化器期望的表达式类型来解析它，而不是使用当前命名空间和开放命名空间集。
-{tech}[通用字段表示法] 是相关的：此 {deftech}_前导点表示法_使用标识符的预期类型将其解析为名称，而字段表示法使用紧邻点之前的术语的推断类型。
+{tech (key := "Generalized field notation")}[通用字段表示法] 是相关的：此 {deftech (key := "leading dot notation")}_前导点表示法_使用标识符的预期类型将其解析为名称，而字段表示法使用紧邻点之前的术语的推断类型。
 
-具有前导 `.` 的标识符将在 {deftech}_expected 类型的命名空间_ 中查找。
+具有前导 `.` 的标识符将在 {deftech (key := "expected type's namespace")}_expected 类型的命名空间_ 中查找。
 如果术语的预期类型是应用于零个或多个参数的常量，则其命名空间就是该常量的名称。
 如果该类型不是常量（例如函数、元变量或 Universe）的应用，则它没有命名空间。
 
@@ -332,7 +332,7 @@ $t1:term → $t2
 
  * {lean}`(a b : Nat) → Nat`
 
-最后两种类型允许函数与 {tech}[命名参数] 一起使用；除此之外，这三个都是等效的。
+最后两种类型允许函数与 {tech (key := "named arguments")}[命名参数] 一起使用；除此之外，这三个都是等效的。
 :::
 
 # 功能
@@ -401,19 +401,19 @@ Lean 支持函数的隐式参数。
 
   : 普通隐式参数
 
-    普通 {deftech}[隐式] 参数是 Lean 应通过统一确定其值的函数参数。
+    普通 {deftech (key := "implicit")}[隐式] 参数是 Lean 应通过统一确定其值的函数参数。
     换句话说，每个调用站点应该恰好有一个潜在的参数值，该值将导致函数调用作为一个整体是正确类型的。
     Lean精化器尝试在函数每次出现时查找所有隐式参数的值。
     普通隐式参数写在花括号中（`{` 和 `}`）。
 
   : 严格的隐式参数
 
-    {deftech}_Strictimplicit_ 参数与普通隐式参数相同，但 Lean 仅在调用站点提供后续显式参数时才尝试查找参数值。
+    {deftech (key := "Strict implicit")}_Strictimplicit_ 参数与普通隐式参数相同，但 Lean 仅在调用站点提供后续显式参数时才尝试查找参数值。
     严格隐式参数写在双花括号中（`⦃` 和 `⦄`，或 `{{` 和 `}}`）。
 
   : 实例隐式参数
 
-    {tech}_instance隐式_参数的实参可通过 {ref "instance-synth"}[类型类综合]找到。
+    {tech (key := "instance implicit")}_instance隐式_参数的实参可通过 {ref "instance-synth"}[类型类综合]找到。
     实例隐式参数写在方括号中（`[` 和 `]`）。
     与其他类型的隐式参数不同，不使用 `:` 编写的实例隐式参数指定参数的类型，而不是提供名称。
     此外，只允许使用单个名称。
@@ -561,7 +561,7 @@ tag := "function-application"
 精化器将这些转换为核心 类型论 的更简单模型。
 
 :::freeSyntax term (title := "Function Application")
-函数应用程序由一项、后跟一个或多个参数、或零个或多个参数以及最后的 {deftech}[省略号] 组成。
+函数应用程序由一项、后跟一个或多个参数、或零个或多个参数以及最后的 {deftech (key := "ellipsis")}[省略号] 组成。
 ```grammar
 $e:term $e:argument+
 ***************
@@ -571,7 +571,7 @@ $e:term $e:argument* ".."
 
 {TODO}[Annotate with syntax kinds for incoming hyperlinks during traversal pass]
 :::freeSyntax Lean.Parser.Term.argument (title := "Arguments")
-函数参数可以是术语或 {deftech}[命名参数]。
+函数参数可以是术语或 {deftech (key := "named arguments")}[命名参数]。
 ```grammar
 $e:term
 ***********
@@ -587,12 +587,12 @@ $e:term
 函数期望的每个参数都有一个名称。
 重复函数的参数类型，从参数序列中选择参数，如下所示：
  * 如果参数的名称与为命名参数提供的名称匹配，则选择该参数。
- * 如果参数为 {tech}[隐式]，则会使用该参数的类型创建一个新的元变量并选择该元变量。
- * 如果参数是 {tech}[实例隐式]，则使用参数的类型创建一个新的实例元变量并插入。实例元变量安排在稍后综合。
- * 如果参数是 {tech}[严格隐式] 参数，并且存在尚未选择的任何命名或位置参数，则会使用该参数的类型创建一个新的元变量并选择该元变量。
+ * 如果参数为 {tech (key := "implicit")}[隐式]，则会使用该参数的类型创建一个新的元变量并选择该元变量。
+ * 如果参数是 {tech (key := "instance implicit")}[实例隐式]，则使用参数的类型创建一个新的实例元变量并插入。实例元变量安排在稍后综合。
+ * 如果参数是 {tech (key := "strict implicit")}[严格隐式] 参数，并且存在尚未选择的任何命名或位置参数，则会使用该参数的类型创建一个新的元变量并选择该元变量。
  * 如果参数是显式的，则选择并详细说明下一个位置参数。如果没有位置参数：
-   * 如果参数声明为 {tech}[可选参数]，则选择其默认值作为参数。
-   * 如果参数是 {tech}[自动参数]，则执行其关联的策略脚本来构造参数。
+   * 如果参数声明为 {tech (key := "optional parameter")}[可选参数]，则选择其默认值作为参数。
+   * 如果参数是 {tech (key := "automatic parameter")}[自动参数]，则执行其关联的策略脚本来构造参数。
    * 如果参数既不是可选的也不是自动的，并且不存在省略号，则选择一个新变量作为参数。如果存在省略号，则选择新的元变量，就好像参数是隐式的一样。
 
 作为一种特殊情况，当函数应用程序出现在 {ref "pattern-matching"}[pattern] 中并且存在省略号时，可选参数和自动参数将变为通用模式 (`_`) 而不是被插入。
@@ -602,7 +602,7 @@ $e:term
 如果为缺少显式位置参数创建了任何新变量，则整个应用程序将包装在绑定它们的 {keywordOf Lean.Parser.Term.fun}`fun` 术语中。
 最后，调用实例综合并求解尽可能多的元变量：
  1. 为整个函数应用程序推断类型。这可能会导致一些元变量由于类型推断期间发生的统一而被解决。
- 2. 实例元变量被合成。仅当推断类型是作为实例之一的输出参数的元变量时，才使用 {tech}[默认实例]。
+ 2. 实例元变量被合成。仅当推断类型是作为实例之一的输出参数的元变量时，才使用 {tech (key := "Default instances")}[默认实例]。
  3. 如果有预期类型，则与推断类型统一；然而，由于这种统一而产生的错误将被丢弃。如果预期类型和推断类型可以相等，则统一可以解决剩余的隐式参数元变量。如果它们不相等，则不会引发错误，因为周围的精化器可能能够插入 {tech}[coercions] 或 {tech (key := "lift")}[monad lifts]。
 
 
@@ -731,7 +731,7 @@ $e:term.$f:ident
 :::
 
 如果术语的类型是应用于零个或多个参数的常量，则 {deftech}[field notation] 可用于向其应用函数，无论该术语是具有字段的结构还是类型类实例。
-使用字段表示法来应用其他函数称为 {deftech}_广义字段表示法_。
+使用字段表示法来应用其他函数称为 {deftech (key := "generalized field notation")}_广义字段表示法_。
 
 在术语类型的命名空间中查找点后面的标识符，这是常量的名称。
 如果该类型不是常量的应用（例如元变量或 Universe），则它没有命名空间，并且不能使用通用字段表示法。
@@ -877,7 +877,7 @@ $e <| $e
 :::
 
 :::syntax term (title := "Pipeline Fields")
-有一个版本的管道表示法用于 {tech}[通用字段表示法]。
+有一个版本的管道表示法用于 {tech (key := "generalized field notation")}[通用字段表示法]。
 ```grammar
 $e |>.$_:ident
 ```
@@ -943,7 +943,7 @@ end
 tag := "zh-terms-h009"
 %%%
 
-有两种数字文字：自然数文字和 {deftech}[科学文字]。
+有两种数字文字：自然数文字和 {deftech (key := "scientific literals")}[科学文字]。
 两者均通过 {tech (key := "type class")}[类型类] 重载。
 
 ## 自然数
@@ -968,7 +968,7 @@ variable {n : Nat}
 （虽然可以将数字 123 写为 {lean}`1_2__3`，但不建议这样做。）
 
 当 Lean 遇到自然数文字 {lean}`n` 时，它通过重载方法 {lean}`OfNat.ofNat n` 对其进行解释。
-{lean}`OfNat Nat n` 的 {tech}[默认实例] 确保在不存在其他类型信息时可以推断类型 {lean}`Nat`。
+{lean}`OfNat Nat n` 的 {tech (key := "default instance")}[默认实例] 确保在不存在其他类型信息时可以推断类型 {lean}`Nat`。
 
 {docstring OfNat}
 
@@ -1105,7 +1105,7 @@ tag := "if-then-else"
 
 条件表达式用于检查命题是真还是假。{margin}[尽管语法相似，但 {keywordOf Lean.Parser.Tactic.tacIfThenElse}`if` 使用 {ref "tactic-language-branching"}[在策略语言中]，而 {keywordOf Lean.Parser.Term.doIf}`if` 使用 {ref "tactic-language-branching"}[在`do`-notation] 是单独的语法形式，记录在它们自己的部分中。]
 这要求该命题具有 {name}`Decidable` 实例，因为无法检查_任意_命题是真还是假。
-还有一个从 {name}`Bool` 到 {lean}`Prop` 的 {tech}[强制]，它会产生可判定的命题（即，所讨论的 {name}`Bool` 等于 {name}`true`），如 {ref "decidable-propositions"}[关于可判定性的部分]中所述。
+还有一个从 {name}`Bool` 到 {lean}`Prop` 的 {tech (key := "coercion")}[强制]，它会产生可判定的命题（即，所讨论的 {name}`Bool` 等于 {name}`true`），如 {ref "decidable-propositions"}[关于可判定性的部分]中所述。
 
 条件表达式有两种版本：一种仅执行大小写区分，而另一种则另外在本地上下文中添加有关命题真假的假设。
 这允许运行时检查生成可用于静态排除错误的编译时证据。
@@ -1207,13 +1207,13 @@ tag := "pattern-matching"
 %%%
 
 
-{deftech}_Patternmatching_ 是一种使用 {deftech}_patterns_ 语法来识别和解构值的方法，{deftech}_patterns_ 是术语的子集。
+{deftech (key := "Pattern matching")}_模式匹配_是一种使用 {deftech (key := "patterns")}_模式_ 语法来识别和解构值的方法，模式是术语的子集。
 识别和解构值的模式类似于用于构造值的语法。
-一个或多个 {deftech}_match 判别式_同时与一系列 {deftech}_match 替代方案_进行比较。
+一个或多个 {deftech (key := "match discriminants")}_匹配判别式_同时与一系列 {deftech (key := "match alternatives")}_匹配替代项_进行比较。
 判别式可以被命名。
 每个替代项都包含一个或多个以逗号分隔的模式序列；所有模式序列必须包含与判别式相同数量的模式。
-当模式序列与所有判别式匹配时，在用每个 {tech}[模式变量] 的值以及每个命名判别式的等式假设扩展的环境中评估相应 {keywordOf Lean.Parser.Term.match}`=>` 后面的项。
-该术语称为匹配替代项的 {deftech}_right-hand side_。
+当模式序列与所有判别式匹配时，在用每个 {tech (key := "pattern variable")}[模式变量] 的值以及每个命名判别式的等式假设扩展的环境中评估相应 {keywordOf Lean.Parser.Term.match}`=>` 后面的项。
+该术语称为匹配替代项的 {deftech (key := "right-hand side")}_右侧_。
 
 :::syntax term (title := "Pattern Matching")
 ```grammar
@@ -1246,19 +1246,19 @@ $h:ident : $e:term
 
   空洞语法 {lean}`_` 是一种匹配任何值且不绑定任何模式变量的模式。
   包罗万象的模式并不完全等同于未使用的模式变量。
-  它们可以用在模式输入需要更具体的 {tech}[无法访问的模式]的位置，而变量不能在这些位置使用。
+  它们可以用在模式输入需要更具体的 {tech (key := "inaccessible pattern")}[无法访问的模式]的位置，而变量不能在这些位置使用。
 
 : 标识符
 
   如果标识符未绑定在当前范围内且未应用于参数，则它表示模式变量。
-  {deftech}_Pattern 变量_ 匹配任何值，并且如此匹配的值将绑定到计算 {tech}[右侧] 的本地环境中的模式变量。
-  如果标识符已绑定，则如果它绑定到 {tech}[归纳类型] 的 {tech}[构造函数]，或者其定义具有 {attr}`match_pattern` 属性，则它是一个模式。
+  {deftech (key := "Pattern variables")}_Pattern 变量_ 匹配任何值，并且如此匹配的值将绑定到计算 {tech (key := "right-hand side")}[右侧] 的本地环境中的模式变量。
+  如果标识符已绑定，则如果它绑定到 {tech (key := "constructor")}[归纳类型] 的 {tech (key := "inductive type")}[构造函数]，或者其定义具有 {attr}`match_pattern` 属性，则它是一个模式。
 
 : 应用领域
 
   如果所应用的函数是绑定到构造函数的标识符或具有 {attr}`match_pattern` 属性并且所有参数也是模式，则函数应用程序是模式。
   如果标识符是构造函数，则当参数模式与构造函数的参数匹配时，模式将匹配使用该构造函数构建的值。
-  如果它是具有 {attr}`match_pattern` 属性的函数，则展开函数应用程序，并将结果项的 {tech}[正规形式] 用作模式。
+  如果它是具有 {attr}`match_pattern` 属性的函数，则展开函数应用程序，并将结果项的 {tech (key := "normal form")}[正规形式] 用作模式。
   默认参数照常插入，并且它们的正常形式用作模式。
   然而，{tech (key := "ellipsis")}[省略号] 会导致所有其他参数被视为通用模式，即使是那些具有关联默认值或策略的参数。
 
@@ -1266,13 +1266,13 @@ $h:ident : $e:term
 
   {ref "char-syntax"}[字符文字] 和 {ref "string-syntax"}[字符串文字] 是与相应字符或字符串匹配的模式。
   {ref "raw-string-literals"}[原始字符串文字] 允许作为模式，但 {ref "string-interpolation"}[插值字符串] 不允许作为模式。
-  模式中的 {ref "nat-syntax"}[自然数文字] 通过合成相应的 {name}`OfNat` 实例并将结果项减少为 {tech}[正常形式]（它必须是模式）来解释。
-  同样，{tech}[科学文字] 通过相应的 {name}`OfScientific` 实例进行解释。
+  模式中的 {ref "nat-syntax"}[自然数文字] 通过合成相应的 {name}`OfNat` 实例并将结果项减少为 {tech (key := "normal form")}[正常形式]（它必须是模式）来解释。
+  同样，{tech (key := "scientific literals")}[科学文字] 通过相应的 {name}`OfScientific` 实例进行解释。
   虽然 {lean}`Float` 有这样的实例，但 {lean}`Float` 不能用作模式，因为该实例依赖于无法简化为有效模式的不透明函数。
 
 : 结构实例
 
-  {tech}[结构实例]可以用作模式。
+  {tech (key := "Structure instances")}[结构实例]可以用作模式。
   它们被解释为相应的结构构造函数。
 
 : 引用的名字
@@ -1286,7 +1286,7 @@ $h:ident : $e:term
 
 : 无法访问的模式
 
-  {deftech}[不可访问的模式] 是通过稍后键入约束而强制具有特定值的模式。
+  {deftech (key := "Inaccessible patterns")}[不可访问的模式] 是通过稍后键入约束而强制具有特定值的模式。
   任何术语都可以用作不可访问的术语。
   无法访问的术语用括号括起来，前面带有句点 (`.`)。
 
@@ -1326,7 +1326,7 @@ def half (n : Nat) : Nat :=
 :::
 
 还可以对模式进行命名。
-{deftech}[命名模式]将名称与模式关联起来；在后续模式中以及匹配替代项的右侧，名称指的是与给定模式匹配的值的部分。
+{deftech (key := "Named patterns")}[命名模式]将名称与模式关联起来；在后续模式中以及匹配替代项的右侧，名称指的是与给定模式匹配的值的部分。
 命名模式在名称和模式之间写入 `@`。
 就像判别式一样，命名模式也可以提供用于相等假设的名称。
 
@@ -1481,7 +1481,7 @@ tag := "zh-terms-h017"
 由于模式是术语的子集，因此也可以检查它们的类型。
 与给定判别式匹配的每个模式必须与相应的判别式具有相同的类型。
 
-每个匹配替代项的 {tech}[右侧] 应具有与整体 {keywordOf Lean.Parser.Term.match}`match` 术语相同的类型。
+每个匹配替代项的 {tech (key := "right-hand side")}[右侧] 应具有与整体 {keywordOf Lean.Parser.Term.match}`match` 术语相同的类型。
 为了支持 依值类型，将判别式与模式匹配可以细化模式范围内预期的类型。
 在同一匹配替代项和右侧类型中的两个后续模式中，判别式的出现将被替换为它所匹配的模式。
 
@@ -1492,7 +1492,7 @@ variable {α : Type u}
 ```
 
 :::example "Type Refinement"
-这个 {tech}[索引族] 描述了大部分平衡的树，深度编码在类型中。
+这个 {tech (key := "indexed family")}[索引族] 描述了大部分平衡的树，深度编码在类型中。
 ```lean
 inductive BalancedTree (α : Type u) : Nat → Type u where
   | empty : BalancedTree α 0
@@ -1587,7 +1587,7 @@ but is expected to have type
 tag := "zh-terms-h018"
 %%%
 
-当命名判别式时，{keywordOf Lean.Parser.Term.match}`match` 会生成模式和判别式相等的证明，并将其绑定到 {tech}[右侧] 中提供的名称。
+当命名判别式时，{keywordOf Lean.Parser.Term.match}`match` 会生成模式和判别式相等的证明，并将其绑定到 {tech (key := "right-hand side")}[右侧] 中提供的名称。
 这对于弥合索引系列上的依赖模式匹配与需要显式命题参数的 API 之间的差距非常有用，并且可以帮助利用假设的策略取得成功。
 
 :::example "Pattern Equality Proofs"
@@ -1623,12 +1623,12 @@ tag := "zh-terms-h019"
 %%%
 
 模式匹配不是 Lean 的内置原语。
-相反，它通过 {tech}[辅助匹配函数] 转换为 {tech}[递归器] 的应用程序。
+相反，它通过 {tech (key := "recursors")}[辅助匹配函数] 转换为 {tech (key := "auxiliary matching functions")}[递归器] 的应用程序。
 两者都需要 {tech}_motive_ 来解释判别式和结果类型之间的关系。
 一般来说，{keywordOf Lean.Parser.Term.match}`match`精化器能够合成适当的动机，并且模式匹配期间发生的类型细化是所选动机的结果。
 在某些特殊情况下，可能需要不同的动机，并且可以使用 {keywordOf Lean.Parser.Term.match}`match` 的 `(motive := …)` 语法显式提供。
 这个动机应该是一个函数类型，它期望至少与判别式一样多的参数。
-将具有此类型的函数按顺序应用于判别式所产生的类型是整个 {keywordOf Lean.Parser.Term.match}`match` 项的类型，而将具有此类型的函数应用于每个替代中的所有模式所产生的类型是该替代的 {tech}[右侧] 的类型。
+将具有此类型的函数按顺序应用于判别式所产生的类型是整个 {keywordOf Lean.Parser.Term.match}`match` 项的类型，而将具有此类型的函数应用于每个替代中的所有模式所产生的类型是该替代的 {tech (key := "right-hand side")}[右侧] 的类型。
 
 :::example "Matching with an Explicit Motive"
 显式动机可用于提供从周围上下文中无法获得的类型信息。
@@ -1660,7 +1660,7 @@ tag := "zh-terms-h020"
 
 当匹配索引族时，索引也必须是判别式。
 否则，该模式的类型不会很好：如果索引只是一个变量但构造函数的类型需要更具体的值，则这是一个类型错误。
-然而，一个名为 {deftech}[判别细化] 的过程会自动添加索引作为附加判别式。
+然而，一个名为 {deftech (key := "discriminant refinement")}[判别细化] 的过程会自动添加索引作为附加判别式。
 
 ::::keepEnv
 :::example "Discriminant Refinement"
@@ -1748,7 +1748,7 @@ variable {n : Nat}
 在模式中，使用 {attr}`match_pattern` 属性定义的常量将展开并规范化，而不是拒绝。
 这允许对许多模式使用更方便的语法。
 在标准库中，{name}`Nat.add`、{name}`HAdd.hAdd`、{name}`Add.add` 和 {name}`Neg.neg` 都具有此属性，该属性允许像 {lean}`n + 1` 这样的模式而不是 {lean}`Nat.succ n`。
-类似地，{name}`Unit`和{name}`Unit.unit`是将{name}`PUnit`和{name}`PUnit.unit`各自的{tech}[宇宙参数]设置为0的定义； {name}`Unit.unit` 上的 {attr}`match_pattern` 属性允许其在模式中使用，并扩展为 {lean}`PUnit.unit.{0}`。
+类似地，{name}`Unit`和{name}`Unit.unit`是将{name}`PUnit`和{name}`PUnit.unit`各自的{tech (key := "universe parameters")}[宇宙参数]设置为0的定义； {name}`Unit.unit` 上的 {attr}`match_pattern` 属性允许其在模式中使用，并扩展为 {lean}`PUnit.unit.{0}`。
 
 :::syntax attr (title := "Attribute for Match Patterns")
 {attr}`match_pattern` 属性指示应在模式中展开而不是拒绝定义。
@@ -1932,7 +1932,7 @@ draft := true
 %%%
 
 :::planned 209
-将模式匹配的精化指定为 {deftech}[辅助匹配函数]。
+将模式匹配的精化指定为 {deftech (key := "auxiliary match functions")}[辅助匹配函数]。
 :::
 
 # 洞
@@ -1955,7 +1955,7 @@ _
 
 ::::keepEnv
 :::example "Filling Holes with Unification"
-函数 {lean}`the` 的使用方式与 {keywordOf Lean.Parser.Term.show}`show` 或 {tech}[类型归属] 类似。
+函数 {lean}`the` 的使用方式与 {keywordOf Lean.Parser.Term.show}`show` 或 {tech (key := "type ascription")}[类型归属] 类似。
 ```lean
 def the (α : Sort u) (x : α) : α := x
 ```
@@ -1971,7 +1971,7 @@ def the (α : Sort u) (x : α) : α := x
 
 
 在编写证明时，显式引入未知值会很方便。
-这是通过 {deftech}_合成孔_ 完成的，这些孔永远无法通过统一解决，并且可能出现在多个位置。
+这是通过 {deftech (key := "synthetic holes")}_合成孔_ 完成的，这些孔永远无法通过统一解决，并且可能出现在多个位置。
 它们主要在策略证明中有用，并在 {ref "metavariables-in-proofs"}[证明中的元变量部分]中进行了描述。
 
 :::syntax term (title := "Synthetic Holes")
@@ -1994,7 +1994,7 @@ tag := "zh-terms-h027"
 Type 归属不仅仅用于记录程序：
  * 程序文本中可能没有足够的信息来派生术语的类型。归属是提供类型的一种方式。
  * 推断的类型可能不是某个术语所需的类型。
- * 术语的预期类型用于驱动 {tech}[强制转换] 的插入，而归属是控制强制插入位置的一种方法。
+ * 术语的预期类型用于驱动 {tech (key := "coercions")}[强制转换] 的插入，而归属是控制强制插入位置的一种方法。
 
 :::syntax term (title := "Postfix Type Ascriptions")
 Type 归属必须用括号括起来。
@@ -2076,7 +2076,7 @@ example := show StateM String _ from do
 普通后缀类型归属会更改该术语的预期类型，这可能会改变该术语的详细说明方式。
 然而，在精化之后，Lean 推断结果项的类型，并使用该推断类型执行进一步的精化任务。
 另一方面，{keywordOf Lean.Parser.Term.show}`show` 详细精化了推断类型为归属类型的术语。
-使用 {tech}[通用字段表示法] 时可以观察到差异，其中仅保证在使用 {keywordOf Lean.Parser.Term.show}`show` 时使用归属类型来解析字段。
+使用 {tech (key := "generalized field notation")}[通用字段表示法] 时可以观察到差异，其中仅保证在使用 {keywordOf Lean.Parser.Term.show}`show` 时使用归属类型来解析字段。
 
 ::::example "Postfix Ascription vs `show`"
 
@@ -2109,7 +2109,7 @@ this : Colors
 :::
 
 :::paragraph
-该函数设计为使用 {tech}[通用字段表示法] 调用：
+该函数设计为使用 {tech (key := "generalized field notation")}[通用字段表示法] 调用：
 ```lean
 def Colors.hasYellow (cs : Colors) : Bool :=
   cs.any (·.toLower == "yellow")

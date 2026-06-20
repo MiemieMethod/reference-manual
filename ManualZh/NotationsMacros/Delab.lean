@@ -37,27 +37,27 @@ tag := "unexpand-and-delab"
 
 : 解扩展器
 
-  解扩展器是 {tech}[宏] 的逆。
+  解扩展器是 {tech (key := "macros")}[宏] 的逆。
   宏通过翻译根据旧语法实现新语法，将新功能扩展为预先存在的功能的编码。
   与宏一样，{deftech}_unexpanders_ 将 {lean}`Syntax` 翻译为 {lean}`Syntax`；与宏不同，它们将编码转换为新的扩展。
 
 : 精化器
 
-  Delaborators 是 {tech}[elaborators] 的逆。
-  虽然 {tech}[elaborators] 将 {lean}`Syntax` 翻译为核心类型论的 {lean}`Expr`，但 {deftech}_delaborators_ 将 {lean}`Expr` 翻译为 {lean}`Syntax`。
+  Delaborators 是 {tech (key := "elaborators")}[elaborators] 的逆。
+  虽然 {tech (key := "elaborators")}[elaborators] 将 {lean}`Syntax` 翻译为核心类型论的 {lean}`Expr`，但 {deftech}_delaborators_ 将 {lean}`Expr` 翻译为 {lean}`Syntax`。
 :::
 
 在显示 {name}`Expr` 之前，首先对其进行细化，然后取消展开。
 精化器跟踪其输出源自的原始 {name}`Expr` 中的位置；该位置在生成的语法 {name Lean.SourceInfo}`SourceInfo` 中进行编码。
 正如宏展开自动使用与原始语法位置相对应的合成源信息来注释生成的语法，解扩展机制保留生成的语法与基础 {name}`Expr` 的关联。
-此关联启用 Lean 的交互功能，当结果语法显示在 {tech}[证明状态] 和诊断中时，该功能提供有关结果语法的信息。
+此关联启用 Lean 的交互功能，当结果语法显示在 {tech (key := "proof states")}[证明状态] 和诊断中时，该功能提供有关结果语法的信息。
 
 # 解扩展器
 %%%
 tag := "Unexpanders"
 %%%
 
-正如宏注册在将 {tech}[语法种类] 映射到宏实现的表中一样，解扩展器也注册在将常量名称映射到解扩展器实现的表中。
+正如宏注册在将 {tech (key := "syntax kinds")}[语法种类] 映射到宏实现的表中一样，解扩展器也注册在将常量名称映射到解扩展器实现的表中。
 Lean 在向用户显示语法之前，会尝试根据此表重写语法中常量的每个应用。
 非应用程序的上下文出现被视为具有零参数的应用程序。
 
@@ -119,7 +119,7 @@ v : Solo
 -/
 
 ```
-此证明状态显示使用 {tech}[结构实例] 语法的构造函数。
+此证明状态显示使用 {tech (key := "structure instance")}[结构实例] 语法的构造函数。
 解扩展器可用于覆盖此选择。
 由于 {name}`Solo.mk` 不能应用于任何参数，因此解展开器可以忽略语法，该语法始终为 {lean (type := "UnexpandM Syntax")}`` `(Solo.mk) ``。
 
@@ -269,7 +269,7 @@ open Lean (Term)
 delab $_:ident
 ```
 
-{keyword}`app_delab ` 属性在当前 {tech (key := "section scope")}[范围] 中的 {tech (key := "resolve")}[解析] 后为指示常量的应用程序注册一个解释器。
+{keyword}`app_delab ` 属性在当前 {tech (key := "resolve")}[范围] 中的 {tech (key := "section scope")}[解析] 后为指示常量的应用程序注册一个解释器。
 ```grammar
 app_delab $_:ident
 ```

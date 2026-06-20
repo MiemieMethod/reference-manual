@@ -444,7 +444,7 @@ example : @ex2a = @ex2b := by rfl
 ```
 
 除了方便地支持具有数据依赖性的顺序计算之外，{keywordOf Lean.Parser.Term.do}`do`-notation 还支持本地添加各种效果，包括提前返回、本地可变状态和提前终止的循环。
-这些效果是通过整个 {keywordOf Lean.Parser.Term.do}`do` 块以类似于 {tech}[monad 转换器] 的方式进行转换来实现的，而不是通过局部脱糖来实现。
+这些效果是通过整个 {keywordOf Lean.Parser.Term.do}`do` 块以类似于 {tech (key := "monad transformers")}[monad 转换器] 的方式进行转换来实现的，而不是通过局部脱糖来实现。
 
 ## 提前返回
 %%%
@@ -808,7 +808,7 @@ none
 tag := "closest-do-block"
 %%%
 
-{keywordOf Lean.Parser.Term.do}`do` 表示法的许多功能都会对 {deftech}[当前 {keywordOf Lean.Parser.Term.do}`do` 块]产生影响。
+{keywordOf Lean.Parser.Term.do}`do` 表示法的许多功能都会对 {deftech (key := "current do block")}[当前 {keywordOf Lean.Parser.Term.do}`do` 块]产生影响。
 特别是，提前返回会中止当前块，导致其计算返回值，并且可变绑定只能在定义它们的块中进行更改。
 理解这些特征需要精确定义“同一”块的含义。
 

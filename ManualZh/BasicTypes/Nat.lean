@@ -18,11 +18,11 @@ open Verso.Genre.Manual.InlineLean
 tag := "Nat"
 %%%
 
-{deftech}[自然数] 是非负整数。
+{deftech (key := "natural numbers")}[自然数] 是非负整数。
 从逻辑上讲，它们是数字 0、1、2、3……，由构造函数 {lean}`Nat.zero` 和 {lean}`Nat.succ` 生成。
 除了计算机可用内存施加的物理约束之外，Lean 对自然数的表示没有施加上限。
 
-由于自然数是数学推理和编程的基础，因此 Lean 的实现特别支持它们。自然数的逻辑模型为 {tech}[归纳类型]，并且使用该模型指定算术运算。在 Lean 的内核中，解释器和编译代码、封闭的自然数被表示为高效的任意精度整数。足够小的数字是不需要通过指针间接寻址的值。算术运算是通过利用高效表示的原语来实现的。
+由于自然数是数学推理和编程的基础，因此 Lean 的实现特别支持它们。自然数的逻辑模型为 {tech (key := "inductive type")}[归纳类型]，并且使用该模型指定算术运算。在 Lean 的内核中，解释器和编译代码、封闭的自然数被表示为高效的任意精度整数。足够小的数字是不需要通过指针间接寻址的值。算术运算是通过利用高效表示的原语来实现的。
 
 # 逻辑模型
 %%%
@@ -37,7 +37,7 @@ tag := "nat-model"
 variable (i : Nat)
 ```
 :::example "Proofs by Induction"
-自然数是 {tech}[归纳类型]，因此 {tactic}`induction`策略可用于证明全称量化陈述。
+自然数是 {tech (key := "inductive type")}[归纳类型]，因此 {tactic}`induction`策略可用于证明全称量化陈述。
 归纳证明需要基例和归纳步骤。
 基例证明该陈述对于 `0` 是正确的。
 归纳步骤证明某个任意数 {lean}`i` 的陈述的真实性意味着 {lean}`i + 1` 的陈述的真实性。
@@ -343,7 +343,7 @@ tag := "nat-api-elim"
 
 为 {lean}`Nat` 自动生成的递归原理会产生以 {lean}`Nat.zero` 和 {lean}`Nat.succ` 表述的证明目标。
 这对于用户来说不是特别友好，因此提供了另一种逻辑等效的递归原则，其结果是用 {lean}`0` 和 `n + 1` 来表述的目标。
-{tech}[自定义消除器] 用于 {tactic}`induction` 和 {tactic}`cases`策略可以使用 {attr}`induction_eliminator` 和 {attr}`cases_eliminator` 属性提供。
+{tech (key := "Custom eliminators")}[自定义消除器] 用于 {tactic}`induction` 和 {tactic}`cases`策略可以使用 {attr}`induction_eliminator` 和 {attr}`cases_eliminator` 属性提供。
 
 {docstring Nat.recAux}
 

@@ -50,7 +50,7 @@ coinductive InfSeq (r : α → α → Prop) : α → Prop where
   | step : r a b → InfSeq r b → InfSeq r a
 ```
 
-这会生成一个构造函数和一个 {tech}[代归纳原理]：
+这会生成一个构造函数和一个 {tech (key := "coinduction principle")}[代归纳原理]：
 
 ```signature
 InfSeq.step (α : Type) (r : α → α → Prop) {a b : α} :
@@ -91,7 +91,7 @@ tag := "coinductive-elaboration"
 
 在底层，{keywordOf Lean.Parser.Command.declaration}`coinductive` 命令分几个步骤详细说明。
 首先，它被当作普通的 {keywordOf Lean.Parser.Command.declaration}`inductive` 声明来处理。
-然而，在使用内核注册类型之前，会创建 {deftech}_flat inductor_（也称为 _functor_）：构造函数前提中共归纳谓词的每个递归出现都被显式参数替换。
+然而，在使用内核注册类型之前，会创建 {deftech (key := "flat inductive")}_flat inductor_（也称为 _functor_）：构造函数前提中共归纳谓词的每个递归出现都被显式参数替换。
 
 
 :::example "Flat Inductive"
@@ -125,7 +125,7 @@ InfSeq._functor.step : ∀ (α : Type) (r : α → α → Prop) (InfSeq._functor
 ```
 :::
 
-然后构造等效的 {deftech}_存在形式_，将每个构造函数表示为从属乘积（即存在量词和连词）的析取。
+然后构造等效的 {deftech (key := "existential form")}_存在形式_，将每个构造函数表示为从属乘积（即存在量词和连词）的析取。
 这种形式用于单调性检查和生成可读的共归纳原理。
 
 :::example "Existential Form"
@@ -164,13 +164,13 @@ InfSeq._functor.existential_equiv : ∀ (α : Type) (r : α → α → Prop) (In
 :::paragraph
 为名为 `P` 的共归纳谓词生成以下声明：
 
- * `P._functor`：{tech}[扁平电感]
- * `P._functor.existential`：{tech}[存在形式]
+ * `P._functor`：{tech (key := "flat inductive")}[扁平电感]
+ * `P._functor.existential`：{tech (key := "existential form")}[存在形式]
  * `P._functor.existential_equiv`：两种形式之间的等效性
  * `P.functor_unfold`：将共归纳谓词连接到其平面归纳的定理
  * 构造函数（例如，`P.step`）：对应于声明中的每个构造函数
  * `P.casesOn`：案例分析原理
-  * `P.coinduct`: {tech}[共归纳原理]
+  * `P.coinduct`: {tech (key := "coinduction principle")}[共归纳原理]
 :::
 
 # 互感和感性块
@@ -178,7 +178,7 @@ InfSeq._functor.existential_equiv : ∀ (α : Type) (r : α → α → Prop) (In
 tag := "mutual-coinductive-syntax"
 %%%
 
-在包含 {keywordOf Lean.Parser.Command.coinductive}`coinductive` 定义的 {tech}[相互块] 中，{keywordOf Lean.Parser.Command.inductive}`inductive` 关键字被重新解释：它不是注册为普通的内核归纳类型，而是通过晶格理论 {tech (key := "lattice-theoretic inductive predicate")}[感应固定点] 机制进行详细说明。
+在包含 {keywordOf Lean.Parser.Command.coinductive}`coinductive` 定义的 {tech (key := "mutual block")}[相互块] 中，{keywordOf Lean.Parser.Command.inductive}`inductive` 关键字被重新解释：它不是注册为普通的内核归纳类型，而是通过晶格理论 {tech (key := "lattice-theoretic inductive predicate")}[感应固定点] 机制进行详细说明。
 这允许在同一个共同块中混合共归纳谓词和归纳谓词。
 
 :::example "Mutual Coinductive-Inductive Block"
@@ -229,7 +229,7 @@ tag := "coinductive-restrictions"
  * 它只能定义谓词，即 {lean}`Prop` 中赋值的类型。
    尝试在 {lean}`Type` 或更高的宇宙中定义共归纳类型会导致错误。
 
- * 定义的谓词可能没有 {tech}[宏范围]。
+ * 定义的谓词可能没有 {tech (key := "macro scopes")}[宏范围]。
 
  * 尚不支持通过 {keywordOf Lean.Parser.Term.match}`match` 的模式匹配；请改用 {tactic}`cases`策略。
 

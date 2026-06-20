@@ -33,7 +33,7 @@ open Std
 后面的示例将探索添加 {attrs}`@[grind]` 注释作为开发过程的一部分，以使 {tactic}`grind` 在新领域中更加有效。
 此示例不依赖于 {tactic}`grind` 的任何代数扩展，我们只是使用：
 * 从库中实例化带注释的定理，
-* {tech}[同余闭包]，以及
+* {tech (key := "congruence closure")}[同余闭包]，以及
 * 案件分割。
 
 这里的解决方案建立在 Chris Hughes 早期的形式化基础上，但有一些显着的改进：

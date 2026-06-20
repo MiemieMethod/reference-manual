@@ -60,8 +60,8 @@ tag := "partial-fixpoint"
 
 :::
 
-正如结构函数和良基递归一样，Lean 允许将 {tech}[相互递归] 函数定义为部分固定点。
-要使用此功能，{tech}[mutual block] 中的每个函数定义都必须使用 {keywordOf Lean.Parser.Command.declaration}`partial_fixpoint` 修饰符进行注释。
+正如结构函数和良基递归一样，Lean 允许将 {tech (key := "mutually recursive")}[相互递归] 函数定义为部分固定点。
+要使用此功能，{tech (key := "mutual block")}[mutual block] 中的每个函数定义都必须使用 {keywordOf Lean.Parser.Command.declaration}`partial_fixpoint` 修饰符进行注释。
 
 ```lean -show
 section
@@ -100,9 +100,9 @@ tag := "partial-fixpoint-tailrec"
 如果满足以下两个条件，则递归函数可以定义为部分不动点：
 
  1. 该函数的返回类型是固定的（与 {ref "partial-unsafe"}[标记为 {keywordOf Lean.Parser.Command.declaration}`partial` 的函数]一样）— {name}`Nonempty` 或 {name}`Inhabited` 实例都可以工作。
- 2. 所有递归调用都在函数的 {tech}[尾部位置] 中。
+ 2. 所有递归调用都在函数的 {tech (key := "tail position")}[尾部位置] 中。
 
-如果表达式是：
+如果表达式处于 {deftech (key := "tail position")}_尾部位置_，则它是：
 
  * 函数体本身，
  * 位于尾部位置的 {keywordOf Lean.Parser.Term.match}`match` 表达式的分支，
@@ -131,7 +131,7 @@ example (n : Nat) : getA n = getA (n + 3) := by
 
 :::example "Loops are Tail Recursive Functions"
 
-因为函数体本身是一个{tech}[尾部位置]，所以无限循环函数{lean}`loop`是尾递归的。
+因为函数体本身是一个{tech (key := "tail position")}[尾部位置]，所以无限循环函数{lean}`loop`是尾递归的。
 它可以被定义为部分固定点。
 
 ```lean
@@ -195,7 +195,7 @@ tag := "partial-fixpoint-monadic"
 
 其适用的高阶函数集是 {ref "partial-fixpoint-theory"}[extensible]，因此这里没有给出详尽的列表。
 我们的愿望是接受使用 {name}`bind` 等抽象单子操作构建的单子递归函数定义，但不会打开单子的抽象（例如，通过匹配 {name}`Option` 值）。
-特别是，使用 {tech}[{keywordOf Lean.Parser.Term.do}`do`-notation] 应该可以。
+特别是，使用 {tech (key := "do-notation")}[{keywordOf Lean.Parser.Term.do}`do`-notation] 应该可以。
 
 :::example "Monadic functions"
 
@@ -209,7 +209,7 @@ def ack : (n m : Nat) → Option Nat
 partial_fixpoint
 ```
 
-递归调用也可能发生在高阶函数中，例如 {name}`List.mapM`（如果设置正确）和 {tech}[{keywordOf Lean.Parser.Term.do}`do`-notation]：
+递归调用也可能发生在高阶函数中，例如 {name}`List.mapM`（如果设置正确）和 {tech (key := "do-notation")}[{keywordOf Lean.Parser.Term.do}`do`-notation]：
 
 ```lean -keep
 structure Tree where cs : List Tree
@@ -277,7 +277,7 @@ tag := "partial-correctness-theorem"
 
 另一方面，合适的单子中的部分固定点提供了额外的定理，将未定义的值从非终止映射到单子中的合适的值。
 在 {name}`Option` 单子中，对于定义方程指定非终止的所有函数输入，部分固定点等于 {name}`Option.none`。
-根据这一事实，Lean 证明了函数的 {deftech}_部分正确性定理_，该定理允许当函数结果为 {name}`Option.some` 时得出事实。
+根据这一事实，Lean 证明了函数的 {deftech (key := "partial correctness theorem")}_部分正确性定理_，该定理允许当函数结果为 {name}`Option.some` 时得出事实。
 
 
 ::::example "Partial Correctness Theorem"
@@ -361,8 +361,8 @@ theorem List.findIndex_implies_pred
 tag := "mutual-partial-fixpoint"
 %%%
 
-Lean 支持使用 {tech}[部分固定点] 定义 {tech}[相互递归] 函数。
-可以使用 {tech}[mutual block] 引入相互递归，但它也可以由 {keywordOf Lean.Parser.Term.letrec}`let rec` 表达式和 {keywordOf Lean.Parser.Command.declaration}`where` 块产生。
+Lean 支持使用 {tech (key := "partial fixpoint")}[部分固定点] 定义 {tech (key := "mutually recursive")}[相互递归] 函数。
+可以使用 {tech (key := "mutual block")}[mutual block] 引入相互递归，但它也可以由 {keywordOf Lean.Parser.Term.letrec}`let rec` 表达式和 {keywordOf Lean.Parser.Command.declaration}`where` 块产生。
 相互良基递归的规则应用于一组实际相互递归、提升的定义，这些定义由相互组的 {ref "mutual-syntax"}[精化步骤] 产生。
 
 如果交互组中的所有函数都有 {keywordOf Lean.Parser.Command.declaration}`partial_fixpoint` 子句，则使用此策略。

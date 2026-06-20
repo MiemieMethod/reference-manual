@@ -21,7 +21,7 @@ tag := "Thunk"
 {deftech}_thunk_ 延迟值的计算。
 特别是，{name}`Thunk` 类型用于延迟编译代码中值的计算，直到明确请求该值为止 - 该请求称为 {deftech (key := "force")}_forcing_ thunk。
 计算出的值会被保存，因此后续请求不会导致重新计算。
-当明确请求时，最多计算一次值称为 {deftech}_lazyvaluation_.{index}[call-by-need]
+当明确请求时，最多计算一次值称为 {deftech (key := "lazy evaluation")}_lazyvaluation_.{index}[call-by-need]
 此缓存对于 Lean 的逻辑是不可见的，其中 {name}`Thunk` 相当于 {name}`Unit` 中的函数。
 
 

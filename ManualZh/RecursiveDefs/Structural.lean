@@ -25,13 +25,13 @@ tag := "structural-recursion"
 %%%
 
 结构递归函数是指每次递归调用的结构项都小于参数的项。
-相同的参数必须在所有递归调用中减少；该参数称为 {deftech}_递减参数_。
+相同的参数必须在所有递归调用中减少；该参数称为 {deftech (key := "decreasing parameter")}_递减参数_。
 结构递归比递归器提供的原始递归更强，因为递归调用可以使用参数的更深层嵌套的子项，而不仅仅是直接子项。
 然而，用于实现结构递归的结构是使用递归器实现的；这些辅助结构在 {ref "recursor-elaboration-helpers"}[关于归纳类型的部分]中进行了描述。
 
 管理结构递归的规则本质上是_语法_的。
 有许多递归定义表现出结构递归计算行为，但不被这些规则所接受；这是全自动分析的基本结果。
-{tech}[良基递归] 提供了一种语义方法来演示终止，该方法可用于递归函数不是结构递归的情况，但也可以在根据结构递归计算的函数不满足语法要求时使用。
+{tech (key := "Well-founded recursion")}[良基递归] 提供了一种语义方法来演示终止，该方法可用于递归函数不是结构递归的情况，但也可以在根据结构递归计算的函数不满足语法要求时使用。
 
 ```lean -show
 section
@@ -75,9 +75,9 @@ n' : Nat := n - 1
 ⊢ n - 1 < n
 ```
 这是因为参数 {lean}`n` 上没有模式匹配。
-虽然此函数确实终止，但它这样做的论点是基于 if、相等测试和减法的属性，而不是 {lean}`Nat` 是 {tech}[归纳类型] 的通用特征。
-这些参数使用 {tech}[良基递归] 表示，对函数定义的轻微更改允许 Lean 自动支持良基递归来构造替代终止证明。
-此版本基于 {lean}`Nat` 的 {tech}[命题等价] 的可判定性进行分支，而不是布尔相等测试的结果：
+虽然此函数确实终止，但它这样做的论点是基于 if、相等测试和减法的属性，而不是 {lean}`Nat` 是 {tech (key := "inductive type")}[归纳类型] 的通用特征。
+这些参数使用 {tech (key := "well-founded recursion")}[良基递归] 表示，对函数定义的轻微更改允许 Lean 自动支持良基递归来构造替代终止证明。
+此版本基于 {lean}`Nat` 的 {tech (key := "propositional equality")}[命题等价] 的可判定性进行分支，而不是布尔相等测试的结果：
 
 ```lean
 def countdown' (n : Nat) : List Nat :=
@@ -95,8 +95,8 @@ end
 ```
 
 结构递归可以显式或自动使用。
-对于显式结构递归，函数定义声明哪个参数是 {tech}[递减参数]。
-如果未显式声明终止策略，Lean 将搜索递减参数以及与 {tech}[良基递归] 一起使用的递减度量。
+对于显式结构递归，函数定义声明哪个参数是 {tech (key := "decreasing parameter")}[递减参数]。
+如果未显式声明终止策略，Lean 将搜索递减参数以及与 {tech (key := "well-founded recursion")}[良基递归] 一起使用的递减度量。
 显式注释结构递归有以下好处：
  * 它可以加速精化，因为没有搜索发生。
  * 它为读者记录了终止论证。
@@ -107,7 +107,7 @@ end
 tag := "zh-recursivedefs-structural-h001"
 %%%
 
-要显式使用结构递归，可以使用指定 {tech}[递减参数] 的 {keywordOf Lean.Parser.Command.declaration}`termination_by structural` 子句来注释函数或定理定义。
+要显式使用结构递归，可以使用指定 {tech (key := "decreasing parameter")}[递减参数] 的 {keywordOf Lean.Parser.Command.declaration}`termination_by structural` 子句来注释函数或定理定义。
 递减的参数可以是对签名中命名的参数的引用。
 当签名指定函数类型时，递减的参数还可以是签名中未命名的参数；在这种情况下，可以通过将其余参数的名称写在箭头之前来引入它们（{keywordOf Lean.Parser.Command.declaration}`=>`）。
 
@@ -147,13 +147,13 @@ termination_by structural $[$_:ident* =>]? $term
 
 递减参数必须满足以下条件：
 
-* 其类型必须是 {tech}[归纳类型]。
+* 其类型必须是 {tech (key := "inductive type")}[归纳类型]。
 
 * 如果其类型是 {tech}[indexed family]，则所有索引都必须是函数的参数。
 
-* 如果递减参数的归纳或索引族具有数据类型参数，则这些数据类型参数本身可能仅依赖于属于 {tech}[固定前缀] 的函数参数。
+* 如果递减参数的归纳或索引族具有数据类型参数，则这些数据类型参数本身可能仅依赖于属于 {tech (key := "fixed prefix")}[固定前缀] 的函数参数。
 
-{deftech}_fixedparameter_ 是在所有递归调用中未经修改地传递的函数参数，并且不是递归参数类型的索引。
+{deftech (key := "fixed parameter")}_fixedparameter_ 是在所有递归调用中未经修改地传递的函数参数，并且不是递归参数类型的索引。
 {deftech}_fixed prefix_ 是函数参数的最长前缀，其中所有参数都是固定的。
 
 :::example "Ineligible decreasing parameters"
@@ -189,7 +189,7 @@ cannot use specified measure for structural recursion:
 ```
 
 递减参数类型的参数不得依赖于变化参数或索引之后的函数参数。
-在{lean}`afterVarying`中，{tech}[固定前缀]为空，因为第一个参数`n`变化，所以`p`不是固定前缀的一部分：
+在{lean}`afterVarying`中，{tech (key := "fixed prefix")}[固定前缀]为空，因为第一个参数`n`变化，所以`p`不是固定前缀的一部分：
 
 ```lean +error (name := badparam)
 inductive WithParam' (p : Nat) : Nat → Type where
@@ -208,12 +208,12 @@ Cannot use parameter x:
 ```
 :::
 
-此外，函数的每次递归调用都必须在递减的 {deftech}_strict 子项_上
+此外，函数的每次递归调用都必须在递减的 {deftech (key := "strict sub-term")}_strict 子项_上
 参数。
 
  * 递减参数本身是一个子项，但不是严格的子项。
- * 如果子项是 {keywordOf Lean.Parser.Term.match}`match` 表达式或其他模式匹配语法的 {tech (key := "match discriminant")}[判别式]，则与判别式匹配的模式是每个 {tech}[匹配替代项] 的 {tech}[右侧] 中的子项。
-   特别是，{ref "match-generalization"}[匹配泛化]的规则用于将判别式连接到右侧模式项的出现；因此，它尊重 {tech}[定义等价]。
+ * 如果子项是 {keywordOf Lean.Parser.Term.match}`match` 表达式或其他模式匹配语法的 {tech (key := "match discriminant")}[判别式]，则与判别式匹配的模式是每个 {tech (key := "match alternative")}[匹配替代项] 的 {tech (key := "right-hand side")}[右侧] 中的子项。
+   特别是，{ref "match-generalization"}[匹配泛化]的规则用于将判别式连接到右侧模式项的出现；因此，它尊重 {tech (key := "definitional equality")}[定义等价]。
    当且仅当判别式是严格子项时，该模式才是严格子项。
  * 如果子项是应用于参数的构造函数，则其递归参数是严格子项。
 
@@ -266,7 +266,7 @@ Cannot use parameter n:
     half n'
 ```
 
-使用 {tech}[良基递归]，并将判别式显式连接到匹配模式，可以接受此定义。
+使用 {tech (key := "well-founded recursion")}[良基递归]，并将判别式显式连接到匹配模式，可以接受此定义。
 
 ```lean
 def half (n : Nat) : Nat :=
@@ -349,7 +349,7 @@ Cannot use parameter nk:
 这是因为参数的类型 {name}`Prod` 不是递归的。
 因此，其构造函数没有可由模式匹配公开的递归参数。
 
-使用 {tech}[良基递归] 可以接受此定义，但是：
+使用 {tech (key := "well-founded recursion")}[良基递归] 可以接受此定义，但是：
 ```lean
 def min' (nk : Nat × Nat) : Nat :=
   match nk with
@@ -403,7 +403,7 @@ end
 tag := "mutual-structural-recursion"
 %%%
 
-Lean 支持使用结构递归定义 {tech}[相互递归]函数。
+Lean 支持使用结构递归定义 {tech (key := "mutually recursive")}[相互递归]函数。
 可以使用 {tech}[mutual block] 引入相互递归，但它也可以由 {keywordOf Lean.Parser.Term.letrec}`let rec` 表达式和 {keywordOf Lean.Parser.Command.declaration}`where` 块产生。
 相互结构递归的规则应用于一组实际相互递归、提升的定义，这些定义由相互组的 {ref "mutual-syntax"}[精化步骤] 产生。
 如果共同组中的每个函数都有一个 {keyword}`termination_by structural` 注释来指示该函数的递减参数，则使用结构递归来转换定义。
@@ -492,7 +492,7 @@ tag := "inferring-structural-recursion"
 
 
 如果递归或互递归函数定义中不存在 {keyword}`termination_by` 子句，则 Lean 尝试通过按顺序尝试所有合适的参数来有效地推断合适的结构递减参数。
-如果此搜索失败，Lean 将尝试推断 {tech}[良基递归]。
+如果此搜索失败，Lean 将尝试推断 {tech (key := "well-founded recursion")}[良基递归]。
 
 对于相互递归函数，会尝试所有参数组合，直至达到极限以避免组合爆炸。
 如果只有部分相互递归函数具有 {keyword}`termination_by structural` 子句，则仅考虑这些参数，而对于其他函数，则考虑结构递归的所有参数。
@@ -526,14 +526,14 @@ tag := "elab-as-course-of-values"
 
 {spliceContents ManualZh.RecursiveDefs.Structural.RecursorExample}
 
-结构递归分析尝试将递归 {tech}[预定义] 转换为适当的结构递归结构的使用。
+结构递归分析尝试将递归 {tech (key := "pre-definition")}[预定义] 转换为适当的结构递归结构的使用。
 到这一步，模式匹配已经被翻译成匹配器函数的使用；这些由终止检查器进行特殊处理。
 接下来，对于每组参数，尝试使用 `brecOn` 进行转换。
 
 {spliceContents ManualZh.RecursiveDefs.Structural.CourseOfValuesExample}
 
 `below` 构造是从类型的每个值到对所有较小值进行某些函数调用的结果的映射；它可以理解为一个记忆表，其中已经包含了所有较小值的结果。
-`below` 结构中表达的“较小值”的概念直接对应于 {tech}[严格子术语]的定义。
+`below` 结构中表达的“较小值”的概念直接对应于 {tech (key := "strict sub-terms")}[严格子术语]的定义。
 
 递归器需要归纳类型的每个构造函数都有一个参数；在 {tech}[ι-reduction] 期间，使用构造函数的参数（以及递归参数的递归结果）调用这些参数。
 另一方面，值过程递归运算符 `brecOn` 只需要一个一次性覆盖所有构造函数的情况。

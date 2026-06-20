@@ -20,7 +20,7 @@ tag := "quotients"
 %%%
 
 
-{deftech}_商类型_允许通过减小现有类型的 {tech}[命题等价] 的粒度来形成新类型。
+{deftech (key := "Quotient types")}_商类型_允许通过减小现有类型的 {tech (key := "propositional equality")}[命题等价] 的粒度来形成新类型。
 特别是，给定类型 $`A` 和等价关系 $`\sim`，商 $`A / \sim` 包含与 $`A` 相同的元素，但与 $`\sim` 相关的每对元素都被视为相等。
 平等受到普遍尊重； Lean 的逻辑中没有任何内容可以观察到两个相等项之间的任何差异。
 因此，商类型提供了一种构建难以逾越的抽象障碍的方法。
@@ -29,7 +29,7 @@ tag := "quotients"
 {docstring Quotient}
 
 证明基础类型的两个元素通过等价关系相关就足以证明它们在 {name}`Quotient` 中相等。
-但是，{tech}[定义等价] 不受使用 {lean}`Quotient` 的影响：商中的两个元素定义等价当且仅当它们在基础类型中定义等价时。
+但是，{tech (key := "definitional equality")}[定义等价] 不受使用 {lean}`Quotient` 的影响：商中的两个元素定义等价当且仅当它们在基础类型中定义等价时。
 
 :::paragraph
 商类型在编程中并未广泛使用。
@@ -71,17 +71,17 @@ tag := "quotient-alternatives"
 
 一般来说，如果类型 $`Q` 遵循商的通用属性，则通过等价关系 $`\sim` 可以将类型 $`Q` 称为 $`A` 的商：存在一个函数 $`q:A\to Q`，其属性为 $`q(a)=q(b)` 当且仅当 $`a\sim b` 对于所有$`a` 和 $`b` 位于 $`A` 中。
 
-由 {name}`Quotient` 形成的商在 {tech}[命题等价] 范围内具有此属性：与 $`\sim` 相关的 $`A` 的元素相等，因此无法区分它们。
+由 {name}`Quotient` 形成的商在 {tech (key := "propositional equality")}[命题等价] 范围内具有此属性：与 $`\sim` 相关的 $`A` 的元素相等，因此无法区分它们。
 但是，同一等价类的成员的商不一定是 {tech (key := "definitional equality")}[定义等价]。
 
 商还可以通过在 $`A` 本身中指定每个等价类的单个代表，然后将 $`Q` 定义为 $`A` 中的元素对并证明它们是这样的规范代表来实现。
 与将 $`A` 中的每个 $`a` 映射到其规范代表的函数一起，$`Q` 是 $`A` 的商。
-由于{tech}[证明无关]，同一等价类的$`Q`中的代表是{tech (key := "definitional equality")}[定义等价]。
+由于{tech (key := "proof irrelevance")}[证明无关]，同一等价类的$`Q`中的代表是{tech (key := "definitional equality")}[定义等价]。
 
 这种手动实现的商 $`Q` 比 {name}`Quotient` 更容易使用。
 特别是，因为每个等价类都由其单个规范代表表示，所以无需证明商的函数遵循等价关系。
 由于计算给出归一化值，它还可以具有更好的计算属性（相反，{name}`Quotient` 的元素可以用多种方式表示）。
-最后，由于手动实现的商是 {tech}[归纳类型]，因此它可以在其他类型不能使用的上下文中使用，例如定义 {ref "nested-inductive-types"}[嵌套归纳类型] 时。
+最后，由于手动实现的商是 {tech (key := "inductive type")}[归纳类型]，因此它可以在其他类型不能使用的上下文中使用，例如定义 {ref "nested-inductive-types"}[嵌套归纳类型] 时。
 然而，并非所有商都可以手动实现。
 
 
@@ -94,7 +94,7 @@ structure Z where
   b : Nat
   canonical : a = 0 ∨ b = 0
 ```
-由于 {tech}[证明无关性]，表示相同整数的该结构类型的每个值已经相等。
+由于 {tech (key := "proof irrelevance")}[证明无关性]，表示相同整数的该结构类型的每个值已经相等。
 使用包装器可以更方便地构建 {lean}`Z`，该包装器利用自然数的减法在零处截断的事实来自动构建证明：
 ```lean
 def Z.mk' (n k : Nat) : Z where
@@ -205,10 +205,10 @@ Setoid 除了作为商类型的构建块之外，本身也很有用。
 tag := "equivalence-relations"
 %%%
 
-{deftech}_等价关系_是自反、对称和传递的关系。
+{deftech (key := "equivalence relation")}_等价关系_是自反、对称和传递的关系。
 
 :::syntax term (title := "Equivalence Relations")
-根据类型的某些规范等价关系的等价性是使用 `≈` 编写的，它是使用 {tech}[类型类] {name}`HasEquiv` 重载的。
+根据类型的某些规范等价关系的等价性是使用 `≈` 编写的，它是使用 {tech (key := "type class")}[类型类] {name}`HasEquiv` 重载的。
 ```grammar
 $_ ≈ $_
 ```
@@ -254,7 +254,7 @@ tag := "quotient-intro"
 %%%
 
 
-类型 {lean}`Quotient` 需要 {lean}`Setoid` 的实例作为普通参数，而不是作为 {tech}[实例隐式] 参数。
+类型 {lean}`Quotient` 需要 {lean}`Setoid` 的实例作为普通参数，而不是作为 {tech (key := "instance implicit")}[实例隐式] 参数。
 这有助于确保商使用预期的等价关系。
 可以通过命名实例或使用 {name}`inferInstance` 来提供实例。
 
@@ -427,7 +427,7 @@ tag := "quotient-proofs"
 证明商类型元素属性的基本工具是健全性公理和归纳原理。
 健全性公理指出，如果基础类型的两个元素通过商的等价关系相关，则它们在商类型中相等。
 归纳原理遵循归纳类型的递归结构：为了证明谓词包含商类型的所有元素，只需证明它适用于将 {name}`Quotient.mk` 应用于基础类型的每个元素即可。
-由于 {name}`Quotient` 不是 {tech}[归纳类型]，因此策略（例如 {tactic}`cases` 和 {tactic}`induction`）要求使用 {keyword}`using` 修饰符显式指定 {name}`Quotient.ind`。
+由于 {name}`Quotient` 不是 {tech (key := "inductive type")}[归纳类型]，因此策略（例如 {tactic}`cases` 和 {tactic}`induction`）要求使用 {keyword}`using` 修饰符显式指定 {name}`Quotient.ind`。
 
 {docstring Quotient.sound}
 
@@ -562,7 +562,7 @@ variable
   (resp : ∀ x y, r x y → f x = f y)
   (x : α)
 ```
-除了上述常量之外，Lean 的内核还包含 {name}`Quot.lift` 的缩减规则，该规则导致其与 {name}`Quot.mk` 一起使用时缩减，类似于归纳类型的 {tech}[ι-缩减]。
+除了上述常量之外，Lean 的内核还包含 {name}`Quot.lift` 的缩减规则，该规则导致其与 {name}`Quot.mk` 一起使用时缩减，类似于归纳类型的 {tech (key := "ι-reduction")}[ι-缩减]。
 给定 {lean}`r` 与 {lean}`α` 的关系，从 {lean}`α` 到 {lean}`β` 的函数 {lean}`f`，以及 {lean}`resp` 证明 {lean}`f` 尊重 {lean}`r`，术语{lean}`Quot.lift f resp (Quot.mk r x)` 是 {tech (key := "definitional equality")}[定义等于] {lean}`f x`。
 
 ```lean -show
@@ -682,7 +682,7 @@ extApp (Quot.mk _ f)
 ```leanTerm
 fun x => (Quot.mk extEq f).lift (· x) (fun _ _ h => h x)
 ```
-它定义上等于 {lean}`fun x => f x`，它定义上等于（通过 {tech}[η-等价]）{lean}`f`。
+它定义上等于 {lean}`fun x => f x`，它定义上等于（通过 {tech (key := "η-equivalence")}[η-等价]）{lean}`f`。
 {name}`Quot.lift` 的计算规则的命题版本是不够的，因为可约表达式出现在函数体中，并且通过函数中的等式重写已经需要函数外延性。
 
 ```lean -show

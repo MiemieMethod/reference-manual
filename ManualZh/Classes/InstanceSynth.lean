@@ -24,7 +24,7 @@ tag := "instance-synth"
 
 实例合成是一种递归搜索过程，要么找到给定类型类的实例，要么失败。
 换句话说，给定一个注册为类型类的类型，实例合成尝试用所述类型构造一个术语。
-它遵循 {tech}[可约性]：{tech}[半可约] 或 {tech}[不可约] 定义不会展开，因此定义的实例不会自动视为其展开的实例，除非它是 {tech}[可约]。
+它遵循 {tech (key := "reducibility")}[可约性]：{tech (key := "semireducible")}[半可约] 或 {tech (key := "irreducible")}[不可约] 定义不会展开，因此定义的实例不会自动视为其展开的实例，除非它是 {tech (key := "reducible")}[可约]。
 给定类可能有多个可能的实例；在这种情况下，声明的优先级和声明顺序将按此顺序用作决胜局，较新的实例优先于具有相同优先级的较早实例。
 
 该搜索过程在存在菱形的情况下是有效的，并且在存在循环时不会无限循环。
@@ -63,7 +63,7 @@ tag := "zh-classes-instancesynth-h001"
  * 输出参数的合成值与搜索问题中的指定值不匹配。
 失败的分支不会重试。
 
-如果搜索失败或卡住，搜索进程会尝试按优先级顺序使用匹配的 {tech}[默认实例]。
+如果搜索失败或卡住，搜索进程会尝试按优先级顺序使用匹配的 {tech (key := "default instances")}[默认实例]。
 对于默认实例，输入参数不需要完全已知，并且可以通过实例参数值来实例化。
 默认实例可能采用实例隐式参数，这会引发进一步的递归搜索。
 
@@ -185,9 +185,9 @@ tag := "zh-classes-instancesynth-h003"
 %%%
 
 实例合成在其搜索中使用本地实例和全局实例。
-{deftech}_本地实例_是本地上下文中可用的实例；它们可以是函数的参数，也可以是使用 `let` 本地定义的。 {TODO}[`let` 的文档参考]
+{deftech (key := "Local instances")}_本地实例_是本地上下文中可用的实例；它们可以是函数的参数，也可以是使用 `let` 本地定义的。 {TODO}[`let` 的文档参考]
 本地实例无需特别注明；任何类型为类型类的局部变量都是实例综合的候选者。
-{deftech}_全局实例_是全局环境中可用的实例；每个全局实例都是应用了 {attr}`instance` 属性的定义名称。{margin}[{keywordOf Lean.Parser.Command.declaration}`instance` 声明自动应用 {attr}`instance` 属性。]
+{deftech (key := "Global instances")}_全局实例_是全局环境中可用的实例；每个全局实例都是应用了 {attr}`instance` 属性的定义名称。{margin}[{keywordOf Lean.Parser.Command.declaration}`instance` 声明自动应用 {attr}`instance` 属性。]
 
 ::::keepEnv
 :::example "Local Instances"
@@ -288,7 +288,7 @@ Membership.{u, v} (α : outParam (Type u)) (γ : Type v) : Type (max u v)
 ```
 
 Type 类参数可以通过将其类型包装在 {name}`outParam` {tech}[gadget] 中来声明为输出。
-当类参数是 {deftech}_输出参数_时，实例合成将不需要它是已知的；事实上，任何现有的价值都被完全忽略。
+当类参数是 {deftech (key := "output parameter")}_输出参数_时，实例合成将不需要它是已知的；事实上，任何现有的价值都被完全忽略。
 选择与输入参数匹配的第一个实例，并且该实例对输出参数的分配将成为其值。
 如果存在预先存在的值，则综合完成后将其与赋值进行比较，如果不匹配则出错。
 
@@ -390,7 +390,7 @@ Hint: Type class instance resolution failures can be inspected with the `set_opt
 :::
 ::::
 
-{deftech}_半输出参数_类似于输出参数，因为在合成开始之前不需要知道它们；与输出参数不同，在选择实例时会考虑它们的值。
+{deftech (key := "Semi-output parameters")}_半输出参数_类似于输出参数，因为在合成开始之前不需要知道它们；与输出参数不同，在选择实例时会考虑它们的值。
 
 {docstring semiOutParam}
 
@@ -440,7 +440,7 @@ OneSmaller.shrink (some false) ⋯ : Bool
 tag := "default-instance-synth"
 %%%
 
-当实例合成失败时，如果未选择实例，则按优先级顺序尝试使用 {attr}`default_instance` 属性指定的 {deftech}_default 实例_。
+当实例合成失败时，如果未选择实例，则按优先级顺序尝试使用 {attr}`default_instance` 属性指定的 {deftech (key := "default instances")}_default 实例_。
 当优先级相同时，会先选择最近定义的默认实例，然后再选择较早定义的默认实例。
 选择导致搜索成功的第一个默认实例。
 
@@ -470,8 +470,8 @@ tag := "zh-classes-instancesynth-h007"
 tag := "instance-wrapping"
 %%%
 
-{name}`inferInstanceAs` 或默认 {keywordOf Lean.Parser.Command.declaration}`deriving` 处理程序合成实例后，将处理实例主体以确保其类型及其字段类型与 {name Lean.Meta.TransparencyMode.instances}`instances` 透明度下的预期类型匹配，这仅展开 {tech}[可约] 和 {tech}[隐式可约] 定义。
-当实例减少到低于 {tech}[半可缩减]透明度时，此处理可防止实例定义的内部泄漏，泄漏可能会导致代码库的不同部分之间产生意外的依赖关系。
+{name}`inferInstanceAs` 或默认 {keywordOf Lean.Parser.Command.declaration}`deriving` 处理程序合成实例后，将处理实例主体以确保其类型及其字段类型与 {name Lean.Meta.TransparencyMode.instances}`instances` 透明度下的预期类型匹配，这仅展开 {tech (key := "reducible")}[可约] 和 {tech (key := "implicit reducible")}[隐式可约] 定义。
+当实例减少到低于 {tech (key := "semireducible")}[半可缩减]透明度时，此处理可防止实例定义的内部泄漏，泄漏可能会导致代码库的不同部分之间产生意外的依赖关系。
 
 如果预期类型是一个命题，则该实例被包装在辅助定理中。
 否则，合成的实例会在 {name Lean.Meta.TransparencyMode.instances}`instances` 透明度下还原为弱头部范式。

@@ -68,7 +68,7 @@ layoutDiagram [
 ```
 :::
 
-字符串表示为字节的 {tech}[动态数组]，以 UTF-8 编码。
+字符串表示为字节的 {tech (key := "dynamic arrays")}[动态数组]，以 UTF-8 编码。
 在对象头之后，字符串包含：
 
 : 字节数

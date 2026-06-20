@@ -31,7 +31,7 @@ tag := "lake-config"
 %%%
 
 :::paragraph
-Lake 为 {tech}[包配置] 文件提供两种格式：
+Lake 为 {tech (key := "package configuration")}[包配置] 文件提供两种格式：
 
 : TOML
 
@@ -48,8 +48,8 @@ Lake 为 {tech}[包配置] 文件提供两种格式：
 命令 {lake}`translate-config` 可用于在两种格式之间自动转换。
 :::
 
-这两种格式都由 Lake 进行类似的处理，它以内部结构类型的形式从配置文件中提取 {tech}[包配置]。
-当包为 {tech (key := "configure package")}[已配置] 时，生成的数据结构将写入 {tech}[构建目录] 中的 `lakefile.olean`。
+这两种格式都由 Lake 进行类似的处理，它以内部结构类型的形式从配置文件中提取 {tech (key := "package configuration")}[包配置]。
+当包为 {tech (key := "configure package")}[已配置] 时，生成的数据结构将写入 {tech (key := "build directory")}[构建目录] 中的 `lakefile.olean`。
 
 
 # 声明性 TOML 格式
@@ -58,7 +58,7 @@ tag := "lake-config-toml"
 %%%
 
 
-TOML{margin}[[_Tom 显而易见的最小语言_](https://toml.io/en/) 是配置文件的标准化格式。] 配置文件描述 Lake {tech}[包配置] 文件最常用的声明性子集。
+TOML{margin}[[_Tom 显而易见的最小语言_](https://toml.io/en/) 是配置文件的标准化格式。] 配置文件描述 Lake {tech (key := "package configuration")}[包配置] 文件最常用的声明性子集。
 TOML 文件表示_tables_，它将键映射到值。
 值可能由字符串、数字、值数组或其他表格组成。
 由于 TOML 在文件结构方面具有相当大的灵活性，因此本参考文档记录了预期的值，而不是用于生成它们的特定语法。
@@ -79,7 +79,7 @@ Lake 未使用的字段名称不应用于存储要由其他工具处理的元数
 tag := "zh-buildtools-lake-config-h002"
 %%%
 
-`lakefile.toml` 的顶级内容指定适用于包本身的选项，包括名称和版本等元数据、{tech}[工作空间]中文件的位置、用于所有 {tech}[目标] 的编译器标志，以及
+`lakefile.toml` 的顶级内容指定适用于包本身的选项，包括名称和版本等元数据、{tech (key := "workspace")}[工作空间]中文件的位置、用于所有 {tech (key := "targets")}[目标] 的编译器标志，以及
 唯一的必填字段是 `name`，它声明包的名称。
 
 :::::tomlTableDocs root "Package Configuration" Lake.PackageConfig (skip := backend) (skip := releaseRepo?) (skip := buildArchive?) (skip := manifestFile) (skip := moreServerArgs) (skip := dynlibs) (skip := plugins)
@@ -102,15 +102,15 @@ tag := "zh-buildtools-lake-config-h002"
 :::tomlFieldCategory "Building and Running" defaultTargets leanLibDir platformIndependent precompileModules moreServerOptions moreGlobalServerArgs buildType leanOptions moreLeanArgs weakLeanArgs moreLeancArgs weakLeancArgs moreLinkArgs weakLinkArgs extraDepTargets
 
 这些选项配置代码在包中的构建和运行方式。
-包中的库、可执行文件和其他 {tech}[目标] 可以进一步添加到此配置的部分。
+包中的库、可执行文件和其他 {tech (key := "targets")}[目标] 可以进一步添加到此配置的部分。
 
 :::
 
 :::tomlFieldCategory "Testing and Linting" testDriver testDriverArgs lintDriver lintDriverArgs builtinLint
 
-CLI 命令 {lake}`test` 和 {lake}`lint` 使用由 {tech}[工作空间] 的 {tech}[根包] 配置的定义来执行测试和 linting。
+CLI 命令 {lake}`test` 和 {lake}`lint` 使用由 {tech (key := "workspace")}[工作空间] 的 {tech (key := "root package")}[根包] 配置的定义来执行测试和 linting。
 运行以执行测试和 linting 的代码称为测试或 lint 驱动程序。
-在 Lean 配置文件中，可以通过将 `@[test_driver]` 或 `@[lint_driver]` 属性应用于 {tech}[Lake 脚本] 或可执行文件或库目标来指定这些文件。
+在 Lean 配置文件中，可以通过将 `@[test_driver]` 或 `@[lint_driver]` 属性应用于 {tech (key := "Lake script")}[Lake 脚本] 或可执行文件或库目标来指定这些文件。
 在 Lean 和 TOML 配置文件中，也可以通过设置这些选项来配置它们。
 可以使用字符串 `"PKG/TGT"` 将依赖项 `PKG` 中的目标或脚本 `TGT` 指定为测试或 lint 驱动程序
 
@@ -744,7 +744,7 @@ tag := "lake-config-lean"
 %%%
 
 
-Lake {tech}[包配置] 文件的 Lean 格式为 TOML 格式中支持的声明性功能提供域特定语言。
+Lake {tech (key := "package configuration")}[包配置] 文件的 Lean 格式为 TOML 格式中支持的声明性功能提供域特定语言。
 此外，它还提供了编写 Lean 代码的能力，以实现任何无法以声明方式表达的必要构建逻辑。
 Lean 配置文件名为 {configFile}`lakefile.lean`。
 
@@ -862,7 +862,7 @@ tag := "zh-buildtools-lake-config-h010"
 
 
 
-{tech}[目标] 通常通过应用 `default_target` 属性而不是显式列出它们来添加到默认目标集中。
+{tech (key := "Targets")}[目标] 通常通过应用 `default_target` 属性而不是显式列出它们来添加到默认目标集中。
 :::TODO
 修复上面的 `default_target` — 它不适用于 CI，但可以在本地使用 `attr` 角色。
 :::
@@ -1143,7 +1143,7 @@ $[where
 default_script
 ```
 
-将 {tech}[Lake 脚本] 标记为 {tech}[package] 的默认值。
+将 {tech (key := "Lake script")}[Lake 脚本] 标记为 {tech}[package] 的默认值。
 
 :::
 

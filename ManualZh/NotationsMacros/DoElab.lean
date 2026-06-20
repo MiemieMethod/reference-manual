@@ -51,13 +51,13 @@ Lean 版本 4.29.0 中引入了可扩展的 {keywordOf Lean.Parser.Term.do}`do` 
 tag := "zh-notationsmacros-doelab-h001"
 %%%
 
-{tech}[语法类型] `doElem` 表示各个 {tech}[`do` 元素]。
+{tech (key := "syntax kind")}[语法类型] `doElem` 表示各个 {tech (key := "do-elements")}[`do` 元素]。
 这些元素的序列由语法类型 {name}`doSeq` 表示，它构成了 {keywordOf Lean.Parser.Term.do}`do` 块的主体。
 {keywordOf Lean.Parser.Term.do}`do` 的精化器在其主体中的 {name}`doSeq` 上调用专门的精化框架，依次详细说明每个 `doElem`。
 这个专门的框架允许序列中的每个元素修改后续元素的精化，以及跟踪诸如封闭循环（对于 {keywordOf Lean.Parser.Term.doBreak}`break` 和 {keywordOf Lean.Parser.Term.doContinue}`continue`）、通过 {keywordOf Lean.Parser.Term.doReturn}`return` 转义的方式以及可变变量集等信息。
 
 {keywordOf Lean.Parser.Term.do}`do`-elements 的精化与术语非常相似。
-首先，如果所讨论的语法是 {tech}[宏]，则它会被扩展。
+首先，如果所讨论的语法是 {tech (key := "macro")}[宏]，则它会被扩展。
 重复此操作，直到宏展开的结果不再是宏。
 接下来，查询内部表以查找与 {keywordOf Lean.Parser.Term.do}`do` 元素的语法类型关联的精化过程。
 该表与术语精化器表分开，因为 {keywordOf Lean.Parser.Term.do}`do` 元素精化器具有不同的类型。
@@ -595,7 +595,7 @@ def elabOnce : DoElab := fun stx dec => do
 tag := "do-elab-control-info"
 %%%
 
-除了精化器之外，自定义 {keywordOf Lean.Parser.Term.do}`do` 元素还必须提供 {deftech}_控制信息_。
+除了精化器之外，自定义 {keywordOf Lean.Parser.Term.do}`do` 元素还必须提供 {deftech (key := "control information")}_控制信息_。
 这描述了自定义元素如何与周围的控制结构和可变变量交互。
 控制信息允许Lean生成适当的代码；特别是，它允许 {name Lean.Elab.Do.DoElemCont.withDuplicableCont}`DoElemCont.withDuplicableCont` 分析延续要详细说明的代码，从而实现更好的代码生成。
 控制信息与精化器是分开的，因为精化器需要能够在精化子元素之前分析子元素的_语法_，以便知道如何构造其延续。
@@ -652,7 +652,7 @@ tag := "zh-notationsmacros-doelab-h009"
 
 上下文的一个重要部分是可用于正在详细说明的 {keywordOf Lean.Parser.Term.do}`do` 元素的一组可变变量。
 这在两个字段中可用：{name Lean.Elab.Do.Context.mutVars}`mutVars` 提供最初绑定变量的标识符，而 {name Lean.Elab.Do.Context.mutVarDefs}`mutVarDefs` 将它们的名称映射到表示它们的局部变量。
-由于{tech}[卫生]，{name Lean.Elab.Do.Context.mutVars}`mutVars`中的标识符包含{tech}[宏范围]；在构建面向用户的错误消息之前，应使用 {name}`Name.simpMacroScopes` 删除这些内容。
+由于{tech (key := "hygiene")}[卫生]，{name Lean.Elab.Do.Context.mutVars}`mutVars`中的标识符包含{tech (key := "macro scopes")}[宏范围]；在构建面向用户的错误消息之前，应使用 {name}`Name.simpMacroScopes` 删除这些内容。
 
 每个可变变量对应至少一个详细变量 ({name}`Expr.fvar`)。
 这些详细变量存在于跟踪其用户可见名称的本地上下文中。

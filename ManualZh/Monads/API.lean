@@ -106,7 +106,7 @@ tag := "zh-monads-api-h003"
 tag := "zh-monads-api-h004"
 %%%
 
-{deftech}_Kleisli Composition_是一元函数的组合，类似于普通函数的{name}`Function.comp`。
+{deftech (key := "Kleisli composition")}_Kleisli Composition_是一元函数的组合，类似于普通函数的{name}`Function.comp`。
 
 {docstring Bind.kleisliRight}
 

@@ -40,7 +40,7 @@ tag := "mvcgen-tactic"
 :::
 
 {tactic}`mvcgen`策略实现_monadic 验证条件生成器_：
-它将涉及使用 Lean 的命令式 {keywordOf Lean.Parser.Term.do}`do` 表示法编写的程序的目标分解为多个足以证明该目标的较小的 {tech}_验证条件_ ({deftech}[VCs])。
+它将涉及使用 Lean 的命令式 {keywordOf Lean.Parser.Term.do}`do` 表示法编写的程序的目标分解为多个足以证明该目标的较小的 {tech (key := "verification conditions")}_验证条件_ ({deftech}[VCs])。
 除了描述 {tactic}`mvcgen` 使用的参考之外，本章还包括可以独立于参考阅读的 {ref "mvcgen-tactic-tutorial" (remote := "tutorials")}[教程]。
 
 为了使用 {tactic}`mvcgen`策略，必须导入 {module}`Std.Tactic.Do` 并且必须打开命名空间 {namespace}`Std.Do`。
@@ -55,18 +55,18 @@ tag := "zh-vcgen-h001"
 
 {tactic}`mvcgen` 的工作流程包括以下内容：
 
-1. Monadic 程序根据 {tech}[谓词转换器语义] 重新解释。
+1. Monadic 程序根据 {tech (key := "predicate transformer semantics")}[谓词转换器语义] 重新解释。
    {name}`WP` 的实例决定了 monad 的解释。
-   每个程序都被解释为从任意 {tech}[后置条件] 到 {tech}[最弱前置条件] 的映射，以确保后置条件。
+   每个程序都被解释为从任意 {tech (key := "postconditions")}[后置条件] 到 {tech (key := "weakest precondition")}[最弱前置条件] 的映射，以确保后置条件。
    此步骤对于大多数用户来说是不可见的，但是想要使其 monad 能够与 {tactic}`mvcgen` 一起使用的库作者需要理解它。
 2. 程序由较小的程序组成。
    {keywordOf Lean.Parser.Term.do}`do` 块中的每个语句都与谓词转换器关联，并且存在将这些语句与排序和控制流运算符组合的通用规则。
-   带有前置条件和后置条件的语句称为 {tech}_Hoare Triple_。
+   带有前置条件和后置条件的语句称为 {tech (key := "Hoare triple")}_Hoare Triple_。
    在程序中，每个语句的后置条件应该足以证明下一个语句的前置条件，并且循环需要指定的 {deftech}_loop invariant_，这是一个在循环开始和每次迭代结束时必须为 true 的语句。
-   指定的 {tech}_specation lemmas_ 将函数与指定它们的 Hoare 三元组关联起来。
+   指定的 {tech (key := "specification lemmas")}_specation lemmas_ 将函数与指定它们的 Hoare 三元组关联起来。
 3. 将一元程序的最弱前提条件语义应用于所需的证明目标会导致证明目标必须成立的前提条件。
    任何缺失的步骤，例如循环不变量或证明语句的前提条件暗示其后置条件都会成为新的子目标。
-   这些缺失的步骤称为 {deftech}_验证条件_。
+   这些缺失的步骤称为 {deftech (key := "verification conditions")}_验证条件_。
    {tactic}`mvcgen`策略执行此转换，用其验证条件替换目标。
    在此转换期间，{tactic}`mvcgen` 使用规范引理来释放有关各个语句的证明。
 4. 在提供循环不变量之后，许多验证条件实际上可以自动解除。
@@ -78,10 +78,10 @@ tag := "zh-vcgen-h001"
 tag := "zh-vcgen-h002"
 %%%
 
-{deftech}_谓词转换器语义_是将程序解释为从谓词到谓词的函数，而不是从值到值的函数。
+{deftech (key := "predicate transformer semantics")}_谓词转换器语义_是将程序解释为从谓词到谓词的函数，而不是从值到值的函数。
 {deftech}_postcondition_ 是在运行程序后成立的断言，而 {deftech}_precondition_ 是在运行程序之前必须成立的断言，以便保证后置条件成立。
 
-{tactic}`mvcgen` 使用的谓词转换器语义将后置条件转换为 {deftech}_最弱的前提条件_，在此情况下程序将确保后置条件。
+{tactic}`mvcgen` 使用的谓词转换器语义将后置条件转换为 {deftech (key := "weakest preconditions")}_最弱的前提条件_，在此情况下程序将确保后置条件。
 如果在所有状态下 $`P'` 足以证明 $`P`，但 $`P` 不足以证明 $`P'`，则断言 $`P` 弱于 $`P'`。
 逻辑上等价的断言被认为是相等的。
 
@@ -345,7 +345,7 @@ tag := "zh-vcgen-h008"
 universe u v
 variable {m : Type u → Type v} {ps : PostShape.{u}} [WP m ps] {P : Assertion ps} {α  : Type u}  {prog : m α} {Q' : α → Assertion ps}
 ```
-可能引发异常的程序的后置条件有两种。 {deftech}_总正确性解释_ {lean}`⦃P⦄ prog ⦃⇓ r => Q' r⦄` 断言，如果 {lean}`P` 成立，则 {lean}`prog` 终止_并且_ {lean}`Q'` 对于结果成立。 {deftech}_部分正确性解释_ {lean}`⦃P⦄ prog ⦃⇓? r => Q' r⦄` 断言，给定 {lean}`P` 成立，并且_if_ {lean}`prog` 终止_then_ {lean}`Q'` 对于结果成立。
+可能引发异常的程序的后置条件有两种。 {deftech (key := "total correctness interpretation")}_总正确性解释_ {lean}`⦃P⦄ prog ⦃⇓ r => Q' r⦄` 断言，如果 {lean}`P` 成立，则 {lean}`prog` 终止_并且_ {lean}`Q'` 对于结果成立。 {deftech (key := "partial correctness interpretation")}_部分正确性解释_ {lean}`⦃P⦄ prog ⦃⇓? r => Q' r⦄` 断言，给定 {lean}`P` 成立，并且_if_ {lean}`prog` 终止_then_ {lean}`Q'` 对于结果成立。
 :::
 
 
@@ -568,7 +568,7 @@ tag := "mvcgen-adequacy"
 
 可以从纯代码调用的 Monad 通常提供一个调用运算符，该运算符将任何所需的输入状态作为参数，并返回与输出状态配对的值或某种异常值。
 示例包括 {name}`StateT.run`、{name}`ExceptT.run` 和 {name}`Id.run`。
-{deftech}_Adequacy lemmas_ 在有关单子程序调用的语句与这些程序的 {tech}[最弱前提条件] 语义（由其 {name}`WP` 实例给出）之间提供桥梁。
+{deftech}_Adequacy lemmas_ 在有关单子程序调用的语句与这些程序的 {tech (key := "weakest precondition")}[最弱前提条件] 语义（由其 {name}`WP` 实例给出）之间提供桥梁。
 它们表明，如果最弱的前提条件为真，则有关调用的属性为真。
 
 {docstring Id.of_wp_run_eq}
@@ -588,7 +588,7 @@ tag := "mvcgen-adequacy"
 tag := "zh-vcgen-h013"
 %%%
 
-{deftech}_Hoare Triple_{citep hoare69}[] 由前置条件、程序和后置条件组成。
+{deftech (key := "Hoare triple")}_Hoare Triple_{citep hoare69}[] 由前置条件、程序和后置条件组成。
 在前置条件为 true 的状态下运行程序会导致后置条件为 true 的状态。
 
 {docstring Triple}
@@ -614,8 +614,8 @@ variable [WP m ps] {x : m α} {P : Assertion ps} {Q : PostCond α ps}
 tag := "zh-vcgen-h014"
 %%%
 
-{deftech}_规范引理_是将霍尔三元组与函数关联起来的指定定理。
-当 {tactic}`mvcgen` 遇到函数时，它会检查是否有任何已注册的规范引理，并尝试使用它们来释放中间 {tech}[验证条件]。
+{deftech (key := "Specification lemmas")}_规范引理_是将霍尔三元组与函数关联起来的指定定理。
+当 {tactic}`mvcgen` 遇到函数时，它会检查是否有任何已注册的规范引理，并尝试使用它们来释放中间 {tech (key := "verification conditions")}[验证条件]。
 如果没有适用的规范引理，则语句的前置条件和后置条件之间的连接将成为验证条件。
 规范引理允许对一元代码库进行组合推理。
 
@@ -633,7 +633,7 @@ spec $[$_:prio]?
 :::
 
 规范引理中的全称量化变量可用于将输入状态与输出状态和返回值相关联。
-这些变量称为 {deftech}_原理图变量_。
+这些变量称为 {deftech (key := "schematic variables")}_原理图变量_。
 
 :::example "Schematic Variables"
 ```imports -show
@@ -676,7 +676,7 @@ tag := "zh-vcgen-h015"
 %%%
 
 这些类型用于不变量。
-{name}`ForIn.forIn` 和 {name}`ForIn'.forIn'` 的 {tech}[规范引理] 采用 {name}`Invariant` 类型的参数，并且 {tactic}`mvcgen` 确保其他自动化不会意外生成不变量。
+{name}`ForIn.forIn` 和 {name}`ForIn'.forIn'` 的 {tech (key := "specification lemmas")}[规范引理] 采用 {name}`Invariant` 类型的参数，并且 {tactic}`mvcgen` 确保其他自动化不会意外生成不变量。
 
 {docstring Invariant}
 
@@ -707,7 +707,7 @@ tag := "zh-vcgen-h016"
 %%%
 
 {tactic}`mvcgen`策略将以 {name}`SPred` 和最弱先决条件表示的目标转换为一组不变量和验证条件，这些不变量和验证条件一起足以证明原始目标。
-特别是，{tech}[霍尔三元组]是根据最弱前提条件定义的，因此可以使用 {tactic}`mvcgen` 来证明它们。
+特别是，{tech (key := "Hoare triples")}[霍尔三元组]是根据最弱前提条件定义的，因此可以使用 {tactic}`mvcgen` 来证明它们。
 
 :::leanSection
 ```lean -show
@@ -716,8 +716,8 @@ variable [Monad m] [WPMonad m ps] {e : m α} {P : Assertion ps} {Q : PostCond α
 目标的验证条件生成如下：
 1. 应用了许多简化和重写。
 2. 目标现在应该采用 {lean}`P ⊢ₛ wp⟦e⟧ Q` 的形式（即，从一组有状态假设到暗示所需后置条件的最弱前提条件的蕴涵）。
-3. {tech}[可约]常量和表达式 {lean}`e` 中标记为 {attrs}`@[spec]` 的定义已展开。
-4. 如果表达式是 {tech}[辅助匹配函数] 或条件（{name}`ite` 或 {name}`dite`）的应用，则首先对其进行简化。
+3. {tech (key := "Reducible")}[可约]常量和表达式 {lean}`e` 中标记为 {attrs}`@[spec]` 的定义已展开。
+4. 如果表达式是 {tech (key := "auxiliary matching function")}[辅助匹配函数] 或条件（{name}`ite` 或 {name}`dite`）的应用，则首先对其进行简化。
    每个匹配器的 {tech (key := "match discriminant")}[判别式] 被简化，并且整个项被减少以试图消除匹配器或条件。
    如果失败，则会为每个分支生成一个新目标。
 5. 如果表达式是常量的应用，则按优先级顺序尝试标记为 {attrs}`@[spec]` 的适用引理。
@@ -731,16 +731,16 @@ variable [Monad m] [WPMonad m ps] {e : m α} {P : Assertion ps} {Q : PostCond α
 8. 根据策略的配置参数，在每个验证条件下尝试 {tactic}`mvcgen_trivial` 和 {tactic}`mleave`。
 :::
 
-可以通过为库定义适当的 {tech}[规范引理] 来改进验证条件生成。
+可以通过为库定义适当的 {tech (key := "specification lemmas")}[规范引理] 来改进验证条件生成。
 良好规范引理的存在会导致生成的验证条件更少。
-此外，确保术语的 {tech}[simp 范式] 适用于模式匹配，并且默认 simp 集中有足够的引理来将每个可能的术语简化为该范式，可能会导致更多条件和模式匹配被消除。
+此外，确保术语的 {tech (key := "simp normal form")}[simp 范式] 适用于模式匹配，并且默认 simp 集中有足够的引理来将每个可能的术语简化为该范式，可能会导致更多条件和模式匹配被消除。
 
 # 为 Monad 启用 `mvcgen`
 %%%
 tag := "zh-vcgen-h017"
 %%%
 
-如果 monad 是根据 Lean 标准库提供的 {tech}[monad 转换器] 实现的，例如 {name}`ExceptT` 和 {name}`StateT`，那么它不需要额外的实例。
+如果 monad 是根据 Lean 标准库提供的 {tech (key := "monad transformers")}[monad 转换器] 实现的，例如 {name}`ExceptT` 和 {name}`StateT`，那么它不需要额外的实例。
 其他 monad 将需要 {name}`WP`、{name}`LawfulMonad` 和 {name}`WPMonad` 的实例。
 策略旨在支持对具有可能被中断状态的单线程控制进行建模的 monad；换句话说，就是普通命令式编程中存在的效果。
 更多奇特效应尚未得到研究。
@@ -749,11 +749,11 @@ tag := "zh-vcgen-h017"
 这个引理应该表明，运行单子计算和断言所需谓词的最弱前提条件实际上足以证明该谓词。
 
 除了 monad 的定义之外，典型的库还提供一组原始运算符。
-其中每一个都应提供 {tech}[规范引理]。
+其中每一个都应提供 {tech (key := "specification lemma")}[规范引理]。
 将状态内部设为私有并导出一组精心设计的断言运算符可能也很有用。
 
 理想情况下，库的原始运算符的规范引理应该是作为谓词转换器的运算符的精确规范。
-虽然通常更容易思考运算符如何将输入状态转换为输出状态，但当后置条件完全自由时，{tech}[验证条件]生成将更可靠地工作。
+虽然通常更容易思考运算符如何将输入状态转换为输出状态，但当后置条件完全自由时，{tech (key := "verification condition")}[验证条件]生成将更可靠地工作。
 这允许自动化使用下一个语句的精确前提条件来实例化后置条件，而不需要显示蕴涵。
 换句话说，将前置条件指定为后置条件的函数的规范在实践中比仅关联前置条件和后置条件的规范效果更好。
 
@@ -881,7 +881,7 @@ theorem LogM.of_wp_run_eq {x : α × Array β} {prog : LogM β α}
 
 接下来，应该为库中的每个运算符提供一个规范引理。
 只有一个：{name}`log`。
-对于新的单子，这些证明必须经常打破 {tech}[Hoare 三元组] 的抽象边界和最弱的前提条件；然后，图书馆的客户可以抽象地使用它们提供的规范。
+对于新的单子，这些证明必须经常打破 {tech (key := "Hoare triples")}[Hoare 三元组] 的抽象边界和最弱的前提条件；然后，图书馆的客户可以抽象地使用它们提供的规范。
 ```lean
 theorem log_spec {x : β} :
     ⦃ fun s => ⌜s = s'⌝ ⦄ log x ⦃ ⇓ () s => ⌜s = s'.push x⌝ ⦄ := by

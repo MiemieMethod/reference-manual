@@ -35,7 +35,7 @@ htmlSplit := .never
 
 名称被组织成分层的 {deftech}_namespaces_，它们是名称的集合。
 命名空间是 Lean 中组织 API 的主要方式：它们提供操作本体，对相关项进行分组。
-此外，虽然这不是通过在命名空间中给它们命名来完成的，但 {ref "language-extension"}[语法扩展]、{tech}[实例] 和 {tech}[属性] 等功能的效果可以附加到命名空间。
+此外，虽然这不是通过在命名空间中给它们命名来完成的，但 {ref "language-extension"}[语法扩展]、{tech (key := "instances")}[实例] 和 {tech (key := "attributes")}[属性] 等功能的效果可以附加到命名空间。
 
 将操作排序到名称空间中可以从全局角度从概念上组织库。
 然而，任何给定的 Lean 文件通常不会同等地使用所有名称。
@@ -50,7 +50,7 @@ htmlSplit := .never
 tag := "scopes"
 %%%
 
-许多命令对当前 {deftech}[_sectionscope_] 产生影响（有时在清除时简称为“scope”）。
+许多命令对当前 {deftech (key := "section scope")}[_sectionscope_] 产生影响（有时在清除时简称为“scope”）。
 每个 Lean 模块都有一个部分范围。
 嵌套作用域是通过 {keywordOf Lean.Parser.Command.namespace}`namespace` 和 {keywordOf Lean.Parser.Command.section}`section` 命令以及 {keywordOf Lean.Parser.Command.in}`in` 命令组合器创建的。
 
@@ -58,7 +58,7 @@ tag := "scopes"
 
 : 当前命名空间
 
-  {deftech}_当前命名空间_ 是将在其中定义新声明的命名空间。
+  {deftech (key := "current namespace")}_当前命名空间_ 是将在其中定义新声明的命名空间。
   此外，{tech (key:="resolve")}[名称解析] 包括全局名称范围内当前命名空间的所有前缀。
 
 : 开放的命名空间
@@ -72,7 +72,7 @@ tag := "scopes"
 
 : 节变量
 
-  {tech}[节变量] 是作为参数自动添加到定义中的名称（或 {tech}[实例隐式] 参数）。
+  {tech (key := "Section variables")}[节变量] 是作为参数自动添加到定义中的名称（或 {tech (key := "instance implicit")}[实例隐式] 参数）。
   当它们出现在定理的陈述中时，它们也会作为全称量化的假设添加到定理中。
 
 
@@ -105,10 +105,10 @@ $[public]? $[noncomputable]? $[meta]?
 如果标头包含 {keyword}`noncomputable`，则该节中的定义都被认为是不可计算的，并且不会为它们生成编译代码。
 这对于依赖非计算推理原则（例如选择公理）的定义是必需的。
 
-其余修饰符仅在 {tech}[模块] 中有用。
+其余修饰符仅在 {tech (key := "modules")}[模块] 中有用。
 如果标头包含 {attrs}`@[expose]`，则该节中的所有定义都是 {tech}[exposed]。
-如果它包含 {keyword}`public`，则默认情况下，此类 {deftech}[publicsection] 中的声明是公共的，而不是私有的。
-如果它包含{keyword}`meta`，则该节的声明全部放在{tech}[元阶段]中。
+如果它包含 {keyword}`public`，则默认情况下，此类 {deftech (key := "public section")}[publicsection] 中的声明是公共的，而不是私有的。
+如果它包含{keyword}`meta`，则该节的声明全部放在{tech (key := "meta phase")}[元阶段]中。
 :::
 
 :::example "Named Section"
@@ -280,7 +280,7 @@ Unknown identifier `cupcake`
 tag := "section-variables"
 %%%
 
-{deftech}_Section Variables_ 是自动添加到提及它们的声明中的参数。
+{deftech (key := "Section variables")}_Section Variables_ 是自动添加到提及它们的声明中的参数。
 无论选项 {option}`autoImplicit` 是否为 {lean}`true`，都会发生这种情况。
 节变量可以是隐式的、严格隐式的或显式的；实例隐式节变量经过特殊处理。
 

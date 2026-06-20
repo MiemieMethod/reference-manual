@@ -44,7 +44,7 @@ Lean 通过多种机制解决符号可扩展性问题，每种机制解决问题
 
  * {ref "parser"}_extensible parser_ {index}[parser] 允许以声明方式实现多种符号约定，并灵活组合。
  * {ref "macro-and-elab"}[宏] 允许将新语法轻松映射到现有语法，这是为新构造提供含义的简单方法。
-  由于 {tech}[卫生] 和源位置的自动传播，此过程不会干扰 Lean 的交互功能。
+  由于 {tech (key := "hygiene")}[卫生] 和源位置的自动传播，此过程不会干扰 Lean 的交互功能。
  * {ref "macro-and-elab"}[Elaborators] 提供新语法，在宏表达能力不足的情况下，可使用与 Lean 自己的语法相同的工具。
  * {ref "notations"}[符号] 允许同时定义解析器扩展、宏和漂亮的打印机。
    定义中缀、前缀或后缀运算符时，{ref "operators"}[自定义运算符] 自动处理优先级和关联性。
@@ -64,21 +64,21 @@ tag := "macros"
 %%%
 
 {deftech}_Macros_ 是在 {tech (key := "elaborator") -normalize}[精化] 和 {ref "tactic-macros"}[策略执行] 期间发生的从 {name Lean.Syntax}`Syntax` 到 {name Lean.Syntax}`Syntax` 的转换。
-用宏转换的结果替换语法称为 {deftech}_宏扩展_。
-多个宏可以与单个 {tech}[语法类型] 关联，并且按定义顺序尝试它们。
-宏在 {tech}[monad] 中运行，该 {tech}[monad] 可以访问一些编译时元数据，并且能够发出错误消息或委托给后续宏，但宏 monad 的功能远不如精化monad 强大。
+用宏转换的结果替换语法称为 {deftech (key := "macro expansion")}_宏扩展_。
+多个宏可以与单个 {tech (key := "syntax kind")}[语法类型] 关联，并且按定义顺序尝试它们。
+宏在 {tech (key := "Monad")}[monad] 中运行，该 {tech (key := "Monad")}[monad] 可以访问一些编译时元数据，并且能够发出错误消息或委托给后续宏，但宏 monad 的功能远不如精化monad 强大。
 
 ```lean -show
 section
 open Lean (Syntax MacroM)
 ```
 
-宏与 {tech}[语法类型] 关联。
+宏与 {tech (key := "syntax kinds")}[语法类型] 关联。
 内部表将语法类型映射到 {lean}`Syntax → MacroM Syntax` 类型的宏。
 宏通过抛出 {name Lean.Macro.Exception.unsupportedSyntax}`unsupportedSyntax` 异常委托给表中的下一个条目。
 当一个给定的 {name}`Syntax` 值_是一个宏_时，存在与其语法类型关联且不会抛出 {name Lean.Macro.Exception.unsupportedSyntax}`unsupportedSyntax` 的宏。
 如果宏引发任何其他异常，则会向用户报告错误。
-{tech}[语法类别]与宏展开无关；然而，由于每种语法类型通常与单个语法类别相关联，因此它们在实践中不会产生干扰。
+{tech (key := "Syntax categories")}[语法类别]与宏展开无关；然而，由于每种语法类型通常与单个语法类别相关联，因此它们在实践中不会产生干扰。
 
 ::::keepEnv
 :::example "Macro Error Reporting"
@@ -112,7 +112,7 @@ macro_rules
 :::
 ::::
 
-在详细精化一段语法之前，精化器检查其 {tech}[语法类型] 是否具有与其关联的宏。
+在详细精化一段语法之前，精化器检查其 {tech (key := "syntax kind")}[语法类型] 是否具有与其关联的宏。
 这些是按顺序尝试的。
 如果宏成功，可能返回不同类型的语法，则重复检查并再次扩展宏，直到最外层语法不再是宏。
 然后可以继续执行精化或策略。
@@ -161,7 +161,7 @@ tag := "macro-hygiene"
 %%%
 
 如果宏的扩展无法导致标识符捕获，则该宏为 {deftech (key:="hygiene")}_hygienic_。
-{deftech}[标识符捕获]是指标识符最终引用了源代码中该标识符出现的范围之外的绑定位点。
+{deftech (key := "Identifier capture")}[标识符捕获]是指标识符最终引用了源代码中该标识符出现的范围之外的绑定位点。
 标识符捕获有两种类型：
  * 如果宏的扩展引入了绑定器，那么作为宏参数的标识符最终可能会引用引入的绑定器（如果它们的名称恰好匹配）。
  * 如果宏的扩展旨在引用一个名称，但该宏在本地绑定该名称或引入了新的全局名称的上下文中使用，则它最终可能会引用错误的名称。
@@ -172,11 +172,11 @@ tag := "macro-hygiene"
 变量捕获问题很难测试，因为它们依赖于名称选择的巧合，并且一致地应用这些技术会产生嘈杂的代码。
 
 Lean 具有自动卫生功能：几乎在所有情况下，宏都会自动卫生。
-通过使用 {deftech}_macroscopes_ 对宏引入的标识符进行注释，可以避免引入的绑定捕获，该标识符唯一标识宏展开的每次调用。
+通过使用 {deftech (key := "macro scopes")}_macroscopes_ 对宏引入的标识符进行注释，可以避免引入的绑定捕获，该标识符唯一标识宏展开的每次调用。
 如果标识符的绑定和使用具有相同的宏范围，则它们是通过宏展开的同一步骤引入的，并且应该相互引用。
 同样，宏生成的代码中全局名称的使用不会被扩展上下文中的本地绑定捕获，因为这些使用站点具有绑定出现中不存在的宏范围。
 通过使用在宏主体中生成的代码中在引用时匹配的一组全局名称来注释潜在的全局名称引用，可以防止新引入的全局名称的捕获。
-用潜在引用对象注释的标识符称为 {deftech}_预解析标识符_，并且 {name}`Syntax.ident` 构造函数上的 {lean}`Syntax.Preresolved` 字段用于存储潜在引用对象。
+用潜在引用对象注释的标识符称为 {deftech (key := "pre-resolved identifiers")}_预解析标识符_，并且 {name}`Syntax.ident` 构造函数上的 {lean}`Syntax.Preresolved` 字段用于存储潜在引用对象。
 在精化期间，如果标识符具有与其关联的预解析全局名称，则其他全局名称不会被视为有效的引用目标。
 
 宏作用域和预解析标识符的引入发生在 {tech}[quotation] 期间。
@@ -220,7 +220,7 @@ tag := "macro-exceptions"
 tag := "macro-monad-hygiene"
 %%%
 
-{tech}[Hygiene] 是通过将 {tech}[宏范围] 添加到语法中出现的标识符来实现的。
+{tech}[Hygiene] 是通过将 {tech (key := "macro scopes")}[宏范围] 添加到语法中出现的标识符来实现的。
 通常，{tech}[quotation] 的过程会添加所有必要的作用域，但直接构造语法的宏必须将宏作用域添加到它们引入的标识符中。
 
 {docstring Lean.Macro.withFreshMacroScope}
@@ -266,9 +266,9 @@ open Lean
 ```
 
 在下面的示例中，引用的内容可以是函数应用程序，也可以是命令序列。
-两者都匹配文件的同一区域，因此 {tech}[本地最长匹配规则] 不相关。
+两者都匹配文件的同一区域，因此 {tech (key := "local longest-match rule")}[本地最长匹配规则] 不相关。
 术语引用的优先级高于命令引用，因此引用被解释为术语。
-条款期望其 {tech}[反引号] 具有类型 {lean}``TSyntax `term`` rather than {lean}``TSyntax `command``。
+条款期望其 {tech (key := "antiquotations")}[反引号] 具有类型 {lean}``TSyntax `term`` rather than {lean}``TSyntax `command``。
 ```lean +error (name := cmdQuot)
 example (cmd1 cmd2 : TSyntax `command) : MacroM (TSyntax `command) :=
   `($cmd1 $cmd2)
@@ -395,9 +395,9 @@ open Lean.Elab.Tactic (TacticM)
 ```
 
 引用不是类型 {name}`Syntax`，而是类型为 {lean}`m Syntax` 的单子操作。
-引用是一元的，因为它通过添加 {tech}[宏范围] 和预解析标识符来实现 {tech}[卫生]，如 {ref "macro-hygiene"}[卫生部分] 中所述。
+引用是一元的，因为它通过添加 {tech (key := "hygiene")}[宏范围] 和预解析标识符来实现 {tech (key := "macro scopes")}[卫生]，如 {ref "macro-hygiene"}[卫生部分] 中所述。
 要使用的特定 monad 是引用的隐式参数，任何具有 {name}`MonadQuotation` 类型类实例的 monad 都适用。
-{name}`MonadQuotation` 扩展了 {name}`MonadRef`，这使引用能够访问宏扩展器或精化器当前正在处理的语法的源位置。 {name}`MonadQuotation` 还包括将 {tech}[宏范围] 添加到标识符并为子任务使用新的宏范围的功能。
+{name}`MonadQuotation` 扩展了 {name}`MonadRef`，这使引用能够访问宏扩展器或精化器当前正在处理的语法的源位置。 {name}`MonadQuotation` 还包括将 {tech (key := "macro scopes")}[宏范围] 添加到标识符并为子任务使用新的宏范围的功能。
 支持报价的 Monad 包括 {name}`MacroM`、{name}`TermElabM`、{name}`CommandElabM` 和 {name}`TacticM`。
 
 ```lean -show
@@ -416,7 +416,7 @@ example [Monad m] [MonadQuotation m] : m Syntax := `(term|2 + 2)
 tag := "quasiquotation"
 %%%
 
-{deftech}_Quasiquotation_ 是一种可能包含 {deftech}_antiquotations_ 的引用形式，{deftech}_antiquotations_ 是未引用的引用区域，而是计算结果语法的表达式。
+{deftech}_Quasiquotation_ 是一种可能包含 {deftech}_antiquotations_ 的引用形式，{deftech (key := "splices")}_antiquotations_ 是未引用的引用区域，而是计算结果语法的表达式。
 准引用本质上是一个模板；外部引用区域提供了一个固定的框架，始终产生相同的外部语法，而反引号产生最终语法中不同的部分。
 Lean 中的所有引用都是准引用，因此不需要特殊语法来区分准引用和其他引用。
 引用过程不会将宏作用域添加到通过反引号插入的标识符，因为这些标识符要么来自另一个引用（在这种情况下它们已经具有宏作用域），要么来自宏的输入（在这种情况下它们不应该具有宏作用域，因为它们不是由宏引入的）。
@@ -585,10 +585,10 @@ end
 tag := "splices"
 %%%
 
-除了通过反引号包括其他语法之外，准引号还可以包括 {deftech}_splices_。
+除了通过反引号包括其他语法之外，准引号还可以包括 {deftech (key := "splice suffix")}_splices_。
 拼接表示数组的元素按顺序插入。
 重复的元素可以包括分隔符，例如列表或数组元素之间的逗号。
-拼接可以由带有 {deftech}_splice 后缀_的普通反引号组成，或者它们可以是 {deftech}_扩展拼接_，提供额外的重复结构。
+拼接可以由带有 {deftech (key := "extended splices")}_splice 后缀_的普通反引号组成，或者它们可以是 {deftech (key := "token antiquotations")}_扩展拼接_，提供额外的重复结构。
 
 剪接后缀由星号或有效原子后跟星号 (`*`) 组成。
 后缀可以跟在任何标识符或术语反引号后面。
@@ -887,7 +887,7 @@ macro_rules
 ```
 最初，限定符序列的类型为 {lean}``TSepArray `qualifier ","``，表示它表示以逗号分隔的限定符序列。
 {lean}`TSepArray.getElems` 将其转换为 {lean}``TSyntaxArray `qualifier``, which is an abbreviation for {lean}``Array (TSyntax `qualifier)``。
-这允许使用 {tech}[通用字段表示法] 来调用 {name}`Array.foldrM`。
+这允许使用 {tech (key := "generalized field notation")}[通用字段表示法] 来调用 {name}`Array.foldrM`。
 谓词分支中需要 `term` 注释，以防止匹配值具有语法类型 {lean}`` `qualifier ``；必须从该值中解开一个 {name Syntax.node}`node`。
 
 列表推导式的行为符合预期：
@@ -936,22 +936,22 @@ $_:attrKind macro_rules $[(kind := $k)]?
 如果没有为引用指定类别或解析器，则它可能匹配术语或命令（序列），但绝不会两者都匹配。
 为了避免歧义，选择术语“解析器”。
 
-在内部，宏在一个表中进行跟踪，该表将每个 {tech}[语法类型] 映射到其宏。
+在内部，宏在一个表中进行跟踪，该表将每个 {tech (key := "syntax kind")}[语法类型] 映射到其宏。
 {keywordOf Lean.Parser.Command.macro_rules}`macro_rules`命令可以用语法类型明确地注释。
 
 如果显式提供了语法类型，则宏定义会检查每个引用模式是否具有该类型。
-如果引用的解析结果是 {tech}[选择节点]（即，如果解析不明确），则对于具有指定类型的每个替代项，模式都会重复一次。
+如果引用的解析结果是 {tech (key := "choice node")}[选择节点]（即，如果解析不明确），则对于具有指定类型的每个替代项，模式都会重复一次。
 如果没有一个替代方案具有指定的类型，则这是一个错误。
 
 如果没有明确提供种类，则解析器确定的种类将用于每个模式。
 这些模式不需要全部具有相同的语法类型；宏是为至少一种模式使用的每种语法类型定义的。
-如果引用模式的解析结果是 {tech}[选择节点]（即，如果解析不明确），则这是一个错误。
+如果引用模式的解析结果是 {tech (key := "choice node")}[选择节点]（即，如果解析不明确），则这是一个错误。
 
 如果语法本身没有文档注释，则会向用户显示与 {keywordOf Lean.Parser.Command.macro_rules}`macro_rules` 关联的文档注释。
 否则，将显示语法本身的文档注释。
 
 与 {ref "notations"}[符号] 和 {ref "operators"}[运算符] 一样，宏规则可以声明为 `scoped` 或 `local`。
-作用域宏仅在当前命名空间打开时才有效，本地宏规则仅在当前 {tech}[节范围] 中有效。
+作用域宏仅在当前命名空间打开时才有效，本地宏规则仅在当前 {tech (key := "section scope")}[节范围] 中有效。
 
 ::::keepEnv
 :::example "Idiom Brackets"
@@ -1158,8 +1158,8 @@ section
 open Lean
 ```
 
-{keywordOf Lean.Parser.Command.macro}`macro` 命令同时定义新的 {tech}[语法规则]，并将其与 {tech}[宏] 关联。
-与 {keywordOf Lean.Parser.Command.notation}`notation` 不同，{keywordOf Lean.Parser.Command.notation}`notation` 只能定义新术语语法，并且其中扩展是要替换参数的术语，{keywordOf Lean.Parser.Command.macro}`macro` 命令可以在任何 {tech}[语法类别] 中定义语法，并且可以使用 {name}`MacroM` monad 中的任意代码来生成扩展。
+{keywordOf Lean.Parser.Command.macro}`macro` 命令同时定义新的 {tech (key := "syntax rule")}[语法规则]，并将其与 {tech (key := "macro")}[宏] 关联。
+与 {keywordOf Lean.Parser.Command.notation}`notation` 不同，{keywordOf Lean.Parser.Command.notation}`notation` 只能定义新术语语法，并且其中扩展是要替换参数的术语，{keywordOf Lean.Parser.Command.macro}`macro` 命令可以在任何 {tech (key := "syntax category")}[语法类别] 中定义语法，并且可以使用 {name}`MacroM` monad 中的任意代码来生成扩展。
 由于宏比符号灵活得多，Lean 无法自动生成解扩展器；这意味着通过 {keywordOf Lean.Parser.Command.macro}`macro` 命令实现的新语法可用于 Lean 的_输入_，但 Lean 的输出在没有进一步工作的情况下不会使用它。
 
 :::syntax command (title := "Macro Declarations")
@@ -1214,7 +1214,7 @@ macro "gah!" thing:str other:(str <|> num) arg:num,* : term => do
 
 ```
 
-文档注释与新语法相关联，属性种类（无、`local` 或 `scoped`）控制宏的可见性，就像它对符号的可见性一样：`scoped` 宏在定义它们的命名空间中或在打开该命名空间的任何 {tech}[节范围] 中可用，而 `local`宏仅在本地部分范围内可用。
+文档注释与新语法相关联，属性种类（无、`local` 或 `scoped`）控制宏的可见性，就像它对符号的可见性一样：`scoped` 宏在定义它们的命名空间中或在打开该命名空间的任何 {tech (key := "section scope")}[节范围] 中可用，而 `local`宏仅在本地部分范围内可用。
 
 在幕后，{keywordOf Lean.Parser.Command.macro}`macro` 命令本身由宏实现，该宏将其扩展为 {keywordOf Lean.Parser.Command.syntax}`syntax` 命令和 {keywordOf Lean.Parser.Command.macro_rules}`macro_rules` 命令。
 应用于宏命令的任何属性都会应用于语法定义，但不会应用于 {keywordOf Lean.Parser.Command.macro_rules}`macro_rules` 命令。
@@ -1228,11 +1228,11 @@ end
 tag := "macro-attribute"
 %%%
 
-可以使用 {keywordOf Lean.Parser.Attr.macro}`macro` 属性将 {tech}[宏] 手动添加到语法类型中。
+可以使用 {keywordOf Lean.Parser.Attr.macro}`macro` 属性将 {tech (key := "Macros")}[宏] 手动添加到语法类型中。
 这种指定宏的低级方法通常没有用处，除非宏本身生成宏定义的代码生成结果。
 
 :::syntax attr (title := "The {keyword}`macro` Attribute")
-{keywordOf Lean.Parser.Attr.macro}`macro` 属性指定将函数视为指定语法类型的 {tech}[宏]。
+{keywordOf Lean.Parser.Attr.macro}`macro` 属性指定将函数视为指定语法类型的 {tech (key := "macro")}[宏]。
 ```grammar
 macro $_:ident
 ```

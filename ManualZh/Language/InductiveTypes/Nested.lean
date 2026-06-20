@@ -18,10 +18,10 @@ set_option guard_msgs.diff true
 tag := "nested-inductive-types"
 %%%
 
-{deftech}_嵌套归纳类型_是归纳类型，其中所定义的类型的递归出现是其他归纳类型构造函数的参数。
+{deftech (key := "Nested inductive types")}_嵌套归纳类型_是归纳类型，其中所定义的类型的递归出现是其他归纳类型构造函数的参数。
 这些递归出现“嵌套”在其他类型构造函数的下面。
 满足一定要求的嵌套归纳类型可以转化为相互的归纳类型；这个翻译表明它们是合理的。
-在内部，{tech}[内核] 执行此转换；如果成功，则接受_原始_嵌套的归纳类型。
+在内部，{tech (key := "kernel")}[内核] 执行此转换；如果成功，则接受_原始_嵌套的归纳类型。
 这避免了翻译表面细节可能引起的性能和可用性问题。
 
 :::paragraph
@@ -69,7 +69,7 @@ inductive RTree (α : Type u) : Type u where
 variable {n : Nat}
 ```
 任意分支玫瑰树的声明使用索引跟踪树的深度。
-构造函数 `DRTree.node` 有一个 {tech}[自动隐式参数] {lean}`n`，表示所有子树的深度。
+构造函数 `DRTree.node` 有一个 {tech (key := "automatic implicit parameter")}[自动隐式参数] {lean}`n`，表示所有子树的深度。
 但是，局部变量（例如构造函数参数）不允许作为嵌套出现的参数：
 :::
 ```lean +error (name := localVar)
@@ -156,7 +156,7 @@ inductive Palindrome (α : Type) : List α → Prop where
 : 递归重构
 
   嵌套归纳类型的递归器是根据转换类型的递归器构造的。
-  在翻译中，嵌套事件的动机由转换函数组成，{tech}[小前提]根据需要使用它们。
+  在翻译中，嵌套事件的动机由转换函数组成，{tech (key := "minor premises")}[小前提]根据需要使用它们。
   需要证明转换函数互逆，因为编码的构造函数在一个方向上进行转换，但最终应用于另一个方向上的转换结果。
 
 

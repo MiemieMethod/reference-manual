@@ -28,7 +28,7 @@ set_option maxHeartbeats 250000
 tag := "List"
 %%%
 
-链表，实现为 {tech}[归纳类型] {name}`List`，包含元素的有序序列。
+链表，实现为 {tech (key := "inductive type")}[归纳类型] {name}`List`，包含元素的有序序列。
 与 {ref "Array"}[arrays] 不同，Lean 根据归纳类型的普通规则编译列表；但是，列表上的某些操作被使用 {attr}`csimp` 机制的编译代码中的尾递归等效项所取代。{TODO}[从此处写入和外部引用]
 Lean 提供文字列表和构造函数 {name}`List.cons` 的语法。
 
@@ -299,12 +299,12 @@ tag := "zh-basictypes-list-h012"
 折叠是使用函数组合列表元素的运算符。
 它们有两种类型，以函数调用的嵌套命名：
 
-: {deftech}[左折]
+: {deftech (key := "Left folds")}[左折]
 
   左折叠将从列表头部到末尾的元素组合在一起。
   列表的头部与初始值组合，然后该操作的结果与下一个值组合，依此类推。
 
-: {deftech}[右折]
+: {deftech (key := "Right folds")}[右折]
 
   右折叠从列表末尾到开头组合元素，就好像每个 {name List.cons}`cons` 构造函数都被替换为对组合函数的调用，并且 {name List.nil}`nil` 被替换为初始值。
 

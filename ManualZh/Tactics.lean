@@ -29,7 +29,7 @@ tag := "tactics"
 %%%
 
 策略语言是一种用于构造证明的专用编程语言。
-在 Lean 中，{tech}[命题] 由类型表示，证明是居住在这些类型中的术语。
+在 Lean 中，{tech (key := "propositions")}[命题] 由类型表示，证明是居住在这些类型中的术语。
 {margin}[{ref "propositions"}[关于命题的部分]更详细地描述了命题。]
 虽然术语旨在方便地指示某个类型的特定居民，但策略的设计目的是方便地证明某个类型有人居住。
 存在这种区别是因为定义挑选出感兴趣的精确对象并且程序返回预期结果很重要，但证明无关性意味着没有_技术_理由来选择一个证明项而不是另一个证明项。
@@ -42,9 +42,9 @@ tag := "tactics"
 证明状态中的第一个目标称为 {deftech}_main goal_.{index (subterm := "main")}[goal]{index}[main goal]
 虽然大多数策略仅影响主要目标，但 {tactic}`<;>` 和 {tactic}`all_goals` 等运算符可用于将策略应用到许多目标，而子弹、{tactic}`next` 或 {tactic}`case` 等运算符可将后续策略的焦点缩小到仅一个目标目标处于证明状态。
 
-策略在幕后构造 {deftech}[证明条款]。
+策略在幕后构造 {deftech (key := "proof terms")}[证明条款]。
 证明项是定理正确性的可独立检查的证据，以 Lean 的 类型论 形式编写。
-每个证明都在 {tech}[内核] 中进行检查，并且可以使用独立实现的外部检查器进行验证，因此策略中的错误最糟糕的结果是令人困惑的错误消息，而不是不正确的证明。
+每个证明都在 {tech (key := "kernel")}[内核] 中进行检查，并且可以使用独立实现的外部检查器进行验证，因此策略中的错误最糟糕的结果是令人困惑的错误消息，而不是不正确的证明。
 策略证明中的每个目标对应于证明项的不完整部分。
 
 # 运行策略
@@ -361,7 +361,7 @@ tag := "metavariables-in-proofs"
 它们可能代表 {tech}[universe] 级别或术语。
 当还没有足够的信息来确定值时，一些元变量会作为 Lean 的精化过程的一部分出现。
 这些元变量的名称末尾有一个数字部分，例如 `?m.392` 或 `?u.498`。
-其他元变量是由于策略或 {tech}[合成孔]而出现的。
+其他元变量是由于策略或 {tech (key := "synthetic holes")}[合成孔]而出现的。
 这些元变量的名称没有数字部分。
 由策略生成的元变量经常显示为 {tech}[case labels] 与元变量名称匹配的目标。
 
@@ -590,7 +590,7 @@ tag := "tactic-language-goal-selection"
 %%%
 
 
-大多数策略影响 {tech}[主要目标]。
+大多数策略影响 {tech (key := "main goal")}[主要目标]。
 目标选择策略提供了一种将不同目标视为主要目标的方法，从而重新排列证明状态中的目标顺序。
 
 
@@ -613,12 +613,12 @@ tag := "tactic-language-sequencing"
 %%%
 
 除了逐个运行策略（每个都用于解决主要目标）之外，策略语言还支持根据目标生成方式对策略进行排序。
-{tactic}`<;>`策略组合器允许将策略应用于由其他策略生成的_every_ {tech}[子目标]。
+{tactic}`<;>`策略组合器允许将策略应用于由其他策略生成的_every_ {tech (key := "subgoal")}[子目标]。
 如果没有生成新目标，则不会运行第二个策略。
 
 :::tactic "<;>"
 
-如果策略在任何 {tech}[子目标] 上失败，则整个 {tactic}`<;>`策略失败。
+如果策略在任何 {tech (key := "subgoals")}[子目标] 上失败，则整个 {tactic}`<;>`策略失败。
 :::
 
 ::::example "Subgoal Sequencing"
@@ -888,7 +888,7 @@ tag := "tactic-config"
 策略的文档中介绍了每个策略可用的特定选项。
 
 :::syntax Lean.Parser.Tactic.optConfig -open (title := "Tactic Configuration")
-策略配置由零个或多个 {deftech}[配置项] 组成：
+策略配置由零个或多个 {deftech (key := "configuration items")}[配置项] 组成：
 ```grammar
 $x:configItem*
 ```

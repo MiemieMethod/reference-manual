@@ -26,7 +26,7 @@ shortContextTitle := "Elan"
 %%%
 
 Elan 是 Lean 工具链经理。
-它负责安装 {tech}[工具链] 并运行其组成程序。
+它负责安装 {tech (key := "toolchains")}[工具链] 并运行其组成程序。
 Elan 可以无缝地处理各种项目，每个项目都设计为使用特定版本的 Lean 构建，而无需手动安装和选择工具链版本。
 每个项目通常配置为使用特定版本，该版本根据需要透明安装，并自动跟踪对 Lean 版本的更改。
 
@@ -45,7 +45,7 @@ tag := "elan-toolchain-versions"
 tag := "elan-channels"
 %%%
 
-工具链是通过提供工具链标识符来指定的，该标识符可以是 {deftech}_channel_（标识特定类型的 Lean 版本），也可以选择来源，也可以是由 {elan}`toolchain link` 建立的 {deftech}_自定义工具链名称_。
+工具链是通过提供工具链标识符来指定的，该标识符可以是 {deftech}_channel_（标识特定类型的 Lean 版本），也可以选择来源，也可以是由 {elan}`toolchain link` 建立的 {deftech (key := "custom toolchain name")}_自定义工具链名称_。
 渠道可能是：
 
  : `stable`
@@ -65,7 +65,7 @@ tag := "elan-channels"
     每个 Lean 版本号标识仅包含该版本的通道。
     版本号可以选择在前面加上 `v`，因此 `v4.17.0` 和 `4.17.0` 是等效的。
     同样，`nightly-YYYY-MM-DD` 指定从指定日期起每晚发布。
-    项目的 {tech}[工具链文件] 通常应包含 Lean 的特定版本，而不是通用通道，以便更轻松地在开发人员之间进行协调以及构建和测试项目的旧版本。
+    项目的 {tech (key := "toolchain file")}[工具链文件] 通常应包含 Lean 的特定版本，而不是通用通道，以便更轻松地在开发人员之间进行协调以及构建和测试项目的旧版本。
     维护 Lean 版本和夜间构建的存档。
 
  : 自定义本地工具链
@@ -88,7 +88,7 @@ Elan 将工具链与目录关联起来，并使用当前工作目录的最新父
 目录的工具链可能来自工具链文件或使用 {ref "elan-override"}[`elan override`] 配置的覆盖。
 
 当前工具链的确定方法是：首先搜索当前目录的已配置工具链，遍历父目录，直到找到工具链版本或不再有父目录。
-如果目录已配置 {tech}[工具链覆盖] 或者包含 `lean-toolchain` 文件，则目录具有已配置的工具链。
+如果目录已配置 {tech (key := "toolchain override")}[工具链覆盖] 或者包含 `lean-toolchain` 文件，则目录具有已配置的工具链。
 最近的父级优先于其祖先，如果目录同时具有覆盖和工具链文件，则覆盖优先。
 如果未找到目录工具链，则使用 Elan 配置的 {deftech}_default toolchain_ 作为后备。
 
@@ -224,7 +224,7 @@ Lean (version 4.9.0, arm64-apple-darwin23.5.0, commit 8f9843a4a5fe, Release)
 tag := "elan-default"
 %%%
 
-Elan 的配置文件指定当当前目录没有 `lean-toolchain` 文件或 {tech}[工具链覆盖] 时要使用的 {tech}[默认工具链]。
+Elan 的配置文件指定当当前目录没有 `lean-toolchain` 文件或 {tech (key := "default toolchain")}[工具链覆盖] 时要使用的 {tech (key := "toolchain override")}[默认工具链]。
 通常使用 {elan}`default` 命令更改此值，而不是手动编辑文件。
 
 ```elanHelp "default"
@@ -448,7 +448,7 @@ DISCUSSION:
 tag := "elan-override"
 %%%
 
-特定于目录的 {tech}[工具链覆盖] 是优先于 `lean-toolchain` 文件的本地配置。
+特定于目录的 {tech (key := "toolchain overrides")}[工具链覆盖] 是优先于 `lean-toolchain` 文件的本地配置。
 `elan override` 命令管理覆盖。
 
 ```elanHelp "override"

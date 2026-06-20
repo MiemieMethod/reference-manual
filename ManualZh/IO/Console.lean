@@ -24,7 +24,7 @@ set_option linter.unusedVariables false
 tag := "zh-io-console-root"
 %%%
 
-Lean 包括用于写入 {tech}[标准输出] 和 {tech}[标准错误] 的便捷函数。
+Lean 包括用于写入 {tech (key := "standard output")}[标准输出] 和 {tech (key := "standard error")}[标准错误] 的便捷函数。
 全部都使用 {lean}`ToString` 实例，并且名称以 `-ln` 结尾的变体在输出后添加换行符。
 这些便捷函数只公开了 {ref "stdio"}[使用标准 I/O 流] 时可用功能的一部分。
 特别是，要从 标准输入 读取一行，请使用 {lean}`IO.getStdin` 和 {lean}`IO.FS.Stream.getLine` 的组合。

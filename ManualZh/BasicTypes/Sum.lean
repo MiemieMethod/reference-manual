@@ -31,7 +31,7 @@ universe u v
 :::paragraph
 sum 类型有两种类型：
 
- * {lean}`Sum` 是所有 {lean}`Type` {tech}[宇宙] 上的 {tech (key := "universe polymorphism")}[多态]，并且绝不是 {tech}[命题]。
+ * {lean}`Sum` 是所有 {lean}`Type` {tech (key := "universe polymorphism")}[宇宙] 上的 {tech (key := "universes")}[多态]，并且绝不是 {tech (key := "proposition")}[命题]。
 
  * {lean}`PSum` 允许加数是命题或类型。与 {name}`Or` 不同，两个命题的 {name}`PSum` 仍然是一个类型，非命题代码可以检查使用哪个注入来构造给定值。
 
@@ -97,7 +97,7 @@ end
 tag := "sum-api"
 %%%
 
-Sum 类型主要用于 {tech}[模式匹配]，而不是来自 API 的显式函数调用。
+Sum 类型主要用于 {tech (key := "pattern matching")}[模式匹配]，而不是来自 API 的显式函数调用。
 因此，它们的主要 API 是构造函数 {name Sum.inl}`inl` 和 {name Sum.inr}`inr`。
 
 ## 案例区分
@@ -142,7 +142,7 @@ tag := "zh-basictypes-sum-h006"
 这是因为有两种不同的方法来构造默认值（通过 {name Sum.inl}`inl` 或 {name Sum.inr}`inr`），并且实例综合可能会导致任一选择。
 结果可能是两个相同书写的术语的精化不同并且不 {tech (key := "definitional equality")}[定义等价]。
 
-两种类型都有 {name}`Nonempty` 实例，对于 {tech}[证明无关性]，选择 {name Sum.inl}`inl` 或 {name Sum.inr}`inr` 并不重要。
+两种类型都有 {name}`Nonempty` 实例，对于 {tech (key := "proof irrelevance")}[证明无关性]，选择 {name Sum.inl}`inl` 或 {name Sum.inr}`inr` 并不重要。
 这足以启用 {keyword}`partial` 功能。
 对于需要 {name}`Inhabited` 实例的情况（例如使用 {keyword}`panic!` 的程序），可以通过使用 {keywordOf Lean.Parser.Term.have}`have` 或 {keywordOf Lean.Parser.Term.let}`let` 将实例添加到本地上下文来显式使用该实例。
 

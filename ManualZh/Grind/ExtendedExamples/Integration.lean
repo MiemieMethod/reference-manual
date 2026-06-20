@@ -99,7 +99,7 @@ example : (cos x + sin x)^2 = 2 * cos x * sin x + 1 := by
 
 
 :::paragraph
-当需要 {tech}[同余闭包] 时，我们也可以进行此类论证：
+当需要 {tech (key := "congruence closure")}[同余闭包] 时，我们也可以进行此类论证：
 ```lean
 example (f : R → Nat) :
     f ((cos x + sin x)^2) = f (2 * cos x * sin x + 1) := by

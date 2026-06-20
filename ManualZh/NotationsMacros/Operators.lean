@@ -35,17 +35,17 @@ Lean 支持自定义中缀、前缀和后缀运算符。
 运算符优先级决定了无括号表达式的运算顺序：因为乘法的优先级高于加法，所以 {lean}`2 + 3 * 4` 等效于 {lean}`2 + (3 * 4)`，{lean}`2 * 3 + 4` 等效于 {lean}`(2 * 3) + 4`。
 中缀运算符还具有 {deftech}_associativity_ ，它确定具有相同优先级的运算符链的含义：
 
-: {deftech}[左结合]
+: {deftech (key := "Left-associative")}[左结合]
 
   这些运算符嵌套在左侧。
   加法是左关联的，因此 {lean}`2 + 3 + 4 + 5` 相当于 {lean}`((2 + 3) + 4) + 5`。
 
-: {deftech}[右结合]
+: {deftech (key := "Right-associative")}[右结合]
 
   这些运算符嵌套在右侧。
   产品类型是右关联的，因此 {lean}`Nat × String × Unit × Option Int` 等效于 {lean}`Nat × (String × (Unit × Option Int))`。
 
-: {deftech}[非关联]
+: {deftech (key := "Non-associative")}[非关联]
 
   链接这些运算符是一个语法错误。
   需要明确的括号。
@@ -110,12 +110,12 @@ $_:attrKind postfix:$_ $[(name := $x)]? $[(priority := $_:prio)]? $s:str => $t:t
 ```
 :::
 
-每个命令前面可能带有 {tech}[文档注释] 和 {tech}[属性]。
+每个命令前面可能带有 {tech (key := "documentation comments")}[文档注释] 和 {tech (key := "attributes")}[属性]。
 当用户将鼠标悬停在运算符上时会显示文档注释，并且属性可以调用任意元程序，就像任何其他声明一样。
 属性 {attr}`inherit_doc` 导致实现该运算符的函数的文档被该运算符本身重用。
 
-运算符与 {tech}[节范围] 的交互方式与属性相同。
-默认情况下，运算符可在任何可传递导入在其中建立它们的模块中使用，但可以将它们声明为 `scoped` 或 `local`，以分别将其可用性限制在当前名称空间已打开的上下文或当前 {tech}[节范围] 中。
+运算符与 {tech (key := "section scopes")}[节范围] 的交互方式与属性相同。
+默认情况下，运算符可在任何可传递导入在其中建立它们的模块中使用，但可以将它们声明为 `scoped` 或 `local`，以分别将其可用性限制在当前名称空间已打开的上下文或当前 {tech (key := "section scope")}[节范围] 中。
 
 自定义运算符需要 {ref "precedence"}[优先级] 说明符，后跟冒号。
 自定义运算符没有可回退的默认优先级。
@@ -159,7 +159,7 @@ infix:90 " ⤴ " => Option.getD
 
 
 当定义多个共享相同语法的运算符时，Lean 的解析器会尝试所有这些运算符。
-如果多个规则成功，则选择使用最多输入的规则 - 这称为 {deftech}_本地最长匹配规则_。
+如果多个规则成功，则选择使用最多输入的规则 - 这称为 {deftech (key := "local longest-match rule")}_本地最长匹配规则_。
 在某些情况下，解析多个运算符可能会成功，所有运算符都覆盖相同的输入范围。
 在这些情况下，操作员的 {tech}[priority] 用于选择适当的结果。
 最后，如果具有相同优先级的多个运算符匹配最长匹配，解析器将保存所有结果，并且精化器依次尝试每个结果，如果精化在其中一个结果上没有成功，则失败。
@@ -188,7 +188,7 @@ True + False : Prop
 2 + 2 : Nat
 ```
 
-但是，由于 new 运算符不具有关联性，因此 {tech}[本地最长匹配规则] 意味着只有 {name}`HAdd.hAdd` 适用于不带括号的三参数版本：
+但是，由于 new 运算符不具有关联性，因此 {tech (key := "local longest-match rule")}[本地最长匹配规则] 意味着只有 {name}`HAdd.hAdd` 适用于不带括号的三参数版本：
 ```lean +error (name := trueOrFalseOrTrue1)
 #check True + False + True
 ```
@@ -226,7 +226,7 @@ due to the absence of the instance above
 Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
 ```
 
-new 运算符不具有关联性，因此 {tech}[本地最长匹配规则] 意味着只有 {name}`HAdd.hAdd` 适用于三参数版本：
+new 运算符不具有关联性，因此 {tech (key := "local longest-match rule")}[本地最长匹配规则] 意味着只有 {name}`HAdd.hAdd` 适用于三参数版本：
 ```lean +error (name := trueOrFalseOrTrue2)
 #check True + False + True
 ```
@@ -292,7 +292,7 @@ infix:9 (name := bogus) "`a" => Nat.mul
 中缀运算符按该顺序将该术语应用于左右参数。
 除了在每个调用站点接受参数的能力之外，对该术语没有任何具体要求。
 运算符可以构造函数，因此该术语可能需要比运算符更多的参数。
-隐式参数和 {tech}[实例隐式] 参数在每个应用程序站点解析，这允许通过 {tech}[类型类] {tech}[方法] 定义运算符。
+隐式参数和 {tech (key := "instance-implicit")}[实例隐式] 参数在每个应用程序站点解析，这允许通过 {tech (key := "type class")}[类型类] {tech (key := "method")}[方法] 定义运算符。
 
 ```lean -show -keep
 -- Double-check claims about operators above
@@ -301,7 +301,7 @@ prefix:max "blah" => Nat.add
 ```
 
 如果该术语由全局环境中的名称或此类名称对一个或多个参数的应用组成，则 Lean 会自动为运算符生成 {tech}[unexpander]。
-这意味着当功能项本来会显示时，运算符将显示在 {tech}[证明状态]、错误消息和 Lean 的其他输出中。
+这意味着当功能项本来会显示时，运算符将显示在 {tech (key := "proof states")}[证明状态]、错误消息和 Lean 的其他输出中。
 Lean 不会跟踪原始术语中是否使用了该运算符；只要有机会，它就会被插入。
 
 :::::keepEnv

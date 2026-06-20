@@ -94,7 +94,7 @@ example :
 tag := "raw-string-literals"
 %%%
 
-在 {deftech}[原始字符串文字]、{index (subterm := "raw string")}[文字] 中，没有转义序列或间隙，每个字符都准确地表示自身。
+在 {deftech (key := "raw string literals")}[原始字符串文字]、{index (subterm := "raw string")}[文字] 中，没有转义序列或间隙，每个字符都准确地表示自身。
 原始字符串文字前面是 `r`，后跟零个或多个哈希字符 (`#`) 和双引号 `"`。
 字符串文字由双引号完成，后跟“相同数量”的哈希字符。
 例如，它们可用于避免对某些字符进行双重转义：

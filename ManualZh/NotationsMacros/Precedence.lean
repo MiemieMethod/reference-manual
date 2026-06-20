@@ -25,7 +25,7 @@ set_option linter.unusedVariables false
 tag := "precedence"
 %%%
 
-Lean 的中缀运算符、符号和其他语法扩展使用显式 {tech}[优先级] 注释。
+Lean 的中缀运算符、符号和其他语法扩展使用显式 {tech (key := "precedence")}[优先级] 注释。
 虽然 Lean 中的优先级从技术上讲可以是任何自然数，但按照惯例，它们的范围是从 {evalPrec}`min` 到 {evalPrec}`max`，分别表示为 `min` 和 `max`。{TODO}[修复 keywordsOf 运算符并在此处使用它]
 函数应用程序具有最高优先级。
 

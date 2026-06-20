@@ -37,7 +37,7 @@ tag := "recursor-types"
 
 :::paragraph
 递归器采用以下参数：
-: 归纳类型的{tech}[参数]
+: 归纳类型的{tech (key := "parameters")}[参数]
 
   由于参数是一致的，因此可以在整个递归器上抽象它们。
 
@@ -45,13 +45,13 @@ tag := "recursor-types"
 
   动机决定了递归器的应用类型。动机是一个函数，其参数是类型的索引和实例化这些索引的类型的实例。动机确定的类型的特定 Universe 取决于归纳类型的 Universe 和特定构造函数 - 有关详细信息，请参阅有关 {ref "subsingleton-elimination"}[{tech}[subsingleton] 消除] 的部分。
 
-: 每个构造函数都有一个 {deftech}_小前提_
+: 每个构造函数都有一个 {deftech (key := "minor premise")}_小前提_
 
   对于每个构造函数，递归器期望一个函数满足构造函数的任意应用的动机。
   每个小前提都抽象了构造函数的所有参数。
   如果构造函数的参数类型是归纳类型本身，则小前提另外接受一个参数，该参数的类型是应用于该参数值的动机 - 这将收到递归处理递归参数的结果。
 
-: {deftech}_大前提_，或目标
+: {deftech (key := "major premise")}_大前提_，或目标
 
   最后，递归器将类型的实例以及任何索引值作为参数。
 
@@ -220,7 +220,7 @@ tag := "iota-reduction"
 
 除了向逻辑添加新常量之外，归纳类型声明还添加新的归约规则。
 这些规则控制着递归器和构造函数之间的交互；特别是以构造函数作为主要前提的递归器。
-这种形式的还原称为 {deftech}_ι-还原_（iota 还原）{index}[ι-还原]{index (subterm:="ι (iota)")}[还原]。
+这种形式的还原称为 {deftech (key := "ι-reduction")}_ι-还原_（iota 还原）{index}[ι-还原]{index (subterm:="ι (iota)")}[还原]。
 
 当递归器的大前提是不带递归参数的构造函数时，递归应用程序会简化为构造函数的小前提对构造函数的参数的应用。
 如果存在递归参数，则通过将递归应用于递归事件来找到小前提的这些参数。
@@ -241,7 +241,7 @@ tag := "inductive-type-universe-levels"
 
 归纳类型的 Type 构造函数必须位于 {tech}[universe] 或其返回类型为 Universe 的函数类型中。
 每个构造函数必须位于返回归纳类型的饱和应用程序的函数类型中。
-如果归纳类型的 Universe 是 {lean}`Prop`，则对 Universe 没有进一步的限制，因为 {lean}`Prop` 是 {tech}[必然]。
+如果归纳类型的 Universe 是 {lean}`Prop`，则对 Universe 没有进一步的限制，因为 {lean}`Prop` 是 {tech (key := "impredicative")}[必然]。
 如果 Universe 不是 {lean}`Prop`，则构造函数的每个参数必须满足以下条件：
  * 如果构造函数的参数是归纳类型的参数（在参数与索引的意义上），则此参数的类型可能不大于类型构造函数的范围。
  * 所有其他构造函数参数必须小于类型构造函数的范围。
@@ -275,7 +275,7 @@ tag := "strict-positivity"
 %%%
 
 
-在构造函数的参数类型中定义的类型的所有出现都必须位于 {deftech}_严格正_位置。
+在构造函数的参数类型中定义的类型的所有出现都必须位于 {deftech (key := "strictly positive")}_严格正_位置。
 如果某个位置不在函数的参数类型中（无论其周围嵌套了多少个函数类型），并且它不是除归纳类型的类型构造函数之外的任何表达式的参数，则该位置严格为正。
 此限制排除了不健全的归纳类型定义，但代价是也排除了一些没有问题的定义。
 
@@ -378,7 +378,7 @@ tag := "recursor-elaboration-helpers"
 
 这些结构遵循 {citet constructionsOnConstructors}[] 中的描述。
 
-对于 {tech}[良基递归]，拥有可用的通用大小概念通常很有用。
+对于 {tech (key := "well-founded recursion")}[良基递归]，拥有可用的通用大小概念通常很有用。
 这是在 {name}`SizeOf` 类中捕获的。
 
 {docstring SizeOf}

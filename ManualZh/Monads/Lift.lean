@@ -35,7 +35,7 @@ variable {α β : Type u}
 当一个 monad 至少与另一个 monad 一样有能力时，则后一个 monad 的操作可以在期望前一个 monad 操作的上下文中使用。
 这称为 {deftech (key := "lift")}_lifting_ 从一个单子到另一个单子的动作。
 Lean 在电梯可用时自动插入电梯；电梯在 {name}`MonadLift` 类型类别中定义。
-在通用 {tech}[强制] 机制之前尝试自动 monad 提升。
+在通用 {tech (key := "coercion")}[强制] 机制之前尝试自动 monad 提升。
 
 {docstring MonadLift}
 
@@ -123,7 +123,7 @@ fun {α} act => liftM act : {α : Type} → BaseIO α → EIO IO.Error α
 
 :::::keepEnv
 ::::example "Lifting Transformed Monads"
-大多数标准库的 {tech}[monad 转换器] 也有 {name}`MonadLift` 的实例，因此基本 monad 操作可以在转换后的 monad 中使用，无需额外工作。
+大多数标准库的 {tech (key := "monad transformers")}[monad 转换器] 也有 {name}`MonadLift` 的实例，因此基本 monad 操作可以在转换后的 monad 中使用，无需额外工作。
 例如，状态 monad 操作可以在读取器和异常转换器之间提升，从而允许兼容的 monad 自由混合：
 ```lean -keep
 def incrBy (n : Nat) : StateM Nat Unit := modify (· + n)

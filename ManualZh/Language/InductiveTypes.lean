@@ -25,10 +25,10 @@ tag := "inductive-types"
 %%%
 
 
-{deftech}_感应类型_是向Lean引入新类型的主要手段。
+{deftech (key := "Inductive types")}_感应类型_是向Lean引入新类型的主要手段。
 虽然 {tech}[universes]、{tech}[functions] 和 {tech}[quotient types] 是用户无法添加的内置原语，但 Lean 中的所有其他类型要么是归纳类型，要么是根据 Universe、函数和归纳类型定义的。
-归纳类型由其 {deftech}_type 构造函数_ {index}[类型构造函数] 及其 {deftech}_constructors_ 指定； {index}[构造函数]它们的其他属性都是从这些派生的。
-每个归纳类型都有一个类型构造函数，它可以同时采用 {tech}[全域参数] 和普通参数。
+归纳类型由其 {deftech (key := "type constructors")}_type 构造函数_ {index}[类型构造函数] 及其 {deftech}_constructors_ 指定； {index}[构造函数]它们的其他属性都是从这些派生的。
+每个归纳类型都有一个类型构造函数，它可以同时采用 {tech (key := "universe parameters")}[全域参数] 和普通参数。
 归纳类型可以有任意数量的构造函数；这些构造函数引入了新值，其类型以归纳类型的类型构造函数为首。
 
 基于类型构造函数和归纳类型的构造函数，Lean 派生 {deftech}_recursor_{index}[recursor]{see "recursor"}[eliminator]。
@@ -63,7 +63,7 @@ $[deriving $[$x:ident],*]?
 新的归纳类型扩展了 Lean 的核心逻辑 - 它们不由其他一些已存在的数据编码或表示。
 归纳类型声明必须满足 {ref "well-formed-inductives"}[许多格式良好的要求]，以确保逻辑保持一致。
 
-声明的第一行，从 {keywordOf Lean.Parser.Command.declaration (parser:=«inductive»)}`inductive` 到 {keywordOf Lean.Parser.Command.declaration (parser:=«inductive»)}`where`，指定新的 {tech}[类型构造函数] 的名称和类型。
+声明的第一行，从 {keywordOf Lean.Parser.Command.declaration (parser:=«inductive»)}`inductive` 到 {keywordOf Lean.Parser.Command.declaration (parser:=«inductive»)}`where`，指定新的 {tech (key := "type constructor")}[类型构造函数] 的名称和类型。
 如果提供了类型构造函数的类型签名，则其结果类型必须是 {tech}[universe]，但参数不需要是类型。
 如果未提供签名，则 Lean 将尝试推断一个刚好足以包含结果类型的 Universe。
 在某些情况下，此过程可能无法找到最小宇宙或根本找不到最小宇宙，因此需要注释。
@@ -71,12 +71,12 @@ $[deriving $[$x:ident],*]?
 构造器规范遵循{keywordOf Lean.Parser.Command.declaration (parser:=«inductive»)}`where`。
 构造函数不是强制性的，因为无构造函数的归纳类型（例如 {lean}`False` 和 {lean}`Empty`）是完全合理的。
 每个构造函数规范均以竖线（`'|'`、Unicode `'VERTICAL BAR' (U+007c)`）、声明修饰符和名称开头。
-该名称是 {tech}[原始标识符]。
+该名称是 {tech (key := "raw identifier")}[原始标识符]。
 名称后面有声明签名。
 签名可以指定任何参数，以归纳类型声明的格式良好性要求为模，但签名中的返回类型必须是指定的归纳类型的类型构造函数的饱和应用程序。
 如果未提供签名，则通过插入足够的隐式参数来构造格式正确的返回类型来推断构造函数的类型。
 
-新归纳类型的名称在 {tech}[当前命名空间] 中定义。
+新归纳类型的名称在 {tech (key := "current namespace")}[当前命名空间] 中定义。
 每个构造函数的名称位于归纳类型的命名空间中。{index (subterm := "of inductive type")}[命名空间]
 
 ## 参数及指标
@@ -99,7 +99,7 @@ Type 构造函数可以采用两种参数： {deftech}_parameters_ {index (subte
 
 索引可以被视为定义类型的_family_。
 每个索引选择都会从该族中选择一个类型，该族有自己的一组可用构造函数。
-据说带有索引的 Type 构造函数指定类型的 {deftech}_indexed family_ {index (subterm := "of types")}[indexed family]。
+据说带有索引的 Type 构造函数指定类型的 {deftech (key := "indexed families")}_indexed family_ {index (subterm := "of types")}[indexed family]。
 
 ## 示例归纳类型
 %%%
@@ -116,7 +116,7 @@ inductive Vacant : Type where
 :::
 
 :::example "A constructorless proposition"
-{lean}`No` 是一个假 {tech}[命题]，等价于 Lean 的 {lean}`False`：
+{lean}`No` 是一个假 {tech (key := "proposition")}[命题]，等价于 Lean 的 {lean}`False`：
 ```lean
 inductive No : Prop where
 ```
@@ -227,8 +227,8 @@ axiom α : Type u
 axiom b : Bool
 ```
 
-在此声明中，{lean}`α` 是 {tech}[参数]，因为它在所有出现的 {name}`EvenOddList` 中一致使用。
-{lean}`b` 是 {tech}[索引]，因为它在不同的情况下使用不同的 {lean}`Bool` 值。
+在此声明中，{lean}`α` 是 {tech (key := "parameter")}[参数]，因为它在所有出现的 {name}`EvenOddList` 中一致使用。
+{lean}`b` 是 {tech (key := "index")}[索引]，因为它在不同的情况下使用不同的 {lean}`Bool` 值。
 :::
 
 
@@ -281,7 +281,7 @@ inductive Either'' : Type u → Type v → Type (max u v + 1) where
   | right : β → Either'' α β
 ```
 此类型需要更大的 Universe，因为 {ref "inductive-type-universe-levels"}[构造函数参数必须位于比归纳类型的 Universe 小的 Universe 中]。
-{name}`Either''.right` 的类型参数是通过 Lean 的 {tech}[自动隐式参数] 的普通规则发现的。
+{name}`Either''.right` 的类型参数是通过 Lean 的 {tech (key := "automatic implicit parameters")}[自动隐式参数] 的普通规则发现的。
 ::::
 :::::
 
@@ -291,7 +291,7 @@ inductive Either'' : Type u → Type v → Type (max u v + 1) where
 tag := "anonymous-constructor-syntax"
 %%%
 
-如果归纳类型只有一个构造函数，则该构造函数符合 {deftech}_匿名构造函数语法_。
+如果归纳类型只有一个构造函数，则该构造函数符合 {deftech (key := "anonymous constructor syntax")}_匿名构造函数语法_。
 可以将显式参数括在尖括号（`'⟨'` 和 `'⟩'`、Unicode `MATHEMATICAL LEFT ANGLE BRACKET	(U+0x27e8)` 和 `MATHEMATICAL RIGHT ANGLE BRACKET	(U+0x27e9)`）中并用逗号分隔，而不是将构造函数的名称写入其参数。
 这在模式和表达式上下文中都有效。
 按名称提供参数或使用 `@` 将所有隐式参数转换为显式参数需要使用普通构造函数语法。
@@ -357,7 +357,7 @@ tag := "inductive-declarations-deriving-instances"
 tag := "run-time-inductives"
 %%%
 
-归纳类型的运行时表示取决于它有多少个构造函数、每个构造函数采用多少个参数以及这些参数是否是 {tech}[相关]。
+归纳类型的运行时表示取决于它有多少个构造函数、每个构造函数采用多少个参数以及这些参数是否是 {tech (key := "relevant")}[相关]。
 
 ## 例外情况
 %%%
@@ -377,7 +377,7 @@ axiom α : Prop
 
  * {lean}`Float` 由指向包含“double”的 Lean 对象的指针表示。
 
- * 至少有 2 个且至多有 $`2^{32}` 个构造函数、并且每个构造函数均无参数的 {deftech}_枚举归纳_ 类型，由 {C}`uint8_t`、{C}`uint16_t`、{C}`uint32_t` 中足以为每个构造函数分配唯一值的第一个类型表示。例如，类型 {lean}`Bool` 由 {C}`uint8_t` 表示，其中值 {C}`0` 代表 {lean}`false`，{C}`1` 代表 {lean}`true`。{TODO}[看看这是否应该说“无相关参数”]
+ * 至少有 2 个且至多有 $`2^{32}` 个构造函数、并且每个构造函数均无参数的 {deftech (key := "enum inductive")}_枚举归纳_ 类型，由 {C}`uint8_t`、{C}`uint16_t`、{C}`uint32_t` 中足以为每个构造函数分配唯一值的第一个类型表示。例如，类型 {lean}`Bool` 由 {C}`uint8_t` 表示，其中值 {C}`0` 代表 {lean}`false`，{C}`1` 代表 {lean}`true`。{TODO}[看看这是否应该说“无相关参数”]
 
  * {lean}`Decidable α` 的表示方式与 `Bool` 相同。{TODO}[Decidable 和 Bool 不是简单构造函数和无关性规则的特殊情况吗？]
 
@@ -600,7 +600,7 @@ Unknown identifier `FreshList`
 tag := "mutual-inductive-types-same-parameters"
 %%%
 
-`mutual` 组中的所有归纳类型必须具有相同的 {tech}[参数]。
+`mutual` 组中的所有归纳类型必须具有相同的 {tech (key := "parameters")}[参数]。
 它们的指数可能不同。
 
 ::::keepEnv

@@ -41,7 +41,7 @@ Lean 标准库中的类型类表示用于编程的概念，而不是一般的数
 {deftech}[{name}`Functor`] 的实例允许在整个多态上下文中一致地应用操作。
 示例包括通过应用函数来转换列表的每个元素，以及通过安排将纯函数应用于现有 {lean}`IO` 操作的结果来创建新的 {lean}`IO` 操作。
 {deftech}[{name}`Monad`]的实例允许对具有数据依赖性的副作用进行编码；示例包括使用元组来模拟可变状态、使用求和类型来模拟异常以及使用 {lean}`IO` 表示实际副作用。
-{deftech}[{name}`Applicative` 函子] 占据中间立场：与 monad 一样，它们允许将使用效果计算的函数应用于使用效果计算的参数，但它们不允许顺序数据依赖关系，其中效果的输出形成另一个有效操作的输入。
+{deftech (key := "Applicative functors")}[{name}`Applicative` 函子] 占据中间立场：与 monad 一样，它们允许将使用效果计算的函数应用于使用效果计算的参数，但它们不允许顺序数据依赖关系，其中效果的输出形成另一个有效操作的输入。
 
 附加类型类 {name}`Pure`、{name}`Bind`、{name}`SeqLeft`、{name}`SeqRight` 和 {name}`Seq` 捕获来自 {name}`Applicative` 和 {name}`Monad` 的各个操作，允许它们重载并与不一定是 {name}`Applicative` 的类型一起使用函子或 {name}`Monad`。
 {name}`Alternative` 类型类描述了另外具有一些失败和恢复概念的应用函子。

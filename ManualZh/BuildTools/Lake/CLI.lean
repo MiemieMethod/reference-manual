@@ -152,7 +152,7 @@ using the form NAME=VALUE like the POSIX `env` command.
   * 检测到的 Lake 可执行文件
 *
   * {envVar}`LAKE_HOME`
-  * 检测到{tech}[Lake首页]
+  * 检测到{tech (key := "Lake home")}[Lake首页]
 *
   * {envVar}`LEAN_SYSROOT`
   * 检测到Lean {tech}[toolchain]目录
@@ -170,20 +170,20 @@ using the form NAME=VALUE like the POSIX `env` command.
 :::table (align := left) -header
 *
   * {envVar}`LEAN_PATH`
-  * 添加 Lake 和 {tech}[工作空间] 的 Lean {tech}[库目录]。
+  * 添加 Lake 和 {tech (key := "workspace")}[工作空间] 的 Lean {tech (key := "library directories")}[库目录]。
 *
   * {envVar}`LEAN_SRC_PATH`
-  * 添加了 Lake 和 {tech}[工作空间] 的 {tech}[源目录]。
+  * 添加了 Lake 和 {tech (key := "workspace")}[工作空间] 的 {tech (key := "source directories")}[源目录]。
 *
   * {envVar}`PATH`
-  * 添加 Lean、Lake 和 {tech}[工作空间] 的 {tech}[二进制目录]。
-    在 Windows 上，还添加了 Lean 和 {tech}[工作空间] 的 {tech}[库目录]。
+  * 添加 Lean、Lake 和 {tech (key := "workspace")}[工作空间] 的 {tech (key := "binary directories")}[二进制目录]。
+    在 Windows 上，还添加了 Lean 和 {tech (key := "workspace")}[工作空间] 的 {tech (key := "library directories")}[库目录]。
 *
   * {envVar}`DYLD_LIBRARY_PATH`
-  * 在 macOS 上，添加 Lean 和 {tech}[工作空间] 的 {tech}[库目录]。
+  * 在 macOS 上，添加 Lean 和 {tech (key := "workspace")}[工作空间] 的 {tech (key := "library directories")}[库目录]。
 *
   * {envVar}`LD_LIBRARY_PATH`
-  * 在 Windows 和 macOS 以外的平台上，添加 Lean 和 {tech}[工作空间] 的 {tech}[库目录]。
+  * 在 Windows 和 macOS 以外的平台上，添加 Lean 和 {tech (key := "workspace")}[工作空间] 的 {tech (key := "library directories")}[库目录]。
 :::
 ::::
 
@@ -281,11 +281,11 @@ Lake 的命令行界面提供了许多全局选项以及执行重要任务的子
 : {lakeOptDef option}`--dir DIR` 或 {lakeOptDef option}`-d=DIR`
 
   使用提供的目录作为包的位置，而不是当前工作目录。
-  这并不总是等同于首先更改目录，因为将使用当前目录的 {tech}[工具链文件] 指示的 `lake` 版本，而不是 `DIR` 的版本。
+  这并不总是等同于首先更改目录，因为将使用当前目录的 {tech (key := "toolchain file")}[工具链文件] 指示的 `lake` 版本，而不是 `DIR` 的版本。
 
 : {lakeOptDef option}`--file FILE` 或 {lakeOptDef option}`-f=FILE`
 
-  使用指定的 {tech}[包配置] 文件而不是默认文件。
+  使用指定的 {tech (key := "package configuration")}[包配置] 文件而不是默认文件。
 
 : {lakeOptDef flag}`--old`
 
@@ -302,28 +302,28 @@ Lake 的命令行界面提供了许多全局选项以及执行重要任务的子
 
 : {lakeOptDef flag}`--allow-empty`
 
-  接受在未配置 {tech}[默认目标] 时不产生输出的构建。
+  接受在未配置 {tech (key := "default targets")}[默认目标] 时不产生输出的构建。
 
 : {lakeOptDef flag}`--update`
 
-  在加载 {tech}[包配置] 之后但在执行其他任务（例如构建）之前更新依赖项。
+  在加载 {tech (key := "package configuration")}[包配置] 之后但在执行其他任务（例如构建）之前更新依赖项。
   这相当于在所选命令之前运行 `lake update`，但由于不必加载配置两次，因此可能会更快。
 
 : {lakeOptDef option}`--packages=FILE`
 
-  使用指定的 {tech}[包覆盖] 文件。
+  使用指定的 {tech (key := "package overrides")}[包覆盖] 文件。
   可以多次指定以添加更多覆盖（以后的覆盖优先）。
   完整的包覆盖集还将包括来自 `.lake/package-overrides.json` 的包覆盖（如果有）。
   但是，此选项提供的选项优先。
 
 :  {lakeOptDef flag}`--reconfigure` 或 {lakeOptDef flag}`-R`
 
-  通常，首次配置包时，{tech}[包配置] 文件为 {tech (key := "elaborator") -normalize}[详细]，结果缓存到 {tech}[`.olean` 文件]，用于将来的调用，直到包配置为止
+  通常，首次配置包时，{tech (key := "package configuration")}[包配置] 文件为 {tech (key := "elaborator") -normalize}[详细]，结果缓存到 {tech (key := ".olean file")}[`.olean` 文件]，用于将来的调用，直到包配置为止
   提供此标志会导致重新详细说明配置文件。
 
 : {lakeOptDef flag}`--keep-toolchain`
 
-  默认情况下，Lake 尝试更新本地 {tech}[工作空间] 的 {tech}[工具链文件]。
+  默认情况下，Lake 尝试更新本地 {tech (key := "workspace")}[工作空间] 的 {tech (key := "toolchain file")}[工具链文件]。
   提供此标志会禁用 {ref "automatic-toolchain-updates"}[自动工具链更新]。
 
 : {lakeOptDef flag}`--no-build`
@@ -353,7 +353,7 @@ tag := "zh-buildtools-lake-cli-h003"
 
 : {lakeOptDef flag}`--verbose`、{lakeOptDef flag}`-v`
 
-  显示跟踪日志（通常是命令调用）和构建的 {tech}[目标]。
+  显示跟踪日志（通常是命令调用）和构建的 {tech (key := "targets")}[目标]。
 
 :  {lakeOptDef flag}`--ansi`、{lakeOptDef flag}`--no-ansi`
 
@@ -389,7 +389,7 @@ tag := "automatic-toolchain-updates"
 %%%
 
 {lake}`update` 命令检查依赖项的更改，获取其源并相应地更新 {tech}[manifest]。
-默认情况下，当新版本的依赖项指定更新的工具链时，{lake}`update` 还会尝试更新 {tech}[根包] 的 {tech}[工具链文件]。
+默认情况下，当新版本的依赖项指定更新的工具链时，{lake}`update` 还会尝试更新 {tech (key := "root package")}[根包] 的 {tech (key := "toolchain file")}[工具链文件]。
 可以使用 {lakeOpt}`--keep-toolchain` 标志禁用此行为。
 
 :::paragraph
@@ -405,7 +405,7 @@ tag := "automatic-toolchain-updates"
 如果没有最新的工具链，Lake 将打印警告并继续更新而不更改工具链。
 :::
 
-如果 Lake 确实找到新工具链，则会相应更新 {tech}[工作空间] 的 `lean-toolchain` 文件，并使用新工具链的 Lake 重新启​​动 {lake}`update`。
+如果 Lake 确实找到新工具链，则会相应更新 {tech (key := "workspace")}[工作空间] 的 `lean-toolchain` 文件，并使用新工具链的 Lake 重新启​​动 {lake}`update`。
 如果检测到 {ref "elan"}[Elan]，它将通过 `elan run` 生成新的 Lake 进程，其参数与最初运行 Lake 时使用的参数相同。
 如果Elan缺失，会提示用户手动重启Lake，并退出并返回特殊错误代码（即`4`）。
 Lake 使用的 Elan 可执行文件可以使用 {envVar}`ELAN` 环境变量进行配置。
@@ -447,7 +447,7 @@ version of the configuration file, respectively. The default is TOML.
 :::lake init "name [template][\".\"language]"
 
 运行 {lake}`init` 会在当前目录中创建初始 Lean 包。
-该包的内容基于模板，其中 {tech}[package]、其 {tech}[targets] 及其 {tech}[module root] 的名称源自当前目录的名称。
+该包的内容基于模板，其中 {tech}[package]、其 {tech}[targets] 及其 {tech (key := "module roots")}[module root] 的名称源自当前目录的名称。
 
 {lakeMeta}`template` 可能是：
 
@@ -467,7 +467,7 @@ version of the configuration file, respectively. The default is TOML.
 
   创建一个包，其中包含依赖于 [Mathlib](https://github.com/leanprover-community/mathlib4) 的库。
 
-{lakeMeta}`language` 选择用于 {tech}[包配置] 文件的文件格式，可以是 `lean`（默认值）或 `toml`。
+{lakeMeta}`language` 选择用于 {tech (key := "package configuration")}[包配置] 文件的文件格式，可以是 `lean`（默认值）或 `toml`。
 :::
 
 :::TODO
@@ -544,14 +544,14 @@ mappings can then be used to upload build artifacts to a remote cache with
 {lakeArgs}`[["@"]package["/"]][target|["+"]module][":"facet]`
 
 可选的 {keyword}`@` 和 {keyword}`+` 标记可用于消除文件路径以及可执行文件和库中的包和模块的歧义，这些文件通过名称指定为 {lakeMeta}`target`。
-如果未提供，{lakeMeta}`package` 默认为 {tech}[工作空间] 的 {tech}[根包]。
+如果未提供，{lakeMeta}`package` 默认为 {tech (key := "workspace")}[工作空间] 的 {tech (key := "root package")}[根包]。
 如果工作区中的多个包中存在相同的目标名称，则选择在包依赖关系图的拓扑排序中找到的目标名称的第一个匹配项。
 模块目标也可以通过其文件名来指定，冒号后面有一个可选的方面。
 
 可用的 {tech}[facets] 取决于是否要构建包、库、可执行文件或模块。
 它们列在 {ref "lake-facets"}[有关方面的部分]中。
 
-使用 {ref "lake-cache"}[本地工件缓存] 时，{lakeOptDef option}`-o` 选项会保存 {tech}[映射文件]，用于跟踪构建中每个步骤的输入和输出。
+使用 {ref "lake-cache"}[本地工件缓存] 时，{lakeOptDef option}`-o` 选项会保存 {tech (key := "mappings file")}[映射文件]，用于跟踪构建中每个步骤的输入和输出。
 此文件可与 {lake}`cache get` 和 {lake}`cache put` 一起使用来与远程缓存交互。
 映射文件采用 JSON 行格式，每行有一个有效的 JSON 对象，其文件扩展名通常为 `.jsonl`。
 ::::
@@ -561,10 +561,10 @@ mappings can then be used to upload build artifacts to a remote cache with
 :::table
 *
   - `a`
-  - 目标 `a` 的 {tech}[默认构面]
+  - 目标 `a` 的 {tech (key := "default facet")}[默认构面]
 *
   - `@a`
-  - {tech}[封装] `a` 的 {tech}[默认目标]
+  - {tech (key := "default targets")}[封装] `a` 的 {tech (key := "package")}[默认目标]
 *
   - `+A`
   -  模块 `A` 的 Lean 工件（因为模块的默认方面是 `leanArts`）
@@ -576,7 +576,7 @@ mappings can then be used to upload build artifacts to a remote cache with
   - 从 `a` 包的模块 `A` 编译的 C 文件
 *
   - `:foo`
-  - {tech}[根包]的方面 `foo`
+  - {tech (key := "root package")}[根包]的方面 `foo`
 *
   - `A/B/C.lean:o`
   - 文件 `A/B/C.lean` 中模块的已编译目标代码
@@ -598,7 +598,7 @@ It merely verifies that some are specified.
 ```
 
 :::lake «check-build»
-如果 {tech}[工作空间] 的 {tech}[根包] 配置了任何 {tech}[默认目标]，则退出并显示代码 0。
+如果 {tech (key := "workspace")}[工作空间] 的 {tech (key := "root package")}[根包] 配置了任何 {tech (key := "default targets")}[默认目标]，则退出并显示代码 0。
 否则出错（退出代码为 1）。
 
 {lake}`check-build` *不*验证配置的默认目标是否有效。
@@ -667,7 +667,7 @@ the workspace. Otherwise, just deletes those of the specified packages.
 
 :::lake clean "[packages...]"
 
-如果未指定包，则删除工作区中每个包的 {tech}[构建目录]。
+如果未指定包，则删除工作区中每个包的 {tech (key := "build directories")}[构建目录]。
 否则，它只删除指定的 {lakeMeta}`packages` 的那些。
 
 :::
@@ -722,7 +722,7 @@ the workspace's root package's additional Lean arguments and the given args
 
 :::lake lean "file [\"--\" args...]"
 
-构建给定 {lakeMeta}`file` 的导入，然后按顺序使用 {tech}[工作空间] 的 {tech}[根包] 的附加 Lean 参数和给定的 {lakeMeta}`args` 在其上运行 `lean`。
+构建给定 {lakeMeta}`file` 的导入，然后按顺序使用 {tech (key := "workspace")}[工作空间] 的 {tech (key := "root package")}[根包] 的附加 Lean 参数和给定的 {lakeMeta}`args` 在其上运行 `lean`。
 `lean`进程在{ref "lake-environment"}[Lake的环境]中执行。
 :::
 
@@ -772,9 +772,9 @@ ANNOTATIONS:
 
 ::::lake shake "[options...] [module ...]"
 
-通过分析生成的 {tech}[`.olean` 文件] 来推断所需的导入，检查当前项目是否有未使用的导入，确保每个导入都贡献一些常量或其他精化依赖项。
+通过分析生成的 {tech (key := ".olean files")}[`.olean` 文件] 来推断所需的导入，检查当前项目是否有未使用的导入，确保每个导入都贡献一些常量或其他精化依赖项。
 
-如果指定了 {lakeMeta}`module`，则会检查它以及可从它传递访问的所有文件。否则，将检查包的 {tech}[默认目标]。
+如果指定了 {lakeMeta}`module`，则会检查它以及可从它传递访问的所有文件。否则，将检查包的 {tech (key := "default targets")}[默认目标]。
 
 :::paragraph
 源文件可以包含特殊注释来控制 {lake}`shake` 的行为：
@@ -861,10 +861,10 @@ built and then run like a script. A library test driver will just be built.
 ```
 
 :::lake test " [\"--\" args...]"
-使用配置的 {tech}[测试驱动程序] 测试工作区的根包。
+使用配置的 {tech (key := "test driver")}[测试驱动程序] 测试工作区的根包。
 
 将构建一个可执行的测试驱动程序，然后使用包配置的 `testDriverArgs` 加上 CLI {lakeMeta}`args` 运行。
-{tech}[Lake 脚本] 测试驱动程序使用与可执行测试驱动程序相同的参数运行。
+{tech (key := "Lake script")}[Lake 脚本] 测试驱动程序使用与可执行测试驱动程序相同的参数运行。
 将刚刚构建一个库测试驱动程序；预计实施测试时，失败会导致构建因精化时间错误而失败。
 :::
 
@@ -1091,7 +1091,7 @@ with the package configuration's `moreServerArgs` field and `args`.
 ```
 
 :::lake serve "[\"--\" args...]"
-使用 {tech}[包配置] 的 `moreServerArgs` 字段和 {lakeMeta}`args` 在工作区的根项目中运行 Lean 语言服务器。
+使用 {tech (key := "package configuration")}[包配置] 的 `moreServerArgs` 字段和 {lakeMeta}`args` 在工作区的根项目中运行 Lean 语言服务器。
 
 此命令通常由编辑器或其他工具调用，而不是手动调用。
 :::
@@ -1124,7 +1124,7 @@ A bare `lake update` will upgrade all dependencies.
 
 :::lake update "[packages...]"
 更新 Lake 软件包 {tech}[manifest]（即 `lake-manifest.json`），根据需要下载和升级软件包。
-对于每个新的（可传递的）{tech}[Git 依赖项]，相应的提交将被克隆到工作区的 {tech}[包目录] 的子目录中。
+对于每个新的（可传递的）{tech (key := "Git dependency")}[Git 依赖项]，相应的提交将被克隆到工作区的 {tech (key := "package directory")}[包目录] 的子目录中。
 没有本地依赖项的副本。
 
 如果指定了一组包 {lakeMeta}`packages`，则这些依赖项将升级到与包的配置兼容的最新版本（如果从配置中删除，则将其删除）。
@@ -1176,7 +1176,7 @@ Does NOT build any artifacts. It just packs the existing ones.
 ```
 
 :::lake pack "[archive.tar.gz]"
-使用 `tar` 将根包的 {tech}[构建目录] 打包到 gzip 压缩的 tar 存档中。
+使用 `tar` 将根包的 {tech (key := "build directory")}[构建目录] 打包到 gzip 压缩的 tar 存档中。
 如果未指定存档的路径，则存档位于程序包的 Lake 目录 (`.lake`) 中，并根据其 `buildArchive` 设置进行命名。
 此命令不会构建任何工件：它只归档现有的内容。
 用户应确保在运行此命令之前存在所需的工件。
@@ -1194,7 +1194,7 @@ the package's `buildArchive` in its Lake directory (`.lake`).
 ```
 
 :::lake unpack "[archive.tar.gz]"
-将 gzip 压缩的 tar 存档 {lakeMeta}`archive.tgz` 的内容解压到根包的 {tech}[构建目录] 中。
+将 gzip 压缩的 tar 存档 {lakeMeta}`archive.tgz` 的内容解压到根包的 {tech (key := "build directory")}[构建目录] 中。
 如果未指定 {lakeMeta}`archive.tgz`，则使用包的 `buildArchive` 设置来确定文件名，并且该文件应位于包的 Lake 目录 (`.lake`) 中。
 :::
 
@@ -1207,7 +1207,7 @@ tag := "zh-buildtools-lake-cli-h015"
 {lake}`cache get`、{lake}`cache put` 和 {lake}`cache add` 用于与远程缓存服务器交互。
 这些命令是*实验性的*，并且仅在启用 {ref "lake-cache"}[本地缓存] 时才有用。
 
-这些命令可以配置为使用 {deftech}[缓存范围]，它是包的一组构建输出的服务器特定标识符。
+这些命令可以配置为使用 {deftech (key := "cache scope")}[缓存范围]，它是包的一组构建输出的服务器特定标识符。
 在 Reservoir 上，范围目前与 GitHub 存储库相同，但将来可能包括工具链和平台信息。
 其他远程缓存可以使用它们想要的任何范围方案。
 缓存范围是使用 {lakeOptDef option}`--scope=` 选项指定的。

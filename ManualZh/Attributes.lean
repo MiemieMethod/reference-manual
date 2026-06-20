@@ -32,10 +32,10 @@ htmlSplit := .never
 {deftech}_Attributes_ 是声明上的一组可扩展的编译时注释。
 它们可以作为 {ref "declaration-modifiers"}[声明修饰符] 或使用 {keywordOf Lean.Parser.Command.attribute}`attribute` 命令添加。
 
-属性可以将信息与编译时表（包括 {tech}[自定义 simp 集]、{tech}[宏] 和 {tech}[实例]）中的声明相关联，对定义施加附加要求（例如，如果其类型不是类型类，则拒绝它们），或生成附加代码。
-与术语、命令的 {tech}[宏] 和自定义 {tech}[elaborators] 以及策略一样，属性的 {tech}[语法类别] `attr` 被设计为可扩展，并且有一个表将每个扩展映射到解释它的编译时程序。
+属性可以将信息与编译时表（包括 {tech (key := "custom simp sets")}[自定义 simp 集]、{tech (key := "macros")}[宏] 和 {tech (key := "instances")}[实例]）中的声明相关联，对定义施加附加要求（例如，如果其类型不是类型类，则拒绝它们），或生成附加代码。
+与术语、命令的 {tech (key := "macros")}[宏] 和自定义 {tech}[elaborators] 以及策略一样，属性的 {tech (key := "syntax category")}[语法类别] `attr` 被设计为可扩展，并且有一个表将每个扩展映射到解释它的编译时程序。
 
-属性应用为 {deftech}_attribute 实例_，将范围指示符与属性配对。
+属性应用为 {deftech (key := "attribute instances")}_attribute 实例_，将范围指示符与属性配对。
 这些可能出现在作为声明修饰符的属性中，也可能出现在独立的 {keywordOf Lean.Parser.Command.attribute}`attribute` 命令中。
 
 :::syntax Lean.Parser.Term.attrInstance (title := "Attribute Instances")
@@ -45,7 +45,7 @@ $_:attrKind $_:attr
 
 `attrKind` 是可选的 {ref "scoped-attributes"}[属性范围] 关键字 {keyword}`local` 或 {keyword}`scoped`。
 这些控制属性效果的可见性。
-属性本身是可扩展 {tech}[语法类别] `attr` 中的任何内容。
+属性本身是可扩展 {tech (key := "syntax category")}[语法类别] `attr` 中的任何内容。
 :::
 
 属性系统非常强大：属性可以将任意信息与声明相关联并生成任意数量的帮助程序。
@@ -75,7 +75,7 @@ tag := "zh-attributes-h002"
 
 {keywordOf Lean.Parser.Command.attribute}`attribute` 命令可用于修改声明的属性。
 一些示例用途包括：
- * 通过添加 {attr}`instance` 将预先存在的声明注册为本地范围中的 {tech}[实例]，
+ * 通过添加 {attr}`instance` 将预先存在的声明注册为本地范围中的 {tech (key := "instance")}[实例]，
  * 使用 {attr}`simp` 或 {attr}`ext` 将预先存在的定理标记为简单引理或外延引理，并且
  * 暂时从默认的 {tech}[simp set] 中删除 simp 引理。
 
@@ -116,7 +116,7 @@ tag := "scoped-attributes"
 ```grammar
 ```
 
-本地范围的声明仅在建立它们的 {tech}[节范围] 范围内有效。
+本地范围的声明仅在建立它们的 {tech (key := "section scope")}[节范围] 范围内有效。
 ```grammar
 local
 ```

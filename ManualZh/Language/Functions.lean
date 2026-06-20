@@ -22,12 +22,12 @@ tag := "functions"
 
 函数类型有两种：
 
- : {deftech}[依赖]
+ : {deftech (key := "Dependent")}[依赖]
 
    依赖函数类型显式命名参数，并且函数的共域可以显式引用该名称。
    由于类型可以根据值计算，因此依赖函数可以返回任意数量的不同类型的值，具体取决于其参数。{margin}[依赖函数有时称为 {deftech}_dependent products_，因为它们对应于集合的索引乘积。]
 
- : {deftech}[非相关]
+ : {deftech (key := "Non-Dependent")}[非相关]
 
    非依赖函数类型不包含参数名称，并且陪域不会根据提供的特定参数而变化。
 
@@ -98,7 +98,7 @@ i : Nat
 ::::
 :::::
 
-虽然核心 类型论 不具有 {tech}[隐式] 参数，但函数类型确实包含参数是否隐式的指示。
+虽然核心 类型论 不具有 {tech (key := "implicit")}[隐式] 参数，但函数类型确实包含参数是否隐式的指示。
 该信息由 Lean精化器使用，但它不会影响核心理论中的类型检查或 定义等价，并且在仅考虑核心 类型论 时可以忽略。
 
 :::example "Definitional Equality of Implicit and Explicit Function Types"
@@ -118,7 +118,7 @@ example :
 tag := "zh-language-functions-h001"
 %%%
 
-在 Lean 的 类型论 中，函数是使用绑定变量的 {deftech}_函数抽象_ 创建的。
+在 Lean 的 类型论 中，函数是使用绑定变量的 {deftech (key := "function abstractions")}_函数抽象_ 创建的。
 {margin}[在各个社区中，函数抽象也称为 _lambdas_，因为 Alonzo Church 对它们的表示法，或者称为_匿名函数_，因为它们不需要在全局环境中使用名称来定义。]
 应用该函数时，通过 {tech (key := "β")}[β-reduction] 找到结果：用参数替换绑定变量。
 在编译的代码中，这种情况严格发生：参数必须已经是一个值。
@@ -126,7 +126,7 @@ tag := "zh-language-functions-h001"
 
 在Lean的{ref "function-terms"}[术语语言]中，函数抽象可以采用多个参数或使用模式匹配。
 这些功能被转换为核心语言中更简单的操作，其中所有函数抽象都只采用一个参数。
-并非所有函数都源自抽象：{tech}[类型构造函数]、{tech}[构造函数] 和 {tech}[递归函数] 可能具有函数类型，但不能单独使用函数抽象来定义它们。
+并非所有函数都源自抽象：{tech (key := "type constructors")}[类型构造函数]、{tech (key := "constructors")}[构造函数] 和 {tech (key := "recursors")}[递归函数] 可能具有函数类型，但不能单独使用函数抽象来定义它们。
 
 
 # 柯里化
@@ -150,7 +150,7 @@ tag := "function-extensionality"
 
 
 Lean 中的函数 定义等价 是 {deftech}_intensional_。
-这意味着 定义等价 是按语法定义的，对绑定变量和 {tech}[约简] 进行模重命名。
+这意味着 定义等价 是按语法定义的，对绑定变量和 {tech (key := "reduction")}[约简] 进行模重命名。
 对于第一个近似，这意味着如果两个函数实现相同的算法，则它们在定义上是相等的，而不是通常的数学相等概念，即如果它们将 {tech}[domain] 的相等元素映射到 {tech}[codomain] 的相等元素，则两个函数相等。
 
 
@@ -158,7 +158,7 @@ Lean 中的函数 定义等价 是 {deftech}_intensional_。
 内涵相等的句法特征意味着检查它的算法是可以确定的。
 检查外延相等性涉及证明关于函数相等性的本质上任意定理，并且没有明确的规范来检查它的算法。
 这使得扩展相等对于类型检查器来说是一个糟糕的选择。
-相反，函数外延性作为推理原理提供，在证明 {tech}[命题] 两个函数相等时可以调用该推理原理。
+相反，函数外延性作为推理原理提供，在证明 {tech (key := "proposition")}[命题] 两个函数相等时可以调用该推理原理。
 
 
 ::::keepEnv

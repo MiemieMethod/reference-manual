@@ -24,7 +24,7 @@ tag := "coinductive-theory"
 %%%
 
 共归纳和归纳谓词的构造建立在完全格的 Knaster-Tarski 不动点定理的基础上。
-虽然 {ref "partial-fixpoint-theory"}[部分固定点递归] 依赖于链完整偏序 ({name}`Lean.Order.CCPO`)，但共归纳和归纳谓词使用更强的 {deftech}_完整格_ 概念。
+虽然 {ref "partial-fixpoint-theory"}[部分固定点递归] 依赖于链完整偏序 ({name}`Lean.Order.CCPO`)，但共归纳和归纳谓词使用更强的 {deftech (key := "complete lattice")}_完整格_ 概念。
 
 关键思想是 {lean}`Prop` 带有按蕴涵排序的 {ref "complete-lattices"}[完整格] 结构（`P ⊑ Q` 当 `P → Q` 时），并且完整格上的任何单调内函数都具有根据 Knaster-Tarski 定理的最小和最大不动点。
 共导谓词使用 {ref "lattice-prop"}[反向蕴涵顺序]（当 `Q → P` 时为 `P ⊑ Q`），因此此反向顺序中的最小固定点是标准顺序中的最大固定点。
@@ -38,7 +38,7 @@ tag := "coinductive-theory"
 tag := "complete-lattices"
 %%%
 
-{tech}[完整格] 是一个偏序，其中每个子集都有一个最小上界，而不仅仅是每个链。
+{tech (key := "complete lattice")}[完整格] 是一个偏序，其中每个子集都有一个最小上界，而不仅仅是每个链。
 
 {docstring Lean.Order.CompleteLattice}
 
@@ -88,7 +88,7 @@ tag := "coinductive-monotonicity"
 {tactic}`monotonicity`策略通过组合用 {attr}`partial_fixpoint_monotone` 属性注册的引理来证明单调性。
 这种方法比严格的积极性更为宽容。
 例如，通过翻转 {name}`Lean.Order.ImplicationOrder` 和 {name}`Lean.Order.ReverseImplicationOrder` 之间的顺序可以正确处理否定和蕴涵。
-这就是允许在同一个 {tech}[互块]中混合感应和共感应固定点的原因。
+这就是允许在同一个 {tech (key := "mutual block")}[互块]中混合感应和共感应固定点的原因。
 
 {tactic}`monotonicity`策略处理的构造集是可扩展的：注册额外的 {attr}`partial_fixpoint_monotone` 引理可教导策略处理新的逻辑连接词或高阶函数。
 或者，当通过 {keyword}`monotonicity` 子句使用 {keywordOf Lean.Parser.Command.declaration}`coinductive_fixpoint` 时，可以提供显式单调性证明项。

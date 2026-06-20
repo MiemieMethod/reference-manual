@@ -27,16 +27,16 @@ tag := "zh-io-files-root"
 Lean 在所有支持的平台上提供一致的文件系统 API。
 这些是关键概念：
 
-: {deftech}[文件]
+: {deftech (key := "Files")}[文件]
 
   文件是操作系统提供的一种抽象，它提供对持久存储的数据的随机访问，这些数据按层次结构组织到目录中。
 
-: {deftech}[目录]
+: {deftech (key := "Directories")}[目录]
 
   目录，也称为_文件夹_，可能包含文件或其他目录。
   从根本上来说，目录将名称映射到它包含的文件和/或目录。
 
-: {deftech}[文件句柄]
+: {deftech (key := "File Handles")}[文件句柄]
 
   文件句柄 ({name IO.FS.Handle}`Handle`) 是对已打开以进行读取和/或写入的文件的抽象引用。
   文件句柄维护一种确定是否允许读取和/或写入的模式，以及指向文件中特定位置的光标。
@@ -50,7 +50,7 @@ Lean 在所有支持的平台上提供一致的文件系统 API。
   它们由字符串表示，其中分隔符 {margin}[当前平台的分隔符在 {name}`System.FilePath.pathSeparators` 中列出。] 分隔名称。
 
   路径的详细信息是特定于平台的。
-  {deftech}[绝对路径] 从 {deftech}_根目录_ 开始；某些操作系统具有单个根目录，而其他操作系统可能具有多个根目录。
+  {deftech (key := "Absolute paths")}[绝对路径] 从 {deftech (key := "root directory")}_根目录_ 开始；某些操作系统具有单个根目录，而其他操作系统可能具有多个根目录。
   相对路径不从根目录开始，并且需要将某个其他目录作为起点。
   除了目录之外，路径还可以包含特殊目录名称 `.`（指在其中找到它的目录）和 `..`（指路径中先前的目录）。
 
@@ -58,10 +58,10 @@ Lean 在所有支持的平台上提供一致的文件系统 API。
   扩展名由字符 {name}`System.FilePath.extSeparator` 分隔。
   在某些平台上，可执行文件具有特殊扩展名 ({name}`System.FilePath.exeExtension`)。
 
-: {deftech}[流]
+: {deftech (key := "Streams")}[流]
 
   流是对文件的更高级别的抽象，既提供附加功能又隐藏文件的一些细节。
-  虽然 {tech}[文件句柄] 本质上是围绕操作系统表示的薄包装器，但流在 Lean 中实现为称为 {lean}`IO.FS.Stream` 的结构。
+  虽然 {tech (key := "file handles")}[文件句柄] 本质上是围绕操作系统表示的薄包装器，但流在 Lean 中实现为称为 {lean}`IO.FS.Stream` 的结构。
   由于流是在 Lean 中实现的，因此用户代码可以创建额外的流，这些流可以与标准库中提供的流无缝地一起使用。
 
 # 低级文件 API
@@ -193,7 +193,7 @@ tag := "zh-io-files-h003"
 不同的平台对路径有不同的约定：一些使用斜杠（`/`）作为目录分隔符，另一些使用反斜杠（`\`）。
 有些区分大小写，有些则不区分大小写。
 可以使用不同的 Unicode 编码和正常形式来表示文件名，并且某些平台将文件名视为字节序列而不是字符串。
-在一个系统上表示 {tech}[绝对路径] 的字符串在另一系统上甚至可能不是有效路径。
+在一个系统上表示 {tech (key := "absolute path")}[绝对路径] 的字符串在另一系统上甚至可能不是有效路径。
 
 要编写与多个系统尽可能兼容的 Lean 代码，使用 Lean 的路径操作原语而不是原始字符串操作会很有帮助。
 {name}`System.FilePath.join` 等帮助程序会考虑绝对路径的特定于平台的规则，{name}`System.FilePath.pathSeparator` 包含当前平台的适当路径分隔符，{name}`System.FilePath.exeExtension` 包含可执行文件的任何必要扩展名。

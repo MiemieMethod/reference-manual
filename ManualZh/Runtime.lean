@@ -60,9 +60,9 @@ Lean 值可以在运行时以两种方式表示：
 
 装箱值可以是指向对象的指针（在这种情况下最低位为 0），也可以是立即值（在这种情况下最低位为 1），并且通过将表示形式向右移动一位来找到该值。
 
-具有未装箱表示的类型（例如 {name}`UInt8` 和 {tech}[enum inducing] 类型）在编译器可以确定该值具有所述类型的上下文中表示为相应的 C 类型。
+具有未装箱表示的类型（例如 {name}`UInt8` 和 {tech (key := "enum inductive")}[enum inducing] 类型）在编译器可以确定该值具有所述类型的上下文中表示为相应的 C 类型。
 在某些情况下，例如 {name}`Array` 等通用容器类型，否则未装箱的值必须在存储之前装箱。
-换句话说，使用 {name}`Bool.not` 调用并返回未装箱的 `uint8_t` 值，因为 {tech}[enum inducing] 类型 {name}`Bool` 具有未装箱的表示形式，但 {lean}`Array Bool` 中的各个 {name}`Bool` 值已装箱。
+换句话说，使用 {name}`Bool.not` 调用并返回未装箱的 `uint8_t` 值，因为 {tech (key := "enum inductive")}[enum inducing] 类型 {name}`Bool` 具有未装箱的表示形式，但 {lean}`Array Bool` 中的各个 {name}`Bool` 值已装箱。
 归纳类型的构造函数中 {lean}`Bool` 类型的字段表示为未装箱，而存储在实例化为 {lean}`Bool` 的多态字段中的 {lean}`Bool` 则为装箱。
 
 
@@ -337,7 +337,7 @@ draft := true
 tag := "zh-runtime-h006"
 %%%
 
-Lean 包括并行和并发程序的原语，使用 {tech}[任务] 进行描述。
+Lean 包括并行和并发程序的原语，使用 {tech (key := "tasks")}[任务] 进行描述。
 Lean 运行时系统包括一个为任务分配硬件资源的任务管理器。
 与用于定义任务的 API 一起，{ref "concurrency"}[有关多线程程序的部分]对此进行了详细描述。
 
@@ -387,7 +387,7 @@ private axiom «α₂→…→αₙ₋₁».{u} : Type u
 local macro "..." : term => ``(«α₂→…→αₙ₋₁»)
 ```
 
-Lean {deftech}_应用程序二进制接口_ (ABI) 描述如何在平台本机调用约定中对 Lean 声明的签名进行编码。
+Lean {deftech (key := "Application Binary Interface")}_应用程序二进制接口_ (ABI) 描述如何在平台本机调用约定中对 Lean 声明的签名进行编码。
 它基于标准C ABI和目标平台的调用约定。
 可以使用属性 Lean 标记 Lean 声明以与外部函数交互，这会导致编译代码使用 C 声明 {C}`sym` 作为实现，也可以使用属性 {attr}`export sym` 进行标记，这使得声明可作为 {C}`sym` 提供给 C。
 
@@ -406,7 +406,7 @@ extern s sym;
 s sym(t₁, ..., tₙ);
 ```
 其中参数类型 `tᵢ` 是类型 {lean}`αᵢ` 的 C 翻译。
-对于 {attr}`extern`，首先删除所有 {tech}[不相关] 类型。
+对于 {attr}`extern`，首先删除所有 {tech (key := "irrelevant")}[不相关] 类型。
 :::
 
 ### 将类型从 Lean 转换为 C
@@ -430,7 +430,7 @@ local macro "..." : term => ``(«...»)
 * {lean}`Float` 由 {C}`double` 表示。
 * {name}`Nat`和{name}`Int`由{C}`lean_object *`表示。
   它们的运行时值可以是指向不透明 bignum 对象的指针，或者如果“指针”的最低位为 1 ({C}`lean_is_scalar`)，则为编码的自然数或整数 ({C}`lean_box`/{C}`lean_unbox`)。
-* Universe {lean}`Sort u`、类型构造函数 {lean}`... → Sort u` 或命题 {lean}`p`​` :`{lean}` Prop` 是 {tech}[无关]，并且可以静态擦除（参见上文）或表示为具有运行时值的 {C}`lean_object *` {C}`lean_box(0)`
+* Universe {lean}`Sort u`、类型构造函数 {lean}`... → Sort u` 或命题 {lean}`p`​` :`{lean}` Prop` 是 {tech (key := "irrelevant")}[无关]，并且可以静态擦除（参见上文）或表示为具有运行时值的 {C}`lean_object *` {C}`lean_box(0)`
 * 对于没有特殊编译器支持的其他归纳类型的 ABI 取决于类型的具体情况。
   它与这些类型的 {ref "run-time-inductives"}[运行时表示]相同。
   其运行时值要么是指向 {C}`lean_object` 子类型的对象的指针（请参阅下面的“归纳类型”部分），要么是归纳类型的第 {C}`cidx` 构造函数的值 {C}`lean_box(cidx)`（如果该构造函数没有任何相关参数）。
@@ -461,7 +461,7 @@ tag := "ffi-borrowing"
 ```grammar
 @& $_
 ```
-通过在参数类型前加上 {keyword}`@&` 前缀，可以将参数标记为 {tech}[借用]。
+通过在参数类型前加上 {keyword}`@&` 前缀，可以将参数标记为 {tech (key := "borrowed")}[借用]。
 :::
 
 ## 初始化

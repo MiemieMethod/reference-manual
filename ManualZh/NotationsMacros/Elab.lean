@@ -40,7 +40,7 @@ tag := "elaborators"
 精化器有两种类型：
 
  * {deftech}_Command elaborators_ 用于向 Lean 添加新命令。
-   命令作为副作用实现：它们可以向全局环境添加新常量，扩展编译时表（例如跟踪 {tech}[实例] 的表），它们可以以信息、警告或错误的形式提供反馈，并且它们可以完全访问 {name}`IO` monad。
+   命令作为副作用实现：它们可以向全局环境添加新常量，扩展编译时表（例如跟踪 {tech (key := "instances")}[实例] 的表），它们可以以信息、警告或错误的形式提供反馈，并且它们可以完全访问 {name}`IO` monad。
    命令精化器与它们可以处理的 {tech (key := "kind")}[语法类型] 相关联。
 
  * {deftech}_Term elaborators_ 用于通过将语法转换为 Lean 的核心 类型论 来实现新术语。
@@ -109,8 +109,8 @@ open Lean
 
 命令精化器可用于查询环境以发现有多少个常量具有给定名称。
 此示例使用 {name}`MonadEnv` 类中的 {name}`getEnv` 来获取当前环境。
-{name}`Environment.constants` 生成从名称到有关它们的信息的映射（例如它们的类型以及它们是否是定义、{tech}[归纳类型] 声明等）。
-{name}`logInfoAt` 允许信息输出与原始程序的语法关联，并且 {tech}[令牌反引号] 用于实现 Lean 约定，即交互式命令的输出与其关键字关联。
+{name}`Environment.constants` 生成从名称到有关它们的信息的映射（例如它们的类型以及它们是否是定义、{tech (key := "inductive type")}[归纳类型] 声明等）。
+{name}`logInfoAt` 允许信息输出与原始程序的语法关联，并且 {tech (key := "token antiquotation")}[令牌反引号] 用于实现 Lean 约定，即交互式命令的输出与其关键字关联。
 
 ```lean
 syntax "#count_constants " ident : command

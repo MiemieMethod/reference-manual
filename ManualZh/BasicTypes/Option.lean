@@ -122,7 +122,7 @@ section
 variable {α : Type u} (line : String)
 ```
 
-有一个从 {lean}`α` 到 {lean}`Option α` 的 {tech}[强制] 将值包装在 {lean}`some` 中。
+有一个从 {lean}`α` 到 {lean}`Option α` 的 {tech (key := "coercion")}[强制] 将值包装在 {lean}`some` 中。
 这允许 {name}`Option` 的使用方式与其他语言中的可空类型类似，其中缺少的值由 {name}`none` 指示，而存在的值没有特别标记。
 
 :::example "Coercions and {name}`Option`"

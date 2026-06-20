@@ -88,9 +88,9 @@ variable {m : Type → Type} [Monad m] {α : Type}
 
 单位类型有两种变体：
 
- * {lean}`Unit` 是存在于最小非命题 {tech}[宇宙] 中的 {lean}`Type`。
+ * {lean}`Unit` 是存在于最小非命题 {tech (key := "universe")}[宇宙] 中的 {lean}`Type`。
 
- * {lean}`PUnit` 是 {tech (key := "universe polymorphism")}[宇宙多态]，可用于任何非命题 {tech}[宇宙]。
+ * {lean}`PUnit` 是 {tech (key := "universe polymorphism")}[宇宙多态]，可用于任何非命题 {tech (key := "universe")}[宇宙]。
 
 在幕后，{lean}`Unit` 实际上被定义为 {lean}`PUnit.{1}`。
 如果可能，{lean}`Unit` 应优先于 {name}`PUnit`，以避免不必要的 Universe 参数。
@@ -190,7 +190,7 @@ tag := "zh-basictypes-h003"
 tag := "zh-basictypes-h004"
 %%%
 
-由于 {lean}`Bool` 是 {tech}[enum inducing] 类型，因此它在编译代码中由单个字节表示。
+由于 {lean}`Bool` 是 {tech (key := "enum inductive")}[enum inducing] 类型，因此它在编译代码中由单个字节表示。
 
 ## 布尔值和命题
 %%%
@@ -198,7 +198,7 @@ tag := "zh-basictypes-h005"
 %%%
 
 {lean}`Bool` 和 {lean}`Prop` 都代表真理的概念。
-从纯粹的逻辑角度来看，它们是等价的：{tech}[命题外延性]意味着基本上只有两个命题，即{lean}`True`和{lean}`False`。
+从纯粹的逻辑角度来看，它们是等价的：{tech (key := "propositional extensionality")}[命题外延性]意味着基本上只有两个命题，即{lean}`True`和{lean}`False`。
 但是，存在一个重要的实用差异：{lean}`Bool` 对可以由程序计算的值进行分类，而 {lean}`Prop` 对代码生成没有意义的语句进行分类。
 换句话说，{lean}`Bool` 是适用于程序的真与假概念，而 {lean}`Prop` 是适用于数学的概念。
 由于校样已从编译的程序中删除，因此保持 {lean}`Bool` 和 {lean}`Prop` 不同可以清楚地表明 Lean 文件的哪些部分用于计算。
@@ -218,7 +218,7 @@ example : (true = true) = True := by simp
 ```
 
 {lean}`Bool` 可以用在任何需要 {lean}`Prop` 的地方。
-从每个 {lean}`Bool` {lean}`b` 到命题 {lean}`b = true` 都有一个 {tech}[强制]。
+从每个 {lean}`Bool` {lean}`b` 到命题 {lean}`b = true` 都有一个 {tech (key := "coercion")}[强制]。
 通过 {lean}`propext`，{lean}`true = true` 等于 {lean}`True`，{lean}`false = true` 等于 {lean}`False`。
 
 并非每个命题都可以被程序用来做出运行时决策。

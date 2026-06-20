@@ -26,7 +26,7 @@ tag := "zh-io-ref-root"
 %%%
 
 
-虽然普通的 {tech}[状态单子] 使用跟踪状态内容以及计算值的元组对有状态计算进行编码，但 Lean 的运行时系统还提供始终由可变内存单元支持的可变引用。
+虽然普通的 {tech (key := "state monads")}[状态单子] 使用跟踪状态内容以及计算值的元组对有状态计算进行编码，但 Lean 的运行时系统还提供始终由可变内存单元支持的可变引用。
 可变引用的类型为 {lean}`IO.Ref`，指示单元格是可变的，并且读取和写入必须是显式的。
 {lean}`IO.Ref` 是使用 {lean}`ST.Ref` 实现的，因此整个 {ref "mutable-st-references"}[{lean}`ST.Ref` API] 也可以与 {lean}`IO.Ref` 一起使用。
 

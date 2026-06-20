@@ -50,7 +50,7 @@ tag := "monad-varieties"
 标准库提供了处理常用效果的抽象。
 许多常用效果分为以下几类：
 
-: {deftech}[状态单子] 具有可变状态
+: {deftech (key := "State monads")}[状态单子] 具有可变状态
 
   可以访问可能被计算的其他部分修改的某些数据的计算使用_可变状态_。
   状态可以通过多种方式实现，在 {ref "state-monads"}[状态 monads] 部分中进行了描述，并在 {name}`MonadState` 类型类中捕获。
@@ -163,8 +163,8 @@ Except.ok 0
 只要它们有不同的类型，就应该可以方便地访问两者。
 在典型使用中，类型类中重载的一些一元操作具有可用于 {tech (key := "synthesis")}[实例综合]的类型信息，而其他操作则没有。
 例如，传递给 {name MonadState.set}`set` 的参数确定要使用的状态类型，而 {name MonadState.get}`get` 不采用此类参数。
-当有多个状态可用时，{name MonadState.set}`set` 应用程序中存在的类型信息可用于选择正确的实例，这表明可变状态的类型应该是输入参数或 {tech}[半输出参数]，以便可用于选择实例。
-另一方面，{name MonadState.get}`get` 的使用中缺乏类型信息，这表明可变状态的类型应该是 {lean}`MonadState` 中的 {tech}[输出参数]，因此类型类综合从 monad 本身确定状态的类型。
+当有多个状态可用时，{name MonadState.set}`set` 应用程序中存在的类型信息可用于选择正确的实例，这表明可变状态的类型应该是输入参数或 {tech (key := "semi-output parameter")}[半输出参数]，以便可用于选择实例。
+另一方面，{name MonadState.get}`get` 的使用中缺乏类型信息，这表明可变状态的类型应该是 {lean}`MonadState` 中的 {tech (key := "output parameter")}[输出参数]，因此类型类综合从 monad 本身确定状态的类型。
 
 这种二分法可以通过许多效果类型类的两个版本来解决。
 带有半输出参数的版本具有后缀`-Of`，其操作根据需要显式采用类型。
@@ -277,7 +277,7 @@ Hint: Type class instance resolution failures can be inspected with the `set_opt
 (getThe String, getThe Nat) : M String × M Nat
 ```
 
-设置状态适用于任一类型，因为状态类型是 {name}`MonadStateOf` 上的 {tech}[半输出参数]。
+设置状态适用于任一类型，因为状态类型是 {name}`MonadStateOf` 上的 {tech (key := "semi-output parameter")}[半输出参数]。
 ```lean (name := setNat)
 #check (set 4 : M Unit)
 ```
@@ -300,7 +300,7 @@ set "Four" : M PUnit
 tag := "monad-transformers"
 %%%
 
-{deftech}_monad Transformer_ 是一个函数，当提供一个 monad 时，它会返回一个新的 monad。
+{deftech (key := "monad transformer")}_monad Transformer_ 是一个函数，当提供一个 monad 时，它会返回一个新的 monad。
 通常，这个新的 monad 具有原始 monad 的所有效果以及一些附加效果。
 
 ```lean -show

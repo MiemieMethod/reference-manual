@@ -116,7 +116,7 @@ section
 variable {α : Type u}
 ```
 
-强制转换不用于解析 {tech}[通用字段表示法]：仅考虑术语的推断类型。
+强制转换不用于解析 {tech (key := "generalized field notation")}[通用字段表示法]：仅考虑术语的推断类型。
 但是，{tech}[type ascription] 可用于触发对具有所需广义字段的类型的强制。
 强制转换也不用于解析 {name}`OfNat` 实例：即使存在 {lean}`OfNat Nat` 的默认实例，从 {lean}`Nat` 到 {lean}`α` 的强制转换也不允许将自然数文字用于 {lean}`α`。
 
@@ -320,7 +320,7 @@ tag := "coercion-insertion"
 %%%
 
 :::paragraph
-搜索从一种类型到另一种类型的强制转换的过程称为 {deftech}_coercion insert_。
+搜索从一种类型到另一种类型的强制转换的过程称为 {deftech (key := "coercion insertion")}_coercion insert_。
 在以下可能会发生错误的情况下会尝试强制插入：
 
  * 术语的预期类型与为该术语找到的类型不同。
@@ -569,9 +569,9 @@ variable [CoeHead α α'] [CoeOut α' …] [CoeOut … α''] [Coe α'' …] [Coe
 换句话说，为该术语找到的类型中的信息用于解析实例链。
 {name}`Coe` 和 {name}`CoeTail` 实例从预期类型链接到推断类型，因此预期类型中的信息用于解析实例链。
 如果这些链在中间相遇，则发现了强制。
-这反映在它们的类型签名中：{name}`CoeHead` 和 {name}`CoeOut` 使用 {tech}[半输出参数] 作为强制转换的目标，而 {name}`Coe` 和 {name}`CoeTail` 使用 {tech}[半输出参数] 作为强制转换的源。
+这反映在它们的类型签名中：{name}`CoeHead` 和 {name}`CoeOut` 使用 {tech (key := "semi-output parameters")}[半输出参数] 作为强制转换的目标，而 {name}`Coe` 和 {name}`CoeTail` 使用 {tech (key := "semi-output parameters")}[半输出参数] 作为强制转换的源。
 
-当实例为 {tech}[半输出参数] 提供值时，该值将在实例综合期间使用。
+当实例为 {tech (key := "semi-output parameter")}[半输出参数] 提供值时，该值将在实例综合期间使用。
 然而，如果没有提供值，则合成算法可以分配一个值。
 因此，在选择实例时，应为每个半输出参数分配一个类型。
 这意味着当强制输出中出现的变量是其输入中的变量的子集时，应使用 {name}`CoeOut`；当输入中的变量是输出中的变量的子集时，应使用 {name}`Coe`。
@@ -740,7 +740,7 @@ but is expected to have type
 可以使用前缀运算符 {keywordOf coeNotation}`↑` 显式放置强制转换。
 :::
 
-与使用嵌套 {tech}[类型归属] 不同，用于放置强制转换的 {keywordOf coeNotation}`↑` 语法不需要显式编写所涉及的类型。
+与使用嵌套 {tech (key := "type ascriptions")}[类型归属] 不同，用于放置强制转换的 {keywordOf coeNotation}`↑` 语法不需要显式编写所涉及的类型。
 
 :::example "Controlling Coercion Insertion"
 
@@ -809,7 +809,7 @@ coe
 :::
 
 :::example "Implementing Coercions"
-{tech}[enum inducing] 类型 {lean}`Weekday` 代表一周中的几天：
+{tech (key := "enum inductive")}[enum inducing] 类型 {lean}`Weekday` 代表一周中的几天：
 ```lean
 inductive Weekday where
   | mo | tu | we | th | fr | sa | su
@@ -891,10 +891,10 @@ tag := "nat-api-cast"
 
 类型类 {name}`NatCast` 和 {name}`IntCast` 是 {name}`Coe` 的特殊情况，用于定义从 {lean}`Nat` 或 {lean}`Int` 到某种某种意义上规范的其他类型的强制。
 它们的存在是为了更好地与大型数学库集成，例如 [Mathlib](https://github.com/leanprover-community/mathlib4)，这些数学库大量使用强制从自然数或整数映射到其他结构（通常是环）。
-理想情况下，将自然数或整数强制转换为这些结构是 {tech}[simp 范式]，因为这是表示它们的便捷方法。
+理想情况下，将自然数或整数强制转换为这些结构是 {tech (key := "simp normal form")}[simp 范式]，因为这是表示它们的便捷方法。
 
-当强制转换应用程序预计为类型的 {tech}[simp 范式] 时，重要的是在实践中所有此类强制转换都是 {tech (key := "definitional equality")}[定义等价]。
-否则，{tech}[simp范式]将需要选择单个链式强制转换路径，但引理可能会意外地使用不同的路径来陈述。
+当强制转换应用程序预计为类型的 {tech (key := "simp normal form")}[simp 范式] 时，重要的是在实践中所有此类强制转换都是 {tech (key := "definitional equality")}[定义等价]。
+否则，{tech (key := "simp normal form")}[simp范式]将需要选择单个链式强制转换路径，但引理可能会意外地使用不同的路径来陈述。
 由于 {tactic}`simp` 的内部索引基于术语的底层结构，而不是其在表面语法中的表示形式，因此这些差异将导致引理无法应用到预期的位置。
 另一方面，{lean}`NatCast` 和 {lean}`IntCast` 实例应定义为始终 {tech (key := "definitional equality")}[定义等价]，从而避免出现该问题。
 Lean 标准库的实例经过排列，使得在强制插入期间优先选择 {name}`NatCast` 或 {name}`IntCast` 实例而不是强制实例链。
@@ -974,7 +974,7 @@ example : StringMonoid := "hello"
 :::
 
 :::example "Sort Coercions as Ordinary Coercions"
-{tech}[归纳类型] {name}`NatOrBool` 代表类型 {name}`Nat` 和 {name}`Bool`。
+{tech (key := "inductive type")}[归纳类型] {name}`NatOrBool` 代表类型 {name}`Nat` 和 {name}`Bool`。
 它们可以强制转换为实际类型 {name}`Nat` 和 {name}`Bool`：
 ```lean
 inductive NatOrBool where
@@ -1009,7 +1009,7 @@ tag := "fun-coercion"
 %%%
 
 预期类型通常不可用的另一种情况是函数应用术语中的函数位置。
-依赖函数类型很常见；它们与 {tech}[隐式] 参数一起，导致信息从一个参数的精化流向其他参数的精化。
+依赖函数类型很常见；它们与 {tech (key := "implicit")}[隐式] 参数一起，导致信息从一个参数的精化流向其他参数的精化。
 尝试从整个应用程序术语的预期类型和单独推断的参数类型来推断函数所需的类型通常会失败。
 在这些情况下，Lean 使用 {name}`CoeFun` 类型类将应用程序位置中的非函数强制为函数。
 与 {name}`CoeSort` 一样，{name}`CoeFun` 实例在插入函数强制转换时不会与其他强制转换链接，但它们可以在普通强制插入期间用作 {name}`CoeOut` 实例。
@@ -1133,7 +1133,7 @@ instance :
 用解释语言编写的函数可以解释为 Lean 函数，但也可以检查其底层源代码。
 
 类型良好的解释器的第一步是选择可以使用的 Lean 类型的子集。
-这些类型由代码 {name}`Ty` 的 {tech}[归纳类型] 以及将这些代码映射到实际类型的函数表示。
+这些类型由代码 {name}`Ty` 的 {tech (key := "inductive type")}[归纳类型] 以及将这些代码映射到实际类型的函数表示。
 ```lean
 inductive Ty where
   | nat
@@ -1144,7 +1144,7 @@ abbrev Ty.interp : Ty → Type
   | .arr t t' => t.interp → t'.interp
 ```
 
-语言本身由变量上下文和结果类型上的 {tech}[索引族] 表示。
+语言本身由变量上下文和结果类型上的 {tech (key := "indexed family")}[索引族] 表示。
 变量由 [de Bruijn 指数](https://en.wikipedia.org/wiki/De_Bruijn_index) 表示。
 ```lean
 inductive Tm : List Ty → Ty → Type where
@@ -1242,7 +1242,7 @@ tag := "coercion-impl-details"
 
 只有普通的强制插入才使用链接。
 将强制转换插入 {ref "sort-coercion"}[sort] 或 {ref "fun-coercion"}[function] 使用普通实例合成。
-同样，{tech}[依赖强制转换]也不是链接的。
+同样，{tech (key := "dependent coercions")}[依赖强制转换]也不是链接的。
 
 ## 展开强制
 %%%

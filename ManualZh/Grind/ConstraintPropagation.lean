@@ -25,8 +25,8 @@ open Lean Lean.Grind Lean.Meta.Grind
 tag := "grind-propagation"
 %%%
 
-{deftech}[约束传播] 适用于白板的 {lean}`True` 和 {lean}`False` 存储桶。
-每当将术语添加到其中一个存储桶时，{tactic}`grind` 都会触发数十个小型 {deftech}_forward 规则_，这些规则从其逻辑结果中获取更多信息：
+{deftech (key := "Constraint propagation")}[约束传播] 适用于白板的 {lean}`True` 和 {lean}`False` 存储桶。
+每当将术语添加到其中一个存储桶时，{tactic}`grind` 都会触发数十个小型 {deftech (key := "forward rules")}_forward 规则_，这些规则从其逻辑结果中获取更多信息：
 
 : 布尔连接词
 
@@ -45,7 +45,7 @@ tag := "grind-propagation"
 
 : 归纳类型
 
-  如果将同一 {tech}[归纳类型] 的两个不同构造函数（例如 {name}`none` 和 {name}`some`）的应用所形成的项置于同一等价类中，则会产生矛盾。
+  如果将同一 {tech (key := "inductive type")}[归纳类型] 的两个不同构造函数（例如 {name}`none` 和 {name}`some`）的应用所形成的项置于同一等价类中，则会产生矛盾。
   如果由同一构造函数的应用形成的两个项被放置在同一等价类中，则它们的参数也相等。
 
 : 预测
@@ -63,7 +63,7 @@ tag := "grind-propagation"
   ```lean -show
   variable {h : α = β} {a : α}
   ```
-  任何术语 {typed}`cast h a : β` 都立即与 {typed}`a : α` 等同（使用 {tech}[异构相等]）。
+  任何术语 {typed}`cast h a : β` 都立即与 {typed}`a : α` 等同（使用 {tech (key := "heterogeneous equality")}[异构相等]）。
   :::
 
 : 减少
@@ -92,7 +92,7 @@ tag := "grind-propagation"
 
 3. 如果出现矛盾，则使用 ({lean}`closeGoal`) 关闭目标。
 
-{deftech}_向上传播_从有关子项的事实导出有关项的事实，而{deftech}_向下传播_从有关项的事实导出有关子项的事实。
+{deftech (key := "Upward propagation")}_向上传播_从有关子项的事实导出有关项的事实，而{deftech (key := "downward propagation")}_向下传播_从有关项的事实导出有关子项的事实。
 :::
 
 ```lean -show

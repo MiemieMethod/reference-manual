@@ -171,8 +171,8 @@ tag := "technical-terms"
 %%%
 
 
-{deftech}_技术术语_ 是指在撰写本参考手册这样的技术材料时，以非常特定的意义使用的词项。
-{tech}[技术术语]的用例通常会像此处一样超链接到其定义位置。
+{deftech (key := "Technical terminology")}_技术术语_ 是指在撰写本参考手册这样的技术材料时，以非常特定的意义使用的词项。
+{tech (key := "technical terminology")}[技术术语]的用例通常会像此处一样超链接到其定义位置。
 
 ## 常量、语法与 tactic 参考
 %%%

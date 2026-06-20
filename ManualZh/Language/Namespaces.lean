@@ -21,7 +21,7 @@ tag := "namespaces"
 名称中除了最后一个组成部分之外的所有组成部分都是名称空间，而最后一个组成部分是名称本身。
 
 命名空间用于对相关定义、定理、类型和其他声明进行分组。
-当命名空间对应于类型的名称时，可以使用 {tech}[通用字段表示法] 来访问其内容。
+当命名空间对应于类型的名称时，可以使用 {tech (key := "generalized field notation")}[通用字段表示法] 来访问其内容。
 除了组织名称之外，命名空间还对 {ref "language-extension"}[语法扩展]、{ref "attributes"}[属性] 和 {ref "type-classes"}[实例] 进行分组。
 
 命名空间与 {tech}[modules] 正交：模块是一起详细说明、编译和加载的代码单元，但模块名称与其提供的名称之间没有必然联系。
@@ -29,7 +29,7 @@ tag := "namespaces"
 
 有一个根命名空间，通常通过简单地省略命名空间来表示。
 可以通过以 `_root_` 开头的名称来明确指示。
-在名称将相对于环境命名空间（例如来自 {tech}[节范围]）或本地范围进行解释的上下文中，这可能是必要的。
+在名称将相对于环境命名空间（例如来自 {tech (key := "section scope")}[节范围]）或本地范围进行解释的上下文中，这可能是必要的。
 
 :::example "Explicit Root Namespace"
 当前命名空间中的名称优先于根命名空间中的名称。
@@ -68,10 +68,10 @@ end Forest
 tag := "zh-language-namespaces-h001"
 %%%
 
-每个 {tech}[节范围] 都有一个 {tech}[当前命名空间]，它由 {keywordOf Lean.Parser.Command.namespace}`namespace` 命令确定。{margin}[{keywordOf Lean.Parser.Command.namespace}`namespace` 命令在 {ref "scope-commands"}[有关引入节范围的命令的部分]中进行了描述。]
+每个 {tech (key := "section scope")}[节范围] 都有一个 {tech (key := "current namespace")}[当前命名空间]，它由 {keywordOf Lean.Parser.Command.namespace}`namespace` 命令确定。{margin}[{keywordOf Lean.Parser.Command.namespace}`namespace` 命令在 {ref "scope-commands"}[有关引入节范围的命令的部分]中进行了描述。]
 在节范围内声明的名称将添加到当前命名空间。
 如果声明的名称有多个组件，则其命名空间嵌套在当前命名空间内；声明的当前命名空间的主体是嵌套命名空间。
-节范围还包括一组 {deftech}_opened 命名空间_，这些命名空间的内容在没有附加限定的范围内。
+节范围还包括一组 {deftech (key := "opened namespaces")}_opened 命名空间_，这些命名空间的内容在没有附加限定的范围内。
 {tech (key := "resolve")}[解析] 特定名称的标识符会考虑当前命名空间和打开的命名空间。
 但是，{deftech}[protected] 声明（即具有 {keyword}`protected` {ref "declaration-modifiers"}[modifier] 的声明）在打开其命名空间时不会进入作用域。
 {ref "identifiers-and-resolution"}[关于标识符作为术语的部分]中描述了将标识符解析为考虑当前命名空间和打开的命名空间的名称的规则。
@@ -362,7 +362,7 @@ export $_ ($_*)
 :::
 
 :::example "Exported Names"
-{tech}[归纳类型] {name}`Veg.Leafy` 的声明建立了构造函数 {name}`Veg.Leafy.spinach` 和 {name}`Veg.Leafy.cabbage`：
+{tech (key := "inductive type")}[归纳类型] {name}`Veg.Leafy` 的声明建立了构造函数 {name}`Veg.Leafy.spinach` 和 {name}`Veg.Leafy.cabbage`：
 ```lean
 namespace Veg
 inductive Leafy where
@@ -372,6 +372,6 @@ export Leafy (spinach)
 end Veg
 export Veg.Leafy (cabbage)
 ```
-第一个 {keyword}`export` 命令使 {name}`Veg.Leafy.spinach` 可作为 {name}`Veg.spinach` 进行访问，因为 {tech}[当前命名空间] 是 `Veg`。
+第一个 {keyword}`export` 命令使 {name}`Veg.Leafy.spinach` 可作为 {name}`Veg.spinach` 进行访问，因为 {tech (key := "current namespace")}[当前命名空间] 是 `Veg`。
 第二个使 {name}`Veg.Leafy.cabbage` 可作为 {name}`cabbage` 进行访问，因为当前命名空间是根命名空间。
 :::

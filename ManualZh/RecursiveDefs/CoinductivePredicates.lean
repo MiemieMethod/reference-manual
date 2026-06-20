@@ -40,7 +40,7 @@ Lean 的 类型论 不直接支持共感类型。
  * 活性特性
 
 同时，{deftech (key := "lattice-theoretic inductive predicate")}[归纳谓词]也可以使用相同的机制通过最少的固定点来定义。
-由于它使用相同的底层机制，因此普通 {tech}[归纳类型] 的替代方案与混合感应-共感应互块兼容。
+由于它使用相同的底层机制，因此普通 {tech (key := "inductive types")}[归纳类型] 的替代方案与混合感应-共感应互块兼容。
 :::
 
 ::::::example "Infinite Sequences" (open := true)
@@ -263,7 +263,7 @@ example (R : α → α → Prop) (a : α) :
 
 :::
 
-除了方程引理之外，Lean 还生成 {deftech}[共归纳原理]。
+除了方程引理之外，Lean 还生成 {deftech (key := "coinduction principle")}[共归纳原理]。
 共归纳原理指出，共归纳谓词可以通过展示一些其他谓词来证明，这些谓词是单调函数的后固定点。
 
 ::::example "Coinduction Principles for Infinite Sequences"

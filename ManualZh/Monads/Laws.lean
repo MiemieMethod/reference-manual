@@ -77,7 +77,7 @@ end F
 
 {docstring LawfulApplicative}
 
-{deftech}[monad law] 指定 {name}`pure` 后跟 {name}`bind` 应等效于函数应用程序（即 {name}`pure` 没有效果），{name}`bind` 后跟 {name}`pure` 围绕函数应用程序等效于 {name Functor.map}`map`，并且{name}`bind` 是结合的。
+{deftech (key := "monad laws")}[monad law] 指定 {name}`pure` 后跟 {name}`bind` 应等效于函数应用程序（即 {name}`pure` 没有效果），{name}`bind` 后跟 {name}`pure` 围绕函数应用程序等效于 {name Functor.map}`map`，并且{name}`bind` 是结合的。
 
 
 {docstring LawfulMonad}

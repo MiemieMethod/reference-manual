@@ -25,7 +25,7 @@ set_option linter.unusedVariables false
 tag := "state-monads"
 %%%
 
-{tech}[状态单子] 提供对可变值的访问。
+{tech (key := "State monads")}[状态单子] 提供对可变值的访问。
 底层实现可以使用元组来模拟可变性，或者可以使用 {name}`ST.Ref` 之类的东西来确保突变。
 即使那些使用元组的实现实际上也可能在运行时使用突变，因为当存在对值的唯一引用时 Lean 使用突变，但这需要一种更喜欢 {name}`modify` 和 {name}`modifyGet` 而不是 {name}`get` 和 {name}`set` 的编程风格。
 

@@ -26,7 +26,7 @@ variable {α : Type u}
 ```
 
 {lean}`Subarray α` 类型是 {lean}`Std.Slice α` 的缩写。
-这意味着，除了本节中的运算符之外，{tech}[通用字段表示法]还可用于调用 {namespace}`Std.Slice` 命名空间中的函数，例如 {name}`Std.Slice.foldl`。
+这意味着，除了本节中的运算符之外，{tech (key := "generalized field notation")}[通用字段表示法]还可用于调用 {namespace}`Std.Slice` 命名空间中的函数，例如 {name}`Std.Slice.foldl`。
 :::
 
 {docstring Subarray}

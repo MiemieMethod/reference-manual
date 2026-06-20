@@ -25,7 +25,7 @@ tag := "interaction"
 Lean 专为交互式使用而设计，而不是作为批处理模式系统，在批处理模式系统中将整个文件输入然后转换为目标代码或错误消息。
 许多设计用于交互式使用的编程语言都提供 {deftech}[REPL]、{margin}[{noVale "Vale can't handle partly-bolded words"}[“*R*ead-*E*val-*P*rint *L*oop”] 的缩写；代码会被解析（“read”）、求值并显示结果，此过程可按需重复。]可在其中输入和测试代码，并使用加载源文件、类型检查术语或查询环境的命令。
 Lean 的交互功能基于不同的范例。
-Lean 提供了 {tech}[命令]，用于在源文件上下文中完成相同的任务，而不是在程序外部提供单独的命令提示符。
+Lean 提供了 {tech (key := "commands")}[命令]，用于在源文件上下文中完成相同的任务，而不是在程序外部提供单独的命令提示符。
 按照惯例，用于交互使用而不是作为持久代码工件的一部分的命令以 {keyword}`#` 为前缀。
 
 Lean 命令的信息可在 {deftech}_message log_ 中获取，它累积来自 {tech (key := "Lean elaborator")}[精化器] 的输出。
@@ -40,7 +40,7 @@ tag := "hash-eval"
 
 {keywordOf Lean.Parser.Command.eval}`#eval` 命令用于将代码作为程序运行。
 特别是，它能够执行 {lean}`IO` 操作，它使用按值调用评估策略{ref "partial-unsafe"}[执行 {keyword}`partial` 函数]，并且类型和证明都被删除。
-使用 {keywordOf Lean.reduceCmd}`#reduce` 来使用 {tech}[定义等价] 中的归约规则来归约项。
+使用 {keywordOf Lean.reduceCmd}`#reduce` 来使用 {tech (key := "definitional equality")}[定义等价] 中的归约规则来归约项。
 
 :::syntax command (title := "Evaluating Terms")
 
@@ -70,7 +70,7 @@ open Lean.Elab.Command (CommandElabM)
 
 代码的运行方式取决于其类型：
 
- * 如果该类型位于 {lean}`IO` 单子中，则它在捕获 {tech}[标准输出] 和 {tech}[标准错误] 的上下文中执行，并将其重定向到 Lean {tech}[消息日志]。
+ * 如果该类型位于 {lean}`IO` 单子中，则它在捕获 {tech (key := "standard output")}[标准输出] 和 {tech (key := "standard error")}[标准错误] 的上下文中执行，并将其重定向到 Lean {tech (key := "message log")}[消息日志]。
    如果返回值的类型不是 {lean}`Unit`，则它会显示为非一元表达式的结果。
  * 如果该类型位于内部 Lean 元编程 monad（{name Lean.Elab.Command.CommandElabM}`CommandElabM`、{name Lean.Elab.Term.TermElabM}`TermElabM`、{name Lean.MetaM}`MetaM` 或 {name Lean.CoreM}`CoreM`）之一中，则它在当前上下文中运行。
     例如，环境将包含调用 {keywordOf Lean.Parser.Command.eval}`#eval` 的范围内的定义。
@@ -90,7 +90,7 @@ end
 
 
 在 {tech}`module` 中使用时，{keywordOf Lean.Parser.Command.eval}`#eval` 显示了 Lean 语言服务器和 Lean 编译器处理文件的方式之间的差异。
-由于它在编译时运行代码，因此 {keywordOf Lean.Parser.Command.eval}`#eval` 要求其代码在 {tech}[元阶段] 中可用。
+由于它在编译时运行代码，因此 {keywordOf Lean.Parser.Command.eval}`#eval` 要求其代码在 {tech (key := "meta phase")}[元阶段] 中可用。
 为了更容易地试验模块，语言服务器使所有导入的模块在元阶段可用，而编译器严格遵守 {keywordOf Lean.Parser.Module.import}`meta` 声明。
 因此，使用 {keywordOf Lean.guardMsgsCmd}`#guard_msgs` 与 {keywordOf Lean.Parser.Command.eval}`#eval` 一起嵌入轻量级测试的模块可能会在语言服务器中成功详细说明，但在构建过程中会失败。
 要解决此问题，可以使用包含测试的模块中的 {keywordOf Lean.Parser.Module.import}`meta import` 导入定义：
@@ -205,7 +205,7 @@ tag := "hash-reduce"
 与 {keywordOf Lean.Parser.Command.eval}`#eval` 命令不同，归约不会产生副作用，并且结果显示为术语，而不是通过 {name}`ToString` 或 {name}`Repr` 实例显示。
 
 一般来说，{keywordOf Lean.reduceCmd}`#reduce` 主要用于诊断 定义等价 和证明项的问题，而 {keywordOf Lean.Parser.Command.eval}`#eval` 更适合计算项的值。
-特别是，使用 {tech}[良基递归] 或 {tech}[部分固定点] 定义的函数要么使用归约引擎计算非常慢，要么根本不会归约。
+特别是，使用 {tech (key := "well-founded recursion")}[良基递归] 或 {tech (key := "partial fixpoints")}[部分固定点] 定义的函数要么使用归约引擎计算非常慢，要么根本不会归约。
 
 :::syntax command (title := "Reducing Terms")
 ```grammar
@@ -288,7 +288,7 @@ fun x => x + x : (x : ?m.12) → ?m.19 x
 ```
 {keywordOf Lean.Parser.Command.check}`#check` 的此变体使用与 {keywordOf Lean.Parser.Command.check}`#check` 相同的过程来详细精化该术语。
 如果精化成功，则为错误；如果失败，则没有错误。
-部分精化的术语和发现的任何类型信息都将添加到 {tech}[消息日志]。
+部分精化的术语和发现的任何类型信息都将添加到 {tech (key := "message log")}[消息日志]。
 :::
 
 
@@ -322,7 +322,7 @@ tag := "hash-synth"
 ```
 :::
 
-{keywordOf Lean.Parser.Command.synth}`#synth` 命令调用 Lean 的 {tech}[类型类] 解析机制，并尝试执行 {ref "instance-synth"}[实例合成] 来查找给定类型类的实例。
+{keywordOf Lean.Parser.Command.synth}`#synth` 命令调用 Lean 的 {tech (key := "type class")}[类型类] 解析机制，并尝试执行 {ref "instance-synth"}[实例合成] 来查找给定类型类的实例。
 如果成功，则输出结果实例项。
 
 ::::example "Synthesizing a Type Class Instance"
@@ -391,7 +391,7 @@ tag := "hash-print"
 #print $s:str
 ```
 
-将字符串文字添加到 Lean 的 {tech}[消息日志]。
+将字符串文字添加到 Lean 的 {tech (key := "message log")}[消息日志]。
 :::
 
 
@@ -441,7 +441,7 @@ theorem swap_eq_swap' : swap = swap' := by
 :::
 
 :::syntax command (title := "Printing Equations")
-命令 {keywordOf Lean.Parser.Command.printEqns}`#print equations`（可缩写为 {keywordOf Lean.Parser.Command.printEqns}`#print eqns`）显示函数的 {tech}[方程引理]。
+命令 {keywordOf Lean.Parser.Command.printEqns}`#print equations`（可缩写为 {keywordOf Lean.Parser.Command.printEqns}`#print eqns`）显示函数的 {tech (key := "equational lemmas")}[方程引理]。
 ```grammar
 #print equations $t
 ```
@@ -502,7 +502,7 @@ intersperse.eq_unfold.{u_1} :
 :::
 
 :::example "Scope Information"
-{keywordOf Lean.Parser.Command.where}`#where` 命令显示对当前 {tech}[节范围] 所做的所有修改，无论是在当前范围还是在其嵌套的范围中。
+{keywordOf Lean.Parser.Command.where}`#where` 命令显示对当前 {tech (key := "section scope")}[节范围] 所做的所有修改，无论是在当前范围还是在其嵌套的范围中。
 
 ```lean +fresh (name := scopeInfo)
 section
@@ -548,7 +548,7 @@ tag := "hash-guard_msgs"
 %%%
 
 {keywordOf Lean.guardMsgsCmd}`#guard_msgs` 命令可用于确保命令输出的消息符合预期。
-与本节中的交互命令一起，它可用于构造一个文件，该文件仅在输出符合预期时才会详细说明；这样的文件可以用作 {ref "lake"}[Lake] 中的 {tech}[测试驱动程序]。
+与本节中的交互命令一起，它可用于构造一个文件，该文件仅在输出符合预期时才会详细说明；这样的文件可以用作 {ref "lake"}[Lake] 中的 {tech (key := "test driver")}[测试驱动程序]。
 
 :::syntax command (title := "Documenting Expected Output")
 ```grammar

@@ -37,11 +37,11 @@ Lean 的解析器生成 {name}`Lean.Syntax` 类型的具体语法树。
 {name}`Lean.Syntax` 是归纳类型，表示 Lean 的所有语法，包括命令、术语、策略和任何自定义扩展。
 所有这些都由一些基本构建块表示：
 
-: {deftech}[原子]
+: {deftech (key := "Atoms")}[原子]
 
   原子是语法的基本终端，包括文字（例如字符和数字）、括号、运算符和关键字。
 
-: {deftech}[标识符]
+: {deftech (key := "Identifiers")}[标识符]
 
   :::keepEnv
   ```lean -show
@@ -52,7 +52,7 @@ Lean 的解析器生成 {name}`Lean.Syntax` 类型的具体语法树。
   标识符语法包括标识符可能引用的预解析名称列表。
   :::
 
-: {deftech}[节点]
+: {deftech (key := "Nodes")}[节点]
 
   节点代表非终结符的解析。
   节点包含 {deftech}_syntax kind_，它标识生成节点的语法规则，以及子 {name Lean.Syntax}`Syntax` 值的数组。
@@ -154,20 +154,20 @@ tag := "zh-notationsmacros-syntaxdef-h004"
 tag := "source-info"
 %%%
 
-原子、标识符和节点可选地包含 {deftech}[源信息]，用于跟踪它们与原始文件的对应关系。
+原子、标识符和节点可选地包含 {deftech (key := "source information")}[源信息]，用于跟踪它们与原始文件的对应关系。
 解析器保存所有标记的源信息，但不保存节点的源信息；已解析节点的位置信息是根据其第一个和最后一个标记重建的。
-并非所有 {name Lean.Syntax}`Syntax` 数据都来自解析器：它可能是 {tech}[宏展开] 的结果，在这种情况下，它通常包含生成和解析的语法的混合，或者它可能是 {tech (key := "delaborator")}[delaborating] 内部术语的结果以将其显示给用户。
+并非所有 {name Lean.Syntax}`Syntax` 数据都来自解析器：它可能是 {tech (key := "macro expansion")}[宏展开] 的结果，在这种情况下，它通常包含生成和解析的语法的混合，或者它可能是 {tech (key := "delaborator")}[delaborating] 内部术语的结果以将其显示给用户。
 在这些用例中，节点本身可能包含源信息。
 
 源信息有两种：
 
-: {deftech}[原件]
+: {deftech (key := "Original")}[原件]
 
   原始源信息来自解析器。
   除了原始源位置之外，它还包含解析器跳过的前导和尾随空格，这允许重建原始字符串。
   该空白被保存为原始源代码的字符串表示形式的偏移量（即，{name}`Substring`），以避免分配子字符串的副本。
 
-: {deftech}[合成]
+: {deftech (key := "Synthetic")}[合成]
 
   综合源信息来自元程序（包括宏）或来自 Lean 的内部。
   因为没有要重建的原始字符串，所以它不保存前导和尾随空格。
@@ -233,13 +233,13 @@ Lean.Syntax.node
     Lean.Syntax.atom (Lean.SourceInfo.none) "+", Lean.Syntax.missing]
 ```
 
-在第二个示例中，通过引用插入的 {tech}[宏范围] 在调用 {name}`List.length` 时可见。
+在第二个示例中，通过引用插入的 {tech (key := "macro scopes")}[宏范围] 在调用 {name}`List.length` 时可见。
 ```lean (name := reprStx2)
 #eval do
   let stx ← `(List.length ["Rose", "Daffodil", "Lily"])
   logInfo (repr (removeSourceInfo stx.raw))
 ```
-{tech}[预解析标识符] {name}`List.length` 的内容在此处可见：
+{tech (key := "pre-resolved identifier")}[预解析标识符] {name}`List.length` 的内容在此处可见：
 ```leanOutput reprStx2 (allowDiff := 2)
 Lean.Syntax.node
   (Lean.SourceInfo.none)
@@ -296,7 +296,7 @@ open Lean
 («term_+_» (num "2") "+" <missing>)
 ```
 
-在第二个示例中，通过引用插入的 {tech}[宏范围] 在调用 {name}`List.length` 时可见。
+在第二个示例中，通过引用插入的 {tech (key := "macro scopes")}[宏范围] 在调用 {name}`List.length` 时可见。
 ```lean (name := toStringStx2)
 #eval do
   let stx ← `(List.length ["Rose", "Daffodil", "Lily"])
@@ -345,7 +345,7 @@ def getPPContext : CommandElabM PPContext := do
 2 + 5
 ```
 
-在第二个示例中，通过引用插入到 {name}`List.length` 上的 {tech}[宏范围] 导致它显示为带有匕首 (`✝`)。
+在第二个示例中，通过引用插入到 {name}`List.length` 上的 {tech (key := "macro scopes")}[宏范围] 导致它显示为带有匕首 (`✝`)。
 ```lean (name := ppStx2)
 #eval do
   let stx ← `(List.length ["Rose", "Daffodil", "Lily"])
@@ -357,7 +357,7 @@ List.length✝ ["Rose", "Daffodil", "Lily"]
 ```
 
 漂亮的打印会自动换行并插入缩进。
-{tech}[强制] 通常使用默认布局宽度将漂亮打印机的输出转换为 {name}`logInfo` 所需的类型。
+{tech (key := "coercion")}[强制] 通常使用默认布局宽度将漂亮打印机的输出转换为 {name}`logInfo` 所需的类型。
 可以通过使用命名参数显式调用 {name Std.Format.pretty}`pretty` 来控制宽度。
 ```lean (name := ppStx3)
 #eval do
@@ -387,7 +387,7 @@ end Inspecting
 tag := "typed-syntax"
 %%%
 
-语法还可以用指定其属于哪个 {tech}[语法类别] 的类型进行注释。
+语法还可以用指定其属于哪个 {tech (key := "syntax category")}[语法类别] 的类型进行注释。
 {TODO}[Describe the problem here—complicated invisible internal invariants leading to weird error msgs]
 {name Lean.TSyntax}`TSyntax` 结构包含语法类别的类型级列表以及语法树。
 语法类别列表通常只包含一个元素，在这种情况下，不会显示列表结构本身。
@@ -397,7 +397,7 @@ tag := "typed-syntax"
 {docstring Lean.SyntaxNodeKinds}
 
 {tech}[Quasiquotations] 防止替换不来自正确语法类别的类型化语法。
-对于许多 Lean 的内置语法类别，有一组 {tech}[强制转换] 适当地包装另一种类别的语法，例如从字符串文字语法到术语语法的强制转换。
+对于许多 Lean 的内置语法类别，有一组 {tech (key := "coercions")}[强制转换] 适当地包装另一种类别的语法，例如从字符串文字语法到术语语法的强制转换。
 此外，许多仅对某些语法类别有效的辅助函数仅针对适当的类型化语法定义。
 
 ```lean -show
@@ -418,8 +418,8 @@ variable {ks : SyntaxNodeKinds} {sep : String}
 ```
 除了 {name Lean.TSyntax}`TSyntax` 之外，还有一些表示带或不带分隔符的语法数组的类型。
 这些对应于语法声明或反引号中的 {TODO}[xref] 重复元素。
-{lean}`TSyntaxArray ks`是{lean}`Array (TSyntax ks)`的{tech}[缩写]，而{lean}`TSepArray ks sep`是一个结构体；这意味着 {tech}[广义字段表示法] 可用于将数组函数应用于 {name}`TSyntaxArray`，但不能应用于 {name}`TSepArray`。
-{lean}`TSepArray ks` 和 {lean}`TSyntaxArray ks` 之间存在 {tech}[强制]，以及显式转换函数。
+{lean}`TSyntaxArray ks`是{lean}`Array (TSyntax ks)`的{tech (key := "abbreviation")}[缩写]，而{lean}`TSepArray ks sep`是一个结构体；这意味着 {tech (key := "generalized field notation")}[广义字段表示法] 可用于将数组函数应用于 {name}`TSyntaxArray`，但不能应用于 {name}`TSepArray`。
+{lean}`TSepArray ks` 和 {lean}`TSyntaxArray ks` 之间存在 {tech (key := "coercion")}[强制]，以及显式转换函数。
 此转换会从基础数组中插入或删除分隔符元素，所需时间与元素数量成线性关系。
 :::
 
@@ -525,7 +525,7 @@ open Lean
 {name Lean.Quote}`Quote` 类允许将值转换为表示它们的类型化语法。
 例如，{lean (type:="Term")}`quote 5` 表示 {lean (type := "Term")}``⟨.node .none `num #[.atom .none "5"]⟩``。
 该类通过语法类型进行参数化；这允许相同的值以不同的种类适当地表示。
-{name}`Quote` 的实例解析考虑类型化语法 {tech}[强制转换]。
+{name}`Quote` 的实例解析考虑类型化语法 {tech (key := "coercions")}[强制转换]。
 语法类型的默认值为 {lean}`` `term ``。
 ```lean -show
 /--
@@ -598,9 +598,9 @@ tag := "typed-syntax-helpers"
 tag := "syntax-categories"
 %%%
 
-Lean 的解析器包含一个 {deftech}_syntaxcategories_ 表，它对应于上下文无关语法中的非终结符。
+Lean 的解析器包含一个 {deftech (key := "syntax categories")}_syntaxcategories_ 表，它对应于上下文无关语法中的非终结符。
 一些最重要的类别是术语、命令、宇宙层级、优先级、优先级以及表示标记（例如文字）的类别。
-通常，每个 {tech}[语法种类] 对应于一个类别。
+通常，每个 {tech (key := "syntax kind")}[语法种类] 对应于一个类别。
 可以使用 {keywordOf Lean.Parser.Command.syntaxCat}`declare_syntax_cat` 声明新类别。
 
 :::syntax command (title := "Declaring Syntactic Categories")
@@ -623,7 +623,7 @@ declare_syntax_cat $_ $[(behavior := $_)]?
 tag := "syntax-rules"
 %%%
 
-每个 {tech}[语法类别] 与一组 {deftech}_syntax Rules_ 相关联，这些规则对应于上下文无关语法中的产生式。
+每个 {tech (key := "syntax category")}[语法类别] 与一组 {deftech (key := "syntax rules")}_syntax Rules_ 相关联，这些规则对应于上下文无关语法中的产生式。
 可以使用 {keywordOf Lean.Parser.Command.syntax}`syntax` 命令定义语法规则。
 
 :::syntax command (title := "Syntax Rules")
@@ -638,10 +638,10 @@ syntax$[:$p]? $[(name := $x)]? $[(priority := $p)]? $_* : $c
 与运算符和符号声明一样，文档注释的内容在用户与新语法交互时向用户显示。
 可以添加属性以在结果定义上调用编译时元程序。
 
-语法规则与 {tech}[节范围] 的交互方式与属性、运算符和符号相同。
-默认情况下，任何模块中的解析器都可以使用语法规则，该模块可传递地导入在其中建立语法规则的语法规则，但可以将它们声明为 `scoped` 或 `local`，以分别将其可用性限制为当前名称空间已打开的上下文或当前 {tech}[节范围]。
+语法规则与 {tech (key := "section scopes")}[节范围] 的交互方式与属性、运算符和符号相同。
+默认情况下，任何模块中的解析器都可以使用语法规则，该模块可传递地导入在其中建立语法规则的语法规则，但可以将它们声明为 `scoped` 或 `local`，以分别将其可用性限制为当前名称空间已打开的上下文或当前 {tech (key := "section scope")}[节范围]。
 
-当类别的多个语法规则可以匹配当前输入时，{tech}[本地最长匹配规则]用于选择其中之一。
+当类别的多个语法规则可以匹配当前输入时，{tech (key := "local longest-match rule")}[本地最长匹配规则]用于选择其中之一。
 与符号和运算符一样，如果最长匹配存在平局，则使用声明的优先级来确定应用哪个解析结果。
 如果这仍然不能解决歧义，则保存所有并列的结果。
 精化器预计将尝试所有这些方法，并在能够详细精化其中一个时成功。
@@ -790,7 +790,7 @@ sepBy1($_:stx, $_:str, $_:stx, allowTrailingSep)
 :::example "Parsing Matched Parentheses and Brackets"
 
 可以使用语法规则定义由匹配的圆括号和方括号组成的语言。
-第一步是声明一个新的 {tech}[语法类别]：
+第一步是声明一个新的 {tech (key := "syntax category")}[语法类别]：
 ```lean
 declare_syntax_cat balanced
 ```
@@ -850,7 +850,7 @@ example := balanced [() (]]
 syntax "[[" term,*,? "]]" : term
 ```
 
-添加 {tech}[宏] 来描述如何将其转换为普通列表文字，使其可以在测试中使用。
+添加 {tech (key := "macro")}[宏] 来描述如何将其转换为普通列表文字，使其可以在测试中使用。
 ```lean
 macro_rules
   | `(term|[[$e:term,*]]) => `([$e,*])

@@ -67,7 +67,7 @@ tag := "zh-monads-zoo-combined-h001"
 后一个选项与大多数命令式编程语言的语义相匹配，但前者对于基于搜索的问题非常有用。
 通常，一些但不是全部状态应该回滚；这可以通过将 {name}`ExceptT`“夹在”{name}`StateT` 的两个单独用途之间来实现。
 
-为了避免通过使用 {lean}`StateT σ (EStateM ε σ') α` 产生另一层间接，{name}`EStateM` 提供了 {name}`EStateM.Backtrackable` {tech}[类型类别]。
+为了避免通过使用 {lean}`StateT σ (EStateM ε σ') α` 产生另一层间接，{name}`EStateM` 提供了 {name}`EStateM.Backtrackable` {tech (key := "type class")}[类型类别]。
 此类指定可以保存和恢复的状态的某些部分。
 然后，{name}`EStateM` 安排围绕错误处理进行保存和恢复。
 

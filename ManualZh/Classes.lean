@@ -35,14 +35,14 @@ tag := "type-classes"
 如果一个操作可以与多种类型一起使用，那么它就是_多态_。
 在 Lean 中，多态性分为三种：
 
- 1. {tech}[宇宙多态性]，其中定义中的排序可以通过各种方式实例化，
+ 1. {tech (key := "universe polymorphism")}[宇宙多态性]，其中定义中的排序可以通过各种方式实例化，
  2. 将类型作为（可能是隐式的）参数的函数，允许单个代码体处理任何类型，以及
- 3. {deftech}_ad-hoc多态性_，用类型类实现，其中要重载的操作对于不同类型可能有不同的实现。
+ 3. {deftech (key := "ad-hoc polymorphism")}_ad-hoc多态性_，用类型类实现，其中要重载的操作对于不同类型可能有不同的实现。
 
 由于 Lean 不允许对类型进行大小写分析，因此多态函数实现的操作对于任何类型参数的选择都是统一的；例如，{name}`List.map` 不会根据输入列表是否包含 {name}`String` 或 {name}`Nat` 突然进行不同的计算。
 当没有“统一”的方法来实现操作时，临时多态操作非常有用；规范用例是重载算术运算符，以便它们与 {name}`Nat`、{name}`Int`、{name}`Float` 以及具有合理加法概念的任何其他类型一起使用。
 Ad-hoc多态性也可能涉及多种类型；在集合中查找给定索引处的值涉及集合类型、索引类型以及要提取的成员元素的类型。
-{deftech}_type class_{margin}[Type 类首先在 {citehere wadlerBlott89}[]] 中描述，描述了重载操作的集合（称为 {deftech}_methods_）以及所涉及的类型。
+{deftech (key := "type class")}_type class_{margin}[Type 类首先在 {citehere wadlerBlott89}[]] 中描述，描述了重载操作的集合（称为 {deftech (key := "methods")}_methods_）以及所涉及的类型。
 
 Type 类非常灵活。
 重载可能涉及多种类型；对于数据结构、索引类型、元素类型甚至断言结构中键存在的谓词的特定选择，可以重载诸如对数据结构进行索引之类的操作。
@@ -64,7 +64,7 @@ Type 类非常灵活。
   {name}`Decidable` 类型类允许 Lean 自动找到命题的决策过程。
   这用作 {keywordOf termIfThenElse}`if` 表达式的基础，该表达式可以在任何可判定的命题上分支。
 
-虽然普通的多态定义只是期望使用任意参数进行实例化，但使用类型类重载的运算符将使用 {deftech}_instances_ 进行实例化，{deftech}_instances_ 定义某些特定参数集的重载操作。
+虽然普通的多态定义只是期望使用任意参数进行实例化，但使用类型类重载的运算符将使用 {deftech (key := "instances")}_instances_ 进行实例化，{deftech}_instances_ 定义某些特定参数集的重载操作。
 这些 {deftech}[instance-implicit] 参数在方括号中指示。
 在调用站点，Lean 或者 {deftech (key := "synthesis")}_synthesizes_ {index}[实例合成] {index (subterm := "of type class instances")}[合成]来自可用候选的合适实例，或者发出错误信号。
 因为实例本身可能具有实例参数，所以该搜索过程可以是递归的并且产生组合来自各种实例的代码的最终复合实例值。
@@ -311,7 +311,7 @@ tag := "class inductive"
 大多数类型类遵循一组重载方法的范例，客户端可以从中自由选择。
 这自然是通过产品类型建模的，重载方法是该产品类型的投影。
 然而，有些类是求和类型：它们要求合成实例的接收者首先检查提供了可用实例构造函数。
-为了说明这些类，类声明可以包含任意 {tech}[归纳类型]，而不仅仅是结构声明的扩展形式。
+为了说明这些类，类声明可以包含任意 {tech (key := "inductive type")}[归纳类型]，而不仅仅是结构声明的扩展形式。
 
 :::syntax Lean.Parser.Command.declaration (title := "Class Inductive Type Declarations")
 ```grammar
