@@ -377,9 +377,9 @@ axiom α : Prop
 
  * {lean}`Float` 由指向包含“double”的 Lean 对象的指针表示。
 
- * {deftech}_enum inducing_ 类型至少为 2，最多为 $`2^{32}` constructors, each of which has no parameters, is represented by the first type of {C}`uint8_t`、{C}`uint16_t`、{C}`uint32_t`，足以为每个构造函数分配唯一值。例如，类型 {lean}`Bool` 由 {C}`uint8_t` 表示，其中值 {C}`0` 代表 {lean}`false`，{C}`1` 代表 {lean}`true`。 {TODO}[看看这是否应该说“无相关参数”]
+ * 至少有 2 个且至多有 $`2^{32}` 个构造函数、并且每个构造函数均无参数的 {deftech}_枚举归纳_ 类型，由 {C}`uint8_t`、{C}`uint16_t`、{C}`uint32_t` 中足以为每个构造函数分配唯一值的第一个类型表示。例如，类型 {lean}`Bool` 由 {C}`uint8_t` 表示，其中值 {C}`0` 代表 {lean}`false`，{C}`1` 代表 {lean}`true`。{TODO}[看看这是否应该说“无相关参数”]
 
- * {lean}`Decidable α` 的表示方式与 `Bool` {TODO} 相同[Decidable 和 Bool 不是简单构造函数和无关性规则的特殊情况吗？]
+ * {lean}`Decidable α` 的表示方式与 `Bool` 相同。{TODO}[Decidable 和 Bool 不是简单构造函数和无关性规则的特殊情况吗？]
 
  * {lean}`Nat` 和 {lean}`Int` 由 {C}`lean_object *` 表示。
   它们的表示在 {ref "nat-runtime"}[关于自然数的部分]和 {ref "int-runtime"}[关于整数的部分]中有更详细的描述。
