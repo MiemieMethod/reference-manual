@@ -79,7 +79,7 @@ cat > "$TUT_REMOTE_CONFIG" <<EOF
       "updateFrequency": "always",
       "shortName": "ref",
       "longName": "Lean Language Reference",
-      "sources": [{ "local": "$REF_SOURCE/xref.json" }, "default"]
+      "sources": [{ "local": "$REF_SOURCE/xref.json" }]
     }
   }
 }
