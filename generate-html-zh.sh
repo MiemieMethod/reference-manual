@@ -53,10 +53,13 @@ fi
 
 if [ "$MODE" = "preview" ]; then
   REF_REMOTE_CONFIG="test-data/reference-remotes.json"
+  TUT_REMOTE_CONFIG="test-data/tutorial-remotes.json"
 else
   REF_REMOTE_CONFIG="_build/production-remotes-reference.json"
+  TUT_REMOTE_CONFIG="_build/production-remotes-tutorials.json"
   mkdir -p _build
   sed "s/__VERSION__/$VERSION/g" config/production-remotes-reference.json.template > "$REF_REMOTE_CONFIG"
+  sed "s/__VERSION__/$VERSION/g" config/production-remotes-tutorials.json.template > "$TUT_REMOTE_CONFIG"
   echo "Generated production config with version $VERSION"
 fi
 
@@ -71,10 +74,18 @@ fi
 echo "Running generate-manual-zh with args --depth 2 --verbose --delay-html-multi multi-zh.json --remote-config $REF_REMOTE_CONFIG --with-word-count words-zh.txt $MANUAL_OUTPUT_FLAG $DRAFT_FLAG"
 lake --quiet exe generate-manual-zh --depth 2 --verbose --delay-html-multi multi-zh.json --remote-config "$REF_REMOTE_CONFIG" --with-word-count "words-zh.txt" $MANUAL_OUTPUT_FLAG $DRAFT_FLAG
 
+echo "Running generate-tutorials with args --verbose --delay tutorials-zh.json --remote-config $TUT_REMOTE_CONFIG"
+lake --quiet exe generate-tutorials --verbose --delay tutorials-zh.json --remote-config "$TUT_REMOTE_CONFIG"
+
 echo "Running generate-manual-zh with args --verbose --resume-html-multi multi-zh.json --remote-config $REF_REMOTE_CONFIG $MANUAL_OUTPUT_FLAG $DRAFT_FLAG"
 lake --quiet exe generate-manual-zh --verbose --resume-html-multi multi-zh.json --remote-config "$REF_REMOTE_CONFIG" $MANUAL_OUTPUT_FLAG $DRAFT_FLAG
 
+echo "Running generate-tutorials with args --verbose --resume tutorials-zh.json --remote-config $TUT_REMOTE_CONFIG"
+lake --quiet exe generate-tutorials --verbose --resume tutorials-zh.json --remote-config "$TUT_REMOTE_CONFIG"
+
 mkdir -p "$OUTPUT"
 cp -r "$REF_SOURCE"/* "$OUTPUT/"
+mkdir -p "$OUTPUT/tutorials"
+cp -r _tutorial-out/* "$OUTPUT/tutorials/"
 
 echo "Done! Chinese manual generated at $OUTPUT/"
