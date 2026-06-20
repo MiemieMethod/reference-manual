@@ -22,9 +22,6 @@ file := "v4.21.0"
 For this release, 295 changes landed. In addition to the 100 feature additions and 83 fixes listed below there were 2 refactoring changes, 4 documentation improvements, 6 performance improvements, 2 improvements to the test suite and 98 other changes.
 
 ## Highlights
-%%%
-tag := "zh-releases-v4-21-0-h001"
-%%%
 
 _'Unknown identifier' code actions_
 
@@ -119,9 +116,6 @@ _Other Highlights_
   that users can redirect error messages.
 
 ## Language
-%%%
-tag := "zh-releases-v4-21-0-h002"
-%%%
 
 * [#6973](https://github.com/leanprover/lean4/pull/6973) stops `dsimp` from visiting proof terms, which should make
   `simp` and `dsimp` more efficient.
@@ -580,9 +574,6 @@ tag := "zh-releases-v4-21-0-h002"
   the ring and cutsat modules.
 
 ## Library
-%%%
-tag := "zh-releases-v4-21-0-h003"
-%%%
 
 * [#7352](https://github.com/leanprover/lean4/pull/7352) reworks the `simp` set around the `Id` monad, to not elide or
   unfold `pure` and `Id.run`
@@ -784,9 +775,6 @@ tag := "zh-releases-v4-21-0-h003"
   however that in Mathlib this happens anyway!
 
 ## Compiler
-%%%
-tag := "zh-releases-v4-21-0-h004"
-%%%
 
 * [#8211](https://github.com/leanprover/lean4/pull/8211) adds support for generating IR from the LCNF representation of
   the new compiler.
@@ -880,9 +868,6 @@ tag := "zh-releases-v4-21-0-h004"
   `typeParams`.
 
 ## Pretty Printing
-%%%
-tag := "zh-releases-v4-21-0-h005"
-%%%
 
 * [#8041](https://github.com/leanprover/lean4/pull/8041) changes the behavior of `pp.showLetValues` to use a hoverable
   `⋯` to hide let values. This is now false by default, and there is a new
@@ -904,17 +889,11 @@ tag := "zh-releases-v4-21-0-h005"
   classes.
 
 ## Documentation
-%%%
-tag := "zh-releases-v4-21-0-h006"
-%%%
 
 * [#8199](https://github.com/leanprover/lean4/pull/8199) adds a style guide for documentation, including both general
   principles and docstring-specific concerns.
 
 ## Server
-%%%
-tag := "zh-releases-v4-21-0-h007"
-%%%
 
 * [#7665](https://github.com/leanprover/lean4/pull/7665) and [#8180](https://github.com/leanprover/lean4/pull/8180) add
   support for code actions that resolve 'Unknown identifier' errors by either importing the missing declaration or by
@@ -936,9 +915,6 @@ tag := "zh-releases-v4-21-0-h007"
   question.
 
 ## Lake
-%%%
-tag := "zh-releases-v4-21-0-h008"
-%%%
 
 * [#8383](https://github.com/leanprover/lean4/pull/8383) fixes the use of `import Lake` with precompiled modules, which
   was previously broken on MacOS.
@@ -961,9 +937,6 @@ tag := "zh-releases-v4-21-0-h008"
   machines, which is useful for Mathlib's cache.
 
 ## Other
-%%%
-tag := "zh-releases-v4-21-0-h009"
-%%%
 
 * [#8192](https://github.com/leanprover/lean4/pull/8192) includes upgrades to the `release_checklist.py` script prepared
   while releasing v4.20.0-rc1.

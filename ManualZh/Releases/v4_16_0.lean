@@ -20,14 +20,8 @@ file := "v4.16.0"
 
 ````markdown
 ## Highlights
-%%%
-tag := "zh-releases-v4-16-0-h001"
-%%%
 
 ### Unique `sorry`s
-%%%
-tag := "zh-releases-v4-16-0-h002"
-%%%
 
 [#5757](https://github.com/leanprover/lean4/pull/5757) makes it harder to create "fake" theorems about definitions that
 are stubbed-out with `sorry` by ensuring that each `sorry` is not
@@ -55,9 +49,6 @@ The option `set_option pp.sorrySource true` causes the pretty printer to
 show source position information on sorries.
 
 ### Separators in numeric literals
-%%%
-tag := "zh-releases-v4-16-0-h003"
-%%%
 
 [#6204](https://github.com/leanprover/lean4/pull/6204) lets `_` be used in numeric literals as a separator. For
 example, `1_000_000`, `0xff_ff` or `0b_10_11_01_00`. New lexical syntax:
@@ -70,9 +61,6 @@ example, `1_000_000`, `0xff_ff` or `0b_10_11_01_00`. New lexical syntax:
 ```
 
 ### Additional new features
-%%%
-tag := "zh-releases-v4-16-0-h004"
-%%%
 
 * [#6300](https://github.com/leanprover/lean4/pull/6300) adds the `debug.proofAsSorry` option. When enabled, the proofs
 of theorems are ignored and replaced with `sorry`.
@@ -85,9 +73,6 @@ nothing in interactive contexts (e.g., the server).
 * [#6366](https://github.com/leanprover/lean4/pull/6366) adds support for `Float32` and fixes a bug in the runtime.
 
 ### Library updates
-%%%
-tag := "zh-releases-v4-16-0-h005"
-%%%
 
 The Lean 4 library saw many changes that improve arithmetic reasoning, enhance data structure APIs,
 and refine library organization. Key changes include better support for bitwise operations, shifts,
@@ -95,9 +80,6 @@ and conversions, expanded lemmas for `Array`, `Vector`, and `List`, and improved
 Some modules have been reorganized for clarity, and internal refinements ensure greater consistency and correctness.
 
 ### Breaking changes
-%%%
-tag := "zh-releases-v4-16-0-h006"
-%%%
 
 [#6330](https://github.com/leanprover/lean4/pull/6330) removes unnecessary parameters from the functional induction
 principles. This is a breaking change; broken code can typically be adjusted
@@ -108,9 +90,6 @@ _This highlights section was contributed by Violetta Sim._
 For this release, 201 changes landed. In addition to the 74 feature additions and 44 fixes listed below there were 7 refactoring changes, 5 documentation improvements and 62 chores.
 
 ## Language
-%%%
-tag := "zh-releases-v4-16-0-h007"
-%%%
 
 * [#3696](https://github.com/leanprover/lean4/pull/3696) makes all message constructors handle pretty printer errors.
 
@@ -397,9 +376,6 @@ type `GoalM Unit`. See the modified tests in this PR for examples.
 creation of unnecessary metavariables.
 
 ## Library
-%%%
-tag := "zh-releases-v4-16-0-h008"
-%%%
 
 * [#6182](https://github.com/leanprover/lean4/pull/6182) adds `BitVec.[toInt|toFin]_concat` and moves a couple of
 theorems into the concat section, as `BitVec.msb_concat` is needed for
@@ -507,9 +483,6 @@ List/Array/Vector.
 `partial_fixpoint` feature.
 
 ## Compiler
-%%%
-tag := "zh-releases-v4-16-0-h009"
-%%%
 
 * [#6311](https://github.com/leanprover/lean4/pull/6311) adds support for `HEq` to the new code generator.
 
@@ -541,9 +514,6 @@ installed on the machine.
 toolchains installed on the machine.
 
 ## Pretty Printing
-%%%
-tag := "zh-releases-v4-16-0-h010"
-%%%
 
 * [#5689](https://github.com/leanprover/lean4/pull/5689) adjusts the way the pretty printer unresolves names. It used to
 make use of all `export`s when pretty printing, but now it only uses
@@ -555,16 +525,10 @@ which the dot notation feature in #6189 now incentivizes.
 * [#5757](https://github.com/leanprover/lean4/pull/5757), aside from introducing labeled sorries, fixes the bug that the metadata attached to the pretty-printed representation of arguments with a borrow annotation (for example, the second argument of `String.append`), is inconsistent with the metadata attached to the regular arguments.
 
 ## Documentation
-%%%
-tag := "zh-releases-v4-16-0-h011"
-%%%
 
 * [#6450](https://github.com/leanprover/lean4/pull/6450) adds a docstring to the `@[app_delab]` attribute.
 
 ## Server
-%%%
-tag := "zh-releases-v4-16-0-h012"
-%%%
 
 * [#6279](https://github.com/leanprover/lean4/pull/6279) fixes a bug in structure instance field completion that caused
 it to not function correctly for bracketed structure instances written
@@ -575,9 +539,6 @@ displayed. The regression was triggered by #5835 and originally caused
 by #4926.
 
 ## Lake
-%%%
-tag := "zh-releases-v4-16-0-h013"
-%%%
 
 * [#6176](https://github.com/leanprover/lean4/pull/6176) changes Lake's build process to no longer use `leanc` for
 compiling C files or linking shared libraries and executables. Instead,
@@ -611,9 +572,6 @@ breaking `lake exe cache` in downstream projects.
 previously only set for executables).
 
 ## Other
-%%%
-tag := "zh-releases-v4-16-0-h014"
-%%%
 
 * [#6285](https://github.com/leanprover/lean4/pull/6285) upstreams the `ToLevel` type class from mathlib and uses it to
 fix the existing `ToExpr` instances so that they are truly universe

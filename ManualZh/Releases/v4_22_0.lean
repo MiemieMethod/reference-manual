@@ -22,14 +22,8 @@ file := "v4.22.0"
 For this release, 468 changes landed. In addition to the 185 feature additions and 85 fixes listed below there were 15 refactoring changes, 5 documentation improvements, 4 performance improvements, 0 improvements to the test suite and 174 other changes.
 
 ## Highlights
-%%%
-tag := "zh-releases-v4-22-0-h001"
-%%%
 
 ### Grind is released!
-%%%
-tag := "zh-releases-v4-22-0-h002"
-%%%
 
 Lean now includes a new SMT-style tactic `grind`, along with annotations for the Lean standard library.
 `grind` ships theory-specific solvers, including cutsat (superseding `omega`, with model construction)
@@ -38,18 +32,12 @@ and a new Gröbner basis solver.
 Also see the [chapter on grind in the reference manual](https://lean-lang.org/doc/reference/latest//The--grind--tactic/#grind).
 
 ### New compiler
-%%%
-tag := "zh-releases-v4-22-0-h003"
-%%%
 
 The old compiler has been replaced by the new compiler ([#8577](https://github.com/leanprover/lean4/pull/8577))!
 This closes many long-standing issues, and lays the foundation for many
 future features and performance improvements.
 
 ### New `math` project template
-%%%
-tag := "zh-releases-v4-22-0-h004"
-%%%
 
 [#8866](https://github.com/leanprover/lean4/pull/8866) upgrades the `math` template for `lake init` and
 `lake new` to meet rigorous Mathlib maintenance standards.
@@ -61,17 +49,11 @@ In comparison with the previous version (now available as `lake new ... math-lax
 * README with some GitHub-specific instructions.
 
 ### Signature help
-%%%
-tag := "zh-releases-v4-22-0-h005"
-%%%
 
 [#8511](https://github.com/leanprover/lean4/pull/8511) implements signature help support in the editors.
 See the demo in the PR description.
 
 ### Displaying import hierarchy
-%%%
-tag := "zh-releases-v4-22-0-h006"
-%%%
 
 [#8654](https://github.com/leanprover/lean4/pull/8654) (together with [#620](https://github.com/leanprover/vscode-lean4/pull/620) for vscode-lean4) adds
 a new module hierarchy component in
@@ -79,9 +61,6 @@ VS Code that can be used to navigate both the import tree of a module
 and the imported-by tree of a module.
 
 ### Refactor of `have`/`let` semantics
-%%%
-tag := "zh-releases-v4-22-0-h007"
-%%%
 
 TL;DR: nondependent `let` bindings are now transformed to `have` bindings for better performance.
 Syntax of `have` and `let` is unified, and new options are added.
@@ -116,9 +95,6 @@ Syntax of `have` and `let` is unified, and new options are added.
   `letFun` support from WHNF and `simp`.
 
 ### Simp
-%%%
-tag := "zh-releases-v4-22-0-h008"
-%%%
 
 * **Flagging unused `simp` arguments**
 
@@ -150,9 +126,6 @@ tag := "zh-releases-v4-22-0-h008"
   parallelism.
 
 ### Named errors with explanations
-%%%
-tag := "zh-releases-v4-22-0-h009"
-%%%
 
 Lean now supports named error messages with associated explanations.
 
@@ -164,9 +137,6 @@ and the ability to link to [error explanations in the reference manual](https://
 This infrastructure lays the foundation for a searchable error index and improved diagnostics.
 
 ### `finally` section
-%%%
-tag := "zh-releases-v4-22-0-h010"
-%%%
 
 [#8723](https://github.com/leanprover/lean4/pull/8723) implements a `finally` section following a (potentially empty)
 `where` block. `where ... finally` opens a tactic sequence block in
@@ -185,9 +155,6 @@ example (i j : Nat) (xs : Array Nat) (hi : i < xs.size) (hj: j < xs.size) :=
 ```
 
 ### Polymorphic ranges and slices
-%%%
-tag := "zh-releases-v4-22-0-h011"
-%%%
 
 [#8784](https://github.com/leanprover/lean4/pull/8784) introduces new syntax for ranges:
 `1...*`, `1...=3`, `1...<3`, `1<...=2`, `*...=3.`.
@@ -195,9 +162,6 @@ tag := "zh-releases-v4-22-0-h011"
 [#8947](https://github.com/leanprover/lean4/pull/8947) extends this syntax to slices, allowing expressions like `xs[*...end]`.
 
 ### Library highlights
-%%%
-tag := "zh-releases-v4-22-0-h012"
-%%%
 
 Notable additions to the standard library are:
 
@@ -210,9 +174,6 @@ Notable additions to the standard library are:
 * system information functions ([#8109](https://github.com/leanprover/lean4/pull/8109)).
 
 ### Experimental: monadic verification framework
-%%%
-tag := "zh-releases-v4-22-0-h013"
-%%%
 
 [#8995](https://github.com/leanprover/lean4/pull/8995) introduces a Hoare logic for monadic programs in
 `Std.Do.Triple`, and assorted tactics:
@@ -222,35 +183,23 @@ tag := "zh-releases-v4-22-0-h013"
 pure verification conditions.
 
 ### Experimental: module system
-%%%
-tag := "zh-releases-v4-22-0-h014"
-%%%
 
 The new module system (enabled by the `module` keyword before import statements) is available
 for experimentation.
 
 ### Experimental: sharing oleans between different checkouts of the same repository
-%%%
-tag := "zh-releases-v4-22-0-h015"
-%%%
 
 [#8922](https://github.com/leanprover/lean4/pull/8922) introduces a local artifact cache for Lake. When enabled, Lake
 will share build artifacts (built files) across different instances of
 the same package using an input- and content-addressed cache. Requires `export LAKE_ARTIFACT_CACHE=true` for now.
 
 ### Warnings about `sorry`s
-%%%
-tag := "zh-releases-v4-22-0-h016"
-%%%
 
 [#8662](https://github.com/leanprover/lean4/pull/8662) adds a `warn.sorry` option (default true) that logs the
 "declaration uses 'sorry'" warning when declarations contain `sorryAx`.
 When false, the warning is not logged.
 
 ### Breaking changes
-%%%
-tag := "zh-releases-v4-22-0-h017"
-%%%
 
 * [#8751](https://github.com/leanprover/lean4/pull/8751) adds the `nondep` field of `Expr.letE` to the C++ data model.
 
@@ -278,9 +227,6 @@ tag := "zh-releases-v4-22-0-h017"
   see the PR description for more info.
 
 ## Language
-%%%
-tag := "zh-releases-v4-22-0-h018"
-%%%
 
 * [#6672](https://github.com/leanprover/lean4/pull/6672) filters out all declarations from `Lean.*`, `*.Tactic.*`, and
   `*.Linter.*` from the results of `exact?` and `rw?`.
@@ -1039,9 +985,6 @@ tag := "zh-releases-v4-22-0-h018"
 ````markdown
 
 ## 图书馆
-%%%
-tag := "zh-releases-v4-22-0-h019"
-%%%
 
 * [#8003](https://github.com/leanprover/lean4/pull/8003) 为 `Async` 操作添加了新的单子接口。
 
@@ -1349,9 +1292,6 @@ tag := "zh-releases-v4-22-0-h019"
   `ByteArray` 的 `DecidableEq` 实例）。
 
 ## 编译器
-%%%
-tag := "zh-releases-v4-22-0-h020"
-%%%
 
 * [#8594](https://github.com/leanprover/lean4/pull/8594) 从中删除了 strictOr/strictAnd 的错误优化
   旧的编译器，并删除不正确的测试。为了做到
@@ -1507,9 +1447,6 @@ tag := "zh-releases-v4-22-0-h020"
   编译器。由于没有对此进行测试，因此它没有受到关注。
 
 ## 漂亮的印刷
-%%%
-tag := "zh-releases-v4-22-0-h021"
-%%%
 
 * [#7954](https://github.com/leanprover/lean4/pull/7954) 改进了 `pp.oneline`，现在它会在以下情况下保留标签：
   将格式化语法截断为一行。请注意，`[...]`
@@ -1535,9 +1472,6 @@ tag := "zh-releases-v4-22-0-h021"
   `--` 注释末尾的换行符。
 
 ## 文档
-%%%
-tag := "zh-releases-v4-22-0-h022"
-%%%
 
 * [#8934](https://github.com/leanprover/lean4/pull/8934) 添加了对一些有关不可计算性的错误的解释，
   冗余匹配替代项和无效的归纳声明。
@@ -1549,9 +1483,6 @@ tag := "zh-releases-v4-22-0-h022"
   一致的格式和风格，并添加缺失的文档字符串。
 
 ## 服务器
-%%%
-tag := "zh-releases-v4-22-0-h023"
-%%%
 
 * [#8105](https://github.com/leanprover/lean4/pull/8105) 添加了对服务器端 `RpcRef` 重用的支持并修复了错误
   当文件仍然存在时，InfoView 中的跟踪节点将关闭
@@ -1585,9 +1516,6 @@ tag := "zh-releases-v4-22-0-h023"
   `Lean.isIdFirst`。
 
 ## Lake
-%%%
-tag := "zh-releases-v4-22-0-h024"
-%%%
 
 * [#7738](https://github.com/leanprover/lean4/pull/7738) 使内置构面的记忆可通过
   构面配置上的 `memoize` 选项。内置的方面是
@@ -1662,9 +1590,6 @@ tag := "zh-releases-v4-22-0-h024"
   模块作业日志。
 
 ## 其他
-%%%
-tag := "zh-releases-v4-22-0-h025"
-%%%
 
 * [#8702](https://github.com/leanprover/lean4/pull/8702) 增强了 PR 发布工作流程，以创建短格式和
   SHA 后缀的发布标签。创建预发布-{PR_NUMBER} 和

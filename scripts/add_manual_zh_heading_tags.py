@@ -53,7 +53,6 @@ def add_tags(path: Path) -> int:
     in_metadata = False
     in_markdown_block = False
     markdown_outer_fence: str | None = None
-    in_markdown_inner_fence = False
     heading_index = 0
     added = 0
     file_slug = slugify_path(path)
@@ -65,31 +64,8 @@ def add_tags(path: Path) -> int:
             if stripped == markdown_outer_fence:
                 in_markdown_block = False
                 markdown_outer_fence = None
-                in_markdown_inner_fence = False
                 out.append(line)
                 continue
-
-            if stripped == "%%%":
-                in_metadata = not in_metadata
-                out.append(line)
-                continue
-
-            if not in_metadata and FENCE_RE.match(line):
-                in_markdown_inner_fence = not in_markdown_inner_fence
-                out.append(line)
-                continue
-
-            if not in_metadata and HEADING_RE.match(line):
-                heading_index += 1
-                out.append(line)
-                if next_nonblank(lines, i + 1) != "%%%":
-                    tag = f"zh-{file_slug}-h{heading_index:03d}"
-                    out.append("%%%\n")
-                    out.append(f'tag := "{tag}"\n')
-                    out.append("%%%\n")
-                    added += 1
-                continue
-
             out.append(line)
             continue
 

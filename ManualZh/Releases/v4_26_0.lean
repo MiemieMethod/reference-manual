@@ -22,14 +22,8 @@ file := "v4.26.0"
 For this release, 264 changes landed. In addition to the 84 feature additions and 73 fixes listed below there were 10 refactoring changes, 7 documentation improvements, 13 performance improvements, 8 improvements to the test suite and 69 other changes.
 
 ## Highlights
-%%%
-tag := "zh-releases-v4-26-0-h001"
-%%%
 
 ### Dependencies by Semantic Version
-%%%
-tag := "zh-releases-v4-26-0-h002"
-%%%
 
 [#10959](https://github.com/leanprover/lean4/pull/10959) enables Lake users to require Reservoir dependencies by a
 semantic version range. On a `lake update`, Lake will fetch the
@@ -37,14 +31,8 @@ package's version information from Reservoir and select the newest
 version of the package that satisfies the range.
 
 ### Grind
-%%%
-tag := "zh-releases-v4-26-0-h003"
-%%%
 
 #### Grind Pattern
-%%%
-tag := "zh-releases-v4-26-0-h004"
-%%%
 
 [#11189](https://github.com/leanprover/lean4/pull/11189) implements `grind_pattern` constraints. They are useful for
 controlling theorem instantiation in `grind`. As an example, consider
@@ -79,9 +67,6 @@ example (as : Array Nat) (h : #[].extract i j = as) : False := by
 ```
 
 #### Grind Lint
-%%%
-tag := "zh-releases-v4-26-0-h005"
-%%%
 
 [#11157](https://github.com/leanprover/lean4/pull/11157) implements the `#grind_lint` command, a diagnostic tool for
 analyzing the behavior of theorems annotated for theorem instantiation.
@@ -111,9 +96,6 @@ Additional subcommands are provided for targeted inspection and control:
 [#11167](https://github.com/leanprover/lean4/pull/11167) implements support for `#grind_lint check in module <module>`.
 
 #### Grind Interactive Mode
-%%%
-tag := "zh-releases-v4-26-0-h006"
-%%%
 
 Interactive mode gained several new features:
 
@@ -134,9 +116,6 @@ Interactive mode gained several new features:
   current `grind` state ([#10919](https://github.com/leanprover/lean4/pull/10919)).
 
 ### User Extensions in `try?`
-%%%
-tag := "zh-releases-v4-26-0-h007"
-%%%
 
 [#11149](https://github.com/leanprover/lean4/pull/11149) adds a user-extension mechanism for the `try?` tactic. You can
 either use the `@[try_suggestion]` attribute on a declaration with
@@ -146,16 +125,10 @@ fixed piece of syntax. User-extensions are only tried _after_ the
 built-in try strategies have been tried and failed.
 
 ### Match Compilation
-%%%
-tag := "zh-releases-v4-26-0-h008"
-%%%
 
 This release includes several performance optimizations in match compilation of large match statements (PRs [#10763](https://github.com/leanprover/lean4/pull/10763), [#11072](https://github.com/leanprover/lean4/pull/11072) and [#10823](https://github.com/leanprover/lean4/pull/10823)).
 
 ### Library Suggestions
-%%%
-tag := "zh-releases-v4-26-0-h009"
-%%%
 
 - [#10920](https://github.com/leanprover/lean4/pull/10920)/[#11029](https://github.com/leanprover/lean4/pull/11029)
   adds support for `grind +suggestions`, calling the currently
@@ -168,9 +141,6 @@ tag := "zh-releases-v4-26-0-h009"
 - [#11030](https://github.com/leanprover/lean4/pull/11030) adds a library suggestion engine for local theorems.
 
 ### Library Highlights
-%%%
-tag := "zh-releases-v4-26-0-h010"
-%%%
 
 - [#11019](https://github.com/leanprover/lean4/pull/11019) introduces slices of lists that are available via slice notation
   (e.g., `xs[1...5]`).
@@ -179,18 +149,12 @@ tag := "zh-releases-v4-26-0-h010"
   about `String.ValidPos` and `String.Slice.Pos`.
 
 ### Breaking Changes
-%%%
-tag := "zh-releases-v4-26-0-h011"
-%%%
 
 - [#10625](https://github.com/leanprover/lean4/pull/10625) implements zero cost `BaseIO` by erasing the `IO.RealWorld`
   parameter from argument lists and structures. This is a **major breaking
   change for FFI**.
 
 ## Language
-%%%
-tag := "zh-releases-v4-26-0-h012"
-%%%
 
 * [#10763](https://github.com/leanprover/lean4/pull/10763) improves match compilation: Branch on variables in the order
   suggested by the first remaining alternative, and do not branch when the
@@ -296,9 +260,6 @@ tag := "zh-releases-v4-26-0-h012"
   option is effective.
 
 ## Library
-%%%
-tag := "zh-releases-v4-26-0-h013"
-%%%
 
 * [#9515](https://github.com/leanprover/lean4/pull/9515) adds a missing lemma for the `List` API.
 
@@ -426,9 +387,6 @@ tag := "zh-releases-v4-26-0-h013"
   https://leanprover.zulipchat.com/#narrow/channel/270676-lean4/topic/Reasonning.20about.20PRange.20sizes.20.28with.20.60Int.60.29/with/546466339.
 
 ## Tactics
-%%%
-tag := "zh-releases-v4-26-0-h014"
-%%%
 
 * [#10848](https://github.com/leanprover/lean4/pull/10848) fixes an issue where adding a missing case name after the pipe
   in `induction` would not remove the now-obsolete error message.
@@ -872,9 +830,6 @@ tag := "zh-releases-v4-26-0-h014"
   定理，作为测试工作流程的一部分。更多内容敬请关注。
 
 ## 编译器
-%%%
-tag := "zh-releases-v4-26-0-h015"
-%%%
 
 * [#10625](https://github.com/leanprover/lean4/pull/10625) 通过擦除 `IO.RealWorld` 实现零成本 `BaseIO`
   来自参数列表和结构的参数。这是一个**重大突破
@@ -944,17 +899,11 @@ tag := "zh-releases-v4-26-0-h015"
   Verso 文档字符串元数据。
 
 ## 文档
-%%%
-tag := "zh-releases-v4-26-0-h016"
-%%%
 
 * [#11179](https://github.com/leanprover/lean4/pull/11179) 删除了大多数情况，其中错误消息解释说它是
   “可能是由于元变量”，给出了更多解释和提示。
 
 ## 服务器
-%%%
-tag := "zh-releases-v4-26-0-h017"
-%%%
 
 * [#10787](https://github.com/leanprover/lean4/pull/10787) 改进了服务器日志记录机制以允许过滤日志
   通过 LSP 方法输出。
@@ -964,9 +913,6 @@ tag := "zh-releases-v4-26-0-h017"
   服务器在悬停弹出窗口中呈现术语。
 
 ## Lake
-%%%
-tag := "zh-releases-v4-26-0-h018"
-%%%
 
 * [#10861](https://github.com/leanprover/lean4/pull/10861) 修复了 `input_dir` 跟踪，以便也递归通过
   子目录。 `input_dir` 的 `filter` 将应用于每个
@@ -1005,9 +951,6 @@ tag := "zh-releases-v4-26-0-h018"
   根）。
 
 ## 其他
-%%%
-tag := "zh-releases-v4-26-0-h019"
-%%%
 
 * [#11074](https://github.com/leanprover/lean4/pull/11074) 添加了 `.claude/claude.md`，包含基本开发说明
   让 Claude Code 在此存储库中运行。

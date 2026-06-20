@@ -20,9 +20,6 @@ file := "v4.9.0"
 
 ````markdown
 ### Language features, tactics, and metaprograms
-%%%
-tag := "zh-releases-v4-9-0-h001"
-%%%
 
 * **Definition transparency**
   * [#4053](https://github.com/leanprover/lean4/pull/4053) adds the `seal` and `unseal` commands, which make definitions locally be irreducible or semireducible.
@@ -162,18 +159,12 @@ tag := "zh-releases-v4-9-0-h001"
   [#4338](https://github.com/leanprover/lean4/pull/4338).
 
 ### Language server, widgets, and IDE extensions
-%%%
-tag := "zh-releases-v4-9-0-h002"
-%%%
 * [#4066](https://github.com/leanprover/lean4/pull/4066) fixes features like "Find References" when browsing core Lean sources.
 * [#4254](https://github.com/leanprover/lean4/pull/4254) allows embedding user widgets in structured messages.
   Companion PR is [vscode-lean4#449](https://github.com/leanprover/vscode-lean4/pull/449).
 * [#4445](https://github.com/leanprover/lean4/pull/4445) makes watchdog more resilient against badly behaving clients.
 
 ### Library
-%%%
-tag := "zh-releases-v4-9-0-h003"
-%%%
 * [#4059](https://github.com/leanprover/lean4/pull/4059) upstreams many `List` and `Array` operations and theorems from Batteries.
 * [#4055](https://github.com/leanprover/lean4/pull/4055) removes the unused `Inhabited` instance for `Subtype`.
 * [#3967](https://github.com/leanprover/lean4/pull/3967) adds dates in existing `@[deprecated]` attributes.
@@ -221,9 +212,6 @@ tag := "zh-releases-v4-9-0-h003"
   [#4332](https://github.com/leanprover/lean4/pull/4332).
 
 ### Lean internals
-%%%
-tag := "zh-releases-v4-9-0-h004"
-%%%
 * **Defeq and WHNF algorithms**
   * [#4029](https://github.com/leanprover/lean4/pull/4029) remove unnecessary `checkpointDefEq`
   * [#4206](https://github.com/leanprover/lean4/pull/4206) fixes `isReadOnlyOrSyntheticOpaque` to respect metavariable depth.
@@ -262,18 +250,12 @@ tag := "zh-releases-v4-9-0-h004"
   * Tests: [030406](https://github.com/leanprover/lean4/commit/03040618b8f9b35b7b757858483e57340900cdc4), [#4133](https://github.com/leanprover/lean4/pull/4133).
 
 ### Compiler, runtime, and FFI
-%%%
-tag := "zh-releases-v4-9-0-h005"
-%%%
 * [#4100](https://github.com/leanprover/lean4/pull/4100) improves reset/reuse algorithm; it now runs a second pass relaxing the constraint that reused memory cells must only be for the exact same constructor.
 * [#2903](https://github.com/leanprover/lean4/pull/2903) fixes segfault in old compiler from mishandling `noConfusion` applications.
 * [#4311](https://github.com/leanprover/lean4/pull/4311) fixes bug in constant folding.
 * [#3915](https://github.com/leanprover/lean4/pull/3915) documents the runtime memory layout for inductive types.
 
 ### Lake
-%%%
-tag := "zh-releases-v4-9-0-h006"
-%%%
 * [#4518](https://github.com/leanprover/lean4/pull/4518) makes trace reading more robust. Lake now rebuilds if trace files are invalid or unreadable and is backwards compatible with previous pure numeric traces.
 * [#4057](https://github.com/leanprover/lean4/pull/4057) adds support for docstrings on `require` commands.
 * [#4088](https://github.com/leanprover/lean4/pull/4088) improves hovers for `family_def` and `library_data` commands.
@@ -308,9 +290,6 @@ tag := "zh-releases-v4-9-0-h006"
   * [#4356](https://github.com/leanprover/lean4/pull/4356) adds build log path to the warning for a missing or invalid build log.
 
 ### DevOps
-%%%
-tag := "zh-releases-v4-9-0-h007"
-%%%
 * [#3984](https://github.com/leanprover/lean4/pull/3984) adds a script (`script/rebase-stage0.sh`) for `git rebase -i` that automatically updates each stage0.
 * [#4108](https://github.com/leanprover/lean4/pull/4108) finishes renamings from transition to Std to Batteries.
 * [#4109](https://github.com/leanprover/lean4/pull/4109) adjusts the Github bug template to mention testing using [live.lean-lang.org](https://live.lean-lang.org).
@@ -330,9 +309,6 @@ tag := "zh-releases-v4-9-0-h007"
 * [#4628](https://github.com/leanprover/lean4/pull/4628) fixes the Windows build, which was missing an exported symbol.
 
 ### Breaking changes
-%%%
-tag := "zh-releases-v4-9-0-h008"
-%%%
 While most changes could be considered to be a breaking change, this section makes special note of API changes.
 
 * `Nat.zero_or` and `Nat.or_zero` have been swapped ([#4094](https://github.com/leanprover/lean4/pull/4094)).

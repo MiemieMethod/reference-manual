@@ -22,9 +22,6 @@ file := "v4.23.0"
 For this release, 610 changes landed. In addition to the 95 feature additions and 139 fixes listed below there were 61 refactoring changes, 12 documentation improvements, 71 performance improvements, and 232 other changes.
 
 ## Highlights
-%%%
-tag := "zh-releases-v4-23-0-h001"
-%%%
 
 Lean v4.23.0 release brings significant performance improvements, better error messages,
 and a plethora of bug fixes, refinements, and consolidations in `grind`, the compiler, and other components of Lean.
@@ -63,9 +60,6 @@ In terms of user experience, noteworthy new features are:
   You can try all of these in the [Lean playground](https://live.lean-lang.org/#codez=PQWghAUAxABAEgSwHYBcDOMBmB7ATjZANwEMAbBAExiWIFsBTK43AcwFcHUNkYAHYlCnq4kaCCGAQIyCmwDGKBIXowAKjADuAC2H0IMGAB8YtANYBGGAAoAHjACeMAF4wAXDABC2bKQCUU+hs6XlIVKxQ3NV83AF59EwE5LRgIjQQULXjjADozSytHVxiU3DZ6aKsNWJKyipcirDI0cpgYgD5rfylQSFhELiw8GDliZuo6ejEJAKDaELCAI0ivH2j3ADkBaoX7eJHmjAW90ZUkbCRAhDQhVFa2+IM0UwRebvBoeGR0QfxaK7RkCwYNdSgo2LgVMhrsQkHIVJgEPRSBQppIICD5ChwSoAMqaHQQ+IIpEUSwbARExHIgBMkQAavQFENNhFicjzDNgqFIniivEAN4AXwgQA).
 
 ### Breaking Changes
-%%%
-tag := "zh-releases-v4-23-0-h002"
-%%%
 
 - [#9800](https://github.com/leanprover/lean4/pull/9800) improves the delta deriving handler, giving it the ability to
   process definitions with binders, as well as the ability to recursively
@@ -104,9 +98,6 @@ tag := "zh-releases-v4-23-0-h002"
     etc. with corresponding instance parameters.
 
 ## Language
-%%%
-tag := "zh-releases-v4-23-0-h003"
-%%%
 
 * [#6732](https://github.com/leanprover/lean4/pull/6732) adds support for the `clear` tactic in conversion mode.
 
@@ -818,9 +809,6 @@ tag := "zh-releases-v4-23-0-h003"
 
 ````markdown
 ## Library
-%%%
-tag := "zh-releases-v4-23-0-h004"
-%%%
 
 * [#7450](https://github.com/leanprover/lean4/pull/7450) implements `Nat.dfold`, a dependent analogue of `Nat.fold`.
 
@@ -988,9 +976,6 @@ tag := "zh-releases-v4-23-0-h004"
 * [#9850](https://github.com/leanprover/lean4/pull/9850) 添加 `Std.PRange` 表示法的精化器。
 
 ## 编译器
-%%%
-tag := "zh-releases-v4-23-0-h005"
-%%%
 
 * [#8691](https://github.com/leanprover/lean4/pull/8691) 确保使用编译时恢复状态
   新的编译器失败。这对于不可计算的情况尤其重要
@@ -1143,9 +1128,6 @@ tag := "zh-releases-v4-23-0-h005"
   在返回值的生命周期内对元素的有效引用。
 
 ## 漂亮的印刷
-%%%
-tag := "zh-releases-v4-23-0-h006"
-%%%
 
 * [#8391](https://github.com/leanprover/lean4/pull/8391) 为 `Vector.mk` 添加一个解展开器，用于解展开 `Vector.mk
   #[...]_` to `#v[...]`。
@@ -1173,9 +1155,6 @@ tag := "zh-releases-v4-23-0-h006"
   宇宙层级 元变量。
 
 ## 文档
-%%%
-tag := "zh-releases-v4-23-0-h007"
-%%%
 
 * [#9093](https://github.com/leanprover/lean4/pull/9093) 添加了 `ToFormat.toFormat` 缺失的文档字符串。
 
@@ -1184,9 +1163,6 @@ tag := "zh-releases-v4-23-0-h007"
 * [#9593](https://github.com/leanprover/lean4/pull/9593) 显着简化了 `propext` 的文档字符串。
 
 ## 服务器
-%%%
-tag := "zh-releases-v4-23-0-h008"
-%%%
 
 * [#9040](https://github.com/leanprover/lean4/pull/9040) 改进了“转到定义”用户体验，具体来说：
   - 现在，在类型类投影上使用“转到定义”将提取
@@ -1223,9 +1199,6 @@ tag := "zh-releases-v4-23-0-h008"
   并行精化的进展。
 
 ## Lake
-%%%
-tag := "zh-releases-v4-23-0-h009"
-%%%
 
 * [#9053](https://github.com/leanprover/lean4/pull/9053) 更新 Lake 以解析可传递的 `.olean` 文件
   通过 `lean --setup` 的 `modules` 字段导入 Lean。这个
@@ -1305,9 +1278,6 @@ tag := "zh-releases-v4-23-0-h009"
   产生有效的标头。
 
 ## 其他
-%%%
-tag := "zh-releases-v4-23-0-h010"
-%%%
 
 * [#9106](https://github.com/leanprover/lean4/pull/9106) 修复了“未定义符号：lean::mpz::divexact(lean::mpz const&,
   Lean::mpz const&)` when building without `LEAN_USE_GMP`

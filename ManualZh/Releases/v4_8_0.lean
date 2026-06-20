@@ -20,9 +20,6 @@ file := "v4.8.0"
 
 ````markdown
 ### Language features, tactics, and metaprograms
-%%%
-tag := "zh-releases-v4-8-0-h001"
-%%%
 
 * **Functional induction principles.**
   [#3432](https://github.com/leanprover/lean4/pull/3432), [#3620](https://github.com/leanprover/lean4/pull/3620),
@@ -179,9 +176,6 @@ tag := "zh-releases-v4-8-0-h001"
 [#3908](https://github.com/leanprover/lean4/pull/3908), [#3872](https://github.com/leanprover/lean4/pull/3872).
 
 ### Language server and IDE extensions
-%%%
-tag := "zh-releases-v4-8-0-h002"
-%%%
 
 * [#3602](https://github.com/leanprover/lean4/pull/3602) enables `import` auto-completions.
 * [#3608](https://github.com/leanprover/lean4/pull/3608) fixes issue [leanprover/vscode-lean4#392](https://github.com/leanprover/vscode-lean4/issues/392).
@@ -203,9 +197,6 @@ tag := "zh-releases-v4-8-0-h002"
 * [#3985](https://github.com/leanprover/lean4/pull/3985) makes trace timings appear in Infoview.
 
 ### Pretty printing
-%%%
-tag := "zh-releases-v4-8-0-h003"
-%%%
 
 * [#3797](https://github.com/leanprover/lean4/pull/3797) fixes the hovers over binders so that they show their types.
 * [#3640](https://github.com/leanprover/lean4/pull/3640) and [#3735](https://github.com/leanprover/lean4/pull/3735): Adds attribute `@[pp_using_anonymous_constructor]` to make structures pretty print as `⟨x, y, z⟩`
@@ -235,9 +226,6 @@ tag := "zh-releases-v4-8-0-h003"
 * [#4034](https://github.com/leanprover/lean4/pull/4034) makes hovers for RHS terms in `match` expressions in the Infoview reliably show the correct term.
 
 ### Library
-%%%
-tag := "zh-releases-v4-8-0-h004"
-%%%
 
 * `Bool`/`Prop`
   * [#3508](https://github.com/leanprover/lean4/pull/3508) improves `simp` confluence for `Bool` and `Prop` terms.
@@ -306,9 +294,6 @@ tag := "zh-releases-v4-8-0-h004"
   [#3871](https://github.com/leanprover/lean4/pull/3871), [#3919](https://github.com/leanprover/lean4/pull/3919).
 
 ### Lean internals
-%%%
-tag := "zh-releases-v4-8-0-h005"
-%%%
 
 * **Defeq and WHNF algorithms**
   * [#3616](https://github.com/leanprover/lean4/pull/3616) gives better support for reducing `Nat.rec` expressions.
@@ -381,9 +366,6 @@ tag := "zh-releases-v4-8-0-h005"
   [#4026](https://github.com/leanprover/lean4/pull/4026).
 
 ### Compiler, runtime, and FFI
-%%%
-tag := "zh-releases-v4-8-0-h006"
-%%%
 
 * [#3632](https://github.com/leanprover/lean4/pull/3632) makes it possible to allocate and free thread-local runtime resources for threads not started by Lean itself.
 * [#3627](https://github.com/leanprover/lean4/pull/3627) improves error message about compacting closures.
@@ -394,9 +376,6 @@ tag := "zh-releases-v4-8-0-h006"
   removes `interpreter` copy constructor to avoid potential memory safety issues.
 
 ### Lake
-%%%
-tag := "zh-releases-v4-8-0-h007"
-%%%
 
 * **TOML Lake configurations**. [#3298](https://github.com/leanprover/lean4/pull/3298), [#4104](https://github.com/leanprover/lean4/pull/4104).
 
@@ -464,9 +443,6 @@ tag := "zh-releases-v4-8-0-h007"
 * **Docs:** [#3704](https://github.com/leanprover/lean4/pull/3704).
 
 ### DevOps
-%%%
-tag := "zh-releases-v4-8-0-h008"
-%%%
 
 * [#3536](https://github.com/leanprover/lean4/pull/3536) and [#3833](https://github.com/leanprover/lean4/pull/3833)
   add a checklist for the release process.
@@ -497,9 +473,6 @@ tag := "zh-releases-v4-8-0-h008"
   fixes asan linking
 
 ### Breaking changes
-%%%
-tag := "zh-releases-v4-8-0-h009"
-%%%
 
 * Due to the major Lake build refactor, code using the affected parts of the Lake API or relying on the previous output format of Lake builds is likely to have been broken. We have tried to minimize the breakages and, where possible, old definitions have been marked `@[deprecated]` with a reference to the new alternative.
 

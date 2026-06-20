@@ -24,16 +24,10 @@ file := "v4.20.0"
 For this release, 346 changes landed. In addition to the 108 feature additions and 85 fixes listed below there were 6 refactoring changes, 7 documentation improvements, 8 performance improvements, 4 improvements to the test suite and 126 other changes.
 
 ## Highlights
-%%%
-tag := "zh-releases-v4-20-0-h001"
-%%%
 
 The Lean v4.20.0 release brings multiple new features, bug fixes, improvements to Lake, and groundwork for the module system.
 
 ### Language Features
-%%%
-tag := "zh-releases-v4-20-0-h002"
-%%%
 
 * [#6432](https://github.com/leanprover/lean4/pull/6432) implements tactics called `extract_lets` and `lift_lets` that
   manipulate `let`/`let_fun` expressions. The `extract_lets` tactic
@@ -155,9 +149,6 @@ tag := "zh-releases-v4-20-0-h002"
   (co)induction proof principle (given by Park induction) is generated.
 
 ### Library Highlights
-%%%
-tag := "zh-releases-v4-20-0-h003"
-%%%
 
 [#8004](https://github.com/leanprover/lean4/pull/8004) adds extensional hash maps and hash sets under the names
   `Std.ExtDHashMap`, `Std.ExtHashMap` and `Std.ExtHashSet`. Extensional
@@ -176,17 +167,11 @@ Other notable library developments in this release include:
 - Additional lemmas for `Array`/`List`/`Vector`.
 
 ### Lake
-%%%
-tag := "zh-releases-v4-20-0-h004"
-%%%
 
 * [#7909](https://github.com/leanprover/lean4/pull/7909) adds Lake support for building modules given their source file
   path. This is made use of in both the CLI and the server.
 
 ### Breaking Changes
-%%%
-tag := "zh-releases-v4-20-0-h005"
-%%%
 
 * [#7474](https://github.com/leanprover/lean4/pull/7474) updates `rw?`, `show_term`, and other tactic-suggesting tactics
   to suggest `expose_names` when necessary and validate tactics prior to
@@ -257,9 +242,6 @@ tag := "zh-releases-v4-20-0-h005"
   See the FFI example for a demonstration.
 
 ## Language
-%%%
-tag := "zh-releases-v4-20-0-h006"
-%%%
 
 * [#6325](https://github.com/leanprover/lean4/pull/6325) ensures that environments can be loaded, repeatedly, without
   executing arbitrary code
@@ -706,9 +688,6 @@ tag := "zh-releases-v4-20-0-h006"
   大型结构的条款。
 
 ## 图书馆
-%%%
-tag := "zh-releases-v4-20-0-h007"
-%%%
 
 * [#6081](https://github.com/leanprover/lean4/pull/6081) 将 `inheritEnv` 字段添加到 `IO.Process.SpawnArgs`。如果
   `false`，生成的进程不会继承其父进程的环境。
@@ -938,9 +917,6 @@ tag := "zh-releases-v4-20-0-h007"
 * [#8184](https://github.com/leanprover/lean4/pull/8184) 为所有地图变体添加 `insertMany_append` 引理。
 
 ## 编译器
-%%%
-tag := "zh-releases-v4-20-0-h008"
-%%%
 
 * [#6063](https://github.com/leanprover/lean4/pull/6063) 更新了 LLVM 和 clang 所使用和附带的版本
   Lean 至 19.1.2
@@ -1033,9 +1009,6 @@ tag := "zh-releases-v4-20-0-h008"
   `precompileModules` 会导致“找不到符号”错误。
 
 ## 漂亮的印刷
-%%%
-tag := "zh-releases-v4-20-0-h009"
-%%%
 
 * [#7805](https://github.com/leanprover/lean4/pull/7805) 修改原始自然数文字的漂亮打印；现在
   `pp.explicit` 和 `pp.natLit` 均启用 `nat_lit` 前缀。安
@@ -1072,9 +1045,6 @@ tag := "zh-releases-v4-20-0-h009"
   名称。
 
 ## 文档
-%%%
-tag := "zh-releases-v4-20-0-h010"
-%%%
 
 * [#7947](https://github.com/leanprover/lean4/pull/7947) 添加了一些文档字符串来阐明
   `Lean.mkFreshId`、`Lean.Core.mkFreshUserName`、
@@ -1084,9 +1054,6 @@ tag := "zh-releases-v4-20-0-h010"
 * [#8018](https://github.com/leanprover/lean4/pull/8018) 将 RArray 文档字符串调整为 #8014 中的新现实。
 
 ## 服务器
-%%%
-tag := "zh-releases-v4-20-0-h011"
-%%%
 
 * [#7610](https://github.com/leanprover/lean4/pull/7610) 调整 `TryThis` 小部件以在小部件消息中也起作用
   而不仅仅是作为面板小部件。它还添加了额外的
@@ -1104,9 +1071,6 @@ tag := "zh-releases-v4-20-0-h011"
   在#7902 中意外损坏。
 
 ## Lake
-%%%
-tag := "zh-releases-v4-20-0-h012"
-%%%
 
 * [#7796](https://github.com/leanprover/lean4/pull/7796) 将 Lean 的共享库路径移动到工作区之前
   Lake 的增强环境（例如 `lake env`）。
@@ -1164,9 +1128,6 @@ tag := "zh-releases-v4-20-0-h012"
   Lake CLI 以及 Lean 和 TOML 配置文件中。
 
 ## 其他
-%%%
-tag := "zh-releases-v4-20-0-h013"
-%%%
 
 * [#7785](https://github.com/leanprover/lean4/pull/7785) 为发布过程添加了进一步的自动化，处理
   标记并自动创建新的 `bump/v4.X.0` 分支，以及

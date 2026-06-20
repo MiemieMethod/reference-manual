@@ -22,9 +22,6 @@ file := "v4.25.0"
 For this release, 398 changes landed. In addition to the 141 feature additions and 83 fixes listed below there were 21 refactoring changes, 9 documentation improvements, 4 performance improvements, 5 improvements to the test suite and 135 other changes.
 
 ## Highlights
-%%%
-tag := "zh-releases-v4-25-0-h001"
-%%%
 
 Lean v4.25.0 release brings several exciting new features.
 Editor integration adds interactivity to "try this" suggestions,
@@ -39,9 +36,6 @@ The standard library features a redesigned `String` type and expanded async prim
 Read on for the details!
 
 ### Apply "try this" Suggestions
-%%%
-tag := "zh-releases-v4-25-0-h002"
-%%%
 
 [#10524](https://github.com/leanprover/lean4/pull/10524) adds support for interactivity (hover, go-to-definitions) for "try this"
 messages that were introduced in [#9966](https://github.com/leanprover/lean4/pull/9966). In doing so, it moves the link
@@ -49,9 +43,6 @@ to apply a suggestion to a separate `[apply]` button in front of the
 suggestion.
 
 ### Remote Caching with Lake
-%%%
-tag := "zh-releases-v4-25-0-h003"
-%%%
 
 [#10188](https://github.com/leanprover/lean4/pull/10188) adds support for remote artifact caches (e.g., Reservoir) to
 Lake. As part of this support, a new suite of `lake cache` CLI commands
@@ -60,9 +51,6 @@ local cache support has been overhauled for better interplay with the
 new remote support.
 
 ### Coinductive Predicates
-%%%
-tag := "zh-releases-v4-25-0-h004"
-%%%
 
 [#10333](https://github.com/leanprover/lean4/pull/10333) introduces a `coinductive` keyword, that can be used to define
 coinductive predicates via a syntax identical to the one for `inductive`
@@ -111,9 +99,6 @@ end
 ```
 
 ### Mvcgen Invariants Suggestions
-%%%
-tag := "zh-releases-v4-25-0-h005"
-%%%
 
 [#10456](https://github.com/leanprover/lean4/pull/10456) and [#10566](https://github.com/leanprover/lean4/pull/10566)
 implement `mvcgen invariants?` to suggest concrete invariants
@@ -181,14 +166,8 @@ but it is a good starting point for iterating. It is also useful because the use
 the exact syntax.
 
 ### Grind
-%%%
-tag := "zh-releases-v4-25-0-h006"
-%%%
 
 #### Interactive mode
-%%%
-tag := "zh-releases-v4-25-0-h007"
-%%%
 
 `grind` has been extended with an interactive mode `grind => …`
 ([#10607](https://github.com/leanprover/lean4/pull/10607), [#10677](https://github.com/leanprover/lean4/pull/10677), ...)
@@ -255,9 +234,6 @@ In the interactive mode, it is possible to do the following:
   Moreover, users can hover over them to see the exact term used in the case split.
 
 #### Non-commutative (semi)ring normalization
-%%%
-tag := "zh-releases-v4-25-0-h008"
-%%%
 
 - [#10375](https://github.com/leanprover/lean4/pull/10375) adds support for non-commutative ring normalization in `grind`.
   The new normalizer also accounts for the `IsCharP` type class.
@@ -282,9 +258,6 @@ tag := "zh-releases-v4-25-0-h008"
   ```
 
 #### Injective functions
-%%%
-tag := "zh-releases-v4-25-0-h009"
-%%%
 
 [#10445](https://github.com/leanprover/lean4/pull/10445),
 [#10447](https://github.com/leanprover/lean4/pull/10447),
@@ -327,9 +300,6 @@ example (f : InjFn (List Nat) α) (x y z : Nat)
 ```
 
 #### Grind order solver
-%%%
-tag := "zh-releases-v4-25-0-h010"
-%%%
 
 Grind can now solve preorder and ordered ring problems
 ([#10562](https://github.com/leanprover/lean4/pull/10562), [#10598](https://github.com/leanprover/lean4/pull/10598) and [#10600](https://github.com/leanprover/lean4/pull/10600)).
@@ -343,9 +313,6 @@ example [LE α] [LT α] [Std.LawfulOrderLT α] [Std.IsLinearPreorder α] [CommRi
 ```
 
 #### New pattern inference heuristic
-%%%
-tag := "zh-releases-v4-25-0-h011"
-%%%
 
 [#10422](https://github.com/leanprover/lean4/pull/10422) and [#10432](https://github.com/leanprover/lean4/pull/10432)
 implement the new E-matching pattern inference heuristic for
@@ -380,9 +347,6 @@ set_option backward.grind.inferPattern true
 ```
 
 ### Specifications Derivation
-%%%
-tag := "zh-releases-v4-25-0-h012"
-%%%
 
 Lean now provides automated generation of specification theorems for custom and derived type class instances:
 
@@ -439,9 +403,6 @@ Lean now provides automated generation of specification theorems for custom and 
   Does not support mutual or nested inductives.
 
 ### Overhaul of the String Type
-%%%
-tag := "zh-releases-v4-25-0-h013"
-%%%
 
 - [#10304](https://github.com/leanprover/lean4/pull/10304) redefines `String` to be the type of byte arrays `b`
   for which `b.IsValidUtf8`. This moves the data model of strings much closer to the actual data representation at runtime.
@@ -471,9 +432,6 @@ tag := "zh-releases-v4-25-0-h013"
   Add `String.Pos.Raw.lt_iff` as a `simp` lemma if your proofs break.
 
 ### Async Framework
-%%%
-tag := "zh-releases-v4-25-0-h014"
-%%%
 
 Async framework has been extended with:
 
@@ -484,9 +442,6 @@ Async framework has been extended with:
 - `Std.CancellationToken` ([#10510](https://github.com/leanprover/lean4/pull/10510)).
 
 ### Iterators
-%%%
-tag := "zh-releases-v4-25-0-h015"
-%%%
 
 - [#10686](https://github.com/leanprover/lean4/pull/10686) introduces `any`, `anyM`, `all` and `allM` for pure and monadic
   iterators. It also provides lemmas about them.
@@ -497,17 +452,11 @@ tag := "zh-releases-v4-25-0-h015"
 - [#10761](https://github.com/leanprover/lean4/pull/10761) provides iterators on hash maps.
 
 ### InfoView Trace Search
-%%%
-tag := "zh-releases-v4-25-0-h016"
-%%%
 
 [#10365](https://github.com/leanprover/lean4/pull/10365) implements the server-side for a new trace search mechanism in
 the InfoView. See the PR description for a demo video.
 
 ### Linear Construction of Instances
-%%%
-tag := "zh-releases-v4-25-0-h017"
-%%%
 
 There are now alternative implementations of `DerivingBEq` ([#10268](https://github.com/leanprover/lean4/pull/10268))
 and `Deriving Ord` ([#10270](https://github.com/leanprover/lean4/pull/10270))
@@ -518,9 +467,6 @@ New options `deriving.beq.linear_construction_threshold` and `deriving.ord.linea
 set the constructor count threshold (10 by default) for using the new construction.
 
 ### Porting to the Module System
-%%%
-tag := "zh-releases-v4-25-0-h018"
-%%%
 
 [#10807](https://github.com/leanprover/lean4/pull/10807) introduces the `backward.privateInPublic` option to aid in
 porting projects to the module system by temporarily allowing access to
@@ -529,9 +475,6 @@ warning will be generated by such accesses unless
 `backward.privateInPublic.warn` is disabled.
 
 ### Breaking Changes
-%%%
-tag := "zh-releases-v4-25-0-h019"
-%%%
 
 - [#10714](https://github.com/leanprover/lean4/pull/10714) removes support for reducible well-founded recursion, a Breaking
   Change. Using `@[semireducible]` on a definition by well-founded
@@ -561,9 +504,6 @@ tag := "zh-releases-v4-25-0-h019"
   Breaking change: the `«end»` syntax is adjusted to take an `identWithPartialTrailingDot` instead of an `ident`.
 
 ## Language
-%%%
-tag := "zh-releases-v4-25-0-h020"
-%%%
 
 * [#7844](https://github.com/leanprover/lean4/pull/7844) adds a simple implementation of MePo, from "Lightweight
   relevance filtering for machine-generated resolution problems" by Meng
@@ -938,9 +878,6 @@ tag := "zh-releases-v4-25-0-h020"
   `set_option` notation.
 
 ## Library
-%%%
-tag := "zh-releases-v4-25-0-h021"
-%%%
 
 * [#9258](https://github.com/leanprover/lean4/pull/9258) adds support for signal handlers to the Lean standard library.
 
@@ -1072,9 +1009,6 @@ tag := "zh-releases-v4-25-0-h021"
 * [#10761](https://github.com/leanprover/lean4/pull/10761) provides iterators on hash maps.
 
 ## Tactics
-%%%
-tag := "zh-releases-v4-25-0-h022"
-%%%
 
 * [#10445](https://github.com/leanprover/lean4/pull/10445) adds helper definitions in preparation for the upcoming
   injective function support in `grind`.
@@ -1428,9 +1362,6 @@ tag := "zh-releases-v4-25-0-h022"
   `finish?`.
 
 ## Compiler
-%%%
-tag := "zh-releases-v4-25-0-h023"
-%%%
 
 * [#10429](https://github.com/leanprover/lean4/pull/10429) fixes and overeager reuse of specialisation in the code
   generator.
@@ -1456,9 +1387,6 @@ tag := "zh-releases-v4-25-0-h023"
   generator.
 
 ## Pretty Printing
-%%%
-tag := "zh-releases-v4-25-0-h024"
-%%%
 
 * [#10376](https://github.com/leanprover/lean4/pull/10376) modifies pretty printing of `fun` binders, suppressing the safe
   shadowing feature among the binders in the same `fun`. For example,
@@ -1467,9 +1395,6 @@ tag := "zh-releases-v4-25-0-h024"
   => 0` pretty prints as-is, taking advantage of safe shadowing.
 
 ## Documentation
-%%%
-tag := "zh-releases-v4-25-0-h025"
-%%%
 
 * [#10632](https://github.com/leanprover/lean4/pull/10632) adds missing docstrings for ByteArray and makes existing ones
   consistent with our style.
@@ -1478,9 +1403,6 @@ tag := "zh-releases-v4-25-0-h025"
   the String API.
 
 ## Server
-%%%
-tag := "zh-releases-v4-25-0-h026"
-%%%
 
 * [#10365](https://github.com/leanprover/lean4/pull/10365) implements the server-side for a new trace search mechanism in
   the InfoView.
@@ -1530,9 +1452,6 @@ tag := "zh-releases-v4-25-0-h026"
   `[anonymous]`.
 
 ## Lake
-%%%
-tag := "zh-releases-v4-25-0-h027"
-%%%
 
 * [#9855](https://github.com/leanprover/lean4/pull/9855) adds a new `allowImportAll` configuration option for packages
   and libraries. When enabled by an upstream package or library,
@@ -1587,9 +1506,6 @@ tag := "zh-releases-v4-25-0-h027"
   out-of-date.
 
 ## Other
-%%%
-tag := "zh-releases-v4-25-0-h028"
-%%%
 
 * [#10383](https://github.com/leanprover/lean4/pull/10383) includes some improvements to the release process, making the
   updating of `stable` branches more robust, and including `cslib` in the

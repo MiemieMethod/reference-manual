@@ -22,9 +22,6 @@ file := "v4.13.0"
 **完整变更日志**：https://github.com/leanprover/lean4/compare/v4.12.0...v4.13.0
 
 ### 语言功能、策略和元程序
-%%%
-tag := "zh-releases-v4-13-0-h001"
-%%%
 
 * `structure` 命令
   * [#5511](https://github.com/leanprover/lean4/pull/5511) 允许结构父级成为类型同义词。
@@ -99,9 +96,6 @@ tag := "zh-releases-v4-13-0-h001"
 
 
 ### 语言服务器、小部件和 IDE 扩展
-%%%
-tag := "zh-releases-v4-13-0-h002"
-%%%
 
 * [#5205](https://github.com/leanprover/lean4/pull/5205) 减少了策略块中自动完成的延迟。
 * [#5237](https://github.com/leanprover/lean4/pull/5237) 修复了当将文本光标从右侧移动到标识符时，VS Code 中的符号出现突出显示不突出显示的情况。
@@ -113,9 +107,6 @@ tag := "zh-releases-v4-13-0-h002"
 
 
 ### 漂亮的印刷
-%%%
-tag := "zh-releases-v4-13-0-h003"
-%%%
 
 * [#4979](https://github.com/leanprover/lean4/pull/4979) 制作漂亮的打印机转义标识符（标记）。
 * [#5389](https://github.com/leanprover/lean4/pull/5389) 使格式化程序使用当前标记表。
@@ -123,9 +114,6 @@ tag := "zh-releases-v4-13-0-h003"
 
 
 ### 图书馆
-%%%
-tag := "zh-releases-v4-13-0-h004"
-%%%
 
 * [#5222](https://github.com/leanprover/lean4/pull/5222) 减少 `Json.compress` 中的分配。
 * [#5231](https://github.com/leanprover/lean4/pull/5231) 上游 `Zero` 和 `NeZero`
@@ -302,9 +290,6 @@ tag := "zh-releases-v4-13-0-h004"
 
 
 ### 编译器、运行时和 FFI
-%%%
-tag := "zh-releases-v4-13-0-h005"
-%%%
 
 * [#4685](https://github.com/leanprover/lean4/pull/4685) 修复了 C `run_new_frontend` 签名中的拼写错误
 * [#4729](https://github.com/leanprover/lean4/pull/4729) IR 检查器建议使用 `noncomputable`
@@ -317,9 +302,6 @@ tag := "zh-releases-v4-13-0-h005"
 
 
 ### Lake
-%%%
-tag := "zh-releases-v4-13-0-h006"
-%%%
   * Reservoir 构建缓存。 Lake 现在将在构建之前尝试从 Reservoir 获取包的预构建副本。仅对leanprover 或leanprover 社区组织中由Reservoir 索引的版本上的软件包启用此功能。用户可以通过在 CLI 上传递 --no-cache 或将 LAKE_NO_CACHE 环境变量设置为 true 来强制 Lake 从源构建包。 [#5486](https://github.com/leanprover/lean4/pull/5486)、[#5572](https://github.com/leanprover/lean4/pull/5572)、[#5583](https://github.com/leanprover/lean4/pull/5583)、[#5600](https://github.com/leanprover/lean4/pull/5600)、[#5641](https://github.com/leanprover/lean4/pull/5641)、 [#5642](https://github.com/leanprover/lean4/pull/5642)。
   * [#5504](https://github.com/leanprover/lean4/pull/5504) Lake new 和 Lake init 现在默认生成 TOML 配置。
   * [#5878](https://github.com/leanprover/lean4/pull/5878) 修复了一个严重问题：当尝试清理名称不正确所需的依赖项时，Lake 会删除路径依赖项。
@@ -328,9 +310,6 @@ tag := "zh-releases-v4-13-0-h006"
     * [#5641](https://github.com/leanprover/lean4/pull/5641) 包内目标的 Lake 构建将不再构建包的依赖项包级额外目标依赖项。在技​​术层面上，包的 extraDep 方面不再传递地构建其依赖项的 extraDep 方面（其中包括其 extraDepTargets）。
 
 ### 文档修复
-%%%
-tag := "zh-releases-v4-13-0-h007"
-%%%
 
 * [#3918](https://github.com/leanprover/lean4/pull/3918) `@[builtin_doc]` 属性 (@digama0)
 * [#4305](https://github.com/leanprover/lean4/pull/4305) 解释借位语法 (@eric-wieser)
@@ -343,9 +322,6 @@ tag := "zh-releases-v4-13-0-h007"
 * 对文档字符串中的拼写进行了许多修复，(@euprunin)： [#5425](https://github.com/leanprover/lean4/pull/5425) [#5426](https://github.com/leanprover/lean4/pull/5426) [#5427](https://github.com/leanprover/lean4/pull/5427) [#5430](https://github.com/leanprover/lean4/pull/5430) [#5431](https://github.com/leanprover/lean4/pull/5431) [#5434](https://github.com/leanprover/lean4/pull/5434) [#5435](https://github.com/leanprover/lean4/pull/5435) [#5436](https://github.com/leanprover/lean4/pull/5436) [#5438](https://github.com/leanprover/lean4/pull/5438) [#5439](https://github.com/leanprover/lean4/pull/5439) [#5440](https://github.com/leanprover/lean4/pull/5440) [#5599](https://github.com/leanprover/lean4/pull/5599)
 
 ### CI 的变化
-%%%
-tag := "zh-releases-v4-13-0-h008"
-%%%
 
 * [#5343](https://github.com/leanprover/lean4/pull/5343) 允许通过注释添加 `release-ci` 标签 (@thorimur)
 * [#5344](https://github.com/leanprover/lean4/pull/5344) 在工作流程中正确设置检查级别 (@thorimur)

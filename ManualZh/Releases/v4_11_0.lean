@@ -20,9 +20,6 @@ file := "v4.11.0"
 
 ````markdown
 ### Language features, tactics, and metaprograms
-%%%
-tag := "zh-releases-v4-11-0-h001"
-%%%
 
 * The variable inclusion mechanism has been changed. Like before, when a definition mentions a variable, Lean will add it as an argument of the definition, but now in theorem bodies, variables are not included based on usage in order to ensure that changes to the proof cannot change the statement of the overall theorem. Instead, variables are only available to the proof if they have been mentioned in the theorem header or in an **`include` command** or are instance implicit and depend only on such variables. The **`omit` command** can be used to omit included variables.
 
@@ -142,18 +139,12 @@ tag := "zh-releases-v4-11-0-h001"
 
 
 ### Language server, widgets, and IDE extensions
-%%%
-tag := "zh-releases-v4-11-0-h002"
-%%%
 
 * [#4727](https://github.com/leanprover/lean4/pull/4727) makes it so that responses to info view requests come as soon as the relevant tactic has finished execution.
 * [#4580](https://github.com/leanprover/lean4/pull/4580) makes it so that whitespace changes do not invalidate imports, and so starting to type the first declaration after imports should no longer cause them to reload.
 * [#4780](https://github.com/leanprover/lean4/pull/4780) fixes an issue where hovering over unimported builtin names could result in a panic.
 
 ### Pretty printing
-%%%
-tag := "zh-releases-v4-11-0-h003"
-%%%
 
 * [#4558](https://github.com/leanprover/lean4/pull/4558) fixes the `pp.instantiateMVars` setting and changes the default value to `true`.
 * [#4631](https://github.com/leanprover/lean4/pull/4631) makes sure syntax nodes always run their formatters. Fixes an issue where if `ppSpace` appears in a `macro` or `elab` command then it does not format with a space.
@@ -164,9 +155,6 @@ tag := "zh-releases-v4-11-0-h003"
 * [#4854](https://github.com/leanprover/lean4/pull/4854) allows arbitrarily long sequences of optional arguments to be omitted from the end of applications, versus the previous conservative behavior of omitting up to one optional argument.
 
 ### Library
-%%%
-tag := "zh-releases-v4-11-0-h004"
-%%%
 
 * `Nat`
   * [#4597](https://github.com/leanprover/lean4/pull/4597) adds bitwise lemmas `Nat.and_le_(left|right)`.
@@ -239,9 +227,6 @@ tag := "zh-releases-v4-11-0-h004"
   * Docs: [#4782](https://github.com/leanprover/lean4/pull/4782), [#4869](https://github.com/leanprover/lean4/pull/4869), [#4648](https://github.com/leanprover/lean4/pull/4648)
 
 ### Lean internals
-%%%
-tag := "zh-releases-v4-11-0-h005"
-%%%
 * **Elaboration**
   * [#4596](https://github.com/leanprover/lean4/pull/4596) enforces `isDefEqStuckEx` at `unstuckMVar` procedure, causing isDefEq to throw a stuck defeq exception if the metavariable was created in a previous level. This results in some better error messages, and it helps `rw` succeed in synthesizing instances (see issue [#2736](https://github.com/leanprover/lean4/issues/2736)).
   * [#4713](https://github.com/leanprover/lean4/pull/4713) fixes deprecation warnings when there are overloaded symbols.
@@ -296,9 +281,6 @@ tag := "zh-releases-v4-11-0-h005"
   * Docs: [#4748](https://github.com/leanprover/lean4/pull/4748) (`Command.Scope`)
 
 ### Compiler, runtime, and FFI
-%%%
-tag := "zh-releases-v4-11-0-h006"
-%%%
 * [#4661](https://github.com/leanprover/lean4/pull/4661) moves `Std` from `libleanshared` to much smaller `libInit_shared`. This fixes the Windows build.
 * [#4668](https://github.com/leanprover/lean4/pull/4668) fixes initialization, explicitly initializing `Std` in `lean_initialize`.
 * [#4746](https://github.com/leanprover/lean4/pull/4746) adjusts `shouldExport` to exclude more symbols to get below Windows symbol limit. Some exceptions are added by [#4884](https://github.com/leanprover/lean4/pull/4884) and [#4956](https://github.com/leanprover/lean4/pull/4956) to support Verso.
@@ -306,9 +288,6 @@ tag := "zh-releases-v4-11-0-h006"
 * [#4515](https://github.com/leanprover/lean4/pull/4515) fixes calling programs with spaces on Windows.
 
 ### Lake
-%%%
-tag := "zh-releases-v4-11-0-h007"
-%%%
 
 * [#4735](https://github.com/leanprover/lean4/pull/4735) improves a number of elements related to Git checkouts, cloud releases,
 and related error handling.
@@ -327,9 +306,6 @@ and related error handling.
 
 
 ### DevOps/CI
-%%%
-tag := "zh-releases-v4-11-0-h008"
-%%%
 
 * **Workflows**
   * [#4531](https://github.com/leanprover/lean4/pull/4531) makes release trigger an update of `release.lean-lang.org`.
@@ -354,9 +330,6 @@ tag := "zh-releases-v4-11-0-h008"
 
 
 ### Breaking changes
-%%%
-tag := "zh-releases-v4-11-0-h009"
-%%%
 
 * For `@[ext]`-generated `ext` and `ext_iff` lemmas, the `x` and `y` term arguments are now implicit. Furthermore these two lemmas are now protected ([#4543](https://github.com/leanprover/lean4/pull/4543)).
 

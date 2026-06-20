@@ -24,17 +24,11 @@ file := "v4.19.0"
 For this release, 420 changes landed. In addition to the 164 feature additions and 78 fixes listed below there were 13 refactoring changes, 29 documentation improvements, 31 performance improvements, 9 improvements to the test suite and 94 other changes.
 
 ## Highlights
-%%%
-tag := "zh-releases-v4-19-0-h001"
-%%%
 
 Lean v4.19.0 introduces a number of features, bug fixes, performance gains, library developments,
 along with quality-of-life improvements across documentation, the language server, and Lake.
 
 ### New Decorations in VS Code
-%%%
-tag := "zh-releases-v4-19-0-h002"
-%%%
 
 Visual feedback in VS Code has been improved, with the extension now featuring:
 
@@ -54,17 +48,11 @@ All of these features can be disabled, and 'Goals accomplished!' icon can be con
 See [leanprover/vscode-lean4#585](https://github.com/leanprover/vscode-lean4/pull/585) for the details.
 
 ### Parallel Elaboration
-%%%
-tag := "zh-releases-v4-19-0-h003"
-%%%
 
 * [#7084](https://github.com/leanprover/lean4/pull/7084) enables the elaboration of theorem bodies, i.e. proofs, to
   happen in parallel to each other as well as to other elaboration tasks.
 
 ### Language Features
-%%%
-tag := "zh-releases-v4-19-0-h004"
-%%%
 
 * [#5182](https://github.com/leanprover/lean4/pull/5182) makes functions defined by well-founded recursion use an
   `opaque` well-founded proof by default. This reliably prevents kernel
@@ -128,9 +116,6 @@ tag := "zh-releases-v4-19-0-h004"
   **Breaking change**: other metaprogramming users of `Command.State.infoState` may need to call `InfoState.substituteLazy` on it manually to fill all holes.
 
 ### Updates to structures and classes
-%%%
-tag := "zh-releases-v4-19-0-h005"
-%%%
 
 * [#7302](https://github.com/leanprover/lean4/pull/7302) changes how fields are elaborated in the `structure`/`class`
   commands and also makes default values respect the structure resolution
@@ -160,9 +145,6 @@ tag := "zh-releases-v4-19-0-h005"
   parameters binder kinds in that field's projection function. See the PR description for further details.
 
 ### Library Updates
-%%%
-tag := "zh-releases-v4-19-0-h006"
-%%%
 
 * Developments in the async machinery;
 * Standardization of the integer division API;
@@ -174,9 +156,6 @@ tag := "zh-releases-v4-19-0-h006"
 See the Library section below for details.
 
 ### Other Highlights
-%%%
-tag := "zh-releases-v4-19-0-h007"
-%%%
 
 * Documentation has been significantly expanded. See the Documentation section below for details.
 
@@ -186,9 +165,6 @@ tag := "zh-releases-v4-19-0-h007"
   arbitrary target types.
 
 ## Language
-%%%
-tag := "zh-releases-v4-19-0-h008"
-%%%
 
 * [#5182](https://github.com/leanprover/lean4/pull/5182) makes functions defined by well-founded recursion use an
   `opaque` well-founded proof by default; see highlights section for details.
@@ -280,9 +256,6 @@ tag := "zh-releases-v4-19-0-h008"
   We should abstract proofs occurring in the inferred proposition too.
 
 ### Structures
-%%%
-tag := "zh-releases-v4-19-0-h009"
-%%%
 
 * [#7302](https://github.com/leanprover/lean4/pull/7302) changes how fields are elaborated in the `structure`/`class`
   commands and also makes default values respect the structure resolution
@@ -415,9 +388,6 @@ tag := "zh-releases-v4-19-0-h009"
   clause.
 
 ### Parallel Elaboration
-%%%
-tag := "zh-releases-v4-19-0-h010"
-%%%
 
 * [#7084](https://github.com/leanprover/lean4/pull/7084) enables the elaboration of theorem bodies, i.e. proofs, to
   happen in parallel to each other as well as to other elaboration tasks.
@@ -439,9 +409,6 @@ tag := "zh-releases-v4-19-0-h010"
   errors in the command would no longer find such messages.
 
 ### bv_decide
-%%%
-tag := "zh-releases-v4-19-0-h011"
-%%%
 
 * [#7298](https://github.com/leanprover/lean4/pull/7298) adds rewrites to bv_decide's preprocessing that concern
   combinations of if-then-else and operation such as multiplication or
@@ -553,9 +520,6 @@ tag := "zh-releases-v4-19-0-h011"
   lookup when we require a constant node.
 
 ### Grind
-%%%
-tag := "zh-releases-v4-19-0-h012"
-%%%
 
 * [#7355](https://github.com/leanprover/lean4/pull/7355) fixes a bug in the `markNestedProofs` preprocessor used in the
   `grind` tactic.
@@ -634,9 +598,6 @@ tag := "zh-releases-v4-19-0-h012"
   on `x` to learn this fact. See tests.
 
 ### CutSat
-%%%
-tag := "zh-releases-v4-19-0-h013"
-%%%
 
 * [#7312](https://github.com/leanprover/lean4/pull/7312) implements proof term generation for `cooper_dvd_left` and its
   variants in the cutsat procedure for linear integer arithmetic.
@@ -723,9 +684,6 @@ tag := "zh-releases-v4-19-0-h013"
   natural variable `x` would be represented as `NatCast.natCast x`.
 
 ## Library
-%%%
-tag := "zh-releases-v4-19-0-h014"
-%%%
 
 * [#6496](https://github.com/leanprover/lean4/pull/6496) adds short-circuit support to bv_decide to accelerate
   multiplications with shared coefficients. In particular, `a * x = b * x`
@@ -862,9 +820,6 @@ tag := "zh-releases-v4-19-0-h014"
   **BREAKING CHANGE:** While many lemmas were renamed and the lemma with the old signature was simply deprecated, some lemmas were changed without renaming them. They now use the `getElem` variants instead of `get`.
 
 ### Async
-%%%
-tag := "zh-releases-v4-19-0-h015"
-%%%
 
 * [#6683](https://github.com/leanprover/lean4/pull/6683) introduces TCP socket support using the LibUV library, enabling
   asynchronous I/O operations with it.
@@ -894,9 +849,6 @@ tag := "zh-releases-v4-19-0-h015"
 * [#7771](https://github.com/leanprover/lean4/pull/7771) adds a barrier primitive as `Std.Barrier`.
 
 ### Finite Types
-%%%
-tag := "zh-releases-v4-19-0-h016"
-%%%
 
 * [#7228](https://github.com/leanprover/lean4/pull/7228) adds simprocs to reduce expressions involving `IntX`.
 
@@ -930,9 +882,6 @@ tag := "zh-releases-v4-19-0-h016"
   off from #7592.
 
 ### Tree Map
-%%%
-tag := "zh-releases-v4-19-0-h017"
-%%%
 
 * [#7270](https://github.com/leanprover/lean4/pull/7270) provides lemmas about the tree map functions `foldlM`, `foldl`,
   `foldrM` and `foldr` and their interactions with other functions for
@@ -1000,9 +949,6 @@ tag := "zh-releases-v4-19-0-h017"
   introduce some `Ord`-based lemmas that are more simp-friendly.
 
 ### BitVec API
-%%%
-tag := "zh-releases-v4-19-0-h018"
-%%%
 
 * [#7104](https://github.com/leanprover/lean4/pull/7104) adds `BitVec.[toNat|toFin|toInt]_[sshiftRight|sshiftRight']`
   plus variants with `of_msb_*`. While at it, we also add
@@ -1058,9 +1004,6 @@ tag := "zh-releases-v4-19-0-h018"
   `Int.tmod`.
 
 ### Bitwuzla Rewrite Rules
-%%%
-tag := "zh-releases-v4-19-0-h019"
-%%%
 
 * [#7424](https://github.com/leanprover/lean4/pull/7424) proves Bitwuzla's rule
   [`BV_ZERO_EXTEND_ELIM`](https://github.com/bitwuzla/bitwuzla/blob/6a1a768987cca77f36ebfe06f3a786348a481bbd/src/rewrite/rewrites_bv.cpp#L4021-L4033):
@@ -1149,9 +1092,6 @@ tag := "zh-releases-v4-19-0-h019"
   简化add-of-append。
 
 ## 编译器
-%%%
-tag := "zh-releases-v4-19-0-h020"
-%%%
 
 * [#7398](https://github.com/leanprover/lean4/pull/7398) 修复了 cce（常见情况消除）过程中的范围界定错误
   旧代码生成器的。该通道将为
@@ -1164,9 +1104,6 @@ tag := "zh-releases-v4-19-0-h020"
   服务器进程，最多减少 60%
 
 ## 漂亮的印刷
-%%%
-tag := "zh-releases-v4-19-0-h021"
-%%%
 
 * [#7589](https://github.com/leanprover/lean4/pull/7589) 更改了打印机的结构实例符号，以便
   如果字段的值定义等于默认值，则字段被省略
@@ -1175,9 +1112,6 @@ tag := "zh-releases-v4-19-0-h021"
   无论如何打印。
 
 ## 文档
-%%%
-tag := "zh-releases-v4-19-0-h022"
-%%%
 
 * [#7198](https://github.com/leanprover/lean4/pull/7198) 使 `Char` 命名空间中的文档字符串遵循
   文档约定。
@@ -1248,9 +1182,6 @@ tag := "zh-releases-v4-19-0-h022"
   API 时尚。
 
 ## 服务器
-%%%
-tag := "zh-releases-v4-19-0-h023"
-%%%
 
 * [#7178](https://github.com/leanprover/lean4/pull/7178) 修复了语言服务器中的竞争条件
   有时会导致它丢弃请求并且永远不会响应它们
@@ -1298,9 +1229,6 @@ tag := "zh-releases-v4-19-0-h023"
   版本不会因文档更改而取消。
 
 ## Lake
-%%%
-tag := "zh-releases-v4-19-0-h024"
-%%%
 
 * [#7185](https://github.com/leanprover/lean4/pull/7185) 重构了 Lake 的构建内部结构，以引入
   包、模块和库之外的目标和方面。刻面，
@@ -1364,9 +1292,6 @@ tag := "zh-releases-v4-19-0-h024"
   类型并修复从关键文字到目标的失败强制。
 
 ## 其他
-%%%
-tag := "zh-releases-v4-19-0-h025"
-%%%
 
 * [#7326](https://github.com/leanprover/lean4/pull/7326) 更新发行说明脚本以更好地缩进 PR
   描述。

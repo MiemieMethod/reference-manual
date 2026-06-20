@@ -44,6 +44,54 @@ def closeEnclosingSections (headerMapping : Markdown.HeaderMapping) : PartElabM 
   for _ in headerMapping do
     closeEnclosingSection
 
+/-- Closes Markdown-created sections whose Markdown level is at least `level`. -/
+partial def closeMarkdownSectionsTo (headerMapping : Markdown.HeaderMapping) (level : Nat) :
+    PartElabM Markdown.HeaderMapping := do
+  match headerMapping with
+  | [] => pure []
+  | docLevel :: more =>
+    if docLevel ≥ level then
+      closeEnclosingSection
+      closeMarkdownSectionsTo more level
+    else
+      pure headerMapping
+
+def markdownHeaderTag (tagPrefix : String) (index : Nat) : String :=
+  s!"markdown-{tagPrefix}-h{index}"
+
+/--
+Adds Markdown blocks while assigning stable ASCII tags to Markdown headings.
+
+The default Verso tag generator derives tags from heading text. Chinese headings may therefore
+slugify to the same underscore-only string, so release-note Markdown needs explicit tags.
+-/
+def addTaggedPartFromMarkdown (tagPrefix : String) (block : MD4Lean.Block)
+    (currentHeaderLevels : Markdown.HeaderMapping) (nextHeaderIndex : Nat) :
+    PartElabM (Markdown.HeaderMapping × Nat) := do
+  match block with
+  | .header level txt => do
+    let currentHeaderLevels ← closeMarkdownSectionsTo currentHeaderLevels level
+    let titleTexts ← match txt.mapM Markdown.stringFromMarkdownText with
+      | .ok t => pure t
+      | .error e => throwError m!"Unsupported Markdown in header:\n{e}"
+    let titleText := titleTexts.foldl (· ++ ·) ""
+    let titleSyntax ← getRef
+    let titleInline ← `(Verso.Doc.Inline.text $(quote titleText))
+    let tag := markdownHeaderTag tagPrefix nextHeaderIndex
+    let metadata ← `({ tag := some (Tag.provided $(quote tag)) : PartMetadata })
+    PartElabM.push {
+      rangeSyntax := titleSyntax
+      selectionSyntax := titleSyntax
+      expandedTitle := some (titleText, #[titleInline])
+      metadata := some metadata
+      blocks := #[]
+      priorParts := #[]
+    }
+    pure (level :: currentHeaderLevels, nextHeaderIndex + 1)
+  | block => do
+    PartElabM.addBlock (← Markdown.blockFromMarkdown block)
+    pure (currentHeaderLevels, nextHeaderIndex)
+
 @[part_command Lean.Doc.Syntax.codeblock]
 def markdown : PartCommand
   | `(Lean.Doc.Syntax.codeblock| ``` $markdown:ident $args*| $txt ``` ) => do
@@ -55,7 +103,12 @@ def markdown : PartCommand
      let some ast := MD4Lean.parse txt.getString
        | throwError "Failed to parse body of markdown code block"
      let mut currentHeaderLevels : Markdown.HeaderMapping := {}
+     let mut nextHeaderIndex := 1
+     let tagPrefix := toString (hash txt.getString)
      for block in ast.blocks do
-       currentHeaderLevels ← Markdown.addPartFromMarkdown block currentHeaderLevels
+       let (currentHeaderLevels', nextHeaderIndex') ←
+         addTaggedPartFromMarkdown tagPrefix block currentHeaderLevels nextHeaderIndex
+       currentHeaderLevels := currentHeaderLevels'
+       nextHeaderIndex := nextHeaderIndex'
      closeEnclosingSections currentHeaderLevels
   | _ => Elab.throwUnsupportedSyntax
