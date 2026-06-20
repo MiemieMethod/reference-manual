@@ -53,13 +53,10 @@ fi
 
 if [ "$MODE" = "preview" ]; then
   REF_REMOTE_CONFIG="test-data/reference-remotes.json"
-  TUT_REMOTE_CONFIG="test-data/tutorial-remotes.json"
 else
   REF_REMOTE_CONFIG="_build/production-remotes-reference.json"
-  TUT_REMOTE_CONFIG="_build/production-remotes-tutorials.json"
   mkdir -p _build
   sed "s/__VERSION__/$VERSION/g" config/production-remotes-reference.json.template > "$REF_REMOTE_CONFIG"
-  sed "s/__VERSION__/$VERSION/g" config/production-remotes-tutorials.json.template > "$TUT_REMOTE_CONFIG"
   echo "Generated production config with version $VERSION"
 fi
 
@@ -70,6 +67,23 @@ else
   MANUAL_OUTPUT_FLAG="--output _out/zh"
   REF_SOURCE="_out/zh/html-multi"
 fi
+
+mkdir -p _build
+TUT_REMOTE_CONFIG="_build/zh-remotes-tutorials.json"
+cat > "$TUT_REMOTE_CONFIG" <<EOF
+{
+  "version": 0,
+  "sources": {
+    "reference": {
+      "root": "",
+      "updateFrequency": "always",
+      "shortName": "ref",
+      "longName": "Lean Language Reference",
+      "sources": [{ "local": "$REF_SOURCE/xref.json" }, "default"]
+    }
+  }
+}
+EOF
 
 echo "Running generate-manual-zh with args --depth 2 --verbose --delay-html-multi multi-zh.json --remote-config $REF_REMOTE_CONFIG --with-word-count words-zh.txt $MANUAL_OUTPUT_FLAG $DRAFT_FLAG"
 lake --quiet exe generate-manual-zh --depth 2 --verbose --delay-html-multi multi-zh.json --remote-config "$REF_REMOTE_CONFIG" --with-word-count "words-zh.txt" $MANUAL_OUTPUT_FLAG $DRAFT_FLAG

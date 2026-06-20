@@ -69,9 +69,22 @@ jobs:
             python3 - <<'PY'
           from pathlib import Path
           lines = Path("build-zh-ci.log").read_text(errors="replace").splitlines()
+          needles = (
+              "Ambiguous",
+              "Couldn't",
+              "Duplicate tag",
+              "Failed",
+              "No destination found",
+              "No external tag",
+              "No source found",
+              "No term def",
+              "Remote ",
+              "errors were encountered",
+          )
           interesting = [
               line for line in lines
               if line.startswith(("error:", "✖", "Some required targets", "- Manual", "- ManualZh"))
+              or any(needle in line for needle in needles)
           ]
           def emit(title, selected):
               text = "\n".join(selected)
