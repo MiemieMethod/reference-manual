@@ -124,6 +124,9 @@ def Coll.iter (c : Coll) := (#[].iter : Iter Elem)
 :::
 
 # 运行时注意事项
+%%%
+tag := "zh-iterators-h001"
+%%%
 
 对于许多用例，使用迭代器可以通过避免分配中间数据结构来提高性能。
 如果没有迭代器，则使用数组压缩列表需要首先将其中一个类型转换为另一种类型，分配中间结构，然后使用适当的 {name List.zip}`zip` 函数。
@@ -137,6 +140,9 @@ def Coll.iter (c : Coll) := (#[].iter : Iter Elem)
 如果是这种情况，可能需要手动编写尾递归函数，而不是使用更高级别的 API。
 
 # 迭代器定义
+%%%
+tag := "zh-iterators-h002"
+%%%
 
 迭代器可以是单子迭代器或纯迭代器，并且它们可以是有限的、高效的或潜在无限的。
 {deftech (key:="monadic iterator")}_Monadic_ 迭代器在某些 {tech}[monad] 中使用副作用来发出每个值，因此必须在 monad 中使用，而 {deftech (key:="pure iterator")}_pure_ 迭代器不需要副作用。
@@ -246,6 +252,9 @@ tag := "iterator-plausibility"
 {docstring PlausibleIterStep.done}
 
 ## 有限且高效的迭代器
+%%%
+tag := "zh-iterators-h004"
+%%%
 
 :::paragraph
 并非所有迭代器都保证返回有限数量的结果；迭代所有自然数是完全明智的。
@@ -635,6 +644,9 @@ def fileSize (name : System.FilePath) : IO Nat := do
 ::::
 
 ## 访问元素
+%%%
+tag := "zh-iterators-h005"
+%%%
 
 一些迭代器支持高效的随机访问。
 例如，数组迭代器可以通过增加其在数组中维护的索引来在恒定时间内跳过任意数量的元素。
@@ -644,6 +656,9 @@ def fileSize (name : System.FilePath) : IO Nat := do
 {docstring IterM.nextAtIdx?}
 
 ## 循环
+%%%
+tag := "zh-iterators-h006"
+%%%
 
 {docstring IteratorLoop +allowMissing}
 
@@ -652,6 +667,9 @@ def fileSize (name : System.FilePath) : IO Nat := do
 {docstring LawfulIteratorLoop +allowMissing}
 
 ## 宇宙层级
+%%%
+tag := "zh-iterators-h007"
+%%%
 
 为了使迭代器的 {tech}[宇宙层级] 更加灵活，在 {name}`Iterator.step` 的结果周围应用了包装类型 {name Std.Shrink}`Shrink`。
 该类型目前是占位符。
@@ -665,6 +683,9 @@ def fileSize (name : System.FilePath) : IO Nat := do
 
 
 ## 基本迭代器
+%%%
+tag := "zh-iterators-h008"
+%%%
 
 除了集合类型提供的迭代器之外，还有两个不连接到任何底层数据结构的基本迭代器。
 {name}`Iter.empty` 在没有产生任何数据后立即完成迭代，并且 {name}`Iter.repeat` 永远产生相同的元素。
@@ -678,6 +699,9 @@ def fileSize (name : System.FilePath) : IO Nat := do
 
 
 # 使用迭代器
+%%%
+tag := "zh-iterators-h009"
+%%%
 
 :::paragraph
 使用迭代器的主要方式有以下三种：
@@ -813,6 +837,9 @@ where
 :::
 
 ## 步进迭代器
+%%%
+tag := "zh-iterators-h010"
+%%%
 
 使用 {name}`Iter.step` 或 {name}`IterM.step` 手动步进迭代器。
 
@@ -821,6 +848,9 @@ where
 {docstring IterM.step}
 
 ### 终止
+%%%
+tag := "zh-iterators-h011"
+%%%
 
 当手动步进有限迭代器时，终止测量 {name Iter.finitelyManySteps}`finitelyManySteps` 和 {name Iter.finitelyManySkips}`finitelyManySkips` 可用于表示每一步都使迭代更接近结束。
 {ref "well-founded-recursion"}[良基递归] 的证明自动化已预先配置，以证明步骤后的递归调用会减少这些措施。
@@ -860,6 +890,9 @@ termination_by it.finitelyManySkips
 {docstring IterM.TerminationMeasures.Productive +allowMissing}
 
 ## 使用纯迭代器
+%%%
+tag := "zh-iterators-h012"
+%%%
 
 {docstring Iter.fold}
 
@@ -888,6 +921,9 @@ termination_by it.finitelyManySkips
 {docstring Iter.atIdxSlow?}
 
 ## 使用 Monadic 迭代器
+%%%
+tag := "zh-iterators-h013"
+%%%
 
 {docstring IterM.drain}
 
@@ -916,6 +952,9 @@ termination_by it.finitelyManySkips
 {docstring IterM.atIdx?}
 
 ## 收藏家
+%%%
+tag := "zh-iterators-h014"
+%%%
 
 收集器使用迭代器，返回列表或数组中的所有数据。
 为了被收集，迭代器必须是有限的。
@@ -934,6 +973,9 @@ termination_by it.finitelyManySkips
 
 
 # 迭代器组合器
+%%%
+tag := "zh-iterators-h015"
+%%%
 
 迭代器组合器的文档通常包括 {deftech}_大理石图_，显示底层迭代器返回的元素与组合器迭代器返回的元素之间的关系。
 大理石图提供示例，而不是完整规格。
@@ -986,6 +1028,9 @@ left.zip right     -----(a, x)------(b, y)-----⊥
 
 
 ## 纯组合器
+%%%
+tag := "zh-iterators-h016"
+%%%
 
 {docstring IterM.mk}
 
@@ -1037,6 +1082,9 @@ left.zip right     -----(a, x)------(b, y)-----⊥
 
 
 ## 单子组合器
+%%%
+tag := "zh-iterators-h017"
+%%%
 
 {docstring IterM.toIter}
 
@@ -1093,8 +1141,14 @@ left.zip right     -----(a, x)------(b, y)-----⊥
 {docstring IterM.attachWith}
 
 # 关于迭代器的推理
+%%%
+tag := "zh-iterators-h018"
+%%%
 
 ## 关于消费者的推理
+%%%
+tag := "zh-iterators-h019"
+%%%
 
 迭代器库提供了大量有用的引理。
 大多数关于有限迭代器的定理都可以通过将语句重写为关于列表的定理来证明，利用迭代器组合子和相应列表操作之间的对应关系已经被证明的事实。
@@ -1140,6 +1194,9 @@ example (l : Array Nat) :
 :::
 
 ## 逐步推理
+%%%
+tag := "zh-iterators-h020"
+%%%
 
 当没有足够的引理来通过重写列表模型来证明属性时，可能有必要通过直接推理迭代器的步骤函数来证明有关迭代器的事情。
 本节中的归纳原理对于逐步推理很有用。
@@ -1156,6 +1213,9 @@ example (l : Array Nat) :
 示例包括 {name}`List.step_iter_nil`、{name}`List.step_iter_cons`、{name}`IterM.step_map`。
 
 ## 用于推理的 Monad
+%%%
+tag := "zh-iterators-h021"
+%%%
 
 {docstring Std.Iterators.PostconditionT}
 
@@ -1186,6 +1246,9 @@ example (l : Array Nat) :
 {docstring HetT.pbind}
 
 ## 等价
+%%%
+tag := "zh-iterators-h022"
+%%%
 
 迭代器等价性是根据迭代器的可观察行为而不是其实现来定义的。
 特别是，内部状态被忽略。

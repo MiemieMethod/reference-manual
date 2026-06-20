@@ -230,6 +230,9 @@ open D
 
 
 ## 领先 `.`
+%%%
+tag := "zh-terms-h002"
+%%%
 
 当标识符以点 (`.`) 开头时，将使用精化器期望的表达式类型来解析它，而不是使用当前命名空间和开放命名空间集。
 {tech}[通用字段表示法] 是相关的：此 {deftech}_前导点表示法_使用标识符的预期类型将其解析为名称，而字段表示法使用紧邻点之前的术语的推断类型。
@@ -830,6 +833,9 @@ Nat.half Nat.zero : Nat
 ::::
 
 ## 管道语法
+%%%
+tag := "zh-terms-h008"
+%%%
 
 管道语法提供了编写函数应用程序的替代方法。
 重复管道使用解析优先级而不是嵌套括号来将函数应用程序嵌套到位置参数。
@@ -933,6 +939,9 @@ end
 ::::
 
 # 数字文字
+%%%
+tag := "zh-terms-h009"
+%%%
 
 有两种数字文字：自然数文字和 {deftech}[科学文字]。
 两者均通过 {tech (key := "type class")}[类型类] 重载。
@@ -1004,6 +1013,9 @@ instance : OfNat NatInterval n where
 诸如 {lean}`-5` 之类的术语由应用于自然数文字的前缀否定（可以通过 {name}`Neg` 类型类重载）组成。
 
 ## 科学数字
+%%%
+tag := "zh-terms-h011"
+%%%
 
 科学数字文字由一系列十进制数字组成，后跟（不插入空格）可选的小数部分（句号后跟零个或多个十进制数字）和可选的指数部分（字母 `e` 后跟可选的 `+` 或 `-`，然后后跟一个或多个十进制数字）。
 科学数字通过 {name}`OfScientific` 类型类重载。
@@ -1013,10 +1025,16 @@ instance : OfNat NatInterval n where
 {name}`Float` 和 {name}`Float32` 有一个 {lean}`OfScientific` 实例，但没有单独的浮点文字。
 
 ## 弦乐
+%%%
+tag := "zh-terms-h012"
+%%%
 
 字符串文字在 {ref "string-syntax"}[字符串章节]中进行了描述。
 
 ## 列表和数组
+%%%
+tag := "zh-terms-h013"
+%%%
 
 列表和数组文字包含括号内以逗号分隔的元素序列，数组以哈希标记 (`#`) 为前缀。
 数组文字被解释为包含在转换调用中的列表文字。
@@ -1074,6 +1092,9 @@ let y := 1 :: 1 :: 1 :: 1 :: y;
 :::
 
 # 结构和构造函数
+%%%
+tag := "zh-terms-h014"
+%%%
 
 {ref "anonymous-constructor-syntax"}[匿名构造函数] 和 {ref "structure-constructors"}[结构实例语法] 在各自的部分中进行了描述。
 
@@ -1452,6 +1473,9 @@ info: fun y =>
 ```
 
 ## 类型
+%%%
+tag := "zh-terms-h017"
+%%%
 
 每个判别式都必须有良好的类型。
 由于模式是术语的子集，因此也可以检查它们的类型。
@@ -1559,6 +1583,9 @@ but is expected to have type
 ::::
 
 ### 模式相等性证明
+%%%
+tag := "zh-terms-h018"
+%%%
 
 当命名判别式时，{keywordOf Lean.Parser.Term.match}`match` 会生成模式和判别式相等的证明，并将其绑定到 {tech}[右侧] 中提供的名称。
 这对于弥合索引系列上的依赖模式匹配与需要显式命题参数的 API 之间的差距非常有用，并且可以帮助利用假设的策略取得成功。
@@ -1591,6 +1618,9 @@ simp_all made no progress
 :::
 
 ### 明确的动机
+%%%
+tag := "zh-terms-h019"
+%%%
 
 模式匹配不是 Lean 的内置原语。
 相反，它通过 {tech}[辅助匹配函数] 转换为 {tech}[递归器] 的应用程序。
@@ -1624,6 +1654,9 @@ Invalid match expression: This pattern contains metavariables:
 :::
 
 ### 判别式细化
+%%%
+tag := "zh-terms-h020"
+%%%
 
 当匹配索引族时，索引也必须是判别式。
 否则，该模式的类型不会很好：如果索引只是一个变量但构造函数的类型需要更具体的值，则这是一个类型错误。
@@ -1829,6 +1862,9 @@ fun n =>
 ::::
 
 ## 其他模式匹配运营商
+%%%
+tag := "zh-terms-h024"
+%%%
 
 除了 {keywordOf Lean.Parser.Term.match}`match` 和 {keywordOf termIfLet}`if let` 之外，还有一些其他运算符执行模式匹配。
 
@@ -1900,6 +1936,9 @@ draft := true
 :::
 
 # 洞
+%%%
+tag := "zh-terms-h026"
+%%%
 
 {deftech}_hole_ 或 {deftech}_placeholder term_ 是指示缺少精化器.{index}[占位符术语]{index (subterm := "placeholder")}[术语]的指令的术语
 就术语而言，当周围上下文仅允许在漏洞所在的位置写入一个类型正确的术语时，可以自动填充漏洞。
@@ -1945,6 +1984,9 @@ def the (α : Sort u) (x : α) : α := x
 :::
 
 # Type 归属
+%%%
+tag := "zh-terms-h027"
+%%%
 
 {deftech}_Type ascriptions_ 用术语的类型显式注释它们。
 它们是为 Lean 提供术语的预期类型的一种方法。
@@ -2095,13 +2137,22 @@ false
 
 
 # 引用和反引用
+%%%
+tag := "zh-terms-h028"
+%%%
 
 报价条款在 {ref "quotation"}[报价部分]中进行了描述。
 
 # `do`-符号
+%%%
+tag := "zh-terms-h029"
+%%%
 
 {keywordOf Lean.Parser.Term.do}`do`-符号在 {ref "do-notation"}[在单子章节中]进行了描述。
 
 # 证明
+%%%
+tag := "zh-terms-h030"
+%%%
 
 调用策略({keywordOf Lean.Parser.Term.byTactic}`by`) 的语法在 {ref "by"}[证明部分]中描述。

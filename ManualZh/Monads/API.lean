@@ -70,18 +70,27 @@ These values were kept:
 ::::
 
 # 丢弃结果
+%%%
+tag := "zh-monads-api-h001"
+%%%
 
 当使用仅为其副作用返回值的操作时，{name}`discard` 函数特别有用。
 
 {docstring discard}
 
 # 控制流程
+%%%
+tag := "zh-monads-api-h002"
+%%%
 
 {docstring guard}
 
 {docstring optional}
 
 # 提升布尔运算
+%%%
+tag := "zh-monads-api-h003"
+%%%
 
 {docstring andM}
 
@@ -90,6 +99,9 @@ These values were kept:
 {docstring notM}
 
 # 克莱斯利成分
+%%%
+tag := "zh-monads-api-h004"
+%%%
 
 {deftech}_Kleisli Composition_是一元函数的组合，类似于普通函数的{name}`Function.comp`。
 
@@ -98,6 +110,9 @@ These values were kept:
 {docstring Bind.kleisliLeft}
 
 # 重新排序的操作
+%%%
+tag := "zh-monads-api-h005"
+%%%
 
 有时，将函数部分应用到其第二个参数可能会很方便。
 这些函数颠倒了参数的顺序，使其变得更容易。

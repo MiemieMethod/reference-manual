@@ -28,6 +28,9 @@ tag := "grind-annotation"
 注释通常应该保守：仅当您期望 {tactic}`grind` 在模式匹配后_始终_实例化定理时才添加注释。
 
 # 简单引理
+%%%
+tag := "zh-grind-annotation-h001"
+%%%
 
 通常，许多用 {attrs}`@[simp]` 注释的定理也应该用 {attrs}`@[grind =]` 注释。
 一个重要的例外是，通常我们避免使用在右侧引入 {keywordOf Lean.Parser.Term.if}`if` 的 {attrs}`@[simp]` 定理，而是更喜欢以正条件和负条件作为假设的一对定理。
@@ -36,6 +39,9 @@ tag := "grind-annotation"
 除了使用 {attrs}`@[grind =]` 鼓励 {tactic}`grind` 从左到右执行重写之外，您还可以使用 {attrs}`@[grind _=_]` 来“饱和”，无论何时遇到任何一方都允许双向重写。
 
 # 向后和向前推理
+%%%
+tag := "zh-grind-annotation-h002"
+%%%
 
 :::paragraph
 使用 {attrs}`@[grind ←]`（从定理的结论生成模式）进行向后推理定理，即当结论与目标匹配时应该尝试的定理。

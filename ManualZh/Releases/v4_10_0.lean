@@ -20,6 +20,9 @@ file := "v4.10.0"
 
 ````markdown
 ### Language features, tactics, and metaprograms
+%%%
+tag := "zh-releases-v4-10-0-h001"
+%%%
 
 * `split` tactic:
   * [#4401](https://github.com/leanprover/lean4/pull/4401) improves the strategy `split` uses to generalize discriminants of matches and adds `trace.split.failure` trace class for diagnosing issues.
@@ -111,15 +114,24 @@ file := "v4.10.0"
   * [#4528](https://github.com/leanprover/lean4/pull/4528) fixes error message range for the cdot focusing tactic.
 
 ### Language server, widgets, and IDE extensions
+%%%
+tag := "zh-releases-v4-10-0-h002"
+%%%
 
 * [#4443](https://github.com/leanprover/lean4/pull/4443) makes the watchdog be more resilient against badly behaving clients.
 
 ### Pretty printing
+%%%
+tag := "zh-releases-v4-10-0-h003"
+%%%
 
 * [#4433](https://github.com/leanprover/lean4/pull/4433) restores fallback pretty printers when context is not available, and documents `addMessageContext`.
 * [#4556](https://github.com/leanprover/lean4/pull/4556) introduces `pp.maxSteps` option and sets the default value of `pp.deepTerms` to `false`. Together, these keep excessively large or deep terms from overwhelming the Infoview.
 
 ### Library
+%%%
+tag := "zh-releases-v4-10-0-h004"
+%%%
 * [#4560](https://github.com/leanprover/lean4/pull/4560) splits `GetElem` class into `GetElem` and `GetElem?`.
   This enables removing `Decidable` instance arguments from `GetElem.getElem?` and `GetElem.getElem!`, improving their rewritability.
   See the docstrings for these classes for more information.
@@ -169,6 +181,9 @@ file := "v4.10.0"
   * [#4502](https://github.com/leanprover/lean4/pull/4502) fixes errors reported by running the library through the Batteries linters.
 
 ### Lean internals
+%%%
+tag := "zh-releases-v4-10-0-h005"
+%%%
 
 * [#4391](https://github.com/leanprover/lean4/pull/4391) makes `getBitVecValue?` recognize `BitVec.ofNatLt`.
 * [#4410](https://github.com/leanprover/lean4/pull/4410) adjusts `instantiateMVars` algorithm to zeta reduce `let` expressions while beta reducing instantiated metavariables.
@@ -211,6 +226,9 @@ file := "v4.10.0"
 * **Cleanup:** [#4380](https://github.com/leanprover/lean4/pull/4380), [#4431](https://github.com/leanprover/lean4/pull/4431), [#4494](https://github.com/leanprover/lean4/pull/4494), [e8f768](https://github.com/leanprover/lean4/commit/e8f768f9fd8cefc758533bc76e3a12b398ed4a39), [de2690](https://github.com/leanprover/lean4/commit/de269060d17a581ed87f40378dbec74032633b27), [d3a756](https://github.com/leanprover/lean4/commit/d3a7569c97123d022828106468d54e9224ed8207), [#4404](https://github.com/leanprover/lean4/pull/4404), [#4537](https://github.com/leanprover/lean4/pull/4537).
 
 ### Compiler, runtime, and FFI
+%%%
+tag := "zh-releases-v4-10-0-h006"
+%%%
 
 * [d85d3d](https://github.com/leanprover/lean4/commit/d85d3d5f3a09ff95b2ee47c6f89ef50b7e339126) fixes criterion for tail-calls in ownership calculation.
 * [#3963](https://github.com/leanprover/lean4/pull/3963) adds validation of UTF-8 at the C++-to-Lean boundary in the runtime.
@@ -218,6 +236,9 @@ file := "v4.10.0"
 * [#4477](https://github.com/leanprover/lean4/pull/4477) exposes the compiler flags for the bundled C compiler (clang).
 
 ### Lake
+%%%
+tag := "zh-releases-v4-10-0-h007"
+%%%
 
 * [#4384](https://github.com/leanprover/lean4/pull/4384) deprecates `inputFile` and replaces it with `inputBinFile` and `inputTextFile`. Unlike `inputBinFile` (and `inputFile`), `inputTextFile` normalizes line endings, which helps ensure text file traces are platform-independent.
 * [#4371](https://github.com/leanprover/lean4/pull/4371) simplifies dependency resolution code.
@@ -274,6 +295,9 @@ file := "v4.10.0"
   will come in the future.
 
 ### DevOps/CI
+%%%
+tag := "zh-releases-v4-10-0-h008"
+%%%
 * [#4427](https://github.com/leanprover/lean4/pull/4427) uses Namespace runners for CI for `leanprover/lean4`.
 * [#4440](https://github.com/leanprover/lean4/pull/4440) fixes speedcenter tests in CI.
 * [#4441](https://github.com/leanprover/lean4/pull/4441) fixes that workflow change would break CI for unrebased PRs.
@@ -291,6 +315,9 @@ file := "v4.10.0"
   * [#4587](https://github.com/leanprover/lean4/pull/4587) adds linking of `-lStd` back into nix build flags on darwin.
 
 ### Breaking changes
+%%%
+tag := "zh-releases-v4-10-0-h009"
+%%%
 
 * `Char.csize` is replaced by `Char.utf8Size` ([#4357](https://github.com/leanprover/lean4/pull/4357)).
 * Library lemmas now are in terms of `(· == a)` over `(a == ·)` ([#3056](https://github.com/leanprover/lean4/pull/3056)).

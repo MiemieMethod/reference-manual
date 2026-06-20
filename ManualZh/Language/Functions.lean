@@ -114,6 +114,9 @@ example :
 :::
 
 # 函数抽象
+%%%
+tag := "zh-language-functions-h001"
+%%%
 
 在 Lean 的 类型论 中，函数是使用绑定变量的 {deftech}_函数抽象_ 创建的。
 {margin}[在各个社区中，函数抽象也称为 _lambdas_，因为 Alonzo Church 对它们的表示法，或者称为_匿名函数_，因为它们不需要在全局环境中使用名称来定义。]

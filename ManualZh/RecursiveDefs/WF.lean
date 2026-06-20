@@ -135,6 +135,9 @@ decreasing_by
 :::
 
 # 终止证明
+%%%
+tag := "zh-recursivedefs-wf-h002"
+%%%
 
 一旦指定了 {tech}[measure] 并确定了其 {tech}[well-founded relation]，Lean 就会确定每个递归调用的终止证明义务。
 
@@ -442,6 +445,9 @@ section
 ::::
 
 # 默认终止证明策略
+%%%
+tag := "zh-recursivedefs-wf-h003"
+%%%
 
 如果未给出 {keywordOf Lean.Parser.Command.declaration}`decreasing_by` 子句，则隐式使用 {tactic}`decreasing_tactic`，并分别应用于每个证明义务。
 
@@ -814,6 +820,9 @@ end
 {spliceContents ManualZh.RecursiveDefs.WF.PreprocessExample}
 
 # 理论与构建
+%%%
+tag := "zh-recursivedefs-wf-h007"
+%%%
 
 ```lean -show
 section

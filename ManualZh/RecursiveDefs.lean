@@ -507,6 +507,9 @@ irreducible
 :::
 
 ## 还原性和策略
+%%%
+tag := "zh-recursivedefs-h006"
+%%%
 
 策略{tactic}`with_reducible`、{tactic}`with_reducible_and_instances` 和 {tactic}`with_unfolding_all` 控制大多数策略展开的定义。
 
@@ -610,6 +613,9 @@ theorem sum_eq_add : sum x y = x + y := by simp
 
 
 ## 修改还原性
+%%%
+tag := "zh-recursivedefs-h007"
+%%%
 
 通过使用 {keywordOf Lean.Parser.Command.attribute}`attribute` 命令应用适当的属性，可以在定义定义的模块中全局修改定义的可约性。
 在其他模块中，可以通过使用 {keyword}`local` 修饰符应用属性来修改导入定义的可简化性。
@@ -634,6 +640,9 @@ unseal $_:ident $_*
 :::
 
 ## 选项
+%%%
+tag := "zh-recursivedefs-h008"
+%%%
 
 为了提高性能，精化器和许多策略构建了索引和缓存。
 其中许多都考虑了可还原性，如果可还原性发生全局变化，则无法使它们失效并重新生成。

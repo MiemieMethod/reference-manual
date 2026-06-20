@@ -85,12 +85,21 @@ end
 
 
 # API 参考
+%%%
+tag := "zh-basictypes-int-h004"
+%%%
 
 ## 特性
+%%%
+tag := "zh-basictypes-int-h005"
+%%%
 
 {docstring Int.sign}
 
 ## 转换
+%%%
+tag := "zh-basictypes-int-h006"
+%%%
 
 {docstring Int.natAbs}
 
@@ -111,6 +120,9 @@ end
 {docstring Int.repr}
 
 ## 算术
+%%%
+tag := "zh-basictypes-int-h007"
+%%%
 
 通常，使用 Lean 的重载算术表示法来访问整数的算术运算。
 特别是，{inst}`Add Int`、{inst}`Neg Int`、{inst}`Sub Int` 和 {inst}`Mul Int` 的实例允许使用普通中缀运算符。
@@ -182,6 +194,9 @@ tag := "int-div"
 {docstring Int.fmod}
 
 ## 按位运算符
+%%%
+tag := "zh-basictypes-int-h009"
+%%%
 
 {name}`Int` 上的位运算符可以理解为无限位流上的位运算符，这些位是整数的补码表示。
 
@@ -190,6 +205,9 @@ tag := "int-div"
 {docstring Int.shiftRight}
 
 ## 比较
+%%%
+tag := "zh-basictypes-int-h010"
+%%%
 
 {lean}`Int` 上的等式和不等式测试通常使用其等式和排序关系的可判定性或使用 {inst}`BEq Int` 和 {inst}`Ord Int` 实例来执行。
 

@@ -30,6 +30,9 @@ section on {ref "declaration-modifiers"}[Modifiers] for more information about n
 定义。
 
 # 示例
+%%%
+tag := "zh-errorexplanations-dependsonnoncomputable-h001"
+%%%
 
 :::errorExample "Necessarily Noncomputable Function Not Appropriately Marked"
 ```broken

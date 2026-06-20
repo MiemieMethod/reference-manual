@@ -29,6 +29,9 @@ shortTitle := "inductiveParamMismatch"
 参数到索引。
 
 # 示例
+%%%
+tag := "zh-errorexplanations-inductiveparammismatch-h001"
+%%%
 
 :::errorExample "Vector Length Index as a Parameter"
 ```broken

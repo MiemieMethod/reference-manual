@@ -55,6 +55,9 @@ def g (n : Nat) : Nat :=
 :::
 
 # API 参考
+%%%
+tag := "zh-basictypes-empty-h001"
+%%%
 
 {docstring Empty.elim}
 

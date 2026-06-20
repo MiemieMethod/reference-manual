@@ -29,6 +29,9 @@ file := "v4.29.1"
 和 0 个其他更改。
 
 # 编译器
+%%%
+tag := "zh-releases-v4-29-1-h001"
+%%%
 
 ```markdown
 

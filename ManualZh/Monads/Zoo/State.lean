@@ -30,6 +30,9 @@ tag := "state-monads"
 即使那些使用元组的实现实际上也可能在运行时使用突变，因为当存在对值的唯一引用时 Lean 使用突变，但这需要一种更喜欢 {name}`modify` 和 {name}`modifyGet` 而不是 {name}`get` 和 {name}`set` 的编程风格。
 
 # 一般状态 API
+%%%
+tag := "zh-monads-zoo-state-h001"
+%%%
 
 {docstring MonadState}
 
@@ -50,6 +53,9 @@ tag := "state-monads"
 {docstring modifyGetThe}
 
 # 基于元组的状态 Monad
+%%%
+tag := "zh-monads-zoo-state-h002"
+%%%
 
 ```lean -show
 variable {α σ : Type u}
@@ -85,6 +91,9 @@ variable {α σ : Type u}
 {docstring StateT.pure}
 
 # 连续传递风格的状态单子
+%%%
+tag := "zh-monads-zoo-state-h003"
+%%%
 
 延续传递风格的状态单子将状态计算表示为函数，对于任何类型，该函数都采用初始状态和接受值和更新状态的延续（建模为函数）。
 这种类型的一个例子是 {lean}`(δ : Type u) → σ → (α → σ → δ) → δ`，尽管 {lean}`StateCpsT` 是一个可以应用于任何 monad 的转换器。
@@ -107,6 +116,9 @@ variable {α σ : Type u}
 {docstring StateCpsT.run}
 
 # 来自可变引用的状态 Monad
+%%%
+tag := "zh-monads-zoo-state-h004"
+%%%
 
 ```lean -show
 variable {m : Type → Type} {σ ω : Type} [STWorld σ m]

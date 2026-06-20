@@ -38,6 +38,9 @@ Lean 特别支持数组：
 以只有一个唯一引用的方式使用数组的 Lean 代码（即使用它 {deftech}_线性_）避免了持久数据结构的性能开销，同时仍然像普通的纯函数程序一样方便地写入、读取和证明。
 
 # 逻辑模型
+%%%
+tag := "zh-basictypes-array-h001"
+%%%
 
 {docstring Array}
 
@@ -186,6 +189,9 @@ tag := "array-api"
 %%%
 
 ## 构造数组
+%%%
+tag := "zh-basictypes-array-h006"
+%%%
 
 {docstring Array.empty}
 
@@ -212,6 +218,9 @@ tag := "array-api"
 {docstring Array.rightpad}
 
 ## 尺寸
+%%%
+tag := "zh-basictypes-array-h007"
+%%%
 
 {docstring Array.size}
 
@@ -220,6 +229,9 @@ tag := "array-api"
 {docstring Array.isEmpty}
 
 ## 查找
+%%%
+tag := "zh-basictypes-array-h008"
+%%%
 
 {docstring Array.extract}
 
@@ -236,6 +248,9 @@ tag := "array-api"
 {docstring Array.getMax?}
 
 ## 查询
+%%%
+tag := "zh-basictypes-array-h009"
+%%%
 
 {docstring Array.count}
 
@@ -248,6 +263,9 @@ tag := "array-api"
 {docstring Array.finIdxOf?}
 
 ## 转换
+%%%
+tag := "zh-basictypes-array-h010"
+%%%
 
 {docstring Array.toList}
 
@@ -263,6 +281,9 @@ tag := "array-api"
 
 
 ## 修改
+%%%
+tag := "zh-basictypes-array-h011"
+%%%
 
 {docstring Array.push}
 
@@ -327,6 +348,9 @@ tag := "array-api"
 {docstring Array.getEvenElems}
 
 ## 排序数组
+%%%
+tag := "zh-basictypes-array-h012"
+%%%
 
 {docstring Array.qsort}
 
@@ -345,6 +369,9 @@ tag := "array-api"
 
 
 ## 迭代
+%%%
+tag := "zh-basictypes-array-h013"
+%%%
 
 {docstring Array.iter}
 
@@ -371,6 +398,9 @@ tag := "array-api"
 {docstring Array.sum}
 
 ## 转型
+%%%
+tag := "zh-basictypes-array-h014"
+%%%
 
 {docstring Array.map}
 
@@ -406,6 +436,9 @@ tag := "array-api"
 
 
 ## 过滤
+%%%
+tag := "zh-basictypes-array-h015"
+%%%
 
 {docstring Array.filter}
 
@@ -422,6 +455,9 @@ tag := "array-api"
 {docstring Array.filterSepElemsM}
 
 ## 分区
+%%%
+tag := "zh-basictypes-array-h016"
+%%%
 
 {docstring Array.partition}
 
@@ -429,6 +465,9 @@ tag := "array-api"
 
 
 ## 元素谓词
+%%%
+tag := "zh-basictypes-array-h017"
+%%%
 
 {docstring Array.contains}
 
@@ -473,12 +512,18 @@ tag := "array-api"
 {docstring Array.isEqv}
 
 ## 比较
+%%%
+tag := "zh-basictypes-array-h018"
+%%%
 
 {docstring Array.isPrefixOf}
 
 {docstring Array.lex}
 
 ## 终止助手
+%%%
+tag := "zh-basictypes-array-h019"
+%%%
 
 {docstring Array.attach}
 

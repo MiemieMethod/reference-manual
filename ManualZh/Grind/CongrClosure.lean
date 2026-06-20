@@ -73,6 +73,9 @@ example (a b c : Nat) (h : a = b) : (a, c) = (b, c) := by
 
 
 # 同余闭包与简化
+%%%
+tag := "zh-grind-congrclosure-h001"
+%%%
 
 ::::leanSection
 ```lean -show

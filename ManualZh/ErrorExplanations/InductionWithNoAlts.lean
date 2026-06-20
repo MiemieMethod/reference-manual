@@ -22,6 +22,9 @@ shortTitle := "inductionWithNoAlts"
 `induction`策略用于自然数游戏中的自然数遵循不同的模式。
 
 # 示例
+%%%
+tag := "zh-errorexplanations-inductionwithnoalts-h001"
+%%%
 
 :::errorExample "Adding Explicit Cases to an Induction Proof"
 ```broken

@@ -47,6 +47,9 @@ Lean 版本 4.29.0 中引入了可扩展的 {keywordOf Lean.Parser.Term.do}`do` 
 :::
 
 # 精化概述
+%%%
+tag := "zh-notationsmacros-doelab-h001"
+%%%
 
 {tech}[语法类型] `doElem` 表示各个 {tech}[`do` 元素]。
 这些元素的序列由语法类型 {name}`doSeq` 表示，它构成了 {keywordOf Lean.Parser.Term.do}`do` 块的主体。
@@ -61,6 +64,9 @@ Lean 版本 4.29.0 中引入了可扩展的 {keywordOf Lean.Parser.Term.do}`do` 
 如果 {keywordOf Lean.Parser.Term.do}`do` 元素仅包含术语，则 Lean 解析器将其包装在语法类型 {name Lean.Parser.Term.doExpr}`doExpr` 中；它的精化器调用术语精化器，确保该术语具有 {keywordOf Lean.Parser.Term.do}`do` 块的正确类型。
 
 # `do` 表示法中的宏
+%%%
+tag := "zh-notationsmacros-doelab-h002"
+%%%
 
 宏展开发生在 {keywordOf Lean.Parser.Term.do}`do` 元素的精化期间。
 {keywordOf Lean.Parser.Term.do}`do` 元素宏与术语或命令宏之间没有根本区别；它们的区别在于其定义的语法属于 `doElem` 语法类别的一部分。
@@ -170,6 +176,9 @@ def getEven : IO { n : Nat // n % 2 = 0 ∨ n % 3 = 0} := do
 ::::
 
 ## 局限性
+%%%
+tag := "zh-notationsmacros-doelab-h003"
+%%%
 
 :::paragraph
 当扩展可以作为宏实现时，通常最好这样做。
@@ -233,6 +242,9 @@ in the application
 ::::
 
 # 精化
+%%%
+tag := "zh-notationsmacros-doelab-h004"
+%%%
 
 
 {keywordOf Lean.Parser.Term.do}`do` 元素的精化出现在 {name Lean.Elab.Do.DoElabM}`DoElabM` 单子中。
@@ -287,6 +299,9 @@ doElem_elab
 {docstring Lean.Elab.Do.elabDoElems1 +allowMissing}
 
 ## 单子操作
+%%%
+tag := "zh-notationsmacros-doelab-h005"
+%%%
 
 精化框架提供了几个帮助器，可以更方便、更高效地构建当前 monad 及其操作的应用程序。
 
@@ -299,6 +314,9 @@ doElem_elab
 {docstring Lean.Elab.Do.mkPUnitUnit}
 
 ## 延续
+%%%
+tag := "zh-notationsmacros-doelab-h006"
+%%%
 
 {keywordOf Lean.Parser.Term.do}`do`-精化延续由等待当前元素的结果的精化器以及元数据（例如该结果预期具有的类型）组成。
 
@@ -628,6 +646,9 @@ doElem_control_info
 {docstring Lean.Elab.Do.InferControlInfo.ofLetOrReassignArrow +allowMissing}
 
 ## 可变变量
+%%%
+tag := "zh-notationsmacros-doelab-h009"
+%%%
 
 上下文的一个重要部分是可用于正在详细说明的 {keywordOf Lean.Parser.Term.do}`do` 元素的一组可变变量。
 这在两个字段中可用：{name Lean.Elab.Do.Context.mutVars}`mutVars` 提供最初绑定变量的标识符，而 {name Lean.Elab.Do.Context.mutVarDefs}`mutVarDefs` 将它们的名称映射到表示它们的局部变量。

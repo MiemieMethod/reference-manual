@@ -24,6 +24,9 @@ file := "v4.18.0"
 For this release, 344 changes landed. In addition to the 166 feature additions and 38 fixes listed below there were 13 refactoring changes, 10 documentation improvements, 3 performance improvements, 4 improvements to the test suite and 109 other changes.
 
 ## Highlights
+%%%
+tag := "zh-releases-v4-18-0-h001"
+%%%
 
 Lean v4.18 release brings a number of exciting new features:
 
@@ -165,6 +168,9 @@ been strengthened.
 _This summary of highlights was contributed by Violetta Sim._
 
 ## Language
+%%%
+tag := "zh-releases-v4-18-0-h002"
+%%%
 
 * [#6634](https://github.com/leanprover/lean4/pull/6634) adds support for changing the binder annotations of existing
   variables to and from strict-implicit and instance-implicit using the
@@ -288,6 +294,9 @@ _This summary of highlights was contributed by Violetta Sim._
   `Std.Internal.Rat.ceil`.
 
 ### Updates to the `try?` Tactic
+%%%
+tag := "zh-releases-v4-18-0-h003"
+%%%
 
 * [#6961](https://github.com/leanprover/lean4/pull/6961) adds the auxiliary tactic `evalAndSuggest`. It will be used to
   refactor `try?`.
@@ -357,6 +366,9 @@ _This summary of highlights was contributed by Violetta Sim._
   trying without first.
 
 ### Functional Induction Tactic
+%%%
+tag := "zh-releases-v4-18-0-h004"
+%%%
 
 * [#7069](https://github.com/leanprover/lean4/pull/7069) adds the `fun_induction` and `fun_cases` tactics, which add
   convenience around using functional induction and functional cases
@@ -371,6 +383,9 @@ _This summary of highlights was contributed by Violetta Sim._
   indexing off-by-one error.
 
 ### `bv_decide` Tactic
+%%%
+tag := "zh-releases-v4-18-0-h005"
+%%%
 
 * [#6741](https://github.com/leanprover/lean4/pull/6741) implements two rules for bv_decide's preprocessor, lowering
   `|||` to `&&&` in order to enable more term sharing + application of
@@ -415,6 +430,9 @@ _This summary of highlights was contributed by Violetta Sim._
   bv_decide.
 
 ### Parallelizing Elaboration
+%%%
+tag := "zh-releases-v4-18-0-h006"
+%%%
 
 * [#6770](https://github.com/leanprover/lean4/pull/6770) enables code generation to proceed in parallel to further
   elaboration.
@@ -430,6 +448,9 @@ _This summary of highlights was contributed by Violetta Sim._
   creating conflicts across threads.
 
 ### Linear Integer Normalization in `simp +arith`
+%%%
+tag := "zh-releases-v4-18-0-h007"
+%%%
 
 * [#7000](https://github.com/leanprover/lean4/pull/7000) adds helper theorems for justifying the linear integer
   normalizer.
@@ -461,6 +482,9 @@ _This summary of highlights was contributed by Violetta Sim._
   option.
 
 ### `grind` Tactic
+%%%
+tag := "zh-releases-v4-18-0-h008"
+%%%
 
 The `grind` tactic is still is experimental and still under development. Avoid using it in production projects
 
@@ -485,6 +509,9 @@ The `grind` tactic is still is experimental and still under development. Avoid u
   `grind`.
 
 #### Cutsat Procedure (Solver for Linear Integer Arithmetic Problems)
+%%%
+tag := "zh-releases-v4-18-0-h009"
+%%%
 
 * [#7077](https://github.com/leanprover/lean4/pull/7077) proves the helper theorems for justifying the "Div-Solve" rule
   in the cutsat procedure.
@@ -610,6 +637,9 @@ The `grind` tactic is still is experimental and still under development. Avoid u
   only by dsimp, but not by simp (e.g. inside a dependent let)
 
 ## Library
+%%%
+tag := "zh-releases-v4-18-0-h010"
+%%%
 
 * [#5498](https://github.com/leanprover/lean4/pull/5498) makes `BitVec.getElem` the simp normal form in case a proof is
   available and changes `ext` to return `x[i]` + a hypothesis that proves
@@ -885,6 +915,9 @@ The `grind` tactic is still is experimental and still under development. Avoid u
   Float(64).
 
 ## Compiler
+%%%
+tag := "zh-releases-v4-18-0-h011"
+%%%
 
 * [#6928](https://github.com/leanprover/lean4/pull/6928) makes extern decls evaluate as ⊤ rather than the default value
   of ⊥ in the LCNF elimDeadBranches analysis.
@@ -916,12 +949,18 @@ The `grind` tactic is still is experimental and still under development. Avoid u
   happens when initializing Init.Core built with the new code generator.
 
 ## Pretty Printing
+%%%
+tag := "zh-releases-v4-18-0-h012"
+%%%
 
 * [#7074](https://github.com/leanprover/lean4/pull/7074) modifies the signature pretty printer to add hover information
   for parameters in binders. This makes the binders be consistent with the
   hovers in pi types.
 
 ## Documentation
+%%%
+tag := "zh-releases-v4-18-0-h013"
+%%%
 
 * [#6886](https://github.com/leanprover/lean4/pull/6886) adds recommended spellings for many notations defined in Lean
   core, using the `recommended_spelling` command from #6869.
@@ -944,6 +983,9 @@ The `grind` tactic is still is experimental and still under development. Avoid u
   definitions.
 
 ## Server
+%%%
+tag := "zh-releases-v4-18-0-h014"
+%%%
 
 * [#6329](https://github.com/leanprover/lean4/pull/6329) enables the language server to present multiple disjoint line
   ranges as being worked on. Even before parallelism lands, we make use of
@@ -1063,6 +1105,9 @@ The `grind` tactic is still is experimental and still under development. Avoid u
   new document version, reporting an incomplete result.
 
 ## Lake
+%%%
+tag := "zh-releases-v4-18-0-h015"
+%%%
 
 * [#6829](https://github.com/leanprover/lean4/pull/6829) changes the error message for Lake configuration failure to
   reflect that issues do not always arise from an invalid lakefile, but
@@ -1116,6 +1161,9 @@ The `grind` tactic is still is experimental and still under development. Avoid u
   configuration files.
 
 ## Other
+%%%
+tag := "zh-releases-v4-18-0-h016"
+%%%
 
 * [#7129](https://github.com/leanprover/lean4/pull/7129) optimizes the performance of the unused variables linter in the
   case of a definition with a huge `Expr` representation

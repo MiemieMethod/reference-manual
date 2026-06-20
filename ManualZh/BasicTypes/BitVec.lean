@@ -28,6 +28,9 @@ tag := "BitVec"
 有符号数以二进制补码形式表示。
 
 # 逻辑模型
+%%%
+tag := "zh-basictypes-bitvec-h001"
+%%%
 
 位向量表示为具有适当界限的 {name}`Fin` 的包装器。
 由于 {name}`Fin` 本身是 {name}`Nat` 的包装器，因此位向量能够使用内核的特殊支持来通过自然数进行高效计算。
@@ -35,11 +38,17 @@ tag := "BitVec"
 {docstring BitVec}
 
 # 运行时表示
+%%%
+tag := "zh-basictypes-bitvec-h002"
+%%%
 
 位向量表示为具有相应范围的 {lean}`Fin`。
 由于 {name}`BitVec` 是 {name}`Fin` 周围的 {ref "inductive-types-trivial-wrappers"}[简单包装器]，而 {name}`Fin` 是 {name}`Nat` 周围的简单包装器，因此位向量在编译代码中使用与 {name}`Nat` 相同的运行时表示形式。
 
 # 句法
+%%%
+tag := "zh-basictypes-bitvec-h003"
+%%%
 :::leanSection
 ```lean -show
 variable {w n : Nat}
@@ -214,12 +223,18 @@ tag := "BitVec-api"
 
 
 ## 界限
+%%%
+tag := "zh-basictypes-bitvec-h006"
+%%%
 
 {docstring BitVec.intMax}
 
 {docstring BitVec.intMin}
 
 ## 建造
+%%%
+tag := "zh-basictypes-bitvec-h007"
+%%%
 
 {docstring BitVec.fill}
 
@@ -230,6 +245,9 @@ tag := "BitVec-api"
 {docstring BitVec.twoPow}
 
 ## 转换
+%%%
+tag := "zh-basictypes-bitvec-h008"
+%%%
 
 
 {docstring BitVec.toHex}
@@ -253,6 +271,9 @@ tag := "BitVec-api"
 {docstring BitVec.cast}
 
 ## 比较
+%%%
+tag := "zh-basictypes-bitvec-h009"
+%%%
 
 {docstring BitVec.ule}
 
@@ -265,10 +286,16 @@ tag := "BitVec-api"
 {docstring BitVec.decEq}
 
 ## 散列
+%%%
+tag := "zh-basictypes-bitvec-h010"
+%%%
 
 {docstring BitVec.hash}
 
 ## 顺序操作
+%%%
+tag := "zh-basictypes-bitvec-h011"
+%%%
 
 这些操作将位向量视为位序列，而不是数字编码。
 
@@ -297,6 +324,9 @@ tag := "BitVec-api"
 {docstring BitVec.rotateRight}
 
 ### 位提取
+%%%
+tag := "zh-basictypes-bitvec-h012"
+%%%
 
 {docstring BitVec.msb}
 
@@ -317,6 +347,9 @@ tag := "BitVec-api"
 {docstring BitVec.extractLsb'}
 
 ## 按位运算符
+%%%
+tag := "zh-basictypes-bitvec-h013"
+%%%
 
 这些运算符修改一个或多个位向量的各个位。
 
@@ -344,6 +377,9 @@ tag := "BitVec-api"
 
 
 ## 算术
+%%%
+tag := "zh-basictypes-bitvec-h014"
+%%%
 
 这些运算符将位向量视为数字。
 有些操作是有符号的，而另一些则没有符号。
@@ -358,6 +394,9 @@ tag := "BitVec-api"
 
 
 ### 无符号操作
+%%%
+tag := "zh-basictypes-bitvec-h015"
+%%%
 
 {docstring BitVec.udiv}
 
@@ -370,6 +409,9 @@ tag := "BitVec-api"
 {docstring BitVec.usubOverflow}
 
 ### 签名操作
+%%%
+tag := "zh-basictypes-bitvec-h016"
+%%%
 
 {docstring BitVec.abs}
 
@@ -388,14 +430,23 @@ tag := "BitVec-api"
 {docstring BitVec.ssubOverflow}
 
 ## 迭代
+%%%
+tag := "zh-basictypes-bitvec-h017"
+%%%
 
 {docstring BitVec.iunfoldr}
 
 {docstring BitVec.iunfoldr_replace}
 
 ## 证明自动化
+%%%
+tag := "zh-basictypes-bitvec-h018"
+%%%
 
 ### 钻头爆破
+%%%
+tag := "zh-basictypes-bitvec-h019"
+%%%
 
 标准库包含许多有助于实现位爆破的帮助器实现，这是 {tactic}`bv_decide` 用于将命题编码为外部求解器的布尔可满足性问题的技术。
 

@@ -58,11 +58,17 @@ Lean 运行时维护一个用于运行任务的线程池。
 {docstring Task (label := "type") +hideStructureConstructor +hideFields}
 
 # 创建任务
+%%%
+tag := "zh-io-threads-h001"
+%%%
 
 纯任务通常应使用 {name}`Task.spawn` 创建，因为 {name}`Task.pure` 是已使用提供的值解析的任务。
 不纯任务由 {name BaseIO.asTask}`asTask` 操作之一创建。
 
 ## 纯任务
+%%%
+tag := "zh-io-threads-h002"
+%%%
 
 纯任务可以在 {name}`IO` monad 系列之外创建。
 当对它们的最后一个引用被删除时，它们就会终止。
@@ -72,6 +78,9 @@ Lean 运行时维护一个用于运行任务的线程池。
 {docstring Task.pure}
 
 ## 不纯的任务
+%%%
+tag := "zh-io-threads-h003"
+%%%
 
 使用 {name IO.asTask}`asTask` 函数之一生成具有副作用的任务时，实际执行生成的 {name}`IO` 操作非常重要。
 每次执行结果操作时都会生成一个任务，而不是在调用 {name IO.asTask}`asTask` 时生成。
@@ -86,6 +95,9 @@ Lean 运行时维护一个用于运行任务的线程池。
 {docstring IO.asTask}
 
 ## 优先事项
+%%%
+tag := "zh-io-threads-h004"
+%%%
 
 线程调度程序使用任务优先级将任务分配给线程。
 在优先级范围 {name Task.Priority.default}`default`–{name Task.Priority.max}`max` 内，高优先级任务始终优先于低优先级任务。
@@ -100,6 +112,9 @@ Lean 运行时维护一个用于运行任务的线程池。
 {docstring Task.Priority.dedicated}
 
 # 任务结果
+%%%
+tag := "zh-io-threads-h005"
+%%%
 
 {docstring Task.get}
 
@@ -108,6 +123,9 @@ Lean 运行时维护一个用于运行任务的线程池。
 {docstring IO.waitAny}
 
 # 排序任务
+%%%
+tag := "zh-io-threads-h006"
+%%%
 
 这些操作员从旧任务创建新任务。
 如果可能，最好使用 {name}`Task.map` 或 {name}`Task.bind`，而不是在新任务中手动调用 {name}`Task.get`，因为它们不会暂时增加线程池的大小。
@@ -143,6 +161,9 @@ Lean 运行时维护一个用于运行任务的线程池。
 {docstring IO.chainTask}
 
 # 取消和状态
+%%%
+tag := "zh-io-threads-h007"
+%%%
 
 不纯任务应使用 `IO.checkCanceled` 对取消做出反应，取消是由于 `IO.cancel` 的结果或在删除对任务的最后一个引用时发生的。
 纯任务在取消时会自动终止。
@@ -160,6 +181,9 @@ Lean 运行时维护一个用于运行任务的线程池。
 {docstring IO.getTID}
 
 # 承诺
+%%%
+tag := "zh-io-threads-h008"
+%%%
 
 承诺代表未来将提供的价值。
 提供该值称为 {deftech (key := "resolve promise")}_resolving_ 承诺。
@@ -181,12 +205,18 @@ Lean 运行时维护一个用于运行任务的线程池。
 {docstring IO.Promise.resolve}
 
 # 任务之间的通信
+%%%
+tag := "zh-io-threads-h009"
+%%%
 
 除了本节中描述的类型和操作之外，{name}`IO.Ref` 还可以用作锁。
 获取引用（使用 {name ST.Ref.take}`take`）会导致其他线程在读取时阻塞，直到引用再次变为 {name ST.Ref.set}`set`。
 {ref "ref-locks"}[有关参考单元的部分] 中描述了此模式。
 
 ## 渠道
+%%%
+tag := "zh-io-threads-h010"
+%%%
 
 本节中的类型和功能在导入{module}`Std.Sync.Channel`后可用。
 
@@ -223,6 +253,9 @@ variable {m : Type → Type v} {α : Type} [MonadLiftT BaseIO m] [Inhabited α] 
 特别是，每个单子 {lean}`m` 和 {inst}`MonadLiftT BaseIO m` 实例以及 {lean}`α` 和 {inst}`Inhabited α` 实例都有一个类型为 {inst}`ForIn m (Std.Channel.Sync α) α` 的实例。
 :::
 ## 互斥体
+%%%
+tag := "zh-io-threads-h011"
+%%%
 
 本节中的类型和功能在导入{module}`Std.Sync.Mutex`后可用。
 
@@ -238,6 +271,9 @@ variable {m : Type → Type v} {α : Type} [MonadLiftT BaseIO m] [Inhabited α] 
 
 
 ## 条件变量
+%%%
+tag := "zh-io-threads-h012"
+%%%
 
 本节中的类型和功能在导入{module}`Std.Sync.Mutex`后可用。
 

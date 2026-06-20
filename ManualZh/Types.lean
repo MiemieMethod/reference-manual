@@ -170,6 +170,9 @@ tag := "propositions"
 {docstring propext}
 
 # 宇宙
+%%%
+tag := "zh-types-h002"
+%%%
 
 类型按 {deftech}_universes_ 进行分类。 {index}[宇宙]{margin}[宇宙也称为 {deftech}_sorts_。]
 每个宇宙都有一个 {deftech (key:="universe level")}_level_，{index (subterm := "of universe")}[level] 是自然数。
@@ -224,6 +227,9 @@ of sort `Type 2`
 {lean}`Prop` 是 {lean}`Sort 0` 的缩写。
 
 ## 预测性
+%%%
+tag := "zh-types-h003"
+%%%
 
 每个宇宙都包含依赖函数类型，这些函数类型还代表全称量化和含义。
 函数类型的范围由其参数和返回类型的范围决定。
@@ -292,6 +298,9 @@ of sort `Type 4`
 :::
 
 ## 多态性
+%%%
+tag := "zh-types-h004"
+%%%
 
 Lean 支持 {deftech}_universe 多态性_、{index (subterm := "universe")}[多态性] {index}[universe 多态性]，这意味着 Lean 环境中定义的常量可以采用 {deftech}[universe 参数]。
 当使用常量时，可以使用 宇宙层级 实例化这些参数。
@@ -421,6 +430,9 @@ $$`\mathtt{imax}\ u\ v = \begin{cases}0 & \mathrm{when\ }v = 0\\\mathtt{max}\ u\
 如果是 `B : Prop`，则函数类型本身就是 {lean}`Prop`；否则，功能类型的级别为`u` 和`v` 中的最大值。
 
 ### Universe 变量绑定
+%%%
+tag := "zh-types-h006"
+%%%
 
 宇宙多态定义绑定宇宙变量。
 这些绑定可以是显式的，也可以是隐式的。
@@ -531,6 +543,9 @@ draft := true
 :::
 
 ### 宇宙提升
+%%%
+tag := "zh-types-h008"
+%%%
 
 当一种类型的 Universe 小于某些上下文中预期的 Universe 时，{deftech}_universe lift_ 运算符可以弥补这一差距。
 这些是给定类型术语的包装器，它们位于比包装类型更大的宇宙中。

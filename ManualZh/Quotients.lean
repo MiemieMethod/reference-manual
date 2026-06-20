@@ -619,6 +619,9 @@ inductive SetTree (α : Type u) where
 :::
 
 ## 低级商 API
+%%%
+tag := "zh-quotients-h011"
+%%%
 
 {name}`Quot.liftOn` 是 {name}`Quot.lift` 的一个版本，它首先取商类型的值，类似于 {name}`Quotient.liftOn`。
 

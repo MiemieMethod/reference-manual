@@ -135,6 +135,9 @@ tag := "list-api-reference"
 {include 2 ManualZh.BasicTypes.List.Predicates}
 
 ## 构建列表
+%%%
+tag := "zh-basictypes-list-h004"
+%%%
 
 {docstring List.singleton}
 
@@ -159,6 +162,9 @@ tag := "list-api-reference"
 {docstring List.finRange}
 
 ## 长度
+%%%
+tag := "zh-basictypes-list-h005"
+%%%
 
 {docstring List.length}
 
@@ -167,6 +173,9 @@ tag := "list-api-reference"
 {docstring List.isEmpty}
 
 ## 首尾
+%%%
+tag := "zh-basictypes-list-h006"
+%%%
 
 {docstring List.head}
 
@@ -186,6 +195,9 @@ tag := "list-api-reference"
 
 
 ## 查找
+%%%
+tag := "zh-basictypes-list-h007"
+%%%
 
 {docstring List.get}
 
@@ -206,6 +218,9 @@ tag := "list-api-reference"
 {docstring List.min?}
 
 ## 查询
+%%%
+tag := "zh-basictypes-list-h008"
+%%%
 
 {docstring List.count}
 
@@ -232,6 +247,9 @@ tag := "list-api-reference"
 {docstring List.findSomeM?}
 
 ## 转换
+%%%
+tag := "zh-basictypes-list-h009"
+%%%
 
 {docstring List.toArray}
 
@@ -247,12 +265,18 @@ tag := "list-api-reference"
 {include 2 ManualZh.BasicTypes.List.Modification}
 
 ## 排序
+%%%
+tag := "zh-basictypes-list-h010"
+%%%
 
 {docstring List.mergeSort}
 
 {docstring List.merge}
 
 ## 迭代
+%%%
+tag := "zh-basictypes-list-h011"
+%%%
 
 {docstring List.iter}
 
@@ -267,6 +291,9 @@ tag := "list-api-reference"
 {docstring List.sum}
 
 ### 褶皱
+%%%
+tag := "zh-basictypes-list-h012"
+%%%
 
 :::paragraph
 折叠是使用函数组合列表元素的运算符。
@@ -301,6 +328,9 @@ tag := "list-api-reference"
 {include 2 ManualZh.BasicTypes.List.Transformation}
 
 ## 过滤
+%%%
+tag := "zh-basictypes-list-h013"
+%%%
 
 {docstring List.filter}
 
@@ -319,6 +349,9 @@ tag := "list-api-reference"
 {include ManualZh.BasicTypes.List.Partitioning}
 
 ## 元素谓词
+%%%
+tag := "zh-basictypes-list-h014"
+%%%
 
 {docstring List.contains}
 
@@ -339,6 +372,9 @@ tag := "list-api-reference"
 {include 2 ManualZh.BasicTypes.List.Comparisons}
 
 ## 终止助手
+%%%
+tag := "zh-basictypes-list-h015"
+%%%
 
 {docstring List.attach}
 

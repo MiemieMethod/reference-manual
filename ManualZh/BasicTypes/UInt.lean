@@ -25,6 +25,9 @@ Lean 的标准库包括 固定位宽整数 类型的常见分类。
 在编译的代码中，它们被有效地表示：编译器对它们有特殊的支持，就像对其他基本类型的支持一样。
 
 # 逻辑模型
+%%%
+tag := "zh-basictypes-uint-h001"
+%%%
 
 固定位宽整数 可以是未签名的或已签名的。
 此外，它们还有五种大小：8、16、32 和 64 位，以及当前架构的字大小。
@@ -32,6 +35,9 @@ Lean 的标准库包括 固定位宽整数 类型的常见分类。
 有符号整数包装相应的无符号整数，并使用二进制补码表示形式。
 
 ## 未签名
+%%%
+tag := "zh-basictypes-uint-h002"
+%%%
 
 {docstring USize}
 
@@ -44,6 +50,9 @@ Lean 的标准库包括 固定位宽整数 类型的常见分类。
 {docstring UInt64}
 
 ## 签名
+%%%
+tag := "zh-basictypes-uint-h003"
+%%%
 
 {docstring ISize}
 
@@ -74,6 +83,9 @@ Lean 不专门表示归纳类型或数组。
 检查 Lean 中函数的类型不足以确定如何表示 固定位宽整数 值，因为装箱值不会立即拆箱 — 从数组投影 {name}`Int64` 的函数会返回装箱整数值。
 
 # 句法
+%%%
+tag := "zh-basictypes-uint-h005"
+%%%
 
 所有 固定位宽整数 类型都有 {name}`OfNat` 实例，这些实例允许在表达式和模式上下文中将数字用作文字。
 签名类型还具有 {lean}`Neg` 实例，允许应用否定。
@@ -124,8 +136,14 @@ example : (0xff : Int8) = -1   := by rfl
 :::
 
 # API 参考
+%%%
+tag := "zh-basictypes-uint-h006"
+%%%
 
 ## 尺寸
+%%%
+tag := "zh-basictypes-uint-h007"
+%%%
 
 每个 固定位宽整数 都有一个_size_，它是该类型可以表示的不同值的数量。
 这并不等同于 C 的 `sizeof` 运算符，而是确定类型占用多少字节。
@@ -151,6 +169,9 @@ example : (0xff : Int8) = -1   := by rfl
 {docstring Int64.size}
 
 ## 范围
+%%%
+tag := "zh-basictypes-uint-h008"
+%%%
 
 {docstring ISize.minValue}
 
@@ -173,8 +194,14 @@ example : (0xff : Int8) = -1   := by rfl
 {docstring Int64.maxValue}
 
 ## 转换
+%%%
+tag := "zh-basictypes-uint-h009"
+%%%
 
 ### 往返 `Int`
+%%%
+tag := "zh-basictypes-uint-h010"
+%%%
 
 {docstring ISize.toInt}
 
@@ -221,6 +248,9 @@ example : (0xff : Int8) = -1   := by rfl
 
 
 ### 往返 `Nat`
+%%%
+tag := "zh-basictypes-uint-h011"
+%%%
 
 {docstring USize.ofNat}
 
@@ -286,6 +316,9 @@ example : (0xff : Int8) = -1   := by rfl
 
 
 ### 至其他 固定位宽整数
+%%%
+tag := "zh-basictypes-uint-h012"
+%%%
 
 {docstring USize.toUInt8}
 
@@ -389,6 +422,9 @@ example : (0xff : Int8) = -1   := by rfl
 
 
 ### 转浮点数
+%%%
+tag := "zh-basictypes-uint-h013"
+%%%
 
 {docstring ISize.toFloat}
 
@@ -431,6 +467,9 @@ example : (0xff : Int8) = -1   := by rfl
 {docstring UInt64.toFloat32}
 
 ### 往返位向量
+%%%
+tag := "zh-basictypes-uint-h014"
+%%%
 
 {docstring ISize.toBitVec}
 
@@ -453,6 +492,9 @@ example : (0xff : Int8) = -1   := by rfl
 {docstring Int64.ofBitVec}
 
 ### 有限数的往返
+%%%
+tag := "zh-basictypes-uint-h015"
+%%%
 
 {docstring USize.toFin}
 
@@ -477,6 +519,9 @@ example : (0xff : Int8) = -1   := by rfl
 {docstring USize.repr}
 
 ### 致人物
+%%%
+tag := "zh-basictypes-uint-h016"
+%%%
 
 {name}`Char` 类型是 {name}`UInt32` 的包装器，需要证明包装的整数表示 Unicode 代码点。
 该谓词是 {name}`UInt32` API 的一部分。
@@ -488,6 +533,9 @@ example : (0xff : Int8) = -1   := by rfl
 {include 2 ManualZh.BasicTypes.UInt.Arith}
 
 ## 按位运算
+%%%
+tag := "zh-basictypes-uint-h017"
+%%%
 
 通常，应使用 Lean 的重载运算符（特别是 {name}`ShiftLeft`、{name}`ShiftRight`、{name}`AndOp`、{name}`OrOp` 和 {name}`XorOp` 的实例）访问 固定位宽整数 上的按位运算。
 

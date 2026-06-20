@@ -30,18 +30,30 @@ tag := "string-api-slice"
 {docstring String.Slice.Pos}
 
 # API 参考
+%%%
+tag := "zh-basictypes-string-slice-h001"
+%%%
 
 ## 复印
+%%%
+tag := "zh-basictypes-string-slice-h002"
+%%%
 
 {docstring String.Slice.copy}
 
 ## 尺寸
+%%%
+tag := "zh-basictypes-string-slice-h003"
+%%%
 
 {docstring String.Slice.isEmpty}
 
 {docstring String.Slice.utf8ByteSize}
 
 ## 边界
+%%%
+tag := "zh-basictypes-string-slice-h004"
+%%%
 
 {docstring String.Slice.pos}
 
@@ -57,6 +69,9 @@ tag := "string-api-slice"
 
 
 ### 调整
+%%%
+tag := "zh-basictypes-string-slice-h005"
+%%%
 
 {docstring String.Slice.sliceFrom}
 
@@ -91,6 +106,9 @@ tag := "string-api-slice"
 {docstring String.Slice.takeWhile}
 
 ## 人物
+%%%
+tag := "zh-basictypes-string-slice-h006"
+%%%
 
 {docstring String.Slice.front}
 
@@ -101,18 +119,27 @@ tag := "string-api-slice"
 {docstring String.Slice.back?}
 
 ## 字节
+%%%
+tag := "zh-basictypes-string-slice-h007"
+%%%
 
 {docstring String.Slice.getUTF8Byte}
 
 {docstring String.Slice.getUTF8Byte!}
 
 ## 职位
+%%%
+tag := "zh-basictypes-string-slice-h008"
+%%%
 
 {docstring String.Slice.posGE}
 
 {docstring String.Slice.posGT}
 
 ## 搜寻中
+%%%
+tag := "zh-basictypes-string-slice-h009"
+%%%
 
 {docstring String.Slice.contains}
 
@@ -127,6 +154,9 @@ tag := "string-api-slice"
 {docstring String.Slice.revFind?}
 
 ## 操纵
+%%%
+tag := "zh-basictypes-string-slice-h010"
+%%%
 
 {docstring String.Slice.split}
 
@@ -141,6 +171,9 @@ tag := "string-api-slice"
 {docstring String.Slice.trimAsciiStart}
 
 ## 迭代
+%%%
+tag := "zh-basictypes-string-slice-h011"
+%%%
 
 {docstring String.Slice.chars}
 
@@ -161,6 +194,9 @@ tag := "string-api-slice"
 {docstring String.Slice.foldr}
 
 ## 转换
+%%%
+tag := "zh-basictypes-string-slice-h012"
+%%%
 
 {docstring String.Slice.isNat}
 
@@ -170,6 +206,9 @@ tag := "string-api-slice"
 
 
 ## 平等
+%%%
+tag := "zh-basictypes-string-slice-h013"
+%%%
 
 {docstring String.Slice.beq}
 
@@ -177,6 +216,9 @@ tag := "string-api-slice"
 
 
 # 图案
+%%%
+tag := "zh-basictypes-string-slice-h014"
+%%%
 
 字符串切片具有通用搜索模式。
 切片上的许多操作不是被定义为仅适用于字符或字符串，而是接受任意模式。
@@ -206,8 +248,14 @@ Lean 标准库提供的实例允许将以下类型用于向前和向后搜索：
 {docstring String.Slice.Pattern.BackwardPattern +allowMissing}
 
 # 职位
+%%%
+tag := "zh-basictypes-string-slice-h015"
+%%%
 
 ## 查找
+%%%
+tag := "zh-basictypes-string-slice-h016"
+%%%
 
 因为它们保留了对从中绘制它们的切片的引用，所以切片位置允许查找单个字符或字节。
 
@@ -220,6 +268,9 @@ Lean 标准库提供的实例允许将以下类型用于向前和向后搜索：
 {docstring String.Slice.Pos.get?}
 
 ## 递增和递减
+%%%
+tag := "zh-basictypes-string-slice-h017"
+%%%
 
 {docstring String.Slice.Pos.prev}
 
@@ -238,6 +289,9 @@ Lean 标准库提供的实例允许将以下类型用于向前和向后搜索：
 {docstring String.Slice.Pos.nextn}
 
 ## 其他字符串或切片
+%%%
+tag := "zh-basictypes-string-slice-h018"
+%%%
 
 {docstring String.Slice.Pos.cast}
 

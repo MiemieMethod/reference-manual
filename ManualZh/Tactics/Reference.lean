@@ -241,6 +241,9 @@ tag := "tactic-ref-casts"
 :::
 
 # 管理 `let` 表达式
+%%%
+tag := "zh-tactics-reference-h011"
+%%%
 
 :::tactic "extract_lets"
 :::
@@ -273,6 +276,9 @@ tag := "tactic-ref-ext"
 :::
 
 # SMT 启发的自动化
+%%%
+tag := "zh-tactics-reference-h013"
+%%%
 :::tactic "grind"
 :::
 
@@ -741,6 +747,9 @@ unsolved goals
 :::
 
 ## {tactic}`decide_cbv`
+%%%
+tag := "zh-tactics-reference-h023"
+%%%
 
 :::tactic Lean.Parser.Tactic.decide_cbv (show := "decide_cbv")
 :::
@@ -814,6 +823,9 @@ example : ¬∃ k,
 ::::
 
 ## 控制 {tactic}`cbv` 行为
+%%%
+tag := "zh-tactics-reference-h024"
+%%%
 
 :::syntax attr (title := "Custom `cbv` Rewrite Rules")
 {attr}`cbv_eval` 属性将定理注册为 {tactic}`cbv` 在尝试 {tech}[方程引理] 之前应用的自定义重写规则。
@@ -898,6 +910,9 @@ unsolved goals
 ::::
 
 ### 定制简化程序
+%%%
+tag := "zh-tactics-reference-h025"
+%%%
 
 :::paragraph
 {deftech}[cbv 简化过程] ({tactic}`cbv` simproc) 是用户定义的元程序，{tactic}`cbv` 在与给定模式匹配的子表达式上调用它。
@@ -1059,6 +1074,9 @@ Lean 包括 {tactic}`cbv` 的许多内置简化程序。
 :::
 
 ## 选项
+%%%
+tag := "zh-tactics-reference-h026"
+%%%
 
 {optionDocs cbv.maxSteps}
 
@@ -1151,6 +1169,9 @@ tag := "tactic-ref-debug"
 :::
 
 # 建议
+%%%
+tag := "zh-tactics-reference-h031"
+%%%
 
 :::tactic "∎"
 :::
@@ -1199,6 +1220,9 @@ tag := "tactic-ref-spred"
 %%%
 
 ### 启动和停止校样模式
+%%%
+tag := "zh-tactics-reference-h035"
+%%%
 
 :::tactic "mstart"
 :::
@@ -1210,6 +1234,9 @@ tag := "tactic-ref-spred"
 :::
 
 ### 证明国家目标
+%%%
+tag := "zh-tactics-reference-h036"
+%%%
 
 :::tactic "mspec"
 :::
@@ -1245,6 +1272,9 @@ tag := "tactic-ref-spred"
 :::
 
 ### 操纵状态假设
+%%%
+tag := "zh-tactics-reference-h037"
+%%%
 
 :::tactic "mclear"
 :::

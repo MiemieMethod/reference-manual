@@ -37,6 +37,9 @@ variable {t : Type} (x y : Int)
 有助于诊断类型类实例合成的棘手故障。
 
 # 示例
+%%%
+tag := "zh-errorexplanations-synthinstancefailed-h001"
+%%%
 
 :::errorExample "Using the Wrong Binary Operation"
 

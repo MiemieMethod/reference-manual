@@ -115,6 +115,9 @@ Lean 使用 {deftech (key := "reference count")}_引用计数_进行内存管理
 {citet countingBeans}[] 提供有关引用计数在 Lean 中实现的更多详细信息。
 
 ## 观察独特性
+%%%
+tag := "zh-runtime-h003"
+%%%
 
 确保数组和字符串被唯一引用是在 Lean 中编写快速代码的关键。
 原语 {name}`dbgTraceIfShared` 可用于检查数据结构是否存在别名。
@@ -191,6 +194,9 @@ shared RC String update
 ::::
 
 ## 编译器IR
+%%%
+tag := "zh-runtime-h004"
+%%%
 
 编译器选项 {option}`trace.compiler.ir.result` 可用于检查函数的编译器中间表示 (IR)。
 在此中间表示中，引用计数、分配和重用是明确的：
@@ -326,6 +332,9 @@ draft := true
 :::
 
 # 多线程执行
+%%%
+tag := "zh-runtime-h006"
+%%%
 
 Lean 包括并行和并发程序的原语，使用 {tech}[任务] 进行描述。
 Lean 运行时系统包括一个为任务分配硬件资源的任务管理器。
@@ -366,6 +375,9 @@ export $x:ident
 有关如何从 Lean 调用外部代码以及反之亦然的简单示例，请参阅 Lean 源存储库中的 [FFI](https://github.com/leanprover/lean4/tree/master/tests/lake/examples/ffi) 和 [反向 FFI](https://github.com/leanprover/lean4/tree/master/tests/lake/examples/reverse-ffi) 示例。
 
 ## Lean ABI
+%%%
+tag := "zh-runtime-h008"
+%%%
 
 :::leanSection
 ```lean -show
@@ -519,6 +531,9 @@ void lean_finalize_thread();
 ```
 
 ## 解释器中的 `@[extern]`
+%%%
+tag := "zh-runtime-h012"
+%%%
 
 Lean 解释器可以运行 Lean 声明，这些声明的符号在加载的共享库中可用，其中包括标记为 {attr}`extern` 的声明。
 要运行此代码（例如使用 {keywordOf Lean.Parser.Command.eval}`#eval`），需要执行以下步骤：

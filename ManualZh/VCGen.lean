@@ -47,6 +47,9 @@ tag := "mvcgen-tactic"
 
 
 # 概述
+%%%
+tag := "zh-vcgen-h001"
+%%%
 
 
 
@@ -71,6 +74,9 @@ tag := "mvcgen-tactic"
 
 
 # 谓词变压器
+%%%
+tag := "zh-vcgen-h002"
+%%%
 
 {deftech}_谓词转换器语义_是将程序解释为从谓词到谓词的函数，而不是从值到值的函数。
 {deftech}_postcondition_ 是在运行程序后成立的断言，而 {deftech}_precondition_ 是在运行程序之前必须成立的断言，以便保证后置条件成立。
@@ -89,6 +95,9 @@ tag := "mvcgen-tactic"
 
 
 ## 状态谓词
+%%%
+tag := "zh-vcgen-h003"
+%%%
 
 一元程序的谓词变换器语义基于命题可能提及程序状态的逻辑。
 这里，“状态”不仅指可变状态，还指只读值，例如通过 {name}`ReaderT` 提供的值。
@@ -134,6 +143,9 @@ def ItIsSecret : SPred [String] := fun s => ⌜s = "secret"⌝
 :::
 
 ### 蕴涵
+%%%
+tag := "zh-vcgen-h004"
+%%%
 
 有状态谓词通过_entailment_相关。
 有状态谓词的蕴含被定义为全称量化蕴涵：如果 $`P` 和 $`Q` 是状态 $`\sigma` 上的谓词，则当 $`∀ s : \sigma, P(s) → Q(s)` 时，$`P` 蕴含 $`Q`（写作 $`P \vdash_s Q`）。
@@ -170,6 +182,9 @@ variable {σ : List (Type u)} {P Q : SPred σ}
 :::
 
 ### 符号
+%%%
+tag := "zh-vcgen-h005"
+%%%
 
 有状态谓词的语法与普通 Lean 术语的语法重叠。
 特别是，有状态谓词使用逻辑连接词和量词的常用语法。
@@ -187,6 +202,9 @@ term($t)
 :::
 
 ### 连接词和量词
+%%%
+tag := "zh-vcgen-h006"
+%%%
 
 :::syntax term (title := "Predicate Connectives") (namespace := Std.Do)
 ```grammar
@@ -275,6 +293,9 @@ spred(∃ (_ $_* : $ty),  $_)
 {docstring SPred.exists}
 
 ### 有状态的值
+%%%
+tag := "zh-vcgen-h007"
+%%%
 
 正如 {name}`SPred` 表示状态上的谓词一样，{name}`SVal` 表示从状态派生的值。
 
@@ -290,6 +311,9 @@ spred(∃ (_ $_* : $ty),  $_)
 
 
 ## 断言
+%%%
+tag := "zh-vcgen-h008"
+%%%
 
 关于单子程序的断言语言由 {deftech}_postcondition shape_ 参数化，它描述了给定单子中计算的输入和输出。
 前置条件可能会提到 monad 状态的初始值，而后置条件可能会提到返回值、monad 状态的最终值，并且还必须考虑可能引发的任何异常。
@@ -373,6 +397,9 @@ $_ →ₚ $_
 
 
 ## 谓词变压器
+%%%
+tag := "zh-vcgen-h009"
+%%%
 
 谓词变换器是从某些后置条件状态的后置条件到该状态的断言的函数。
 该函数必须是 {deftech}_conjunctive_，这意味着它必须分布在 {name}`PostCond.and` 上。
@@ -411,6 +438,9 @@ variable {σ : List (Type u)} {ps : PostShape} {x y : PredTrans ps α} {Q : Asse
 {docstring PredTrans.pushOption}
 
 ### 最弱的先决条件
+%%%
+tag := "zh-vcgen-h010"
+%%%
 
 monad 的 {tech}[weakest precondition] 语义由 {name}`WP` 类型类提供。
 {name}`WP` 的实例确定 monad 的后置条件形状，并提供将 monad 的操作解释为其后置条件形状中的谓词变换器的逻辑规则。
@@ -425,6 +455,9 @@ wp⟦$_ $[: $_]?⟧
 :::
 
 ### 最弱先决条件单子态射
+%%%
+tag := "zh-vcgen-h011"
+%%%
 
 除了 {name}`WP` 实例之外，{tactic}`mvcgen` 的大多数内置规范引理还依赖于 {name}`WPMonad` 实例的存在。
 除了合法之外，单子实现 {name}`pure` 和 {name}`bind` 的最弱前提条件还应该对应于谓词变换单子的 {name}`pure` 和 {name}`bind` 运算符。
@@ -551,6 +584,9 @@ tag := "mvcgen-adequacy"
 {docstring EStateM.of_wp_run_eq}
 
 ## 霍尔三元组
+%%%
+tag := "zh-vcgen-h013"
+%%%
 
 {deftech}_Hoare Triple_{citep hoare69}[] 由前置条件、程序和后置条件组成。
 在前置条件为 true 的状态下运行程序会导致后置条件为 true 的状态。
@@ -574,6 +610,9 @@ variable [WP m ps] {x : m α} {P : Assertion ps} {Q : PostCond α ps}
 {docstring Triple.mp}
 
 ## 规范引理
+%%%
+tag := "zh-vcgen-h014"
+%%%
 
 {deftech}_规范引理_是将霍尔三元组与函数关联起来的指定定理。
 当 {tactic}`mvcgen` 遇到函数时，它会检查是否有任何已注册的规范引理，并尝试使用它们来释放中间 {tech}[验证条件]。
@@ -632,6 +671,9 @@ example : Assertion (.arg Nat .pure) = SPred [Nat] := rfl
 ```
 
 ## 规格不变
+%%%
+tag := "zh-vcgen-h015"
+%%%
 
 这些类型用于不变量。
 {name}`ForIn.forIn` 和 {name}`ForIn'.forIn'` 的 {tech}[规范引理] 采用 {name}`Invariant` 类型的参数，并且 {tactic}`mvcgen` 确保其他自动化不会意外生成不变量。
@@ -660,6 +702,9 @@ example : Assertion (.arg Nat .pure) = SPred [Nat] := rfl
 
 
 # 验证条件
+%%%
+tag := "zh-vcgen-h016"
+%%%
 
 {tactic}`mvcgen`策略将以 {name}`SPred` 和最弱先决条件表示的目标转换为一组不变量和验证条件，这些不变量和验证条件一起足以证明原始目标。
 特别是，{tech}[霍尔三元组]是根据最弱前提条件定义的，因此可以使用 {tactic}`mvcgen` 来证明它们。
@@ -691,6 +736,9 @@ variable [Monad m] [WPMonad m ps] {e : m α} {P : Assertion ps} {Q : PostCond α
 此外，确保术语的 {tech}[simp 范式] 适用于模式匹配，并且默认 simp 集中有足够的引理来将每个可能的术语简化为该范式，可能会导致更多条件和模式匹配被消除。
 
 # 为 Monad 启用 `mvcgen`
+%%%
+tag := "zh-vcgen-h017"
+%%%
 
 如果 monad 是根据 Lean 标准库提供的 {tech}[monad 转换器] 实现的，例如 {name}`ExceptT` 和 {name}`StateT`，那么它不需要额外的实例。
 其他 monad 将需要 {name}`WP`、{name}`LawfulMonad` 和 {name}`WPMonad` 的实例。

@@ -33,6 +33,9 @@ shortTitle := "propRecLargeElim"
 它的动机是被证明的命题而不是数据值术语的类型。
 
 # 示例
+%%%
+tag := "zh-errorexplanations-propreclargeelim-h001"
+%%%
 
 :::errorExample "Defining an Intermediate Data Value Within a Proof"
 ```broken

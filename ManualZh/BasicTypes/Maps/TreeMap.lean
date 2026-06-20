@@ -31,10 +31,16 @@ tag := "TreeMap"
 {docstring Std.TreeMap +hideFields +hideStructureConstructor}
 
 # 创建
+%%%
+tag := "zh-basictypes-maps-treemap-h001"
+%%%
 
 {docstring Std.TreeMap.empty}
 
 # 特性
+%%%
+tag := "zh-basictypes-maps-treemap-h002"
+%%%
 
 {docstring Std.TreeMap.size}
 
@@ -42,6 +48,9 @@ tag := "TreeMap"
 
 
 # 查询
+%%%
+tag := "zh-basictypes-maps-treemap-h003"
+%%%
 
 {docstring Std.TreeMap.contains}
 
@@ -70,6 +79,9 @@ tag := "TreeMap"
 {docstring Std.TreeMap.valuesArray}
 
 ## 基于排序的查询
+%%%
+tag := "zh-basictypes-maps-treemap-h004"
+%%%
 
 {docstring Std.TreeMap.entryAtIdx}
 
@@ -185,6 +197,9 @@ tag := "TreeMap"
 
 
 # 修改
+%%%
+tag := "zh-basictypes-maps-treemap-h005"
+%%%
 
 {docstring Std.TreeMap.alter}
 
@@ -218,6 +233,9 @@ tag := "TreeMap"
 
 
 # 迭代
+%%%
+tag := "zh-basictypes-maps-treemap-h006"
+%%%
 
 {docstring Std.TreeMap.iter}
 
@@ -244,6 +262,9 @@ tag := "TreeMap"
 {docstring Std.TreeMap.forM}
 
 # 转换
+%%%
+tag := "zh-basictypes-maps-treemap-h007"
+%%%
 
 {docstring Std.TreeMap.ofList}
 
@@ -258,6 +279,9 @@ tag := "TreeMap"
 {docstring Std.TreeMap.unitOfList}
 
 ## 非捆绑变体
+%%%
+tag := "zh-basictypes-maps-treemap-h008"
+%%%
 
 未捆绑的地图将格式良好的证明与数据分开。
 这在定义 {ref "raw-data"}[嵌套归纳类型] 时主要有用。

@@ -867,6 +867,9 @@ tag := "mutual-inductive-types-run-time"
 {include 2 ManualZh.Language.InductiveTypes.Nested}
 
 ## 格理论归纳和共归纳谓词
+%%%
+tag := "zh-language-inductivetypes-h020"
+%%%
 
 归纳类型声明的语法可用于指定归纳谓词和共归纳谓词。
 这些不是 Lean 类型系统的内置功能，而是精心设计成合适的编码。

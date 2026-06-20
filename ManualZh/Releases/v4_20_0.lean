@@ -24,10 +24,16 @@ file := "v4.20.0"
 For this release, 346 changes landed. In addition to the 108 feature additions and 85 fixes listed below there were 6 refactoring changes, 7 documentation improvements, 8 performance improvements, 4 improvements to the test suite and 126 other changes.
 
 ## Highlights
+%%%
+tag := "zh-releases-v4-20-0-h001"
+%%%
 
 The Lean v4.20.0 release brings multiple new features, bug fixes, improvements to Lake, and groundwork for the module system.
 
 ### Language Features
+%%%
+tag := "zh-releases-v4-20-0-h002"
+%%%
 
 * [#6432](https://github.com/leanprover/lean4/pull/6432) implements tactics called `extract_lets` and `lift_lets` that
   manipulate `let`/`let_fun` expressions. The `extract_lets` tactic
@@ -149,6 +155,9 @@ The Lean v4.20.0 release brings multiple new features, bug fixes, improvements t
   (co)induction proof principle (given by Park induction) is generated.
 
 ### Library Highlights
+%%%
+tag := "zh-releases-v4-20-0-h003"
+%%%
 
 [#8004](https://github.com/leanprover/lean4/pull/8004) adds extensional hash maps and hash sets under the names
   `Std.ExtDHashMap`, `Std.ExtHashMap` and `Std.ExtHashSet`. Extensional
@@ -167,11 +176,17 @@ Other notable library developments in this release include:
 - Additional lemmas for `Array`/`List`/`Vector`.
 
 ### Lake
+%%%
+tag := "zh-releases-v4-20-0-h004"
+%%%
 
 * [#7909](https://github.com/leanprover/lean4/pull/7909) adds Lake support for building modules given their source file
   path. This is made use of in both the CLI and the server.
 
 ### Breaking Changes
+%%%
+tag := "zh-releases-v4-20-0-h005"
+%%%
 
 * [#7474](https://github.com/leanprover/lean4/pull/7474) updates `rw?`, `show_term`, and other tactic-suggesting tactics
   to suggest `expose_names` when necessary and validate tactics prior to
@@ -242,6 +257,9 @@ Other notable library developments in this release include:
   See the FFI example for a demonstration.
 
 ## Language
+%%%
+tag := "zh-releases-v4-20-0-h006"
+%%%
 
 * [#6325](https://github.com/leanprover/lean4/pull/6325) ensures that environments can be loaded, repeatedly, without
   executing arbitrary code

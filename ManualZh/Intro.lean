@@ -200,6 +200,9 @@ inductive Even : Nat → Prop where
 ::::
 
 # 如何引用本著作
+%%%
+tag := "zh-intro-h007"
+%%%
 
 在正式引用中，请将本著作引用为 Lean Developers 所著的 _The Lean Language Reference_。
 此外，请在引用中注明相应的 Lean 版本，即 {versionString}[]。

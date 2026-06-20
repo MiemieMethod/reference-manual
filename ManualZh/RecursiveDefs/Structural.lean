@@ -103,6 +103,9 @@ end
  * 在明确需要结构递归的情况下，它可以防止意外使用良基递归。
 
 # 显式结构递归
+%%%
+tag := "zh-recursivedefs-structural-h001"
+%%%
 
 要显式使用结构递归，可以使用指定 {tech}[递减参数] 的 {keywordOf Lean.Parser.Command.declaration}`termination_by structural` 子句来注释函数或定理定义。
 递减的参数可以是对签名中命名的参数的引用。

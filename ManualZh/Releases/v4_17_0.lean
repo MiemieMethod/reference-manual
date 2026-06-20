@@ -26,6 +26,9 @@ For this release, 319 changes landed. In addition to the 168 feature additions a
 
 
 ## Highlights
+%%%
+tag := "zh-releases-v4-17-0-h001"
+%%%
 
 The Lean v4.17 release brings a range of new features, performance improvements,
 and bug fixes. Notable user-visible updates include:
@@ -50,6 +53,9 @@ making APIs of `List` / `Array` / `Vector` consistent, and adding lemmas describ
 * [#6597](https://github.com/leanprover/lean4/pull/6597) fixes the indentation of nested traces nodes in the info view.
 
 ### New Language Features
+%%%
+tag := "zh-releases-v4-17-0-h002"
+%%%
 
 * **Partial Fixpoint**
 
@@ -132,6 +138,9 @@ the Functional Induction Principle, but for all functions (not just
 recursive ones), and without providing inductive hypotheses.
 
 ### New CLI Features
+%%%
+tag := "zh-releases-v4-17-0-h003"
+%%%
 
 * [#6427](https://github.com/leanprover/lean4/pull/6427) adds the Lean CLI option `--src-deps` which parallels `--deps`.
 It parses the Lean code's header and prints out the paths to the
@@ -143,6 +152,9 @@ targets and outputs their results. It can produce raw text or JSON
 -formatted output (with `--json` / `-J`).
 
 ### Breaking Changes
+%%%
+tag := "zh-releases-v4-17-0-h004"
+%%%
 
 * [#6602](https://github.com/leanprover/lean4/pull/6602) allows the dot ident notation to resolve to the current
 definition, or to any of the other definitions in the same mutual block.
@@ -156,6 +168,9 @@ is a breaking change in rare cases: the `split` tactic no longer removes unused 
 _This highlights section was contributed by Violetta Sim._
 
 ## Language
+%%%
+tag := "zh-releases-v4-17-0-h005"
+%%%
 
 * [#5145](https://github.com/leanprover/lean4/pull/5145) splits the environment used by the kernel from that used by the
 elaborator, providing the foundation for tracking of asynchronously
@@ -737,6 +752,9 @@ to implement `try?`.
 * [#6905](https://github.com/leanprover/lean4/pull/6905) adds the `try?` tactic; see above
 
 ## Library
+%%%
+tag := "zh-releases-v4-17-0-h006"
+%%%
 
 * [#6177](https://github.com/leanprover/lean4/pull/6177) implements `BitVec.*_fill`.
 
@@ -1000,6 +1018,9 @@ not + addition in the normalized form so it is easier on the solver.
 which will be filled later.
 
 ## Compiler
+%%%
+tag := "zh-releases-v4-17-0-h007"
+%%%
 
 * [#6535](https://github.com/leanprover/lean4/pull/6535) avoids a linker warning on Windows.
 
@@ -1036,6 +1057,9 @@ missed during the initial Float32 implementation, but this omission has
 the side effect of lowering Float32 to obj in the IR.
 
 ## Pretty Printing
+%%%
+tag := "zh-releases-v4-17-0-h008"
+%%%
 
 * [#6703](https://github.com/leanprover/lean4/pull/6703) modifies the delaborator so that in `pp.tagAppFns` mode,
 generalized field notation is tagged with the head constant. The effect
@@ -1060,6 +1084,9 @@ tokens will be linkified. This new behavior is consistent with how
 `notation` defines app unexpanders.
 
 ## Documentation
+%%%
+tag := "zh-releases-v4-17-0-h009"
+%%%
 
 * [#6549](https://github.com/leanprover/lean4/pull/6549) fixes #6548.
 
@@ -1080,6 +1107,9 @@ the `HDiv.hDiv` docstring (which is shown when hovering over `/`). It
 was changed from `Int.div` to `Int.tdiv` in #5301.
 
 ## Server
+%%%
+tag := "zh-releases-v4-17-0-h010"
+%%%
 
 * [#6597](https://github.com/leanprover/lean4/pull/6597) fixes the indentation of nested traces nodes in the info view.
 
@@ -1087,6 +1117,9 @@ was changed from `Int.div` to `Int.tdiv` in #5301.
 was introduced in #5666, i.e. v4.14.0.
 
 ## Lake
+%%%
+tag := "zh-releases-v4-17-0-h011"
+%%%
 
 * [#6290](https://github.com/leanprover/lean4/pull/6290) uses `StateRefT` instead of `StateT` to equip the Lake build
 monad with a build store.
@@ -1119,6 +1152,9 @@ now implicit).
 0.0.20250221, `OSTYPE` is now reported as `cygwin` instead of `msys`, which must be accounted for in a few Lake tests.
 
 ## Other
+%%%
+tag := "zh-releases-v4-17-0-h012"
+%%%
 
 * [#6479](https://github.com/leanprover/lean4/pull/6479) speeds up JSON serialisation by using a lookup table to check
 whether a string needs to be escaped.

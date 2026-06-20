@@ -25,16 +25,25 @@ tag := "TreeSet"
 {docstring Std.TreeSet +hideStructureConstructor +hideFields}
 
 # 创建
+%%%
+tag := "zh-basictypes-maps-treeset-h001"
+%%%
 
 {docstring Std.TreeSet.empty}
 
 # 特性
+%%%
+tag := "zh-basictypes-maps-treeset-h002"
+%%%
 
 {docstring Std.TreeSet.isEmpty}
 
 {docstring Std.TreeSet.size}
 
 # 查询
+%%%
+tag := "zh-basictypes-maps-treeset-h003"
+%%%
 
 {docstring Std.TreeSet.contains}
 
@@ -47,6 +56,9 @@ tag := "TreeSet"
 {docstring Std.TreeSet.getD}
 
 ## 基于排序的查询
+%%%
+tag := "zh-basictypes-maps-treeset-h004"
+%%%
 
 {docstring Std.TreeSet.atIdx}
 
@@ -106,6 +118,9 @@ tag := "TreeSet"
 {docstring Std.TreeSet.maxD}
 
 # 修改
+%%%
+tag := "zh-basictypes-maps-treeset-h005"
+%%%
 
 
 {docstring Std.TreeSet.insert}
@@ -126,6 +141,9 @@ tag := "TreeSet"
 
 
 # 迭代
+%%%
+tag := "zh-basictypes-maps-treeset-h006"
+%%%
 
 {docstring Std.TreeSet.iter}
 
@@ -147,6 +165,9 @@ tag := "TreeSet"
 
 
 # 转换
+%%%
+tag := "zh-basictypes-maps-treeset-h007"
+%%%
 
 {docstring Std.TreeSet.toList}
 
@@ -157,6 +178,9 @@ tag := "TreeSet"
 {docstring Std.TreeSet.ofArray}
 
 ## 非捆绑变体
+%%%
+tag := "zh-basictypes-maps-treeset-h008"
+%%%
 
 非捆绑集将格式良好的证明与数据分开。
 这在定义 {ref "raw-data"}[嵌套归纳类型] 时主要有用。

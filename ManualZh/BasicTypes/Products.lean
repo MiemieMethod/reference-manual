@@ -140,12 +140,18 @@ tag := "prod-api"
 仅作为一对，{lean}`Prod` 的主 API 由模式匹配以及第一和第二投影 {name}`Prod.fst` 和 {name}`Prod.snd` 提供。
 
 ### 转型
+%%%
+tag := "zh-basictypes-products-h003"
+%%%
 
 {docstring Prod.map}
 
 {docstring Prod.swap}
 
 ### 自然数范围
+%%%
+tag := "zh-basictypes-products-h004"
+%%%
 
 {docstring Prod.allI}
 
@@ -154,6 +160,9 @@ tag := "prod-api"
 {docstring Prod.foldI}
 
 ### 订购
+%%%
+tag := "zh-basictypes-products-h005"
+%%%
 
 {docstring Prod.lexLt}
 

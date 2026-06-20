@@ -646,6 +646,9 @@ norm
 {TODO}[Document `gen` modifier for `grind` patterns]
 
 # 检查模式
+%%%
+tag := "zh-grind-ematching-h002"
+%%%
 
 {attr}`grind?` 属性是 {attr}`grind` 属性的一个版本，它另外显示生成的图案或 {tech}[多图案]。
 模式和多重模式显示为子表达式列表，每个子表达式都是一个模式；普通模式显示为单例列表。

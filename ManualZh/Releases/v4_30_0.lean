@@ -29,12 +29,18 @@ file := "v4.30.0"
 以及 54 个其他变化。
 
 # 亮点
+%%%
+tag := "zh-releases-v4-30-0-h001"
+%%%
 
 Lean 4.30.0 带来了新的交互式 `sym =>`策略、显着扩展的 `cbv`策略、完成了具有用户可控借用注释的新 LCNF 编译器后端，并对 Lake 的缓存基础设施进行了重大检修。
 
 _此亮点部分由 Juanjo Madrigal 贡献。_
 
 ## 全新 `sym =>` 互动策略
+%%%
+tag := "zh-releases-v4-30-0-h002"
+%%%
 
 [#12970](https://github.com/leanprover/lean4/pull/12970) 添加了 `sym =>`，这是一种基于 {tactic}`grind` 构建的新交互式策略模式。与 `grind =>` 急切地引入假设并应用反证法不同，`sym =>` 为用户提供了对每个步骤的明确控制。因此，用户可以使用 `grind` 提供的所有基础设施，但采用自定义策略：
 
@@ -54,6 +60,9 @@ example (f : Nat → Nat) (a b : Nat)
 相关开发可以在 PR 中找到： [#12996](https://github.com/leanprover/lean4/pull/12996) / [#13018](https://github.com/leanprover/lean4/pull/13018) / [#13034](https://github.com/leanprover/lean4/pull/13034) / [#13039](https://github.com/leanprover/lean4/pull/13039) / [#13040](https://github.com/leanprover/lean4/pull/13040) / [#13041](https://github.com/leanprover/lean4/pull/13041) / [#13042](https://github.com/leanprover/lean4/pull/13042) / [#13046](https://github.com/leanprover/lean4/pull/13046) / [#13048](https://github.com/leanprover/lean4/pull/13048) / [#13080](https://github.com/leanprover/lean4/pull/13080)。
 
 ## `cbv`策略扩展
+%%%
+tag := "zh-releases-v4-30-0-h003"
+%%%
 
 v4.29.0 中引入的 {tactic}`cbv`策略不再是实验性的，并在此版本中获得主要的新功能。
 
@@ -87,8 +96,14 @@ v4.30.0 引入了以下改进：
 - 其他改进：[#12851](https://github.com/leanprover/lean4/pull/12851) / [#12944](https://github.com/leanprover/lean4/pull/12944) / [#12875](https://github.com/leanprover/lean4/pull/12875) / [#12888](https://github.com/leanprover/lean4/pull/12888)。
 
 ## 编译器：用户借用注释和新的 LCNF 后端
+%%%
+tag := "zh-releases-v4-30-0-h004"
+%%%
 
 ### 用户借用注释
+%%%
+tag := "zh-releases-v4-30-0-h005"
+%%%
 
 [#12830](https://github.com/leanprover/lean4/pull/12830) 启用对用户提供的借用注释的支持。 Users can now mark function arguments with `(x : @&Ty)` and have the borrow inference preserve these annotations, reducing引用计数pressure:
 
@@ -102,18 +117,27 @@ def process (ctx : @& Context) (data : Array Nat) : Result :=
 [#12942](https://github.com/leanprover/lean4/pull/12942) 将 {lean}`ReaderT` 的上下文参数标记为借用 (`(a : @&ρ) → m α`)，从而导致整个元编程堆栈中的 RC 压力广泛减少。
 
 ### 新 LCNF 后端完成
+%%%
+tag := "zh-releases-v4-30-0-h006"
+%%%
 
 [#12781](https://github.com/leanprover/lean4/pull/12781) 将 C 发射通道从 IR 移植到 LCNF，标志着 IR/LCNF 转换的最后一步，并通过新的编译基础设施实现端到端代码生成。
 
 [#12665](https://github.com/leanprover/lean4/pull/12665) 将扩展重置/重用传递移植到 LCNF，并改进了指数级代码膨胀的预防，从而使二进制大小减少约 15%，并带来全面的小幅加速。
 
 ### 其他编译器改进
+%%%
+tag := "zh-releases-v4-30-0-h007"
+%%%
 
 - [#12971](https://github.com/leanprover/lean4/pull/12971) 将 Lean 的默认堆栈大小增加到 1GB（页面是动态分配的，因此不会增加内存使用量）。堆栈大小可以通过 `LEAN_STACK_SIZE_KB` 自定义。
 - [#12539](https://github.com/leanprover/lean4/pull/12539) 用 `Lean.Compiler.NameDemangling` 中的单一事实来源替换了三个独立的名称重组实现（Lean、C++、Python），删除了约 1,400 行重复代码。
 - [#12724](https://github.com/leanprover/lean4/pull/12724)、[#12727](https://github.com/leanprover/lean4/pull/12727) 将地面数组和装箱标量文字提取到静态初始化数据中。
 
 ## Lake 缓存检修
+%%%
+tag := "zh-releases-v4-30-0-h008"
+%%%
 
 此版本对 Lake 的缓存基础设施进行了全面检修：
 
@@ -132,6 +156,9 @@ def process (ctx : @& Context) (data : Array Nat) : Result :=
 - [#12935](https://github.com/leanprover/lean4/pull/12935)：新的 `fixedToolchain` 选项适用于仅在单个工具链上运行的软件包（如 Mathlib）。
 
 ## 其他语言改进
+%%%
+tag := "zh-releases-v4-30-0-h009"
+%%%
 
 - [#13011](https://github.com/leanprover/lean4/pull/13011) 添加了 `@[deprecated_arg]`，这是一个用于弃用单个函数参数的新属性。当调用者使用旧参数名称时，精化器会发出带有代码操作提示的弃用警告。
 - [#12756](https://github.com/leanprover/lean4/pull/12756) 添加了 `deriving noncomputable instance Foo for Bar` 语法，以便可以将增量派生实例标记为不可计算。
@@ -141,12 +168,21 @@ def process (ctx : @& Context) (data : Array Nat) : Result :=
 - [#12233](https://github.com/leanprover/lean4/pull/12233) 将 `instantiateMVars` 替换为两遍实现，将二次复杂度从延迟分配元变量的长链降低为线性。
 
 ## 图书馆亮点
+%%%
+tag := "zh-releases-v4-30-0-h010"
+%%%
 
 ### HTTP 库
+%%%
+tag := "zh-releases-v4-30-0-h011"
+%%%
 
 [#12126](https://github.com/leanprover/lean4/pull/12126)、[#12127](https://github.com/leanprover/lean4/pull/12127)、[#12128](https://github.com/leanprover/lean4/pull/12128) 和 [#12144](https://github.com/leanprover/lean4/pull/12144) 介绍核心 HTTP 数据类型：`Request`、 `Response`、`Status`、`Version`、`Method`、`Headers`、`URI` 和流式 `Body`。这是 Lean 中标准 HTTP 库的基础。
 
 ### 其他库添加
+%%%
+tag := "zh-releases-v4-30-0-h012"
+%%%
 
 - 字符串验证从 v4.29.0 开始继续进行，并提供 `startsWith`、`skipPrefix?`、`dropPrefix?`、`endsWith`、`dropSuffix?`、`split`、`intercalate`、`isNat` 的证明， `toNat?`、`isInt`、`toInt?`、`drop`、`take` 等。
 - [#12852](https://github.com/leanprover/lean4/pull/12852) 添加 `PersistentHashMap` 迭代器，[#12844](https://github.com/leanprover/lean4/pull/12844) 添加 `append` 组合器用于迭代器串联。
@@ -156,10 +192,16 @@ def process (ctx : @& Context) (data : Array Nat) : Result :=
 - [#12433](https://github.com/leanprover/lean4/pull/12433) 为 `BitVec.cpop` 添加高效的并行前缀和位爆破电路。
 
 ## 实验：使用 `idbg` 进行实时调试
+%%%
+tag := "zh-releases-v4-30-0-h013"
+%%%
 
 [#12648](https://github.com/leanprover/lean4/pull/12648) 添加了实验性 `idbg e` 语法，用于语言服务器和正在运行的编译的 Lean 程序之间的实时调试。当放置在 `do` 块中时，`idbg` 捕获范围和表达式 `e` 中的局部变量，然后通过 TCP 将正在运行的程序连接到语言服务器，以使用实际运行时值计算 `e`。可以在程序运行时编辑表达式 - 每次编辑都会触发重新评估，并将更新的结果显示为信息诊断。这是实验性的，具有已知的局限性（一次单个 `idbg`，必须设置 `LEAN_PATH`，未在 Windows/macOS 上进行测试）。
 
 ## 重大变化
+%%%
+tag := "zh-releases-v4-30-0-h014"
+%%%
 
 - [#12897](https://github.com/leanprover/lean4/pull/12897)：依赖于这些实例之前的“defeq 滥用”或依赖于其特定结构的证明可能需要调整。由于 `inferInstanceAs A` 现在需要准确了解源和目标类型才能继续，因此它不能再用作 `(inferInstance : A)` 的同义词，当源和目标类型相同时，请使用后者。
 - [#13005](https://github.com/leanprover/lean4/pull/13005)：直接调用 `compileDecl` 的元程序现在可能需要在适当的情况下首先调用 `markMeta`，这可能基于现有声明的 `isMarkedMeta` 的值。为此，`addAndCompile` 应分为 `addDecl` 和 `compileDecl`，以便在其间插入呼叫。
@@ -170,6 +212,9 @@ def process (ctx : @& Context) (data : Array Nat) : Result :=
 - [#12603](https://github.com/leanprover/lean4/pull/12603)：具有以无类型绑定程序开头的构造函数的归纳类型可能需要重写，例如如果存在具有该名称的 `variable` 或者如果它旨在隐藏归纳类型的参数之一，则将 `(x)` 更改为 `(x : _)`。
 
 # 语言
+%%%
+tag := "zh-releases-v4-30-0-h015"
+%%%
 
 ````markdown
 
@@ -388,6 +433,9 @@ def process (ctx : @& Context) (data : Array Nat) : Result :=
 ````
 
 # 图书馆
+%%%
+tag := "zh-releases-v4-30-0-h016"
+%%%
 
 ```markdown
 
@@ -610,6 +658,9 @@ def process (ctx : @& Context) (data : Array Nat) : Result :=
 ```
 
 # 策略
+%%%
+tag := "zh-releases-v4-30-0-h017"
+%%%
 
 ```markdown
 
@@ -784,6 +835,9 @@ def process (ctx : @& Context) (data : Array Nat) : Result :=
 ```
 
 # 编译器
+%%%
+tag := "zh-releases-v4-30-0-h018"
+%%%
 
 ```markdown
 
@@ -921,6 +975,9 @@ def process (ctx : @& Context) (data : Array Nat) : Result :=
 ```
 
 # 漂亮的印刷
+%%%
+tag := "zh-releases-v4-30-0-h019"
+%%%
 
 ````markdown
 
@@ -949,6 +1006,9 @@ def process (ctx : @& Context) (data : Array Nat) : Result :=
 ````
 
 # 文档
+%%%
+tag := "zh-releases-v4-30-0-h020"
+%%%
 
 ```markdown
 
@@ -970,6 +1030,9 @@ def process (ctx : @& Context) (data : Array Nat) : Result :=
 ```
 
 # 服务器
+%%%
+tag := "zh-releases-v4-30-0-h021"
+%%%
 
 ```markdown
 
@@ -982,6 +1045,9 @@ def process (ctx : @& Context) (data : Array Nat) : Result :=
 ```
 
 # Lake
+%%%
+tag := "zh-releases-v4-30-0-h022"
+%%%
 
 ```markdown
 
@@ -1051,6 +1117,9 @@ def process (ctx : @& Context) (data : Array Nat) : Result :=
 ```
 
 # 其他
+%%%
+tag := "zh-releases-v4-30-0-h023"
+%%%
 
 ```markdown
 

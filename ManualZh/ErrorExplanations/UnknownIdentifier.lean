@@ -41,6 +41,9 @@ variable that is not in scope.
 消息本身。
 
 # 示例
+%%%
+tag := "zh-errorexplanations-unknownidentifier-h001"
+%%%
 
 :::errorExample "Variable Not in Scope"
 ```broken

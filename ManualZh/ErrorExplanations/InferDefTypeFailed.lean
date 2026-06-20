@@ -38,6 +38,9 @@ shortTitle := "inferDefTypeFailed"
 永远不会尝试使用定理体来推断被证明的命题。
 
 # 示例
+%%%
+tag := "zh-errorexplanations-inferdeftypefailed-h001"
+%%%
 
 :::errorExample "Implicit Argument Cannot be Inferred"
 ```broken

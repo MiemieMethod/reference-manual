@@ -62,6 +62,9 @@ Lean 在所有支持的平台上提供一致的文件系统 API。
   由于流是在 Lean 中实现的，因此用户代码可以创建额外的流，这些流可以与标准库中提供的流无缝地一起使用。
 
 # 低级文件 API
+%%%
+tag := "zh-io-files-h001"
+%%%
 
 在最低级别，文件是使用 {name IO.FS.Handle.mk}`Handle.mk` 显式打开的。
 当删除对句柄对象的最后一个引用时，文件将被关闭。
@@ -163,6 +166,9 @@ Contents: '!!B!!BCD!B'
 ::::
 
 # 流
+%%%
+tag := "zh-io-files-h002"
+%%%
 
 {docstring IO.FS.Stream}
 
@@ -176,6 +182,9 @@ Contents: '!!B!!BCD!B'
 
 
 # 路径
+%%%
+tag := "zh-io-files-h003"
+%%%
 
 路径由字符串表示。
 不同的平台对路径有不同的约定：一些使用斜杠（`/`）作为目录分隔符，另一些使用反斜杠（`\`）。
@@ -226,6 +235,9 @@ Contents: '!!B!!BCD!B'
 {docstring System.FilePath.exeExtension}
 
 # 与文件系统交互
+%%%
+tag := "zh-io-files-h004"
+%%%
 
 路径上的某些操作会参考文件系统。
 
@@ -380,6 +392,9 @@ def runCountdown : IO String := do
 ::::
 
 # 文件和目录
+%%%
+tag := "zh-io-files-h006"
+%%%
 
 {docstring IO.currentDir}
 

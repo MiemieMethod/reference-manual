@@ -29,6 +29,9 @@ shortTitle := "projNonPropFromProp"
 将被提高。
 
 # 示例
+%%%
+tag := "zh-errorexplanations-projnonpropfromprop-h001"
+%%%
 
 :::errorExample "Attempting to Use Index Projection on Existential Proof"
 

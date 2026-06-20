@@ -51,6 +51,9 @@ tag := "validating-blue-check-marks"
 在日常使用 Lean 时，只需检查定理陈述旁边的蓝色双勾标记即可确保定理得到证明。
 
 ## 指示
+%%%
+tag := "zh-validatingproofs-h002"
+%%%
 
 当与 Lean 交互工作时，一旦定理被证明，蓝色的双复选标记就会出现在代码左侧的装订线中。
 
@@ -59,14 +62,23 @@ tag := "validating-blue-check-marks"
 :::
 
 ## 意义
+%%%
+tag := "zh-validatingproofs-h003"
+%%%
 
 蓝色勾号表示根据当前文件及其导入中定义的语法和类型类实例，已成功精化定理陈述，并且 Lean内核已接受从当前文件及其导入中声明的定义、定理和公理得出的定理陈述的证明。
 
 ## 相信
+%%%
+tag := "zh-validatingproofs-h004"
+%%%
 
 如果人们相信正式定理陈述与其预期的非正式含义相对应，并相信导入库的作者是 {tech}[诚实]，他们检查了其库中的定理是否表达了其预期的非正式含义，并且没有声明和使用不健全的公理，则此检查是有意义的。
 
 ## 保护
+%%%
+tag := "zh-validatingproofs-h005"
+%%%
 
 :::listBullet "🛡️"
 这项检查可以防止
@@ -78,6 +90,9 @@ tag := "validating-blue-check-marks"
 :::
 
 ## 评论
+%%%
+tag := "zh-validatingproofs-h006"
+%%%
 
 在 Visual Studio Code 扩展设置中，可以更改符号。
 VS Code 以外的编辑器可能有不同的指示。
@@ -93,6 +108,9 @@ tag := "validating-printing-axioms"
 由于 {lean}`sorry` 和不完整证明都被详细精化为公理，因此可以通过列出证明所依赖的公理来检测它们的存在。
 
 ## 指示
+%%%
+tag := "zh-validatingproofs-h008"
+%%%
 
 :::keepEnv
 ```lean -show
@@ -105,6 +123,9 @@ theorem thmName : TheoremStatement := .intro
 :::
 
 ## 意义
+%%%
+tag := "zh-validatingproofs-h009"
+%%%
 
 该命令打印该定理及其所依赖的定理所使用的公理集。
 上述三个公理是Lean逻辑的标准公理，并且是良性的。
@@ -114,10 +135,16 @@ theorem thmName : TheoremStatement := .intro
 * 任何其他公理都意味着声明和使用了自定义公理，并且该定理仅相对于这些公理的健全性有效。
 
 ## 相信
+%%%
+tag := "zh-validatingproofs-h010"
+%%%
 
 如果人们相信正式定理陈述与其预期的非正式含义相对应，并且相信导入库的作者是 {tech}[诚实]，则此检查是有意义的。
 
 ## 保护
+%%%
+tag := "zh-validatingproofs-h011"
+%%%
 
 :::listBullet "🛡️"
 （除了上面的列表之外）
@@ -135,19 +162,31 @@ tag := "validating-lean4checker"
 有一小类错误和一些不诚实的证明方式，可以通过在构建项目时重新检查存储在 {tech}[`.olean` 文件] 中的证明来捕获。
 
 ## 指示
+%%%
+tag := "zh-validatingproofs-h013"
+%%%
 
 使用 {lake}`build` 构建您的项目，在包含感兴趣的定理的模块上运行 `lean4checker --fresh`，并检查是否未报告错误。
 
 ## 意义
+%%%
+tag := "zh-validatingproofs-h014"
+%%%
 
 `lean4checker` 工具读取 `lean` 在构建期间存储的声明和证明（{tech}[`.olean` 文件]），并通过内核重播它们。
 它相信 {tech}[`.olean` 文件] 结构正确。
 
 ## 相信
+%%%
+tag := "zh-validatingproofs-h015"
+%%%
 
 如果人们相信正式定理陈述与其预期的非正式含义相对应，并且相信导入库的作者不是非常狡猾的 {tech}[恶意]，并且既不会损害用户的系统，也不会使用 Lean 的可扩展性来改变定理陈述的解释，则此检查是有意义的。
 
 ## 保护
+%%%
+tag := "zh-validatingproofs-h016"
+%%%
 
 :::listBullet "🛡️"
 （除了上面的列表之外）
@@ -157,6 +196,9 @@ tag := "validating-lean4checker"
 :::
 
 ## 评论
+%%%
+tag := "zh-validatingproofs-h017"
+%%%
 
 由于 `lean4checker` 读取 {tech}[`.olean` 文件] 而不验证其格式，因此此检查很容易导致攻击者制作无效的 `.olean` 文件（例如无效指针、字符串中的无效数据）。
 
@@ -177,20 +219,32 @@ tag := "validating-comparator"
 这应该只适用于高风险场景（证明市场、高奖励证明竞争、不统一的人工智能）。
 
 ## 指示
+%%%
+tag := "zh-validatingproofs-h019"
+%%%
 
 在可信环境中，编写定理*陈述*（“挑战”），然后将挑战以及提议的证明提供给 [`comparator`](https://github.com/leanprover/comparator) 工具，并启用外部检查器，如其中所述。
 
 ## 意义
+%%%
+tag := "zh-validatingproofs-h020"
+%%%
 
 Comparator 将在沙盒环境中构建证明，以防止构建步骤中的 {tech}[恶意] 代码。
 证明项导出为序列化格式。
 在沙箱之外并且远离可能的恶意代码，它会验证导出的格式，使用 Lean 的内核和/或外部检查器重放证明，并确保已证明的定理语句与可信挑战文件中的定理语句相匹配。
 
 ## 相信
+%%%
+tag := "zh-validatingproofs-h021"
+%%%
 
 如果可信质询文件中的定理语句正确并且用于构建可能的 {tech}[恶意] 代码的沙箱是安全的，则此检查是有意义的。
 
 ## 保护
+%%%
+tag := "zh-validatingproofs-h022"
+%%%
 
 :::listBullet "🛡️"
 （除了上面的列表之外）
@@ -200,10 +254,16 @@ Comparator 将在沙盒环境中构建证明，以防止构建步骤中的 {tech
 :::
 
 ## 评论
+%%%
+tag := "zh-validatingproofs-h023"
+%%%
 
 截至撰写本文时，`comparator` 支持使用官方 Lean内核和独立开发并在 Rust 中实现的外部检查器 [`nanoda`](https://github.com/ammkrn/nanoda_lib)。 [Lean内核Arena](https://arena.lean-lang.org/) 具有更多外部检查器，可以手动使用，以提高信心。
 
 # 剩余问题
+%%%
+tag := "zh-validatingproofs-h024"
+%%%
 
 当遵循使用比较器检查证明的黄金标准时，仍然存在一些假设：
 

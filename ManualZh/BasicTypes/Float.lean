@@ -121,6 +121,9 @@ def pos0 : Float := 0.0
 
 
 # 句法
+%%%
+tag := "zh-basictypes-float-h001"
+%%%
 
 Lean 没有专用的浮点文字。
 相反，浮点文字是通过 {name}`OfScientific` 和 {name}`Neg` 类型类的适当实例来解析的。
@@ -156,6 +159,9 @@ tag := "Float-api"
 %%%
 
 ## 特性
+%%%
+tag := "zh-basictypes-float-h003"
+%%%
 
 浮点数属于以下三类之一：
 
@@ -179,6 +185,9 @@ tag := "Float-api"
 
 
 ## 句法
+%%%
+tag := "zh-basictypes-float-h004"
+%%%
 
 这些操作的存在是为了支持 {inst}`OfScientific Float` 和 {inst}`OfScientific Float32` 实例，并且通常作为文字值的结果间接调用。
 
@@ -188,6 +197,9 @@ tag := "Float-api"
 
 
 ## 转换
+%%%
+tag := "zh-basictypes-float-h005"
+%%%
 
 {docstring Float.toBits}
 
@@ -262,12 +274,18 @@ tag := "Float-api"
 {docstring Float32.frExp}
 
 ## 比较
+%%%
+tag := "zh-basictypes-float-h006"
+%%%
 
 {docstring Float.beq}
 
 {docstring Float32.beq}
 
 ### 不平等现象
+%%%
+tag := "zh-basictypes-float-h007"
+%%%
 
 不等式的决策过程是逻辑中不透明的常数。
 它们只能通过 {name}`Lean.ofReduceBool` 公理使用，例如通过 {tactic}`native_decide`策略。
@@ -289,6 +307,9 @@ tag := "Float-api"
 {docstring Float32.decLt}
 
 ## 算术
+%%%
+tag := "zh-basictypes-float-h008"
+%%%
 
 浮点值的算术运算通常通过 {inst}`Add Float`、{inst}`Sub Float`、{inst}`Mul Float`、{inst}`Div Float` 和 {inst}`HomogeneousPow Float` 实例以及相应的 {name}`Float32` 实例调用。
 
@@ -321,6 +342,9 @@ tag := "Float-api"
 {docstring Float32.exp2}
 
 ### 根源
+%%%
+tag := "zh-basictypes-float-h009"
+%%%
 
 计算负数的平方根得到 `NaN`。
 
@@ -333,6 +357,9 @@ tag := "Float-api"
 {docstring Float32.cbrt}
 
 ## 对数
+%%%
+tag := "zh-basictypes-float-h010"
+%%%
 
 {docstring Float.log}
 
@@ -347,12 +374,18 @@ tag := "Float-api"
 {docstring Float32.log2}
 
 ## 缩放
+%%%
+tag := "zh-basictypes-float-h011"
+%%%
 
 {docstring Float.scaleB}
 
 {docstring Float32.scaleB}
 
 ## 四舍五入
+%%%
+tag := "zh-basictypes-float-h012"
+%%%
 
 {docstring Float.round}
 
@@ -367,8 +400,14 @@ tag := "Float-api"
 {docstring Float32.ceil}
 
 ## 三角学
+%%%
+tag := "zh-basictypes-float-h013"
+%%%
 
 ### 正弦
+%%%
+tag := "zh-basictypes-float-h014"
+%%%
 
 {docstring Float.sin}
 
@@ -387,6 +426,9 @@ tag := "Float-api"
 {docstring Float32.asinh}
 
 ### 余弦
+%%%
+tag := "zh-basictypes-float-h015"
+%%%
 
 {docstring Float.cos}
 
@@ -405,6 +447,9 @@ tag := "Float-api"
 {docstring Float32.acosh}
 
 ### 切线
+%%%
+tag := "zh-basictypes-float-h016"
+%%%
 
 {docstring Float.tan}
 
@@ -427,6 +472,9 @@ tag := "Float-api"
 {docstring Float32.atan2}
 
 ## 负数和绝对值
+%%%
+tag := "zh-basictypes-float-h017"
+%%%
 
 {docstring Float.abs}
 

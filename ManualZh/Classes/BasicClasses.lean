@@ -24,6 +24,9 @@ tag := "basic-classes"
 许多 Lean 类型类的存在是为了允许重载内置符号（例如加法或数组索引）。
 
 # 布尔相等测试
+%%%
+tag := "zh-classes-basicclasses-h001"
+%%%
 
 通过定义 {name}`BEq` 的实例来重载布尔相等运算符 `==`。
 伴随类 {name}`Hashable` 指定类型的哈希过程。
@@ -46,6 +49,9 @@ tag := "basic-classes"
 {docstring hash_eq}
 
 # 订购
+%%%
+tag := "zh-classes-basicclasses-h002"
+%%%
 
 对类型的值进行排序有两种主要方法：
  * {name}`Ord` 类型类提供三向比较运算符 {name}`compare`，它可以指示一个值小于、等于或大于另一个值。它返回 {name}`Ordering`。
@@ -184,6 +190,9 @@ true
 :::
 
 ## 实例构建
+%%%
+tag := "zh-classes-basicclasses-h003"
+%%%
 
 {docstring Ord.lex}
 
@@ -192,6 +201,9 @@ true
 {docstring Ord.on}
 
 # 最小值和最大值
+%%%
+tag := "zh-classes-basicclasses-h004"
+%%%
 
 类 `Max` 和 `Min` 提供重载运算符来选择两个值中的较大或较小值。
 这些应该与 `Ord`、`LT` 和 `LE` 实例（如果存在）一致，但没有机制强制执行这一点。
@@ -265,12 +277,18 @@ noncomputable example (f g : Nat → Nat) : Decidable (f = g) :=
 
 
 # 居住类型
+%%%
+tag := "zh-classes-basicclasses-h006"
+%%%
 
 {docstring Inhabited}
 
 {docstring Nonempty}
 
 # 子单例类型
+%%%
+tag := "zh-classes-basicclasses-h007"
+%%%
 
 {docstring Subsingleton}
 
@@ -293,6 +311,9 @@ draft := true
 {docstring ToString +allowMissing}
 
 # 算术和位运算符
+%%%
+tag := "zh-classes-basicclasses-h009"
+%%%
 
 {docstring Zero}
 
@@ -353,12 +374,18 @@ draft := true
 {docstring XorOp}
 
 # 附加
+%%%
+tag := "zh-classes-basicclasses-h010"
+%%%
 
 {docstring HAppend}
 
 {docstring Append}
 
 # 数据查找
+%%%
+tag := "zh-classes-basicclasses-h011"
+%%%
 
 {docstring GetElem}
 

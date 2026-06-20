@@ -27,6 +27,9 @@ Universe（例如 {lean}`Prop` 或 {lean}`Type`），因为不支持点分标识
 这些类型。
 
 # 示例
+%%%
+tag := "zh-errorexplanations-invaliddottedident-h001"
+%%%
 
 :::errorExample "Insufficient Type Information"
 ```broken

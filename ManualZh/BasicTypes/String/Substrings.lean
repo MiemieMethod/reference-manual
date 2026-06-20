@@ -29,12 +29,18 @@ tag := "string-api-substring"
 {docstring Substring.Raw}
 
 # 特性
+%%%
+tag := "zh-basictypes-string-substrings-h001"
+%%%
 
 {docstring Substring.Raw.isEmpty}
 
 {docstring Substring.Raw.bsize}
 
 # 职位
+%%%
+tag := "zh-basictypes-string-substrings-h002"
+%%%
 
 {docstring Substring.Raw.atEnd}
 
@@ -50,6 +56,9 @@ tag := "string-api-substring"
 
 
 # 折叠和聚集
+%%%
+tag := "zh-basictypes-string-substrings-h003"
+%%%
 
 {docstring Substring.Raw.foldl}
 
@@ -60,12 +69,18 @@ tag := "string-api-substring"
 {docstring Substring.Raw.any}
 
 # 比较
+%%%
+tag := "zh-basictypes-string-substrings-h004"
+%%%
 
 {docstring Substring.Raw.beq}
 
 {docstring Substring.Raw.sameAs}
 
 # 前缀和后缀
+%%%
+tag := "zh-basictypes-string-substrings-h005"
+%%%
 
 {docstring Substring.Raw.commonPrefix}
 
@@ -76,6 +91,9 @@ tag := "string-api-substring"
 {docstring Substring.Raw.dropSuffix?}
 
 # 查找
+%%%
+tag := "zh-basictypes-string-substrings-h006"
+%%%
 
 {docstring Substring.Raw.get}
 
@@ -85,6 +103,9 @@ tag := "string-api-substring"
 
 
 # 修改
+%%%
+tag := "zh-basictypes-string-substrings-h007"
+%%%
 
 {docstring Substring.Raw.drop}
 
@@ -116,6 +137,9 @@ tag := "string-api-substring"
 {docstring Substring.Raw.repair}
 
 # 转换
+%%%
+tag := "zh-basictypes-string-substrings-h008"
+%%%
 
 {docstring Substring.Raw.toString}
 

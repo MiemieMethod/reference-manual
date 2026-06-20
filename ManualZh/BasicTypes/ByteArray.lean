@@ -38,8 +38,14 @@ tag := "ByteArray"
 {docstring ByteArray}
 
 # API 参考
+%%%
+tag := "zh-basictypes-bytearray-h001"
+%%%
 
 ## 构造字节数组
+%%%
+tag := "zh-basictypes-bytearray-h002"
+%%%
 
 {docstring ByteArray.empty}
 
@@ -52,6 +58,9 @@ tag := "ByteArray"
 {docstring ByteArray.copySlice}
 
 ## 尺寸
+%%%
+tag := "zh-basictypes-bytearray-h003"
+%%%
 
 {docstring ByteArray.size}
 
@@ -60,6 +69,9 @@ tag := "ByteArray"
 {docstring ByteArray.isEmpty}
 
 ## 查找
+%%%
+tag := "zh-basictypes-bytearray-h004"
+%%%
 
 {docstring ByteArray.get}
 
@@ -70,6 +82,9 @@ tag := "ByteArray"
 {docstring ByteArray.extract}
 
 ## 转换
+%%%
+tag := "zh-basictypes-bytearray-h005"
+%%%
 
 {docstring ByteArray.toList}
 
@@ -78,6 +93,9 @@ tag := "ByteArray"
 {docstring ByteArray.toUInt64LE!}
 
 ### UTF-8
+%%%
+tag := "zh-basictypes-bytearray-h006"
+%%%
 
 {docstring ByteArray.utf8Decode?}
 
@@ -86,6 +104,9 @@ tag := "ByteArray"
 {docstring ByteArray.utf8DecodeChar}
 
 ## 修改
+%%%
+tag := "zh-basictypes-bytearray-h007"
+%%%
 
 {docstring ByteArray.push}
 
@@ -96,6 +117,9 @@ tag := "ByteArray"
 {docstring ByteArray.set!}
 
 ## 迭代
+%%%
+tag := "zh-basictypes-bytearray-h008"
+%%%
 
 {docstring ByteArray.foldl}
 
@@ -104,6 +128,9 @@ tag := "ByteArray"
 {docstring ByteArray.forIn}
 
 ## 迭代器
+%%%
+tag := "zh-basictypes-bytearray-h009"
+%%%
 
 {docstring ByteArray.iter}
 
@@ -138,6 +165,9 @@ tag := "ByteArray"
 {docstring ByteArray.Iterator.toEnd}
 
 ## 切片
+%%%
+tag := "zh-basictypes-bytearray-h010"
+%%%
 
 {docstring ByteArray.toByteSlice}
 
@@ -177,6 +207,9 @@ tag := "ByteArray"
 
 
 ## 元素谓词
+%%%
+tag := "zh-basictypes-bytearray-h011"
+%%%
 
 {docstring ByteArray.findIdx?}
 

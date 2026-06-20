@@ -69,6 +69,9 @@ Lean 的解析器生成 {name}`Lean.Syntax` 类型的具体语法树。
 {docstring Lean.Syntax.Preresolved}
 
 # 语法节点类型
+%%%
+tag := "zh-notationsmacros-syntaxdef-h002"
+%%%
 
 语法节点类型通常标识生成该节点的解析器。
 这是为运算符或符号（或其自动生成的内部名称）指定的名称出现的地方。
@@ -85,6 +88,9 @@ Lean 的解析器将每个关键字原子 `KW` 包装在一个单例节点中，
 {docstring Lean.Syntax.setKind}
 
 # 令牌和文字类型
+%%%
+tag := "zh-notationsmacros-syntaxdef-h003"
+%%%
 
 许多命名类型与解析器生成的基本标记相关联。
 通常，单令牌语法产生式由包含单个 {name Lean.Syntax.atom}`atom` 的 {name Lean.Syntax.node}`node` 组成；节点中保存的种类允许识别该值。
@@ -131,6 +137,9 @@ info: Lean.Syntax.node (Lean.SourceInfo.none) `str #[Lean.Syntax.atom (Lean.Sour
 {docstring Lean.fieldIdxKind}
 
 # 内部种类
+%%%
+tag := "zh-notationsmacros-syntaxdef-h004"
+%%%
 
 {docstring Lean.groupKind}
 
@@ -168,6 +177,9 @@ tag := "source-info"
 {docstring Lean.SourceInfo}
 
 # 检查语法
+%%%
+tag := "zh-notationsmacros-syntaxdef-h006"
+%%%
 
 ```lean -show
 section Inspecting
@@ -427,6 +439,9 @@ variable {ks : SyntaxNodeKinds} {sep : String}
 
 
 # 别名
+%%%
+tag := "zh-notationsmacros-syntaxdef-h008"
+%%%
 
 为常用的类型化语法变体提供了许多别名。
 这些别名允许在更高的抽象级别编写代码。

@@ -157,6 +157,9 @@ h_3 : 9 * x + -7 * y + -4 ≤ 0
 :::
 
 # 非线性约束
+%%%
+tag := "zh-grind-cutsat-h002"
+%%%
 
 该求解器目前支持非线性约束，并将诸如 `x * x` 之类的非线性项视为变量。
 
@@ -216,6 +219,9 @@ example (x : Int) : x*x ≥ 0 := by
 ::::
 
 # 除法和模数
+%%%
+tag := "zh-grind-cutsat-h003"
+%%%
 
 该求解器支持线性除法和模运算。
 
@@ -230,6 +236,9 @@ example (x y : Int) :
 :::
 
 # 代数处理
+%%%
+tag := "zh-grind-cutsat-h004"
+%%%
 
 求解器规范交换（半）环表达式。
 
@@ -329,6 +338,9 @@ example (a b c : UInt64) : a ≤ 2 → b ≤ 3 → c - a - b = 0 → c ≤ 5 := 
 {docstring Lean.Grind.IntInterval}
 
 # 实施说明
+%%%
+tag := "zh-grind-cutsat-h007"
+%%%
 
 ::::leanSection
 ```lean -show

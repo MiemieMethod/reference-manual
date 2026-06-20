@@ -75,6 +75,9 @@ Lake 未使用的字段名称不应用于存储要由其他工具处理的元数
 
 
 ## 封装配置
+%%%
+tag := "zh-buildtools-lake-config-h002"
+%%%
 
 `lakefile.toml` 的顶级内容指定适用于包本身的选项，包括名称和版本等元数据、{tech}[工作空间]中文件的位置、用于所有 {tech}[目标] 的编译器标志，以及
 唯一的必填字段是 `name`，它声明包的名称。
@@ -375,6 +378,9 @@ name = "Sorting"
 :::::
 
 ## 依赖关系
+%%%
+tag := "zh-buildtools-lake-config-h003"
+%%%
 
 依赖关系在包配置的 {toml}`[[require]]` 字段数组中指定，该数组指定每个包的名称和源。
 来源有以下三种：
@@ -532,6 +538,9 @@ source = {type = "git", url = "https://example.com/example.git"}
 :::::
 
 ## 库目标
+%%%
+tag := "zh-buildtools-lake-config-h004"
+%%%
 
 库目标预计位于 `lean_lib` 表数组中。
 
@@ -628,6 +637,9 @@ precompileModules = true
 :::::
 
 ## 可执行目标
+%%%
+tag := "zh-buildtools-lake-config-h005"
+%%%
 
 :::: tomlTableDocs "lean_exe" "Executable Targets" Lake.LeanExeConfig (skip := backend) (skip := globs) (skip := nativeFacets)
 :::tomlField Lake.LeanExeConfig name "The executable's name" "Executable names" String
@@ -747,6 +759,9 @@ open Lean (NameMap)
 ```
 
 ## 声明字段
+%%%
+tag := "zh-buildtools-lake-config-h007"
+%%%
 
 Lean 配置格式的声明性子集使用声明字段序列来指定配置选项。
 
@@ -760,6 +775,9 @@ $_ := $_
 :::
 
 ## 套餐
+%%%
+tag := "zh-buildtools-lake-config-h008"
+%%%
 ::::syntax command (title := "Package Configuration")
 ```grammar
 $[$_:docComment]?
@@ -800,6 +818,9 @@ post_update $[$name]? $v
 
 
 ## 依赖关系
+%%%
+tag := "zh-buildtools-lake-config-h009"
+%%%
 
 使用 {keywordOf Lake.DSL.requireDecl}`require` 声明指定依赖关系。
 
@@ -835,6 +856,9 @@ from git $t $[@ $t]? $[/ $t]?
 
 
 ## 目标
+%%%
+tag := "zh-buildtools-lake-config-h010"
+%%%
 
 
 
@@ -852,6 +876,9 @@ default_target
 :::
 
 ### 图书馆
+%%%
+tag := "zh-buildtools-lake-config-h011"
+%%%
 
 
 :::syntax command (title := "Library Targets")
@@ -890,6 +917,9 @@ $[where
 {docstring Lake.LeanLibConfig}
 
 ### 可执行文件
+%%%
+tag := "zh-buildtools-lake-config-h012"
+%%%
 
 :::syntax command (title := "Executable Targets")
 
@@ -923,6 +953,9 @@ $[where
 {docstring Lake.LeanExeConfig}
 
 ### 外部库
+%%%
+tag := "zh-buildtools-lake-config-h013"
+%%%
 
 由于外部库可以用任何语言编写并且需要任意构建步骤，因此它们被定义为用 {name Lake.FetchM}`FetchM` monad 编写的程序，生成 {name Lake.Job}`Job`。
 外部库目标应该生成一个构建作业来执行构建，然后返回生成的静态库的位置。
@@ -943,6 +976,9 @@ $[where $_*]?
 :::
 
 ### 自定义目标
+%%%
+tag := "zh-buildtools-lake-config-h014"
+%%%
 
 自定义目标可用于使用 Lake API 定义任何增量构建的工件。
 
@@ -960,6 +996,9 @@ $[where $_*]?
 :::
 
 ### 自定义方面
+%%%
+tag := "zh-buildtools-lake-config-h015"
+%%%
 
 自定义方面允许从模块、库或包增量构建其他工件。
 
@@ -1012,6 +1051,9 @@ $[where $_*]?
 :::
 
 ## 配置值类型
+%%%
+tag := "zh-buildtools-lake-config-h016"
+%%%
 
 {docstring Lake.BuildType}
 
@@ -1065,6 +1107,9 @@ $_:name".+"
 {docstring Lake.Backend}
 
 ## 脚本
+%%%
+tag := "zh-buildtools-lake-config-h017"
+%%%
 
 Lake 脚本用于自动执行需要访问包配置但不参与代码工件增量构建的任务。
 脚本在 {name Lake.ScriptM}`ScriptM` monad 中运行，即 {name}`IO` 以及附加的 {tech}[reader monad] {tech (key := "monad transformer")}[transformer]，提供对包配置的访问。
@@ -1105,6 +1150,9 @@ default_script
 
 
 ## 公用事业
+%%%
+tag := "zh-buildtools-lake-config-h018"
+%%%
 
 :::syntax term (title := "The Current Directory")
 ```grammar

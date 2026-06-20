@@ -158,6 +158,9 @@ $a<...*
 :::
 
 # 范围类型
+%%%
+tag := "zh-basictypes-range-h001"
+%%%
 
 {docstring Std.Rco +allowMissing}
 
@@ -268,6 +271,9 @@ $a<...*
 {docstring Std.Rii.isEmpty}
 
 # 范围相关的 Type 类
+%%%
+tag := "zh-basictypes-range-h002"
+%%%
 
 {docstring Std.PRange.UpwardEnumerable}
 
@@ -292,6 +298,9 @@ $a<...*
 {docstring Std.Rxc.HasSize}
 
 # 实施范围
+%%%
+tag := "zh-basictypes-range-h003"
+%%%
 
 内置范围类型可以与任何类型一起使用，但它们的有用性取决于某些类型类实例的存在。
 一般来说，范围要么检查成员资格，要么枚举或迭代。
@@ -567,6 +576,9 @@ It's Day.we
 ::::
 
 # 范围和切片
+%%%
+tag := "zh-basictypes-range-h004"
+%%%
 
 范围语法可与支持切片的数据结构一起使用以选择结构的切片。
 

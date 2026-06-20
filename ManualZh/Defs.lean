@@ -102,6 +102,9 @@ tag := "signature-syntax"
 在Lean中，不同类型的声明中的签名都以一致的格式书写。
 
 ## 声明名称
+%%%
+tag := "zh-defs-h003"
+%%%
 
 大多数标头以 {deftech}_declaration name_ 开头，后面跟着正确的签名：其参数和结果类型。
 声明名称是可以选择包含 Universe 参数的名称。
@@ -484,6 +487,9 @@ Note: It is not possible to treat `α` as an implicitly bound variable here beca
 ::::
 
 # 定义
+%%%
+tag := "zh-defs-h007"
+%%%
 
 定义向全局环境添加一个新常量作为代表术语的名称。
 作为内核的 定义等价 的一部分，这个新常数可以通过 {tech (key := "δ")}[δ-reduction] 替换为它所代表的术语。
@@ -574,6 +580,9 @@ opaque $_ $_
 :::
 
 # 定理
+%%%
+tag := "zh-defs-h008"
+%%%
 
 :::paragraph
 由于 {tech}[命题] 是其居民视为证明的类型，因此 {deftech}[定理] 和定义在技术上非常相似。
@@ -616,6 +625,9 @@ theorem $_ $_ where
 
 
 # 声明示例
+%%%
+tag := "zh-defs-h009"
+%%%
 
 {deftech}[example] 是一个匿名定义，经过详细精化后被丢弃。
 示例对于开发过程中的增量测试非常有用，并且可以使文件更容易理解。

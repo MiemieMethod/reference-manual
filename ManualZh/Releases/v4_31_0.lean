@@ -30,12 +30,18 @@ file := "v4.31.0"
 以及 48 个其他变化。
 
 # 亮点
+%%%
+tag := "zh-releases-v4-31-0-h001"
+%%%
 
 Lean 4.31.0 是一个整合性很强的版本：除了一些面向用户的新功能（`do` 阻止精化、Lake 内置 linting 和更丰富的编辑器悬停）之外，它还付出了巨大的协调努力，使定义等价性检查正确尊重透明度级别，更快地重新实现`mvcgen'`，包括 HTTP 在内的库的重大开发，以及包括 LLVM 22 升级在内的广泛性能工作。
 
 _此亮点部分由 Juanjo Madrigal 贡献。_
 
 ## `do` 表示法：新循环形式和新精化器
+%%%
+tag := "zh-releases-v4-31-0-h002"
+%%%
 
 `do` 块中的 `while` 条件现在接受 `if` ([#13534](https://github.com/leanprover/lean4/pull/13534)) 已允许的任何条件形式。除了 `while c do …` 和 `while h : c do …` 之外，您现在还可以匹配模式，与 `:=` 或 `←` 绑定：
 
@@ -75,12 +81,18 @@ must be last element in a `do` sequence
 相关开发在 [#13404](https://github.com/leanprover/lean4/pull/13404) / [#13542](https://github.com/leanprover/lean4/pull/13542) / [#13491](https://github.com/leanprover/lean4/pull/13491) / [#13494](https://github.com/leanprover/lean4/pull/13494) / [#13502](https://github.com/leanprover/lean4/pull/13502) / [#13506](https://github.com/leanprover/lean4/pull/13506) / [#13486](https://github.com/leanprover/lean4/pull/13486) / [#13397](https://github.com/leanprover/lean4/pull/13397) / [#13396](https://github.com/leanprover/lean4/pull/13396) / [#13399](https://github.com/leanprover/lean4/pull/13399) / [#13413](https://github.com/leanprover/lean4/pull/13413) / [#13434](https://github.com/leanprover/lean4/pull/13434) / [#13437](https://github.com/leanprover/lean4/pull/13437) / [#13507](https://github.com/leanprover/lean4/pull/13507) / [#13255](https://github.com/leanprover/lean4/pull/13255) / [#13250](https://github.com/leanprover/lean4/pull/13250)。
 
 ## Monadic 程序验证：`mvcgen'`
+%%%
+tag := "zh-releases-v4-31-0-h003"
+%%%
 
 单元验证框架的工作仍在继续。 [#12965](https://github.com/leanprover/lean4/pull/12965) 引入了用于推理一元 Lean 代码的新基础，将一元 Hoare 三元组的前置/后置条件的断言语言从 `SPred` 推广到任何 `CompleteLattice`，分离终止路径和突然路径的后置条件，并解决了多个全域多态性问题。
 
 在此基础上，[#13644](https://github.com/leanprover/lean4/pull/13644) 添加了实验性 `mvcgen'`策略，这是在新的基于 `SymM` 的符号评估框架上从头开始重新实现 `mvcgen`。在某些综合基准测试中，它的性能比 {tactic}`mvcgen` 高出 100 倍以上，并且希望实现功能完整。 `mvcgen'` 还可以用作交互式 `sym => …` 块内的步骤，其中剩余验证条件成为后续 `grind` 步骤的子目标 ([#13680](https://github.com/leanprover/lean4/pull/13680))。
 
 ## 透明度和 Defeq 纪律
+%%%
+tag := "zh-releases-v4-31-0-h004"
+%%%
 
 此版本的一个跨领域主题是使定义等价检查正确尊重*透明度*：在确定两个术语是否“定义等价”时，Lean 如何积极地展开定义。普通的 `def` 在 `.default` 透明度下对其主体进行 defeq，但 `simp`/`dsimp` 在较低的 `.reducible` 级别上运行，在此级别它不会展开：
 
@@ -110,6 +122,9 @@ example : y = 5 := by simp
 相关开发： [#13492](https://github.com/leanprover/lean4/pull/13492) / [#13363](https://github.com/leanprover/lean4/pull/13363) / [#13281](https://github.com/leanprover/lean4/pull/13281) / [#13512](https://github.com/leanprover/lean4/pull/13512) / [#13636](https://github.com/leanprover/lean4/pull/13636) / [#13833](https://github.com/leanprover/lean4/pull/13833) / [#13317](https://github.com/leanprover/lean4/pull/13317) / [#13368](https://github.com/leanprover/lean4/pull/13368) / [#13793](https://github.com/leanprover/lean4/pull/13793) / [#13280](https://github.com/leanprover/lean4/pull/13280) / [#13768](https://github.com/leanprover/lean4/pull/13768) / [#13772](https://github.com/leanprover/lean4/pull/13772)。
 
 ## 弃用模块、语法和选项
+%%%
+tag := "zh-releases-v4-31-0-h005"
+%%%
 
 此版本为库作者添加了一系列工具来管理弃用：
 
@@ -125,12 +140,18 @@ example : y = 5 := by simp
 一组相关的新 linter 警告冗余修饰符：`linter.redundantVisibility` 表示与默认值匹配的 `private`/`public` ([#13132](https://github.com/leanprover/lean4/pull/13132))，`linter.redundantExpose` 表示无操作 `@[expose]`/`@[no_expose]` （[#13359](https://github.com/leanprover/lean4/pull/13359)），以及带有变量或无法识别的头符号的 `@[simp]` 定理的警告（[#13325](https://github.com/leanprover/lean4/pull/13325)）。
 
 ## Lake：内置 Linting
+%%%
+tag := "zh-releases-v4-31-0-h006"
+%%%
 
 Lake 获得内置的 linting 框架，可通过 `lake lint` 标志访问（[#13393](https://github.com/leanprover/lean4/pull/13393)、[#13431](https://github.com/leanprover/lean4/pull/13431)）。它附带了来自 Batteries/Mathlib (`defLemma`/`defProp`、`checkUnivs`) 上游的环境 linter — 另请参阅 [#13356](https://github.com/leanprover/lean4/pull/13356) 中的核心上游 — 以及 `builtinLint` 包配置选项。标志包括 `--builtin-lint`、`--builtin-only`、`--clippy`、`--lint-all` 和 `--lint-only <name>`，并且 `@[builtin_nolint]` 属性抑制每个声明的特定 linters。
 
 [#13513](https://github.com/leanprover/lean4/pull/13513) 通过将警告保留到每个模块的 `.olean` 中，将其扩展到 *text* linter，并且 [#13843](https://github.com/leanprover/lean4/pull/13843) 使模块系统目标 lint 其公共表面，与下游消费者所看到的相匹配。
 
 ## 表现
+%%%
+tag := "zh-releases-v4-31-0-h007"
+%%%
 
 此版本包括广泛的性能工作：
 
@@ -141,6 +162,9 @@ Lake 获得内置的 linting 框架，可通过 `lake lint` 标志访问（[#133
 - 精化本身对于具有多个字段的结构实例表示法 ([#13760](https://github.com/leanprover/lean4/pull/13760)) 和常见情况下的 `Expr.instantiateBetaRevRange` ([#13758](https://github.com/leanprover/lean4/pull/13758)) 更快。
 
 ## 图书馆亮点
+%%%
+tag := "zh-releases-v4-31-0-h008"
+%%%
 
 上一个版本引入的标准 HTTP 库成长为工作服务器：[#12146](https://github.com/leanprover/lean4/pull/12146) 添加了 `H1` 纯 HTTP/1.1 状态机，[#12151](https://github.com/leanprover/lean4/pull/12151) 添加了异步 HTTP/1.1 `Server`。重要的是，[#13511](https://github.com/leanprover/lean4/pull/13511) 将 `Async` 和 `Http` 模块从 `Internal` 升级到 `Std`。
 
@@ -154,12 +178,18 @@ Lake 获得内置的 linting 框架，可通过 `lake lint` 标志访问（[#133
 许多运行时稳健性修复还将以前无声的内存耗尽故障转变为正确的错误或恐慌，而不是段错误和损坏（[#13392](https://github.com/leanprover/lean4/pull/13392)、[#13546](https://github.com/leanprover/lean4/pull/13546)、[#13547](https://github.com/leanprover/lean4/pull/13547)、 [#13548](https://github.com/leanprover/lean4/pull/13548)、[#13549](https://github.com/leanprover/lean4/pull/13549)、[#13521](https://github.com/leanprover/lean4/pull/13521))。对于安全敏感的部署，[#13401](https://github.com/leanprover/lean4/pull/13401) 添加了 `LEAN_MI_SECURE` 构建选项，可实现额外的 mimalloc 内存安全缓解。
 
 ## 编辑器和用户体验改进
+%%%
+tag := "zh-releases-v4-31-0-h009"
+%%%
 
 [#13260](https://github.com/leanprover/lean4/pull/13260) 添加了对*增量诊断*的服务器端支持。以前，在处理文件时报告诊断需要每次重新发送全套数据，这是文件处理过程中工作量的二次方。宣传 `incrementalDiagnosticSupport` 的客户端现在会收到 `PublishDiagnosticsParams.isIncremental` 标志，告诉他们追加而不是替换，从而消除了二次报告。 VS Code 扩展的客户端实现可在 [vscode-lean4#752](https://github.com/leanprover/vscode-lean4/pull/752) 中跟踪。
 
 元变量 ([#13446](https://github.com/leanprover/lean4/pull/13446)) 和悬停 ([#13728](https://github.com/leanprover/lean4/pull/13728) / [#13399](https://github.com/leanprover/lean4/pull/13399) / [#13678](https://github.com/leanprover/lean4/pull/13678) / [#13715](https://github.com/leanprover/lean4/pull/13715))。
 
 ## 重大变化
+%%%
+tag := "zh-releases-v4-31-0-h010"
+%%%
 
 除了上述与透明度相关的更改外，请注意以下事项：
 
@@ -171,6 +201,9 @@ Lake 获得内置的 linting 框架，可通过 `lake lint` 标志访问（[#133
 - [#13516](https://github.com/leanprover/lean4/pull/13516) 将缺失的 `namespace Lake` 添加到 `Lake.Util.Opaque`；必须更新引用 `Opaque` 而没有 `open Lake` 的代码。
 
 # 语言
+%%%
+tag := "zh-releases-v4-31-0-h011"
+%%%
 
 ````markdown
 
@@ -581,6 +614,9 @@ Lake 获得内置的 linting 框架，可通过 `lake lint` 标志访问（[#133
 ````
 
 # 图书馆
+%%%
+tag := "zh-releases-v4-31-0-h012"
+%%%
 
 ```markdown
 
@@ -688,6 +724,9 @@ Lake 获得内置的 linting 框架，可通过 `lake lint` 标志访问（[#133
 ```
 
 # 策略
+%%%
+tag := "zh-releases-v4-31-0-h013"
+%%%
 
 ```markdown
 
@@ -896,6 +935,9 @@ Lake 获得内置的 linting 框架，可通过 `lake lint` 标志访问（[#133
 ```
 
 # 编译器
+%%%
+tag := "zh-releases-v4-31-0-h014"
+%%%
 
 ```markdown
 
@@ -970,6 +1012,9 @@ Lake 获得内置的 linting 框架，可通过 `lake lint` 标志访问（[#133
 ```
 
 # 漂亮的印刷
+%%%
+tag := "zh-releases-v4-31-0-h015"
+%%%
 
 ```markdown
 
@@ -988,6 +1033,9 @@ Lake 获得内置的 linting 框架，可通过 `lake lint` 标志访问（[#133
 ```
 
 # 文档
+%%%
+tag := "zh-releases-v4-31-0-h016"
+%%%
 
 ```markdown
 
@@ -1000,6 +1048,9 @@ Lake 获得内置的 linting 框架，可通过 `lake lint` 标志访问（[#133
 ```
 
 # 服务器
+%%%
+tag := "zh-releases-v4-31-0-h017"
+%%%
 
 ```markdown
 
@@ -1018,6 +1069,9 @@ Lake 获得内置的 linting 框架，可通过 `lake lint` 标志访问（[#133
 ```
 
 # Lake
+%%%
+tag := "zh-releases-v4-31-0-h018"
+%%%
 
 ```markdown
 
@@ -1078,6 +1132,9 @@ Lake 获得内置的 linting 框架，可通过 `lake lint` 标志访问（[#133
 ```
 
 # 其他
+%%%
+tag := "zh-releases-v4-31-0-h019"
+%%%
 
 ```markdown
 

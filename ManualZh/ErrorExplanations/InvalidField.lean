@@ -26,6 +26,9 @@ Lean 的字段表示法非常强大，但这也会使其变得混乱：表达式
 {ref "generalized-field-notation"}[通用字段表示法]。
 
 # 示例
+%%%
+tag := "zh-errorexplanations-invalidfield-h001"
+%%%
 
 :::errorExample "Incorrect Field Name"
 

@@ -70,6 +70,9 @@ set_option pp.rawOnError true
 {docstring List.rightpad}
 
 # 插入
+%%%
+tag := "zh-basictypes-list-modification-h001"
+%%%
 
 {docstring List.insert}
 

@@ -35,11 +35,17 @@ variable (n : Nat)
 特别是，使用位向量而不是证明数字小于 2 的某个幂可以避免需要注意避免评估具体界限。
 
 # 运行时特性
+%%%
+tag := "zh-basictypes-fin-h001"
+%%%
 
 因为 {lean}`Fin n` 是一个只有单个字段不是证明的结构，所以它是一个 {ref "inductive-types-trivial-wrappers"}[平凡的包装器]。
 这意味着它在编译代码中的表示方式与底层自然数相同。
 
 # 强制和文字
+%%%
+tag := "zh-basictypes-fin-h002"
+%%%
 
 有一个从 {lean}`Fin n` 到 {lean}`Nat` 的 {tech}[强制]，它丢弃数字小于界限的证明。
 特别地，这个强制正是投影{name}`Fin.val`。
@@ -121,8 +127,14 @@ Hint: Type class instance resolution failures can be inspected with the `set_opt
 :::
 
 # API 参考
+%%%
+tag := "zh-basictypes-fin-h003"
+%%%
 
 ## 建造
+%%%
+tag := "zh-basictypes-fin-h004"
+%%%
 
 {docstring Fin.last}
 
@@ -131,6 +143,9 @@ Hint: Type class instance resolution failures can be inspected with the `set_opt
 {docstring Fin.pred}
 
 ## 算术
+%%%
+tag := "zh-basictypes-fin-h005"
+%%%
 
 通常，{name}`Fin` 上的算术运算应使用 Lean 的重载算术表示法进行访问，特别是通过实例 {inst}`Add (Fin n)`、{inst}`Sub (Fin n)`、{inst}`Mul (Fin n)`、{inst}`Div (Fin n)` 和 {inst}`Mod (Fin n)`。
 诸如 {lean}`Fin.natAdd` 之类的异构运算符没有相应的异构实例（例如 {name}`HAdd`），以避免混淆类型推断行为。
@@ -156,6 +171,9 @@ Hint: Type class instance resolution failures can be inspected with the `set_opt
 {docstring Fin.log2}
 
 ## 按位运算
+%%%
+tag := "zh-basictypes-fin-h006"
+%%%
 
 通常，应使用 Lean 的重载按位运算符来访问 {name}`Fin` 上的按位操作，特别是通过实例 {inst}`ShiftLeft (Fin n)`、{inst}`ShiftRight (Fin n)`、{inst}`AndOp (Fin n)`、{inst}`OrOp (Fin n)`、{inst}`Xor (Fin n)`
 
@@ -171,6 +189,9 @@ Hint: Type class instance resolution failures can be inspected with the `set_opt
 
 
 ## 转换
+%%%
+tag := "zh-basictypes-fin-h007"
+%%%
 
 {docstring Fin.toNat}
 
@@ -191,6 +212,9 @@ Hint: Type class instance resolution failures can be inspected with the `set_opt
 {docstring Fin.elim0}
 
 ## 迭代
+%%%
+tag := "zh-basictypes-fin-h008"
+%%%
 
 {docstring Fin.foldr}
 
@@ -205,6 +229,9 @@ Hint: Type class instance resolution failures can be inspected with the `set_opt
 {docstring Fin.hIterateFrom}
 
 ## 推理
+%%%
+tag := "zh-basictypes-fin-h009"
+%%%
 
 {docstring Fin.induction}
 

@@ -74,6 +74,9 @@ tag := "monad-varieties"
 
 
 # Monad Type 类
+%%%
+tag := "zh-monads-zoo-h001"
+%%%
 
 使用 {lean}`MonadState` 和 {lean}`MonadExcept` 等类型类允许客户端代码相对于 monad 是多态的。
 与自动提升一起，这使得程序可以在许多不同的 monad 中重用，并使它们更适合重构。

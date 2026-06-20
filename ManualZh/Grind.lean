@@ -160,6 +160,9 @@ tag := "grind-errors"
 检查这些列表以发现缺失的事实或矛盾的假设。
 
 # 最小化 `grind` 调用
+%%%
+tag := "zh-grind-h002"
+%%%
 
 `grind only [...]`策略使用一组有限的定理调用 {tactic}`grind`，这可以提高性能。
 可以使用 {tactic}`grind?` 方便地构造对 `grind only` 的调用，它会自动记录 {tactic}`grind` 使用的定理并建议合适的 `grind only`。
@@ -185,6 +188,9 @@ tag := "grind-errors"
 {include 1 ManualZh.Grind.Annotation}
 
 # 还原性
+%%%
+tag := "zh-grind-h003"
+%%%
 
 {tech}[可简化]术语定义由{tactic}`grind` 热切地展开。
 这可以实现更高效的 定义等价 比较和索引。

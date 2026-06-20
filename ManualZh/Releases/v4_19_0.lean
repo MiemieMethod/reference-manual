@@ -24,11 +24,17 @@ file := "v4.19.0"
 For this release, 420 changes landed. In addition to the 164 feature additions and 78 fixes listed below there were 13 refactoring changes, 29 documentation improvements, 31 performance improvements, 9 improvements to the test suite and 94 other changes.
 
 ## Highlights
+%%%
+tag := "zh-releases-v4-19-0-h001"
+%%%
 
 Lean v4.19.0 introduces a number of features, bug fixes, performance gains, library developments,
 along with quality-of-life improvements across documentation, the language server, and Lake.
 
 ### New Decorations in VS Code
+%%%
+tag := "zh-releases-v4-19-0-h002"
+%%%
 
 Visual feedback in VS Code has been improved, with the extension now featuring:
 
@@ -48,11 +54,17 @@ All of these features can be disabled, and 'Goals accomplished!' icon can be con
 See [leanprover/vscode-lean4#585](https://github.com/leanprover/vscode-lean4/pull/585) for the details.
 
 ### Parallel Elaboration
+%%%
+tag := "zh-releases-v4-19-0-h003"
+%%%
 
 * [#7084](https://github.com/leanprover/lean4/pull/7084) enables the elaboration of theorem bodies, i.e. proofs, to
   happen in parallel to each other as well as to other elaboration tasks.
 
 ### Language Features
+%%%
+tag := "zh-releases-v4-19-0-h004"
+%%%
 
 * [#5182](https://github.com/leanprover/lean4/pull/5182) makes functions defined by well-founded recursion use an
   `opaque` well-founded proof by default. This reliably prevents kernel
@@ -116,6 +128,9 @@ See [leanprover/vscode-lean4#585](https://github.com/leanprover/vscode-lean4/pul
   **Breaking change**: other metaprogramming users of `Command.State.infoState` may need to call `InfoState.substituteLazy` on it manually to fill all holes.
 
 ### Updates to structures and classes
+%%%
+tag := "zh-releases-v4-19-0-h005"
+%%%
 
 * [#7302](https://github.com/leanprover/lean4/pull/7302) changes how fields are elaborated in the `structure`/`class`
   commands and also makes default values respect the structure resolution
@@ -145,6 +160,9 @@ See [leanprover/vscode-lean4#585](https://github.com/leanprover/vscode-lean4/pul
   parameters binder kinds in that field's projection function. See the PR description for further details.
 
 ### Library Updates
+%%%
+tag := "zh-releases-v4-19-0-h006"
+%%%
 
 * Developments in the async machinery;
 * Standardization of the integer division API;
@@ -156,6 +174,9 @@ See [leanprover/vscode-lean4#585](https://github.com/leanprover/vscode-lean4/pul
 See the Library section below for details.
 
 ### Other Highlights
+%%%
+tag := "zh-releases-v4-19-0-h007"
+%%%
 
 * Documentation has been significantly expanded. See the Documentation section below for details.
 
@@ -165,6 +186,9 @@ See the Library section below for details.
   arbitrary target types.
 
 ## Language
+%%%
+tag := "zh-releases-v4-19-0-h008"
+%%%
 
 * [#5182](https://github.com/leanprover/lean4/pull/5182) makes functions defined by well-founded recursion use an
   `opaque` well-founded proof by default; see highlights section for details.
@@ -256,6 +280,9 @@ See the Library section below for details.
   We should abstract proofs occurring in the inferred proposition too.
 
 ### Structures
+%%%
+tag := "zh-releases-v4-19-0-h009"
+%%%
 
 * [#7302](https://github.com/leanprover/lean4/pull/7302) changes how fields are elaborated in the `structure`/`class`
   commands and also makes default values respect the structure resolution
@@ -388,6 +415,9 @@ See the Library section below for details.
   clause.
 
 ### Parallel Elaboration
+%%%
+tag := "zh-releases-v4-19-0-h010"
+%%%
 
 * [#7084](https://github.com/leanprover/lean4/pull/7084) enables the elaboration of theorem bodies, i.e. proofs, to
   happen in parallel to each other as well as to other elaboration tasks.
@@ -409,6 +439,9 @@ See the Library section below for details.
   errors in the command would no longer find such messages.
 
 ### bv_decide
+%%%
+tag := "zh-releases-v4-19-0-h011"
+%%%
 
 * [#7298](https://github.com/leanprover/lean4/pull/7298) adds rewrites to bv_decide's preprocessing that concern
   combinations of if-then-else and operation such as multiplication or
@@ -520,6 +553,9 @@ See the Library section below for details.
   lookup when we require a constant node.
 
 ### Grind
+%%%
+tag := "zh-releases-v4-19-0-h012"
+%%%
 
 * [#7355](https://github.com/leanprover/lean4/pull/7355) fixes a bug in the `markNestedProofs` preprocessor used in the
   `grind` tactic.
@@ -598,6 +634,9 @@ See the Library section below for details.
   on `x` to learn this fact. See tests.
 
 ### CutSat
+%%%
+tag := "zh-releases-v4-19-0-h013"
+%%%
 
 * [#7312](https://github.com/leanprover/lean4/pull/7312) implements proof term generation for `cooper_dvd_left` and its
   variants in the cutsat procedure for linear integer arithmetic.
@@ -684,6 +723,9 @@ See the Library section below for details.
   natural variable `x` would be represented as `NatCast.natCast x`.
 
 ## Library
+%%%
+tag := "zh-releases-v4-19-0-h014"
+%%%
 
 * [#6496](https://github.com/leanprover/lean4/pull/6496) adds short-circuit support to bv_decide to accelerate
   multiplications with shared coefficients. In particular, `a * x = b * x`
@@ -820,6 +862,9 @@ See the Library section below for details.
   **BREAKING CHANGE:** While many lemmas were renamed and the lemma with the old signature was simply deprecated, some lemmas were changed without renaming them. They now use the `getElem` variants instead of `get`.
 
 ### Async
+%%%
+tag := "zh-releases-v4-19-0-h015"
+%%%
 
 * [#6683](https://github.com/leanprover/lean4/pull/6683) introduces TCP socket support using the LibUV library, enabling
   asynchronous I/O operations with it.
@@ -849,6 +894,9 @@ See the Library section below for details.
 * [#7771](https://github.com/leanprover/lean4/pull/7771) adds a barrier primitive as `Std.Barrier`.
 
 ### Finite Types
+%%%
+tag := "zh-releases-v4-19-0-h016"
+%%%
 
 * [#7228](https://github.com/leanprover/lean4/pull/7228) adds simprocs to reduce expressions involving `IntX`.
 
@@ -882,6 +930,9 @@ See the Library section below for details.
   off from #7592.
 
 ### Tree Map
+%%%
+tag := "zh-releases-v4-19-0-h017"
+%%%
 
 * [#7270](https://github.com/leanprover/lean4/pull/7270) provides lemmas about the tree map functions `foldlM`, `foldl`,
   `foldrM` and `foldr` and their interactions with other functions for
@@ -949,6 +1000,9 @@ See the Library section below for details.
   introduce some `Ord`-based lemmas that are more simp-friendly.
 
 ### BitVec API
+%%%
+tag := "zh-releases-v4-19-0-h018"
+%%%
 
 * [#7104](https://github.com/leanprover/lean4/pull/7104) adds `BitVec.[toNat|toFin|toInt]_[sshiftRight|sshiftRight']`
   plus variants with `of_msb_*`. While at it, we also add
@@ -1004,6 +1058,9 @@ See the Library section below for details.
   `Int.tmod`.
 
 ### Bitwuzla Rewrite Rules
+%%%
+tag := "zh-releases-v4-19-0-h019"
+%%%
 
 * [#7424](https://github.com/leanprover/lean4/pull/7424) proves Bitwuzla's rule
   [`BV_ZERO_EXTEND_ELIM`](https://github.com/bitwuzla/bitwuzla/blob/6a1a768987cca77f36ebfe06f3a786348a481bbd/src/rewrite/rewrites_bv.cpp#L4021-L4033):

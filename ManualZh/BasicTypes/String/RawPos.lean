@@ -23,18 +23,27 @@ tag := "string-api-pos"
 {docstring String.Pos.Raw}
 
 # 有效性
+%%%
+tag := "zh-basictypes-string-rawpos-h001"
+%%%
 
 {docstring String.Pos.Raw.isValid}
 
 {docstring String.Pos.Raw.isValidForSlice}
 
 # 边界
+%%%
+tag := "zh-basictypes-string-rawpos-h002"
+%%%
 
 {docstring String.endPos}
 
 {docstring String.Pos.Raw.atEnd}
 
 # 比较
+%%%
+tag := "zh-basictypes-string-rawpos-h003"
+%%%
 
 {docstring String.Pos.Raw.min}
 
@@ -43,6 +52,9 @@ tag := "string-api-pos"
 {docstring String.Pos.Raw.substrEq}
 
 # 调整
+%%%
+tag := "zh-basictypes-string-rawpos-h004"
+%%%
 
 {docstring String.Pos.Raw.prev}
 
@@ -67,6 +79,9 @@ tag := "string-api-pos"
 {docstring String.Pos.Raw.unoffsetBy}
 
 # 字符串查找
+%%%
+tag := "zh-basictypes-string-rawpos-h005"
+%%%
 
 {docstring String.Pos.Raw.extract}
 
@@ -79,6 +94,9 @@ tag := "string-api-pos"
 {docstring String.Pos.Raw.get?}
 
 # 字符串修改
+%%%
+tag := "zh-basictypes-string-rawpos-h006"
+%%%
 
 {docstring String.Pos.Raw.set}
 

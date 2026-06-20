@@ -62,6 +62,9 @@ Lean 包含许多编译器特别支持的内置类型。
 {include 0 ManualZh.BasicTypes.String}
 
 # 单位 Type
+%%%
+tag := "zh-basictypes-h001"
+%%%
 
 单元类型是只有一个元素的规范类型，名为 {name Unit.unit}`unit`，并由空元组 {lean}`()` 表示。
 它仅描述一个值，该值由不应用于任何参数的所述构造函数组成。
@@ -100,6 +103,9 @@ variable {m : Type → Type} [Monad m] {α : Type}
 {docstring PUnit}
 
 ## 定义等价
+%%%
+tag := "zh-basictypes-h002"
+%%%
 
 {deftech}_Unit-like types_ 是具有单个构造函数的归纳类型，该构造函数不采用非证明参数。
 {lean}`PUnit` 就是此类类型之一。
@@ -171,16 +177,25 @@ example (e1 e2 : ProofUnitLike) : e1 = e2 := rfl
 
 
 # 布尔值
+%%%
+tag := "zh-basictypes-h003"
+%%%
 
 {docstring Bool}
 
 构造函数 {lean}`Bool.true` 和 {lean}`Bool.false` 是从 {lean}`Bool` 命名空间导出的，因此它们可以写成 {lean}`true` 和 {lean}`false`。
 
 ## 运行时表示
+%%%
+tag := "zh-basictypes-h004"
+%%%
 
 由于 {lean}`Bool` 是 {tech}[enum inducing] 类型，因此它在编译代码中由单个字节表示。
 
 ## 布尔值和命题
+%%%
+tag := "zh-basictypes-h005"
+%%%
 
 {lean}`Bool` 和 {lean}`Prop` 都代表真理的概念。
 从纯粹的逻辑角度来看，它们是等价的：{tech}[命题外延性]意味着基本上只有两个命题，即{lean}`True`和{lean}`False`。
@@ -221,6 +236,9 @@ end BoolProp
 ```
 
 ## 句法
+%%%
+tag := "zh-basictypes-h006"
+%%%
 
 :::syntax term (title := "Boolean Infix Operators")
 中缀运算符 `&&`、`||` 和 `^^` 分别是 {lean}`Bool.and`、{lean}`Bool.or` 和 {lean}`Bool.xor` 的表示法。
@@ -245,8 +263,14 @@ $_:term ^^ $_:term
 
 
 ## API 参考
+%%%
+tag := "zh-basictypes-h007"
+%%%
 
 ### 逻辑运算
+%%%
+tag := "zh-basictypes-h008"
+%%%
 
 ```lean -show
 section ShortCircuit
@@ -276,12 +300,18 @@ end ShortCircuit
 {docstring Bool.xor}
 
 ### 比较
+%%%
+tag := "zh-basictypes-h009"
+%%%
 
 大多数布尔值比较应使用 {inst}`DecidableEq Bool`、{inst}`LT Bool`、{inst}`LE Bool` 实例执行。
 
 {docstring Bool.decEq}
 
 ### 转换
+%%%
+tag := "zh-basictypes-h010"
+%%%
 
 {docstring Bool.toISize}
 

@@ -55,6 +55,9 @@ $_:attrKind $_:attr
 每个属性决定如何存储自己的元数据，以及对于给定用例，灵活性和性能之间的适当权衡是什么。
 
 # 属性作为修饰符
+%%%
+tag := "zh-attributes-h001"
+%%%
 
 属性可以作为 {ref "declaration-modifiers"}[声明修饰符] 添加到声明中。
 它们放置在文档注释和可见性修饰符之间。
@@ -66,6 +69,9 @@ $_:attrKind $_:attr
 :::
 
 # {keyword}`attribute` 命令
+%%%
+tag := "zh-attributes-h002"
+%%%
 
 {keywordOf Lean.Parser.Command.attribute}`attribute` 命令可用于修改声明的属性。
 一些示例用途包括：

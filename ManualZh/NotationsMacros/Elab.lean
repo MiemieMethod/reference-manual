@@ -88,6 +88,9 @@ tactic $_
 :::
 
 # 命令精化器
+%%%
+tag := "zh-notationsmacros-elab-h001"
+%%%
 
 :::::leanSection
 ```lean -show
@@ -139,6 +142,9 @@ Found 2 instances of 'interestingName'
 :::::
 
 # 术语精化器
+%%%
+tag := "zh-notationsmacros-elab-h002"
+%%%
 
 :::::leanSection
 ```lean -show
@@ -293,5 +299,8 @@ Hint: Type class instance resolution failures can be inspected with the `set_opt
 :::::
 
 # 定制策略
+%%%
+tag := "zh-notationsmacros-elab-h003"
+%%%
 
 自定义策略在 {ref "custom-tactics"}[有关策略的部分]中进行了描述。

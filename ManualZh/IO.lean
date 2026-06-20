@@ -54,6 +54,9 @@ axiom α : Type
 :::::
 
 # 逻辑模型
+%%%
+tag := "zh-io-h001"
+%%%
 
 :::::keepEnv
 ```lean -show
@@ -258,6 +261,9 @@ tag := "io-processes"
 %%%
 
 ## 当前流程
+%%%
+tag := "zh-io-h009"
+%%%
 
 {docstring IO.Process.getCurrentDir}
 
@@ -268,6 +274,9 @@ tag := "io-processes"
 {docstring IO.Process.getPID}
 
 ## 正在运行的进程
+%%%
+tag := "zh-io-h010"
+%%%
 
 从 Lean 运行其他程序有三种主要方法：
 
@@ -503,6 +512,9 @@ There are 90 four-digit palindromes.
 
 
 # 随机数
+%%%
+tag := "zh-io-h011"
+%%%
 
 {docstring IO.setRandSeed}
 
@@ -513,6 +525,9 @@ There are 90 four-digit palindromes.
 {docstring randNat}
 
 ## 随机生成器
+%%%
+tag := "zh-io-h012"
+%%%
 
 {docstring RandomGen}
 
@@ -527,6 +542,9 @@ There are 90 four-digit palindromes.
 {docstring mkStdGen}
 
 ## 系统随机性
+%%%
+tag := "zh-io-h013"
+%%%
 
 {docstring IO.getRandomBytes}
 

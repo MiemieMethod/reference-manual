@@ -132,6 +132,9 @@ open Std
 
 
 # 图书馆设计
+%%%
+tag := "zh-basictypes-maps-h001"
+%%%
 
 地图和集合上的所有基本操作都经过充分验证。
 对于使用列表实现的更简单的模型，它们被证明是正确的。
@@ -142,6 +145,9 @@ open Std
 示例包括 {name Std.HashMap.partition}`HashMap.partition` 和 {name Std.TreeMap.filterMap}`TreeMap.filterMap`。
 
 ## 融合运营
+%%%
+tag := "zh-basictypes-maps-h002"
+%%%
 
 根据表的预先存在的内容修改表是很常见的。
 为了避免必须遍历数据结构两次，在“融合”变体中提供了许多查询/修改对，这些变体在修改映射或集合的同时执行查询。
@@ -302,6 +308,9 @@ def Maze.go? (maze : Maze) (dir : String) : Option Maze :=
 :::
 
 ## 适合唯一性的运算符
+%%%
+tag := "zh-basictypes-maps-h004"
+%%%
 
 使用数据结构时应小心，以确保尽可能多的引用是唯一的，这使得 Lean 能够在幕后使用破坏性突变，同时保持纯函数式接口。
 地图和集合库提供可用于维护引用唯一性的运算符。
@@ -368,10 +377,16 @@ tag := "HashMap"
 
 
 ## 创建
+%%%
+tag := "zh-basictypes-maps-h006"
+%%%
 
 {docstring Std.HashMap.emptyWithCapacity}
 
 ## 特性
+%%%
+tag := "zh-basictypes-maps-h007"
+%%%
 
 {docstring Std.HashMap.size}
 
@@ -390,6 +405,9 @@ $_ ~m $_
 :::
 
 ## 查询
+%%%
+tag := "zh-basictypes-maps-h008"
+%%%
 
 {docstring Std.HashMap.contains}
 
@@ -418,6 +436,9 @@ $_ ~m $_
 {docstring Std.HashMap.valuesArray}
 
 ## 修改
+%%%
+tag := "zh-basictypes-maps-h009"
+%%%
 
 {docstring Std.HashMap.alter}
 
@@ -448,6 +469,9 @@ $_ ~m $_
 {docstring Std.HashMap.union}
 
 ## 迭代
+%%%
+tag := "zh-basictypes-maps-h010"
+%%%
 
 {docstring Std.HashMap.iter}
 
@@ -466,6 +490,9 @@ $_ ~m $_
 {docstring Std.HashMap.forM}
 
 ## 转换
+%%%
+tag := "zh-basictypes-maps-h011"
+%%%
 
 {docstring Std.HashMap.ofList}
 
@@ -478,6 +505,9 @@ $_ ~m $_
 {docstring Std.HashMap.unitOfList}
 
 ## 非捆绑变体
+%%%
+tag := "zh-basictypes-maps-h012"
+%%%
 
 未捆绑的地图将格式良好的证明与数据分开。
 这在定义 {ref "raw-data"}[嵌套归纳类型] 时主要有用。
@@ -497,10 +527,16 @@ tag := "DHashMap"
 {docstring Std.DHashMap +hideFields +hideStructureConstructor}
 
 ## 创建
+%%%
+tag := "zh-basictypes-maps-h014"
+%%%
 
 {docstring Std.DHashMap.emptyWithCapacity}
 
 ## 特性
+%%%
+tag := "zh-basictypes-maps-h015"
+%%%
 
 {docstring Std.DHashMap.size}
 
@@ -519,6 +555,9 @@ $_ ~m $_
 :::
 
 ## 查询
+%%%
+tag := "zh-basictypes-maps-h016"
+%%%
 
 {docstring Std.DHashMap.contains}
 
@@ -548,6 +587,9 @@ $_ ~m $_
 {docstring Std.DHashMap.valuesArray}
 
 ## 修改
+%%%
+tag := "zh-basictypes-maps-h017"
+%%%
 
 {docstring Std.DHashMap.alter}
 
@@ -576,6 +618,9 @@ $_ ~m $_
 {docstring Std.DHashMap.union}
 
 ## 迭代
+%%%
+tag := "zh-basictypes-maps-h018"
+%%%
 
 {docstring Std.DHashMap.iter}
 
@@ -594,6 +639,9 @@ $_ ~m $_
 {docstring Std.DHashMap.forM}
 
 ## 转换
+%%%
+tag := "zh-basictypes-maps-h019"
+%%%
 
 {docstring Std.DHashMap.ofList}
 
@@ -602,6 +650,9 @@ $_ ~m $_
 {docstring Std.DHashMap.toList}
 
 ## 非捆绑变体
+%%%
+tag := "zh-basictypes-maps-h020"
+%%%
 
 未捆绑的地图将格式良好的证明与数据分开。
 这在定义 {ref "raw-data"}[嵌套归纳类型] 时主要有用。
@@ -621,16 +672,25 @@ tag := "ExtHashMap"
 {docstring Std.ExtHashMap +hideFields +hideStructureConstructor}
 
 ## 创建
+%%%
+tag := "zh-basictypes-maps-h022"
+%%%
 
 {docstring Std.ExtHashMap.emptyWithCapacity}
 
 ## 特性
+%%%
+tag := "zh-basictypes-maps-h023"
+%%%
 
 {docstring Std.ExtHashMap.size}
 
 {docstring Std.ExtHashMap.isEmpty}
 
 ## 查询
+%%%
+tag := "zh-basictypes-maps-h024"
+%%%
 
 {docstring Std.ExtHashMap.contains}
 
@@ -651,6 +711,9 @@ tag := "ExtHashMap"
 {docstring Std.ExtHashMap.getKeyD}
 
 ## 修改
+%%%
+tag := "zh-basictypes-maps-h025"
+%%%
 
 {docstring Std.ExtHashMap.alter}
 
@@ -677,10 +740,16 @@ tag := "ExtHashMap"
 {docstring Std.ExtHashMap.insertManyIfNewUnit}
 
 ## 迭代
+%%%
+tag := "zh-basictypes-maps-h026"
+%%%
 
 {docstring Std.ExtHashMap.map}
 
 ## 转换
+%%%
+tag := "zh-basictypes-maps-h027"
+%%%
 
 {docstring Std.ExtHashMap.ofList}
 
@@ -698,10 +767,16 @@ tag := "ExtDHashMap"
 {docstring Std.ExtDHashMap +hideFields +hideStructureConstructor}
 
 ## 创建
+%%%
+tag := "zh-basictypes-maps-h029"
+%%%
 
 {docstring Std.ExtDHashMap.emptyWithCapacity}
 
 ## 特性
+%%%
+tag := "zh-basictypes-maps-h030"
+%%%
 
 {docstring Std.ExtDHashMap.size}
 
@@ -709,6 +784,9 @@ tag := "ExtDHashMap"
 
 
 ## 查询
+%%%
+tag := "zh-basictypes-maps-h031"
+%%%
 
 {docstring Std.ExtDHashMap.contains}
 
@@ -729,6 +807,9 @@ tag := "ExtDHashMap"
 {docstring Std.ExtDHashMap.getKeyD}
 
 ## 修改
+%%%
+tag := "zh-basictypes-maps-h032"
+%%%
 
 {docstring Std.ExtDHashMap.alter}
 
@@ -754,10 +835,16 @@ tag := "ExtDHashMap"
 
 
 ## 迭代
+%%%
+tag := "zh-basictypes-maps-h033"
+%%%
 
 {docstring Std.ExtDHashMap.map}
 
 ## 转换
+%%%
+tag := "zh-basictypes-maps-h034"
+%%%
 
 {docstring Std.ExtDHashMap.ofList}
 
@@ -770,10 +857,16 @@ tag := "HashSet"
 {docstring Std.HashSet}
 
 ## 创建
+%%%
+tag := "zh-basictypes-maps-h036"
+%%%
 
 {docstring Std.HashSet.emptyWithCapacity}
 
 ## 特性
+%%%
+tag := "zh-basictypes-maps-h037"
+%%%
 
 {docstring Std.HashSet.isEmpty}
 
@@ -793,6 +886,9 @@ $_ ~m $_
 
 
 ## 查询
+%%%
+tag := "zh-basictypes-maps-h038"
+%%%
 
 
 {docstring Std.HashSet.contains}
@@ -807,6 +903,9 @@ $_ ~m $_
 
 
 ## 修改
+%%%
+tag := "zh-basictypes-maps-h039"
+%%%
 
 {docstring Std.HashSet.insert}
 
@@ -823,6 +922,9 @@ $_ ~m $_
 {docstring Std.HashSet.union}
 
 ## 迭代
+%%%
+tag := "zh-basictypes-maps-h040"
+%%%
 
 {docstring Std.HashSet.iter}
 
@@ -839,6 +941,9 @@ $_ ~m $_
 {docstring Std.HashSet.forM}
 
 ## 转换
+%%%
+tag := "zh-basictypes-maps-h041"
+%%%
 
 {docstring Std.HashSet.ofList}
 
@@ -849,6 +954,9 @@ $_ ~m $_
 {docstring Std.HashSet.toArray}
 
 ## 非捆绑变体
+%%%
+tag := "zh-basictypes-maps-h042"
+%%%
 
 未捆绑的地图将格式良好的证明与数据分开。
 这在定义 {ref "raw-data"}[嵌套归纳类型] 时主要有用。
@@ -867,10 +975,16 @@ tag := "ExtHashSet"
 {docstring Std.ExtHashSet}
 
 ## 创建
+%%%
+tag := "zh-basictypes-maps-h044"
+%%%
 
 {docstring Std.ExtHashSet.emptyWithCapacity}
 
 ## 特性
+%%%
+tag := "zh-basictypes-maps-h045"
+%%%
 
 {docstring Std.ExtHashSet.isEmpty}
 
@@ -878,6 +992,9 @@ tag := "ExtHashSet"
 
 
 ## 查询
+%%%
+tag := "zh-basictypes-maps-h046"
+%%%
 
 {docstring Std.ExtHashSet.contains}
 
@@ -891,6 +1008,9 @@ tag := "ExtHashSet"
 
 
 ## 修改
+%%%
+tag := "zh-basictypes-maps-h047"
+%%%
 
 {docstring Std.ExtHashSet.insert}
 
@@ -903,6 +1023,9 @@ tag := "ExtHashSet"
 {docstring Std.ExtHashSet.containsThenInsert}
 
 ## 转换
+%%%
+tag := "zh-basictypes-maps-h048"
+%%%
 
 {docstring Std.ExtHashSet.ofList}
 
@@ -921,16 +1044,25 @@ tag := "DTreeMap"
 {docstring Std.DTreeMap +hideFields +hideStructureConstructor}
 
 ## 创建
+%%%
+tag := "zh-basictypes-maps-h050"
+%%%
 
 {docstring Std.DTreeMap.empty}
 
 ## 特性
+%%%
+tag := "zh-basictypes-maps-h051"
+%%%
 
 {docstring Std.DTreeMap.size}
 
 {docstring Std.DTreeMap.isEmpty}
 
 ## 查询
+%%%
+tag := "zh-basictypes-maps-h052"
+%%%
 
 {docstring Std.DTreeMap.contains}
 
@@ -959,6 +1091,9 @@ tag := "DTreeMap"
 {docstring Std.DTreeMap.valuesArray}
 
 ## 修改
+%%%
+tag := "zh-basictypes-maps-h053"
+%%%
 
 {docstring Std.DTreeMap.alter}
 
@@ -985,6 +1120,9 @@ tag := "DTreeMap"
 {docstring Std.DTreeMap.partition}
 
 ## 迭代
+%%%
+tag := "zh-basictypes-maps-h054"
+%%%
 
 {docstring Std.DTreeMap.iter}
 
@@ -1003,6 +1141,9 @@ tag := "DTreeMap"
 {docstring Std.DTreeMap.forM}
 
 ## 转换
+%%%
+tag := "zh-basictypes-maps-h055"
+%%%
 
 {docstring Std.DTreeMap.ofList}
 
@@ -1011,6 +1152,9 @@ tag := "DTreeMap"
 {docstring Std.DTreeMap.toList}
 
 ## 非捆绑变体
+%%%
+tag := "zh-basictypes-maps-h056"
+%%%
 
 未捆绑的地图将格式良好的证明与数据分开。
 这在定义 {ref "raw-data"}[嵌套归纳类型] 时主要有用。

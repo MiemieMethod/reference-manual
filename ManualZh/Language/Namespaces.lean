@@ -64,6 +64,9 @@ end Forest
 :::
 
 # 命名空间和节范围
+%%%
+tag := "zh-language-namespaces-h001"
+%%%
 
 每个 {tech}[节范围] 都有一个 {tech}[当前命名空间]，它由 {keywordOf Lean.Parser.Command.namespace}`namespace` 命令确定。{margin}[{keywordOf Lean.Parser.Command.namespace}`namespace` 命令在 {ref "scope-commands"}[有关引入节范围的命令的部分]中进行了描述。]
 在节范围内声明的名称将添加到当前命名空间。
@@ -338,6 +341,9 @@ Unknown identifier `three`
 ::::
 
 # 导出名称
+%%%
+tag := "zh-language-namespaces-h002"
+%%%
 
 {deftech}_Exporting_ 名称使其在当前命名空间中可用。
 与定义不同，此别名是完全透明的：使用直接解析为原始名称。

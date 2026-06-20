@@ -19,6 +19,9 @@ htmlSplit := .never
 
 
 # 1 级
+%%%
+tag := "zh-supportedplatforms-h001"
+%%%
 
 :::paragraph
 第 1 层平台是由我们的 CI 基础设施构建和测试 Lean 的平台。
@@ -32,6 +35,9 @@ Lean 的二进制版本可通过 {ref "elan"}[`elan`] 适用于这些平台。
 :::
 
 # 2 级
+%%%
+tag := "zh-supportedplatforms-h002"
+%%%
 
 第 2 层平台是 Lean 交叉编译但未经我们的 CI 测试的平台。
 这些平台可以使用二进制版本。

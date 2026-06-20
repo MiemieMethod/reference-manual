@@ -40,6 +40,9 @@ tag := "instance-synth"
 {docstring inferInstanceAs}
 
 # 实例搜索摘要
+%%%
+tag := "zh-classes-instancesynth-h001"
+%%%
 
 一般来说，实例合成是一种递归搜索过程，通常可以任意回溯。
 对于实例术语，综合可能会_成功_，如果找不到这样的术语，则可能_失败_，或者如果信息不足，则_陷入困境_。
@@ -177,6 +180,9 @@ IF THE LEAN OUTPUT BELOW CHANGES, IT MAY ALSO BE NECESSARY TO UPDATE THE NARRATI
 ::::
 
 # 候选实例
+%%%
+tag := "zh-classes-instancesynth-h003"
+%%%
 
 实例合成在其搜索中使用本地实例和全局实例。
 {deftech}_本地实例_是本地上下文中可用的实例；它们可以是函数的参数，也可以是使用 `let` 本地定义的。 {TODO}[`let` 的文档参考]
@@ -442,6 +448,9 @@ tag := "default-instance-synth"
 如果递归搜索失败，搜索过程将回溯并尝试下一个默认实例。
 
 # “道德规范”实例
+%%%
+tag := "zh-classes-instancesynth-h007"
+%%%
 
 在实例合成期间，如果目标完全已知（即不包含元变量）并且搜索成功，则不会为同一目标尝试更多实例。
 换句话说，当以无法通过随后的信息增加来反驳的方式成功搜索某个目标时，即使存在可能已使用的其他实例，也不会再次尝试该目标。
@@ -476,6 +485,9 @@ tag := "instance-wrapping"
 如果实例未简化为构造函数应用程序并且其类型与预期类型不匹配，则将其包装在具有适当可简化性的辅助定义中。
 
 # 选项
+%%%
+tag := "zh-classes-instancesynth-h009"
+%%%
 
 {optionDocs backward.synthInstance.canonInstances}
 

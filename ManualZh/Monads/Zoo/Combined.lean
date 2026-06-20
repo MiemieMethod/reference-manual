@@ -55,6 +55,9 @@ variable (ε : Type u) (σ σ' : Type u) (α : Type u)
 {docstring EStateM.fromStateM +allowMissing}
 
 # 状态回滚
+%%%
+tag := "zh-monads-zoo-combined-h001"
+%%%
 
 以不同顺序组合 {name}`StateT` 和 {name}`ExceptT` 会导致异常与状态的交互方式不同。
 在一种顺序中，当捕获异常时，状态更改会回滚；另一方面，他们坚持不懈。
@@ -73,6 +76,9 @@ variable (ε : Type u) (σ σ' : Type u) (α : Type u)
 {docstring EStateM.nonBacktrackable}
 
 # 实施
+%%%
+tag := "zh-monads-zoo-combined-h002"
+%%%
 
 这些函数通常不直接调用，而是通过其相应的类型类访问。
 

@@ -483,6 +483,9 @@ tag := "format-render"
 {docstring Std.Format.MonadPrettyFormat}
 
 ## `ToFormat` 级
+%%%
+tag := "zh-interaction-formatrepr-h008"
+%%%
 
 {name}`Std.ToFormat` 类用于提供格式化值的标准方法，但不期望此格式化是有效的 Lean 语法。
 这些实例用于错误消息和某些 {ref "format-join"}[序列连接运算符]。

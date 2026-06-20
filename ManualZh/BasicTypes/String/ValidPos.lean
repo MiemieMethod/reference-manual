@@ -23,6 +23,9 @@ tag := "string-api-valid-pos"
 {docstring String.ValidPos}
 
 # 在字符串中
+%%%
+tag := "zh-basictypes-string-validpos-h001"
+%%%
 
 {docstring String.startValidPos}
 
@@ -35,6 +38,9 @@ tag := "string-api-valid-pos"
 {docstring String.pos!}
 
 # 查找
+%%%
+tag := "zh-basictypes-string-validpos-h002"
+%%%
 
 {docstring String.ValidPos.get}
 
@@ -47,12 +53,18 @@ tag := "string-api-valid-pos"
 {docstring String.ValidPos.extract +allowMissing}
 
 # 修改
+%%%
+tag := "zh-basictypes-string-validpos-h003"
+%%%
 
 {docstring String.ValidPos.modify}
 
 {docstring String.ValidPos.byte}
 
 # 调整
+%%%
+tag := "zh-basictypes-string-validpos-h004"
+%%%
 
 {docstring String.ValidPos.prev}
 
@@ -67,6 +79,9 @@ tag := "string-api-valid-pos"
 {docstring String.ValidPos.next?}
 
 # 其他琴弦
+%%%
+tag := "zh-basictypes-string-validpos-h005"
+%%%
 
 {docstring String.ValidPos.cast}
 

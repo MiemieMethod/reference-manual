@@ -28,6 +28,9 @@ shortTitle := "inductiveParamMissing"
 和参数。
 
 # 示例
+%%%
+tag := "zh-errorexplanations-inductiveparammissing-h001"
+%%%
 
 :::errorExample "Omitting Parameter in Argument to Higher-Order Predicate"
 ```broken

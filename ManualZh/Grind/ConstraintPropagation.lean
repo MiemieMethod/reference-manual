@@ -187,6 +187,9 @@ TODO (@kim-em)：我们不添加上面的 `{lean}` literal type to `propagateEta
 {lean}`Bool` 的许多专门变体完全反映了这些规则（例如 {lean}`propagateBoolAndUp`）。
 
 # 仅传播示例
+%%%
+tag := "zh-grind-constraintpropagation-h001"
+%%%
 
 这些目标“纯粹”通过约束传播来封闭——没有案例分割，没有理论求解器：
 

@@ -30,14 +30,23 @@ file := "v4.27.0"
 此版本有 372 项更改。除了下面列出的 118 项功能添加和 71 项修复之外，还有 28 项重构更改、13 项文档改进、25 项性能改进、6 项测试套件改进和 111 项其他更改。
 
 # 亮点
+%%%
+tag := "zh-releases-v4-27-0-h001"
+%%%
 
 ## 模块系统稳定
+%%%
+tag := "zh-releases-v4-27-0-h002"
+%%%
 
 [#11637](https://github.com/leanprover/lean4/pull/11637) 声明模块系统不再是实验性的，并使 {option}`experimental.module` 选项成为无操作。
 
 有关文档，请参阅参考手册中的 {ref "module-scopes"}[模块和可见性] 部分。
 
 ## 向后兼容性选项
+%%%
+tag := "zh-releases-v4-27-0-h003"
+%%%
 
 [#11304](https://github.com/leanprover/lean4/pull/11304) 记录 `backward.*` 选项只是临时的
 移民辅助工具，可能会在 6 个月后消失，恕不另行通知
@@ -45,6 +54,9 @@ file := "v4.27.0"
 关于这些选项。
 
 ## 性能提升
+%%%
+tag := "zh-releases-v4-27-0-h004"
+%%%
 
 此版本包含许多性能改进，特别是：
 
@@ -56,6 +68,9 @@ file := "v4.27.0"
   在 Linux 上，其他平台上可能有更多。
 
 ## 错误信息
+%%%
+tag := "zh-releases-v4-27-0-h005"
+%%%
 
 此版本包含对错误消息的一系列更改，旨在使其更加有用和可操作。
 具体来说，一些消息现在有提示、建议和解释链接。
@@ -73,8 +88,14 @@ file := "v4.27.0"
 [#11621](https://github.com/leanprover/lean4/pull/11621)。
 
 ## 研磨的新功能
+%%%
+tag := "zh-releases-v4-27-0-h006"
+%%%
 
 ### 函数值同余闭包
+%%%
+tag := "zh-releases-v4-27-0-h007"
+%%%
 
 [#11323](https://github.com/leanprover/lean4/pull/11323) 引入了新的 {tactic}`grind` 选项 `funCC`（默认启用），
 它将同余闭包扩展到函数值相等。当
@@ -100,6 +121,9 @@ h : f a = g
 有关使用的更多详细信息，请参阅 PR 描述。
 
 ### 控制定理实例化
+%%%
+tag := "zh-releases-v4-27-0-h008"
+%%%
 
 [#11428](https://github.com/leanprover/lean4/pull/11428) 在 {keywordOf Lean.Parser.Command.grind_pattern}`grind_pattern` 中实现对 *guards* 的支持。新的
 功能提供了对定理实例化的额外控制。对于
@@ -124,6 +148,9 @@ grind_pattern fMono => f x, f y where
 有关更详细的讨论和示例证明跟踪，请参阅 PR 描述。
 
 ### 提供任意参数
+%%%
+tag := "zh-releases-v4-27-0-h009"
+%%%
 
 [#11268](https://github.com/leanprover/lean4/pull/11268) 实现对任意 {tactic}`grind` 参数的支持。特点
 与 {tactic}`simp` 中提供的类似，其中处理证明项
@@ -149,6 +176,9 @@ example (a : Nat) :
 请注意，在上面的示例中，`snd_eq` 仅实例化两次，但具有不同的 Universe 参数。
 
 ### 研磨回复
+%%%
+tag := "zh-releases-v4-27-0-h010"
+%%%
 
 [#11248](https://github.com/leanprover/lean4/pull/11248) 实现选项 `revert`，该选项设置为 `false`
 默认。
@@ -158,6 +188,9 @@ example (a : Nat) :
 要恢复旧的 `grind` 行为，请使用 `grind +revert`。
 
 ### Grind 的其他新功能
+%%%
+tag := "zh-releases-v4-27-0-h011"
+%%%
 
 - `grind ring` 中的 `BitVec` 支持 ([#11639](https://github.com/leanprover/lean4/pull/11639))
   和 `grind lia` ([#11640](https://github.com/leanprover/lean4/pull/11640));
@@ -177,6 +210,9 @@ example (a : Nat) :
   [#11409](https://github.com/leanprover/lean4/pull/11409))。
 
 ## 良基递归上 `Nat`
+%%%
+tag := "zh-releases-v4-27-0-h012"
+%%%
 
 使用良基递归的定义通常是不可约的。
 对于 [#7965](https://github.com/leanprover/lean4/pull/7965)，当终止措施的类型为 {name}`Nat` 时，
@@ -184,6 +220,9 @@ example (a : Nat) :
 没有通常的警告。
 
 ## 图书馆亮点
+%%%
+tag := "zh-releases-v4-27-0-h013"
+%%%
 
 此版本完成了 {name}`String` API 的修订，包括相关类型的 {name}`String.Pos`、
 对 {name}`String.Slice` 的完整 API 支持，以及使用新的 `Iterator` API 的迭代器。
@@ -208,6 +247,9 @@ example (a : Nat) :
   1).copy = "Hello"`, write `s.drop 1 == "Hello".toSlice`.
 
 ## 重大变化
+%%%
+tag := "zh-releases-v4-27-0-h014"
+%%%
 
 - [#11474](https://github.com/leanprover/lean4/pull/11474) 和
   [11562](https://github.com/leanprover/lean4/pull/11562)
@@ -227,6 +269,9 @@ example (a : Nat) :
   概括 `g x`。
 
 # 语言
+%%%
+tag := "zh-releases-v4-27-0-h015"
+%%%
 
 ````markdown
 
@@ -491,6 +536,9 @@ example (a : Nat) :
 ````
 
 # 图书馆
+%%%
+tag := "zh-releases-v4-27-0-h016"
+%%%
 
 ```markdown
 
@@ -749,6 +797,9 @@ example (a : Nat) :
 ```
 
 # 策略
+%%%
+tag := "zh-releases-v4-27-0-h017"
+%%%
 
 ````markdown
 
@@ -1118,6 +1169,9 @@ example (a : Nat) :
 ````
 
 # Compiler
+%%%
+tag := "zh-releases-v4-27-0-h018"
+%%%
 
 ```markdown
 
@@ -1211,6 +1265,9 @@ example (a : Nat) :
 ```
 
 # Documentation
+%%%
+tag := "zh-releases-v4-27-0-h019"
+%%%
 
 ```markdown
 
@@ -1237,6 +1294,9 @@ example (a : Nat) :
 ```
 
 # Server
+%%%
+tag := "zh-releases-v4-27-0-h020"
+%%%
 
 ```markdown
 
@@ -1255,6 +1315,9 @@ example (a : Nat) :
 ```
 
 # Lake
+%%%
+tag := "zh-releases-v4-27-0-h021"
+%%%
 
 ```markdown
 
@@ -1277,6 +1340,9 @@ example (a : Nat) :
 ```
 
 # Other
+%%%
+tag := "zh-releases-v4-27-0-h022"
+%%%
 
 ````markdown
 

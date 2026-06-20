@@ -22,6 +22,9 @@ file := "v4.23.0"
 For this release, 610 changes landed. In addition to the 95 feature additions and 139 fixes listed below there were 61 refactoring changes, 12 documentation improvements, 71 performance improvements, and 232 other changes.
 
 ## Highlights
+%%%
+tag := "zh-releases-v4-23-0-h001"
+%%%
 
 Lean v4.23.0 release brings significant performance improvements, better error messages,
 and a plethora of bug fixes, refinements, and consolidations in `grind`, the compiler, and other components of Lean.
@@ -60,6 +63,9 @@ In terms of user experience, noteworthy new features are:
   You can try all of these in the [Lean playground](https://live.lean-lang.org/#codez=PQWghAUAxABAEgSwHYBcDOMBmB7ATjZANwEMAbBAExiWIFsBTK43AcwFcHUNkYAHYlCnq4kaCCGAQIyCmwDGKBIXowAKjADuAC2H0IMGAB8YtANYBGGAAoAHjACeMAF4wAXDABC2bKQCUU+hs6XlIVKxQ3NV83AF59EwE5LRgIjQQULXjjADozSytHVxiU3DZ6aKsNWJKyipcirDI0cpgYgD5rfylQSFhELiw8GDliZuo6ejEJAKDaELCAI0ivH2j3ADkBaoX7eJHmjAW90ZUkbCRAhDQhVFa2+IM0UwRebvBoeGR0QfxaK7RkCwYNdSgo2LgVMhrsQkHIVJgEPRSBQppIICD5ChwSoAMqaHQQ+IIpEUSwbARExHIgBMkQAavQFENNhFicjzDNgqFIniivEAN4AXwgQA).
 
 ### Breaking Changes
+%%%
+tag := "zh-releases-v4-23-0-h002"
+%%%
 
 - [#9800](https://github.com/leanprover/lean4/pull/9800) improves the delta deriving handler, giving it the ability to
   process definitions with binders, as well as the ability to recursively
@@ -98,6 +104,9 @@ In terms of user experience, noteworthy new features are:
     etc. with corresponding instance parameters.
 
 ## Language
+%%%
+tag := "zh-releases-v4-23-0-h003"
+%%%
 
 * [#6732](https://github.com/leanprover/lean4/pull/6732) adds support for the `clear` tactic in conversion mode.
 
@@ -809,6 +818,9 @@ In terms of user experience, noteworthy new features are:
 
 ````markdown
 ## Library
+%%%
+tag := "zh-releases-v4-23-0-h004"
+%%%
 
 * [#7450](https://github.com/leanprover/lean4/pull/7450) implements `Nat.dfold`, a dependent analogue of `Nat.fold`.
 

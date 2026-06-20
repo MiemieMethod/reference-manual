@@ -21,6 +21,9 @@ file := "v4.15.0"
 ````markdown
 
 ## Language
+%%%
+tag := "zh-releases-v4-15-0-h001"
+%%%
 
 - [#4595](https://github.com/leanprover/lean4/pull/4595) implements `Simp.Config.implicitDefEqsProofs`. When `true`
 (default: `true`), `simp` will **not** create a proof term for a
@@ -285,6 +288,9 @@ definitions during resolution.
 docstring fail to reparse the entire command.
 
 ## Library
+%%%
+tag := "zh-releases-v4-15-0-h002"
+%%%
 
 - [#4904](https://github.com/leanprover/lean4/pull/4904) introduces date and time functionality to the Lean 4 Std.
 
@@ -533,6 +539,9 @@ benchmarks indistinguishably from the old.
 which make proving inequalities about `System.Platform.numBits` easier.
 
 ## Compiler
+%%%
+tag := "zh-releases-v4-15-0-h003"
+%%%
 
 - [#5840](https://github.com/leanprover/lean4/pull/5840) changes `lean_sharecommon_{eq,hash}` to only consider the
 salient bytes of an object, and not any bytes of any
@@ -556,6 +565,9 @@ unsafe and adjusts the elaborator accordingly
 - [#6257](https://github.com/leanprover/lean4/pull/6257) harden `markPersistent` uses
 
 ## Pretty Printing
+%%%
+tag := "zh-releases-v4-15-0-h004"
+%%%
 
 - [#2934](https://github.com/leanprover/lean4/pull/2934) adds the option `pp.parens` (default: false) that causes the
 pretty printer to eagerly insert parentheses, which can be useful for
@@ -595,6 +607,9 @@ would not heed `pp.raw`. Closes #6090.
 not definitionally equal" errors.
 
 ## Documentation
+%%%
+tag := "zh-releases-v4-15-0-h005"
+%%%
 
 - [#6009](https://github.com/leanprover/lean4/pull/6009) fixes a typo in the docstring for prec and makes the text
 slightly more precise.
@@ -615,6 +630,9 @@ what they were intended to be!
 indices.
 
 ## Server
+%%%
+tag := "zh-releases-v4-15-0-h006"
+%%%
 
 - [#5835](https://github.com/leanprover/lean4/pull/5835) adds auto-completion for the fields of structure instance notation. Specifically, querying the completions via `Ctrl+Space` in the whitespace of a structure instance notation will now bring up the full list of fields. Whitespace structure completion can be enabled for custom syntax by wrapping the parser for the list of fields in a `structInstFields` parser.
 
@@ -633,6 +651,9 @@ the processing of all other requests and notifications and significantly
 increasing overall language server latency after saving.
 
 ## Lake
+%%%
+tag := "zh-releases-v4-15-0-h007"
+%%%
 
 - [#5684](https://github.com/leanprover/lean4/pull/5684) update toolchain on `lake update`
 
@@ -654,6 +675,9 @@ dependency from Reservoir. If the package is not indexed, it will
 produce a suggestion about how to require it from GitHub.
 
 ## Other
+%%%
+tag := "zh-releases-v4-15-0-h008"
+%%%
 
 - [#6137](https://github.com/leanprover/lean4/pull/6137) adds support for displaying multiple threads in the trace
 profiler output.

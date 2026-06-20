@@ -64,6 +64,9 @@ tag := "mutable-st-references"
 {docstring ST.mkRef}
 
 ## 阅读和写作
+%%%
+tag := "zh-io-ref-h002"
+%%%
 
 {docstring ST.Ref.get}
 
@@ -156,10 +159,16 @@ Final balance is zero or positive.
 {docstring ST.Ref.swap}
 
 ## 比较
+%%%
+tag := "zh-io-ref-h003"
+%%%
 
 {docstring ST.Ref.ptrEq}
 
 ## `ST` 支持的状态 Monad
+%%%
+tag := "zh-io-ref-h004"
+%%%
 
 {docstring ST.Ref.toMonadStateOf}
 

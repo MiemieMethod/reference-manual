@@ -23,6 +23,9 @@ file := "v4.14.0"
 **Full Changelog**: https://github.com/leanprover/lean4/compare/v4.13.0...v4.14.0
 
 ### Language features, tactics, and metaprograms
+%%%
+tag := "zh-releases-v4-14-0-h001"
+%%%
 
 * `structure` and `inductive` commands
   * [#5517](https://github.com/leanprover/lean4/pull/5517) improves universe level inference for the resulting type of an `inductive` or `structure.` Recall that a `Prop`-valued inductive type is a syntactic subsingleton if it has at most one constructor and all the arguments to the constructor are in `Prop`. Such types have large elimination, so they could be defined in `Type` or `Prop` without any trouble. The way inference has changed is that if a type is a syntactic subsingleton with exactly one constructor, and the constructor has at least one parameter/field, then the `inductive`/`structure` command will prefer creating a `Prop` instead of a `Type`. The upshot is that the `: Prop` in `structure S : Prop` is often no longer needed. (With @arthur-adjedj).
@@ -163,6 +166,9 @@ file := "v4.14.0"
 
 
 ### Language server, widgets, and IDE extensions
+%%%
+tag := "zh-releases-v4-14-0-h002"
+%%%
 
 * [#5224](https://github.com/leanprover/lean4/pull/5224) fixes `WorkspaceClientCapabilities` to make `applyEdit` optional, in accordance with the LSP specification (@pzread).
 * [#5340](https://github.com/leanprover/lean4/pull/5340) fixes a server deadlock when shutting down the language server and a desync between client and language server after a file worker crash.
@@ -175,6 +181,9 @@ file := "v4.14.0"
 * [#5801](https://github.com/leanprover/lean4/pull/5801) distinguishes theorem auto-completions from non-theorem auto-completions.
 
 ### Pretty printing
+%%%
+tag := "zh-releases-v4-14-0-h003"
+%%%
 
 * [#5640](https://github.com/leanprover/lean4/pull/5640) fixes a bug where goal states in messages might print newlines as spaces.
 * [#5643](https://github.com/leanprover/lean4/pull/5643) adds option `pp.mvars.delayed` (default false), which when false causes delayed assignment metavariables to pretty print with what they are assigned to. Now `fun x : Nat => ?a` pretty prints as `fun x : Nat => ?a` rather than `fun x ↦ ?m.7 x`.
@@ -188,6 +197,9 @@ file := "v4.14.0"
 * [#5854](https://github.com/leanprover/lean4/pull/5854) adds delaborators for `<|>`, `<*>`, `>>`, `<*`, and `*>`.
 
 ### Library
+%%%
+tag := "zh-releases-v4-14-0-h004"
+%%%
 
 * `Array`
   * [#5687](https://github.com/leanprover/lean4/pull/5687) deprecates `Array.data`.
@@ -270,6 +282,9 @@ file := "v4.14.0"
   * [#5812](https://github.com/leanprover/lean4/pull/5812) removes redundant `Decidable` assumptions (@FR-vdash-bot).
 
 ### Compiler, runtime, and FFI
+%%%
+tag := "zh-releases-v4-14-0-h005"
+%%%
 
 * [#5685](https://github.com/leanprover/lean4/pull/5685) fixes help message flags, removes the `-f` flag and adds the `-g` flag (@James-Oswald).
 * [#5930](https://github.com/leanprover/lean4/pull/5930) adds `--short-version` (`-V`) option to display short version (@juhp).
@@ -277,6 +292,9 @@ file := "v4.14.0"
 * [#5753](https://github.com/leanprover/lean4/pull/5753) raises the minimum supported Windows version to Windows 10 1903 (released May 2019).
 
 ### Lake
+%%%
+tag := "zh-releases-v4-14-0-h006"
+%%%
 
 * [#5715](https://github.com/leanprover/lean4/pull/5715) changes `lake new math` to use `autoImplicit false` (@eric-wieser).
 * [#5688](https://github.com/leanprover/lean4/pull/5688) makes `Lake` not create core aliases in the `Lake` namespace.
@@ -287,12 +305,18 @@ file := "v4.14.0"
 * [#6231](https://github.com/leanprover/lean4/pull/6231) improves the errors Lake produces when it fails to fetch a dependency from Reservoir. If the package is not indexed, it will produce a suggestion about how to require it from GitHub.
 
 ### Documentation
+%%%
+tag := "zh-releases-v4-14-0-h007"
+%%%
 
 * [#5617](https://github.com/leanprover/lean4/pull/5617) fixes MSYS2 build instructions.
 * [#5725](https://github.com/leanprover/lean4/pull/5725) points out that `OfScientific` is called with raw literals (@eric-wieser).
 * [#5794](https://github.com/leanprover/lean4/pull/5794) adds a stub for application ellipsis notation (@eric-wieser).
 
 ### Breaking changes
+%%%
+tag := "zh-releases-v4-14-0-h008"
+%%%
 
 * The syntax for providing arguments to deriving handlers has been removed, which was not used by any major Lean projects in the ecosystem. As a result, the  `applyDerivingHandlers` now takes one fewer argument, `registerDerivingHandlerWithArgs` is now simply `registerDerivingHandler`, `DerivingHandler` no longer includes the unused parameter, and `DerivingHandlerNoArgs` has been deprecated. To migrate code, delete the unused `none` argument and use `registerDerivingHandler` and `DerivingHandler`. ([#5265](https://github.com/leanprover/lean4/pull/5265))
 * The minimum supported Windows version has been raised to Windows 10 1903, released May 2019. ([#5753](https://github.com/leanprover/lean4/pull/5753))

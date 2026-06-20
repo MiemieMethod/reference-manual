@@ -22,6 +22,9 @@ file := "v4.28.0"
 此版本有 309 项更改。除了下面列出的 94 项功能添加和 65 项修复之外，还有 19 项重构更改、8 项文档改进、34 项性能改进、12 项测试套件改进和 77 项其他更改。
 
 # 亮点
+%%%
+tag := "zh-releases-v4-28-0-h001"
+%%%
 
 Lean v4.28 版本包含模块系统修复、性能
 改进，特别是在 `bv_decide` 中，以及持续扩展
@@ -29,6 +32,9 @@ Lean v4.28 版本包含模块系统修复、性能
 下面介绍。
 
 ## 符号模拟框架
+%%%
+tag := "zh-releases-v4-28-0-h002"
+%%%
 
 新的轻量级符号仿真框架与 `grind` 集成
 并启用验证条件生成器的实现
@@ -56,6 +62,9 @@ Lean v4.28 版本包含模块系统修复、性能
   优化
 
 ## 用户定义的研磨属性
+%%%
+tag := "zh-releases-v4-28-0-h003"
+%%%
 
 [#11765](https://github.com/leanprover/lean4/pull/11765) 实现
 用户定义的 `grind` 属性。它们对于想要的用户很有用
@@ -96,6 +105,9 @@ grind_pattern [my_grind] fg => g (f x)
 ```
 
 ## Grind 中可配置的标准化和预处理
+%%%
+tag := "zh-releases-v4-28-0-h004"
+%%%
 
 [#11776](https://github.com/leanprover/lean4/pull/11776) 添加
 属性 `[grind norm]` 和 `[grind unfold]` 用于控制
@@ -124,6 +136,9 @@ example : 6 ∣ 3*h x := by grind
 请参阅 PR 描述以获取完整的讨论。
 
 ## Grind 和 Simp 中的局部定义
+%%%
+tag := "zh-releases-v4-28-0-h005"
+%%%
 
 [#11946](https://github.com/leanprover/lean4/pull/11946) 添加一个
 `+locals` `grind`策略的配置选项
@@ -138,6 +153,9 @@ example : 6 ∣ 3*h x := by grind
 策略。
 
 ## `bv_decide` 中的求解器模式
+%%%
+tag := "zh-releases-v4-28-0-h006"
+%%%
 
 [#11847](https://github.com/leanprover/lean4/pull/11847) 添加了一个新的
 `solverMode` 字段到 `bv_decide` 的配置，允许用户
@@ -149,6 +167,9 @@ example : 6 ∣ 3*h x := by grind
 - `default`，其中没有额外的 SAT 求解器标志。
 
 ## 并行策略组合器
+%%%
+tag := "zh-releases-v4-28-0-h007"
+%%%
 
 [#11949](https://github.com/leanprover/lean4/pull/11949) 添加了一个新的
 `first_par`策略并行运行多个策略组合器
@@ -162,6 +183,9 @@ example : 6 ∣ 3*h x := by grind
 - `grind? +locals +suggestions` ̵ 结合了两者
 
 ## 依赖管理工具
+%%%
+tag := "zh-releases-v4-28-0-h008"
+%%%
 
 - [#11726](https://github.com/leanprover/lean4/pull/11726) 上游
   来自 Mathlib 的依赖管理命令：
@@ -179,6 +203,9 @@ example : 6 ∣ 3*h x := by grind
   功能从 `script/Shake.lean` 转移到 Lake CLI。
 
 ## 外部检查器
+%%%
+tag := "zh-releases-v4-28-0-h009"
+%%%
 
 [#11887](https://github.com/leanprover/lean4/pull/11887) 使
 外部检查器lean4checker可用作现有的`leanchecker`
@@ -186,8 +213,14 @@ elan 已知的二进制文件，允许开箱即用地访问
 它。
 
 ## 图书馆亮点
+%%%
+tag := "zh-releases-v4-28-0-h010"
+%%%
 
 ### 范围
+%%%
+tag := "zh-releases-v4-28-0-h011"
+%%%
 
 - [#11438](https://github.com/leanprover/lean4/pull/11438) 重命名
   namespace `Std.Range` to `Std.Legacy.Range`. Instead of using
@@ -195,6 +228,9 @@ elan 已知的二进制文件，允许开箱即用地访问
   应使用其相应的 `a...b` 符号。
 
 ### 迭代器
+%%%
+tag := "zh-releases-v4-28-0-h012"
+%%%
 
 - [#11446](https://github.com/leanprover/lean4/pull/11446) 移动很多
   迭代器 API 从 `Std.Iterators` 到 `Std` 的常量
@@ -210,6 +246,9 @@ elan 已知的二进制文件，允许开箱即用地访问
   迭代器的有限性，公共 API 的一部分。
 
 ### 位向量
+%%%
+tag := "zh-releases-v4-28-0-h013"
+%%%
 
 - [#11257](https://github.com/leanprover/lean4/pull/11257) 添加
   `BitVec.cpop` 的定义，又名 popcount。
@@ -219,6 +258,9 @@ elan 已知的二进制文件，允许开箱即用地访问
   缺点操作。
 
 ### 异步框架
+%%%
+tag := "zh-releases-v4-28-0-h014"
+%%%
 
 - [#11499](https://github.com/leanprover/lean4/pull/11499) 添加
   `Context` 类型，用于通过上下文传播取消。它有效
@@ -226,6 +268,9 @@ elan 已知的二进制文件，允许开箱即用地访问
   控制取消。
 
 # 语言
+%%%
+tag := "zh-releases-v4-28-0-h015"
+%%%
 
 * [#11553](https://github.com/leanprover/lean4/pull/11553) 使匹配方程生成器中使用的 `simpH` 生成一个
   证明术语。这是为了在 #11512 中进行更大的重构做准备。
@@ -338,6 +383,9 @@ elan 已知的二进制文件，允许开箱即用地访问
   错误地拒绝对 perm 引理的有效重写。
 
 # 图书馆
+%%%
+tag := "zh-releases-v4-28-0-h016"
+%%%
 
 * [#11257](https://github.com/leanprover/lean4/pull/11257) 添加了 `BitVec.cpop` 的定义，该定义依赖于更多
   概括 `BitVec.cpopNatRec`，并围绕它建立一些理论。名称
@@ -503,6 +551,9 @@ elan 已知的二进制文件，允许开箱即用地访问
   以及拼写列表中的语法。
 
 # 策略
+%%%
+tag := "zh-releases-v4-28-0-h017"
+%%%
 
 * [#11664](https://github.com/leanprover/lean4/pull/11664) 在 `grind linarith` 中添加了对 `Nat.cast` 的支持。现在它使用
   `Grind.OrderedRing.natCast_nonneg`。例子：
@@ -947,6 +998,9 @@ elan 已知的二进制文件，允许开箱即用地访问
 * [#12147](https://github.com/leanprover/lean4/pull/12147) 添加了新的 API，用于帮助用户编写有针对性的重写。
 
 # 编译器
+%%%
+tag := "zh-releases-v4-28-0-h018"
+%%%
 
 * [#11479](https://github.com/leanprover/lean4/pull/11479) 使专门化器也能够递归地专门化于某些
   非平凡的高阶情况。
@@ -1000,6 +1054,9 @@ elan 已知的二进制文件，允许开箱即用地访问
   框架。
 
 # 文档
+%%%
+tag := "zh-releases-v4-28-0-h019"
+%%%
 
 * [#11737](https://github.com/leanprover/lean4/pull/11737) 将 `ffi.md` 替换为指向相应部分的链接
   手册，因此我们不必使两份文档保持最新。
@@ -1020,6 +1077,9 @@ elan 已知的二进制文件，允许开箱即用地访问
   方式。
 
 # 服务器
+%%%
+tag := "zh-releases-v4-28-0-h020"
+%%%
 
 * [#11536](https://github.com/leanprover/lean4/pull/11536) 更正了 JSON 架构
   `src/lake/schemas/lakefile-toml-schema.json` 允许表变体
@@ -1044,6 +1104,9 @@ elan 已知的二进制文件，允许开箱即用地访问
   模块系统
 
 # Lake
+%%%
+tag := "zh-releases-v4-28-0-h021"
+%%%
 
 * [#11683](https://github.com/leanprover/lean4/pull/11683) 修复了 Lake 和 Lean 查看方式不一致的问题
   `meta import` 的传递性。 Lake 现在按照 Lean 的预期工作，并且
@@ -1085,6 +1148,9 @@ elan 已知的二进制文件，允许开箱即用地访问
   基本 `+mod` 目标键。
 
 # 其他
+%%%
+tag := "zh-releases-v4-28-0-h022"
+%%%
 
 * [#11727](https://github.com/leanprover/lean4/pull/11727) 添加了一个 Python 脚本，该脚本有助于查找哪个提交引入了
   Lean 中的行为更改。它支持多种二分模式和
@@ -1102,6 +1168,9 @@ elan 已知的二进制文件，允许开箱即用地访问
   上下文信息节点中的代码块。
 
 # 菲菲
+%%%
+tag := "zh-releases-v4-28-0-h023"
+%%%
 
 * [#12098](https://github.com/leanprover/lean4/pull/12098) 删除了针对Lean编译库的要求
   标头必须使用 `-fwrapv`。

@@ -45,6 +45,9 @@ shortTitle := "redundantMatchAlt"
 与通过丢弃未使用的臂来编译的冗余替代品进行匹配。
 
 # 示例
+%%%
+tag := "zh-errorexplanations-redundantmatchalt-h001"
+%%%
 
 :::errorExample "Incorrect Ordering of Pattern Matches"
 ```broken

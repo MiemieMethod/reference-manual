@@ -113,6 +113,9 @@ def postalCodes : Std.HashMap Nat String :=
 
 
 # 强制
+%%%
+tag := "zh-basictypes-option-h001"
+%%%
 
 ```lean -show
 section
@@ -146,8 +149,14 @@ end
 
 
 # API 参考
+%%%
+tag := "zh-basictypes-option-h002"
+%%%
 
 ## 提取值
+%%%
+tag := "zh-basictypes-option-h003"
+%%%
 
 {docstring Option.get}
 
@@ -167,6 +176,9 @@ end
 
 
 ## 特性和比较
+%%%
+tag := "zh-basictypes-option-h004"
+%%%
 
 {docstring Option.isNone}
 
@@ -190,6 +202,9 @@ variable {α} [DecidableEq α] [LT α] [Min α] [Max α]
 {docstring Option.decidableEqNone}
 
 ## 转换
+%%%
+tag := "zh-basictypes-option-h005"
+%%%
 
 {docstring Option.toArray}
 
@@ -200,6 +215,9 @@ variable {α} [DecidableEq α] [LT α] [Min α] [Max α]
 {docstring Option.format}
 
 ## 控制
+%%%
+tag := "zh-basictypes-option-h006"
+%%%
 
 {name}`Option` 可以被认为是描述可能无法返回值的计算。
 {inst}`Monad Option` 实例以及 {inst}`Alternative Option` 均基于这种理解。
@@ -223,6 +241,9 @@ variable {α} [DecidableEq α] [LT α] [Min α] [Max α]
 
 
 ## 迭代
+%%%
+tag := "zh-basictypes-option-h007"
+%%%
 
 {name}`Option` 可以被认为是最多包含一个值的集合。
 从这个角度来看，迭代运算符可以理解为对包含的值（如果存在）执行某些操作，或者如果不存在则不执行任何操作。
@@ -244,6 +265,9 @@ variable {α} [DecidableEq α] [LT α] [Min α] [Max α]
 {docstring Option.mapM}
 
 ## 递归助手
+%%%
+tag := "zh-basictypes-option-h008"
+%%%
 
 {docstring Option.attach}
 
@@ -252,6 +276,9 @@ variable {α} [DecidableEq α] [LT α] [Min α] [Max α]
 {docstring Option.unattach}
 
 ## 推理
+%%%
+tag := "zh-basictypes-option-h009"
+%%%
 
 {docstring Option.choice}
 

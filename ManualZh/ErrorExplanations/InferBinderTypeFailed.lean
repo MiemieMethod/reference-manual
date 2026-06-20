@@ -46,6 +46,9 @@ shortTitle := "inferBinderTypeFailed"
 下面的示例演示了前三种情况。
 
 # 示例
+%%%
+tag := "zh-errorexplanations-inferbindertypefailed-h001"
+%%%
 
 :::errorExample "Binder Type Requires New Type Variable"
 ```broken

@@ -22,6 +22,9 @@ file := "v4.24.0"
 For this release, 377 changes landed. In addition to the 105 feature additions and 75 fixes listed below there were 25 refactoring changes, 9 documentation improvements, 21 performance improvements, 4 improvements to the test suite and 138 other changes.
 
 ## Highlights
+%%%
+tag := "zh-releases-v4-24-0-h001"
+%%%
 
 Lean 4.24.0 release brings continued improvements to the module system and the verification framework,
 strengthens the `grind` tactic, and advances the standard library.
@@ -36,6 +39,9 @@ performance improvements in the language server.
 As always, there are plenty of bug fixes and new features, some of which are listed below:
 
 ### "Try this" suggestions are rendered under 'Messages'
+%%%
+tag := "zh-releases-v4-24-0-h002"
+%%%
 
 - [#9966](https://github.com/leanprover/lean4/pull/9966) adjusts the "try this" widget to be rendered as a widget message
   under 'Messages', not a separate widget under a 'Suggestions' section.
@@ -43,6 +49,9 @@ As always, there are plenty of bug fixes and new features, some of which are lis
   duplicated between 'Messages' and 'Suggestions'.
 
 ### `invariants` and `with` sections in `mvcgen`
+%%%
+tag := "zh-releases-v4-24-0-h003"
+%%%
 
 - [#9927](https://github.com/leanprover/lean4/pull/9927) implements extended `induction`-inspired syntax for `mvcgen`,
   allowing optional `invariants` and `with` sections.
@@ -76,11 +85,17 @@ As always, there are plenty of bug fixes and new features, some of which are lis
   ```
 
 ### Library: Dyadic rationals
+%%%
+tag := "zh-releases-v4-24-0-h004"
+%%%
 
 - [#9993](https://github.com/leanprover/lean4/pull/9993) defines the dyadic rationals, showing they are an ordered ring
   embedding into the rationals.
 
 ### Grind AC solver
+%%%
+tag := "zh-releases-v4-24-0-h005"
+%%%
 
 `grind` can reason about associative, commutative, idempotent, and/or unital operations
 ([#10105](https://github.com/leanprover/lean4/pull/10105), [#10146](https://github.com/leanprover/lean4/pull/10146), etc..):
@@ -98,6 +113,9 @@ example {α : Sort u} (op : α → α → α) (u : α) [Std.Associative op] [Std
 ```
 
 ### Metaprogramming notes
+%%%
+tag := "zh-releases-v4-24-0-h006"
+%%%
 
 - [#10306](https://github.com/leanprover/lean4/pull/10306) fixes a few bugs in the `rw` tactic.
 
@@ -105,6 +123,9 @@ example {α : Sort u} (op : α → α → α) (u : α) [Std.Associative op] [Std
   for elaborating rewrite theorems and applying rewrites to expressions.
 
 ### Breaking changes
+%%%
+tag := "zh-releases-v4-24-0-h007"
+%%%
 
 - [#9749](https://github.com/leanprover/lean4/pull/9749) refactors the Lake codebase to use the new module system
   throughout. Every module in `Lake` is now a `module`.
@@ -117,6 +138,9 @@ example {α : Sort u} (op : α → α → α) (u : α) [Std.Associative op] [Std
   to report this as an issue on GitHub.
 
 ## Language
+%%%
+tag := "zh-releases-v4-24-0-h008"
+%%%
 
 * [#8891](https://github.com/leanprover/lean4/pull/8891) improves the error message produced when passing (automatically
   redundant) local hypotheses to `grind`.
@@ -705,6 +729,9 @@ example {α : Sort u} (op : α → α → α) (u : α) [Std.Associative op] [Std
   `pp.unicode.fun` to opt into the unicode form when pretty printing.
 
 ## Library
+%%%
+tag := "zh-releases-v4-24-0-h009"
+%%%
 
 * [#7858](https://github.com/leanprover/lean4/pull/7858) implements the fast circuit for overflow detection in unsigned
   multiplication used by Bitwuzla and proposed in:
@@ -887,6 +914,9 @@ example {α : Sort u} (op : α → α → α) (u : α) [Std.Associative op] [Std
   arguing via injectivity in `grind` if these are available.
 
 ## Compiler
+%%%
+tag := "zh-releases-v4-24-0-h010"
+%%%
 
 * [#9631](https://github.com/leanprover/lean4/pull/9631) makes `IO.RealWorld` opaque. It also adds a new compiler -only
   `lcRealWorld` constant to represent this type within the compiler. By
@@ -944,6 +974,9 @@ example {α : Sort u} (op : α → α → α) (u : α) [Std.Associative op] [Std
   projection functions instead.
 
 ## Pretty Printing
+%%%
+tag := "zh-releases-v4-24-0-h011"
+%%%
 
 * [#10122](https://github.com/leanprover/lean4/pull/10122) adds support for pretty printing using generalized field
   notation (dot notation) for private definitions on public types. It also
@@ -969,11 +1002,17 @@ example {α : Sort u} (op : α → α → α) (u : α) [Std.Associative op] [Std
   enables `pp.piBinderNames` if it is not otherwise explicitly set.
 
 ## Documentation
+%%%
+tag := "zh-releases-v4-24-0-h012"
+%%%
 
 * [#9956](https://github.com/leanprover/lean4/pull/9956) adds additional information to the `let` and `have` tactic
   docstrings about opaqueness, when to use each, and associated tactics.
 
 ## Server
+%%%
+tag := "zh-releases-v4-24-0-h013"
+%%%
 
 * [#9966](https://github.com/leanprover/lean4/pull/9966) adjusts the "try this" widget to be rendered as a widget message
   under 'Messages', not a separate widget under a 'Suggestions' section.
@@ -992,6 +1031,9 @@ example {α : Sort u} (op : α → α → α) (u : α) [Std.Associative op] [Std
   yields a result in 920ms.
 
 ## Lake
+%%%
+tag := "zh-releases-v4-24-0-h014"
+%%%
 
 * [#9749](https://github.com/leanprover/lean4/pull/9749) refactors the Lake codebase to use the new module system
   throughout. Every module in `Lake` is now a `module`.
@@ -1000,6 +1042,9 @@ example {α : Sort u} (op : α → α → α) (u : α) [Std.Associative op] [Std
   consistent with other code found in `Lake.DSL`.
 
 ## Other
+%%%
+tag := "zh-releases-v4-24-0-h015"
+%%%
 
 * [#10043](https://github.com/leanprover/lean4/pull/10043) allows Lean's parser to run with a final position prior to the
   end of the string, so it can be invoked on a sub-region of the input.

@@ -76,6 +76,9 @@ tag := "char-api"
 %%%
 
 ## 转换
+%%%
+tag := "zh-basictypes-char-h005"
+%%%
 
 {docstring Char.ofNat}
 
@@ -166,18 +169,27 @@ tag := "char-api-classes"
 {docstring Char.isWhitespace}
 
 ## 大小写转换
+%%%
+tag := "zh-basictypes-char-h007"
+%%%
 
 {docstring Char.toUpper}
 
 {docstring Char.toLower}
 
 ## 比较
+%%%
+tag := "zh-basictypes-char-h008"
+%%%
 
 {docstring Char.le}
 
 {docstring Char.lt}
 
 ## Unicode
+%%%
+tag := "zh-basictypes-char-h009"
+%%%
 
 {docstring Char.utf8Size}
 

@@ -31,6 +31,9 @@ tag := "exception-monads"
 归纳类型{name}`Except` 捕获了这种模式，并且它本身就是一个 monad。
 
 # 例外情况
+%%%
+tag := "zh-monads-zoo-except-h001"
+%%%
 
 {docstring Except}
 
@@ -54,6 +57,9 @@ tag := "exception-monads"
 
 
 # Type级
+%%%
+tag := "zh-monads-zoo-except-h002"
+%%%
 
 {docstring MonadExcept}
 
@@ -70,10 +76,16 @@ tag := "exception-monads"
 {docstring tryCatchThe}
 
 # “最后”计算
+%%%
+tag := "zh-monads-zoo-except-h003"
+%%%
 
 {docstring MonadFinally}
 
 # 变压器
+%%%
+tag := "zh-monads-zoo-except-h004"
+%%%
 
 {docstring ExceptT}
 
@@ -97,6 +109,9 @@ tag := "exception-monads"
 
 
 # 连续传递风格中的异常 Monad
+%%%
+tag := "zh-monads-zoo-except-h005"
+%%%
 
 ```lean -show
 universe u

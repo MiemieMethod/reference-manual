@@ -155,6 +155,9 @@ Lean 标准库包含标准库中定义的类型的适用实例。
 例如，Mathlib `CommRing` 类型类实现 `Lean.Grind.CommRing` 以确保 `ring` 解算器开箱即用。
 
 ## 代数结构
+%%%
+tag := "zh-grind-algebra-h002"
+%%%
 
 为了启用代数求解器，类型应该具有求解器支持的最具体的可能代数结构的实例。
 按照特异性递增的顺序，即 {name Lean.Grind.Semiring}`Semiring`、{name Lean.Grind.Ring}`Ring`、{name Lean.Grind.CommSemiring}`CommSemiring`、{name Lean.Grind.CommRing}`CommRing` 和 {name Lean.Grind.Field}`Field`。
@@ -198,6 +201,9 @@ example [Field α] (a : α) :
 {docstring Lean.Grind.Field}
 
 ## 环特性
+%%%
+tag := "zh-grind-algebra-h004"
+%%%
 
 :::TODO
 
@@ -331,6 +337,9 @@ example (x y : Nat) :
 {docstring Lean.Grind.AddRightCancel}
 
 # 资源限制
+%%%
+tag := "zh-grind-algebra-h007"
+%%%
 
 Gröbner 基础计算可能非常昂贵。您可以使用选项 `grind (ringSteps := <num>)` 限制 `ring` 求解器执行的步数
 

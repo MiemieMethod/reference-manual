@@ -28,6 +28,9 @@ tag := "grind-split"
 
 
 # 选择启发法
+%%%
+tag := "zh-grind-caseanalysis-h001"
+%%%
 
 {tactic}`grind` 通过组合三个信号源来决定分割哪个子项：
 
@@ -253,6 +256,9 @@ example (h : Even (n + 2)) : Even n := by
 :::
 
 # 表现
+%%%
+tag := "zh-grind-caseanalysis-h002"
+%%%
 
 案例分析功能强大，但计算成本昂贵：每个级别的案例分割都会使搜索空间成倍增加。
 重要的是要明智，不要进行不必要的分割。

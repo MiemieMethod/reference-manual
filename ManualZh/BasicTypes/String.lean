@@ -162,6 +162,9 @@ tag := "string-api-valid-pos"
 {docstring String.Pos}
 
 ### 在字符串中
+%%%
+tag := "zh-basictypes-string-h008"
+%%%
 
 {docstring String.startPos}
 
@@ -176,6 +179,9 @@ tag := "string-api-valid-pos"
 {docstring String.extract}
 
 ### 查找
+%%%
+tag := "zh-basictypes-string-h009"
+%%%
 
 {docstring String.Pos.get}
 
@@ -186,12 +192,18 @@ tag := "string-api-valid-pos"
 {docstring String.Pos.set}
 
 ### 修改
+%%%
+tag := "zh-basictypes-string-h010"
+%%%
 
 {docstring String.Pos.modify}
 
 {docstring String.Pos.byte}
 
 ### 调整
+%%%
+tag := "zh-basictypes-string-h011"
+%%%
 
 {docstring String.Pos.prev}
 
@@ -206,6 +218,9 @@ tag := "string-api-valid-pos"
 {docstring String.Pos.next?}
 
 ### 其他琴弦
+%%%
+tag := "zh-basictypes-string-h012"
+%%%
 
 {docstring String.Pos.cast}
 
@@ -225,22 +240,34 @@ tag := "string-api-pos"
 {docstring String.Pos.Raw}
 
 ### 字节位置
+%%%
+tag := "zh-basictypes-string-h014"
+%%%
 
 {docstring String.Pos.Raw.offsetOfPos}
 
 ### 有效性
+%%%
+tag := "zh-basictypes-string-h015"
+%%%
 
 {docstring String.Pos.Raw.isValid}
 
 {docstring String.Pos.Raw.isValidForSlice}
 
 ### 边界
+%%%
+tag := "zh-basictypes-string-h016"
+%%%
 
 {docstring String.rawEndPos}
 
 {docstring String.Pos.Raw.atEnd}
 
 ### 比较
+%%%
+tag := "zh-basictypes-string-h017"
+%%%
 
 {docstring String.Pos.Raw.min}
 
@@ -249,6 +276,9 @@ tag := "string-api-pos"
 {docstring String.Pos.Raw.substrEq}
 
 ### 调整
+%%%
+tag := "zh-basictypes-string-h018"
+%%%
 
 {docstring String.Pos.Raw.prev}
 
@@ -273,6 +303,9 @@ tag := "string-api-pos"
 {docstring String.Pos.Raw.unoffsetBy}
 
 ### 字符串查找
+%%%
+tag := "zh-basictypes-string-h019"
+%%%
 
 {docstring String.Pos.Raw.extract}
 
@@ -285,6 +318,9 @@ tag := "string-api-pos"
 {docstring String.Pos.Raw.get?}
 
 ### 字符串修改
+%%%
+tag := "zh-basictypes-string-h020"
+%%%
 
 {docstring String.Pos.Raw.set}
 

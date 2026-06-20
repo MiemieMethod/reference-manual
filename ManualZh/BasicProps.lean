@@ -90,6 +90,9 @@ termination_by n
 :::
 
 # 逻辑连接词
+%%%
+tag := "zh-basicprops-h002"
+%%%
 
 连词被实现为归纳定义的命题 {name}`And`。
 构造函数 {name}`And.intro` 表示合取的引入规则：要证明一个合取，只需证明两个合取即可。
@@ -200,6 +203,9 @@ $_ ↔ $_
 
 
 # 量词
+%%%
+tag := "zh-basicprops-h003"
+%%%
 
 正如蕴涵在 {lean}`Prop` 中实现为普通函数类型一样，全称量化在 {lean}`Prop` 中实现为依赖函数类型。
 由于 {lean}`Prop` 是 {tech}[必然]，因此 {tech}[codomain] 是 {lean}`Prop` 的任何函数类型本身也是 {lean}`Prop`，即使 {tech}[domain] 是 {lean}`Type` 也是如此。

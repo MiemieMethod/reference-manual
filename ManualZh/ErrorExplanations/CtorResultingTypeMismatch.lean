@@ -24,6 +24,9 @@ shortTitle := "ctorResultingTypeMismatch"
 inductive type being defined has no indices.
 
 # 示例
+%%%
+tag := "zh-errorexplanations-ctorresultingtypemismatch-h001"
+%%%
 
 :::errorExample "Typo in Resulting Type"
 ```broken

@@ -34,6 +34,9 @@ variable {α : Type u}
 {docstring Subarray.empty}
 
 # 数组数据
+%%%
+tag := "zh-basictypes-array-subarray-h001"
+%%%
 
 {docstring Subarray.array}
 
@@ -46,6 +49,9 @@ variable {α : Type u}
 {docstring Subarray.stop_le_array_size}
 
 # 调整大小
+%%%
+tag := "zh-basictypes-array-subarray-h002"
+%%%
 
 {docstring Subarray.drop}
 
@@ -56,6 +62,9 @@ variable {α : Type u}
 {docstring Subarray.split}
 
 # 查找
+%%%
+tag := "zh-basictypes-array-subarray-h003"
+%%%
 
 {docstring Subarray.get}
 
@@ -64,6 +73,9 @@ variable {α : Type u}
 {docstring Subarray.getD}
 
 # 迭代
+%%%
+tag := "zh-basictypes-array-subarray-h004"
+%%%
 
 {docstring Subarray.foldr}
 
@@ -76,6 +88,9 @@ variable {α : Type u}
 {docstring Subarray.forIn}
 
 # 元素谓词
+%%%
+tag := "zh-basictypes-array-subarray-h005"
+%%%
 
 {docstring Subarray.findRev?}
 
