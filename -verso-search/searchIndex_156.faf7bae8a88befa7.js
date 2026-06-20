@@ -1,0 +1,1 @@
+window.docContents[156].resolve({"/Tactic-Proofs/Tactic-Reference/#tactic-ref-inductive":{"contents":"\n\n\n\n","context":"Lean 参考\u0009策略样张\u0009策略参考","header":"14.5.15. 归纳类型","id":"/Tactic-Proofs/Tactic-Reference/#tactic-ref-inductive"}});

@@ -1,0 +1,1 @@
+window.docContents[39].resolve({"/The-Type-System/Inductive-Types/#recursors":{"contents":"每个归纳类型都配备有 recursor。\n递归器完全由类型构造函数和构造函数的签名确定。\n递归器具有函数类型，但它们是原始类型，无法使用 fun 进行定义。\n\n\n\n\n\n","context":"Lean 参考\u0009Type System\u0009归纳类型\u0009逻辑模型","header":"4.4.3.1. 递归器","id":"/The-Type-System/Inductive-Types/#recursors"}});
